@@ -1,0 +1,155 @@
+---
+title: LSIDS03
+subtitle: Listing of Subjects Who Were Unblinded During the Study
+---
+
+------------------------------------------------------------------------
+
+{{< include ../../_utils/envir_hook.qmd >}}
+
+```{r setup, echo = FALSE, warning = FALSE, message = FALSE}
+library(rtables.officer)
+
+envsetup_config_name <- "default"
+
+# Path to the combined config file
+envsetup_file_path <- file.path("../..", "envsetup.yml")
+
+Sys.setenv(ENVSETUP_ENVIRON = '')
+library(envsetup)
+loaded_config <- config::get(config = envsetup_config_name, file = envsetup_file_path)
+envsetup::rprofile(loaded_config)
+
+
+dpscomp <- compound
+dpspdr <- paste(protocol,dbrelease,rpteff,sep="__")
+
+aptcomp <- compound
+aptpdr <- paste(protocol,dbrelease,rpteff,sep="__")
+
+###### Study specific updates (formerly in envre)
+
+dpscomp <- "standards"
+dpspdr <- "jjcs__NULL__jjcs - core"
+
+apt <- FALSE
+
+```
+
+## Output
+
+:::: panel-tabset
+## {{< fa regular file-lines sm fw >}} Preview
+
+```{r variant1, results='hide', warning = FALSE, message = FALSE}
+
+# Program Name:              lsids03.R
+
+# Prep environment
+
+library(envsetup)
+library(tern)
+library(dplyr)
+library(rtables)
+library(junco)
+library(stringi)
+
+# Define script level parameters
+
+tblid <- "LSIDS03"
+fileid <- tblid
+popfl <- "SAFFL"
+trtvar <- "TRT01P"
+key_cols <- c("COL0", "COL1")
+disp_cols <- paste0("COL", 0:9)
+concat_sep <- " / "
+tab_titles <- get_titles_from_file(input_path = '../../_data/', tblid)
+string_map <- default_str_map
+
+# Process data
+
+adsl <- pharmaverseadamjnj::adsl %>%
+  filter(!!rlang::sym(popfl) == "Y" & UNBLNDFL == "Y")
+
+adexsum <- pharmaverseadamjnj::adexsum %>%
+  filter(PARAMCD == "CUMDOSE") %>%
+  select(STUDYID, USUBJID, PARAMCD, PARAM, AVAL)
+
+adsl_adexsum <- left_join(adsl, adexsum, by = c(
+  "STUDYID" = "STUDYID",
+  "USUBJID" = "USUBJID"
+))
+
+lsting <- adsl_adexsum %>%
+  mutate(
+    AGE = explicit_na(as.character(AGE), ""),
+    SEX = explicit_na(SEX, ""),
+    RACE_DECODE = explicit_na(RACE_DECODE, ""),
+    AVAL = explicit_na(as.character(AVAL), ""),
+    AVALU = case_when(
+      !is.na(AVAL) ~
+        stringr::str_extract(PARAM, "(?<=\\()([^()]*?)(?=\\)[^()]*$)"),
+      is.na(AVAL) ~
+        ""
+    ),
+    EOTSTT = explicit_na(EOTSTT, ""),
+    EOSSTT = explicit_na(EOSSTT, ""),
+    COL0 = explicit_na(.data[[trtvar]], ""),
+    COL1 = explicit_na(USUBJID, ""),
+    COL2 = paste(AGE, SEX, RACE_DECODE, sep = concat_sep),
+    # Optional Column: COL3/LTVISIT
+    COL3 = explicit_na(LTVISIT, ""),
+    COL4 = explicit_na(as.character(UNBLNDDY), ""),
+    COL5 = explicit_na(as.character(TRTEDY), ""),
+    # Optional Column: COL6/CUMDOSE/CUMDOSU
+    COL6 = paste0(AVAL, " ", AVALU),
+    COL7 = explicit_na(stringi::stri_trans_totitle(UNBREAS), ""),
+    COL8 = case_when(
+      EOTSTT == "DISCONTINUED" ~ "Yes",
+      EOTSTT != "DISCONTINUED" ~ "No"
+    ),
+    COL9 = case_when(
+      EOSSTT == "DISCONTINUED" ~ "Yes",
+      EOSSTT != "DISCONTINUED" ~ "No"
+    )
+  ) %>%
+  arrange(COL0, COL1)
+
+lsting <- var_relabel(lsting,
+  COL0 = "Treatment Group",
+  COL1 = "Subject ID",
+  COL2 = paste("Age (years)", "Sex", "Race", sep = concat_sep),
+  # Optional Column: COL3/LTVISIT
+  COL3 = "Last Visit~[super a]",
+  COL4 = "Study Day~[super b] of Unblinding",
+  COL5 = "Study Day~[super b] of Last Study Agent Administered",
+  # Optional Column: COL6/CUMDOSE/CUMDOSU
+  COL6 = "Total Dose (unit)~[super c]",
+  COL7 = "Reason for Unblinding",
+  COL8 = "Was Study Agent Discontinued?",
+  COL9 = "Was Study Participation Discontinued Prematurely?"
+)
+
+# Build listing
+
+result <- rlistings::as_listing(
+  df = lsting,
+  key_cols = key_cols,
+  disp_cols = disp_cols,
+)
+
+# Add titles and footnotes
+
+result <- set_titles(result, tab_titles)
+
+# Output listing
+
+tt_to_tlgrtf(string_map = string_map, tt = head(result, 100), file = fileid, orientation = "landscape")
+```
+```{r result1, echo=FALSE, message=FALSE, warning=FALSE, test = list(result_v1 = "result")}
+tt_to_flextable(head(result,100), theme = theme_docx_default(font_size = 6))
+```
+
+[Download RTF file](`r paste0(tolower(tblid), '.rtf')`)
+::::
+

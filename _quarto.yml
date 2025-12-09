@@ -1,0 +1,145 @@
+---
+project:
+  type: website
+  preview:
+    port: 4200
+    browser: true
+    watch-inputs: true
+    navigate: true
+    timeout: 6000
+
+format:
+  html:
+    search: true
+    theme:
+      light:
+        - flatly
+      dark:
+        - darkly
+    anchor-sections: true
+    #smooth-scroll: true # https://github.com/quarto-ext/shinylive/issues/46
+    code-link: true
+    code-fold: true
+    code-overflow: scroll
+    code-line-numbers: true
+    code-copy: true
+    code-tools:
+      source: true
+      toggle: false
+      caption: none
+    code-block-bg: true
+    code-block-border-left: "#1482FA"
+    css: assets/css/style.css
+    fig-format: svg
+    grid:
+      body-width: 99999px # max width - full screen
+    number-sections: false
+    lang: en-US
+    page-layout: full
+    toc: true
+    # WebR configuration removed as requested
+    # webr:
+    #   packages:
+    #     - tern
+    #     - random.cdisc.data
+    #     - dplyr
+    #     # - teal.modules.clinical
+    #     # - junco
+    #   repos:
+    #     # - https://johnsonandjohnson.r-universe.dev
+    #     - https://insightsengineering.r-universe.dev
+    #     - https://pharmaverse.r-universe.dev
+    #     - https://cloud.r-project.org
+    #   channel: "2024-01-01"
+    #   show-startup-message: false
+    #   cell-options:
+    #     autorun: true
+    #     max-lines: 20
+
+execute:
+  #freeze: true
+  cache: true
+  code-line-numbers: true
+  echo: true
+
+engine: knitr
+
+knitr:
+  opts_chunk:
+    dev: 'svg'
+
+filters:
+  - insightsengineering/pattern-strip
+  - fontawesome
+pattern-strip-patterns:
+  - "#%s?nolint.*"
+  - "#%s?styler:.*"
+
+editor: visual
+highlight-style: github
+
+website:
+  title: TL Catalog
+  image: assets/img/logo.png
+  open-graph: true
+  favicon: assets/img/logo.png
+  search:
+    location: navbar
+    type: overlay
+    copy-button: true
+  page-navigation: true
+  reader-mode: true
+  site-url: https://johnsonandjohnson.github.io/tlg-catalog
+  repo-url: https://github.com/johnsonandjohnson/tlg-catalog
+  repo-subdir: book
+  repo-actions: [edit, issue]
+  repo-branch: main
+  # google-analytics: UA-125641273-1
+  cookie-consent: true
+  page-footer:
+    left: |
+      Made with ❤️ by the J&J Team
+  navbar:
+    pinned: true
+    collapse: false
+    background: primary
+    search: true
+  sidebar:
+    - id: sidebar
+      style: docked
+      collapse-level: 1
+      logo: assets/img/logo.png
+      border: true
+      contents:
+        - file: index.qmd
+          text: Introduction
+        - text: "---"
+        - auto: tables
+        - auto: listings
+#        - auto: graphs
+        - text: "---"
+        - reproducibility.qmd
+        - text: "---"
+        - changelog.qmd
+        - text: "---"
+        - tlg-index.qmd
+  comments:
+    giscus:
+      # Reference: https://quarto.org/docs/reference/projects/books.html#giscus
+      # Also https://giscus.app/ for all options
+      repo: johnsonandjohnson/tlg-catalog
+      # repo-id: "MDEwOlJlcG9zaXRvcnk0MDYxNTcwMjg="
+      category: General
+      # category-id: "DIC_kwDOGDV25M4CVBzs"
+      reactions-enabled: true
+      theme: light
+      language: en
+      loading: lazy
+      mapping: pathname
+
+profile:
+  group:
+    - [development] #stable.,
+  default: development
+resources:
+  - "*.rtf"

@@ -1,0 +1,413 @@
+default: 
+  project_path: !expr Sys.setenv(ENVSETUP_PROJECT_PATH = getwd()); getwd()
+  paths:
+    environ: !expr if (grepl("/PDEV", Sys.getenv("ENVSETUP_PROJECT_PATH"))) {
+      Sys.setenv(ENVSETUP_ENVIRON = "PDEV")} else if (grepl("/PREPROD", Sys.getenv("ENVSETUP_PROJECT_PATH"))) {
+     Sys.setenv(ENVSETUP_ENVIRON = "PREPROD")} else if (grepl("/PROD", Sys.getenv("ENVSETUP_PROJECT_PATH"))) {
+      Sys.setenv(ENVSETUP_ENVIRON = "PROD")}; Sys.getenv("ENVSETUP_ENVIRON")
+    a_in: !expr file.path(Sys.getenv('ENVSETUP_PROJECT_PATH'), "../../_data")
+    am_in: !expr file.path(Sys.getenv('ENVSETUP_PROJECT_PATH'), "../../_data/metadata")
+    opath: !expr file.path(Sys.getenv('ENVSETUP_PROJECT_PATH'))
+    dpspath: !expr file.path(Sys.getenv('ENVSETUP_PROJECT_PATH'), "../../_data")
+    d_in: !expr file.path(Sys.getenv('ENVSETUP_PROJECT_PATH'), "../../_data")
+    dm_in: !expr file.path(Sys.getenv('ENVSETUP_PROJECT_PATH'), "../../_data/metadata")
+    a_out: !expr file.path(Sys.getenv('ENVSETUP_PROJECT_PATH'), "../../_data")
+    
+    cl: !expr file.path(Sys.getenv('ENVSETUP_PROJECT_PATH'), "../../_data")
+                   
+    compound: "globalcode_development"
+    protocol: "jnj-56021927--pcr3002--synthetic"
+    dbrelease: "dbr_csr_synthetic"    
+    rpteff: "re_jjcs_testing"
+efficacy:
+  paths:
+    project_path: !expr Sys.setenv(ENVSETUP_PROJECT_PATH = Sys.getenv("spacepath", unset = getwd())); 
+      Sys.getenv("ENVSETUP_PROJECT_PATH")
+    environ: !expr if (grepl("/PDEV", Sys.getenv("ENVSETUP_PROJECT_PATH"))) {
+      Sys.setenv(ENVSETUP_ENVIRON = "PDEV")} else if (grepl("/PREPROD", Sys.getenv("ENVSETUP_PROJECT_PATH"))) {
+     Sys.setenv(ENVSETUP_ENVIRON = "PREPROD")} else if (grepl("/PROD", Sys.getenv("ENVSETUP_PROJECT_PATH"))) {
+      Sys.setenv(ENVSETUP_ENVIRON = "PROD")}; Sys.getenv("ENVSETUP_ENVIRON")
+    search: !expr Sys.getenv("ENVSETUP_ENVIRON")
+    username: !expr   if (Sys.getenv('ENVSETUP_ENVIRON') == "PDEV") {
+      Sys.setenv(ENVSETUP_USERNAME = regmatches(Sys.getenv('ENVSETUP_PROJECT_PATH'), regexec(".*PDEV/(.*?)/pharma.*", Sys.getenv('ENVSETUP_PROJECT_PATH')))[[1]][2])} else {
+      Sys.setenv(ENVSETUP_USERNAME = "__NA__")}; Sys.getenv("ENVSETUP_USERNAME")
+    topdrv: !expr Sys.setenv(ENVSETUP_TOPDRV = sub(paste0("/", Sys.getenv("ENVSETUP_ENVIRON"), ".*"), "\\1",  Sys.getenv("ENVSETUP_PROJECT_PATH")));
+                  Sys.getenv("ENVSETUP_TOPDRV")
+    remainder: !expr assign("temp_remainder", sub(".*/pharma/", "",  Sys.getenv("ENVSETUP_PROJECT_PATH")), envir = parent.frame());
+                     assign("temp_remainder_split", unlist(strsplit(get("temp_remainder", envir = parent.frame()), "[\\/]")), envir = parent.frame());
+                     assign("temp_remainder_split_no_programs", get("temp_remainder_split", envir = parent.frame())[!get("temp_remainder_split", envir = parent.frame()) %in% c("programs", "qc")], envir = parent.frame());
+                     assign("temp_compound", get("temp_remainder_split_no_programs", envir = parent.frame())[1], envir = parent.frame());
+                     assign("temp_protocol", {if(length(get("temp_remainder_split_no_programs", envir = parent.frame())) > 1) {get("temp_remainder_split_no_programs", envir = parent.frame())[2]} else "__NA__"}, envir = parent.frame());
+                     assign("temp_dbrelease", {if(length(get("temp_remainder_split_no_programs", envir = parent.frame())) > 2) {get("temp_remainder_split_no_programs", envir = parent.frame())[3]} else "__NA__"}, envir = parent.frame());
+                     assign("temp_rpteff", {if(length(get("temp_remainder_split_no_programs", envir = parent.frame())) > 3) {get("temp_remainder_split_no_programs", envir = parent.frame())[4]} else "__NA__"}, envir = parent.frame());
+                     Sys.setenv(ENVSETUP_COMPOUND =  get("temp_compound", envir = parent.frame()));
+                     Sys.setenv(ENVSETUP_PROTOCOL = get("temp_protocol", envir = parent.frame()));
+                     Sys.setenv(ENVSETUP_DBRELEASE = get("temp_dbrelease", envir = parent.frame()));
+                     Sys.setenv(ENVSETUP_RPTEFF = get("temp_rpteff", envir = parent.frame()));
+                     paste0(get("temp_remainder_split_no_programs", envir = parent.frame()), collapse = "/")
+    compound: !expr Sys.getenv("ENVSETUP_COMPOUND")
+    protocol: !expr Sys.getenv("ENVSETUP_PROTOCOL")
+    dbrelease: !expr Sys.getenv("ENVSETUP_DBRELEASE")
+    rpteff: !expr Sys.getenv("ENVSETUP_RPTEFF")
+    pdev_root: !expr assign("path_list", c(Sys.getenv("ENVSETUP_TOPDRV"),
+                                           "PDEV",
+                                           Sys.getenv("ENVSETUP_USERNAME"),
+                                           "pharma",
+                                           Sys.getenv("ENVSETUP_COMPOUND"),
+                                           Sys.getenv("ENVSETUP_PROTOCOL"),
+                                           Sys.getenv("ENVSETUP_DBRELEASE"),
+                                           Sys.getenv("ENVSETUP_RPTEFF"),
+                                           "__NA__"), 
+                                           envir = parent.frame());
+                        assign("temp_no_na", get("path_list", envir = parent.frame())[get("path_list", envir = parent.frame()) != "__NA__"], envir = parent.frame());
+                        assign("temp_pdev_root", paste0(get("temp_no_na", envir = parent.frame()), collapse = "/"), envir = parent.frame());
+                        Sys.setenv(ENVSETUP_PDEV_ROOT = get("temp_pdev_root", envir = parent.frame()));
+                        get("temp_pdev_root", envir = parent.frame())
+    pdev_dbr_root: !expr assign("path_list", c(Sys.getenv("ENVSETUP_TOPDRV"),
+                                               "PDEV",
+                                               Sys.getenv("ENVSETUP_USERNAME"),
+                                               "pharma",
+                                               Sys.getenv("ENVSETUP_COMPOUND"),
+                                               Sys.getenv("ENVSETUP_PROTOCOL"),
+                                               Sys.getenv("ENVSETUP_DBRELEASE"),
+                                               "__NA__",
+                                               "__NA__"), 
+                                           envir = parent.frame());
+                     assign("temp_no_na",  get("path_list", envir = parent.frame())[ get("path_list", envir = parent.frame()) != "__NA__"], envir = parent.frame());
+                     assign("temp_pdev_dbr_root", paste0(get("temp_no_na", envir = parent.frame()), collapse = "/"), envir = parent.frame());
+                     Sys.setenv(ENVSETUP_PDEV_DBR_ROOT = get("temp_pdev_dbr_root", envir = parent.frame()));
+                     get("temp_pdev_dbr_root", envir = parent.frame())
+    pdev_protocol_root: !expr assign("path_list", c(Sys.getenv("ENVSETUP_TOPDRV"),
+                                                    "PDEV",
+                                                    Sys.getenv("ENVSETUP_USERNAME"),
+                                                    "pharma",
+                                                    Sys.getenv("ENVSETUP_COMPOUND"),
+                                                    Sys.getenv("ENVSETUP_PROTOCOL"),
+                                                    "__NA__",
+                                                    "__NA__",
+                                                    "__NA__"), 
+                                                    envir = parent.frame());
+                          assign("temp_no_na", get("path_list", envir = parent.frame())[get("path_list", envir = parent.frame()) != "__NA__"], envir = parent.frame());
+                          assign("temp_pdev_protocol_root", paste0(get("temp_no_na", envir = parent.frame()), collapse = "/"), envir = parent.frame());
+                          Sys.setenv(ENVSETUP_PDEV_PROTOCOL_ROOT = get("temp_pdev_protocol_root", envir = parent.frame()));
+                          get("temp_pdev_protocol_root", envir = parent.frame())
+    pdev_compound_root: !expr assign("path_list", c(Sys.getenv("ENVSETUP_TOPDRV"),
+                                                    "PDEV",
+                                                    Sys.getenv("ENVSETUP_USERNAME"),
+                                                    "pharma",
+                                                    Sys.getenv("ENVSETUP_COMPOUND"),
+                                                    "__NA__",
+                                                    "__NA__",
+                                                    "__NA__",
+                                                    "__NA__"), 
+                                                    envir = parent.frame());
+                          assign("temp_no_na", get("path_list", envir = parent.frame())[get("path_list", envir = parent.frame()) != "__NA__"], envir = parent.frame());
+                          assign("temp_pdev_compound_root", paste0(get("temp_no_na", envir = parent.frame()), collapse = "/"), envir = parent.frame());
+                          Sys.setenv(ENVSETUP_PDEV_COMPOUND_ROOT = get("temp_pdev_compound_root", envir = parent.frame()));
+                          get("temp_pdev_compound_root", envir = parent.frame())
+    preprod_root: !expr assign("path_list", c(Sys.getenv("ENVSETUP_TOPDRV"),
+                                              "PREPROD",
+                                              "pharma",
+                                              Sys.getenv("ENVSETUP_COMPOUND"),
+                                              Sys.getenv("ENVSETUP_PROTOCOL"),
+                                              Sys.getenv("ENVSETUP_DBRELEASE"),
+                                              Sys.getenv("ENVSETUP_RPTEFF"),
+                                              "__NA__"), 
+                                              envir = parent.frame());
+                                assign("temp_no_na", get("path_list", envir = parent.frame())[get("path_list", envir = parent.frame()) != "__NA__"], envir = parent.frame());
+                                assign("temp_preprod_root", paste0(get("temp_no_na", envir = parent.frame()), collapse = "/"), envir = parent.frame());
+                                Sys.setenv(ENVSETUP_PREPROD_ROOT = get("temp_preprod_root", envir = parent.frame()));
+                                get("temp_preprod_root", envir = parent.frame())
+    preprod_dbr_root: !expr assign("path_list", c(Sys.getenv("ENVSETUP_TOPDRV"),
+                                                  "PREPROD",
+                                                  "pharma",
+                                                  Sys.getenv("ENVSETUP_COMPOUND"),
+                                                  Sys.getenv("ENVSETUP_PROTOCOL"),
+                                                  Sys.getenv("ENVSETUP_DBRELEASE"),
+                                                  "__NA__",
+                                                  "__NA__"), 
+                                              envir = parent.frame());
+                                assign("temp_no_na", get("path_list", envir = parent.frame())[get("path_list", envir = parent.frame()) != "__NA__"], envir = parent.frame());
+                                assign("temp_preprod_dbr_root", paste0(get("temp_no_na", envir = parent.frame()), collapse = "/"), envir = parent.frame());
+                                Sys.setenv(ENVSETUP_PREPROD_DBR_ROOT = get("temp_preprod_dbr_root", envir = parent.frame()));
+                                get("temp_preprod_dbr_root", envir = parent.frame())
+    preprod_protocol_root: !expr assign("path_list", c(Sys.getenv("ENVSETUP_TOPDRV"),
+                                                       "PREPROD",
+                                                       "pharma",
+                                                       Sys.getenv("ENVSETUP_COMPOUND"),
+                                                       Sys.getenv("ENVSETUP_PROTOCOL"),
+                                                       "__NA__",
+                                                       "__NA__",
+                                                       "__NA__"), 
+                                                       envir = parent.frame());
+                                assign("temp_no_na", get("path_list", envir = parent.frame())[get("path_list", envir = parent.frame()) != "__NA__"], envir = parent.frame());
+                                assign("temp_preprod_protocol_root", paste0(get("temp_no_na", envir = parent.frame()), collapse = "/"), envir = parent.frame());
+                                Sys.setenv(ENVSETUP_PREPROD_PROTOCOL_ROOT = get("temp_preprod_protocol_root", envir = parent.frame()));
+                                get("temp_preprod_protocol_root", envir = parent.frame())
+    preprod_compound_root: !expr assign("path_list", c(Sys.getenv("ENVSETUP_TOPDRV"),
+                                                       "PREPROD",
+                                                       "pharma",
+                                                       Sys.getenv("ENVSETUP_COMPOUND"),
+                                                       "__NA__",
+                                                       "__NA__",
+                                                       "__NA__",
+                                                       "__NA__"), 
+                                                       envir = parent.frame());
+                                assign("temp_no_na", get("path_list", envir = parent.frame())[get("path_list", envir = parent.frame()) != "__NA__"], envir = parent.frame());
+                                assign("temp_preprod_compound_root", paste0(get("temp_no_na", envir = parent.frame()), collapse = "/"), envir = parent.frame());
+                                Sys.setenv(ENVSETUP_PREPROD_COMPOUND_ROOT = get("temp_preprod_compound_root", envir = parent.frame()));
+                                get("temp_preprod_compound_root", envir = parent.frame())
+    prod_root: !expr assign("path_list", c(Sys.getenv("ENVSETUP_TOPDRV"),
+                                           "PROD",
+                                           "pharma",
+                                           Sys.getenv("ENVSETUP_COMPOUND"),
+                                           Sys.getenv("ENVSETUP_PROTOCOL"),
+                                           Sys.getenv("ENVSETUP_DBRELEASE"),
+                                           Sys.getenv("ENVSETUP_RPTEFF"),
+                                           "__NA__"),
+                                           envir = parent.frame());
+                             assign("temp_no_na", get("path_list", envir = parent.frame())[get("path_list", envir = parent.frame()) != "__NA__"], envir = parent.frame());
+                             assign("temp_prod_root", paste0(get("temp_no_na", envir = parent.frame()), collapse = "/"), envir = parent.frame());
+                             Sys.setenv(ENVSETUP_PROD_ROOT = get("temp_prod_root", envir = parent.frame()));
+                             get("temp_prod_root", envir = parent.frame())
+    prod_dbr_root: !expr assign("path_list", c(Sys.getenv("ENVSETUP_TOPDRV"),
+                                               "PROD",
+                                               "pharma",
+                                               Sys.getenv("ENVSETUP_COMPOUND"),
+                                               Sys.getenv("ENVSETUP_PROTOCOL"),
+                                               Sys.getenv("ENVSETUP_DBRELEASE"),
+                                               "__NA__",
+                                               "__NA__"),
+                                               envir = parent.frame());
+                             assign("temp_no_na", get("path_list", envir = parent.frame())[get("path_list", envir = parent.frame()) != "__NA__"], envir = parent.frame());
+                             assign("temp_prod_dbr_root", paste0(get("temp_no_na", envir = parent.frame()), collapse = "/"), envir = parent.frame());
+                             Sys.setenv(ENVSETUP_PROD_DBR_ROOT = get("temp_prod_dbr_root", envir = parent.frame()));
+                             get("temp_prod_dbr_root", envir = parent.frame())
+    prod_protocol_root: !expr assign("path_list", c(Sys.getenv("ENVSETUP_TOPDRV"),
+                                                    "PROD",
+                                                    "pharma",
+                                                    Sys.getenv("ENVSETUP_COMPOUND"),
+                                                    Sys.getenv("ENVSETUP_PROTOCOL"),
+                                                    "__NA__",
+                                                    "__NA__",
+                                                    "__NA__"),
+                                                    envir = parent.frame());
+                             assign("temp_no_na", get("path_list", envir = parent.frame())[get("path_list", envir = parent.frame()) != "__NA__"], envir = parent.frame());
+                             assign("temp_prod_protocol_root", paste0(get("temp_no_na", envir = parent.frame()), collapse = "/"), envir = parent.frame());
+                             Sys.setenv(ENVSETUP_PROD_PROTOCOL_ROOT = get("temp_prod_protocol_root", envir = parent.frame()));
+                             get("temp_prod_protocol_root", envir = parent.frame())
+    prod_compound_root: !expr assign("path_list", c(Sys.getenv("ENVSETUP_TOPDRV"),
+                                                    "PROD",
+                                                    "pharma",
+                                                    Sys.getenv("ENVSETUP_COMPOUND"),
+                                                    "__NA__",
+                                                    "__NA__",
+                                                    "__NA__",
+                                                    "__NA__"),
+                                                    envir = parent.frame());
+                             assign("temp_no_na", get("path_list", envir = parent.frame())[get("path_list", envir = parent.frame()) != "__NA__"], envir = parent.frame());
+                             assign("temp_prod_compound_root", paste0(get("temp_no_na", envir = parent.frame()), collapse = "/"), envir = parent.frame());
+                             Sys.setenv(ENVSETUP_PROD_COMPOUND_ROOT = get("temp_prod_compound_root", envir = parent.frame()));
+                             get("temp_prod_compound_root", envir = parent.frame())
+    a_in: !expr list(PDEV = file.path(Sys.getenv("ENVSETUP_PDEV_ROOT"), "analysis"),
+                     PREPROD = file.path(Sys.getenv("ENVSETUP_PREPROD_ROOT"), "analysis"),
+                     PROD =  file.path(Sys.getenv("ENVSETUP_PROD_ROOT"), "analysis"))
+    a_out: !expr list(PDEV = file.path(Sys.getenv("ENVSETUP_PDEV_ROOT"), "analysis"),
+                     PREPROD = file.path(Sys.getenv("ENVSETUP_PREPROD_ROOT"), "analysis"),
+                     PROD =  file.path(Sys.getenv("ENVSETUP_PROD_ROOT"), "analysis"))
+    apath: !expr list(PDEV = file.path(Sys.getenv("ENVSETUP_PDEV_ROOT"), "analysis"),
+                      PREPROD = file.path(Sys.getenv("ENVSETUP_PREPROD_ROOT"), "analysis"),
+                      PROD =  file.path(Sys.getenv("ENVSETUP_PROD_ROOT"), "analysis"))
+    am_in: !expr if (Sys.getenv("ENVSETUP_RPTEFF") != "__NA__")
+                   list(PDEV = file.path(Sys.getenv("ENVSETUP_PDEV_ROOT"), "analysis/metadata"),
+                        PREPROD = file.path(Sys.getenv("ENVSETUP_PREPROD_ROOT"), "analysis/metadata"),
+                        PROD =  file.path(Sys.getenv("ENVSETUP_PROD_ROOT"), "analysis/metadata"))
+    am_out: !expr if (Sys.getenv("ENVSETUP_RPTEFF") != "__NA__")
+                   list(PDEV = file.path(Sys.getenv("ENVSETUP_PDEV_ROOT"), "analysis/metadata"),
+                        PREPROD = file.path(Sys.getenv("ENVSETUP_PREPROD_ROOT"), "analysis/metadata"),
+                        PROD =  file.path(Sys.getenv("ENVSETUP_PROD_ROOT"), "analysis/metadata"))
+    ams_in: !expr if (Sys.getenv("ENVSETUP_RPTEFF") != "__NA__")
+                   list(PDEV = file.path(Sys.getenv("ENVSETUP_PDEV_ROOT"), "analysis/metadata/submission"),
+                        PREPROD = file.path(Sys.getenv("ENVSETUP_PREPROD_ROOT"), "analysis/metadata/submission"),
+                        PROD =  file.path(Sys.getenv("ENVSETUP_PROD_ROOT"), "analysis/metadata/submission"))
+    ams_out: !expr if (Sys.getenv("ENVSETUP_RPTEFF") != "__NA__")
+                   list(PDEV = file.path(Sys.getenv("ENVSETUP_PDEV_ROOT"), "analysis/metadata/submission"),
+                        PREPROD = file.path(Sys.getenv("ENVSETUP_PREPROD_ROOT"), "analysis/metadata/submission"),
+                        PROD =  file.path(Sys.getenv("ENVSETUP_PROD_ROOT"), "analysis/metadata/submission"))
+    am_in_pdvdir:  !expr if (Sys.getenv("ENVSETUP_RPTEFF") != "__NA__")
+                     file.path(Sys.getenv("ENVSETUP_PDEV_ROOT"), "analysis/metadata")
+    am_in_ppdir:  !expr if (Sys.getenv("ENVSETUP_RPTEFF") != "__NA__")
+                     file.path(Sys.getenv("ENVSETUP_PREPROD_ROOT"), "analysis/metadata")
+    am_in_pdir:  !expr if (Sys.getenv("ENVSETUP_RPTEFF") != "__NA__")
+                     file.path(Sys.getenv("ENVSETUP_PROD_ROOT"), "analysis/metadata")
+    d_in: !expr if (Sys.getenv("ENVSETUP_DBRELEASE") != "__NA__") {
+                  list(PDEV = list(data = file.path(Sys.getenv("ENVSETUP_PDEV_DBR_ROOT"), "_data"),
+                                   source = file.path(Sys.getenv("ENVSETUP_PDEV_DBR_ROOT"), "_source")),
+                       PREPROD = list(data = file.path(Sys.getenv("ENVSETUP_PREPROD_DBR_ROOT"), "_data"),
+                                   source = file.path(Sys.getenv("ENVSETUP_PREPROD_DBR_ROOT"), "_source")),
+                       PROD = list(data = file.path(Sys.getenv("ENVSETUP_PROD_DBR_ROOT"), "_data"),
+                                   source = file.path(Sys.getenv("ENVSETUP_PROD_DBR_ROOT"), "_source")))} else{
+                  list(PDEV = file.path(Sys.getenv("ENVSETUP_PDEV_DBR_ROOT"), "_data"),
+                       PREPROD = file.path(Sys.getenv("ENVSETUP_PREPROD_DBR_ROOT"), "_data"),
+                       PROD =  file.path(Sys.getenv("ENVSETUP_PROD_DBR_ROOT"), "_data"))}
+    d_out: !expr if (Sys.getenv("ENVSETUP_DBRELEASE") != "__NA__") {
+                  list(PDEV = list(data = file.path(Sys.getenv("ENVSETUP_PDEV_DBR_ROOT"), "_data"),
+                                   source = file.path(Sys.getenv("ENVSETUP_PDEV_DBR_ROOT"), "_source")),
+                       PREPROD = list(data = file.path(Sys.getenv("ENVSETUP_PREPROD_DBR_ROOT"), "_data"),
+                                   source = file.path(Sys.getenv("ENVSETUP_PREPROD_DBR_ROOT"), "_source")),
+                       PROD = list(data = file.path(Sys.getenv("ENVSETUP_PROD_DBR_ROOT"), "_data"),
+                                   source = file.path(Sys.getenv("ENVSETUP_PROD_DBR_ROOT"), "_source")))} else{
+                  list(PDEV = file.path(Sys.getenv("ENVSETUP_PDEV_DBR_ROOT"), "_data"),
+                       PREPROD = file.path(Sys.getenv("ENVSETUP_PREPROD_DBR_ROOT"), "_data"),
+                       PROD =  file.path(Sys.getenv("ENVSETUP_PROD_DBR_ROOT"), "_data"))}
+    dpath: !expr if (Sys.getenv("ENVSETUP_DBRELEASE") != "__NA__") {
+                  list(PDEV = list(data = file.path(Sys.getenv("ENVSETUP_PDEV_DBR_ROOT"), "_data"),
+                                   source = file.path(Sys.getenv("ENVSETUP_PDEV_DBR_ROOT"), "_source")),
+                       PREPROD = list(data = file.path(Sys.getenv("ENVSETUP_PREPROD_DBR_ROOT"), "_data"),
+                                   source = file.path(Sys.getenv("ENVSETUP_PREPROD_DBR_ROOT"), "_source")),
+                       PROD = list(data = file.path(Sys.getenv("ENVSETUP_PROD_DBR_ROOT"), "_data"),
+                                   source = file.path(Sys.getenv("ENVSETUP_PROD_DBR_ROOT"), "_source")))} else{
+                  list(PDEV = file.path(Sys.getenv("ENVSETUP_PDEV_DBR_ROOT"), "_data"),
+                       PREPROD = file.path(Sys.getenv("ENVSETUP_PREPROD_DBR_ROOT"), "_data"),
+                       PROD =  file.path(Sys.getenv("ENVSETUP_PROD_DBR_ROOT"), "_data"))}
+    dm_in: !expr if (Sys.getenv("ENVSETUP_DBRELEASE") != "__NA__")
+                  list(PDEV = list(data = file.path(Sys.getenv("ENVSETUP_PDEV_DBR_ROOT"), "_data/metadata"),
+                                   source = file.path(Sys.getenv("ENVSETUP_PDEV_DBR_ROOT"), "_source/metadata")),
+                       PREPROD = list(data = file.path(Sys.getenv("ENVSETUP_PREPROD_DBR_ROOT"), "_data/metadata"),
+                                   source = file.path(Sys.getenv("ENVSETUP_PREPROD_DBR_ROOT"), "_source/metadata")),
+                       PROD = list(data = file.path(Sys.getenv("ENVSETUP_PROD_DBR_ROOT"), "_data/metadata"),
+                                   source = file.path(Sys.getenv("ENVSETUP_PROD_DBR_ROOT"), "_source/metadata")))
+    dm_out: !expr if (Sys.getenv("ENVSETUP_DBRELEASE") != "__NA__")
+                  list(PDEV = list(data = file.path(Sys.getenv("ENVSETUP_PDEV_DBR_ROOT"), "_data/metadata"),
+                                   source = file.path(Sys.getenv("ENVSETUP_PDEV_DBR_ROOT"), "_source/metadata")),
+                       PREPROD = list(data = file.path(Sys.getenv("ENVSETUP_PREPROD_DBR_ROOT"), "_data/metadata"),
+                                   source = file.path(Sys.getenv("ENVSETUP_PREPROD_DBR_ROOT"), "_source/metadata")),
+                       PROD = list(data = file.path(Sys.getenv("ENVSETUP_PROD_DBR_ROOT"), "_data/metadata"),
+                                   source = file.path(Sys.getenv("ENVSETUP_PROD_DBR_ROOT"), "_source/metadata")))
+    dm_in_pdvdir: !expr if (Sys.getenv("ENVSETUP_DBRELEASE") != "__NA__")
+                   file.path(Sys.getenv("ENVSETUP_PDEV_DBR_ROOT"), "_data/metadata")
+    dm_in_ppdir: !expr if (Sys.getenv("ENVSETUP_DBRELEASE") != "__NA__")
+                   file.path(Sys.getenv("ENVSETUP_PREPROD_DBR_ROOT"), "_data/metadata")
+    dm_in_pdir: !expr if (Sys.getenv("ENVSETUP_DBRELEASE") != "__NA__")
+                   file.path(Sys.getenv("ENVSETUP_PROD_DBR_ROOT"), "_data/metadata")
+    dms_in: !expr if (Sys.getenv("ENVSETUP_DBRELEASE") != "__NA__")
+                  list(PDEV = file.path(Sys.getenv("ENVSETUP_PDEV_DBR_ROOT"), "_data/metadata/submission"),
+                       PREPROD = file.path(Sys.getenv("ENVSETUP_PREPROD_DBR_ROOT"), "_data/metadata/submission"),
+                       PROD = file.path(Sys.getenv("ENVSETUP_PROD_DBR_ROOT"), "_data/metadata/submission"))
+    dms_out: !expr if (Sys.getenv("ENVSETUP_DBRELEASE") != "__NA__")
+                  list(PDEV = file.path(Sys.getenv("ENVSETUP_PDEV_DBR_ROOT"), "_data/metadata/submission"),
+                       PREPROD = file.path(Sys.getenv("ENVSETUP_PREPROD_DBR_ROOT"), "_data/metadata/submission"),
+                       PROD = file.path(Sys.getenv("ENVSETUP_PROD_DBR_ROOT"), "_data/metadata/submission"))
+    s_in: !expr if (Sys.getenv("ENVSETUP_DBRELEASE") != "__NA__")
+                  list(PDEV = file.path(Sys.getenv("ENVSETUP_PDEV_DBR_ROOT"), "_source"),
+                       PREPROD = file.path(Sys.getenv("ENVSETUP_PREPROD_DBR_ROOT"), "_source"),
+                       PROD =  file.path(Sys.getenv("ENVSETUP_PROD_DBR_ROOT"), "_source"))
+    sm_in: !expr if (Sys.getenv("ENVSETUP_DBRELEASE") != "__NA__")
+                   list(PDEV = file.path(Sys.getenv("ENVSETUP_PDEV_DBR_ROOT"), "_source/metadata"),
+                        PREPROD = file.path(Sys.getenv("ENVSETUP_PREPROD_DBR_ROOT"), "_source/metadata"),
+                        PROD =  file.path(Sys.getenv("ENVSETUP_PROD_DBR_ROOT"), "_source/metadata"))
+    sm_in_pdvdir: !expr if (Sys.getenv("ENVSETUP_DBRELEASE") != "__NA__")
+                   file.path(Sys.getenv("ENVSETUP_PDEV_DBR_ROOT"), "_source/metadata")
+    sm_in_ppdir: !expr if (Sys.getenv("ENVSETUP_DBRELEASE") != "__NA__")
+                   file.path(Sys.getenv("ENVSETUP_PREPROD_DBR_ROOT"), "_source/metadata")
+    sm_in_pdir: !expr if (Sys.getenv("ENVSETUP_DBRELEASE") != "__NA__")
+                   file.path(Sys.getenv("ENVSETUP_PROD_DBR_ROOT"), "_source/metadata")
+    dict: !expr file.path(Sys.getenv("ENVSETUP_TOPDRV"), "PROD", "pharma", "1_global", "dict", "../..")
+    dbrdrv: !expr list(PDEV = Sys.getenv("ENVSETUP_PDEV_DBR_ROOT"),
+                       PREPROD = Sys.getenv("ENVSETUP_PREPROD_DBR_ROOT"),
+                       PROD = Sys.getenv("ENVSETUP_PROD_DBR_ROOT"))
+    rptdrv: !expr list(PDEV = Sys.getenv("ENVSETUP_PDEV_ROOT"),
+                       PREPROD = Sys.getenv("ENVSETUP_PREPROD_ROOT"),
+                       PROD = Sys.getenv("ENVSETUP_PROD_ROOT"))
+    dpspath: !expr Sys.setenv(ENVSETUP_INPUT_PATH = file.path(Sys.getenv("ENVSETUP_PDEV_ROOT"), "../.."));
+                   list(PDEV = file.path(Sys.getenv("ENVSETUP_PDEV_ROOT"), "../.."),
+                        PREPROD = file.path(Sys.getenv("ENVSETUP_PREPROD_ROOT"), "../.."),
+                        PROD =  file.path(Sys.getenv("ENVSETUP_PROD_ROOT"), "../.."))
+    rmdps: !expr Sys.setenv(ENVSETUP_INPUT_PATH = file.path(Sys.getenv("ENVSETUP_PDEV_ROOT"), "../.."));
+                   list(PDEV = file.path(Sys.getenv("ENVSETUP_PDEV_ROOT"), "../.."),
+                        PREPROD = file.path(Sys.getenv("ENVSETUP_PREPROD_ROOT"), "../.."),
+                        PROD =  file.path(Sys.getenv("ENVSETUP_PROD_ROOT"), "../.."))
+    workpath: !expr getwd()
+    qc: !expr Sys.setenv(ENVSETUP_QC_PATH = file.path(Sys.getenv("ENVSETUP_PDEV_ROOT"), "qc"));
+                        Sys.setenv(ENVSETUP_PROGRAMS_PATH = file.path(Sys.getenv("ENVSETUP_PDEV_ROOT"), "programs"));
+              list(PDEV = file.path(Sys.getenv("ENVSETUP_PDEV_ROOT"), "qc"),
+                        PREPROD = file.path(Sys.getenv("ENVSETUP_PREPROD_ROOT"), "qc"),
+                        PROD =  file.path(Sys.getenv("ENVSETUP_PROD_ROOT"), "qc"))
+    sad_out: !expr if (Sys.getenv("ENVSETUP_RPTEFF") != "__NA__")
+                     list(PDEV = file.path(Sys.getenv("ENVSETUP_PDEV_ROOT"), "submission/analysis/adam/datasets"),
+                          PREPROD = file.path(Sys.getenv("ENVSETUP_PREPROD_ROOT"), "submission/analysis/adam/datasets"),
+                          PROD =  file.path(Sys.getenv("ENVSETUP_PROD_ROOT"), "submission/analysis/adam/datasets"))
+    sadpath: !expr if (Sys.getenv("ENVSETUP_RPTEFF") != "__NA__")
+                     list(PDEV = file.path(Sys.getenv("ENVSETUP_PDEV_ROOT"), "submission/analysis/adam/datasets"),
+                          PREPROD = file.path(Sys.getenv("ENVSETUP_PREPROD_ROOT"), "submission/analysis/adam/datasets"),
+                          PROD =  file.path(Sys.getenv("ENVSETUP_PROD_ROOT"), "submission/analysis/adam/datasets"))
+    sads_out: !expr if (Sys.getenv("ENVSETUP_RPTEFF") != "__NA__")
+                     list(PDEV = file.path(Sys.getenv("ENVSETUP_PDEV_ROOT"), "submission/analysis/adam/datasets/split"),
+                          PREPROD = file.path(Sys.getenv("ENVSETUP_PREPROD_ROOT"), "submission/analysis/adam/datasets/split"),
+                          PROD =  file.path(Sys.getenv("ENVSETUP_PROD_ROOT"), "submission/analysis/adam/datasets/split"))
+    sld_out: !expr if (Sys.getenv("ENVSETUP_RPTEFF") != "__NA__")
+                     list(PDEV = file.path(Sys.getenv("ENVSETUP_PDEV_ROOT"), "submission/analysis/legacy/datasets"),
+                          PREPROD = file.path(Sys.getenv("ENVSETUP_PREPROD_ROOT"), "submission/analysis/legacy/datasets"),
+                          PROD =  file.path(Sys.getenv("ENVSETUP_PROD_ROOT"), "submission/analysis/legacy/datasets"))
+    sldpath: !expr if (Sys.getenv("ENVSETUP_RPTEFF") != "__NA__")
+                     list(PDEV = file.path(Sys.getenv("ENVSETUP_PDEV_ROOT"), "submission/analysis/legacy/datasets"),
+                          PREPROD = file.path(Sys.getenv("ENVSETUP_PREPROD_ROOT"), "submission/analysis/legacy/datasets"),
+                          PROD =  file.path(Sys.getenv("ENVSETUP_PROD_ROOT"), "submission/analysis/legacy/datasets"))
+    slds_out: !expr if (Sys.getenv("ENVSETUP_RPTEFF") != "__NA__")
+                     list(PDEV = file.path(Sys.getenv("ENVSETUP_PDEV_ROOT"), "submission/analysis/legacy/datasets/split"),
+                          PREPROD = file.path(Sys.getenv("ENVSETUP_PREPROD_ROOT"), "submission/analysis/legacy/datasets/split"),
+                          PROD =  file.path(Sys.getenv("ENVSETUP_PROD_ROOT"), "submission/analysis/legacy/datasets/split"))
+    sts_out: !expr if (Sys.getenv("ENVSETUP_RPTEFF") != "__NA__")
+                     list(PDEV = file.path(Sys.getenv("ENVSETUP_PDEV_ROOT"), "submission/tabulations/sdtm"),
+                          PREPROD = file.path(Sys.getenv("ENVSETUP_PREPROD_ROOT"), "submission/tabulations/sdtm"),
+                          PROD =  file.path(Sys.getenv("ENVSETUP_PROD_ROOT"), "submission/tabulations/sdtm"))
+    stspath: !expr if (Sys.getenv("ENVSETUP_RPTEFF") != "__NA__")
+                     list(PDEV = file.path(Sys.getenv("ENVSETUP_PDEV_ROOT"), "submission/tabulations/sdtm"),
+                          PREPROD = file.path(Sys.getenv("ENVSETUP_PREPROD_ROOT"), "submission/tabulations/sdtm"),
+                          PROD =  file.path(Sys.getenv("ENVSETUP_PROD_ROOT"), "submission/tabulations/sdtm"))
+    stss_out: !expr if (Sys.getenv("ENVSETUP_RPTEFF") != "__NA__")
+                     list(PDEV = file.path(Sys.getenv("ENVSETUP_PDEV_ROOT"), "submission/tabulations/sdtm/split"),
+                          PREPROD = file.path(Sys.getenv("ENVSETUP_PREPROD_ROOT"), "submission/tabulations/sdtm/split"),
+                          PROD =  file.path(Sys.getenv("ENVSETUP_PROD_ROOT"), "submission/tabulations/sdtm/split"))
+    slp_out: !expr if (Sys.getenv("ENVSETUP_RPTEFF") != "__NA__")
+                     list(PDEV = file.path(Sys.getenv("ENVSETUP_PDEV_ROOT"), "submission/analysis/legacy/programs"),
+                          PREPROD = file.path(Sys.getenv("ENVSETUP_PREPROD_ROOT"), "submission/analysis/legacy/programs"),
+                          PROD =  file.path(Sys.getenv("ENVSETUP_PROD_ROOT"), "submission/analysis/legacy/programs"))
+    slppath: !expr if (Sys.getenv("ENVSETUP_RPTEFF") != "__NA__")
+                     list(PDEV = file.path(Sys.getenv("ENVSETUP_PDEV_ROOT"), "submission/analysis/legacy/programs"),
+                          PREPROD = file.path(Sys.getenv("ENVSETUP_PREPROD_ROOT"), "submission/analysis/legacy/programs"),
+                          PROD =  file.path(Sys.getenv("ENVSETUP_PROD_ROOT"), "submission/analysis/legacy/programs"))
+    sap_out: !expr if (Sys.getenv("ENVSETUP_RPTEFF") != "__NA__")
+                     list(PDEV = file.path(Sys.getenv("ENVSETUP_PDEV_ROOT"), "submission/analysis/adam/programs"),
+                          PREPROD = file.path(Sys.getenv("ENVSETUP_PREPROD_ROOT"), "submission/analysis/adam/programs"),
+                          PROD =  file.path(Sys.getenv("ENVSETUP_PROD_ROOT"), "submission/analysis/adam/programs"))
+    sappath: !expr if (Sys.getenv("ENVSETUP_RPTEFF") != "__NA__")
+                     list(PDEV = file.path(Sys.getenv("ENVSETUP_PDEV_ROOT"), "submission/analysis/adam/programs"),
+                          PREPROD = file.path(Sys.getenv("ENVSETUP_PREPROD_ROOT"), "submission/analysis/adam/programs"),
+                          PROD =  file.path(Sys.getenv("ENVSETUP_PROD_ROOT"), "submission/analysis/adam/programs"))
+    stl_out: !expr if (Sys.getenv("ENVSETUP_RPTEFF") != "__NA__")
+                     list(PDEV = file.path(Sys.getenv("ENVSETUP_PDEV_ROOT"), "submission/tabulations/legacy"),
+                          PREPROD = file.path(Sys.getenv("ENVSETUP_PREPROD_ROOT"), "submission/tabulations/legacy"),
+                          PROD =  file.path(Sys.getenv("ENVSETUP_PROD_ROOT"), "submission/tabulations/legacy"))
+    stlpath: !expr if (Sys.getenv("ENVSETUP_RPTEFF") != "__NA__")
+                     list(PDEV = file.path(Sys.getenv("ENVSETUP_PDEV_ROOT"), "submission/tabulations/legacy"),
+                          PREPROD = file.path(Sys.getenv("ENVSETUP_PREPROD_ROOT"), "submission/tabulations/legacy"),
+                          PROD =  file.path(Sys.getenv("ENVSETUP_PROD_ROOT"), "submission/tabulations/legacy"))
+    stls_out: !expr if (Sys.getenv("ENVSETUP_RPTEFF") != "__NA__")
+                     list(PDEV = file.path(Sys.getenv("ENVSETUP_PDEV_ROOT"), "submission/tabulations/legacy/split"),
+                          PREPROD = file.path(Sys.getenv("ENVSETUP_PREPROD_ROOT"), "submission/tabulations/legacy/split"),
+                          PROD =  file.path(Sys.getenv("ENVSETUP_PROD_ROOT"), "submission/tabulations/legacy/split"))
+    opath: !expr list(PDEV = file.path(Sys.getenv("ENVSETUP_PDEV_ROOT")),
+                      PREPROD = file.path(Sys.getenv("ENVSETUP_PREPROD_ROOT")),
+                      PROD =  file.path(Sys.getenv("ENVSETUP_PROD_ROOT")))
+    cl: !expr list(PDEV = file.path(Sys.getenv("ENVSETUP_PDEV_ROOT"), "code_library"),
+                   PREPROD = file.path(Sys.getenv("ENVSETUP_PREPROD_ROOT"), "code_library"),
+                   PROD =  file.path(Sys.getenv("ENVSETUP_PROD_ROOT"), "code_library"))
+    pdev_code_library: !expr paste0(c(Sys.getenv("ENVSETUP_PDEV_ROOT"), "code_library"), collapse = "/")
+    preprod_code_library: !expr paste0(c(Sys.getenv("ENVSETUP_PREPROD_ROOT"), "code_library"), collapse = "/")
+    prod_code_library1: !expr paste0(c(Sys.getenv("ENVSETUP_PROD_ROOT"), "code_library"), collapse = "/")
+    prod_code_library2: !expr paste0(c(Sys.getenv("ENVSETUP_PROD_DBR_ROOT"), "code_library"), collapse = "/")
+    prod_code_library3: !expr paste0(c(Sys.getenv("ENVSETUP_PROD_PROTOCOL_ROOT"), "code_library"), collapse = "/")
+    prod_code_library4: !expr paste0(c(Sys.getenv("ENVSETUP_PROD_COMPOUND_ROOT"), "code_library"), collapse = "/")
+  # autos:
+  #   local_functions: !expr file.path(Sys.getenv('ENVSETUP_PROJECT_PATH'), "R")

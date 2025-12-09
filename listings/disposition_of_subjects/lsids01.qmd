@@ -1,0 +1,164 @@
+---
+title: LSIDS01
+subtitle: Listing of Subjects Who Permanently Discontinued Treatment
+---
+
+------------------------------------------------------------------------
+
+{{< include ../../_utils/envir_hook.qmd >}}
+
+```{r setup, echo = FALSE, warning = FALSE, message = FALSE}
+library(rtables.officer)
+
+envsetup_config_name <- "default"
+
+# Path to the combined config file
+envsetup_file_path <- file.path("../..", "envsetup.yml")
+
+Sys.setenv(ENVSETUP_ENVIRON = '')
+library(envsetup)
+loaded_config <- config::get(config = envsetup_config_name, file = envsetup_file_path)
+envsetup::rprofile(loaded_config)
+
+
+dpscomp <- compound
+dpspdr <- paste(protocol,dbrelease,rpteff,sep="__")
+
+aptcomp <- compound
+aptpdr <- paste(protocol,dbrelease,rpteff,sep="__")
+
+###### Study specific updates (formerly in envre)
+
+dpscomp <- "standards"
+dpspdr <- "jjcs__NULL__jjcs - core"
+
+apt <- FALSE
+
+```
+
+## Output
+
+:::: panel-tabset
+## {{< fa regular file-lines sm fw >}} Preview
+
+```{r variant1, results='hide', warning = FALSE, message = FALSE}
+
+# Program Name:              lsids01.R
+
+# Prep environment
+
+library(envsetup)
+library(tern)
+library(dplyr)
+library(rtables)
+library(junco)
+
+# Define script level parameters
+
+tblid <- "LSIDS01"
+fileid <- tblid
+popfl <- "FASFL"
+trtvar <- "TRT01P"
+key_cols <- c("COL0", "COL1")
+disp_cols <- paste0("COL", 0:8)
+concat_sep <- " / "
+tab_titles <- get_titles_from_file(input_path = '../../_data/', tblid)
+string_map <- default_str_map
+
+# Process data
+
+adsl <- pharmaverseadamjnj::adsl %>%
+  filter(!!rlang::sym(popfl) == "Y" & !(EOTSTT %in% c("COMPLETED", "ONGOING")))
+
+ds <- pharmaversesdtmjnj::ds %>%
+  filter((DSSCAT %in% c("TREATMENT")) & DSCAT == "DISPOSITION EVENT" &
+    DSDECOD != "COMPLETED") %>%
+  select(STUDYID, USUBJID, DSSCAT)
+
+adsl_ds <- adsl %>%
+  left_join(ds, by = c("STUDYID" = "STUDYID", "USUBJID" = "USUBJID"))
+
+adexsum <- pharmaverseadamjnj::adexsum %>%
+  filter(PARAMCD == "CUMDOSE") %>%
+  select(STUDYID, USUBJID, PARAMCD, PARAM, AVAL)
+
+adsl_ds_adexsum <- left_join(adsl_ds, adexsum, by = c(
+  "STUDYID" = "STUDYID",
+  "USUBJID" = "USUBJID"
+))
+
+lsting <- adsl_ds_adexsum %>%
+  mutate(
+    AGE = explicit_na(as.character(AGE), ""),
+    SEX = explicit_na(SEX, ""),
+    RACE_DECODE = explicit_na(RACE_DECODE, ""),
+    AVAL = explicit_na(as.character(AVAL), ""),
+    AVALU = case_when(
+      !is.na(AVAL) ~
+        stringr::str_extract(PARAM, "(?<=\\()([^()]*?)(?=\\)[^()]*$)"),
+      is.na(AVAL) ~
+        ""
+    ),
+    DCTREAS = explicit_na(DCTREAS, ""),
+    DCTREASP = explicit_na(DCTREASP, ""),
+    COL0 = explicit_na(.data[[trtvar]], ""),
+    COL1 = explicit_na(USUBJID, ""),
+    COL2 = paste(AGE, SEX, RACE_DECODE, sep = concat_sep),
+    # Optional Column: COL3/DSSCAT
+    COL3 = explicit_na(stringr::str_to_sentence(DSSCAT), ""),
+    # Optional Column: COL4/LTVISIT
+    COL4 = explicit_na(LTVISIT, ""),
+    COL5 = explicit_na(as.character(TRTEDY), ""),
+    # Optional Column: COL6/CUMDOSE/CUMDOSU
+    COL6 = paste0(AVAL, " ", AVALU),
+    COL7 = ifelse(is.na(DCTDT),
+      "",
+      toupper(format(as.Date(DCTDT), format = "%d%b%Y"))
+    ),
+    COL8 = case_when(
+      DCTREAS == "OTHER" ~
+        paste0(DCTREAS, " (", stringr::str_to_sentence(DCTREASP), ")"),
+      DCTREAS != "OTHER" ~
+        DCTREAS
+    )
+  ) %>%
+  arrange(COL0, COL1, COL2, COL3)
+
+lsting <- var_relabel(lsting,
+  COL0 = "Treatment Group",
+  COL1 = "Subject ID",
+  COL2 = paste("Age (years)", "Sex", "Race", sep = concat_sep),
+  # Optional Column: COL3/DSSCAT
+  COL3 = "Study Agent Discontinued",
+  # Optional Column: COL4/LTVISIT
+  COL4 = "Last Visit~[super a]",
+  COL5 = "Study Day~[super b] of Last Study Agent Administered",
+  # Optional Column: COL6/CUMDOSE/CUMDOSU
+  COL6 = "Total Dose (unit)~[super c]",
+  COL7 = "Date of Discontinuation",
+  COL8 = "Primary Reason for Discontinuation"
+)
+
+# Build listing
+
+result <- rlistings::as_listing(
+  df = lsting,
+  key_cols = key_cols,
+  disp_cols = disp_cols
+)
+
+# Add titles and footnotes
+
+result <- set_titles(result, tab_titles)
+
+# Output listing
+
+tt_to_tlgrtf(string_map = string_map, tt = head(result, 100), file = fileid, orientation = "landscape")
+```
+```{r result1, echo=FALSE, message=FALSE, warning=FALSE, test = list(result_v1 = "result")}
+tt_to_flextable(head(result,100), theme = theme_docx_default(font_size = 6))
+```
+
+[Download RTF file](`r paste0(tolower(tblid), '.rtf')`)
+::::
+

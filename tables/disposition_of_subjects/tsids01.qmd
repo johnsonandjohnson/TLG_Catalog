@@ -1,0 +1,179 @@
+---
+title: TSIDS01
+subtitle: Subject Screening and Enrollment
+---
+
+------------------------------------------------------------------------
+
+{{< include ../../_utils/envir_hook.qmd >}}
+
+```{r setup, echo = FALSE, warning = FALSE, message = FALSE}
+library(rtables.officer)
+
+envsetup_config_name <- "default"
+
+# Path to the combined config file
+envsetup_file_path <- file.path("../..", "envsetup.yml")
+
+Sys.setenv(ENVSETUP_ENVIRON = '')
+library(envsetup)
+loaded_config <- config::get(config = envsetup_config_name, file = envsetup_file_path)
+envsetup::rprofile(loaded_config)
+
+
+dpscomp <- compound
+dpspdr <- paste(protocol,dbrelease,rpteff,sep="__")
+
+aptcomp <- compound
+aptpdr <- paste(protocol,dbrelease,rpteff,sep="__")
+
+###### Study specific updates (formerly in envre)
+
+dpscomp <- "standards"
+dpspdr <- "jjcs__NULL__jjcs - core"
+
+apt <- FALSE
+
+```
+
+## Output
+
+:::: panel-tabset
+## {{< fa regular file-lines sm fw >}} Preview
+
+```{r variant1, results='hide', warning = FALSE, message = FALSE}
+
+# Program Name:              tsids01.R
+
+# Prep environment
+
+library(envsetup)
+library(tern)
+library(dplyr)
+library(rtables)
+library(junco)
+
+# Define script level parameters
+
+tblid <- "TSIDS01"
+fileid <- tblid
+tab_titles <- get_titles_from_file(input_path = '../../_data/', tblid)
+string_map <- default_str_map
+
+# Process data
+
+adsl <- pharmaverseadamjnj::adsl %>%
+  filter(SCRNFL == "Y") %>%
+  mutate(
+    SCRNFL   = with_label(.data[["SCRNFL"]] == "Y", "Patients screened"),
+    SCRFFL   = with_label(.data[["SCRFFL"]], "Screening failures"),
+    RESCRNFL = with_label(.data[["RESCRNFL"]] == "Y", "Subjects re-screened"),
+    ENRLFL   = with_label(.data[["ENRLFL"]] == "Y", "Subjects enrolled"),
+    RANDFL   = with_label(.data[["RANDFL"]] == "Y", "Subjects randomized")
+  ) %>%
+  select(
+    STUDYID, USUBJID, SCRNFL, SCRFFL, DCSCREEN, RESCRNFL, RANDFL, ENRLFL,
+    TRT01P
+  )
+
+adsl_unq <- adsl %>%
+  distinct(STUDYID, USUBJID, .keep_all = TRUE)
+
+# Define layout and build table
+
+lyt <- basic_table(
+  show_colcounts = TRUE,
+  colcount_format = "N=xx",
+  top_level_section_div = " "
+) %>%
+  add_overall_col(label = "Total") %>%
+  split_rows_by("SCRFFL", split_fun = keep_split_levels("Y")) %>%
+  summarize_num_patients(
+    var = "USUBJID",
+    .stats = "unique",
+    .formats = c("unique" = jjcsformat_count_fraction),
+    .labels = c(unique = "Screening failures")
+  ) %>%
+  count_occurrences(
+    vars = "DCSCREEN",
+    drop = FALSE,
+    .stats = "count_fraction_fixed_dp",
+    .formats = c("count_fraction_fixed_dp" = jjcsformat_count_fraction)
+  ) %>%
+  count_patients_with_flags(
+    var = "USUBJID",
+    flag_variables = c("RESCRNFL"),
+    nested = FALSE,
+    .stats = "count"
+  ) %>%
+  count_patients_with_flags(
+    var = "USUBJID",
+    flag_variables = c("RANDFL"),
+    nested = FALSE,
+    .stats = "count_fraction",
+    .formats = c("count_fraction" = jjcsformat_count_fraction)
+  )
+
+result <- build_table(lyt, df = adsl, alt_counts_df = adsl_unq)
+
+# Post-processing
+
+# Post-processing step to sort by descending count in the Combined column
+result <- sort_at_path(
+  tt = result,
+  path = c("root", "SCRFFL", "Y", "DCSCREEN"),
+  scorefun = jj_complex_scorefun(
+    spanningheadercolvar = NULL,
+    colpath = c("Total", "Total"),
+    firstcat = NULL,
+    lastcat = "Other"
+  )
+)
+
+if (nrow(adsl) == 0) {
+  # Post-processing step to remove table rows with all 0 or NA values
+  result <- safe_prune_table(result, prune_func = prune_empty_level)
+} else {
+  # Post-processing step to remove reason for screening failures table rows
+  # with all 0 or NA values
+  result <- prune_table(result,
+    prune_func = count_pruner(
+      cat_exclude = c(
+        "Screening failures"
+      ),
+      cols = "Total"
+    )
+  )
+  result <- prune_table(result,
+    prune_func = count_pruner(
+      cat_exclude = c(
+        "Subjects re-screened"
+      ),
+      cols = "Total"
+    )
+  )
+  result <- prune_table(result,
+    prune_func = count_pruner(
+      cat_exclude = c(
+        "Subjects randomized"
+      ),
+      cols = "Total"
+    )
+  )
+}
+
+# Retrieve titles and footnotes
+
+result <- set_titles(result, tab_titles)
+
+# Convert to tbl file and output table
+
+tt_to_tlgrtf(string_map = string_map, tt = result, file = fileid)
+```
+```{r result1, echo=FALSE, message=FALSE, warning=FALSE, test = list(result_v1 = "result")}
+tt_to_flextable(result, theme = theme_docx_default(font_size = 6))
+```
+
+[Download RTF file](`r paste0(tolower(tblid), '.rtf')`)
+::::
+

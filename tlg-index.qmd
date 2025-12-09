@@ -1,0 +1,291 @@
+---
+title: Index
+toc: true
+toc-depth: 4
+---
+
+------------------------------------------------------------------------
+
+### **Tables**
+
+#### Adverse Events
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSFAE01A -- Overall Summary of Subjects With Treatment-emergent Adverse Events](./tables/adverse_events/tsfae01a.qmd)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSFAE01B -- Overall Summary of Subjects With Treatment-emergent Adverse Events](./tables/adverse_events/tsfae01b.qmd)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSFAE02 -- Subjects With Treatment-emergent Adverse Events by System Organ Class and Preferred Term](./tables/adverse_events/tsfae02.qmd)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSFAE02A -- Subjects With Treatment-emergent Adverse Events by System Organ Class, Preferred Term, and Subgroup](./tables/adverse_events/tsfae02a.qmd)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSFAE03 -- Subjects With Treatment-emergent Serious Adverse Events by System Organ Class and Preferred Term](./tables/adverse_events/tsfae03.qmd)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSFAE03A -- Subjects With Treatment-emergent Serious Adverse Events by System Organ Class, Preferred Term, and Subgroup](./tables/adverse_events/tsfae03a.qmd)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSFAE04 -- Subjects With Treatment-emergent Adverse Events Leading to Permanent Discontinuation of Study Treatment by System Organ Class and Preferred Term](./tables/adverse_events/tsfae04.qmd)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSFAE04A -- Subjects With Treatment-emergent Adverse Events Leading to Permanent Discontinuation of Study Treatment by System Organ Class, Preferred Term, and Subgroup](./tables/adverse_events/tsfae04a.qmd)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSFAE05 -- Subjects With Treatment-emergent Related Adverse Events by System Organ Class and Preferred Term](./tables/adverse_events/tsfae05.qmd)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSFAE05A -- Subjects With Treatment-emergent Related Adverse Events by System Organ Class, Preferred Term, and Subgroup](./tables/adverse_events/tsfae05a.qmd)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSFAE06A -- Subjects With Treatment-emergent Adverse Events With Frequency >=5% in Any Treatment Group by Preferred Term](./tables/adverse_events/tsfae06a.qmd)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSFAE06B -- Subjects With Treatment-emergent Adverse Events With Frequency >=5% in Drug-treated Group and >=2% More Often in Drug-treated Group Than Placebo-treated Group by Preferred Term](./tables/adverse_events/tsfae06b.qmd)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSFAE07A -- Subjects With Treatment-emergent Adverse Events of Special Interest - AESI Grouping](./tables/adverse_events/tsfae07a.qmd)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSFAE07B -- Subjects With Treatment-emergent Adverse Events of Special Interest - AESI Grouping](./tables/adverse_events/tsfae07b.qmd)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSFAE08 -- Subjects With Treatment-emergent Adverse Events (Excluding Serious Adverse Events) With Frequency >=5% in Any Treatment Group by System Organ Class and Preferred Term](./tables/adverse_events/tsfae08.qmd)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSFAE09 -- Subjects With Treatment-emergent Adverse Events by System Organ Class](./tables/adverse_events/tsfae09.qmd)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSFAE10 -- Subjects With Treatment-emergent Related Adverse Events With Frequency >=X% in Any Treatment Group by Preferred Term](./tables/adverse_events/tsfae10.qmd)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSFAE11 -- Subjects With Treatment-emergent Adverse Events With Frequency >=x% in Any Treatment Group by System Organ Class and Preferred Term](./tables/adverse_events/tsfae11.qmd)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSFAE12 -- Subjects With Treatment-emergent Adverse Events Leading to Dose Modification of Study Treatment by System Organ Class and Preferred Term](./tables/adverse_events/tsfae12.qmd)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSFAE13 -- Exposure-adjusted Incidence Rate Analysis by Preferred Term](./tables/adverse_events/tsfae13.qmd)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSFAE20A -- Demographic Characteristics for Subjects With Treatment-emergent Adverse Events](./tables/adverse_events/tsfae20a.qmd)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSFAE20B -- Demographic Characteristics for Subjects With Serious Treatment-emergent Adverse Events](./tables/adverse_events/tsfae20b.qmd)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSFAE20C -- Demographic Characteristics for Subjects With Treatment-emergent Adverse Events - OCMQ of Interest / Preferred Term of Interest](./tables/adverse_events/tsfae20c.qmd)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSFAE21A -- Subjects With Treatment-emergent Adverse Events by System Organ Class, Preferred Term, and Severity](./tables/adverse_events/tsfae21a.qmd)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSFAE21B -- Subjects With Treatment-emergent Adverse Events by System Organ Class, Preferred Term, and Toxicity Grade](./tables/adverse_events/tsfae21b.qmd)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSFAE21C -- Subjects With Treatment-emergent Adverse Events by System Organ Class, Preferred Term, and Severity](./tables/adverse_events/tsfae21c.qmd)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSFAE21D -- Subjects With Treatment-emergent Adverse Events by System Organ Class, Preferred Term, and Toxicity Grade](./tables/adverse_events/tsfae21d.qmd)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSFAE22A -- Subjects With Treatment-emergent Adverse Events by System Organ Class, Preferred Term, and Race](./tables/adverse_events/tsfae22a.qmd)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSFAE22B -- Subjects With Treatment-emergent Adverse Events by System Organ Class, Preferred Term, and Sex](./tables/adverse_events/tsfae22b.qmd)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSFAE22C -- Subjects With Treatment-emergent Adverse Events by System Organ Class, Preferred Term, and Age](./tables/adverse_events/tsfae22c.qmd)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSFAE23A -- Subjects With Related Treatment-emergent Serious Adverse Events by Preferred Term](./tables/adverse_events/tsfae23a.qmd)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSFAE23B -- Subjects With Related Fatal Treatment-emergent Adverse Events by Preferred Term](./tables/adverse_events/tsfae23b.qmd)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSFAE23C -- Subjects With Related Treatment-emergent Adverse Events Leading to Discontinuation of Study Treatment by Preferred Term](./tables/adverse_events/tsfae23c.qmd)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSFAE23D -- Subjects With Related Non-serious Treatment-emergent Adverse Events by Preferred Term](./tables/adverse_events/tsfae23d.qmd)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSFDTH01 -- Deaths](./tables/adverse_events/tsfdth01.qmd)
+
+
+#### Adverse Events for Japan Submission
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSFAE24A -- Overall Summary of Treatment-emergent Adverse Events by Severity](./tables/adverse_events_for_japan_submission/tsfae24a.qmd)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSFAE24B -- Overall Summary of Treatment-emergent Adverse Events by Toxicity Grade](./tables/adverse_events_for_japan_submission/tsfae24b.qmd)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSFAE24C -- Subjects With Treatment-emergent Adverse Events and Related Treatment-emergent Adverse Events by System Organ Class and Preferred Term](./tables/adverse_events_for_japan_submission/tsfae24c.qmd)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSFAE24D -- Subjects With Treatment-emergent Adverse Events Toxicity Grade >=3 With Frequency >=x% in Any Treatment Group by System Organ Class and Preferred Term](./tables/adverse_events_for_japan_submission/tsfae24d.qmd)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSFAE24F -- Subjects With Treatment-emergent Adverse Events With Frequency >=x% in Any Treatment Group by System Organ Class and Preferred Term and Onset Time](./tables/adverse_events_for_japan_submission/tsfae24f.qmd)
+
+<!-- (&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSFAE24E -- Subjects With Treatment-emergent Adverse Events With Frequency >=x% in Any Treatment Group]&#40;./tables/adverse_events_for_japan_submission/tsfae24e.qmd) -->
+
+
+#### Clinical Laboratory Evaluation
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSFLAB01 -- Mean Change From Baseline for Laboratory Category Laboratory Data Over Time](./tables/clinical_laboratory_evaluation/tsflab01.qmd)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSFLAB01A -- Mean Change From Baseline for Laboratory Category Laboratory Data Over Time by Subgroup](./tables/clinical_laboratory_evaluation/tsflab01a.qmd)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSFLAB02 -- Subjects With >=1 Laboratory Category Laboratory Values With Elevated or Low Values Meeting Specified Levels Based on Worst On-treatment Value](./tables/clinical_laboratory_evaluation/tsflab02.qmd)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSFLAB02A -- Subjects With >=1 Laboratory Category Laboratory Values With Elevated or Low Values Meeting Specified Levels Based on Worst On-treatment Value by Subgroup](./tables/clinical_laboratory_evaluation/tsflab02a.qmd)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSFLAB02B -- Subjects With Laboratory Category Laboratory Values With Elevated or Low Values Meeting Specified Levels Over Time](./tables/clinical_laboratory_evaluation/tsflab02b.qmd)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSFLAB03 -- Subjects With >=1 Laboratory Values With Elevated or Low Values Based on Worst On-treatment Value Using NCI-CTCAE Criteria](./tables/clinical_laboratory_evaluation/tsflab03.qmd)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSFLAB03A -- Subjects With >=1 Laboratory Values With Elevated or Low Values Based on Worst On-treatment Value Using NCI-CTCAE Criteria by Subgroup](./tables/clinical_laboratory_evaluation/tsflab03a.qmd)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSFLAB04A -- Subjects With Last/Any On-treatment Chemistry Values >= Level 2 Criteria](./tables/clinical_laboratory_evaluation/tsflab04a.qmd)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSFLAB04B -- Subjects With Last/Any On-treatment Hematology Values >= Level 2 Criteria](./tables/clinical_laboratory_evaluation/tsflab04b.qmd)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSFLAB05 -- Subjects With Last/Any On-treatment Laboratory Values >= Grade 2 Based on NCI-CTCAE Criteria](./tables/clinical_laboratory_evaluation/tsflab05.qmd)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSFLAB06 -- Shift in Laboratory Category Laboratory Values From Baseline to Time Point](./tables/clinical_laboratory_evaluation/tsflab06.qmd)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSFLAB07 -- Shift in Laboratory Values From Baseline to Worst Grade During Time Period Based on NCI-CTCAE Criteria](./tables/clinical_laboratory_evaluation/tsflab07.qmd)
+
+
+#### Demographic and Other Baseline Characteristics
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSIDEM01 -- Demographics and Baseline Characteristics](./tables/demographic_and_other_baseline_characteristics/tsidem01.qmd)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSIDEM02 -- Subjects by Region, Country/Territory, and Site](./tables/demographic_and_other_baseline_characteristics/tsidem02.qmd)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSIMH01 -- Medical History/Medical History of Interest by System Organ Class and Preferred Term](./tables/demographic_and_other_baseline_characteristics/tsimh01.qmd)
+
+
+#### Disposition of Subjects
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSIDS01 -- Subject Screening and Enrollment](./tables/disposition_of_subjects/tsids01.qmd)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSIDS02 -- Subject Disposition](./tables/disposition_of_subjects/tsids02.qmd)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSIDS02A -- Subject Disposition by Subgroup](./tables/disposition_of_subjects/tsids02a.qmd)
+
+
+#### Electrocardiograms
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSFECG01 -- Mean Change From Baseline for ECG Data Over Time](./tables/electrocardiograms/tsfecg01.qmd)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSFECG01A -- Mean Change From Baseline for ECG Data Over Time by Subgroup](./tables/electrocardiograms/tsfecg01a.qmd)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSFECG02 -- Categorized Corrected QT Interval Values Over Time](./tables/electrocardiograms/tsfecg02.qmd)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSFECG03 -- Categorized Change From Baseline to Maximum On-treatment Corrected QT Interval](./tables/electrocardiograms/tsfecg03.qmd)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSFECG04 -- Shift From Baseline to Maximum On-treatment Corrected QT Interval](./tables/electrocardiograms/tsfecg04.qmd)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSFECG05 -- Subjects With ECG Values Outside Specified Limits Based on On-treatment Value and Over Time](./tables/electrocardiograms/tsfecg05.qmd)
+
+
+#### Exposure
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSIEX01 -- Duration of Treatment](./tables/exposure/tsiex01.qmd)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSIEX02 -- Study Treatment Administration](./tables/exposure/tsiex02.qmd)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSIEX03 -- Study Treatment Administration](./tables/exposure/tsiex03.qmd)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSIEX04 -- Number of Cycles Received](./tables/exposure/tsiex04.qmd)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSIEX06 -- Subjects Who Received Study Treatment Over Time](./tables/exposure/tsiex06.qmd)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSIEX07 -- Dose Levels Over Time](./tables/exposure/tsiex07.qmd)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSIEX08 -- Incidence and Reason for Dose Modification](./tables/exposure/tsiex08.qmd)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSIEX09 -- Distribution of Subjects by Study Treatment Lot](./tables/exposure/tsiex09.qmd)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSIEX10 -- Study Treatment Compliance](./tables/study_treatment_compliance/tsiex10.qmd)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSIEX11 -- Incidence and Reason for Treatment Modification for Infusions](./tables/exposure/tsiex11.qmd)
+
+
+#### Prior and Concomitant Therapies
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSICM01 -- Concomitant Medications](./tables/prior_and_concomitant_therapies/tsicm01.qmd)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSICM02 -- Concomitant Medications](./tables/prior_and_concomitant_therapies/tsicm02.qmd)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSICM03 -- Concomitant Medications Received by >=xx% of Subjects](./tables/prior_and_concomitant_therapies/tsicm03.qmd)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSICM04 -- Concomitant Medications Received by >=xx% of Subjects](./tables/prior_and_concomitant_therapies/tsicm04.qmd)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSICM05 -- Prior Medications](./tables/prior_and_concomitant_therapies/tsicm05.qmd)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSICM06 -- Prior Medications](./tables/prior_and_concomitant_therapies/tsicm06.qmd)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSICM07 -- Concomitant Medications of Interest](./tables/prior_and_concomitant_therapies/tsicm07.qmd)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSICM08 -- Concomitant Medications of Interest](./tables/prior_and_concomitant_therapies/tsicm08.qmd)
+
+
+
+
+#### Vital Signs and Physical Findings
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSFVIT01 -- Mean Change From Baseline in Blood Pressure Over Time](./tables/vital_signs_and_physical_findings/tsfvit01.qmd)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSFVIT01A -- Mean Change From Baseline in Blood Pressure Over Time by Subgroup](./tables/vital_signs_and_physical_findings/tsfvit01a.qmd)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSFVIT02 -- Subjects With Maximum On-treatment Systolic Blood Pressure by Category of Blood Pressure](./tables/vital_signs_and_physical_findings/tsfvit02.qmd)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSFVIT03 -- Subjects With Maximum On-treatment Diastolic Blood Pressure by Category of Blood Pressure](./tables/vital_signs_and_physical_findings/tsfvit03.qmd)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSFVIT04 -- Subjects Meeting Specific On-treatment Hypotension Levels](./tables/vital_signs_and_physical_findings/tsfvit04.qmd)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSFVIT05 -- Subjects With On-treatment Clinically Important Vital Signs Over Time](./tables/vital_signs_and_physical_findings/tsfvit05.qmd)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSFVIT06 -- Subjects With Treatment-emergent Orthostatic Hypotension During Treatment Period](./tables/vital_signs_and_physical_findings/tsfvit06.qmd)
+
+
+------------------------------------------------------------------------
+
+### **Listings**
+
+#### Adverse Events
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[LSFAE01 -- Listing of Treatment-emergent Adverse Events](./listings/adverse_events/lsfae01.qmd)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[LSFAE02 -- Listing of Treatment-emergent Serious Adverse Events](./listings/adverse_events/lsfae02.qmd)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[LSFAE03 -- Listing of Treatment-emergent Adverse Events Leading to Permanent Discontinuation of Study Treatment](./listings/adverse_events/lsfae03.qmd)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[LSFAE04 -- Listing of Adverse Events Leading to Death](./listings/adverse_events/lsfae04.qmd)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[LSFAE05 -- Listing of Treatment-emergent Adverse Events of Special Interest - Specify AESI Grouping](./listings/adverse_events/lsfae05.qmd)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[LSFDTH01 -- Listing of Deaths](./listings/adverse_events/lsfdth01.qmd)
+
+
+#### Clinical Laboratory Evaluation
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[LSFLAB01 -- Listing of Subjects With Criteria Laboratory Values](./listings/clinical_laboratory_evaluation/lsflab01.qmd)
+
+
+#### Demographic and Other Baseline Characteristics
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[LSIDEM01 -- Listing of Demographics and Baseline Characteristics](./listings/demographic_and_other_baseline_characteristics/lsidem01.qmd)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[LSIDEM02 -- Randomization Listing](./listings/demographic_and_other_baseline_characteristics/lsidem02.qmd)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[LSIMH01 -- Listing of Medical History/Medical History of Interest](./listings/demographic_and_other_baseline_characteristics/lsimh01.qmd)
+
+
+#### Disposition of Subjects
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[LSIDS01 -- Listing of Subjects Who Permanently Discontinued Treatment](./listings/disposition_of_subjects/lsids01.qmd)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[LSIDS02 -- Listing of Subjects Who Discontinued Study Participation Prematurely](./listings/disposition_of_subjects/lsids02.qmd)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[LSIDS03 -- Listing of Subjects Who Were Unblinded During the Study](./listings/disposition_of_subjects/lsids03.qmd)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[LSIDS04 -- Listing of Subjects Who Were Randomized but Never Treated](./listings/disposition_of_subjects/lsids04.qmd)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[LSIDS05 -- Listing of Overall Study Start and End Dates](./listings/disposition_of_subjects/lsids05.qmd)
+
+
+#### Electrocardiograms
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[LSFECG01 -- Listing of Subjects With Criteria ECG Values](./listings/electrocardiograms/lsfecg01.qmd)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[LSFECG02 -- Listing of ECG Values](./listings/electrocardiograms/lsfecg02.qmd)
+
+
+#### Exposure
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[LSIEX01 -- Listing of Study Treatment Administration](./listings/exposure/lsiex01.qmd)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[LSIEX02 -- Listing of Study Treatment Batch Lot Number](./listings/exposure/lsiex02.qmd)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[LSIEX03 -- Listing of Study Treatment Administration for Infusions](./listings/exposure/lsiex03.qmd)
+
+
+#### Prior and Concomitant Therapies
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[LSICM01 -- Listing of Medications](./listings/prior_and_concomitant_therapies/lsicm01.qmd)
+
+
+#### Vital Signs and Physical Findings
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[LSFVIT01 -- Listing of Subjects With Clinically Important Vital Signs](./listings/vital_signs_and_physical_findings/lsfvit01.qmd)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[LSFVIT02 -- Listing of Vital Signs](./listings/vital_signs_and_physical_findings/lsfvit02.qmd)

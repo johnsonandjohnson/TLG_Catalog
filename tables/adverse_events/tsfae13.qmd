@@ -1,0 +1,153 @@
+---
+title: TSFAE13
+subtitle: Exposure-adjusted Incidence Rate Analysis by Preferred Term
+---
+
+------------------------------------------------------------------------
+
+{{< include ../../_utils/envir_hook.qmd >}}
+
+```{r setup, echo = FALSE, warning = FALSE, message = FALSE}
+library(rtables.officer)
+
+envsetup_config_name <- "default"
+
+# Path to the combined config file
+envsetup_file_path <- file.path("../..", "envsetup.yml")
+
+Sys.setenv(ENVSETUP_ENVIRON = '')
+library(envsetup)
+loaded_config <- config::get(config = envsetup_config_name, file = envsetup_file_path)
+envsetup::rprofile(loaded_config)
+
+
+dpscomp <- compound
+dpspdr <- paste(protocol,dbrelease,rpteff,sep="__")
+
+aptcomp <- compound
+aptpdr <- paste(protocol,dbrelease,rpteff,sep="__")
+
+###### Study specific updates (formerly in envre)
+
+dpscomp <- "standards"
+dpspdr <- "jjcs__NULL__jjcs - core"
+
+apt <- FALSE
+
+```
+
+## Output
+
+:::: panel-tabset
+## {{< fa regular file-lines sm fw >}} Preview
+
+```{r variant1, results='hide', warning = FALSE, message = FALSE}
+
+# Program Name:              tsfae13.R
+
+# Prep environment:
+
+library(envsetup)
+library(tern)
+library(dplyr)
+library(rtables)
+library(junco)
+
+# Define script level parameters:
+
+tblid <- "TSFAE13"
+fileid <- tblid
+popfl <- "SAFFL"
+trtvar <- "TRT01A"
+ctrl_grp <- "Placebo"
+tab_titles <- get_titles_from_file(input_path = '../../_data/', tblid)
+string_map <- default_str_map
+
+# Process data:
+
+adexsum <- pharmaverseadamjnj::adexsum %>%
+  filter(!!rlang::sym(popfl) == "Y" & PARAMCD == "TRTDURY") %>%
+  create_colspan_var(
+    non_active_grp          = ctrl_grp,
+    non_active_grp_span_lbl = " ",
+    active_grp_span_lbl     = "Active Study Agent",
+    colspan_var             = "colspan_trt",
+    trt_var                 = trtvar
+  ) %>%
+  mutate(
+    rrisk_header = "Risk Difference (95% CI)",
+    rrisk_label = paste(!!rlang::sym(trtvar), "vs", ctrl_grp),
+    TRTDURY = AVAL
+  ) %>%
+  select(USUBJID, !!rlang::sym(trtvar), colspan_trt, rrisk_header, rrisk_label, TRTDURY)
+
+adae <- pharmaverseadamjnj::adae %>%
+  filter(TRTEMFL == "Y" & AOCCPFL == "Y") %>%
+  select(USUBJID, AEDECOD, ASTDY, AOCCPFL) 
+
+# left join -- subjects without ae will be handled via alt_counts_df dataframe
+aefup <- left_join(adae, adexsum, by = "USUBJID")
+
+colspan_trt_map <- create_colspan_map(adexsum,
+  non_active_grp = ctrl_grp,
+  non_active_grp_span_lbl = " ",
+  active_grp_span_lbl = "Active Study Agent",
+  colspan_var = "colspan_trt",
+  trt_var = trtvar
+)
+ref_path <- c("colspan_trt", " ", trtvar, ctrl_grp)
+
+# Define layout and build table:
+
+lyt <- basic_table(show_colcounts = TRUE, colcount_format = "N=xx", top_level_section_div = " ") %>%
+  split_cols_by("colspan_trt", split_fun = trim_levels_to_map(map = colspan_trt_map)) %>%
+  split_cols_by(trtvar) %>%
+  split_cols_by("rrisk_header", nested = FALSE) %>%
+  split_cols_by(trtvar, labels_var = "rrisk_label", split_fun = remove_split_levels(ctrl_grp)) %>%
+  analyze("TRTDURY",
+          nested = FALSE,
+          show_labels = "hidden",
+          afun = a_patyrs_j
+          ,extra_args = list(.labels = c(patyrs = "Subject years\u1D43"))
+          ) %>%
+   analyze(vars = "AEDECOD",
+           nested = FALSE,
+           afun = a_eair100_j,
+           extra_args = list(
+              fup_var = "TRTDURY",
+              occ_var = "AOCCPFL",
+              occ_dy = "ASTDY",
+              ref_path = ref_path,
+              drop_levels = TRUE)
+   ) %>%
+  append_topleft("Preferred Term, EAIR Per 100 SY")
+
+
+
+result <- build_table(lyt, aefup, alt_counts_df = adexsum)
+
+# Post-Processing:
+
+result <- result %>%
+  sort_at_path(
+    path = c("AEDECOD"),
+    scorefun = jj_complex_scorefun(colpath = "Apalutamide")
+  )
+
+result <- remove_col_count(result)
+
+# Add titles and footnotes:
+
+result <- set_titles(result, tab_titles)
+
+# Convert to tbl file and output table:
+
+tt_to_tlgrtf(string_map = string_map, tt = result, file = fileid, orientation = "landscape")
+```
+```{r result1, echo=FALSE, message=FALSE, warning=FALSE, test = list(result_v1 = "result")}
+tt_to_flextable(result, theme = theme_docx_default(font_size = 6))
+```
+
+[Download RTF file](`r paste0(tolower(tblid), '.rtf')`)
+::::
+

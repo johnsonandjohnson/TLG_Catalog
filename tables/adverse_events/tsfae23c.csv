@@ -1,0 +1,19 @@
+"label","col 1","col 2","col 3","col 4","row_type","anbr","indentme","roworder","newrows"
+"Subjects with ≥1 related AE leading to discontinuation","4 (5.6%)","3 (3.1%)","7 (4.2%)","8 (9.3%)","VALUE",2,0,0,0
+"SINUS BRADYCARDIA","1 (1.4%)","1 (1.0%)","2 (1.2%)","0","VALUE",3,0,0,1
+"EPISTAXIS","0","1 (1.0%)","1 (0.6%)","0","VALUE",3,0,1,0
+"HEADACHE","1 (1.4%)","0","1 (0.6%)","0","VALUE",3,0,2,0
+"MALAISE","1 (1.4%)","0","1 (0.6%)","0","VALUE",3,0,3,0
+"MUSCLE SPASMS","1 (1.4%)","0","1 (0.6%)","0","VALUE",3,0,4,0
+"NAUSEA","1 (1.4%)","0","1 (0.6%)","0","VALUE",3,0,5,0
+"SOMNOLENCE","0","1 (1.0%)","1 (0.6%)","0","VALUE",3,0,6,0
+"CONFUSIONAL STATE","0","0","0","1 (1.2%)","VALUE",3,0,7,0
+"DISORIENTATION","0","0","0","1 (1.2%)","VALUE",3,0,8,0
+"DISTURBANCE IN SEXUAL AROUSAL","0","0","0","1 (1.2%)","VALUE",3,0,9,0
+"DYSURIA","0","0","0","1 (1.2%)","VALUE",3,0,10,0
+"ELECTROCARDIOGRAM T WAVE INVERSION","0","0","0","1 (1.2%)","VALUE",3,0,11,0
+"HYPERHIDROSIS","0","0","0","1 (1.2%)","VALUE",3,0,12,0
+"HYPERTENSION","0","0","0","1 (1.2%)","VALUE",3,0,13,0
+"RASH","0","0","0","1 (1.2%)","VALUE",3,0,14,0
+"VAGINAL MYCOSIS","0","0","0","1 (1.2%)","VALUE",3,0,15,0
+"VENTRICULAR HYPERTROPHY","0","0","0","1 (1.2%)","VALUE",3,0,16,0

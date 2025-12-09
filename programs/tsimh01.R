@@ -52,8 +52,7 @@ fileid <- write_path(opath, tblid)
 titles <- get_titles_from_file(tblid)
 string_map <- default_str_map
 
-popfls <- c("SAFFL", "FASFL")
-popfl <- popfls[1]
+popfls <- "FASFL"
 trtvar <- "TRT01P"
 ctrl_grp <- "Placebo"
 

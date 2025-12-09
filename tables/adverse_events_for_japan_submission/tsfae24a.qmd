@@ -1,0 +1,145 @@
+---
+title: TSFAE24A
+subtitle: Overall Summary of Treatment-emergent Adverse Events by Severity
+---
+
+------------------------------------------------------------------------
+
+{{< include ../../_utils/envir_hook.qmd >}}
+
+```{r setup, echo = FALSE, warning = FALSE, message = FALSE}
+library(rtables.officer)
+
+envsetup_config_name <- "default"
+
+# Path to the combined config file
+envsetup_file_path <- file.path("../..", "envsetup.yml")
+
+Sys.setenv(ENVSETUP_ENVIRON = '')
+library(envsetup)
+loaded_config <- config::get(config = envsetup_config_name, file = envsetup_file_path)
+envsetup::rprofile(loaded_config)
+
+
+dpscomp <- compound
+dpspdr <- paste(protocol,dbrelease,rpteff,sep="__")
+
+aptcomp <- compound
+aptpdr <- paste(protocol,dbrelease,rpteff,sep="__")
+
+###### Study specific updates (formerly in envre)
+
+dpscomp <- "standards"
+dpspdr <- "jjcs__NULL__jjcs - core"
+
+apt <- FALSE
+
+```
+
+## Output
+
+:::: panel-tabset
+## {{< fa regular file-lines sm fw >}} Preview
+
+```{r variant1, results='hide', warning = FALSE, message = FALSE}
+
+# Program Name:              tsfae24a.R
+
+# Prep environment:
+
+library(envsetup)
+library(tern)
+library(dplyr)
+library(rtables)
+library(junco)
+
+# Define script level parameters:
+
+tblid <- "TSFAE24a"
+fileid <- tblid
+popfl <- "SAFFL"
+trtvar <- "TRT01A"
+tab_titles <- get_titles_from_file(input_path = '../../_data/', tblid)
+string_map <- default_str_map
+
+# Process data:
+
+adsl <- pharmaverseadamjnj::adsl %>%
+  filter(!!rlang::sym(popfl) == "Y") %>%
+  create_colspan_var(
+    non_active_grp          = "Placebo",
+    non_active_grp_span_lbl = " ",
+    active_grp_span_lbl     = "Active Study Agent",
+    colspan_var             = "colspan_trt",
+    trt_var                 = trtvar
+  ) %>%
+  select(USUBJID, !!rlang::sym(trtvar), colspan_trt)
+
+adae <- pharmaverseadamjnj::adae %>%
+  filter(TRTEMFL == "Y") %>%
+  mutate(ASEV = factor(ifelse(is.na(AESEV), "Missing", as.character(AESEV)),
+    levels = c("Severe", "Moderate", "Mild", "Missing")
+  )) %>%
+  select(USUBJID, TRTEMFL, ASEV)
+
+ae <- inner_join(adae, adsl, by = c("USUBJID"))
+
+# Keep maximum severity per subject.
+ae <- ae %>%
+  arrange(USUBJID, ASEV) %>%
+  group_by(USUBJID) %>%
+  slice(1) %>%
+  ungroup()
+
+# Define layout and build table:
+
+extra_args_1 <- list(.stats = c("count_unique_fraction"))
+                     
+colspan_trt_map <- create_colspan_map(adsl,
+  non_active_grp = "Placebo",
+  non_active_grp_span_lbl = " ",
+  active_grp_span_lbl = "Active Study Agent",
+  colspan_var = "colspan_trt",
+  trt_var = trtvar
+)
+
+
+lyt <- basic_table(show_colcounts = TRUE, colcount_format = "N=xx", top_level_section_div = " ") %>%
+  append_topleft("n (%)") %>%
+  split_cols_by("colspan_trt", split_fun = trim_levels_to_map(map = colspan_trt_map)) %>%
+  split_cols_by(trtvar) %>%
+  analyze_num_patients(
+    vars = "USUBJID",
+    .stats = "unique",
+    .formats = c("unique" = jjcsformat_count_fraction),
+    .labels = "Subjects with >= 1 AE"
+  ) %>%
+  analyze("ASEV",
+    afun = a_freq_j,
+    extra_args = extra_args_1,
+    var_labels = "Severity",
+    nested = FALSE,
+    show_labels = "visible",
+  )
+
+result <- build_table(lyt, ae, alt_counts_df = adsl)
+
+# Prune missing category if all zeros:
+
+result <- safe_prune_table(result, prune_func = count_pruner(cat_include = "Missing"))
+
+# Add titles and footnotes:
+
+result <- set_titles(result, tab_titles)
+
+# Convert to tbl file and output table:
+
+tt_to_tlgrtf(string_map = string_map, tt = result, file = fileid)
+```
+```{r result1, echo=FALSE, message=FALSE, warning=FALSE, test = list(result_v1 = "result")}
+tt_to_flextable(result, theme = theme_docx_default(font_size = 6))
+```
+
+[Download RTF file](`r paste0(tolower(tblid), '.rtf')`)
+::::
+
