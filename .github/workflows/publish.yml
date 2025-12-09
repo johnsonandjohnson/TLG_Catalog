@@ -189,7 +189,7 @@ jobs:
 
   upload-release-assets:
     name: Upload assets 🔼
-    needs: [publish-dev, publish-stable]
+    needs: [publish-dev] #publish-stable
     runs-on: ubuntu-latest
     if: >
       startsWith(github.ref, 'refs/tags/v')
