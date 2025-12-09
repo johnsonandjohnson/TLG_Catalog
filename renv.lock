@@ -1829,6 +1829,12 @@
       ],
       "Hash": "bb4142f9f1912038e9c1586851dad243"
     },
+    "rtables.officer": {
+      "Package": "rtables.officer",
+      "Version": "0.1.1",
+      "Source": "Repository",
+      "Repository": "CRAN"
+    },
     "sass": {
       "Package": "sass",
       "Version": "0.4.9",
