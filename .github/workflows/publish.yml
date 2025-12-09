@@ -11,7 +11,7 @@ on:
 #      GCHAT_WEBHOOK:
 #        description: |
 #          Google Chat webhook to send failure notifications
-        required: false
+#        required: false
   workflow_dispatch:
   push:
     branches:
