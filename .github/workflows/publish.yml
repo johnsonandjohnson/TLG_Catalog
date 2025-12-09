@@ -70,14 +70,10 @@ jobs:
 #        shell: bash
 
       - name: Setup R dependencies 🎦
-        uses: insightsengineering/setup-r-dependencies@v1
+        uses: r-lib/actions/setup-renv@v2
         env:
           GITHUB_PAT: ${{ steps.github-token.outputs.token }}
         with:
-          repository-path: "./"
-          skip-desc-branch: true
-          skip-desc-dev: true
-          repository-list: "r-universe-dev=https://pharmaverse.r-universe.dev/, PPM=PPM@latest"
           cache-version: "dev"
 
       - name: Render catalog 🖨
