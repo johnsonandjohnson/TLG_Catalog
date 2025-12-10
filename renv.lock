@@ -555,6 +555,17 @@
       ],
       "Hash": "e8ba62486230951fcd2b881c5be23f96"
     },
+    "data.table": {
+      "Package": "data.table",
+      "Version": "1.16.2",
+      "Source": "Repository",
+      "Repository": "RSPM",
+      "Requirements": [
+        "R",
+        "methods"
+      ],
+      "Hash": "2e00b378fc3be69c865120d9f313039a"
+    },
     "desc": {
       "Package": "desc",
       "Version": "1.4.3",
@@ -728,6 +739,50 @@
       "Repository": "RSPM",
       "Hash": "aa5e1cd11c2d15497494c5292d7ffcc8"
     },
+    "flextable": {
+      "Package": "flextable",
+      "Version": "0.9.10",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": [
+        "data.table",
+        "gdtools",
+        "grDevices",
+        "graphics",
+        "grid",
+        "htmltools",
+        "knitr",
+        "officer",
+        "ragg",
+        "rlang",
+        "rmarkdown",
+        "stats",
+        "utils",
+        "uuid",
+        "xml2"
+      ],
+      "Hash": "a7cbadbf9c83806beff786c77c5f6970"
+    },
+    "fontBitstreamVera": {
+      "Package": "fontBitstreamVera",
+      "Version": "0.1.1",
+      "Source": "Repository",
+      "Repository": "RSPM",
+      "Requirements": [
+        "R"
+      ],
+      "Hash": "f6068021eff4aba735a9b2353516636c"
+    },
+    "fontLiberation": {
+      "Package": "fontLiberation",
+      "Version": "0.1.0",
+      "Source": "Repository",
+      "Repository": "RSPM",
+      "Requirements": [
+        "R"
+      ],
+      "Hash": "f918c5e723f86f409912104d5b7a71d6"
+    },
     "fontawesome": {
       "Package": "fontawesome",
       "Version": "0.5.3",
@@ -739,6 +794,18 @@
         "rlang"
       ],
       "Hash": "bd1297f9b5b1fc1372d19e2c4cd82215"
+    },
+    "fontquiver": {
+      "Package": "fontquiver",
+      "Version": "0.2.1",
+      "Source": "Repository",
+      "Repository": "RSPM",
+      "Requirements": [
+        "R",
+        "fontBitstreamVera",
+        "fontLiberation"
+      ],
+      "Hash": "fc0f4226379e451057d55419fd31761e"
     },
     "forcats": {
       "Package": "forcats",
@@ -782,6 +849,21 @@
         "methods"
       ],
       "Hash": "7f48af39fa27711ea5fbd183b399920d"
+    },
+    "gdtools": {
+      "Package": "gdtools",
+      "Version": "0.4.1",
+      "Source": "Repository",
+      "Repository": "RSPM",
+      "Requirements": [
+        "R",
+        "Rcpp",
+        "fontquiver",
+        "htmltools",
+        "systemfonts",
+        "tools"
+      ],
+      "Hash": "169e77416ce3f7ac73fc975909dd5455"
     },
     "generics": {
       "Package": "generics",
@@ -1384,6 +1466,28 @@
       ],
       "Hash": "df58958f293b166e4ab885ebcad90e02"
     },
+    "officer": {
+      "Package": "officer",
+      "Version": "0.7.2",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": [
+        "R6",
+        "cli",
+        "dplyr",
+        "grDevices",
+        "graphics",
+        "openssl",
+        "ragg",
+        "stats",
+        "tidyr",
+        "utils",
+        "uuid",
+        "xml2",
+        "zip"
+      ],
+      "Hash": "6aebaa42ddb2d496b0244e33f4c981bd"
+    },
     "openssl": {
       "Package": "openssl",
       "Version": "2.2.2",
@@ -1443,11 +1547,26 @@
       ],
       "Hash": "938e6bbc4ac57534f8b43224506a8966"
     },
+    "pharmaverseadam": {
+      "Package": "pharmaverseadam",
+      "Version": "1.1.0",
+      "Source": "Repository",
+      "Repository": "RSPM",
+      "Requirements": [
+        "R"
+      ],
+      "Hash": "5bfdd7d77f0fc7dfa1cf0701830dff12"
+    },
     "pharmaverseadamjnj": {
       "Package": "pharmaverseadamjnj",
       "Version": "0.0.1",
       "Source": "Repository",
-      "Repository": "CRAN"
+      "Repository": "RSPM",
+      "Requirements": [
+        "R",
+        "pharmaverseadam"
+      ],
+      "Hash": "c9d543e029c1eb55cac9dc8a307d29d1"
     },
     "pharmaversesdtm": {
       "Package": "pharmaversesdtm",
@@ -1631,6 +1750,17 @@
         "survival"
       ],
       "Hash": "c48844cd7961de506a1b4d22b2e082c7"
+    },
+    "ragg": {
+      "Package": "ragg",
+      "Version": "1.3.3",
+      "Source": "Repository",
+      "Repository": "RSPM",
+      "Requirements": [
+        "systemfonts",
+        "textshaping"
+      ],
+      "Hash": "0595fe5e47357111f29ad19101c7d271"
     },
     "rappdirs": {
       "Package": "rappdirs",
@@ -1839,7 +1969,22 @@
       "Package": "rtables.officer",
       "Version": "0.1.1",
       "Source": "Repository",
-      "Repository": "CRAN"
+      "Repository": "CRAN",
+      "Requirements": [
+        "R",
+        "checkmate",
+        "flextable",
+        "formatters",
+        "lifecycle",
+        "magrittr",
+        "methods",
+        "officer",
+        "rlistings",
+        "rtables",
+        "stats",
+        "stringi"
+      ],
+      "Hash": "07164047618d12898d31d892e3832152"
     },
     "sass": {
       "Package": "sass",
@@ -1928,6 +2073,18 @@
       "Repository": "RSPM",
       "Hash": "de342ebfebdbf40477d0758d05426646"
     },
+    "systemfonts": {
+      "Package": "systemfonts",
+      "Version": "1.1.0",
+      "Source": "Repository",
+      "Repository": "RSPM",
+      "Requirements": [
+        "R",
+        "cpp11",
+        "lifecycle"
+      ],
+      "Hash": "213b6b8ed5afbf934843e6c3b090d418"
+    },
     "tern": {
       "Package": "tern",
       "Version": "0.9.9",
@@ -1993,6 +2150,19 @@
         "withr"
       ],
       "Hash": "3f6e7e5e2220856ff865e4834766bf2b"
+    },
+    "textshaping": {
+      "Package": "textshaping",
+      "Version": "0.4.0",
+      "Source": "Repository",
+      "Repository": "RSPM",
+      "Requirements": [
+        "R",
+        "cpp11",
+        "lifecycle",
+        "systemfonts"
+      ],
+      "Hash": "5142f8bc78ed3d819d26461b641627ce"
     },
     "tibble": {
       "Package": "tibble",
@@ -2144,6 +2314,16 @@
         "R"
       ],
       "Hash": "62b65c52671e6665f803ff02954446e9"
+    },
+    "uuid": {
+      "Package": "uuid",
+      "Version": "1.2-1",
+      "Source": "Repository",
+      "Repository": "RSPM",
+      "Requirements": [
+        "R"
+      ],
+      "Hash": "34e965e62a41fcafb1ca60e9b142085b"
     },
     "vctrs": {
       "Package": "vctrs",
