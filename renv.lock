@@ -1151,29 +1151,7 @@
       "Package": "junco",
       "Version": "0.1.1",
       "Source": "Repository",
-      "Repository": "CRAN",
-      "Requirements": [
-        "R",
-        "assertthat",
-        "broom",
-        "checkmate",
-        "dplyr",
-        "emmeans",
-        "formatters",
-        "generics",
-        "methods",
-        "mmrm",
-        "rbmi",
-        "rlistings",
-        "rtables",
-        "stats",
-        "survival",
-        "tern",
-        "tibble",
-        "tidytlg",
-        "utils"
-      ],
-      "Hash": "5b9b404729c7d36f4d3fb0c3b1925b3c"
+      "Repository": "P3M"
     },
     "knitr": {
       "Package": "knitr",

@@ -80,20 +80,17 @@ toc-depth: 4
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSFDTH01 -- Deaths](./tables/adverse_events/tsfdth01.qmd)
 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSFAE24A -- Overall Summary of Treatment-emergent Adverse Events by Severity](tables/adverse_events/tsfae24a.qmd)
 
-#### Adverse Events for Japan Submission
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSFAE24B -- Overall Summary of Treatment-emergent Adverse Events by Toxicity Grade](tables/adverse_events/tsfae24b.qmd)
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSFAE24A -- Overall Summary of Treatment-emergent Adverse Events by Severity](./tables/adverse_events_for_japan_submission/tsfae24a.qmd)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSFAE24C -- Subjects With Treatment-emergent Adverse Events and Related Treatment-emergent Adverse Events by System Organ Class and Preferred Term](tables/adverse_events/tsfae24c.qmd)
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSFAE24B -- Overall Summary of Treatment-emergent Adverse Events by Toxicity Grade](./tables/adverse_events_for_japan_submission/tsfae24b.qmd)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSFAE24D -- Subjects With Treatment-emergent Adverse Events Toxicity Grade >=3 With Frequency >=x% in Any Treatment Group by System Organ Class and Preferred Term](tables/adverse_events/tsfae24d.qmd)
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSFAE24C -- Subjects With Treatment-emergent Adverse Events and Related Treatment-emergent Adverse Events by System Organ Class and Preferred Term](./tables/adverse_events_for_japan_submission/tsfae24c.qmd)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSFAE24F -- Subjects With Treatment-emergent Adverse Events With Frequency >=x% in Any Treatment Group by System Organ Class and Preferred Term and Onset Time](tables/adverse_events/tsfae24f.qmd)
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSFAE24D -- Subjects With Treatment-emergent Adverse Events Toxicity Grade >=3 With Frequency >=x% in Any Treatment Group by System Organ Class and Preferred Term](./tables/adverse_events_for_japan_submission/tsfae24d.qmd)
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSFAE24F -- Subjects With Treatment-emergent Adverse Events With Frequency >=x% in Any Treatment Group by System Organ Class and Preferred Term and Onset Time](./tables/adverse_events_for_japan_submission/tsfae24f.qmd)
-
-<!-- (&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSFAE24E -- Subjects With Treatment-emergent Adverse Events With Frequency >=x% in Any Treatment Group]&#40;./tables/adverse_events_for_japan_submission/tsfae24e.qmd) -->
+<!-- (&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSFAE24E -- Subjects With Treatment-emergent Adverse Events With Frequency >=x% in Any Treatment Group]&#40;./tables/adverse_events/tsfae24e.qmd) -->
 
 
 #### Clinical Laboratory Evaluation
@@ -123,13 +120,13 @@ toc-depth: 4
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSFLAB07 -- Shift in Laboratory Values From Baseline to Worst Grade During Time Period Based on NCI-CTCAE Criteria](./tables/clinical_laboratory_evaluation/tsflab07.qmd)
 
 
-#### Demographic and Other Baseline Characteristics
+#### Demographic
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSIDEM01 -- Demographics and Baseline Characteristics](./tables/demographic_and_other_baseline_characteristics/tsidem01.qmd)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSIDEM01 -- Demographics and Baseline Characteristics](./tables/demographic/tsidem01.qmd)
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSIDEM02 -- Subjects by Region, Country/Territory, and Site](./tables/demographic_and_other_baseline_characteristics/tsidem02.qmd)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSIDEM02 -- Subjects by Region, Country/Territory, and Site](./tables/demographic/tsidem02.qmd)
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSIMH01 -- Medical History/Medical History of Interest by System Organ Class and Preferred Term](./tables/demographic_and_other_baseline_characteristics/tsimh01.qmd)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSIMH01 -- Medical History/Medical History of Interest by System Organ Class and Preferred Term](./tables/demographic/tsimh01.qmd)
 
 
 #### Disposition of Subjects
@@ -241,13 +238,13 @@ toc-depth: 4
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[LSFLAB01 -- Listing of Subjects With Criteria Laboratory Values](./listings/clinical_laboratory_evaluation/lsflab01.qmd)
 
 
-#### Demographic and Other Baseline Characteristics
+#### Demographic
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[LSIDEM01 -- Listing of Demographics and Baseline Characteristics](./listings/demographic_and_other_baseline_characteristics/lsidem01.qmd)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[LSIDEM01 -- Listing of Demographics and Baseline Characteristics](./listings/demographic/lsidem01.qmd)
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[LSIDEM02 -- Randomization Listing](./listings/demographic_and_other_baseline_characteristics/lsidem02.qmd)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[LSIDEM02 -- Randomization Listing](./listings/demographic/lsidem02.qmd)
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[LSIMH01 -- Listing of Medical History/Medical History of Interest](./listings/demographic_and_other_baseline_characteristics/lsimh01.qmd)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[LSIMH01 -- Listing of Medical History/Medical History of Interest](./listings/demographic/lsimh01.qmd)
 
 
 #### Disposition of Subjects
