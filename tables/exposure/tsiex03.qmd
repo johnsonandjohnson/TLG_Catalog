@@ -242,7 +242,7 @@ tt_to_tlgrtf(string_map = string_map, tt = head(result, 20), file = fileid, orie
 # Convert to tbl file and output table
 ```
 ```{r result1, echo=FALSE, message=FALSE, warning=FALSE, test = list(result_v1 = "result")}
-tt_to_flextable(head(result, 20), theme = theme_docx_default(font_size = 6))
+tt_to_flextable_j(head(result, 20), theme = theme_docx_default(font_size = 6))
 ```
 
 [Download RTF file](`r paste0(tolower(tblid), '.rtf')`)
