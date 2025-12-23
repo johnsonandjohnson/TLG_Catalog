@@ -8,8 +8,6 @@ subtitle: Subjects With On-treatment Clinically Important Vital Signs Over Time
 {{< include ../../_utils/envir_hook.qmd >}}
 
 ```{r setup, echo = FALSE, warning = FALSE, message = FALSE}
-
-
 envsetup_config_name <- "default"
 
 # Path to the combined config file
@@ -71,8 +69,16 @@ selvisit <- c("Cycle 02", "Cycle 04")
 ### as in dataset, order is important for later processing
 ### not automated, hard coded approach for ease of reading
 ### ideally the datasets already contain the appropriate case, to ensure units are in proper case
-sel_param <- c("Pulse Rate (beats/min)", "Systolic Blood Pressure (mmHg)", "Diastolic Blood Pressure (mmHg)")
-sel_param_case <- c("Pulse rate (beats/min)", "Systolic blood pressure (mmHg)", "Diastolic blood pressure (mmHg)")
+sel_param <- c(
+  "Pulse Rate (beats/min)",
+  "Systolic Blood Pressure (mmHg)",
+  "Diastolic Blood Pressure (mmHg)"
+)
+sel_param_case <- c(
+  "Pulse rate (beats/min)",
+  "Systolic blood pressure (mmHg)",
+  "Diastolic blood pressure (mmHg)"
+)
 
 ## different variants of table
 over_time <- TRUE # over time analysis, ALSO restricted to on-treatment records
@@ -90,14 +96,16 @@ adsl <- pharmaverseadamjnj::adsl %>%
   select(USUBJID, all_of(c(popfl, trtvar)), SEX, AGEGR1, RACE, ETHNIC)
 
 
-adsl$colspan_trt <- factor(ifelse(adsl[[trtvar]] == ctrl_grp, " ", "Active Study Agent"),
+adsl$colspan_trt <- factor(
+  ifelse(adsl[[trtvar]] == ctrl_grp, " ", "Active Study Agent"),
   levels = c("Active Study Agent", " ")
 )
 
 adsl$rrisk_header <- "Risk Difference (%) (95% CI)"
 adsl$rrisk_label <- paste(adsl[[trtvar]], paste("vs", ctrl_grp))
 
-colspan_trt_map <- create_colspan_map(adsl,
+colspan_trt_map <- create_colspan_map(
+  adsl,
   non_active_grp = ctrl_grp,
   non_active_grp_span_lbl = " ",
   active_grp_span_lbl = "Active Study Agent",
@@ -118,9 +126,22 @@ if (over_time) {
     ###
     filter(ONTRTFL == "Y") %>%
     select(
-      STUDYID, USUBJID, PARAMCD, PARAM, AVALCAT1, AVALCA1N, AVISIT,
+      STUDYID,
+      USUBJID,
+      PARAMCD,
+      PARAM,
+      AVALCAT1,
+      AVALCA1N,
+      AVISIT,
       ONTRTFL,
-      APOBLFL, CRIT1, CRIT1FL, CRIT2, CRIT2FL, TRTEMFL, ANL02FL, AVAL
+      APOBLFL,
+      CRIT1,
+      CRIT1FL,
+      CRIT2,
+      CRIT2FL,
+      TRTEMFL,
+      ANL02FL,
+      AVAL
     ) %>%
     inner_join(adsl)
 }
@@ -137,7 +158,24 @@ if (worst) {
     filter(PARAMCD %in% selparamcd) %>%
     # 2 records per subject selected : min (ANL06) / max (ANL03)
     filter(ANL03FL == "Y" | ANL06FL == "Y") %>%
-    select(STUDYID, USUBJID, PARAMCD, PARAM, AVALCAT1, AVALCA1N, AVISIT, APOBLFL, CRIT1, CRIT1FL, CRIT2, CRIT2FL, TRTEMFL, ANL03FL, ANL06FL, AVAL) %>%
+    select(
+      STUDYID,
+      USUBJID,
+      PARAMCD,
+      PARAM,
+      AVALCAT1,
+      AVALCA1N,
+      AVISIT,
+      APOBLFL,
+      CRIT1,
+      CRIT1FL,
+      CRIT2,
+      CRIT2FL,
+      TRTEMFL,
+      ANL03FL,
+      ANL06FL,
+      AVAL
+    ) %>%
     inner_join(adsl)
 
   ### need to check for your study if the below applies as these can be study specific
@@ -167,8 +205,8 @@ if (over_time & worst) {
     filtered_advs_2
   )
 
-
-  filtered_advs$AVISIT <- factor(as.character(filtered_advs$AVISIT),
+  filtered_advs$AVISIT <- factor(
+    as.character(filtered_advs$AVISIT),
     levels = c("On-treatment", levels(filtered_advs_1$AVISIT))
   )
 } else if (over_time) {
@@ -179,7 +217,8 @@ if (over_time & worst) {
   stop("At least worst or over_time should be set to TRUE")
 }
 
-filtered_advs$PARAM <- factor(as.character(filtered_advs$PARAM),
+filtered_advs$PARAM <- factor(
+  as.character(filtered_advs$PARAM),
   levels = sel_param,
   labels = sel_param_case
 )
@@ -205,9 +244,7 @@ if (treatment_emergent) {
 }
 
 
-filtered_advs <- var_relabel(filtered_advs,
-  PARAM = "Blood Pressure (mmHg)"
-)
+filtered_advs <- var_relabel(filtered_advs, PARAM = "Blood Pressure (mmHg)")
 
 
 ### Mapping for CRIT1&CRIT2
@@ -227,20 +264,30 @@ xlabel_map <- unique(filtered_advs %>% select(PARAM, CRIT1, CRIT2)) %>%
 
 # Define layout and build table:
 
-extra_args_rr <- list(method = "wald", denom = "n_df", ref_path = ref_path, .stats = c("count_unique_fraction"))  
+extra_args_rr <- list(
+  method = "wald",
+  denom = "n_df",
+  ref_path = ref_path,
+  .stats = c("count_unique_fraction")
+)
 
 
 lyt <- basic_table(
-  show_colcounts = TRUE, colcount_format = "N=xx"
+  show_colcounts = TRUE,
+  colcount_format = "N=xx"
 ) %>%
-  split_cols_by("colspan_trt", split_fun = trim_levels_to_map(map = colspan_trt_map)) %>%
+  split_cols_by(
+    "colspan_trt",
+    split_fun = trim_levels_to_map(map = colspan_trt_map)
+  ) %>%
   split_cols_by(trtvar)
 
 
 if (relrisk) {
   lyt <- lyt %>%
     split_cols_by("rrisk_header", nested = FALSE) %>%
-    split_cols_by(trtvar,
+    split_cols_by(
+      trtvar,
       labels_var = "rrisk_label",
       split_fun = remove_split_levels(ctrl_grp)
     )
@@ -248,7 +295,8 @@ if (relrisk) {
 
 if (over_time) {
   lyt <- lyt %>%
-    split_rows_by("AVISIT",
+    split_rows_by(
+      "AVISIT",
       label_pos = "topleft",
       child_labels = "visible",
       split_label = "Study Visit",
@@ -258,16 +306,24 @@ if (over_time) {
 }
 
 lyt <- lyt %>%
-  split_rows_by("PARAM",
+  split_rows_by(
+    "PARAM",
     label_pos = "topleft",
     child_labels = "visible",
     split_label = "Parameter",
     split_fun = drop_split_levels,
     section_div = " "
   ) %>%
-  analyze("CRIT1FL", a_freq_j, show_labels = "hidden", table_names = "CRIT1_N",
-          extra_args = list(denom = "n_df", .stats = c("n_df")))  %>%
-  analyze(c("CRIT1FL", "CRIT2FL"), a_freq_j,
+  analyze(
+    "CRIT1FL",
+    a_freq_j,
+    show_labels = "hidden",
+    table_names = "CRIT1_N",
+    extra_args = list(denom = "n_df", .stats = c("n_df"))
+  ) %>%
+  analyze(
+    c("CRIT1FL", "CRIT2FL"),
+    a_freq_j,
     extra_args = append(
       extra_args_rr,
       list(val = c("Y"), label_map = xlabel_map)
@@ -290,10 +346,10 @@ result <- set_titles(result, titles)
 
 # Convert to tbl file and output table
 
-tt_to_tlgrtf(string_map = string_map, tt = head(result, 20), file = fileid)
+tt_to_tlgrtf(string_map = string_map, tt = result, file = fileid)
 ```
 ```{r result1, echo=FALSE, message=FALSE, warning=FALSE, test = list(result_v1 = "result")}
-tt_to_flextable_j(head(result, 20), tblid)
+tt_to_flextable_j(result)
 ```
 
 [Download RTF file](`r paste0(tolower(tblid), '.rtf')`)

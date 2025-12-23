@@ -8,7 +8,7 @@ subtitle: Listing of Demographics and Baseline Characteristics
 {{< include ../../_utils/envir_hook.qmd >}}
 
 ```{r setup, echo = FALSE, warning = FALSE, message = FALSE}
-
+library(rtables.officer)
 
 envsetup_config_name <- "default"
 
@@ -51,6 +51,7 @@ library(envsetup)
 library(tern)
 library(dplyr)
 library(rtables)
+library(rlistings)
 library(junco)
 
 # Define script level parameters
@@ -83,42 +84,27 @@ lsting <- adsl %>%
     COL5 = paste(AGE, SEX, RACE_DECODE, sep = concat_sep),
     COL6 = explicit_na(ETHNIC_DECODE, ""),
     COL7 = explicit_na(
-      tidytlg::roundSAS(WEIGHTBL,
-        digits = 1,
-        as_char = TRUE,
-        na_char = ""
-      ),
+      tidytlg::roundSAS(WEIGHTBL, digits = 1, as_char = TRUE, na_char = ""),
       ""
     ),
     COL8 = explicit_na(
-      tidytlg::roundSAS(HEIGHTBL,
-        digits = 1,
-        as_char = TRUE,
-        na_char = ""
-      ),
+      tidytlg::roundSAS(HEIGHTBL, digits = 1, as_char = TRUE, na_char = ""),
       ""
     ),
     COL9 = explicit_na(
-      tidytlg::roundSAS(BMIBL,
-        digits = 2,
-        as_char = TRUE,
-        na_char = ""
-      ),
+      tidytlg::roundSAS(BMIBL, digits = 2, as_char = TRUE, na_char = ""),
       ""
     ),
     # Optional Column: COL10/BSABL
     COL10 = explicit_na(
-      tidytlg::roundSAS(BSABL,
-        digits = 2,
-        as_char = TRUE,
-        na_char = ""
-      ),
+      tidytlg::roundSAS(BSABL, digits = 2, as_char = TRUE, na_char = ""),
       ""
     ),
   ) %>%
   arrange(COL0, COL1)
 
-lsting <- var_relabel(lsting,
+lsting <- var_relabel(
+  lsting,
   COL0 = "Treatment Group",
   COL1 = "Subject ID",
   COL2 = "Region",
@@ -147,10 +133,10 @@ result <- set_titles(result, tab_titles)
 
 # Output listing
 
-tt_to_tlgrtf(string_map = string_map, tt = head(result, 30), file = fileid, orientation = "landscape")
+tt_to_tlgrtf(string_map = string_map, tt = head(result, 100), file = fileid, orientation = "landscape")
 ```
 ```{r result1, echo=FALSE, message=FALSE, warning=FALSE, test = list(result_v1 = "result")}
-tt_to_flextable_j(head(result, 30), tblid)
+tt_to_flextable_j(head(result,100))
 ```
 
 [Download RTF file](`r paste0(tolower(tblid), '.rtf')`)

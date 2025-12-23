@@ -8,8 +8,6 @@ subtitle: Shift in Laboratory Values From Baseline to Worst Grade During Time Pe
 {{< include ../../_utils/envir_hook.qmd >}}
 
 ```{r setup, echo = FALSE, warning = FALSE, message = FALSE}
-
-
 envsetup_config_name <- "default"
 
 # Path to the combined config file
@@ -77,37 +75,73 @@ adsl <- pharmaverseadamjnj::adsl %>%
   filter(.data[[popfl]] == "Y") %>%
   select(STUDYID, USUBJID, all_of(c(popfl, trtvar)))
 
-adsl <- adsl %>% mutate(colspan_trt = factor(ifelse(.data[[trtvar]] == ctrl_grp, " ", "Active Study Agent"),
-  levels = c("Active Study Agent", " ")
-))
+adsl <- adsl %>%
+  mutate(
+    colspan_trt = factor(
+      ifelse(.data[[trtvar]] == ctrl_grp, " ", "Active Study Agent"),
+      levels = c("Active Study Agent", " ")
+    )
+  )
 
 ## to ensure the same order as on other outputs
-trt_order <- as.character((unique(adsl %>% select("colspan_trt", all_of(trtvar))) %>% arrange(colspan_trt, .data[[trtvar]]))[[trtvar]])
+trt_order <- as.character((unique(
+  adsl %>% select("colspan_trt", all_of(trtvar))
+) %>%
+  arrange(colspan_trt, .data[[trtvar]]))[[trtvar]])
 adsl[[trtvar]] <- factor(as.character(adsl[[trtvar]]), levels = trt_order)
 
 
-availparcat56 <- c("Blood and lymphatic system disorders", "Investigations", "Metabolism and nutritional disorders", "Renal and urinary disorders")
+availparcat56 <- c(
+  "Blood and lymphatic system disorders",
+  "Investigations",
+  "Metabolism and nutritional disorders",
+  "Renal and urinary disorders"
+)
 
 flagvars <- c("ONTRTFL", "TRTEMFL", "LVOTFL", "ABLFL")
 adlb00 <- adlb_complete %>%
   filter(!is.na(ATOXGR)) %>%
   filter(!is.na(BTOXGR)) %>%
   select(
-    USUBJID, AVISITN, AVISIT,
-    PARAMCD, PARAM, PARAMN,
-    PARCAT1, PARCAT3, PARCAT5, PARCAT6,
+    USUBJID,
+    AVISITN,
+    AVISIT,
+    PARAMCD,
+    PARAM,
+    PARAMN,
+    PARCAT1,
+    PARCAT3,
+    PARCAT5,
+    PARCAT6,
     starts_with("ATOX"),
     starts_with("BTOX"),
     starts_with("ANL"),
     all_of(flagvars),
     LBSEQ,
-    AVAL, AVALC
+    AVAL,
+    AVALC
   ) %>%
   inner_join(adsl) %>%
-  relocate(., USUBJID, ANL04FL, ANL05FL, ONTRTFL, TRTEMFL, AVISIT, ATOXGRL, ATOXGRH, ATOXDSCL, ATOXDSCH, ABLFL, BTOXGRL, BTOXGRH, PARAMCD, PARCAT3, AVISIT, AVAL)
-
-
-
+  relocate(
+    .,
+    USUBJID,
+    ANL04FL,
+    ANL05FL,
+    ONTRTFL,
+    TRTEMFL,
+    AVISIT,
+    ATOXGRL,
+    ATOXGRH,
+    ATOXDSCL,
+    ATOXDSCH,
+    ABLFL,
+    BTOXGRL,
+    BTOXGRH,
+    PARAMCD,
+    PARCAT3,
+    AVISIT,
+    AVAL
+  )
 
 
 adlb00 <- var_relabel_list(adlb00, var_labels(adlb_complete, fill = T))
@@ -154,14 +188,22 @@ filtered_adlb_tox <-
 ### correction of proper category (PARCAT56) for HGB (LOW) and WBC (HIGH)
 filtered_adlb_tox <-
   filtered_adlb_tox %>%
-  mutate(PARCAT56 = case_when(
-    PARAMCD == "HGB" & ATOXDIR == "LOW" ~ PARCAT6,
-    PARAMCD == "WBC" & ATOXDIR == "HIGH" ~ PARCAT6,
-    TRUE ~ PARCAT5
-  )) %>%
-  mutate(PARCAT56 = factor(PARCAT56,
-    levels = unique(c("Blood and lymphatic system disorders", levels(adlb_complete$PARCAT5)))
-  ))
+  mutate(
+    PARCAT56 = case_when(
+      PARAMCD == "HGB" & ATOXDIR == "LOW" ~ PARCAT6,
+      PARAMCD == "WBC" & ATOXDIR == "HIGH" ~ PARCAT6,
+      TRUE ~ PARCAT5
+    )
+  ) %>%
+  mutate(
+    PARCAT56 = factor(
+      PARCAT56,
+      levels = unique(c(
+        "Blood and lymphatic system disorders",
+        levels(adlb_complete$PARCAT5)
+      ))
+    )
+  )
 
 
 ### filter for timepoints (either per visit or worst over a time period (overall,period,phase,...))
@@ -177,7 +219,10 @@ filtered_adlb_tox <-
   filtered_adlb_tox %>%
   mutate(
     ATOXGRLH = factor(paste("Grade", ATOXGRLH), levels = paste("Grade", 0:4)),
-    BTOXGRLH = factor(paste("Grade", BTOXGRLH), levels = c("N", paste("Grade", 0:4)))
+    BTOXGRLH = factor(
+      paste("Grade", BTOXGRLH),
+      levels = c("N", paste("Grade", 0:4))
+    )
   )
 
 ## trick for alt_counts_df to work with col splitting
@@ -201,7 +246,9 @@ filtered_adlb_tox <- filtered_adlb_tox %>%
   mutate(ATOXDSCLH = factor(as.character(ATOXDSCLH), levels = atoxdsclh_levels))
 
 
-check_categories <- unique(filtered_adlb_tox %>% select(PARCAT3, PARCAT56, ATOXDSCLH)) %>%
+check_categories <- unique(
+  filtered_adlb_tox %>% select(PARCAT3, PARCAT56, ATOXDSCLH)
+) %>%
   arrange(PARCAT3, PARCAT56, ATOXDSCLH)
 
 # Define layout and build table:
@@ -209,31 +256,34 @@ check_categories <- unique(filtered_adlb_tox %>% select(PARCAT3, PARCAT56, ATOXD
 lyt <- basic_table(show_colcounts = FALSE) %>%
   ## to ensure N column is not under the Baseline column span header
   split_cols_by("BTOXGRLH_header2") %>%
-  split_cols_by("BTOXGRLH",
-    split_fun = keep_split_levels("N")
-  ) %>%
+  split_cols_by("BTOXGRLH", split_fun = keep_split_levels("N")) %>%
   split_cols_by("BTOXGRLH_header", nested = FALSE) %>%
-  split_cols_by("BTOXGRLH",
+  split_cols_by(
+    "BTOXGRLH",
     split_fun = make_split_fun(
       pre = list(rm_levels(excl = "N")),
       post = list(add_overall_facet("TOTAL", "Total"))
     )
   ) %>%
   #### replace split_rows and summarize by single analyze call
-  ### a_freq_j only works due to 
+  ### a_freq_j only works due to
   ### special arguments can do the trick : denomf = adslx & .stats = count_unique
   ### we want counts of treatment group coming from adsl, not from input dataset, therefor, countsource = altdf
-  analyze(vars = trtvar,
-          afun = a_freq_j, extra_args = list(
-            restr_columns = "N",
-            .stats = "count_unique", 
-            countsource = "altdf",
-            extrablankline = TRUE
-          ), indent_mod = -1L
+  analyze(
+    vars = trtvar,
+    afun = a_freq_j,
+    extra_args = list(
+      restr_columns = "N",
+      .stats = "count_unique",
+      countsource = "altdf",
+      extrablankline = TRUE
+    ),
+    indent_mod = -1L
   ) %>%
   ## main part of table, restart row-split so nested = FALSE
 
-  split_rows_by("PARCAT56",
+  split_rows_by(
+    "PARCAT56",
     nested = FALSE,
     label_pos = "topleft",
     child_labels = "visible",
@@ -241,43 +291,54 @@ lyt <- basic_table(show_colcounts = FALSE) %>%
     split_fun = drop_split_levels,
     section_div = " "
   ) %>%
-  split_rows_by("ATOXDSCLH",
+  split_rows_by(
+    "ATOXDSCLH",
     label_pos = "topleft",
     child_labels = "visible",
     split_label = "Laboratory Test",
     split_fun = drop_split_levels,
     section_div = " "
   ) %>%
-  split_rows_by(trtvar,
+  split_rows_by(
+    trtvar,
     label_pos = "hidden",
     split_label = "Treatment Group",
     section_div = " "
   ) %>%
   ### a_freq_j
   ### the special statistic "n_rowdf" option does the trick here of getting the proper value for the N column
-  summarize_row_groups(trtvar, cfun = a_freq_j, extra_args = list(.stats = "n_rowdf",
-                                                                   restr_columns = c("N")),
-                       ) %>%
-  
+  summarize_row_groups(
+    trtvar,
+    cfun = a_freq_j,
+    extra_args = list(
+      .stats = "n_rowdf",
+      restr_columns = c("N")
+    ),
+  ) %>%
   ## add extra level TOTAL using new_levels, rather than earlier technique
   ## advantage for denominator derivation -- n_rowdf can be used, if we'd like to present fraction as well
   ## switch .stats to count_unique_denom_fraction or count_unique_fraction
-  analyze("ATOXGRLH",
-          var_labels = "Worst toxicity grade, n",
-          show_labels = "visible",
-          indent_mod = 1L,
-          afun = a_freq_j,
-          extra_args = list(
-            .stats = "count_unique",
-            denom = "n_rowdf",
-            new_levels = list(c("Total"), list(c("Grade 0", "Grade 1", "Grade 2", "Grade 3", "Grade 4"))),
-            new_levels_after = TRUE,
-            .indent_mods = 1L,
-            restr_columns = c(
-              c("GRADE 0", "GRADE 1", "GRADE 2", "GRADE 3", "GRADE 4", "TOTAL")
-            ))
-  )     
- 
+  analyze(
+    "ATOXGRLH",
+    var_labels = "Worst toxicity grade, n",
+    show_labels = "visible",
+    indent_mod = 1L,
+    afun = a_freq_j,
+    extra_args = list(
+      .stats = "count_unique",
+      denom = "n_rowdf",
+      new_levels = list(
+        c("Total"),
+        list(c("Grade 0", "Grade 1", "Grade 2", "Grade 3", "Grade 4"))
+      ),
+      new_levels_after = TRUE,
+      .indent_mods = 1L,
+      restr_columns = c(
+        c("GRADE 0", "GRADE 1", "GRADE 2", "GRADE 3", "GRADE 4", "TOTAL")
+      )
+    )
+  )
+
 
 if (nrow(filtered_adlb_tox) > 0) {
   result <- build_table(lyt, filtered_adlb_tox, alt_counts_df = adsl)
@@ -291,10 +352,10 @@ result <- set_titles(result, titles)
 
 # Convert to tbl file and output table
 
-tt_to_tlgrtf(string_map = string_map, tt = head(result, 20), file = fileid, orientation = "landscape")
+tt_to_tlgrtf(string_map = string_map, tt = result, file = fileid, orientation = "landscape")
 ```
 ```{r result1, echo=FALSE, message=FALSE, warning=FALSE, test = list(result_v1 = "result")}
-tt_to_flextable_j(head(result, 20), tblid)
+tt_to_flextable_j(result)
 ```
 
 [Download RTF file](`r paste0(tolower(tblid), '.rtf')`)

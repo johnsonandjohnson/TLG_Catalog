@@ -234,7 +234,7 @@ tt_to_tlgrtf(string_map = string_map, tt = result,
 )
 ```
 ```{r result1, echo=FALSE, message=FALSE, warning=FALSE, test = list(result_v1 = "result")}
-tt_to_flextable(result, theme = theme_docx_default(font_size = 6))
+tt_to_flextable_j(result)
 ```
 
 [Download RTF file](`r paste0(tolower(tblid), '.rtf')`)

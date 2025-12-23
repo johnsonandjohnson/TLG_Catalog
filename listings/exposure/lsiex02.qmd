@@ -8,8 +8,6 @@ subtitle: Listing of Study Treatment Batch Lot Number
 {{< include ../../_utils/envir_hook.qmd >}}
 
 ```{r setup, echo = FALSE, warning = FALSE, message = FALSE}
-
-
 envsetup_config_name <- "default"
 
 # Path to the combined config file
@@ -52,6 +50,7 @@ library(tern)
 library(dplyr)
 library(tidyr)
 library(rtables)
+library(rlistings)
 library(junco)
 
 # Define script level parameters
@@ -73,25 +72,32 @@ adex <- pharmaverseadamjnj::adex %>%
 lsting <- adex %>%
   mutate(
     DAEXPDT = as.Date(DAEXPDTC, format = "%Y-%m-%d"),
-    DAEXPYR = ifelse(stringr::str_length(sub("T.*", "", DAEXPDTC)) >= 4 &
-      substr(sub("T.*", "", DAEXPDTC), 1, 4) != "----",
-    substr(sub("T.*", "", DAEXPDTC), 1, 4),
-    NA
+    DAEXPYR = ifelse(
+      stringr::str_length(sub("T.*", "", DAEXPDTC)) >= 4 &
+        substr(sub("T.*", "", DAEXPDTC), 1, 4) != "----",
+      substr(sub("T.*", "", DAEXPDTC), 1, 4),
+      NA
     ),
     DAEXPMO = toupper(month.abb[
-      as.numeric(ifelse(stringr::str_length(sub("T.*", "", DAEXPDTC)) >= 7 &
-        substr(sub("T.*", "", DAEXPDTC), 6, 7) != "--",
-      substr(sub("T.*", "", DAEXPDTC), 6, 7),
-      NA
+      as.numeric(ifelse(
+        stringr::str_length(sub("T.*", "", DAEXPDTC)) >= 7 &
+          substr(sub("T.*", "", DAEXPDTC), 6, 7) != "--",
+        substr(sub("T.*", "", DAEXPDTC), 6, 7),
+        NA
       ))
     ]),
-    DAEXPDAY = ifelse(stringr::str_length(sub("T.*", "", DAEXPDTC)) >= 10 &
-      substr(sub("T.*", "", DAEXPDTC), 9, 10) != "--",
-    substr(sub("T.*", "", DAEXPDTC), 9, 10),
-    NA
+    DAEXPDAY = ifelse(
+      stringr::str_length(sub("T.*", "", DAEXPDTC)) >= 10 &
+        substr(sub("T.*", "", DAEXPDTC), 9, 10) != "--",
+      substr(sub("T.*", "", DAEXPDTC), 9, 10),
+      NA
     ),
   ) %>%
-  unite("DAEXPDTL", DAEXPDAY, DAEXPMO, DAEXPYR,
+  unite(
+    "DAEXPDTL",
+    DAEXPDAY,
+    DAEXPMO,
+    DAEXPYR,
     sep = "",
     na.rm = TRUE,
     remove = FALSE
@@ -109,11 +115,18 @@ lsting <- adex %>%
     COL6 = explicit_na(DAEXPDTL, "")
   ) %>%
   arrange(
-    COL0, COL1, !is.na(ASTDT), ASTDT, !is.na(ASTDTM), ASTDTM, AVISITN,
+    COL0,
+    COL1,
+    !is.na(ASTDT),
+    ASTDT,
+    !is.na(ASTDTM),
+    ASTDTM,
+    AVISITN,
     COL2
   )
 
-lsting <- var_relabel(lsting,
+lsting <- var_relabel(
+  lsting,
   COL0 = "Treatment Group",
   COL1 = "Subject ID",
   # Optional Column: COL2/AVISIT
@@ -144,10 +157,10 @@ result <- set_titles(result, tab_titles)
 
 # Output listing
 
-tt_to_tlgrtf(string_map = string_map, tt = head(result, 30), file = fileid, orientation = "landscape")
+tt_to_tlgrtf(string_map = string_map, tt = head(result, 100), file = fileid, orientation = "landscape")
 ```
 ```{r result1, echo=FALSE, message=FALSE, warning=FALSE, test = list(result_v1 = "result")}
-tt_to_flextable_j(head(result, 30), tblid)
+tt_to_flextable(head(result,100), tblid)
 ```
 
 [Download RTF file](`r paste0(tolower(tblid), '.rtf')`)

@@ -8,8 +8,6 @@ subtitle: Study Treatment Compliance
 {{< include ../../_utils/envir_hook.qmd >}}
 
 ```{r setup, echo = FALSE, warning = FALSE, message = FALSE}
-
-
 envsetup_config_name <- "default"
 
 # Path to the combined config file
@@ -43,7 +41,7 @@ apt <- FALSE
 
 ```{r variant1, results='hide', warning = FALSE, message = FALSE}
 
-# Program Name: tsiex10.R
+# Program Name:              tsiex10.R
 
 # Prep Environment
 
@@ -72,11 +70,12 @@ combined_colspan_trt <- TRUE
 
 if (combined_colspan_trt == TRUE) {
   # Set up levels and label for the required combined columns
-  add_combo <- add_combo_facet("Combined",
-                               label = "Combined",
-                               levels = c("Apalutamide", "Apalutamide Subgroup")
+  add_combo <- add_combo_facet(
+    "Combined",
+    label = "Combined",
+    levels = c("Xanomeline High Dose", "Xanomeline Low Dose")
   )
-  
+
   # choose if any facets need to be removed - e.g remove the combined column for placebo
   rm_combo_from_placebo <- cond_rm_facets(
     facets = "Combined",
@@ -84,7 +83,7 @@ if (combined_colspan_trt == TRUE) {
     value = " ",
     split = "colspan_trt"
   )
-  
+
   mysplit <- make_split_fun(post = list(add_combo, rm_combo_from_placebo))
 }
 
@@ -102,8 +101,9 @@ adexsum <- pharmaverseadamjnj::adexsum %>%
   filter(PARAMCD == "TRTCOMP" & !is.na(AVAL) & VISIT == "Overall") %>%
   select(USUBJID, PARAMCD, AVAL, AVALCAT1)
 
-adsl$colspan_trt <- factor(ifelse(adsl[[trtvar]] == "Placebo", " ", "Active Study Agent"),
-                           levels = c("Active Study Agent", " ")
+adsl$colspan_trt <- factor(
+  ifelse(adsl[[trtvar]] == "Placebo", " ", "Active Study Agent"),
+  levels = c("Active Study Agent", " ")
 )
 
 # join data together
@@ -112,12 +112,13 @@ ex <- adexsum %>% inner_join(., adsl, by = c("USUBJID"))
 ex$AVALCAT1 <- droplevels(ex$AVALCAT1)
 ex$AVALCAT1 <- factor(ex$AVALCAT1, levels = catlevels)
 
-colspan_trt_map <- create_colspan_map(adsl,
-                                      non_active_grp = "Placebo",
-                                      non_active_grp_span_lbl = " ",
-                                      active_grp_span_lbl = "Active Study Agent",
-                                      colspan_var = "colspan_trt",
-                                      trt_var = trtvar
+colspan_trt_map <- create_colspan_map(
+  adsl,
+  non_active_grp = "Placebo",
+  non_active_grp_span_lbl = " ",
+  active_grp_span_lbl = "Active Study Agent",
+  colspan_var = "colspan_trt",
+  trt_var = trtvar
 )
 
 # Define layout and build table:
@@ -127,7 +128,10 @@ lyt <- rtables::basic_table(
   show_colcounts = TRUE,
   colcount_format = "N=xx"
 ) %>%
-  split_cols_by("colspan_trt", split_fun = trim_levels_to_map(map = colspan_trt_map))
+  split_cols_by(
+    "colspan_trt",
+    split_fun = trim_levels_to_map(map = colspan_trt_map)
+  )
 
 if (combined_colspan_trt == TRUE) {
   lyt <- lyt %>%
@@ -138,24 +142,35 @@ if (combined_colspan_trt == TRUE) {
 }
 
 lyt <- lyt %>%
-  analyze("STUDYID", var_labels = "Compliance (%)~[super a]",
-          afun = a_freq_j, 
-          extra_args = list(label = "N", .stats = "n_df"),
-          
-          indent_mod = 0L, show_labels = "visible"
+  analyze(
+    "STUDYID",
+    var_labels = "Compliance (%)~[super a]",
+    afun = a_freq_j,
+    extra_args = list(label = "N", .stats = "n_df"),
+    indent_mod = 0L,
+    show_labels = "visible"
   ) %>%
   analyze("AVAL", show_labels = "hidden", indent_mod = 2L, afun = function(x) {
     list(
-      "Mean (SD)" = rcell(c(mean(x), sd(x)), format = jjcsformat_xx("xx.x (xx.xx)")),
+      "Mean (SD)" = rcell(
+        c(mean(x), sd(x)),
+        format = jjcsformat_xx("xx.x (xx.xx)")
+      ),
       "Median" = rcell(median(x), format = jjcsformat_xx("xx.x")),
       "Min, max" = rcell(c(min(x), max(x)), format = jjcsformat_xx("xx., xx."))
     )
   }) %>%
-  analyze("AVALCAT1", nested = FALSE, var_labels = "Compliance category~[super a], n (%)", 
-          afun = a_freq_j, 
-          extra_args = list(denom = "n_df",
-                            .stats = c("count_unique_fraction")),
-          indent_mod = 1L, show_labels = "visible"
+  analyze(
+    "AVALCAT1",
+    nested = FALSE,
+    var_labels = "Compliance category~[super a], n (%)",
+    afun = a_freq_j,
+    extra_args = list(
+      denom = "n_df",
+      .stats = c("count_unique_fraction")
+    ),
+    indent_mod = 1L,
+    show_labels = "visible"
   ) %>%
   append_topleft("Parameter")
 
@@ -167,10 +182,10 @@ result <- set_titles(result, tab_titles)
 
 # Convert to tbl file and output table
 
-tt_to_tlgrtf(string_map = string_map, tt = head(result, 20), file = fileid, orientation = "portrait")
+tt_to_tlgrtf(string_map = string_map, tt = result, file = fileid, orientation = "portrait")
 ```
 ```{r result1, echo=FALSE, message=FALSE, warning=FALSE, test = list(result_v1 = "result")}
-tt_to_flextable_j(head(result, 20), tblid)
+tt_to_flextable_j(result)
 ```
 
 [Download RTF file](`r paste0(tolower(tblid), '.rtf')`)

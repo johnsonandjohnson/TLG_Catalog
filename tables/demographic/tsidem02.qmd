@@ -8,8 +8,6 @@ subtitle: Subjects by Region, Country/Territory, and Site
 {{< include ../../_utils/envir_hook.qmd >}}
 
 ```{r setup, echo = FALSE, warning = FALSE, message = FALSE}
-
-
 envsetup_config_name <- "default"
 
 # Path to the combined config file
@@ -90,18 +88,31 @@ demog_displ_vars <- tibble(orig = demog_vars, displ = vars_decode) %>%
 # filter and restrict to population of interest
 adsl <- adsl %>%
   filter(.data[[popfl]] == "Y") %>%
-  select(USUBJID, starts_with("TRT01"), all_of(popfls), all_of(unique(c(demog_vars, demog_displ_vars))))
+  select(
+    USUBJID,
+    starts_with("TRT01"),
+    all_of(popfls),
+    all_of(unique(c(demog_vars, demog_displ_vars)))
+  )
 
 
-adsl$colspan_trt <- factor(ifelse(adsl[[trtvar]] == ctrl_grp, " ", "Active Study Agent"),
+adsl$colspan_trt <- factor(
+  ifelse(adsl[[trtvar]] == ctrl_grp, " ", "Active Study Agent"),
   levels = c("Active Study Agent", " ")
 )
 
 # to ensure alphabetical ordering, as COUNTRY_DECODE is factor with order according COUNTRY, which is alphabetical on 3-letter code
-adsl$REGION1 <- factor(as.character(adsl$REGION1), levels = sort(unique(as.character(adsl$REGION1))))
-adsl$COUNTRY_DECODE <- factor(as.character(adsl$COUNTRY_DECODE), levels = sort(unique(as.character(adsl$COUNTRY_DECODE))))
+adsl$REGION1 <- factor(
+  as.character(adsl$REGION1),
+  levels = sort(unique(as.character(adsl$REGION1)))
+)
+adsl$COUNTRY_DECODE <- factor(
+  as.character(adsl$COUNTRY_DECODE),
+  levels = sort(unique(as.character(adsl$COUNTRY_DECODE)))
+)
 
-colspan_trt_map <- create_colspan_map(adsl,
+colspan_trt_map <- create_colspan_map(
+  adsl,
   non_active_grp = ctrl_grp,
   non_active_grp_span_lbl = " ",
   active_grp_span_lbl = "Active Study Agent",
@@ -115,12 +126,27 @@ lyt <- basic_table(
   show_colcounts = TRUE,
   colcount_format = "N=xx"
 ) %>%
-  split_cols_by("colspan_trt", split_fun = trim_levels_to_map(map = colspan_trt_map)) %>%
+  split_cols_by(
+    "colspan_trt",
+    split_fun = trim_levels_to_map(map = colspan_trt_map)
+  ) %>%
   split_cols_by(trtvar) %>%
   add_overall_col("Total") %>%
-  split_rows_by("REGION1", split_label = "Region", split_fun = trim_levels_in_group("COUNTRY_DECODE"), label_pos = "topleft", section_div = " ") %>%
+  split_rows_by(
+    "REGION1",
+    split_label = "Region",
+    split_fun = trim_levels_in_group("COUNTRY_DECODE"),
+    label_pos = "topleft",
+    section_div = " "
+  ) %>%
   summarize_row_groups("REGION1") %>%
-  split_rows_by("COUNTRY_DECODE", split_label = "Country/Territory", split_fun = trim_levels_in_group("SITEID"), label_pos = "topleft", section_div = " ") %>%
+  split_rows_by(
+    "COUNTRY_DECODE",
+    split_label = "Country/Territory",
+    split_fun = trim_levels_in_group("SITEID"),
+    label_pos = "topleft",
+    section_div = " "
+  ) %>%
   summarize_row_groups("COUNTRY_DECODE") %>%
   analyze_vars("SITEID", denom = "N_col", .stats = c("count_fraction")) %>%
   append_topleft("    Site, n (%)")
@@ -133,10 +159,10 @@ result <- set_titles(result, titles)
 
 # Convert to tbl file and output table:
 
-tt_to_tlgrtf(string_map = string_map, tt = head(result, 20), file = fileid)
+tt_to_tlgrtf(string_map = string_map, tt = result, file = fileid)
 ```
 ```{r result1, echo=FALSE, message=FALSE, warning=FALSE, test = list(result_v1 = "result")}
-tt_to_flextable_j(head(result, 20), tblid)
+tt_to_flextable_j(result)
 ```
 
 [Download RTF file](`r paste0(tolower(tblid), '.rtf')`)

@@ -1,6 +1,6 @@
 ---
 title: TSFAE24D
-subtitle: Subjects With Treatment-emergent Adverse Events Toxicity Grade ≥3 With Frequency ≥x% in Any Treatment Group by System Organ Class and Preferred Term
+subtitle: Subjects With Treatment-emergent Adverse Events Toxicity Grade =3 With Frequency =x% in Any Treatment Group by System Organ Class and Preferred Term
 ---
 
 ------------------------------------------------------------------------
@@ -8,8 +8,6 @@ subtitle: Subjects With Treatment-emergent Adverse Events Toxicity Grade ≥3 Wi
 {{< include ../../_utils/envir_hook.qmd >}}
 
 ```{r setup, echo = FALSE, warning = FALSE, message = FALSE}
-
-
 envsetup_config_name <- "default"
 
 # Path to the combined config file
@@ -67,14 +65,20 @@ string_map <- default_str_map
 adsl <- pharmaverseadamjnj::adsl %>%
   filter(!!rlang::sym(popfl) == "Y") %>%
   create_colspan_var(
-    non_active_grp          = "Placebo",
+    non_active_grp = "Placebo",
     non_active_grp_span_lbl = " ",
-    active_grp_span_lbl     = "Active Study Agent",
-    colspan_var             = "colspan_trt",
-    trt_var                 = trtvar
+    active_grp_span_lbl = "Active Study Agent",
+    colspan_var = "colspan_trt",
+    trt_var = trtvar
   ) %>%
   mutate(COLSPAN_TOX = "AEs") %>%
-  select(USUBJID, !!rlang::sym(popfl), !!rlang::sym(trtvar), colspan_trt, COLSPAN_TOX)
+  select(
+    USUBJID,
+    !!rlang::sym(popfl),
+    !!rlang::sym(trtvar),
+    colspan_trt,
+    COLSPAN_TOX
+  )
 
 adae <- pharmaverseadamjnj::adae %>%
   filter(TRTEMFL == "Y") %>%
@@ -85,7 +89,8 @@ adae <- inner_join(adae, adsl, by = c("USUBJID"))
 
 # Define layout and build table:
 
-colspan_trt_map <- create_colspan_map(adsl,
+colspan_trt_map <- create_colspan_map(
+  adsl,
   non_active_grp = "Placebo",
   non_active_grp_span_lbl = " ",
   active_grp_span_lbl = "Active Study Agent",
@@ -98,7 +103,7 @@ add_active_combo <- make_split_fun(
     add_combo_facet(
       name = "Combined",
       label = "Combined",
-      levels = c("Apalutamide", "Apalutamide Subgroup")
+      levels = c("Xanomeline High Dose", "Xanomeline Low Dose")
     ),
     cond_rm_facets(
       facets = "Combined",
@@ -118,37 +123,51 @@ add_tox_levels <- make_split_fun(
   ))
 )
 
-extra_args1 <- list(.stats = c("count_unique_fraction"),
-                    subcol_split = "TOXGR",
-                    subcol_var = "TOXGE3",
-                    subcol_val = ">= 3")
+extra_args1 <- list(
+  .stats = c("count_unique_fraction"),
+  subcol_split = "TOXGR",
+  subcol_var = "TOXGE3",
+  subcol_val = ">= 3"
+)
 
 lyt <- basic_table(top_level_section_div = " ") %>%
-  split_cols_by("colspan_trt", split_fun = trim_levels_to_map(map = colspan_trt_map)) %>%
-  split_cols_by(trtvar, split_fun = add_active_combo, show_colcounts = TRUE, colcount_format = "N=xx") %>%
+  split_cols_by(
+    "colspan_trt",
+    split_fun = trim_levels_to_map(map = colspan_trt_map)
+  ) %>%
+  split_cols_by(
+    trtvar,
+    split_fun = add_active_combo,
+    show_colcounts = TRUE,
+    colcount_format = "N=xx"
+  ) %>%
   split_cols_by("COLSPAN_TOX", split_fun = add_tox_levels) %>%
-  analyze("TRTEMFL",
-    nested = FALSE, 
+  analyze(
+    "TRTEMFL",
+    nested = FALSE,
     afun = a_freq_subcol_j,
-    extra_args = append(extra_args1, list(
-      label = "Subjects with >= 1 AE",
-      val = "Y"))
+    extra_args = append(
+      extra_args1,
+      list(
+        label = "Subjects with >= 1 AE",
+        val = "Y"
+      )
+    )
   ) %>%
-  split_rows_by("AEBODSYS",
+  split_rows_by(
+    "AEBODSYS",
     split_label = "System Organ Class",
-    label_pos   = "topleft",
-    split_fun   = trim_levels_in_group("AEDECOD"),
+    label_pos = "topleft",
+    split_fun = trim_levels_in_group("AEDECOD"),
     section_div = " ",
-    nested      = FALSE
+    nested = FALSE
   ) %>%
-  summarize_row_groups("AEBODSYS",
+  summarize_row_groups(
+    "AEBODSYS",
     cfun = a_freq_subcol_j,
     extra_args = extra_args1
   ) %>%
-  analyze("AEDECOD", 
-          afun = a_freq_subcol_j, 
-          extra_args = extra_args1
-  ) %>%
+  analyze("AEDECOD", afun = a_freq_subcol_j, extra_args = extra_args1) %>%
   append_topleft(" Preferred Term, n (%)")
 
 result <- build_table(lyt, adae, alt_counts_df = adsl)
@@ -156,14 +175,20 @@ result <- build_table(lyt, adae, alt_counts_df = adsl)
 # Post-Processing:
 
 result <- result %>%
-  sort_at_path(path = c("AEBODSYS"), scorefun = cont_n_onecol("Active Study Agent.Combined.TOXGR")) %>%
-  sort_at_path(path = c("AEBODSYS", "*", "AEDECOD"), scorefun = score_occurrences_cols("Active Study Agent.Combined.TOXGR"))
+  sort_at_path(
+    path = c("AEBODSYS"),
+    scorefun = cont_n_onecol("Active Study Agent.Combined.TOXGR")
+  ) %>%
+  sort_at_path(
+    path = c("AEBODSYS", "*", "AEDECOD"),
+    scorefun = score_occurrences_cols("Active Study Agent.Combined.TOXGR")
+  )
 
 row_condition <- has_fraction_in_any_col(
   atleast = .02,
   col_names = c(
-    "Active Study Agent.Apalutamide.TOXGR",
-    "Active Study Agent.Apalutamide Subgroup.TOXGR",
+    "Active Study Agent.Xanomeline High Dose.TOXGR",
+    "Active Study Agent.Xanomeline Low Dose.TOXGR",
     "Active Study Agent.Combined.TOXGR",
     " .Placebo.TOXGR"
   )
@@ -177,14 +202,15 @@ result <- set_titles(result, tab_titles)
 
 # Convert to tbl file and output table:
 
-tt_to_tlgrtf(string_map = string_map, tt = head(result, 20),
+tt_to_tlgrtf(string_map = string_map, tt = 
+  result,
   file = fileid,
   orientation = "landscape",
   nosplitin = list(cols = c(trtvar))
 )
 ```
 ```{r result1, echo=FALSE, message=FALSE, warning=FALSE, test = list(result_v1 = "result")}
-tt_to_flextable_j(head(result, 20), tblid)
+tt_to_flextable_j(result)
 ```
 
 [Download RTF file](`r paste0(tolower(tblid), '.rtf')`)

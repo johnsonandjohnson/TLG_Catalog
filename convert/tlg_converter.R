@@ -110,8 +110,8 @@ if (!interactive()) {
 
 path <- "./programs"
 #convert_tlg_scripts(path, regex = "lsfae01.R", overwrite = TRUE)
-#convert_tlg_scripts(path, regex = "^[t].*\\.R$", overwrite = TRUE)
-convert_tlg_scripts(path, regex = "^[l].*\\.R$", overwrite = TRUE)
+convert_tlg_scripts(path, regex = "^[t].*\\.R$", overwrite = TRUE)
+#convert_tlg_scripts(path, regex = "^[l].*\\.R$", overwrite = TRUE)
 # If you want to actually run the examples, uncomment the following lines:
 # if (dir.exists(path)) {
 #   result <- convert_tlg_scripts(path, regex = "^gsfae01.*\\.R$", overwrite = TRUE)
@@ -119,3 +119,27 @@ convert_tlg_scripts(path, regex = "^[l].*\\.R$", overwrite = TRUE)
 # } else {
 #   cat("The 'tables' directory doesn't exist. Please adjust the path.\n")
 # }
+
+# ---- hardcoded post-processing rules to fix APT wrongs labels ----
+
+move_into <- function(src, dest) {
+  if (!dir.exists(src)) return(invisible(NULL))
+  dir.create(dest, recursive = TRUE, showWarnings = FALSE)
+  files <- list.files(src, full.names = TRUE, recursive = TRUE)
+  file.rename(files, file.path(dest, basename(files)))
+  unlink(src, recursive = TRUE, force = TRUE)
+}
+
+move_into("listings/demographic_and_other_baseline_characteristics", "listings/demographic")
+move_into("listings/serious_adverse_events", "listings/adverse_events")
+move_into("listings/deaths", "listings/adverse_events")
+move_into("listings/adverse_events_of_special_interest", "listings/adverse_events")
+move_into("listings/discontinuations_and/or_dose_modifications_due_to_adverse_events", "listings/adverse_events")
+
+
+move_into("tables/demographic_and_other_baseline_characteristics", "tables/demographic")
+move_into("tables/adverse_events_for_japan_submission", "tables/adverse_events")
+move_into("tables/serious_adverse_events", "tables/adverse_events")
+move_into("tables/deaths", "tables/adverse_events")
+move_into("tables/adverse_events_of_special_interest", "tables/adverse_events")
+move_into("tables/discontinuations_and/or_dose_modifications_due_to_adverse_events", "tables/adverse_events")

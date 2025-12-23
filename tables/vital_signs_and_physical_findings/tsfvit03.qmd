@@ -8,8 +8,6 @@ subtitle: Subjects With Maximum On-treatment Diastolic Blood Pressure by Categor
 {{< include ../../_utils/envir_hook.qmd >}}
 
 ```{r setup, echo = FALSE, warning = FALSE, message = FALSE}
-
-
 envsetup_config_name <- "default"
 
 # Path to the combined config file
@@ -82,16 +80,25 @@ sel_param_case <- c("Diastolic blood pressure (mmHg)")
 
 adsl <- pharmaverseadamjnj::adsl %>%
   filter(.data[[popfl]] == "Y") %>%
-  select(USUBJID, all_of(c(popfl, trtvar)), SEX_DECODE, AGEGR1, RACE_DECODE, ETHNIC_DECODE)
+  select(
+    USUBJID,
+    all_of(c(popfl, trtvar)),
+    SEX_DECODE,
+    AGEGR1,
+    RACE_DECODE,
+    ETHNIC_DECODE
+  )
 
-adsl$colspan_trt <- factor(ifelse(adsl[[trtvar]] == ctrl_grp, " ", "Active Study Agent"),
+adsl$colspan_trt <- factor(
+  ifelse(adsl[[trtvar]] == ctrl_grp, " ", "Active Study Agent"),
   levels = c("Active Study Agent", " ")
 )
 
 adsl$rrisk_header <- "Risk Difference (%) (95% CI)"
 adsl$rrisk_label <- paste(adsl[[trtvar]], paste("vs", ctrl_grp))
 
-colspan_trt_map <- create_colspan_map(adsl,
+colspan_trt_map <- create_colspan_map(
+  adsl,
   non_active_grp = ctrl_grp,
   non_active_grp_span_lbl = " ",
   active_grp_span_lbl = "Active Study Agent",
@@ -108,10 +115,22 @@ ref_path <- c("colspan_trt", " ", trtvar, ctrl_grp)
 filtered_advs <- pharmaverseadamjnj::advs %>%
   filter(PARAMCD %in% selparamcd) %>%
   filter(ANL06FL == "Y") %>%
-  select(STUDYID, USUBJID, PARAMCD, PARAM, AVALCAT1, AVALCA1N, AVISIT, ANL06FL, APOBLFL, ONTRTFL) %>%
+  select(
+    STUDYID,
+    USUBJID,
+    PARAMCD,
+    PARAM,
+    AVALCAT1,
+    AVALCA1N,
+    AVISIT,
+    ANL06FL,
+    APOBLFL,
+    ONTRTFL
+  ) %>%
   inner_join(adsl)
 
-filtered_advs$PARAM <- factor(as.character(filtered_advs$PARAM),
+filtered_advs$PARAM <- factor(
+  as.character(filtered_advs$PARAM),
   levels = sel_param,
   labels = sel_param_case
 )
@@ -125,7 +144,10 @@ markedlyabnormal_file <- file.path('../../_data', "markedlyabnormal.xlsx")
 
 markedlyabnormal_sheets <- readxl::excel_sheets(markedlyabnormal_file)
 
-lbmarkedlyabnormal_defs <- readxl::read_excel(markedlyabnormal_file, sheet = "ADVS") %>%
+lbmarkedlyabnormal_defs <- readxl::read_excel(
+  markedlyabnormal_file,
+  sheet = "ADVS"
+) %>%
   filter(PARAMCD != "Parameter Code") %>%
   arrange(PARAMCD, VARNAME, ORDER) %>%
   filter(VARNAME == "AVALCAT1") %>%
@@ -156,46 +178,65 @@ param_map <- lbmarkedlyabnormal_defs %>%
 
 # if no code list was defined, not all defined categories might be present on data
 # sas2rds conversion might not have added all categories as factor levels - need to do this here
-if (class(filtered_advs$AVALCAT1) == "character" ||
-  !all(unique(param_map$AVALCAT1) %in% levels(filtered_advs$AVALCAT1))) {
-  filtered_advs$AVALCAT1 <- factor(as.character(filtered_advs$AVALCAT1), levels = unique(param_map$AVALCAT1))
+if (
+  class(filtered_advs$AVALCAT1) == "character" ||
+    !all(unique(param_map$AVALCAT1) %in% levels(filtered_advs$AVALCAT1))
+) {
+  filtered_advs$AVALCAT1 <- factor(
+    as.character(filtered_advs$AVALCAT1),
+    levels = unique(param_map$AVALCAT1)
+  )
 }
 
 # filtered_advs$PARAM <- droplevels(filtered_advs$PARAM)
 
-filtered_advs <- var_relabel(filtered_advs,
-  PARAM = "Blood Pressure"
-)
+filtered_advs <- var_relabel(filtered_advs, PARAM = "Blood Pressure")
 
 # Define layout and build table:
 
-extra_args_rr <- list(method = "wald", denom = "n_df", ref_path = ref_path, .stats = c("denom","count_unique_fraction"))  
-
+extra_args_rr <- list(
+  method = "wald",
+  denom = "n_df",
+  ref_path = ref_path,
+  .stats = c("denom", "count_unique_fraction")
+)
 
 
 lyt0 <- basic_table(
-  show_colcounts = TRUE, colcount_format = "N=xx"
+  show_colcounts = TRUE,
+  colcount_format = "N=xx"
 ) %>%
-  split_cols_by("colspan_trt", split_fun = trim_levels_to_map(map = colspan_trt_map)) %>%
+  split_cols_by(
+    "colspan_trt",
+    split_fun = trim_levels_to_map(map = colspan_trt_map)
+  ) %>%
   split_cols_by(trtvar) %>%
   split_cols_by("rrisk_header", nested = FALSE) %>%
-  split_cols_by(trtvar,
+  split_cols_by(
+    trtvar,
     labels_var = "rrisk_label",
     split_fun = remove_split_levels(ctrl_grp)
   ) %>%
-  split_rows_by("PARAM",
+  split_rows_by(
+    "PARAM",
     label_pos = "topleft",
     child_labels = "hidden",
     split_label = "Diastolic Blood Pressure (mmHg), n (%)",
     section_div = " ",
     ## ensure only the appropriate levels inside PARAM-AVALCAT1 will be included
     split_fun = trim_levels_to_map(param_map)
-  ) 
+  )
 
 # version without explicit denominator (as in shell)
 lyt <- lyt0 %>%
   # for testing, it is sometimes convenient to explicitely show the used denominator
-  analyze("AVALCAT1", a_freq_j, extra_args = extra_args_rr, show_labels = "hidden", indent_mod = 0L)
+  analyze(
+    "AVALCAT1",
+    a_freq_j,
+    extra_args = extra_args_rr,
+    show_labels = "hidden",
+    indent_mod = 0L
+  )
 
 
 result <- build_table(lyt, filtered_advs, alt_counts_df = adsl)
@@ -210,10 +251,10 @@ result <- set_titles(result, titles)
 
 # Convert to tbl file and output table
 
-tt_to_tlgrtf(string_map = string_map, tt = head(result, 20), file = fileid, orientation = "landscape")
+tt_to_tlgrtf(string_map = string_map, tt = result, file = fileid, orientation = "landscape")
 ```
 ```{r result1, echo=FALSE, message=FALSE, warning=FALSE, test = list(result_v1 = "result")}
-tt_to_flextable_j(head(result, 20), tblid)
+tt_to_flextable_j(result)
 ```
 
 [Download RTF file](`r paste0(tolower(tblid), '.rtf')`)

@@ -8,8 +8,6 @@ subtitle: Study Treatment Administration
 {{< include ../../_utils/envir_hook.qmd >}}
 
 ```{r setup, echo = FALSE, warning = FALSE, message = FALSE}
-
-
 envsetup_config_name <- "default"
 
 # Path to the combined config file
@@ -43,7 +41,7 @@ apt <- FALSE
 
 ```{r variant1, results='hide', warning = FALSE, message = FALSE}
 
-# Program Name: tsiex02.R
+# Program Name:              tsiex02.R
 
 # Prep Environment
 
@@ -72,11 +70,12 @@ combined_colspan_trt <- TRUE
 
 if (combined_colspan_trt == TRUE) {
   # Set up levels and label for the required combined columns
-  add_combo <- add_combo_facet("Combined",
-                               label = "Combined",
-                               levels = c("Apalutamide", "Apalutamide Subgroup")
+  add_combo <- add_combo_facet(
+    "Combined",
+    label = "Combined",
+    levels = c("Xanomeline High Dose", "Xanomeline Low Dose")
   )
-  
+
   # choose if any facets need to be removed - e.g remove the combined column for placebo
   rm_combo_from_placebo <- cond_rm_facets(
     facets = "Combined",
@@ -84,7 +83,7 @@ if (combined_colspan_trt == TRUE) {
     value = " ",
     split = "colspan_trt"
   )
-  
+
   mysplit <- make_split_fun(post = list(add_combo, rm_combo_from_placebo))
 }
 
@@ -99,7 +98,12 @@ adsl <- pharmaverseadamjnj::adsl %>%
 # for the filtering AVISIT records if it does exist
 adexsum <- pharmaverseadamjnj::adexsum %>%
   mutate(VISIT = if (exists("AVISIT")) AVISIT else "Overall") %>%
-  filter(PARAMCD %in% c("DOSEDAYS", "CUMDOSE", "MEANDDI", "MEANDD", "MODEDD", "FINDD") & !is.na(AVAL) & VISIT == "Overall") %>%
+  filter(
+    PARAMCD %in%
+      c("DOSEDAYS", "CUMDOSE", "MEANDDI", "MEANDD", "MODEDD", "FINDD") &
+      !is.na(AVAL) &
+      VISIT == "Overall"
+  ) %>%
   mutate(
     AVAL1 = case_when(PARAMCD == "DOSEDAYS" ~ AVAL),
     AVAL2 = case_when(PARAMCD == "CUMDOSE" ~ AVAL),
@@ -110,10 +114,23 @@ adexsum <- pharmaverseadamjnj::adexsum %>%
     AVAL6 = case_when(PARAMCD == "FINDD" ~ AVAL),
     AVALCAT6 = case_when(PARAMCD == "FINDD" ~ AVALCAT1)
   ) %>%
-  select(STUDYID, USUBJID, PARAMCD, AVAL1, AVAL2, AVAL3, AVAL4, AVAL5, AVAL6, AVALCAT5, AVALCAT6)
+  select(
+    STUDYID,
+    USUBJID,
+    PARAMCD,
+    AVAL1,
+    AVAL2,
+    AVAL3,
+    AVAL4,
+    AVAL5,
+    AVAL6,
+    AVALCAT5,
+    AVALCAT6
+  )
 
-adsl$colspan_trt <- factor(ifelse(adsl[[trtvar]] == "Placebo", " ", "Active Study Agent"),
-                           levels = c("Active Study Agent", " ")
+adsl$colspan_trt <- factor(
+  ifelse(adsl[[trtvar]] == "Placebo", " ", "Active Study Agent"),
+  levels = c("Active Study Agent", " ")
 )
 
 # join data together
@@ -126,18 +143,21 @@ ex$AVALCAT5 <- factor(ex$AVALCAT5, levels = catlevels)
 ex$AVALCAT6 <- droplevels(ex$AVALCAT6)
 ex$AVALCAT6 <- factor(ex$AVALCAT6, levels = catlevels)
 
-colspan_trt_map <- create_colspan_map(adsl,
-                                      non_active_grp = "Placebo",
-                                      non_active_grp_span_lbl = " ",
-                                      active_grp_span_lbl = "Active Study Agent",
-                                      colspan_var = "colspan_trt",
-                                      trt_var = trtvar
+colspan_trt_map <- create_colspan_map(
+  adsl,
+  non_active_grp = "Placebo",
+  non_active_grp_span_lbl = " ",
+  active_grp_span_lbl = "Active Study Agent",
+  colspan_var = "colspan_trt",
+  trt_var = trtvar
 )
 
 # Define layout and build table:
 
-extra_args1 <- list(.stats = "count_unique_fraction",
-                    denom = "n_df")
+extra_args1 <- list(
+  .stats = "count_unique_fraction",
+  denom = "n_df"
+)
 
 
 lyt <- rtables::basic_table(
@@ -145,7 +165,10 @@ lyt <- rtables::basic_table(
   show_colcounts = TRUE,
   colcount_format = "N=xx"
 ) %>%
-  split_cols_by("colspan_trt", split_fun = trim_levels_to_map(map = colspan_trt_map))
+  split_cols_by(
+    "colspan_trt",
+    split_fun = trim_levels_to_map(map = colspan_trt_map)
+  )
 
 if (combined_colspan_trt == TRUE) {
   lyt <- lyt %>%
@@ -156,89 +179,217 @@ if (combined_colspan_trt == TRUE) {
 }
 
 lyt <- lyt %>%
-  analyze("AVAL1", table_names = "AVAL1x", var_labels = "Total dosing days of treatment (excluding days off treatment)~[super a]", show_labels = "visible", indent_mod = 0L, afun = function(x) {
-    list(
-      "N" = rcell(length(x), format = jjcsformat_xx("xx"))
-    )
-  }) %>%
-  analyze("AVAL1", nested = TRUE, var_labels = "Total dosing days of treatment (excluding days off treatment)~[super a]", show_labels = "hidden", indent_mod = 2L, afun = function(x) {
-    list(
-      "Mean (SD)" = rcell(c(mean(x), sd(x)), format = jjcsformat_xx("xx.x (xx.xx)")),
-      "Median" = rcell(median(x), format = jjcsformat_xx("xx.x")),
-      "Min, max" = rcell(c(min(x), max(x)), format = jjcsformat_xx("xx., xx.")),
-      "Interquartile range" = rcell(c(quantile(x, c(0.25, 0.75), type = 2)), format = jjcsformat_xx("xx.x, xx.x"))
-    )
-  }) %>%
-  analyze("AVAL2", table_names = "AVAL2x", nested = FALSE, var_labels = "Cumulative dose ([unit])", show_labels = "visible", indent_mod = 0L, afun = function(x) {
-    list(
-      "N" = rcell(length(x), format = jjcsformat_xx("xx"))
-    )
-  }) %>%
-  analyze("AVAL2", nested = TRUE, var_labels = "Cumulative dose ([unit])", show_labels = "hidden", indent_mod = 2L, afun = function(x) {
-    list(
-      "Mean (SD)" = rcell(c(mean(x), sd(x)), format = jjcsformat_xx("xx.x (xx.xx)")),
-      "Median" = rcell(median(x), format = jjcsformat_xx("xx.x")),
-      "Min, max" = rcell(c(min(x), max(x)), format = jjcsformat_xx("xx., xx.")),
-      "Interquartile range" = rcell(c(quantile(x, c(0.25, 0.75), type = 2)), format = jjcsformat_xx("xx.x, xx.x"))
-    )
-  }) %>%
-  analyze("AVAL3", table_names = "AVAL3x", nested = FALSE, var_labels = "Average daily dose ([unit/day]) (including days off treatment)", show_labels = "visible", indent_mod = 0L, afun = function(x) {
-    list(
-      "N" = rcell(length(x), format = jjcsformat_xx("xx"))
-    )
-  }) %>%
-  analyze("AVAL3", nested = TRUE, var_labels = "Average daily dose ([unit/day]) (including days off treatment)", show_labels = "hidden", indent_mod = 2L, afun = function(x) {
-    list(
-      "Mean (SD)" = rcell(c(mean(x), sd(x)), format = jjcsformat_xx("xx.xx (xx.xxx)")),
-      "Median" = rcell(median(x), format = jjcsformat_xx("xx.xx")),
-      "Min, max" = rcell(c(min(x), max(x)), format = jjcsformat_xx("xx.x, xx.x")),
-      "Interquartile range" = rcell(c(quantile(x, c(0.25, 0.75), type = 2)), format = jjcsformat_xx("xx.xx, xx.xx"))
-    )
-  }) %>%
-  analyze("AVAL4", table_names = "AVAL4x", nested = FALSE, var_labels = "Average daily dose ([unit/day]) (excluding days off treatment)", show_labels = "visible", indent_mod = 0L, afun = function(x) {
-    list(
-      "N" = rcell(length(x), format = jjcsformat_xx("xx"))
-    )
-  }) %>%
-  analyze("AVAL4", nested = TRUE, var_labels = "Average daily dose ([unit/day]) (excluding days off treatment)", show_labels = "hidden", indent_mod = 2L, afun = function(x) {
-    list(
-      "Mean (SD)" = rcell(c(mean(x), sd(x)), format = jjcsformat_xx("xx.xx (xx.xxx)")),
-      "Median" = rcell(median(x), format = jjcsformat_xx("xx.xx")),
-      "Min, max" = rcell(c(min(x), max(x)), format = jjcsformat_xx("xx.x, xx.x")),
-      "Interquartile range" = rcell(c(quantile(x, c(0.25, 0.75), type = 2)), format = jjcsformat_xx("xx.xx, xx.xx"))
-    )
-  }) %>%
-  analyze("AVAL5", nested = FALSE, var_labels = "Modal daily dose ([unit/day]), n (%)", show_labels = "visible", indent_mod = 0L, afun = function(x) {
-    list(
-      "N" = rcell(length(x), format = jjcsformat_xx("xx"))
-    )
-  }) %>%
-  analyze("AVALCAT5",
-          afun = a_freq_j,
-          extra_args = extra_args1, 
-          show_labels = "hidden", 
-          indent_mod = 2L
+  analyze(
+    "AVAL1",
+    table_names = "AVAL1x",
+    var_labels = "Total dosing days of treatment (excluding days off treatment)~[super a]",
+    show_labels = "visible",
+    indent_mod = 0L,
+    afun = function(x) {
+      list(
+        "N" = rcell(length(x), format = jjcsformat_xx("xx"))
+      )
+    }
   ) %>%
-  analyze("AVAL6", table_names = "AVAL6x", nested = FALSE, var_labels = "Final daily dose ([unit/day])", show_labels = "visible", indent_mod = 0L, afun = function(x) {
-    list(
-      "N" = rcell(length(x), format = jjcsformat_xx("xx"))
-    )
-  }) %>%
-  analyze("AVAL6", nested = TRUE, var_labels = "Final daily dose ([unit/day])", show_labels = "hidden", indent_mod = 2L, afun = function(x) {
-    list(
-      "Mean (SD)" = rcell(c(mean(x), sd(x)), format = jjcsformat_xx("xx.x (xx.xx)")),
-      "Median" = rcell(median(x), format = jjcsformat_xx("xx.x")),
-      "Min, max" = rcell(c(min(x), max(x)), format = jjcsformat_xx("xx., xx.")),
-      "Interquartile range" = rcell(c(quantile(x, c(0.25, 0.75), type = 2)), format = jjcsformat_xx("xx.x, xx.x"))
-    )
-  }) %>%
-  analyze("AVALCAT6",
-          afun = a_freq_j,
-          nested = FALSE, 
-          show_labels = "visible",
-          var_labels = "Final daily dose ([unit/day]), n (%)",           
-          extra_args = extra_args1,
-          indent_mod = 1L
+  analyze(
+    "AVAL1",
+    nested = TRUE,
+    var_labels = "Total dosing days of treatment (excluding days off treatment)~[super a]",
+    show_labels = "hidden",
+    indent_mod = 2L,
+    afun = function(x) {
+      list(
+        "Mean (SD)" = rcell(
+          c(mean(x), sd(x)),
+          format = jjcsformat_xx("xx.x (xx.xx)")
+        ),
+        "Median" = rcell(median(x), format = jjcsformat_xx("xx.x")),
+        "Min, max" = rcell(
+          c(min(x), max(x)),
+          format = jjcsformat_xx("xx., xx.")
+        ),
+        "Interquartile range" = rcell(
+          c(quantile(x, c(0.25, 0.75), type = 2)),
+          format = jjcsformat_xx("xx.x, xx.x")
+        )
+      )
+    }
+  ) %>%
+  analyze(
+    "AVAL2",
+    table_names = "AVAL2x",
+    nested = FALSE,
+    var_labels = "Cumulative dose ([unit])",
+    show_labels = "visible",
+    indent_mod = 0L,
+    afun = function(x) {
+      list(
+        "N" = rcell(length(x), format = jjcsformat_xx("xx"))
+      )
+    }
+  ) %>%
+  analyze(
+    "AVAL2",
+    nested = TRUE,
+    var_labels = "Cumulative dose ([unit])",
+    show_labels = "hidden",
+    indent_mod = 2L,
+    afun = function(x) {
+      list(
+        "Mean (SD)" = rcell(
+          c(mean(x), sd(x)),
+          format = jjcsformat_xx("xx.x (xx.xx)")
+        ),
+        "Median" = rcell(median(x), format = jjcsformat_xx("xx.x")),
+        "Min, max" = rcell(
+          c(min(x), max(x)),
+          format = jjcsformat_xx("xx., xx.")
+        ),
+        "Interquartile range" = rcell(
+          c(quantile(x, c(0.25, 0.75), type = 2)),
+          format = jjcsformat_xx("xx.x, xx.x")
+        )
+      )
+    }
+  ) %>%
+  analyze(
+    "AVAL3",
+    table_names = "AVAL3x",
+    nested = FALSE,
+    var_labels = "Average daily dose ([unit/day]) (including days off treatment)",
+    show_labels = "visible",
+    indent_mod = 0L,
+    afun = function(x) {
+      list(
+        "N" = rcell(length(x), format = jjcsformat_xx("xx"))
+      )
+    }
+  ) %>%
+  analyze(
+    "AVAL3",
+    nested = TRUE,
+    var_labels = "Average daily dose ([unit/day]) (including days off treatment)",
+    show_labels = "hidden",
+    indent_mod = 2L,
+    afun = function(x) {
+      list(
+        "Mean (SD)" = rcell(
+          c(mean(x), sd(x)),
+          format = jjcsformat_xx("xx.xx (xx.xxx)")
+        ),
+        "Median" = rcell(median(x), format = jjcsformat_xx("xx.xx")),
+        "Min, max" = rcell(
+          c(min(x), max(x)),
+          format = jjcsformat_xx("xx.x, xx.x")
+        ),
+        "Interquartile range" = rcell(
+          c(quantile(x, c(0.25, 0.75), type = 2)),
+          format = jjcsformat_xx("xx.xx, xx.xx")
+        )
+      )
+    }
+  ) %>%
+  analyze(
+    "AVAL4",
+    table_names = "AVAL4x",
+    nested = FALSE,
+    var_labels = "Average daily dose ([unit/day]) (excluding days off treatment)",
+    show_labels = "visible",
+    indent_mod = 0L,
+    afun = function(x) {
+      list(
+        "N" = rcell(length(x), format = jjcsformat_xx("xx"))
+      )
+    }
+  ) %>%
+  analyze(
+    "AVAL4",
+    nested = TRUE,
+    var_labels = "Average daily dose ([unit/day]) (excluding days off treatment)",
+    show_labels = "hidden",
+    indent_mod = 2L,
+    afun = function(x) {
+      list(
+        "Mean (SD)" = rcell(
+          c(mean(x), sd(x)),
+          format = jjcsformat_xx("xx.xx (xx.xxx)")
+        ),
+        "Median" = rcell(median(x), format = jjcsformat_xx("xx.xx")),
+        "Min, max" = rcell(
+          c(min(x), max(x)),
+          format = jjcsformat_xx("xx.x, xx.x")
+        ),
+        "Interquartile range" = rcell(
+          c(quantile(x, c(0.25, 0.75), type = 2)),
+          format = jjcsformat_xx("xx.xx, xx.xx")
+        )
+      )
+    }
+  ) %>%
+  analyze(
+    "AVAL5",
+    nested = FALSE,
+    var_labels = "Modal daily dose ([unit/day]), n (%)",
+    show_labels = "visible",
+    indent_mod = 0L,
+    afun = function(x) {
+      list(
+        "N" = rcell(length(x), format = jjcsformat_xx("xx"))
+      )
+    }
+  ) %>%
+  analyze(
+    "AVALCAT5",
+    afun = a_freq_j,
+    extra_args = extra_args1,
+    show_labels = "hidden",
+    indent_mod = 2L
+  ) %>%
+  analyze(
+    "AVAL6",
+    table_names = "AVAL6x",
+    nested = FALSE,
+    var_labels = "Final daily dose ([unit/day])",
+    show_labels = "visible",
+    indent_mod = 0L,
+    afun = function(x) {
+      list(
+        "N" = rcell(length(x), format = jjcsformat_xx("xx"))
+      )
+    }
+  ) %>%
+  analyze(
+    "AVAL6",
+    nested = TRUE,
+    var_labels = "Final daily dose ([unit/day])",
+    show_labels = "hidden",
+    indent_mod = 2L,
+    afun = function(x) {
+      list(
+        "Mean (SD)" = rcell(
+          c(mean(x), sd(x)),
+          format = jjcsformat_xx("xx.x (xx.xx)")
+        ),
+        "Median" = rcell(median(x), format = jjcsformat_xx("xx.x")),
+        "Min, max" = rcell(
+          c(min(x), max(x)),
+          format = jjcsformat_xx("xx., xx.")
+        ),
+        "Interquartile range" = rcell(
+          c(quantile(x, c(0.25, 0.75), type = 2)),
+          format = jjcsformat_xx("xx.x, xx.x")
+        )
+      )
+    }
+  ) %>%
+  analyze(
+    "AVALCAT6",
+    afun = a_freq_j,
+    nested = FALSE,
+    show_labels = "visible",
+    var_labels = "Final daily dose ([unit/day]), n (%)",
+    extra_args = extra_args1,
+    indent_mod = 1L
   ) %>%
   append_topleft("Parameter")
 
@@ -250,10 +401,10 @@ result <- set_titles(result, tab_titles)
 
 # Convert to tbl file and output table
 
-tt_to_tlgrtf(string_map = string_map, tt = head(result, 20), file = fileid, orientation = "portrait")
+tt_to_tlgrtf(string_map = string_map, tt = result, file = fileid, orientation = "portrait")
 ```
 ```{r result1, echo=FALSE, message=FALSE, warning=FALSE, test = list(result_v1 = "result")}
-tt_to_flextable_j(head(result, 20), tblid)
+tt_to_flextable_j(result)
 ```
 
 [Download RTF file](`r paste0(tolower(tblid), '.rtf')`)

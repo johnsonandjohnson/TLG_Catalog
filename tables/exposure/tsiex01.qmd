@@ -8,8 +8,6 @@ subtitle: Duration of Treatment
 {{< include ../../_utils/envir_hook.qmd >}}
 
 ```{r setup, echo = FALSE, warning = FALSE, message = FALSE}
-
-
 envsetup_config_name <- "default"
 
 # Path to the combined config file
@@ -43,7 +41,7 @@ apt <- FALSE
 
 ```{r variant1, results='hide', warning = FALSE, message = FALSE}
 
-# Program Name: tsiex01.R
+# Program Name:              tsiex01.R
 
 # Prep Environment
 
@@ -73,18 +71,29 @@ ancova <- TRUE
 trtdur <- "TRTDURM"
 daysconv <- 30.4375
 catlevels <- c(
-  "0 to <3 months", "3 to <6 months", "6 to <9 months", "9 to <12 months", "12 to <15 months",
-  "15 to <18 months", "18 to <21 months", "21 to <24 months", "24 to <27 months",
-  "27 to <30 months", "30 to <33 months", "33 to <36 months", "36 to <39 months"
+  "0 to <3 months",
+  "3 to <6 months",
+  "6 to <9 months",
+  "9 to <12 months",
+  "12 to <15 months",
+  "15 to <18 months",
+  "18 to <21 months",
+  "21 to <24 months",
+  "24 to <27 months",
+  "27 to <30 months",
+  "30 to <33 months",
+  "33 to <36 months",
+  "36 to <39 months"
 )
 
 combined_colspan_trt <- TRUE
 
 if (combined_colspan_trt == TRUE) {
   # Set up levels and label for the required combined columns
-  add_combo <- add_combo_facet("Combined",
+  add_combo <- add_combo_facet(
+    "Combined",
     label = "Combined",
-    levels = c("Apalutamide", "Apalutamide Subgroup")
+    levels = c("Xanomeline High Dose", "Xanomeline Low Dose")
   )
 
   # choose if any facets need to be removed - e.g remove the combined column for placebo
@@ -116,11 +125,10 @@ adexsum <- pharmaverseadamjnj::adexsum %>%
   ) %>%
   select(USUBJID, PARAMCD, AVAL, AVALCAT1, starts_with("CRIT"))
 
-adexsum$CRIT0FL <- factor(adexsum$CRIT0FL,
-  levels = c("Y", "N")
-)
+adexsum$CRIT0FL <- factor(adexsum$CRIT0FL, levels = c("Y", "N"))
 
-adsl$colspan_trt <- factor(ifelse(adsl[[trtvar]] == "Placebo", " ", "Active Study Agent"),
+adsl$colspan_trt <- factor(
+  ifelse(adsl[[trtvar]] == "Placebo", " ", "Active Study Agent"),
   levels = c("Active Study Agent", " ")
 )
 
@@ -150,7 +158,8 @@ for (i in 1:countcritvars) {
 ex$AVALCAT1 <- droplevels(ex$AVALCAT1)
 ex$AVALCAT1 <- factor(ex$AVALCAT1, levels = catlevels)
 
-colspan_trt_map <- create_colspan_map(adsl,
+colspan_trt_map <- create_colspan_map(
+  adsl,
   non_active_grp = ctrl_grp,
   non_active_grp_span_lbl = " ",
   active_grp_span_lbl = "Active Study Agent",
@@ -159,36 +168,43 @@ colspan_trt_map <- create_colspan_map(adsl,
 )
 ref_path <- c("colspan_trt", "", trtvar, ctrl_grp)
 
-# Create label_map to be utilized in the Criterion variables (CRIT)   
+# Create label_map to be utilized in the Criterion variables (CRIT)
 
 ex_lblmap <- ex %>%
-select(-CRIT0, -CRIT0FL) %>%
-tidyr::pivot_longer(cols = starts_with("CRIT") & ends_with("FL"), names_to = "value", values_to = "CF_value") %>%
-# Create the label by selecting the corresponding values from the CRIT columns
-mutate(
-  label = case_when(
-    value == "CRIT1FL" ~ CRIT1,
-    value == "CRIT2FL" ~ CRIT2,
-    value == "CRIT3FL" ~ CRIT3,
-    value == "CRIT4FL" ~ CRIT4,
-    value == "CRIT5FL" ~ CRIT5,
-    value == "CRIT6FL" ~ CRIT6,
-    value == "CRIT7FL" ~ CRIT7
-  )
-) %>%
-select(value, label) %>%
-distinct()
+  select(-CRIT0, -CRIT0FL) %>%
+  tidyr::pivot_longer(
+    cols = starts_with("CRIT") & ends_with("FL"),
+    names_to = "value",
+    values_to = "CF_value"
+  ) %>%
+  # Create the label by selecting the corresponding values from the CRIT columns
+  mutate(
+    label = case_when(
+      value == "CRIT1FL" ~ CRIT1,
+      value == "CRIT2FL" ~ CRIT2,
+      value == "CRIT3FL" ~ CRIT3,
+      value == "CRIT4FL" ~ CRIT4,
+      value == "CRIT5FL" ~ CRIT5,
+      value == "CRIT6FL" ~ CRIT6,
+      value == "CRIT7FL" ~ CRIT7
+    )
+  ) %>%
+  select(value, label) %>%
+  distinct()
 
 # Define layout and build table:
 
-extra_args_rr <- list(.stats = c("count_unique_fraction"),riskdiff = FALSE)
+extra_args_rr <- list(.stats = c("count_unique_fraction"), riskdiff = FALSE)
 
 lyt <- rtables::basic_table(
   top_level_section_div = " ",
   show_colcounts = TRUE,
   colcount_format = "N=xx"
 ) %>%
-  split_cols_by("colspan_trt", split_fun = trim_levels_to_map(map = colspan_trt_map))
+  split_cols_by(
+    "colspan_trt",
+    split_fun = trim_levels_to_map(map = colspan_trt_map)
+  )
 
 if (combined_colspan_trt == TRUE) {
   lyt <- lyt %>%
@@ -200,20 +216,64 @@ if (combined_colspan_trt == TRUE) {
 
 lyt <- lyt %>%
   split_cols_by("diff_header", nested = FALSE) %>%
-  split_cols_by(trtvar, split_fun = remove_split_levels(ctrl_grp), labels_var = "diff_label") %>%
-  analyze("AVAL",
-    afun = a_summarize_ex_j, var_labels = "Duration of treatment~[super a], ([unit])",
-    show_labels = "visible", indent_mod = 0L, 
-    extra_args = list(daysconv = daysconv, ref_path = ref_path, ancova = ancova, comp_btw_group = comp_btw_group, variables = list(arm = trtvar, covariates = NULL),
-                      .formats = c(range = jjcsformat_xx("xx.x, xx.x"), "diff_mean_est_ci" = jjcsformat_xx("xx.xx (xx.xx, xx.xx)")))
+  split_cols_by(
+    trtvar,
+    split_fun = remove_split_levels(ctrl_grp),
+    labels_var = "diff_label"
   ) %>%
-   analyze("AVALCAT1", var_labels = "Duration of treatment, n (%)", afun = a_freq_j, extra_args = extra_args_rr, indent_mod = 1L, show_labels = "visible", nested = FALSE) %>%
-   analyze("CRIT0", var_labels = "Duration of treatment~[super b], n (%)", afun = a_freq_j, extra_args = extra_args_rr,indent_mod = 1L, show_labels = "visible", nested = FALSE)
+  analyze(
+    "AVAL",
+    afun = a_summarize_ex_j,
+    var_labels = "Duration of treatment~[super a], ([unit])",
+    show_labels = "visible",
+    indent_mod = 0L,
+    extra_args = list(
+      daysconv = daysconv,
+      ref_path = ref_path,
+      ancova = ancova,
+      comp_btw_group = comp_btw_group,
+      variables = list(arm = trtvar, covariates = NULL),
+      .formats = c(
+        range = jjcsformat_xx("xx.x, xx.x"),
+        "diff_mean_est_ci" = jjcsformat_xx("xx.xx (xx.xx, xx.xx)")
+      )
+    )
+  ) %>%
+  analyze(
+    "AVALCAT1",
+    var_labels = "Duration of treatment, n (%)",
+    afun = a_freq_j,
+    extra_args = extra_args_rr,
+    indent_mod = 1L,
+    show_labels = "visible",
+    nested = FALSE
+  ) %>%
+  analyze(
+    paste0("CRIT", 1, "FL"),
+    var_labels = "Duration of treatment~[super b], n (%)",
+    afun = a_freq_j,
+    extra_args = append(
+      extra_args_rr,
+      list(label = as.character(ex_lblmap$label[1]), val = "Y")
+    ),
+    indent_mod = 1L,
+    show_labels = "visible",
+    nested = FALSE
+  )
 
-# Add in analyze for all CRIT variables contained in ex
-for (i in 1:countcritvars) {
+# Add in analyze for all others CRIT variables contained in ex
+for (i in 2:countcritvars) {
   lyt <- lyt %>%
-    analyze(paste0("CRIT", i,"FL"), afun = a_freq_j, extra_args = append(extra_args_rr,list(label = as.character(ex_lblmap$label[i]),val="Y")), indent_mod = 2L, show_labels = "hidden")
+    analyze(
+      paste0("CRIT", i, "FL"),
+      afun = a_freq_j,
+      extra_args = append(
+        extra_args_rr,
+        list(label = as.character(ex_lblmap$label[i]), val = "Y")
+      ),
+      indent_mod = 2L,
+      show_labels = "hidden"
+    )
 }
 
 lyt <- lyt %>%
@@ -230,10 +290,10 @@ result <- set_titles(result, tab_titles)
 
 # Convert to tbl file and output table
 
-tt_to_tlgrtf(string_map = string_map, tt = head(result, 20), file = fileid, orientation = "landscape")
+tt_to_tlgrtf(string_map = string_map, tt = result, file = fileid, orientation = "landscape")
 ```
 ```{r result1, echo=FALSE, message=FALSE, warning=FALSE, test = list(result_v1 = "result")}
-tt_to_flextable_j(head(result, 20), tblid)
+tt_to_flextable_j(result)
 ```
 
 [Download RTF file](`r paste0(tolower(tblid), '.rtf')`)

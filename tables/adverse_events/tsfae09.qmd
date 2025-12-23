@@ -8,8 +8,6 @@ subtitle: Subjects With Treatment-emergent Adverse Events by System Organ Class
 {{< include ../../_utils/envir_hook.qmd >}}
 
 ```{r setup, echo = FALSE, warning = FALSE, message = FALSE}
-
-
 envsetup_config_name <- "default"
 
 # Path to the combined config file
@@ -43,7 +41,7 @@ apt <- FALSE
 
 ```{r variant1, results='hide', warning = FALSE, message = FALSE}
 
-# Program Name: tsfae09.R
+# Program Name:              tsfae09.R
 
 # Prep Environment
 
@@ -71,9 +69,10 @@ ctrl_grp <- "Placebo"
 
 if (combined_colspan_trt == TRUE) {
   # Set up levels and label for the required combined columns
-  add_combo <- add_combo_facet("Combined",
+  add_combo <- add_combo_facet(
+    "Combined",
     label = "Combined",
-    levels = c("Apalutamide", "Apalutamide Subgroup")
+    levels = c("Xanomeline High Dose", "Xanomeline Low Dose")
   )
 
   # choose if any facets need to be removed - e.g remove the combined column for placebo
@@ -97,7 +96,8 @@ adae <- pharmaverseadamjnj::adae %>%
   filter(TRTEMFL == "Y") %>%
   select(USUBJID, TRTEMFL, AEBODSYS)
 
-adsl$colspan_trt <- factor(ifelse(adsl[[trtvar]] == "Placebo", " ", "Active Study Agent"),
+adsl$colspan_trt <- factor(
+  ifelse(adsl[[trtvar]] == "Placebo", " ", "Active Study Agent"),
   levels = c("Active Study Agent", " ")
 )
 
@@ -109,17 +109,23 @@ if (risk_diff == TRUE) {
 # join data together
 ae <- adae %>% right_join(., adsl, by = c("USUBJID"))
 
-colspan_trt_map <- create_colspan_map(adsl, 
-                                      non_active_grp = ctrl_grp,
-                                      non_active_grp_span_lbl = " ",
-                                      active_grp_span_lbl = "Active Study Agent",
-                                      colspan_var = "colspan_trt",
-                                      trt_var = trtvar)
+colspan_trt_map <- create_colspan_map(
+  adsl,
+  non_active_grp = ctrl_grp,
+  non_active_grp_span_lbl = " ",
+  active_grp_span_lbl = "Active Study Agent",
+  colspan_var = "colspan_trt",
+  trt_var = trtvar
+)
 
 # Define layout and build table:
 
 ref_path <- c("colspan_trt", " ", "TRT01A", "Placebo")
-extra_args_rr <- list(method = rr_method, ref_path = ref_path, .stats = c("count_unique_fraction"))
+extra_args_rr <- list(
+  method = rr_method,
+  ref_path = ref_path,
+  .stats = c("count_unique_fraction")
+)
 
 
 lyt <- basic_table(
@@ -127,7 +133,10 @@ lyt <- basic_table(
   show_colcounts = TRUE,
   colcount_format = "N=xx"
 ) %>%
-  split_cols_by("colspan_trt", split_fun = trim_levels_to_map(map = colspan_trt_map))
+  split_cols_by(
+    "colspan_trt",
+    split_fun = trim_levels_to_map(map = colspan_trt_map)
+  )
 
 if (combined_colspan_trt == TRUE) {
   lyt <- lyt %>%
@@ -140,11 +149,20 @@ if (combined_colspan_trt == TRUE) {
 if (risk_diff == TRUE) {
   lyt <- lyt %>%
     split_cols_by("rrisk_header", nested = FALSE) %>%
-    split_cols_by(trtvar, labels_var = "rrisk_label", split_fun = remove_split_levels("Placebo"))
+    split_cols_by(
+      trtvar,
+      labels_var = "rrisk_label",
+      split_fun = remove_split_levels("Placebo")
+    )
 }
 
 lyt <- lyt %>%
-  analyze("AEBODSYS", afun = a_freq_j, extra_args = append(extra_args_rr, NULL), indent_mod = 0L) %>%
+  analyze(
+    "AEBODSYS",
+    afun = a_freq_j,
+    extra_args = append(extra_args_rr, NULL),
+    indent_mod = 0L
+  ) %>%
   append_topleft("System Organ Class, n (%)")
 
 result <- build_table(lyt, ae, alt_counts_df = adsl)
@@ -152,14 +170,19 @@ result <- build_table(lyt, ae, alt_counts_df = adsl)
 # Post-Processing step to sort by descending count on chosen active treatment columns.
 
 if (length(adae$TRTEMFL) != 0) {
-  result <- sort_at_path(result, c("AEBODSYS"), scorefun = jj_complex_scorefun())
+  result <- sort_at_path(
+    result,
+    c("AEBODSYS"),
+    scorefun = jj_complex_scorefun()
+  )
 }
 
 ## Remove the N=xx column headers for the risk difference columns
 result <- remove_col_count(result)
 
 ## Remove any rogue null rows
-result <- result %>% safe_prune_table(prune_func = keep_rows(keep_non_null_rows))
+result <- result %>%
+  safe_prune_table(prune_func = keep_rows(keep_non_null_rows))
 
 # Add titles and footnotes:
 
@@ -167,10 +190,10 @@ result <- set_titles(result, tab_titles)
 
 # Convert to tbl file and output table
 
-tt_to_tlgrtf(string_map = string_map, tt = head(result, 20), file = fileid, orientation = "landscape")
+tt_to_tlgrtf(string_map = string_map, tt = result, file = fileid, orientation = "landscape")
 ```
 ```{r result1, echo=FALSE, message=FALSE, warning=FALSE, test = list(result_v1 = "result")}
-tt_to_flextable_j(head(result, 20), tblid)
+tt_to_flextable_j(result)
 ```
 
 [Download RTF file](`r paste0(tolower(tblid), '.rtf')`)

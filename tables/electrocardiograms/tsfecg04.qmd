@@ -8,8 +8,6 @@ subtitle: Shift From Baseline to Maximum On-treatment Corrected QT Interval
 {{< include ../../_utils/envir_hook.qmd >}}
 
 ```{r setup, echo = FALSE, warning = FALSE, message = FALSE}
-
-
 envsetup_config_name <- "default"
 
 # Path to the combined config file
@@ -86,11 +84,18 @@ adsl <- pharmaverseadamjnj::adsl %>%
   filter(!!sym(popfl) == "Y") %>%
   select(STUDYID, USUBJID, all_of(c(trtvar, popfl, demogvars)))
 
-adsl <- adsl %>% mutate(colspan_trt = factor(ifelse(!!sym(trtvar) == ctrl_grp, " ", "Active Study Agent"),
-                                             levels = c("Active Study Agent", " ")
-))
+adsl <- adsl %>%
+  mutate(
+    colspan_trt = factor(
+      ifelse(!!sym(trtvar) == ctrl_grp, " ", "Active Study Agent"),
+      levels = c("Active Study Agent", " ")
+    )
+  )
 ## to ensure the same order as on other outputs
-trt_order <- as.character((unique(adsl %>% select("colspan_trt", all_of(trtvar))) %>% arrange(colspan_trt, !!sym(trtvar)))[[trtvar]])
+trt_order <- as.character((unique(
+  adsl %>% select("colspan_trt", all_of(trtvar))
+) %>%
+  arrange(colspan_trt, !!sym(trtvar)))[[trtvar]])
 adsl[[trtvar]] <- factor(as.character(adsl[[trtvar]]), levels = trt_order)
 
 adeg <- adeg_complete %>%
@@ -102,12 +107,23 @@ adeg <- adeg_complete %>%
   ### as mixing worst with other period is not giving the proper selection !!!
   filter(ANL03FL == "Y") %>%
   select(
-    USUBJID, ONTRTFL, TRTEMFL, PARAM, PARAMCD,
-    AVISITN, AVISIT,
-    AVAL, BASE, CHG,
-    AVALCAT1, BASECAT1,
-    ONTRTFL, TRTEMFL,
-    ANL01FL, ANL02FL, ANL03FL
+    USUBJID,
+    ONTRTFL,
+    TRTEMFL,
+    PARAM,
+    PARAMCD,
+    AVISITN,
+    AVISIT,
+    AVAL,
+    BASE,
+    CHG,
+    AVALCAT1,
+    BASECAT1,
+    ONTRTFL,
+    TRTEMFL,
+    ANL01FL,
+    ANL02FL,
+    ANL03FL
   ) %>%
   inner_join(., adsl)
 
@@ -133,7 +149,9 @@ AVALCAT1_levels <- levels(adeg$AVALCAT1)
 
 ## add extra level N to Basecat1
 adeg <- adeg %>%
-  mutate(BASECAT1 = factor(as.character(BASECAT1), levels = c("N", AVALCAT1_levels)))
+  mutate(
+    BASECAT1 = factor(as.character(BASECAT1), levels = c("N", AVALCAT1_levels))
+  )
 
 
 ## trick for alt_counts_df to work with col splitting
@@ -153,77 +171,88 @@ lyt <- basic_table(show_colcounts = FALSE) %>%
   split_cols_by("BASECAT1_header3") %>%
   ## to ensure N column is not under the Baseline column span header
   split_cols_by("BASECAT1_header2") %>%
-  split_cols_by("BASECAT1",
-                split_fun = keep_split_levels("N")
-  ) %>%
+  split_cols_by("BASECAT1", split_fun = keep_split_levels("N")) %>%
   ## restart column split (Nested = False)
   ## Combined levels will be made, and the N column should not appear
   split_cols_by("BASECAT1_header", nested = FALSE) %>%
-  split_cols_by("BASECAT1",
-                split_fun = make_split_fun(
-                  pre = list(rm_levels(excl = "N")),
-                  post = list(
-                    add_overall_facet("TOTAL", "Total")
-                  )
-                )
+  split_cols_by(
+    "BASECAT1",
+    split_fun = make_split_fun(
+      pre = list(rm_levels(excl = "N")),
+      post = list(
+        add_overall_facet("TOTAL", "Total")
+      )
+    )
   ) %>%
   #### replace split_rows and summarize by single analyze call
   ### a_freq_j only works due to
   ### special arguments can do the trick : denomf = adslx & .stats = count_unique
   ### we want counts of treatment group coming from adsl, not from input dataset, therefor, countsource = altdf
-  analyze(vars = trtvar,
-                       afun = a_freq_j, extra_args = list(
-                         restr_columns = "N",
-                         .stats = "count_unique",
-                         countsource = "altdf",
-                         extrablankline = TRUE
-                       ), indent_mod = -1L
+  analyze(
+    vars = trtvar,
+    afun = a_freq_j,
+    extra_args = list(
+      restr_columns = "N",
+      .stats = "count_unique",
+      countsource = "altdf",
+      extrablankline = TRUE
+    ),
+    indent_mod = -1L
   ) %>%
-
   # ## main part of table
-  split_rows_by("PARAM",
-                nested = FALSE,
-                label_pos = "topleft",
-                child_labels = "visible",
-                split_label = "QTc Interval",
-                split_fun = drop_split_levels,
-                section_div = " "
+  split_rows_by(
+    "PARAM",
+    nested = FALSE,
+    label_pos = "topleft",
+    child_labels = "visible",
+    split_label = "QTc Interval",
+    split_fun = drop_split_levels,
+    section_div = " "
   ) %>%
-  split_rows_by(trtvar,
-                label_pos = "topleft",
-                indent_mod = -1L,
-                child_labels = "hidden",
-                split_label = "Treatment Group",
-                section_div = " "
+  split_rows_by(
+    trtvar,
+    label_pos = "topleft",
+    indent_mod = -1L,
+    child_labels = "hidden",
+    split_label = "Treatment Group",
+    section_div = " "
   ) %>%
   ### a_freq_j
   ### the special statistic "n_rowdf" option does the trick here of getting the proper value for the N column
-  summarize_row_groups(trtvar, cfun = a_freq_j, extra_args = list(.stats = "n_rowdf",
-                                                                  restr_columns = c("N"))) %>%
-  split_rows_by("AVISIT",
-                label_pos = "hidden",
-                indent_mod = 1L,
-                split_label = " ",
-                child_labels = "visible",
-                section_div = " "
+  summarize_row_groups(
+    trtvar,
+    cfun = a_freq_j,
+    extra_args = list(
+      .stats = "n_rowdf",
+      restr_columns = c("N")
+    )
+  ) %>%
+  split_rows_by(
+    "AVISIT",
+    label_pos = "hidden",
+    indent_mod = 1L,
+    split_label = " ",
+    child_labels = "visible",
+    section_div = " "
   ) %>%
   ## add extra level TOTAL using new_levels, rather than earlier technique
   ## advantage for denominator derivation -- n_rowdf can be used, if we'd like to present fraction as well
   ## switch .stats to count_unique_denom_fraction or count_unique_fraction
-  analyze("AVALCAT1",
-          afun = a_freq_j,
-          extra_args = list(
-            .stats = "count_unique",
-            denom = "n_rowdf",
-            new_levels = list(c("Total"), list(AVALCAT1_levels)),
-            new_levels_after = TRUE,
-            .indent_mods = 1L,
-            restr_columns = c(
-              toupper(AVALCAT1_levels),
-              "TOTAL"
-            ))
+  analyze(
+    "AVALCAT1",
+    afun = a_freq_j,
+    extra_args = list(
+      .stats = "count_unique",
+      denom = "n_rowdf",
+      new_levels = list(c("Total"), list(AVALCAT1_levels)),
+      new_levels_after = TRUE,
+      .indent_mods = 1L,
+      restr_columns = c(
+        toupper(AVALCAT1_levels),
+        "TOTAL"
+      )
+    )
   ) %>%
-
   append_topleft("    Criteria, n")
 
 result <- build_table(lyt, adeg, alt_counts_df = adslx)
@@ -241,7 +270,9 @@ fontspec <- font_spec("Times", 9L, 1.2)
 col_gap <- 7L
 label_width_ins <- 2
 
-colwidths <- def_colwidths(result, fontspec,
+colwidths <- def_colwidths(
+  result,
+  fontspec,
   col_gap = col_gap,
   label_width_ins = label_width_ins
 )
@@ -250,10 +281,10 @@ colwidths <- def_colwidths(result, fontspec,
 acolwidths <- colwidths
 acolwidths[3:length(acolwidths)] <- 12
 
-tt_to_tlgrtf(string_map = string_map, tt = head(result, 20), file = fileid, colwidths = acolwidths)
+tt_to_tlgrtf(string_map = string_map, tt = result, file = fileid, colwidths = acolwidths)
 ```
 ```{r result1, echo=FALSE, message=FALSE, warning=FALSE, test = list(result_v1 = "result")}
-tt_to_flextable_j(head(result, 20), tblid)
+tt_to_flextable_j(result)
 ```
 
 [Download RTF file](`r paste0(tolower(tblid), '.rtf')`)

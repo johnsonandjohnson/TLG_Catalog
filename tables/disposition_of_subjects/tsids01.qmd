@@ -8,8 +8,6 @@ subtitle: Subject Screening and Enrollment
 {{< include ../../_utils/envir_hook.qmd >}}
 
 ```{r setup, echo = FALSE, warning = FALSE, message = FALSE}
-
-
 envsetup_config_name <- "default"
 
 # Path to the combined config file
@@ -65,14 +63,21 @@ string_map <- default_str_map
 adsl <- pharmaverseadamjnj::adsl %>%
   filter(SCRNFL == "Y") %>%
   mutate(
-    SCRNFL   = with_label(.data[["SCRNFL"]] == "Y", "Patients screened"),
-    SCRFFL   = with_label(.data[["SCRFFL"]], "Screening failures"),
+    SCRNFL = with_label(.data[["SCRNFL"]] == "Y", "Patients screened"),
+    SCRFFL = with_label(.data[["SCRFFL"]], "Screening failures"),
     RESCRNFL = with_label(.data[["RESCRNFL"]] == "Y", "Subjects re-screened"),
-    ENRLFL   = with_label(.data[["ENRLFL"]] == "Y", "Subjects enrolled"),
-    RANDFL   = with_label(.data[["RANDFL"]] == "Y", "Subjects randomized")
+    ENRLFL = with_label(.data[["ENRLFL"]] == "Y", "Subjects enrolled"),
+    RANDFL = with_label(.data[["RANDFL"]] == "Y", "Subjects randomized")
   ) %>%
   select(
-    STUDYID, USUBJID, SCRNFL, SCRFFL, DCSCREEN, RESCRNFL, RANDFL, ENRLFL,
+    STUDYID,
+    USUBJID,
+    SCRNFL,
+    SCRFFL,
+    DCSCREEN,
+    RESCRNFL,
+    RANDFL,
+    ENRLFL,
     TRT01P
   )
 
@@ -120,7 +125,7 @@ result <- build_table(lyt, df = adsl, alt_counts_df = adsl_unq)
 
 # Post-processing step to sort by descending count in the Combined column
 result <- sort_at_path(
-  tt = head(result, 20),
+  tt = result,
   path = c("root", "SCRFFL", "Y", "DCSCREEN"),
   scorefun = jj_complex_scorefun(
     spanningheadercolvar = NULL,
@@ -136,7 +141,8 @@ if (nrow(adsl) == 0) {
 } else {
   # Post-processing step to remove reason for screening failures table rows
   # with all 0 or NA values
-  result <- prune_table(result,
+  result <- prune_table(
+    result,
     prune_func = count_pruner(
       cat_exclude = c(
         "Screening failures"
@@ -144,7 +150,8 @@ if (nrow(adsl) == 0) {
       cols = "Total"
     )
   )
-  result <- prune_table(result,
+  result <- prune_table(
+    result,
     prune_func = count_pruner(
       cat_exclude = c(
         "Subjects re-screened"
@@ -152,7 +159,8 @@ if (nrow(adsl) == 0) {
       cols = "Total"
     )
   )
-  result <- prune_table(result,
+  result <- prune_table(
+    result,
     prune_func = count_pruner(
       cat_exclude = c(
         "Subjects randomized"
@@ -168,10 +176,10 @@ result <- set_titles(result, tab_titles)
 
 # Convert to tbl file and output table
 
-tt_to_tlgrtf(string_map = string_map, tt = head(result, 20), file = fileid)
+tt_to_tlgrtf(string_map = string_map, tt = result, file = fileid)
 ```
 ```{r result1, echo=FALSE, message=FALSE, warning=FALSE, test = list(result_v1 = "result")}
-tt_to_flextable_j(head(result, 20), tblid)
+tt_to_flextable_j(result)
 ```
 
 [Download RTF file](`r paste0(tolower(tblid), '.rtf')`)

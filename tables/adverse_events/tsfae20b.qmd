@@ -8,8 +8,6 @@ subtitle: Demographic Characteristics for Subjects With Serious Treatment-emerge
 {{< include ../../_utils/envir_hook.qmd >}}
 
 ```{r setup, echo = FALSE, warning = FALSE, message = FALSE}
-
-
 envsetup_config_name <- "default"
 
 # Path to the combined config file
@@ -43,7 +41,7 @@ apt <- FALSE
 
 ```{r variant1, results='hide', warning = FALSE, message = FALSE}
 
-# Program Name:              tsfae20b
+# Program Name:              tsfae20b.R
 
 # Prep Environment
 
@@ -70,26 +68,41 @@ ctrl_grp <- "Placebo"
 adsl <- pharmaverseadamjnj::adsl %>%
   filter(!!rlang::sym(popfl) == "Y") %>%
   create_colspan_var(
-    non_active_grp          = ctrl_grp,
+    non_active_grp = ctrl_grp,
     non_active_grp_span_lbl = " ",
-    active_grp_span_lbl     = "Active Study Agent",
-    colspan_var             = "colspan_trt",
-    trt_var                 = trtvar
+    active_grp_span_lbl = "Active Study Agent",
+    colspan_var = "colspan_trt",
+    trt_var = trtvar
   ) %>%
-  select(USUBJID, !!rlang::sym(popfl), !!rlang::sym(trtvar), SEX_DECODE, AGEGR1, RACE_DECODE, ETHNIC_DECODE, colspan_trt)
+  select(
+    USUBJID,
+    !!rlang::sym(popfl),
+    !!rlang::sym(trtvar),
+    SEX_DECODE,
+    AGEGR1,
+    RACE_DECODE,
+    ETHNIC_DECODE,
+    colspan_trt
+  )
 
 # Factor reformatting (e.g., Include missing in the "Unknown" category).
-adsl$SEX_DECODE <- forcats::fct_na_value_to_level(adsl$SEX_DECODE, level = "Unknown")
-
-adsl$AGEGR1_DECODE <- forcats::fct_na_value_to_level(factor(stringr::str_replace(as.character(adsl$AGEGR1), ">=", "\u2265")),
-                                            level = "Unknown"
+adsl$SEX_DECODE <- forcats::fct_na_value_to_level(
+  adsl$SEX_DECODE,
+  level = "Unknown"
 )
 
-adsl$RACE_DECODE <- forcats::fct_collapse(forcats::fct_na_value_to_level(adsl$RACE_DECODE, level = "Unknown"),
+adsl$AGEGR1_DECODE <- forcats::fct_na_value_to_level(
+  factor(stringr::str_replace(as.character(adsl$AGEGR1), ">=", "\u2265")),
+  level = "Unknown"
+)
+
+adsl$RACE_DECODE <- forcats::fct_collapse(
+  forcats::fct_na_value_to_level(adsl$RACE_DECODE, level = "Unknown"),
   "Not reported or unknown" = c("Not reported", "Unknown")
 )
 
-adsl$ETHNIC_DECODE <- forcats::fct_collapse(forcats::fct_na_value_to_level(adsl$ETHNIC_DECODE, level = "Unknown"),
+adsl$ETHNIC_DECODE <- forcats::fct_collapse(
+  forcats::fct_na_value_to_level(adsl$ETHNIC_DECODE, level = "Unknown"),
   "Not reported or unknown" = c("Not reported", "Unknown")
 )
 
@@ -104,7 +117,8 @@ adsl <- adsl %>%
 
 # Define layout and build table
 
-colspan_trt_map <- create_colspan_map(adsl,
+colspan_trt_map <- create_colspan_map(
+  adsl,
   non_active_grp = ctrl_grp,
   non_active_grp_span_lbl = " ",
   active_grp_span_lbl = "Active Study Agent",
@@ -118,7 +132,7 @@ add_active_combo <- make_split_fun(
     add_combo_facet(
       name = "Combined",
       label = "Combined",
-      levels = c("Apalutamide", "Apalutamide Subgroup")
+      levels = c("Xanomeline High Dose", "Xanomeline Low Dose")
     ),
     cond_rm_facets(
       facets = "Combined",
@@ -130,23 +144,38 @@ add_active_combo <- make_split_fun(
 )
 
 extra_args_rr <- list(
-  riskdiff = FALSE)
+  riskdiff = FALSE
+)
 
-extra_args_rr2 <- append(extra_args_rr, list(resp_var = "TRTEMFL", drop_levels = TRUE))
+extra_args_rr2 <- append(
+  extra_args_rr,
+  list(resp_var = "TRTEMFL", drop_levels = TRUE)
+)
 
-lyt <- basic_table(show_colcounts = TRUE, colcount_format = "N=xx", top_level_section_div = " ") %>%
+lyt <- basic_table(
+  show_colcounts = TRUE,
+  colcount_format = "N=xx",
+  top_level_section_div = " "
+) %>%
   append_topleft("Characteristic") %>%
-  split_cols_by("colspan_trt", split_fun = trim_levels_to_map(map = colspan_trt_map)) %>%
-  split_cols_by(trtvar, split_fun = add_active_combo) 
+  split_cols_by(
+    "colspan_trt",
+    split_fun = trim_levels_to_map(map = colspan_trt_map)
+  ) %>%
+  split_cols_by(trtvar, split_fun = add_active_combo)
 
-lyt <- lyt %>% 
-  analyze("TRTEMFL",
+lyt <- lyt %>%
+  analyze(
+    "TRTEMFL",
     afun = a_freq_j,
-    extra_args = append(extra_args_rr, 
-                        list(label = paste("Subjects with >= 1", subjFilterText),
-                             val = "Y",
-                             .stats = c("count_unique_fraction")
-                             )),
+    extra_args = append(
+      extra_args_rr,
+      list(
+        label = paste("Subjects with >= 1", subjFilterText),
+        val = "Y",
+        .stats = c("count_unique_fraction")
+      )
+    ),
     show_labels = "hidden"
   ) %>%
   analyze(
@@ -156,7 +185,7 @@ lyt <- lyt %>%
     afun = a_freq_resp_var_j,
     extra_args = extra_args_rr2,
     nested = FALSE
-  )  %>%
+  ) %>%
   analyze(
     vars = "AGEGR1_DECODE",
     var_labels = "Age group (years), n/Ns (%)",
@@ -164,7 +193,7 @@ lyt <- lyt %>%
     afun = a_freq_resp_var_j,
     extra_args = extra_args_rr2,
     nested = FALSE
-  )  %>%
+  ) %>%
   analyze(
     vars = "RACE_DECODE",
     var_labels = "Race, n/Ns (%)",
@@ -194,10 +223,10 @@ result <- set_titles(result, titles)
 
 # Convert to tbl file and output table
 
-tt_to_tlgrtf(string_map = string_map, tt = head(result, 20), file = fileid, orientation = "landscape")
+tt_to_tlgrtf(string_map = string_map, tt = result, file = fileid, orientation = "landscape")
 ```
 ```{r result1, echo=FALSE, message=FALSE, warning=FALSE, test = list(result_v1 = "result")}
-tt_to_flextable_j(head(result, 20), tblid)
+tt_to_flextable_j(result)
 ```
 
 [Download RTF file](`r paste0(tolower(tblid), '.rtf')`)

@@ -8,8 +8,6 @@ subtitle: Subject Disposition by Subgroup
 {{< include ../../_utils/envir_hook.qmd >}}
 
 ```{r setup, echo = FALSE, warning = FALSE, message = FALSE}
-
-
 envsetup_config_name <- "default"
 
 # Path to the combined config file
@@ -78,13 +76,24 @@ adsl <- no_data_to_report(df = adsl, var = "DCSREAS")
 
 adsl <- adsl %>%
   filter(!!rlang::sym(popfl) == "Y") %>%
-  select(USUBJID, !!rlang::sym(trtvar), !!rlang::sym(popfl), SAFFL, PPROTFL, EOTSTT, DCTREAS, EOSSTT, DCSREAS, RACE_DECODE) %>%
+  select(
+    USUBJID,
+    !!rlang::sym(trtvar),
+    !!rlang::sym(popfl),
+    SAFFL,
+    PPROTFL,
+    EOTSTT,
+    DCTREAS,
+    EOSSTT,
+    DCSREAS,
+    RACE_DECODE
+  ) %>%
   create_colspan_var(
-    non_active_grp          = "Placebo",
+    non_active_grp = "Placebo",
     non_active_grp_span_lbl = " ",
-    active_grp_span_lbl     = "Active Study Agent",
-    colspan_var             = "colspan_trt",
-    trt_var                 = trtvar
+    active_grp_span_lbl = "Active Study Agent",
+    colspan_var = "colspan_trt",
+    trt_var = trtvar
   ) %>%
   mutate(
     rrisk_header = "Risk Difference (%) 95% CI",
@@ -92,9 +101,14 @@ adsl <- adsl %>%
   )
 
 # Added since label_fstr not working with cpct_relrisk
-adsl$RACE <- as.factor(as.character(ifelse(is.na(adsl$RACE_DECODE), NA, paste("Race:", adsl$RACE_DECODE))))
+adsl$RACE <- as.factor(as.character(ifelse(
+  is.na(adsl$RACE_DECODE),
+  NA,
+  paste("Race:", adsl$RACE_DECODE)
+)))
 
-colspan_trt_map <- create_colspan_map(adsl,
+colspan_trt_map <- create_colspan_map(
+  adsl,
   non_active_grp = "Placebo",
   non_active_grp_span_lbl = " ",
   active_grp_span_lbl = "Active Study Agent",
@@ -106,99 +120,160 @@ ref_path <- c("colspan_trt", " ", trtvar, "Placebo")
 # Define layout and build table:
 
 totdf <- tribble(
-  ~valname, ~label,  ~levelcombo,                                         ~exargs,
-  "Total",  "Total", c("Apalutamide", "Apalutamide Subgroup", "Placebo"), list()
+  ~valname , ~label  , ~levelcombo                                                 , ~exargs ,
+  "Total"  , "Total" , c("Xanomeline High Dose", "Xanomeline Low Dose", "Placebo") , list()
 )
 
-# show_denom <- FALSE # toggle on for qc of proper denominator used
-# rr_method <- "wald"
-# extra_args_rr <- list(method = rr_method, show_denom = show_denom, denomdf = adsl, denom = "N_subgroup")
 
-extra_args1 <- list(.alt_df_full = adsl, denom = "n_altdf", denom_by = "RACE", riskdiff = FALSE, .stats = "count_unique")
-extra_args2 <- list(.alt_df_full = adsl, denom = "n_altdf", denom_by = "RACE", riskdiff = FALSE, .stats = "count_unique_fraction")
-extra_args3 <- list(.alt_df_full = adsl, denom = "n_altdf", denom_by = "RACE", riskdiff = TRUE, method = "wald", .stats = "count_unique_fraction", ref_path = ref_path)
+extra_args1 <- list(
+  denom = "n_altdf",
+  denom_by = "RACE",
+  riskdiff = FALSE,
+  .stats = "count_unique"
+)
+extra_args2 <- list(
+  denom = "n_altdf",
+  denom_by = "RACE",
+  riskdiff = FALSE,
+  .stats = "count_unique_fraction"
+)
+extra_args3 <- list(
+  denom = "n_altdf",
+  denom_by = "RACE",
+  riskdiff = TRUE,
+  method = "wald",
+  .stats = "count_unique_fraction",
+  ref_path = ref_path
+)
 
 
-lyt <- basic_table(show_colcounts = TRUE, colcount_format = "N=xx", top_level_section_div = " ") %>%
-  split_cols_by("colspan_trt", split_fun = trim_levels_to_map(map = colspan_trt_map)) %>%
+lyt <- basic_table(
+  show_colcounts = TRUE,
+  colcount_format = "N=xx",
+  top_level_section_div = " "
+) %>%
+  split_cols_by(
+    "colspan_trt",
+    split_fun = trim_levels_to_map(map = colspan_trt_map)
+  ) %>%
   split_cols_by(trtvar) %>%
-  split_cols_by(trtvar, split_fun = add_combo_levels(totdf, keep_levels = "Total"), nested = FALSE) %>%
+  split_cols_by(
+    trtvar,
+    split_fun = add_combo_levels(totdf, keep_levels = "Total"),
+    nested = FALSE
+  ) %>%
   split_cols_by("rrisk_header", nested = FALSE) %>%
-  split_cols_by(trtvar, labels_var = "rrisk_label", split_fun = remove_split_levels("Placebo")) %>%
+  split_cols_by(
+    trtvar,
+    labels_var = "rrisk_label",
+    split_fun = remove_split_levels("Placebo")
+  ) %>%
   split_rows_by("RACE", split_fun = drop_split_levels, section_div = " ") %>%
-  summarize_row_groups("RACE",
+  summarize_row_groups(
+    "RACE",
     cfun = a_freq_j,
     indent_mod = 0L,
     # na_str = " ",
     extra_args = extra_args1
-  )  %>%
+  ) %>%
   # Analysis sets
-  analyze(popfl,
+  analyze(
+    popfl,
     var_labels = "Analysis set:",
     afun = a_freq_j,
-    extra_args = append(extra_args2,list(label="Full", val = "Y")),
+    extra_args = append(extra_args2, list(label = "Full", val = "Y")),
     show_labels = "visible"
   ) %>%
-  analyze("SAFFL",
+  analyze(
+    "SAFFL",
     afun = a_freq_j,
-    extra_args = append(extra_args2,list(label="Safety", val = "Y")),
+    extra_args = append(extra_args2, list(label = "Safety", val = "Y")),
     show_labels = "hidden",
     indent_mod = 1
   ) %>%
-  analyze("PPROTFL",
+  analyze(
+    "PPROTFL",
     afun = a_freq_j,
-    extra_args = append(extra_args2,list(label="Per protocol", val = "Y", extrablankline = TRUE)),
+    extra_args = append(
+      extra_args2,
+      list(label = "Per protocol", val = "Y", extrablankline = TRUE)
+    ),
     show_labels = "hidden",
     indent_mod = 1,
     na_str = " "
   ) %>%
   #  Ongoing
-  analyze("EOSSTT",
+  analyze(
+    "EOSSTT",
     show_labels = "hidden",
     afun = a_freq_j,
     na_str = " ",
-    extra_args = append(extra_args2, list(val = "ONGOING", label = "Subjects ongoing", extrablankline = TRUE))
+    extra_args = append(
+      extra_args2,
+      list(val = "ONGOING", label = "Subjects ongoing", extrablankline = TRUE)
+    )
   ) %>%
   # Treatment disposition
-  analyze("EOTSTT",
+  analyze(
+    "EOTSTT",
     table_names = "Compl_Trt",
     show_labels = "hidden",
     afun = a_freq_j,
-    extra_args = append(extra_args3, list(label = "Completed treatment", val = "COMPLETED"))
-  )  %>%
-  analyze("EOTSTT",
+    extra_args = append(
+      extra_args3,
+      list(label = "Completed treatment", val = "COMPLETED")
+    )
+  ) %>%
+  analyze(
+    "EOTSTT",
     table_names = "DC_Trt",
     show_labels = "hidden",
     afun = a_freq_j,
-    extra_args = append(extra_args3, list(label = "Discontinued treatment", val = "DISCONTINUED"))
+    extra_args = append(
+      extra_args3,
+      list(label = "Discontinued treatment", val = "DISCONTINUED")
+    )
   ) %>%
-  analyze("DCTREAS",
+  analyze(
+    "DCTREAS",
     show_labels = "hidden",
     indent_mod = 1,
     afun = a_freq_j,
-    extra_args = append(extra_args3, list(extrablankline = TRUE, drop_levels = TRUE))
-  )  %>%
+    extra_args = append(
+      extra_args3,
+      list(extrablankline = TRUE, drop_levels = TRUE)
+    )
+  ) %>%
   # Study disposition
-  analyze("EOSSTT",
+  analyze(
+    "EOSSTT",
     table_names = "Compl_Study",
     show_labels = "hidden",
     afun = a_freq_j,
-    extra_args = append(extra_args3, list(label = "Completed study", val ="COMPLETED"))
+    extra_args = append(
+      extra_args3,
+      list(label = "Completed study", val = "COMPLETED")
+    )
   ) %>%
-  analyze("EOSSTT",
+  analyze(
+    "EOSSTT",
     show_labels = "hidden",
     table_names = "DC_Study",
     afun = a_freq_j,
-    extra_args = append(extra_args3, list(label = "Discontinued study", val = "DISCONTINUED"))
+    extra_args = append(
+      extra_args3,
+      list(label = "Discontinued study", val = "DISCONTINUED")
+    )
   ) %>%
-  analyze("DCSREAS",
+  analyze(
+    "DCSREAS",
     show_labels = "hidden",
     indent_mod = 1,
     afun = a_freq_j,
     extra_args = append(extra_args3, list(drop_levels = TRUE))
   )
 
-result <- build_table(lyt, adsl)
+result <- build_table(lyt, adsl, alt_counts_df = adsl)
 
 # Post-Processing
 
@@ -216,7 +291,10 @@ result <- result %>%
     scorefun = jj_complex_scorefun(colpath = "Total")
   )
 
-result <- prune_table(result, prune_func = remove_rows(removerowtext = "No data to report"))
+result <- prune_table(
+  result,
+  prune_func = remove_rows(removerowtext = "No data to report")
+)
 
 # Add titles and footnotes:
 
@@ -224,10 +302,10 @@ result <- set_titles(result, tab_titles)
 
 # Convert to tbl file and output table:
 
-tt_to_tlgrtf(string_map = string_map, tt = head(result, 20), file = fileid, orientation = "landscape")
+tt_to_tlgrtf(string_map = string_map, tt = result, file = fileid, orientation = "landscape")
 ```
 ```{r result1, echo=FALSE, message=FALSE, warning=FALSE, test = list(result_v1 = "result")}
-tt_to_flextable_j(head(result, 20), tblid)
+tt_to_flextable_j(result)
 ```
 
 [Download RTF file](`r paste0(tolower(tblid), '.rtf')`)

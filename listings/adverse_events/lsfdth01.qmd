@@ -8,8 +8,6 @@ subtitle: Listing of Deaths
 {{< include ../../_utils/envir_hook.qmd >}}
 
 ```{r setup, echo = FALSE, warning = FALSE, message = FALSE}
-
-
 envsetup_config_name <- "default"
 
 # Path to the combined config file
@@ -51,6 +49,7 @@ library(envsetup)
 library(tern)
 library(dplyr)
 library(rtables)
+library(rlistings)
 library(junco)
 
 # Define script level parameters
@@ -107,25 +106,34 @@ lsting <- adsl_adexsum %>%
         tidytlg::roundSAS(AVAL, digits = 1, as_char = TRUE, na_char = NULL)
     ),
     # Optional Column: COL5/TRTEDT/TRTEDY
-    COL5 = ifelse(is.na(TRTEDT), "",
+    COL5 = ifelse(
+      is.na(TRTEDT),
+      "",
       paste0(
         toupper(format(TRTEDT, "%d%b%Y")),
-        " (", TRTEDY, ")"
+        " (",
+        TRTEDY,
+        ")"
       )
     ),
     # Optional Column: COL6/LDSTODTH
     COL6 = explicit_na(as.character(LDSTODTH), ""),
-    COL7 = ifelse(is.na(DTHDT), "",
+    COL7 = ifelse(
+      is.na(DTHDT),
+      "",
       paste0(
         toupper(format(DTHDT, "%d%b%Y")),
-        " (", DTHDY, ")"
+        " (",
+        DTHDY,
+        ")"
       )
     ),
     COL8 = paste(DTHCAUS, DTHTERM, sep = concat_sep)
   ) %>%
   arrange(COL0, COL1)
 
-lsting <- var_relabel(lsting,
+lsting <- var_relabel(
+  lsting,
   COL0 = "Treatment Group",
   COL1 = "Subject ID",
   COL2 = paste("Age (years)", "Sex", "Race", sep = concat_sep),
@@ -136,7 +144,8 @@ lsting <- var_relabel(lsting,
   # Optional Column: COL6/LDSTODTH
   COL6 = "Days From Last Study Treatment Administration to Death~[super c]",
   COL7 = "Date of Death (Study Day~[super d])",
-  COL8 = paste("Primary Cause of Death (Preferred Term",
+  COL8 = paste(
+    "Primary Cause of Death (Preferred Term",
     "Verbatim",
     sep = concat_sep
   )
@@ -156,10 +165,10 @@ result <- set_titles(result, tab_titles)
 
 # Output listing
 
-tt_to_tlgrtf(string_map = string_map, tt = head(result, 30), file = fileid, orientation = "landscape")
+tt_to_tlgrtf(string_map = string_map, tt = head(result, 100), file = fileid, orientation = "landscape")
 ```
 ```{r result1, echo=FALSE, message=FALSE, warning=FALSE, test = list(result_v1 = "result")}
-tt_to_flextable_j(head(result, 30), tblid)
+tt_to_flextable(head(result,100), tblid)
 ```
 
 [Download RTF file](`r paste0(tolower(tblid), '.rtf')`)

@@ -8,8 +8,6 @@ subtitle: Listing of Vital Signs
 {{< include ../../_utils/envir_hook.qmd >}}
 
 ```{r setup, echo = FALSE, warning = FALSE, message = FALSE}
-
-
 envsetup_config_name <- "default"
 
 # Path to the combined config file
@@ -52,7 +50,9 @@ library(tern)
 library(dplyr)
 library(tidyr)
 library(rtables)
+library(rlistings)
 library(junco)
+library(tidytlg)
 
 # Define script level parameters
 
@@ -87,18 +87,47 @@ lsting <- advs_list %>%
     AGE = explicit_na(as.character(AGE), ""),
     SEX = explicit_na(SEX, ""),
     RACE_DECODE = explicit_na(RACE_DECODE, ""),
-    ADT = ifelse(nchar(as.character(ADT)) == 10,
+    ADT = ifelse(
+      nchar(as.character(ADT)) == 10,
       toupper(format(ADT, "%d%b%Y")),
       ""
     ),
     ATM = ifelse(!is.na(ADTM), substr(as.character(ADTM), 12, 16), ""),
     ADYN = ifelse(!is.na(ADY), ADY, NA),
     ADY = ifelse(!is.na(ADY), ADY, "--"),
+    VAL_RES = case_when(
+      is.na(VALDIGMAX) & !is.na(AVAL) ~
+        tidytlg::roundSAS(AVAL, digits = 0, as_char = TRUE, na_char = NULL),
+      VALDIGMAX == 0 & !is.na(AVAL) ~
+        tidytlg::roundSAS(AVAL, digits = 0, as_char = TRUE, na_char = NULL),
+      VALDIGMAX == 1 & !is.na(AVAL) ~
+        tidytlg::roundSAS(AVAL, digits = 1, as_char = TRUE, na_char = NULL),
+      VALDIGMAX == 2 & !is.na(AVAL) ~
+        tidytlg::roundSAS(AVAL, digits = 2, as_char = TRUE, na_char = NULL),
+      VALDIGMAX == 3 & !is.na(AVAL) ~
+        tidytlg::roundSAS(AVAL, digits = 3, as_char = TRUE, na_char = NULL),
+      VALDIGMAX >= 4 & !is.na(AVAL) ~
+        tidytlg::roundSAS(AVAL, digits = 4, as_char = TRUE, na_char = NULL),
+      !is.na(AVALC) ~ AVALC
+    ),
+    VAL_HL = case_when(
+      !is.na(ANRIND) ~ substr(ANRIND, 1, 1),
+      .default = NA
+    ),
+    VAL = case_when(
+      !is.na(VAL_RES) & !is.na(VAL_HL) ~ paste(VAL_RES, VAL_HL, sep = " "),
+      !is.na(VAL_RES) & is.na(VAL_HL) ~ VAL_RES,
+      .default = NA
+    ),
     CRIT1L = ifelse(CRIT1FL == "Y", as.character(CRIT1), NA),
     CRIT2L = ifelse(CRIT2FL == "Y", as.character(CRIT2), NA),
     CRIT3L = ifelse(CRIT3FL == "Y", as.character(CRIT3), NA)
   ) %>%
-  unite("CRITL", CRIT1L, CRIT2L, CRIT3L,
+  unite(
+    "CRITL",
+    CRIT1L,
+    CRIT2L,
+    CRIT3L,
     sep = ", ",
     na.rm = TRUE,
     remove = FALSE
@@ -123,21 +152,7 @@ lsting <- advs_list %>%
     COL5 = explicit_na(AVISIT, ""),
     # Optional Column: COL6/ATPT
     COL6 = explicit_na(ATPT, ""),
-    COL7 = case_when(
-      is.na(VALDIGMAX) & !is.na(AVAL) ~
-        tidytlg::roundSAS(AVAL, digits = 0, as_char = TRUE, na_char = NULL),
-      VALDIGMAX == 0 & !is.na(AVAL) ~
-        tidytlg::roundSAS(AVAL, digits = 0, as_char = TRUE, na_char = NULL),
-      VALDIGMAX == 1 & !is.na(AVAL) ~
-        tidytlg::roundSAS(AVAL, digits = 1, as_char = TRUE, na_char = NULL),
-      VALDIGMAX == 2 & !is.na(AVAL) ~
-        tidytlg::roundSAS(AVAL, digits = 2, as_char = TRUE, na_char = NULL),
-      VALDIGMAX == 3 & !is.na(AVAL) ~
-        tidytlg::roundSAS(AVAL, digits = 3, as_char = TRUE, na_char = NULL),
-      VALDIGMAX >= 4 & !is.na(AVAL) ~
-        tidytlg::roundSAS(AVAL, digits = 4, as_char = TRUE, na_char = NULL),
-      !is.na(AVALC) ~ AVALC
-    ),
+    COL7 = VAL,
     COL8 = case_when(
       is.na(CHG) ~ "",
       is.na(VALDIGMAX) & !is.na(AVAL) & !is.na(CHG) ~
@@ -153,18 +168,21 @@ lsting <- advs_list %>%
       VALDIGMAX >= 4 & !is.na(CHG) ~
         tidytlg::roundSAS(CHG, digits = 4, as_char = TRUE, na_char = NULL)
     ),
-    # Optional Column: COL9/CRITy
+    # Optional Column: COL9/CRITy/ATOXGR
     COL9 = explicit_na(CRITL, ""),
+    # COL9 = explicit_na(ATOXGR, ""),
   ) %>%
   arrange(COL0, COL1, COL2, COL3, !is.na(ADYN), ADYN, ADTM)
 
-lsting <- var_relabel(lsting,
+lsting <- var_relabel(
+  lsting,
   COL0 = "Treatment Group",
   COL1 = "Subject ID",
   COL2 = paste("Age (years)", "Sex", "Race", sep = concat_sep),
-  COL3 = "Vital Signs (unit)",
+  COL3 = "Vital Sign (unit)",
   # Optional Variable: ATM
-  COL4 = paste("Assessment Date",
+  COL4 = paste(
+    "Assessment Date",
     "Time (Study Day~[super a])",
     sep = concat_sep
   ),
@@ -173,8 +191,9 @@ lsting <- var_relabel(lsting,
   COL6 = "Time Point",
   COL7 = "Result",
   COL8 = "Change From Baseline",
-  # Optional Column: COL9/CRITy
+  # Optional Column: COL9/CRITy/ATOXGR
   COL9 = "Criteria"
+  # COL9 = "Grade"
 )
 
 # Build listing
@@ -191,13 +210,13 @@ result <- set_titles(result, tab_titles)
 
 # Output listing
 
-tt_to_tlgrtf(string_map = string_map, tt = head(result, 30),
+tt_to_tlgrtf(string_map = string_map, tt = head(result, 100),
   file = fileid,
   orientation = "landscape"
 )
 ```
 ```{r result1, echo=FALSE, message=FALSE, warning=FALSE, test = list(result_v1 = "result")}
-tt_to_flextable_j(head(result, 30), tblid)
+tt_to_flextable(head(result,100), tblid)
 ```
 
 [Download RTF file](`r paste0(tolower(tblid), '.rtf')`)

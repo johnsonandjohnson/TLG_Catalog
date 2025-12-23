@@ -8,8 +8,6 @@ subtitle: Demographics and Baseline Characteristics
 {{< include ../../_utils/envir_hook.qmd >}}
 
 ```{r setup, echo = FALSE, warning = FALSE, message = FALSE}
-
-
 envsetup_config_name <- "default"
 
 # Path to the combined config file
@@ -60,7 +58,7 @@ fileid <- tblid
 titles <- get_titles_from_file(input_path = '../../_data/', tblid)
 string_map <- default_str_map
 
-popfl <- "SAFFL"
+popfl <- "FASFL"
 trtvar <- "TRT01P"
 ctrl_grp <- "Placebo"
 
@@ -71,13 +69,36 @@ adsl <- pharmaverseadamjnj::adsl %>%
 
 # Further script level parameters, after having read in main data
 
-demog_vars <- c("SEX", "AGE", "AGEGR1", "RACE", "ETHNIC", "REGION1", "COUNTRY", "WEIGHTBL", "HEIGHTBL", "BMIBL", "BMIBLG1", "BSABL")
+demog_vars <- c(
+  "SEX",
+  "AGE",
+  "AGEGR1",
+  "RACE",
+  "ETHNIC",
+  "WEIGHTBL",
+  "WGTGR1",
+  "HEIGHTBL",
+  "BMIBL",
+  "BMIBLG1",
+  "BSABL",
+  "REGION1",
+  "COUNTRY"
+)
 ## make it named vars so that demog_vars[xx] with xx subset of vars still works
 names(demog_vars) <- demog_vars
 ## retrieve labels
 demog_labels <- formatters::var_labels(adsl)[demog_vars]
 
-cat_vars <- c("SEX", "AGEGR1", "RACE", "ETHNIC", "REGION1", "COUNTRY", "BMIBLG1")
+cat_vars <- c(
+  "SEX",
+  "AGEGR1",
+  "RACE",
+  "ETHNIC",
+  "WGTGR1",
+  "BMIBLG1",
+  "REGION1",
+  "COUNTRY"
+)
 cat_vars <- intersect(cat_vars, demog_vars)
 # categorical vars get ", n (%)" added into the label
 demog_labels[cat_vars] <- paste0(demog_labels[cat_vars], ", n (%)")
@@ -92,6 +113,7 @@ demog_displ_vars <- tibble(orig = demog_vars, displ = vars_decode) %>%
 
 
 BMIBLG1_avar <- intersect(demog_displ_vars, c("BMIBLG1", "BMIBLG1_DECODE"))
+WGTGR1_avar <- intersect(demog_displ_vars, c("WGTGR1", "WGTGR1_DECODE"))
 AGEGR1_avar <- intersect(demog_displ_vars, c("AGEGR1", "AGEGR1_DECODE"))
 
 ## JJCS standards: split >= 65 into 2 levels
@@ -102,24 +124,45 @@ new_age_levels <- list(c(">=65"), list(c(">=65 to <75", ">=75")))
 ### For BMIBLG1 :add ", n(%)" to the levels of the variable -- not ideal, but the easiest way to get it done
 
 levelsBMI <- levels(adsl[[BMIBLG1_avar]])
-adsl[[BMIBLG1_avar]] <- factor(as.character(adsl[[BMIBLG1_avar]]), levels = levelsBMI, labels = paste0(levelsBMI, ", n (%)"))
+adsl[[BMIBLG1_avar]] <- factor(
+  as.character(adsl[[BMIBLG1_avar]]),
+  levels = levelsBMI,
+  labels = paste0(levelsBMI, ", n (%)")
+)
+
+### For WGTGR1 :add ", n(%)" to the levels of the variable -- not ideal, but the easiest way to get it done
+levelsWGT <- levels(adsl[[WGTGR1_avar]])
+adsl[[WGTGR1_avar]] <- factor(
+  as.character(adsl[[WGTGR1_avar]]),
+  levels = levelsWGT,
+  labels = paste0(levelsWGT, ", n (%)")
+)
 
 # to ensure alphabetical ordering, as COUNTRY_DECODE is factor with order according COUNTRY, which is alphabetical on 3-letter code
-adsl$COUNTRY_DECODE <- factor(as.character(adsl$COUNTRY_DECODE), levels = sort(unique(as.character(adsl$COUNTRY_DECODE))))
+adsl$COUNTRY_DECODE <- factor(
+  as.character(adsl$COUNTRY_DECODE),
+  levels = sort(unique(as.character(adsl$COUNTRY_DECODE)))
+)
 
 # Process data:
 
 ## restrict to core variables only and restrict to population
 adsl <- adsl %>%
-  select(USUBJID, starts_with("TRT01"), all_of(c(demog_vars, demog_displ_vars, popfl, "AGEGR1N"))) %>%
+  select(
+    USUBJID,
+    starts_with("TRT01"),
+    all_of(c(demog_vars, demog_displ_vars, popfl, "AGEGR1N"))
+  ) %>%
   filter(.data[[popfl]] == "Y")
 
 
-adsl$colspan_trt <- factor(ifelse(adsl[[trtvar]] == ctrl_grp, " ", "Active Study Agent"),
+adsl$colspan_trt <- factor(
+  ifelse(adsl[[trtvar]] == ctrl_grp, " ", "Active Study Agent"),
   levels = c("Active Study Agent", " ")
 )
 
-colspan_trt_map <- create_colspan_map(adsl,
+colspan_trt_map <- create_colspan_map(
+  adsl,
   non_active_grp = ctrl_grp,
   non_active_grp_span_lbl = " ",
   active_grp_span_lbl = "Active Study Agent",
@@ -128,7 +171,13 @@ colspan_trt_map <- create_colspan_map(adsl,
 )
 
 prec_var <- function(var, cap = 4) {
-  prec <- tidytlg:::make_precision_data(df = adsl, decimal = cap, precisionby = NULL, precisionon = var) %>% pull(decimal)
+  prec <- tidytlg:::make_precision_data(
+    df = adsl,
+    decimal = cap,
+    precisionby = NULL,
+    precisionon = var
+  ) %>%
+    pull(decimal)
 
   cat(paste("Precision of variable", var, ":", prec, "\n"))
 
@@ -178,7 +227,10 @@ lyt <- basic_table(
   show_colcounts = TRUE,
   colcount_format = "N=xx"
 ) %>%
-  split_cols_by("colspan_trt", split_fun = trim_levels_to_map(map = colspan_trt_map)) %>%
+  split_cols_by(
+    "colspan_trt",
+    split_fun = trim_levels_to_map(map = colspan_trt_map)
+  ) %>%
   split_cols_by(trtvar) %>%
   add_overall_col("Total") %>%
   append_topleft("Characteristic") %>%
@@ -190,19 +242,23 @@ lyt <- basic_table(
     extra_args = list(
       .stats = c("n", "mean_sd", "median", "range", "count_fraction"),
       .labels = c("n" = "N", "range" = "Min, max"),
-      .formats = c(P1_precision,
-        "count_fraction" = jjcsformat_count_fraction
-      ),
-      .indent_mods = c("n" = 0L, "mean_sd" = 1L, "median" = 1L, "range" = 1L, "count_fraction" = 1L)
+      .formats = c(P1_precision, "count_fraction" = jjcsformat_count_fraction),
+      .indent_mods = c(
+        "n" = 0L,
+        "mean_sd" = 1L,
+        "median" = 1L,
+        "range" = 1L,
+        "count_fraction" = 1L
+      )
     )
     # ,section_div = " "
   ) %>%
   ### special requirements for AGEGR1 : add extra combined level
   analyze(
     vars = AGEGR1_avar,
-    afun = a_freq_j,    
+    afun = a_freq_j,
     extra_args = list(
-      denom = "n_df", 
+      denom = "n_df",
       new_levels = new_age_levels,
       .indent_mods = 2L,
       addstr2levs = ", n (%)",
@@ -217,10 +273,14 @@ lyt <- basic_table(
     extra_args = list(
       .stats = c("n", "mean_sd", "median", "range", "count_fraction"),
       .labels = c("n" = "N", "range" = "Min, max"),
-      .formats = c(P2a_precision,
-        "count_fraction" = jjcsformat_count_fraction
-      ),
-      .indent_mods = c("n" = 0L, "mean_sd" = 1L, "median" = 1L, "range" = 1L, "count_fraction" = 1L)
+      .formats = c(P2a_precision, "count_fraction" = jjcsformat_count_fraction),
+      .indent_mods = c(
+        "n" = 0L,
+        "mean_sd" = 1L,
+        "median" = 1L,
+        "range" = 1L,
+        "count_fraction" = 1L
+      )
     )
     # ,section_div = " "
   ) %>%
@@ -231,10 +291,14 @@ lyt <- basic_table(
     extra_args = list(
       .stats = c("n", "mean_sd", "median", "range", "count_fraction"),
       .labels = c("n" = "N", "range" = "Min, max"),
-      .formats = c(P2b_precision,
-        "count_fraction" = jjcsformat_count_fraction
-      ),
-      .indent_mods = c("n" = 0L, "mean_sd" = 1L, "median" = 1L, "range" = 1L, "count_fraction" = 1L)
+      .formats = c(P2b_precision, "count_fraction" = jjcsformat_count_fraction),
+      .indent_mods = c(
+        "n" = 0L,
+        "mean_sd" = 1L,
+        "median" = 1L,
+        "range" = 1L,
+        "count_fraction" = 1L
+      )
     )
     # ,section_div = " "
   )
@@ -246,13 +310,16 @@ result <- build_table(lyt, adsl)
 # update section dividers
 section_div(result, only_sep_sections = TRUE) <- " "
 
-# remove N and label for BMI and AGEGR1 (only label)
+# remove N and label for BMI, AGEGR1, WGTGR1 (only label)
 tt_at_path(result, path = c(BMIBLG1_avar, "n")) <- NULL
+
+tt_at_path(result, path = c(WGTGR1_avar, "n")) <- NULL
 
 label_at_path(result, path = c(AGEGR1_avar)) <- NULL
 label_at_path(result, path = c(BMIBLG1_avar)) <- NULL
+label_at_path(result, path = c(WGTGR1_avar)) <- NULL
 
-# Remove some section dividers : after AGE and after BMIBL
+# Remove some section dividers : after AGE, BMIBL, WEIGHTBL
 rpths <- row_paths(result)
 
 # identify list with label
@@ -265,11 +332,18 @@ gettbl_label_p1 <- function(label) {
 }
 
 get_trpath_label <- function(rpths, label) {
-  mypth <- rpths[[min(which(unlist(lapply(rpths, FUN = gettbl_label_p1(label)))))]]
+  mypth <- rpths[[min(which(unlist(lapply(
+    rpths,
+    FUN = gettbl_label_p1(label)
+  ))))]]
 }
 
 section_div_at_path(result, get_trpath_label(rpths, "BMIBL")) <- NA_character_
 section_div_at_path(result, get_trpath_label(rpths, "AGE")) <- NA_character_
+section_div_at_path(
+  result,
+  get_trpath_label(rpths, "WEIGHTBL")
+) <- NA_character_
 
 
 ### update indents
@@ -279,12 +353,27 @@ upd_indent_mod <- function(result, var, levels, addindent) {
     addindi <- addindent[i]
     leveli <- paste0("count_fraction.", levels[i])
     path <- c(var, leveli)
-    indent_mod(tt_at_path(result, path)) <- indent_mod(tt_at_path(result, path)) + addindi
+    indent_mod(tt_at_path(result, path)) <- indent_mod(tt_at_path(
+      result,
+      path
+    )) +
+      addindi
   }
   return(result)
 }
 
-result <- upd_indent_mod(result, var = BMIBLG1_avar, levels = levels(adsl[[BMIBLG1_avar]]), addindent = rep(1, times = length(levels(adsl[[BMIBLG1_avar]]))))
+result <- upd_indent_mod(
+  result,
+  var = BMIBLG1_avar,
+  levels = levels(adsl[[BMIBLG1_avar]]),
+  addindent = rep(1, times = length(levels(adsl[[BMIBLG1_avar]])))
+)
+result <- upd_indent_mod(
+  result,
+  var = WGTGR1_avar,
+  levels = levels(adsl[[WGTGR1_avar]]),
+  addindent = rep(1, times = length(levels(adsl[[WGTGR1_avar]])))
+)
 
 # Add titles and footnotes:
 
@@ -292,10 +381,10 @@ result <- set_titles(result, titles)
 
 # Convert to tbl file and output table:
 
-tt_to_tlgrtf(string_map = string_map, tt = head(result, 20), file = fileid)
+tt_to_tlgrtf(string_map = string_map, tt = result, file = fileid)
 ```
 ```{r result1, echo=FALSE, message=FALSE, warning=FALSE, test = list(result_v1 = "result")}
-tt_to_flextable_j(head(result, 20), tblid)
+tt_to_flextable_j(result)
 ```
 
 [Download RTF file](`r paste0(tolower(tblid), '.rtf')`)

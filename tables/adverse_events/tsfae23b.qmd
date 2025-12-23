@@ -8,8 +8,6 @@ subtitle: Subjects With Related Fatal Treatment-emergent Adverse Events by Prefe
 {{< include ../../_utils/envir_hook.qmd >}}
 
 ```{r setup, echo = FALSE, warning = FALSE, message = FALSE}
-
-
 envsetup_config_name <- "default"
 
 # Path to the combined config file
@@ -69,11 +67,12 @@ if (combined_colspan_trt == TRUE) {
   # If no combined treatment column(s) needed for your study then this next
   # section of code can be removed
   # Set up levels and label for the required combined columns
-  add_combo <- add_combo_facet("Combined",
+  add_combo <- add_combo_facet(
+    "Combined",
     label = "Combined",
     levels = c(
-      "Apalutamide",
-      "Apalutamide Subgroup"
+      "Xanomeline High Dose",
+      "Xanomeline Low Dose"
     )
   )
 
@@ -100,7 +99,13 @@ adsl <- pharmaverseadamjnj::adsl %>%
     colspan_var = "colspan_trt",
     trt_var = trtvar
   ) %>%
-  select(STUDYID, USUBJID, !!rlang::sym(popfl), !!rlang::sym(trtvar), colspan_trt)
+  select(
+    STUDYID,
+    USUBJID,
+    !!rlang::sym(popfl),
+    !!rlang::sym(trtvar),
+    colspan_trt
+  )
 
 trt_map <- create_colspan_map(
   df = adsl,
@@ -113,16 +118,26 @@ trt_map <- create_colspan_map(
 ref_path <- c("colspan_trt", " ", trtvar, "Placebo")
 
 adae0 <- pharmaverseadamjnj::adae %>%
-  filter(!!rlang::sym(popfl) == "Y" &
-    !!rlang::sym(aerelvar) == "RELATED" &
-    TRTEMFL == "Y" &
-    AEOUT == "FATAL") %>%
-  left_join(subset(adsl, select = c("STUDYID", "USUBJID", "colspan_trt")),
+  filter(
+    !!rlang::sym(popfl) == "Y" &
+      !!rlang::sym(aerelvar) == "RELATED" &
+      TRTEMFL == "Y" &
+      AEOUT == "FATAL"
+  ) %>%
+  left_join(
+    subset(adsl, select = c("STUDYID", "USUBJID", "colspan_trt")),
     by = c("STUDYID", "USUBJID")
   ) %>%
   select(
-    STUDYID, USUBJID, !!rlang::sym(trtvar), !!rlang::sym(popfl), !!rlang::sym(aerelvar),
-    TRTEMFL, AEOUT, AEDECOD, colspan_trt
+    STUDYID,
+    USUBJID,
+    !!rlang::sym(trtvar),
+    !!rlang::sym(popfl),
+    !!rlang::sym(aerelvar),
+    TRTEMFL,
+    AEOUT,
+    AEDECOD,
+    colspan_trt
   )
 
 if (nrow(adae0) == 0) {
@@ -155,9 +170,11 @@ lyt <- lyt %>%
     vars = "TRTEMFL",
     show_labels = "hidden",
     afun = a_freq_j,
-    extra_args = list(label = "Subjects with >=1 related fatal AE",
-                      .stats = c("count_unique_fraction"),
-                      val = "Y"),
+    extra_args = list(
+      label = "Subjects with >=1 related fatal AE",
+      .stats = c("count_unique_fraction"),
+      val = "Y"
+    ),
     section_div = c(" ")
   )
 
@@ -182,9 +199,9 @@ result <- build_table(lyt, df = adae, alt_counts_df = adsl)
 
 if (nrow(adae0) > 0) {
   # Post-Processing step to sort by descending count in the Combined
-  # Apalutamide column
+  # Xanomeline High Dose column
   result <- sort_at_path(
-    tt = head(result, 20),
+    tt = result,
     path = c("root", "AEDECOD"),
     scorefun = jj_complex_scorefun(
       spanningheadercolvar = "colspan_trt",
@@ -209,10 +226,10 @@ result <- set_titles(result, tab_titles)
 
 # Convert to tbl file and output table
 
-tt_to_tlgrtf(string_map = string_map, tt = head(result, 20), file = fileid)
+tt_to_tlgrtf(string_map = string_map, tt = result, file = fileid)
 ```
 ```{r result1, echo=FALSE, message=FALSE, warning=FALSE, test = list(result_v1 = "result")}
-tt_to_flextable_j(head(result, 20), tblid)
+tt_to_flextable_j(result)
 ```
 
 [Download RTF file](`r paste0(tolower(tblid), '.rtf')`)
