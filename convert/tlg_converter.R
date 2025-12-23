@@ -143,3 +143,5 @@ move_into("tables/serious_adverse_events", "tables/adverse_events")
 move_into("tables/deaths", "tables/adverse_events")
 move_into("tables/adverse_events_of_special_interest", "tables/adverse_events")
 move_into("tables/discontinuations_and/or_dose_modifications_due_to_adverse_events", "tables/adverse_events")
+
+move_into("tables/study_treatment_compliance", "tables/exposure")

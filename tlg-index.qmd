@@ -204,7 +204,7 @@ toc-depth: 4
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSIEX09 -- Distribution of Subjects by Study Treatment Lot](./tables/exposure/tsiex09.qmd)
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSIEX10 -- Study Treatment Compliance](./tables/study_treatment_compliance/tsiex10.qmd)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSIEX10 -- Study Treatment Compliance](./tables/exposure/tsiex10.qmd)
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSIEX11 -- Incidence and Reason for Treatment Modification for Infusions](./tables/exposure/tsiex11.qmd)
 
