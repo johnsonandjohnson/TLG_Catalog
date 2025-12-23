@@ -296,7 +296,7 @@ generate_qmd_content <- function(r_content, base_name, base_name_upper, first_le
       filtered_chunks,
       "```",
       "```{r result1, echo=FALSE, message=FALSE, warning=FALSE, test = list(result_v1 = \"result\")}",
-      "tt_to_flextable_j(result)",
+      "tt_to_flextable_j(result, tblid)",
       "```",
       "",
       "[Download RTF file](`r paste0(tolower(tblid), '.rtf')`)",

@@ -718,7 +718,7 @@ result4 <- build_result_parcat3(
 result <- build_result_parcat3(PARCAT3sel = "General chemistry", tblid = tblid)
 ```
 ```{r result1, echo=FALSE, message=FALSE, warning=FALSE, test = list(result_v1 = "result")}
-tt_to_flextable_j(result)
+tt_to_flextable_j(head(result, 25), tblid)
 ```
 
 [Download RTF file](`r paste0(tolower(tblid), '.rtf')`)

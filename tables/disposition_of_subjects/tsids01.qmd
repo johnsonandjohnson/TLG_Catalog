@@ -125,7 +125,7 @@ result <- build_table(lyt, df = adsl, alt_counts_df = adsl_unq)
 
 # Post-processing step to sort by descending count in the Combined column
 result <- sort_at_path(
-  tt = result,
+  tt = head(result, 25),
   path = c("root", "SCRFFL", "Y", "DCSCREEN"),
   scorefun = jj_complex_scorefun(
     spanningheadercolvar = NULL,
@@ -176,10 +176,10 @@ result <- set_titles(result, tab_titles)
 
 # Convert to tbl file and output table
 
-tt_to_tlgrtf(string_map = string_map, tt = result, file = fileid)
+tt_to_tlgrtf(string_map = string_map, tt = head(result, 25), file = fileid)
 ```
 ```{r result1, echo=FALSE, message=FALSE, warning=FALSE, test = list(result_v1 = "result")}
-tt_to_flextable_j(result)
+tt_to_flextable_j(head(result, 25), tblid)
 ```
 
 [Download RTF file](`r paste0(tolower(tblid), '.rtf')`)
