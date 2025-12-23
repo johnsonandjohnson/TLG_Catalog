@@ -191,7 +191,7 @@ result <- set_titles(result, tab_titles)
 
 # Output listing
 
-tt_to_tlgrtf(string_map = string_map, tt = head(result, 100),
+tt_to_tlgrtf(string_map = string_map, tt = head(result, 30),
   file = fileid,
   orientation = "landscape"
 )

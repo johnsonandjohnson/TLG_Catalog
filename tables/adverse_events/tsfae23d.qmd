@@ -184,7 +184,7 @@ if (nrow(adae0) > 0) {
   # Post-Processing step to sort by descending count in the Combined
   # Apalutamide column
   result <- sort_at_path(
-    tt = result,
+    tt = head(result, 20),
     path = c("root", "AEDECOD"),
     scorefun = jj_complex_scorefun(
       spanningheadercolvar = "colspan_trt",
@@ -209,10 +209,10 @@ result <- set_titles(result, tab_titles)
 
 # Convert to tbl file and output table
 
-tt_to_tlgrtf(string_map = string_map, tt = result, file = fileid)
+tt_to_tlgrtf(string_map = string_map, tt = head(result, 20), file = fileid)
 ```
 ```{r result1, echo=FALSE, message=FALSE, warning=FALSE, test = list(result_v1 = "result")}
-tt_to_flextable(result, theme = theme_docx_default(font_size = 6))
+tt_to_flextable(head(result, 20), theme = theme_docx_default(font_size = 6))
 ```
 
 [Download RTF file](`r paste0(tolower(tblid), '.rtf')`)
