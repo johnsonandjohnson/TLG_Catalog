@@ -10,6 +10,7 @@ subtitle: Listing of Demographics and Baseline Characteristics
 ```{r setup, echo = FALSE, warning = FALSE, message = FALSE}
 library(rtables.officer)
 
+options(docx.add_datetime = FALSE, tidytlg.add_datetime = FALSE)
 envsetup_config_name <- "default"
 
 # Path to the combined config file

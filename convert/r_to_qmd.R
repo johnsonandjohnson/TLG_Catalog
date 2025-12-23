@@ -211,6 +211,8 @@ generate_qmd_content <- function(r_content, base_name, base_name_upper, first_le
   # Create setup code chunk
   setup_chunk <- c(
     "```{r setup, echo = FALSE, warning = FALSE, message = FALSE}",
+    "options(docx.add_datetime = FALSE, tidytlg.add_datetime = FALSE)",
+    "",
     "envsetup_config_name <- \"default\"",
     "",
     "# Path to the combined config file",

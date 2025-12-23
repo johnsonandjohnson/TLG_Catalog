@@ -8,8 +8,8 @@ subtitle: Study Treatment Administration
 {{< include ../../_utils/envir_hook.qmd >}}
 
 ```{r setup, echo = FALSE, warning = FALSE, message = FALSE}
+options(docx.add_datetime = FALSE, tidytlg.add_datetime = FALSE)
 envsetup_config_name <- "default"
-
 # Path to the combined config file
 envsetup_file_path <- file.path("../..", "envsetup.yml")
 
