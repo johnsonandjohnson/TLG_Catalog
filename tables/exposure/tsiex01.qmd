@@ -225,7 +225,7 @@ lyt <- lyt %>%
   analyze(
     "AVAL",
     afun = a_summarize_ex_j,
-    var_labels = "Duration of treatment~[super a], ([unit])",
+    var_labels = "Duration~[super a], ([unit])", #TODO FIX THIS
     show_labels = "visible",
     indent_mod = 0L,
     extra_args = list(
@@ -251,7 +251,7 @@ lyt <- lyt %>%
   ) %>%
   analyze(
     paste0("CRIT", 1, "FL"),
-    var_labels = "Duration of treatment~[super b], n (%)",
+    var_labels = "Duration~[super b], n (%)", #TODO FIX THIS
     afun = a_freq_j,
     extra_args = append(
       extra_args_rr,
