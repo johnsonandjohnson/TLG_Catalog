@@ -1,0 +1,26 @@
+"label","col 1","col 2","col 3","row_type","anbr","indentme","roworder","newrows"
+"Day 1 - Pre-dose","","","","HEADER",2,0,0,0
+"N","72","96","168","N",2,1,1,0
+"Number of subjects with values below LLOQxMRD, n (%)","72 (100.0%)","96 (100.0%)","168 (100.0%)","VALUE",2,2,2,0
+"Day 1 - 5 Min Post-dose","","","","HEADER",3,0,2,1
+"N","72","96","168","N",3,1,3,0
+"Number of subjects with values below LLOQxMRD, n (%)","0","0","0","VALUE",3,2,4,0
+"Day 1 - 30 Min Post-dose","","","","HEADER",4,0,4,1
+"N","72","96","168","N",4,1,5,0
+"Number of subjects with values below LLOQxMRD, n (%)","0","0","0","VALUE",4,2,6,0
+"Day 1 - 1h Post-dose","","","","HEADER",5,0,6,1
+"N","72","96","168","N",5,1,7,0
+"Number of subjects with values below LLOQxMRD, n (%)","0","0","0","VALUE",5,2,8,0
+"Day 1 - 1.5h Post-dose","","","","HEADER",6,0,8,1
+"N","72","96","168","N",6,1,9,0
+"Number of subjects with values below LLOQxMRD, n (%)","0","0","0","VALUE",6,2,10,0
+"Day 1 - 2h Post-dose","","","","HEADER",7,0,10,1
+"N","72","96","168","N",7,1,11,0
+"Number of subjects with values below LLOQxMRD, n (%)","0","0","0","VALUE",7,2,12,0
+"Day 1 - 4h Post-dose","","","","HEADER",8,0,12,1
+"N","72","96","168","N",8,1,13,0
+"Number of subjects with values below LLOQxMRD, n (%)","0","0","0","VALUE",8,2,14,0
+"Day 1 - 0-6h Post-dose","","","","HEADER",9,0,14,1
+"N","72","96","168","N",9,1,15,0
+"Number of subjects with values below LLOQxMRD, n (%)","0","0","0","VALUE",9,2,16,0
+"Day 1 - 6h Post-dose","","","","HEADER",10,0,16,1
