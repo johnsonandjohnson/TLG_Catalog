@@ -164,7 +164,7 @@ lyt <- lyt %>%
   analyze(
     "AVALCAT1",
     nested = FALSE,
-    var_labels = "Compliance category~[super a], n (%)",
+    var_labels = "Compliance ~[super a], n (%)", #TODO: FIX THIS
     afun = a_freq_j,
     extra_args = list(
       denom = "n_df",
