@@ -56,7 +56,7 @@ library(junco)
 
 tblid <- "TPK03"
 fileid <- tblid
-get_titles_from_file(input_path = '../../_data/', tblid)
+titles <- get_titles_from_file(input_path = '../../_data/', tblid)
 string_map <- default_str_map
 popfl <- "PKFL"
 trtvar <- "TRT01A"
