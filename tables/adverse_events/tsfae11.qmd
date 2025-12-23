@@ -8,7 +8,7 @@ subtitle: Subjects With Treatment-emergent Adverse Events With Frequency ≥x% i
 {{< include ../../_utils/envir_hook.qmd >}}
 
 ```{r setup, echo = FALSE, warning = FALSE, message = FALSE}
-library(rtables.officer)
+
 
 envsetup_config_name <- "default"
 
@@ -191,7 +191,7 @@ result <- set_titles(result, tab_titles)
 tt_to_tlgrtf(string_map = string_map, tt = head(result, 20), file = fileid, orientation = "landscape")
 ```
 ```{r result1, echo=FALSE, message=FALSE, warning=FALSE, test = list(result_v1 = "result")}
-tt_to_flextable_j(head(result, 20))
+tt_to_flextable_j(head(result, 20), tblid)
 ```
 
 [Download RTF file](`r paste0(tolower(tblid), '.rtf')`)
