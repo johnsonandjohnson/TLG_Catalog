@@ -51,7 +51,7 @@ library(junco)
 
 tblid <- "TPK01b"
 fileid <- write_path(opath, tblid)
-
+titles <- get_titles_from_file(tblid)
 popfl <- "PKFL"
 trtvar <- "TRT01A"
 
@@ -162,8 +162,7 @@ for (i in seq_along(trt_grps)) {
   # Add titles and footnotes:
   ##############################################################################
   
-  result <- set_titles(result, get_titles_from_file(tblid)
-string_map <- default_str_map)
+  result <- set_titles(result, titles)
   
   ##############################################################################
   # Convert to tbl file and output table:
