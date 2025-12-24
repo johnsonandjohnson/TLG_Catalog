@@ -89,8 +89,8 @@ website:
     copy-button: true
   page-navigation: true
   reader-mode: true
-  site-url: https://johnsonandjohnson.github.io/tlg-catalog
-  repo-url: https://github.com/johnsonandjohnson/tlg-catalog
+  site-url: https://johnsonandjohnson.github.io/TLG_Catalog
+  repo-url: https://github.com/johnsonandjohnson/TLG_Catalog
   repo-subdir: book
   repo-actions: [edit, issue]
   repo-branch: main
@@ -127,10 +127,10 @@ website:
     giscus:
       # Reference: https://quarto.org/docs/reference/projects/books.html#giscus
       # Also https://giscus.app/ for all options
-      repo: johnsonandjohnson/tlg-catalog
+      repo: johnsonandjohnson/TLG_Catalog
       # repo-id: "MDEwOlJlcG9zaXRvcnk0MDYxNTcwMjg="
       category: General
-      # category-id: "DIC_kwDOGDV25M4CVBzs"
+      # category-id: "DIC_kwDOGDV25M4CVBzs" #TODO FIX THIS
       reactions-enabled: true
       theme: light
       language: en

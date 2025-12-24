@@ -62,7 +62,7 @@ jobs:
         with:
           path: |
             book/_freeze
-          key: ${{ runner.os }}-tlg-catalog-dev
+          key: ${{ runner.os }}-TLG_Catalog-dev
 
 #      - name: Normalize variables 📏
 #        run: |
@@ -130,7 +130,7 @@ jobs:
 #        with:
 #          path: |
 #            book/_freeze
-#          key: ${{ runner.os }}-tlg-catalog-stable
+#          key: ${{ runner.os }}-TLG_Catalog-stable
 #
 #      - name: Normalize variables 📏
 #        run: |
