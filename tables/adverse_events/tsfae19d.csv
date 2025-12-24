@@ -1,0 +1,7 @@
+"label","col 1","col 2","col 3","col 4","col 5","row_type","anbr","indentme","roworder","newrows"
+"Abnormal Uterine Bleeding","0","1 (2.6%)","1 (2.8%)","-2.8 (-8.1, 2.6)","-0.2 (-7.5, 7.1)","VALUE",2,0,0,0
+"BLEEDING ANOVULATORY","0","1 (2.6%)","1 (2.8%)","-2.8 (-8.1, 2.6)","-0.2 (-7.5, 7.1)","VALUE",2,1,1,0
+"Amenorrhea","0","0","0","0.0 (0.0, 0.0)","0.0 (0.0, 0.0)","VALUE",3,0,1,1
+"Bacterial Vaginosis","0","0","0","0.0 (0.0, 0.0)","0.0 (0.0, 0.0)","VALUE",4,0,1,1
+"Decreased Menstrual Bleeding","0","0","0","0.0 (0.0, 0.0)","0.0 (0.0, 0.0)","VALUE",5,0,1,1
+"Excessive Menstrual Bleeding","0","0","0","0.0 (0.0, 0.0)","0.0 (0.0, 0.0)","VALUE",6,0,1,1

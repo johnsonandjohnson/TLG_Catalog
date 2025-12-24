@@ -40,7 +40,6 @@ cat(
 
 section_header("Tables")
 create_subsection("./tables/adverse_events", "Adverse Events")
-create_subsection("./tables/adverse_events", "Adverse Events for Japan Submission")
 create_subsection("./tables/clinical_laboratory_evaluation", "Clinical Laboratory Evaluation")
 create_subsection("./tables/demographic", "Demographic and Other Baseline Characteristics")
 create_subsection("./tables/disposition_of_subjects", "Disposition of Subjects")
@@ -49,6 +48,7 @@ create_subsection("./tables/exposure", "Exposure")
 create_subsection("./tables/prior_and_concomitant_therapies", "Prior and Concomitant Therapies")
 create_subsection("./tables/study_treatment_compliance", "Study Treatment Compliance")
 create_subsection("./tables/vital_signs_and_physical_findings", "Vital Signs and Physical Findings")
+create_subsection("./tables/pharmacokinetics", "Pharmacokinetics")
 
 # Listings
 
