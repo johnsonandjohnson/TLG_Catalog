@@ -115,15 +115,15 @@ website:
         - file: index.qmd
           text: Introduction
         - text: "---"
+        - file: tlg-index.qmd
+        - text: "---"
         - auto: tables
         - auto: listings
-#        - auto: graphs
         - text: "---"
-        - reproducibility.qmd
+        - file: reproducibility.qmd
         - text: "---"
-        - changelog.qmd
+        - file: changelog.qmd
         - text: "---"
-        - tlg-index.qmd
 #  comments:
     #giscus:
       # Reference: https://quarto.org/docs/reference/projects/books.html#giscus
@@ -144,3 +144,4 @@ profile:
   default: development
 resources:
   - "*.rtf"
+  - "*.docx"
