@@ -94,8 +94,7 @@ website:
   repo-url: https://github.com/johnsonandjohnson/TLG_Catalog
   repo-subdir: book
   repo-actions: [edit, issue]
-  repo-branch: main
-  # google-analytics: UA-125641273-1
+  repo-branch: dev
   cookie-consent: true
   page-footer:
     left: |
