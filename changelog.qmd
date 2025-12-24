@@ -4,31 +4,36 @@ This document tracks the changes made to the J&J CS R Safety TLG Sample Script C
 
 ------------------------------------------------------------------------
 
+## Version: December 24, 2025
+
+
+### Added Scripts
+
+The following scripts have been added to the catalog:
+-   `lsfae06a.R`
+-   `lsfae06b.R`
+-   `tsfae14.R`
+-   `tsfae15.R`
+-   `tsfae16.R`
+-   `tsfae17a.R`
+-   `tsfae17b.R`
+-   `tsfae17c.R`
+-   `tsfae17d.R`
+-   `tsfae19a.R`
+-   `tsfae19b.R`
+-   `tsfae19c.R`
+-   `tsfae19d.R`
+-   `tpk01a.R`
+-   `tpk01b.R`
+-   `tpk02.R`
+-   `tpk03.R`
+
+
 ## Version: August 06, 2025
 
 ### Added Scripts
 
 The following scripts have been added to the catalog:
-
-<!-- -   `gsfae01.R` -->
-<!-- -   `gsfae02.R` -->
-<!-- -   `gsfecg01.R` -->
-<!-- -   `gsflab01.R` -->
-<!-- -   `gsflab01a.R` -->
-<!-- -   `gsflab02.R` -->
-<!-- -   `gsflab03.R` -->
-<!-- -   `gsflab04.R` -->
-<!-- -   `gsflab05.R` -->
-<!-- -   `gsfvit01.R` -->
-<!-- -   `gsfvit01a.R` -->
-<!-- -   `gsfvit02.R` -->
-<!-- -   `gsfvit03.R` -->
-<!-- -   `gsfvit04.R` -->
-<!-- -   `gsfvit05.R` -->
-<!-- -   `gsids01a.R` -->
-<!-- -   `gsids01b.R` -->
-<!-- -   `gsids02.R` -->
-<!-- -   `gsiex01.R` -->
 -   `lsfae01.R`
 -   `lsfae02.R`
 -   `lsfae03.R`
@@ -141,32 +146,5 @@ The following scripts have been added to the catalog:
 -   `tsiex10.R`
 -   `tsiex11.R`
 -   `tsimh01.R`
-
-```{=html}
-<!-- ### Modified Scripts  {.unnumbered}
-
-The following scripts have been updated:
-
-* `lsfecg01.R`
-  * Updated result column to include normal range indicator and clinical significance.
-
-### Added functions:  {.unnumbered}
-
-* **all_days**
-  Returns a vector of all days between start and end dates of events.
-
-
-### Modified functions:  {.unnumbered}
-
-* **cpct_relrisk_fact**
-  Updated function to include new parameter corr_rr_by which allows for additional level in column header space.
-
-
-***
-
-## Previous Versions  {.unnumbered}
-
-* **June 03, 2025**: [jjcs_tlgs_r_catalog_030625](https://idarconnect.jnj.com/jjcs_tlgs_r_catalog_030625/) -->
-```
 
 ------------------------------------------------------------------------
