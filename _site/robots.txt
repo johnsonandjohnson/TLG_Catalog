@@ -1,1 +1,1 @@
-Sitemap: https://johnsonandjohnson.github.io/tlg-catalog/sitemap.xml
+Sitemap: https://johnsonandjohnson.github.io/TLG_Catalog/sitemap.xml

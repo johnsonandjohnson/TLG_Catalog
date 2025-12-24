@@ -211,7 +211,7 @@ generate_qmd_content <- function(r_content, base_name, base_name_upper, first_le
   # Create setup code chunk
   setup_chunk <- c(
     "```{r setup, echo = FALSE, warning = FALSE, message = FALSE}",
-    "library(rtables.officer)",
+    "options(docx.add_datetime = FALSE, tidytlg.add_datetime = FALSE)",
     "",
     "envsetup_config_name <- \"default\"",
     "",
@@ -284,7 +284,7 @@ generate_qmd_content <- function(r_content, base_name, base_name_upper, first_le
       filtered_chunks,
       "```",
       "```{r result1, echo=FALSE, message=FALSE, warning=FALSE, test = list(result_v1 = \"result\")}",
-      "tt_to_flextable(head(result,100), theme = theme_docx_default(font_size = 6))",
+      "tt_to_flextable_j(head(result,100), tblid)",
       "```",
       "",
       "[Download RTF file](`r paste0(tolower(tblid), '.rtf')`)",
@@ -298,7 +298,7 @@ generate_qmd_content <- function(r_content, base_name, base_name_upper, first_le
       filtered_chunks,
       "```",
       "```{r result1, echo=FALSE, message=FALSE, warning=FALSE, test = list(result_v1 = \"result\")}",
-      "tt_to_flextable(result, theme = theme_docx_default(font_size = 6))",
+      "tt_to_flextable_j(result, tblid)",
       "```",
       "",
       "[Download RTF file](`r paste0(tolower(tblid), '.rtf')`)",

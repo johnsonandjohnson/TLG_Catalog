@@ -8,8 +8,7 @@ subtitle: Incidence and Reason for Dose Modification
 {{< include ../../_utils/envir_hook.qmd >}}
 
 ```{r setup, echo = FALSE, warning = FALSE, message = FALSE}
-library(rtables.officer)
-
+options(docx.add_datetime = FALSE, tidytlg.add_datetime = FALSE)
 envsetup_config_name <- "default"
 
 # Path to the combined config file
@@ -43,7 +42,7 @@ apt <- FALSE
 
 ```{r variant1, results='hide', warning = FALSE, message = FALSE}
 
-# Program Name: tsiex08.R
+# Program Name:              tsiex08.R
 
 # Prep Environment
 
@@ -68,11 +67,12 @@ combined_colspan_trt <- TRUE
 
 if (combined_colspan_trt == TRUE) {
   # Set up levels and label for the required combined columns
-  add_combo <- add_combo_facet("Combined",
-                               label = "Combined",
-                               levels = c("Apalutamide", "Apalutamide Subgroup")
+  add_combo <- add_combo_facet(
+    "Combined",
+    label = "Combined",
+    levels = c("Xanomeline High Dose", "Xanomeline Low Dose")
   )
-  
+
   # choose if any facets need to be removed - e.g remove the combined column for placebo
   rm_combo_from_placebo <- cond_rm_facets(
     facets = "Combined",
@@ -80,7 +80,7 @@ if (combined_colspan_trt == TRUE) {
     value = " ",
     split = "colspan_trt"
   )
-  
+
   mysplit <- make_split_fun(post = list(add_combo, rm_combo_from_placebo))
 }
 
@@ -105,46 +105,56 @@ adex2 <- pharmaverseadamjnj::adex %>%
 adex_ <- bind_rows(adex1, adex2)
 
 adex1$AVISIT <- droplevels(adex1$AVISIT)
-adex_$AVISIT <- factor(adex_$AVISIT, levels = c("Overall", levels(adex1$AVISIT)))
+adex_$AVISIT <- factor(
+  adex_$AVISIT,
+  levels = c("Overall", levels(adex1$AVISIT))
+)
 
 adex <- adex_ %>%
   select(USUBJID, ACAT1, ACAT2, AREASOC, AADJ, AVISIT, AVISITN)
 
-adsl$colspan_trt <- factor(ifelse(adsl[[trtvar]] == "Placebo", " ", "Active Study Agent"),
-                           levels = c("Active Study Agent", " ")
+adsl$colspan_trt <- factor(
+  ifelse(adsl[[trtvar]] == "Placebo", " ", "Active Study Agent"),
+  levels = c("Active Study Agent", " ")
 )
 
 # join data together
 ex <- adex %>% inner_join(., adsl, by = c("USUBJID"))
 
-colspan_trt_map <- create_colspan_map(adsl,
-                                      non_active_grp = "Placebo",
-                                      non_active_grp_span_lbl = " ",
-                                      active_grp_span_lbl = "Active Study Agent",
-                                      colspan_var = "colspan_trt",
-                                      trt_var = trtvar
+colspan_trt_map <- create_colspan_map(
+  adsl,
+  non_active_grp = "Placebo",
+  non_active_grp_span_lbl = " ",
+  active_grp_span_lbl = "Active Study Agent",
+  colspan_var = "colspan_trt",
+  trt_var = trtvar
 )
 
 # Define layout and build table:
 
-# Note : 
+# Note :
 # variables AREASOC and AADJ contain missing values, these are removed inside a_freq_j when using denom = "n_df"
 # either use n_parentdf and denom_by = AVISIT to get proper denominator
-# alternative would be to use ex <- df_explicit_na(ex, omit_columns = "colspan_trt", na_level = "<Missing>") and 
+# alternative would be to use ex <- df_explicit_na(ex, omit_columns = "colspan_trt", na_level = "<Missing>") and
 # and have denom = "n_df" in extra_args1 and
 # add excl_levels = "<Missing>" to the extra_args in the calls to these 2 variables
 # excl_levels cannot be used in the overall extra_args1 as val and excl_levels cannot be used together
 
-extra_args1 <- list(.stats = "count_unique_fraction",
-                    denom = "n_parentdf",
-                    denom_by = "AVISIT")
+extra_args1 <- list(
+  .stats = "count_unique_fraction",
+  denom = "n_parentdf",
+  denom_by = "AVISIT"
+)
 
 lyt <- rtables::basic_table(
   top_level_section_div = " ",
   show_colcounts = TRUE,
   colcount_format = "N=xx"
 ) %>%
-  split_cols_by("colspan_trt", split_fun = trim_levels_to_map(map = colspan_trt_map))
+  split_cols_by(
+    "colspan_trt",
+    split_fun = trim_levels_to_map(map = colspan_trt_map)
+  )
 
 if (combined_colspan_trt == TRUE) {
   lyt <- lyt %>%
@@ -156,34 +166,53 @@ if (combined_colspan_trt == TRUE) {
 
 
 lyt <- lyt %>%
-  split_rows_by("AVISIT",
-                split_label = "Time Point",
-                split_fun = trim_levels_in_group("STUDYID"),
-                label_pos = "topleft",
-                indent_mod = 0L,
-                section_div = c(" ")
+  split_rows_by(
+    "AVISIT",
+    split_label = "Time Point",
+    split_fun = trim_levels_in_group("STUDYID"),
+    label_pos = "topleft",
+    indent_mod = 0L,
+    section_div = c(" ")
   ) %>%
-  summarize_row_groups("AVISIT", cfun = a_freq_j,
-                       extra_args = list(.stats = "n_df"),
-                       indent_mod = 0L) %>%
-  analyze("ACAT2",
-          afun = a_freq_j,
-          extra_args = append(extra_args1, list(label = "Dose not administered", val = "Dose not administered")), 
-          indent_mod = 0L, show_labels = "hidden"
+  summarize_row_groups(
+    "AVISIT",
+    cfun = a_freq_j,
+    extra_args = list(.stats = "n_df"),
+    indent_mod = 0L
   ) %>%
-  analyze("AREASOC",
-          afun = a_freq_j, extra_args = extra_args1, 
-          show_labels = "hidden", indent_mod = 1L
+  analyze(
+    "ACAT2",
+    afun = a_freq_j,
+    extra_args = append(
+      extra_args1,
+      list(label = "Dose not administered", val = "Dose not administered")
+    ),
+    indent_mod = 0L,
+    show_labels = "hidden"
   ) %>%
-  analyze("ACAT1",
-          afun = a_freq_j,
-          extra_args = append(extra_args1, list(label = "Dose adjusted", val = "Dose adjusted")), 
-          indent_mod = 0L, show_labels = "hidden"
+  analyze(
+    "AREASOC",
+    afun = a_freq_j,
+    extra_args = extra_args1,
+    show_labels = "hidden",
+    indent_mod = 1L
   ) %>%
-  analyze("AADJ",
-          afun = a_freq_j,
-          extra_args = extra_args1, 
-          show_labels = "hidden", indent_mod = 1L
+  analyze(
+    "ACAT1",
+    afun = a_freq_j,
+    extra_args = append(
+      extra_args1,
+      list(label = "Dose adjusted", val = "Dose adjusted")
+    ),
+    indent_mod = 0L,
+    show_labels = "hidden"
+  ) %>%
+  analyze(
+    "AADJ",
+    afun = a_freq_j,
+    extra_args = extra_args1,
+    show_labels = "hidden",
+    indent_mod = 1L
   ) %>%
   append_topleft("  Dose Modification, n (%)")
 
@@ -194,8 +223,8 @@ result <- build_table(lyt, ex, alt_counts_df = adsl)
 more_than_zero <- has_count_in_any_col(
   atleast = 1,
   col_names = c(
-    "Active Study Agent.Apalutamide",
-    "Active Study Agent.Apalutamide Subgroup",
+    "Active Study Agent.Xanomeline High Dose",
+    "Active Study Agent.Xanomeline Low Dose",
     "Active Study Agent.Combined",
     " .Placebo"
   )
@@ -209,10 +238,10 @@ result <- set_titles(result, tab_titles)
 
 # Convert to tbl file and output table
 
-tt_to_tlgrtf(string_map = string_map, tt = head(result, 20), file = fileid, orientation = "portrait")
+tt_to_tlgrtf(string_map = string_map, tt = head(result, 25), file = fileid, orientation = "portrait")
 ```
 ```{r result1, echo=FALSE, message=FALSE, warning=FALSE, test = list(result_v1 = "result")}
-tt_to_flextable(head(result, 20), theme = theme_docx_default(font_size = 6))
+tt_to_flextable_j(head(result, 25), tblid)
 ```
 
 [Download RTF file](`r paste0(tolower(tblid), '.rtf')`)

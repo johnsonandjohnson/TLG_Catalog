@@ -1,0 +1,167 @@
+---
+title: TPK03
+subtitle: Subjects With Matrix Active Study Agent/Analyte Concentrations Below the Lowest Quantification Level (LLOQ/LLOQxMRD and units) Over Time
+---
+
+------------------------------------------------------------------------
+
+{{< include ../../_utils/envir_hook.qmd >}}
+
+```{r setup, echo = FALSE, warning = FALSE, message = FALSE}
+options(docx.add_datetime = FALSE, tidytlg.add_datetime = FALSE)
+envsetup_config_name <- "default"
+
+# Path to the combined config file
+envsetup_file_path <- file.path("../..", "envsetup.yml")
+
+Sys.setenv(ENVSETUP_ENVIRON = '')
+library(envsetup)
+loaded_config <- config::get(config = envsetup_config_name, file = envsetup_file_path)
+envsetup::rprofile(loaded_config)
+
+
+dpscomp <- compound
+dpspdr <- paste(protocol,dbrelease,rpteff,sep="__")
+
+aptcomp <- compound
+aptpdr <- paste(protocol,dbrelease,rpteff,sep="__")
+
+###### Study specific updates (formerly in envre)
+
+dpscomp <- "standards"
+dpspdr <- "jjcs__NULL__jjcs - core"
+
+apt <- FALSE
+
+```
+
+## Output
+
+:::: panel-tabset
+## {{< fa regular file-lines sm fw >}} Preview
+
+```{r variant1, results='hide', warning = FALSE, message = FALSE}
+
+# Program Name:              tpk03
+
+# Prep environment:
+
+library(envsetup)
+library(dplyr)
+library(forcats)
+library(rtables)
+library(tern)
+library(junco)
+
+# Define script level parameters:
+
+tblid <- "TPK03"
+fileid <- tblid
+titles <- get_titles_from_file(input_path = '../../_data/', tblid)
+string_map <- default_str_map
+popfl <- "PKFL"
+trtvar <- "TRT01A"
+
+# Process data:
+
+adsl <- pharmaverseadamjnj::adsl |>
+  filter(.data[[popfl]] == "Y") |>
+  select(USUBJID, all_of(trtvar), PKFL) |>
+  
+  # Drop the control group
+  filter(.data[[trtvar]] != "Placebo") |>
+  mutate({{ trtvar }} := fct_drop(.data[[trtvar]])) |>
+  
+  mutate(colspan_trt = "Active Study Agent")
+
+adpc <- pharmaverseadamjnj::adpc |>
+  filter(PARAMCD == "XAN") |>
+  select(USUBJID, all_of(trtvar), AVISIT, ATPT, CRIT1FL) |>
+  inner_join(adsl) |>
+  
+  # Concatenate and reorder time points
+  mutate(AVISIT_ATPT = factor(paste(AVISIT, ATPT, sep = " - "), levels = c(
+    "Day 1 - Pre-dose",
+    "Day 1 - 5 Min Post-dose",
+    "Day 1 - 30 Min Post-dose",
+    "Day 1 - 1h Post-dose",
+    "Day 1 - 1.5h Post-dose",
+    "Day 1 - 2h Post-dose",
+    "Day 1 - 4h Post-dose",
+    "Day 1 - 0-6h Post-dose",
+    "Day 1 - 6h Post-dose",
+    "Day 1 - 8h Post-dose",
+    "Day 1 - 6-12h Post-dose",
+    "Day 1 - 12h Post-dose",
+    "Day 1 - 16h Post-dose",
+    "Day 1 - 12-24h Post-dose",
+    "Day 2 - 24h Post-dose",
+    "Day 2 - Pre-dose",
+    "Day 2 - 36h Post-dose",
+    "Day 2 - 24-48h Post-dose",
+    "Day 3 - 48h Post-dose", 
+    "Day 3 - Pre-dose"
+  )))
+
+# Define layout and build table:
+
+lyt <- basic_table() |>
+  split_cols_by(
+    var = "colspan_trt",
+    split_fun = drop_split_levels
+  ) |>
+  
+  split_cols_by(
+    var = trtvar,
+    show_colcounts = TRUE,
+    colcount_format = "N=xx",
+    split_fun = add_overall_level("Combined", first = FALSE)
+  ) |>
+  
+  split_rows_by(
+    var = "AVISIT_ATPT",
+    split_label = "Time Point",
+    label_pos = "topleft",
+    section_div = " "
+  ) |>
+  
+  analyze(
+    vars = "PKFL",
+    show_labels = "hidden",
+    afun = a_freq_j,
+    extra_args = list(
+      val = "Y",
+      label = "N",
+      .stats = "count_unique"
+    )
+  ) |>
+  
+  analyze(
+    vars = "CRIT1FL",
+    show_labels = "hidden",
+    afun = a_freq_j,
+    extra_args = list(
+      val = "Y",
+      label = "Number of subjects with values below LLOQxMRD, n (%)",
+      .stats = "count_unique_fraction",
+      .indent_mods = 1
+    )
+  )
+
+result <- build_table(lyt, df = adpc, alt_counts_df = adsl)
+
+# Add titles and footnotes:
+
+result <- set_titles(result, titles)
+
+# Convert to tbl file and output table:
+
+tt_to_tlgrtf(string_map = string_map, tt = head(result, 25), file = fileid, orientation = "portrait")
+```
+```{r result1, echo=FALSE, message=FALSE, warning=FALSE, test = list(result_v1 = "result")}
+tt_to_flextable_j(head(result, 25), tblid)
+```
+
+[Download RTF file](`r paste0(tolower(tblid), '.rtf')`)
+::::
+

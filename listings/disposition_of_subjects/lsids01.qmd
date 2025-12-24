@@ -8,8 +8,7 @@ subtitle: Listing of Subjects Who Permanently Discontinued Treatment
 {{< include ../../_utils/envir_hook.qmd >}}
 
 ```{r setup, echo = FALSE, warning = FALSE, message = FALSE}
-library(rtables.officer)
-
+options(docx.add_datetime = FALSE, tidytlg.add_datetime = FALSE)
 envsetup_config_name <- "default"
 
 # Path to the combined config file
@@ -51,6 +50,7 @@ library(envsetup)
 library(tern)
 library(dplyr)
 library(rtables)
+library(rlistings)
 library(junco)
 
 # Define script level parameters
@@ -71,8 +71,11 @@ adsl <- pharmaverseadamjnj::adsl %>%
   filter(!!rlang::sym(popfl) == "Y" & !(EOTSTT %in% c("COMPLETED", "ONGOING")))
 
 ds <- pharmaversesdtmjnj::ds %>%
-  filter((DSSCAT %in% c("TREATMENT")) & DSCAT == "DISPOSITION EVENT" &
-    DSDECOD != "COMPLETED") %>%
+  filter(
+    (DSSCAT %in% c("TREATMENT")) &
+      DSCAT == "DISPOSITION EVENT" &
+      DSDECOD != "COMPLETED"
+  ) %>%
   select(STUDYID, USUBJID, DSSCAT)
 
 adsl_ds <- adsl %>%
@@ -82,10 +85,14 @@ adexsum <- pharmaverseadamjnj::adexsum %>%
   filter(PARAMCD == "CUMDOSE") %>%
   select(STUDYID, USUBJID, PARAMCD, PARAM, AVAL)
 
-adsl_ds_adexsum <- left_join(adsl_ds, adexsum, by = c(
-  "STUDYID" = "STUDYID",
-  "USUBJID" = "USUBJID"
-))
+adsl_ds_adexsum <- left_join(
+  adsl_ds,
+  adexsum,
+  by = c(
+    "STUDYID" = "STUDYID",
+    "USUBJID" = "USUBJID"
+  )
+)
 
 lsting <- adsl_ds_adexsum %>%
   mutate(
@@ -111,7 +118,8 @@ lsting <- adsl_ds_adexsum %>%
     COL5 = explicit_na(as.character(TRTEDY), ""),
     # Optional Column: COL6/CUMDOSE/CUMDOSU
     COL6 = paste0(AVAL, " ", AVALU),
-    COL7 = ifelse(is.na(DCTDT),
+    COL7 = ifelse(
+      is.na(DCTDT),
       "",
       toupper(format(as.Date(DCTDT), format = "%d%b%Y"))
     ),
@@ -124,7 +132,8 @@ lsting <- adsl_ds_adexsum %>%
   ) %>%
   arrange(COL0, COL1, COL2, COL3)
 
-lsting <- var_relabel(lsting,
+lsting <- var_relabel(
+  lsting,
   COL0 = "Treatment Group",
   COL1 = "Subject ID",
   COL2 = paste("Age (years)", "Sex", "Race", sep = concat_sep),
@@ -153,10 +162,10 @@ result <- set_titles(result, tab_titles)
 
 # Output listing
 
-tt_to_tlgrtf(string_map = string_map, tt = head(result, 30), file = fileid, orientation = "landscape")
+tt_to_tlgrtf(string_map = string_map, tt = head(result, 100), file = fileid, orientation = "landscape")
 ```
 ```{r result1, echo=FALSE, message=FALSE, warning=FALSE, test = list(result_v1 = "result")}
-tt_to_flextable(head(result,100), theme = theme_docx_default(font_size = 6))
+tt_to_flextable_j(head(result,100), tblid)
 ```
 
 [Download RTF file](`r paste0(tolower(tblid), '.rtf')`)

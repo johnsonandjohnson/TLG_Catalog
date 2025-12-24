@@ -8,8 +8,7 @@ subtitle: Dose Levels Over Time
 {{< include ../../_utils/envir_hook.qmd >}}
 
 ```{r setup, echo = FALSE, warning = FALSE, message = FALSE}
-library(rtables.officer)
-
+options(docx.add_datetime = FALSE, tidytlg.add_datetime = FALSE)
 envsetup_config_name <- "default"
 
 # Path to the combined config file
@@ -43,7 +42,7 @@ apt <- FALSE
 
 ```{r variant1, results='hide', warning = FALSE, message = FALSE}
 
-# Program Name: tsiex07.R
+# Program Name:              tsiex07.R
 
 # Prep Environment
 
@@ -100,7 +99,8 @@ extot <- bind_rows(adex, extot_)
 # join data together
 ex <- extot %>% inner_join(., adsl, by = c("USUBJID"))
 
-ex$colspan_trt <- factor(ifelse(ex$ADOSEC == "Total", " ", "Active Study Agent"),
+ex$colspan_trt <- factor(
+  ifelse(ex$ADOSEC == "Total", " ", "Active Study Agent"),
   levels = c("Active Study Agent", " ")
 )
 
@@ -121,10 +121,12 @@ lyt <- rtables::basic_table(
 ) %>%
   split_cols_by("colspan_trt", split_fun = trim_levels_in_group("ADOSEC")) %>%
   split_cols_by("ADOSEC") %>%
-  tern::count_occurrences("AVISIT",
+  tern::count_occurrences(
+    "AVISIT",
     .stats = "count_fraction_fixed_dp",
     .formats = c("count_fraction_fixed_dp" = jjcsformat_count_fraction),
-    var_labels = " ", show_labels = "hidden"
+    var_labels = " ",
+    show_labels = "hidden"
   ) %>%
   append_topleft("Time Point, n (%)")
 
@@ -136,10 +138,10 @@ result <- set_titles(result, tab_titles)
 
 # Convert to tbl file and output table
 
-tt_to_tlgrtf(string_map = string_map, tt = head(result, 20), file = fileid, orientation = "landscape")
+tt_to_tlgrtf(string_map = string_map, tt = head(result, 25), file = fileid, orientation = "landscape")
 ```
 ```{r result1, echo=FALSE, message=FALSE, warning=FALSE, test = list(result_v1 = "result")}
-tt_to_flextable(head(result, 20), theme = theme_docx_default(font_size = 6))
+tt_to_flextable_j(head(result, 25), tblid)
 ```
 
 [Download RTF file](`r paste0(tolower(tblid), '.rtf')`)

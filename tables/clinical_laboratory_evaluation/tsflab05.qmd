@@ -1,6 +1,6 @@
 ---
 title: TSFLAB05
-subtitle: Subjects With Last/Any On-treatment Laboratory Values ≥ Grade 2 Based on NCI-CTCAE Criteria
+subtitle: Subjects With Last/Any On-treatment Laboratory Values = Grade 2 Based on NCI-CTCAE Criteria
 ---
 
 ------------------------------------------------------------------------
@@ -8,8 +8,7 @@ subtitle: Subjects With Last/Any On-treatment Laboratory Values ≥ Grade 2 Base
 {{< include ../../_utils/envir_hook.qmd >}}
 
 ```{r setup, echo = FALSE, warning = FALSE, message = FALSE}
-library(rtables.officer)
-
+options(docx.add_datetime = FALSE, tidytlg.add_datetime = FALSE)
 envsetup_config_name <- "default"
 
 # Path to the combined config file
@@ -81,7 +80,12 @@ trtemfl <- TRUE
 
 ## parcat5 and 6 options :
 
-availparcat56 <- c("Investigations", "Metabolism and nutritional disorders", "Renal and urinary disorders", "Blood and lymphatic system disorders")
+availparcat56 <- c(
+  "Investigations",
+  "Metabolism and nutritional disorders",
+  "Renal and urinary disorders",
+  "Blood and lymphatic system disorders"
+)
 
 ## resrict to some
 selparcat56 <- availparcat56[c(1, 2, 4)]
@@ -104,14 +108,18 @@ lbvars <- c("LBTESTCD", "LBTEST", "LBSPEC", "LBMETHOD")
 
 lbtoxgrade_defs <- readxl::read_excel(lbtoxgrade_file, sheet = "CTC5")
 
-lbtoxgrade_defs <- unique(unique(lbtoxgrade_defs %>%
-  select(all_of(lbvars), TOXTERM, TOXGRD, INDICATR)) %>%
-  mutate(
-    ATOXDSCLH = TOXTERM,
-    ATOXGRLH = paste("Grade", TOXGRD)
+lbtoxgrade_defs <- unique(
+  unique(
+    lbtoxgrade_defs %>%
+      select(all_of(lbvars), TOXTERM, TOXGRD, INDICATR)
   ) %>%
-  rename(ATOXDIR = INDICATR) %>%
-  select(all_of(lbvars), ATOXDSCLH, ATOXDIR))
+    mutate(
+      ATOXDSCLH = TOXTERM,
+      ATOXGRLH = paste("Grade", TOXGRD)
+    ) %>%
+    rename(ATOXDIR = INDICATR) %>%
+    select(all_of(lbvars), ATOXDSCLH, ATOXDIR)
+)
 
 # Initial processing of data
 
@@ -124,8 +132,16 @@ attention_terms <-
   filter(n > 1)
 
 ad_toxterms <- bind_rows(
-  unique(adlb_complete %>% select(PARAMCD, ATOXDSCL) %>% mutate(TOXTERM = ATOXDSCL, TOXDIR = "LOW")),
-  unique(adlb_complete %>% select(PARAMCD, ATOXDSCH) %>% mutate(TOXTERM = ATOXDSCH, TOXDIR = "HIGH"))
+  unique(
+    adlb_complete %>%
+      select(PARAMCD, ATOXDSCL) %>%
+      mutate(TOXTERM = ATOXDSCL, TOXDIR = "LOW")
+  ),
+  unique(
+    adlb_complete %>%
+      select(PARAMCD, ATOXDSCH) %>%
+      mutate(TOXTERM = ATOXDSCH, TOXDIR = "HIGH")
+  )
 ) %>%
   select(PARAMCD, TOXTERM, TOXDIR) %>%
   filter(!is.na(TOXTERM)) %>%
@@ -146,7 +162,8 @@ toxterms <- unique(
     filter(!(is.na(ATOXDSCL) & is.na(ATOXDSCH))) %>%
     ### do not include PARAMCD here!!!!
     select(ATOXDSCL, ATOXDSCH) %>%
-    tidyr::pivot_longer(.,
+    tidyr::pivot_longer(
+      .,
       cols = c("ATOXDSCL", "ATOXDSCH"),
       names_to = "VARNAME",
       values_to = "ATOXDSCLH"
@@ -169,14 +186,16 @@ adsl <- pharmaverseadamjnj::adsl %>%
   filter(.data[[popfl]] == "Y") %>%
   select(STUDYID, USUBJID, all_of(c(popfl, trtvar)))
 
-adsl$colspan_trt <- factor(ifelse(adsl[[trtvar]] == ctrl_grp, " ", "Active Study Agent"),
+adsl$colspan_trt <- factor(
+  ifelse(adsl[[trtvar]] == ctrl_grp, " ", "Active Study Agent"),
   levels = c("Active Study Agent", " ")
 )
 
 adsl$rrisk_header <- "Risk Difference (%) (95% CI)"
 adsl$rrisk_label <- paste(adsl[[trtvar]], paste("vs", ctrl_grp))
 
-colspan_trt_map <- create_colspan_map(adsl,
+colspan_trt_map <- create_colspan_map(
+  adsl,
   non_active_grp = ctrl_grp,
   non_active_grp_span_lbl = " ",
   active_grp_span_lbl = "Active Study Agent",
@@ -189,20 +208,38 @@ ref_path <- c("colspan_trt", " ", trtvar, ctrl_grp)
 flagvars <- c("ONTRTFL", "TRTEMFL", "LVOTFL")
 adlb00 <- adlb_complete %>%
   select(
-    USUBJID, AVISITN, AVISIT,
+    USUBJID,
+    AVISITN,
+    AVISIT,
     starts_with("PAR"),
     starts_with("ATOX"),
     starts_with("ANL"),
     all_of(flagvars),
     LBSEQ,
-    AVAL, AVALC
+    AVAL,
+    AVALC
   ) %>%
   inner_join(adsl) %>%
   mutate(
     ATOXGRL = as.character(ATOXGRL),
     ATOXGRH = as.character(ATOXGRH)
   ) %>%
-  relocate(., USUBJID, ANL04FL, ANL05FL, ONTRTFL, TRTEMFL, AVISIT, ATOXGRL, ATOXGRH, ATOXDSCL, ATOXDSCH, PARAMCD, AVISIT, AVAL)
+  relocate(
+    .,
+    USUBJID,
+    ANL04FL,
+    ANL05FL,
+    ONTRTFL,
+    TRTEMFL,
+    AVISIT,
+    ATOXGRL,
+    ATOXGRH,
+    ATOXDSCL,
+    ATOXDSCH,
+    PARAMCD,
+    AVISIT,
+    AVAL
+  )
 
 
 # adlb00 <- adlb00 #%>%
@@ -236,7 +273,18 @@ filtered_adlb_low <- filtered_adlb %>%
     ATOXDIR = "LOW",
     ANL045FL = ANL04FL
   ) %>%
-  select(USUBJID, starts_with("PAR"), starts_with("ATOX"), all_of(flagvars), ANL04FL, ANL05FL, ANL045FL, LBSEQ, AVAL, AVALC) %>%
+  select(
+    USUBJID,
+    starts_with("PAR"),
+    starts_with("ATOX"),
+    all_of(flagvars),
+    ANL04FL,
+    ANL05FL,
+    ANL045FL,
+    LBSEQ,
+    AVAL,
+    AVALC
+  ) %>%
   select(-c(ATOXGRL, ATOXGRH, ATOXDSCL, ATOXDSCH))
 
 ### high grades: ATOXDSCH ATOXGRH ANL05FL
@@ -248,7 +296,18 @@ filtered_adlb_high <- filtered_adlb %>%
     ATOXDIR = "HIGH",
     ANL045FL = ANL05FL
   ) %>%
-  select(USUBJID, starts_with("PAR"), starts_with("ATOX"), all_of(flagvars), ANL04FL, ANL05FL, ANL045FL, LBSEQ, AVAL, AVALC) %>%
+  select(
+    USUBJID,
+    starts_with("PAR"),
+    starts_with("ATOX"),
+    all_of(flagvars),
+    ANL04FL,
+    ANL05FL,
+    ANL045FL,
+    LBSEQ,
+    AVAL,
+    AVALC
+  ) %>%
   select(-c(ATOXGRL, ATOXGRH, ATOXDSCL, ATOXDSCH))
 
 
@@ -266,14 +325,22 @@ filtered_adlb_tox <-
 ### correction of proper category (PARCAT56) for HGB (LOW) and WBC (HIGH)
 filtered_adlb_tox <-
   filtered_adlb_tox %>%
-  mutate(PARCAT56 = case_when(
-    PARAMCD == "HGB" & ATOXDIR == "LOW" ~ PARCAT6,
-    PARAMCD == "WBC" & ATOXDIR == "HIGH" ~ PARCAT6,
-    TRUE ~ PARCAT5
-  )) %>%
-  mutate(PARCAT56 = factor(PARCAT56,
-    levels = unique(c("Blood and lymphatic system disorders", levels(adlb_complete$PARCAT5)))
-  ))
+  mutate(
+    PARCAT56 = case_when(
+      PARAMCD == "HGB" & ATOXDIR == "LOW" ~ PARCAT6,
+      PARAMCD == "WBC" & ATOXDIR == "HIGH" ~ PARCAT6,
+      TRUE ~ PARCAT5
+    )
+  ) %>%
+  mutate(
+    PARCAT56 = factor(
+      PARCAT56,
+      levels = unique(c(
+        "Blood and lymphatic system disorders",
+        levels(adlb_complete$PARCAT5)
+      ))
+    )
+  )
 
 
 filtered_adlb_tox <- unique(
@@ -290,8 +357,6 @@ filtered_adlb_tox_1 <- filtered_adlb_tox # %>%
 ### therefor, no need to add ONTRTFL in filter
 ### if derivation of ANL04FL/ANL05FL/LVOTFL is not restricted to ONTRTFL records, adding ONTRTFL here will not give the correct answer either
 ### as mixing worst with other period is not giving the proper selection !!!
-
-
 
 if (toupper(last_any) == "ANY") {
   filtered_adlb_tox_1 <- filtered_adlb_tox_1 %>%
@@ -310,25 +375,27 @@ if (toupper(last_any) == "LAST") {
 #### instead : set ATOXGRLH to a non-reportable value (ie Grade 0) and keep in dataset
 if (trtemfl) {
   filtered_adlb_tox_1 <- filtered_adlb_tox_1 %>%
-    mutate(ATOXGRLHN = case_when(
-      is.na(TRTEMFL) | TRTEMFL != "Y" ~ 0,
-      TRUE ~ ATOXGRLHN
-    ))
+    mutate(
+      ATOXGRLHN = case_when(
+        is.na(TRTEMFL) | TRTEMFL != "Y" ~ 0,
+        TRUE ~ ATOXGRLHN
+      )
+    )
 }
-
 
 
 ### Alphabetical sorting of toxicity terms
 atoxdsclh_levels <- sort(as.character(unique(filtered_adlb_tox_1$ATOXDSCLH)))
 
 filtered_adlb_tox_1 <- filtered_adlb_tox_1 %>%
-  mutate(ATOXGRLHx = case_when(
-    ATOXGRLHN >= as.numeric(grade_threshold) ~ "Y",
-    TRUE ~ "N"
-  )) %>%
+  mutate(
+    ATOXGRLHx = case_when(
+      ATOXGRLHN >= as.numeric(grade_threshold) ~ "Y",
+      TRUE ~ "N"
+    )
+  ) %>%
   mutate(ATOXGRLHx = factor(ATOXGRLHx, levels = c("Y", "N"))) %>%
   mutate(ATOXDSCLH = factor(ATOXDSCLH, levels = atoxdsclh_levels))
-
 
 
 # check uniqueness
@@ -337,39 +404,60 @@ check_non_unique_subject <- filtered_adlb_tox_1 %>%
   mutate(n_subject = n()) %>%
   filter(n_subject > 1)
 
-if (nrow(check_non_unique_subject)) message("Please review your data selection process, subject has multiple records")
+if (nrow(check_non_unique_subject)) {
+  message(
+    "Please review your data selection process, subject has multiple records"
+  )
+}
 
 ### syntethic data: no records for NEUT/NEUTSG for the further selection (ATOXGRL is never populated for these records)
-xx <- adlb00 %>% filter(ATOXDSCL == "Neutrophil Count Decreased" & !is.na(ATOXGRL))
+xx <- adlb00 %>%
+  filter(ATOXDSCL == "Neutrophil Count Decreased" & !is.na(ATOXGRL))
 
 # Define layout and build table:
 
-extra_args_rr <- list(method = "wald", denom = "n_df", .stats = c("count_unique_denom_fraction"), ref_path = ref_path)
+extra_args_rr <- list(
+  method = "wald",
+  denom = "n_df",
+  .stats = c("count_unique_denom_fraction"),
+  ref_path = ref_path
+)
 
 
 lyt <- basic_table(show_colcounts = TRUE, colcount_format = "N=xx") %>%
   ### first columns
-  split_cols_by("colspan_trt", split_fun = trim_levels_to_map(map = colspan_trt_map)) %>%
+  split_cols_by(
+    "colspan_trt",
+    split_fun = trim_levels_to_map(map = colspan_trt_map)
+  ) %>%
   split_cols_by(trtvar) %>%
   split_cols_by("rrisk_header", nested = FALSE) %>%
-  split_cols_by(trtvar,
+  split_cols_by(
+    trtvar,
     labels_var = "rrisk_label",
     split_fun = remove_split_levels(ctrl_grp)
   ) %>%
-  split_rows_by("PARCAT56",
+  split_rows_by(
+    "PARCAT56",
     label_pos = "topleft",
     child_labels = "visible",
     split_label = "Laboratory Category",
     split_fun = drop_split_levels,
     section_div = " "
   ) %>%
-  split_rows_by("ATOXDSCLH",
+  split_rows_by(
+    "ATOXDSCLH",
     label_pos = "topleft",
-    split_label = paste0("Laboratory Test \u2265 Grade ", grade_threshold, ", n (%)"),
+    split_label = paste0(
+      "Laboratory Test \u2265 Grade ",
+      grade_threshold,
+      ", n (%)"
+    ),
     child_labels = "hidden",
     split_fun = drop_split_levels
   ) %>%
-  analyze("ATOXGRLHx",
+  analyze(
+    "ATOXGRLHx",
     afun = a_freq_j,
     extra_args = append(
       extra_args_rr,
@@ -401,10 +489,10 @@ result <- set_titles(result, titles)
 
 # Convert to tbl file and output table
 
-tt_to_tlgrtf(string_map = string_map, tt = head(result, 20), file = fileid, orientation = "landscape")
+tt_to_tlgrtf(string_map = string_map, tt = head(result, 25), file = fileid, orientation = "landscape")
 ```
 ```{r result1, echo=FALSE, message=FALSE, warning=FALSE, test = list(result_v1 = "result")}
-tt_to_flextable(head(result, 20), theme = theme_docx_default(font_size = 6))
+tt_to_flextable_j(head(result, 25), tblid)
 ```
 
 [Download RTF file](`r paste0(tolower(tblid), '.rtf')`)

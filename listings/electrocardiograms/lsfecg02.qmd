@@ -8,8 +8,7 @@ subtitle: Listing of ECG Values
 {{< include ../../_utils/envir_hook.qmd >}}
 
 ```{r setup, echo = FALSE, warning = FALSE, message = FALSE}
-library(rtables.officer)
-
+options(docx.add_datetime = FALSE, tidytlg.add_datetime = FALSE)
 envsetup_config_name <- "default"
 
 # Path to the combined config file
@@ -51,7 +50,9 @@ library(envsetup)
 library(tern)
 library(dplyr)
 library(rtables)
+library(rlistings)
 library(junco)
+library(tidytlg)
 
 # Define script level parameters
 
@@ -86,14 +87,15 @@ lsting <- adeg_list %>%
     AGE = explicit_na(as.character(AGE), ""),
     SEX = explicit_na(SEX, ""),
     RACE_DECODE = explicit_na(RACE_DECODE, ""),
-    ADT = ifelse(nchar(as.character(ADT)) == 10,
+    ADT = ifelse(
+      nchar(as.character(ADT)) == 10,
       toupper(format(ADT, "%d%b%Y")),
       "---------"
     ),
     ATM = ifelse(!is.na(ADTM), substr(as.character(ADTM), 12, 16), "--:--"),
     ADYN = ifelse(!is.na(ADY), ADY, NA),
     ADY = ifelse(!is.na(ADY), ADY, "--"),
-    VAL = case_when(
+    VAL_RES = case_when(
       is.na(VALDIGMAX) & !is.na(AVAL) ~
         tidytlg::roundSAS(AVAL, digits = 0, as_char = TRUE, na_char = NULL),
       VALDIGMAX == 0 & !is.na(AVAL) ~
@@ -105,7 +107,37 @@ lsting <- adeg_list %>%
       VALDIGMAX == 3 & !is.na(AVAL) ~
         tidytlg::roundSAS(AVAL, digits = 3, as_char = TRUE, na_char = NULL),
       VALDIGMAX >= 4 & !is.na(AVAL) ~
-        tidytlg::roundSAS(AVAL, digits = 4, as_char = TRUE, na_char = NULL)
+        tidytlg::roundSAS(AVAL, digits = 4, as_char = TRUE, na_char = NULL),
+      !is.na(AVALC) ~ AVALC
+    ),
+    VAL_HL = case_when(
+      !is.na(ANRIND) ~ substr(ANRIND, 1, 1),
+      .default = NA
+    ),
+    VAL_CS = case_when(
+      EGCLSIG == "Y" ~ "CS",
+      EGCLSIG == "N" ~ "NCS",
+      .default = NA
+    ),
+    VAL = case_when(
+      !is.na(VAL_RES) & !is.na(VAL_HL) & !is.na(VAL_CS) ~ paste(
+        VAL_RES,
+        VAL_HL,
+        VAL_CS,
+        sep = " "
+      ),
+      !is.na(VAL_RES) & !is.na(VAL_HL) & is.na(VAL_CS) ~ paste(
+        VAL_RES,
+        VAL_HL,
+        sep = " "
+      ),
+      !is.na(VAL_RES) & is.na(VAL_HL) & !is.na(VAL_CS) ~ paste(
+        VAL_RES,
+        VAL_CS,
+        sep = " "
+      ),
+      !is.na(VAL_RES) & is.na(VAL_HL) & is.na(VAL_CS) ~ VAL_RES,
+      .default = NA
     ),
     CRIT = case_when(
       (is.na(CRIT1) | CRIT1FL == "N") & (is.na(CRIT2) | CRIT2FL == "N") ~ "",
@@ -143,13 +175,15 @@ lsting <- adeg_list %>%
   ) %>%
   arrange(COL0, COL1, COL2, COL3, !is.na(ADYN), ADYN, ADTM)
 
-lsting <- var_relabel(lsting,
+lsting <- var_relabel(
+  lsting,
   COL0 = "Treatment Group",
   COL1 = "Subject ID",
   COL2 = paste("Age (years)", "Sex", "Race", sep = concat_sep),
   COL3 = "ECG Parameter (unit)",
   # Optional Variable: ATM
-  COL4 = paste("Assessment Date",
+  COL4 = paste(
+    "Assessment Date",
     "Time (Study Day~[super a])",
     sep = concat_sep
   ),
@@ -177,13 +211,13 @@ result <- set_titles(result, tab_titles)
 
 # Output listing
 
-tt_to_tlgrtf(string_map = string_map, tt = head(result, 30),
+tt_to_tlgrtf(string_map = string_map, tt = head(result, 100),
   file = fileid,
   orientation = "landscape"
 )
 ```
 ```{r result1, echo=FALSE, message=FALSE, warning=FALSE, test = list(result_v1 = "result")}
-tt_to_flextable(head(result,100), theme = theme_docx_default(font_size = 6))
+tt_to_flextable_j(head(result,100), tblid)
 ```
 
 [Download RTF file](`r paste0(tolower(tblid), '.rtf')`)

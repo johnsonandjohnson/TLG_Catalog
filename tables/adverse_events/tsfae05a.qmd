@@ -8,8 +8,7 @@ subtitle: Subjects With Treatment-emergent Related Adverse Events by System Orga
 {{< include ../../_utils/envir_hook.qmd >}}
 
 ```{r setup, echo = FALSE, warning = FALSE, message = FALSE}
-library(rtables.officer)
-
+options(docx.add_datetime = FALSE, tidytlg.add_datetime = FALSE)
 envsetup_config_name <- "default"
 
 # Path to the combined config file
@@ -43,7 +42,7 @@ apt <- FALSE
 
 ```{r variant1, results='hide', warning = FALSE, message = FALSE}
 
-# Program Name: tsfae05a.R
+# Program Name:              tsfae05a.R
 
 # Prep Environment
 
@@ -76,9 +75,10 @@ ctrl_grp <- "Placebo"
 
 if (combined_colspan_trt == TRUE) {
   # Set up levels and label for the required combined columns
-  add_combo <- add_combo_facet("Combined",
+  add_combo <- add_combo_facet(
+    "Combined",
     label = "Combined",
-    levels = c("Apalutamide", "Apalutamide Subgroup")
+    levels = c("Xanomeline High Dose", "Xanomeline Low Dose")
   )
 
   # choose if any facets need to be removed - e.g remove the combined column for placebo
@@ -96,14 +96,30 @@ if (combined_colspan_trt == TRUE) {
 
 adsl <- pharmaverseadamjnj::adsl %>%
   filter(!!rlang::sym(popfl) == "Y") %>%
-  mutate(subgrpdisplay = as.factor(paste0(subgrptxt, ": ", !!as.name(subgrpvar), " ", subgrpunit))) %>%
-  select(STUDYID, USUBJID, all_of(trtvar), all_of(popfl), all_of(subgrpvar), subgrpdisplay)
+  mutate(
+    subgrpdisplay = as.factor(paste0(
+      subgrptxt,
+      ": ",
+      !!as.name(subgrpvar),
+      " ",
+      subgrpunit
+    ))
+  ) %>%
+  select(
+    STUDYID,
+    USUBJID,
+    all_of(trtvar),
+    all_of(popfl),
+    all_of(subgrpvar),
+    subgrpdisplay
+  )
 
 adae <- pharmaverseadamjnj::adae %>%
   filter(TRTEMFL == "Y" & AEREL == "RELATED") %>%
   select(USUBJID, TRTEMFL, AEBODSYS, AEDECOD)
 
-adsl$colspan_trt <- factor(ifelse(adsl[[trtvar]] == "Placebo", " ", "Active Study Agent"),
+adsl$colspan_trt <- factor(
+  ifelse(adsl[[trtvar]] == "Placebo", " ", "Active Study Agent"),
   levels = c("Active Study Agent", " ")
 )
 
@@ -115,16 +131,16 @@ if (risk_diff == TRUE) {
 # join data together
 ae <- left_join(adsl, adae, by = c("USUBJID"))
 
-colspan_trt_map <- create_colspan_map(adsl, 
-                                      non_active_grp = ctrl_grp,
-                                      non_active_grp_span_lbl = " ",
-                                      active_grp_span_lbl = "Active Study Agent",
-                                      colspan_var = "colspan_trt",
-                                      trt_var = trtvar)
+colspan_trt_map <- create_colspan_map(
+  adsl,
+  non_active_grp = ctrl_grp,
+  non_active_grp_span_lbl = " ",
+  active_grp_span_lbl = "Active Study Agent",
+  colspan_var = "colspan_trt",
+  trt_var = trtvar
+)
 
 # Define layout and build table:
-
-#show_denom <- FALSE # toggle on for qc of proper denominator used
 
 ref_path <- c("colspan_trt", " ", "TRT01A", "Placebo")
 
@@ -134,7 +150,8 @@ extra_args_rr <- list(
   denom_by = "subgrpdisplay",
   riskdiff = FALSE,
   extrablankline = TRUE,
-  .stats = c("n_altdf"))
+  .stats = c("n_altdf")
+)
 
 extra_args_rr2 <- list(
   denom = "n_altdf",
@@ -150,7 +167,10 @@ lyt <- basic_table(
   show_colcounts = TRUE,
   colcount_format = "N=xx"
 ) %>%
-  split_cols_by("colspan_trt", split_fun = trim_levels_to_map(map = colspan_trt_map))
+  split_cols_by(
+    "colspan_trt",
+    split_fun = trim_levels_to_map(map = colspan_trt_map)
+  )
 
 if (combined_colspan_trt == TRUE) {
   lyt <- lyt %>%
@@ -163,39 +183,57 @@ if (combined_colspan_trt == TRUE) {
 if (risk_diff == TRUE) {
   lyt <- lyt %>%
     split_cols_by("rrisk_header", nested = FALSE) %>%
-    split_cols_by(trtvar, labels_var = "rrisk_label", split_fun = remove_split_levels("Placebo"))
+    split_cols_by(
+      trtvar,
+      labels_var = "rrisk_label",
+      split_fun = remove_split_levels("Placebo")
+    )
 }
 
 lyt <- lyt %>%
-  split_rows_by("subgrpdisplay",
+  split_rows_by(
+    "subgrpdisplay",
     split_label = "",
     split_fun = trim_levels_in_group("STUDYID"),
     indent_mod = -1L,
     section_div = c(" "),
     page_by = TRUE
   ) %>% # Set page_by = FALSE if you do not wish to start a new page after a new subgroup
-  summarize_row_groups("subgrpdisplay", cfun = a_freq_j, indent_mod = 0L, 
-                       extra_args = extra_args_rr) %>%
-  split_rows_by("TRTEMFL",
+  summarize_row_groups(
+    "subgrpdisplay",
+    cfun = a_freq_j,
+    indent_mod = 0L,
+    extra_args = extra_args_rr
+  ) %>%
+  split_rows_by(
+    "TRTEMFL",
     split_fun = keep_split_levels("Y"),
     indent_mod = -1L,
     section_div = c(" ")
   ) %>%
-  summarize_row_groups("TRTEMFL", cfun = a_freq_j, indent_mod = 0L, 
-                       extra_args = append(extra_args_rr2,list(label =  "Subjects with >=1 related AE", extrablankline = TRUE))) %>%
-  split_rows_by("AEBODSYS",
+  summarize_row_groups(
+    "TRTEMFL",
+    cfun = a_freq_j,
+    indent_mod = 0L,
+    extra_args = append(
+      extra_args_rr2,
+      list(label = "Subjects with >=1 related AE", extrablankline = TRUE)
+    )
+  ) %>%
+  split_rows_by(
+    "AEBODSYS",
     split_label = "System Organ Class",
     split_fun = trim_levels_in_group("AEDECOD"),
     label_pos = "topleft",
     indent_mod = 0L,
     section_div = c(" ")
   ) %>%
-  summarize_row_groups("AEBODSYS", cfun = a_freq_j,
-                       extra_args = extra_args_rr2
+  summarize_row_groups(
+    "AEBODSYS",
+    cfun = a_freq_j,
+    extra_args = extra_args_rr2
   ) %>%
-  analyze("AEDECOD", afun = a_freq_j,
-          extra_args = extra_args_rr2
-  ) %>%
+  analyze("AEDECOD", afun = a_freq_j, extra_args = extra_args_rr2) %>%
   append_topleft("  Preferred Term, n (%)")
 
 result <- build_table(lyt, ae, alt_counts_df = adsl)
@@ -206,8 +244,14 @@ result <- remove_col_count(result)
 # Post-Processing step to sort by descending count on chosen active treatment columns.
 
 if (length(adae$TRTEMFL) != 0) {
-  result <- sort_at_path(result, c("subgrpdisplay", "*", "TRTEMFL", "*", "AEBODSYS"), scorefun = jj_complex_scorefun())
-  result <- sort_at_path(result, c("subgrpdisplay", "*", "TRTEMFL", "*", "AEBODSYS", "*", "AEDECOD"),
+  result <- sort_at_path(
+    result,
+    c("subgrpdisplay", "*", "TRTEMFL", "*", "AEBODSYS"),
+    scorefun = jj_complex_scorefun()
+  )
+  result <- sort_at_path(
+    result,
+    c("subgrpdisplay", "*", "TRTEMFL", "*", "AEBODSYS", "*", "AEDECOD"),
     scorefun = jj_complex_scorefun()
   )
 }
@@ -218,10 +262,10 @@ result <- set_titles(result, tab_titles)
 
 # Convert to tbl file and output table
 
-tt_to_tlgrtf(string_map = string_map, tt = head(result, 20), file = fileid, orientation = "landscape")
+tt_to_tlgrtf(string_map = string_map, tt = head(result, 25), file = fileid, orientation = "landscape")
 ```
 ```{r result1, echo=FALSE, message=FALSE, warning=FALSE, test = list(result_v1 = "result")}
-tt_to_flextable(head(result, 20), theme = theme_docx_default(font_size = 6))
+tt_to_flextable_j(head(result, 25), tblid)
 ```
 
 [Download RTF file](`r paste0(tolower(tblid), '.rtf')`)

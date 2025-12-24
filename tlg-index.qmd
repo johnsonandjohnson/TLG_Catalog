@@ -50,11 +50,33 @@ toc-depth: 4
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSFAE13 -- Exposure-adjusted Incidence Rate Analysis by Preferred Term](./tables/adverse_events/tsfae13.qmd)
 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSFAE14 -- Subjects With Treatment-emergent Serious Adverse Events by Organ System and OCMQ (Narrow)](./tables/adverse_events/tsfae14.qmd)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSFAE15 -- Subjects With Treatment-emergent Adverse Events Leading to Discontinuation of Study Treatment  by Organ System and OCMQ (Narrow)](./tables/adverse_events/tsfae15.qmd)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSFAE16 -- Subjects With Treatment-emergent Adverse Events by Organ System and OCMQ (Broad and Narrow)](./tables/adverse_events/tsfae16.qmd)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSFAE17A -- Subjects With Treatment-emergent Serious Adverse Events by Organ System, OCMQ (Narrow) / (Broad) and Preferred Term](./tables/adverse_events/tsfae17a.qmd)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSFAE17B -- Subjects With Treatment-emergent Adverse Events Leading to Discontinuation of Study Treatment by Organ System, OCMQ (Narrow) / (Broad) and Preferred Term](./tables/adverse_events/tsfae17b.qmd)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSFAE17C -- Subjects With Treatment-emergent Adverse Events by Organ System, OCMQ (Narrow) / (Broad) and Preferred Term](./tables/adverse_events/tsfae17c.qmd)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSFAE17D -- Subjects With Treatment-emergent Adverse Events by Organ System, OCMQ (Narrow) / (Broad) and Preferred Term](./tables/adverse_events/tsfae17d.qmd)
+
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSFAE20A -- Demographic Characteristics for Subjects With Treatment-emergent Adverse Events](./tables/adverse_events/tsfae20a.qmd)
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSFAE20B -- Demographic Characteristics for Subjects With Serious Treatment-emergent Adverse Events](./tables/adverse_events/tsfae20b.qmd)
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSFAE20C -- Demographic Characteristics for Subjects With Treatment-emergent Adverse Events - OCMQ of Interest / Preferred Term of Interest](./tables/adverse_events/tsfae20c.qmd)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSFAE19A -- Subjects With Treatment-emergent Adverse Events by Male-specific OCMQ (Narrow) / (Broad) and Preferred Term](./tables/adverse_events/tsfae19a.qmd)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSFAE19B -- Subjects With Treatment-emergent Adverse Events by Male-specific OCMQ (Narrow) / (Broad) and Preferred Term](./tables/adverse_events/tsfae19b.qmd)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSFAE19C -- Subjects With Treatment-emergent Adverse Events by Female-specific OCMQ (Narrow) / (Broad) and Preferred Term](./tables/adverse_events/tsfae19c.qmd)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSFAE19D -- Subjects With Treatment-emergent Adverse Events by Female-specific OCMQ (Narrow) / (Broad) and Preferred Term](./tables/adverse_events/tsfae19d.qmd)
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSFAE21A -- Subjects With Treatment-emergent Adverse Events by System Organ Class, Preferred Term, and Severity](./tables/adverse_events/tsfae21a.qmd)
 
@@ -153,6 +175,17 @@ toc-depth: 4
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSFECG05 -- Subjects With ECG Values Outside Specified Limits Based on On-treatment Value and Over Time](./tables/electrocardiograms/tsfecg05.qmd)
 
 
+#### Pharmacokinetics
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TPK01A -- Matrix Active Study Agent/Analyte Concentrations (units) Over Time](./tables/pharmacokinetics/tpk01a.qmd)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TPK01B -- Matrix Active Study Agent/Analyte Concentrations (units) Over Time](./tables/pharmacokinetics/tpk01b.qmd)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TPK02 -- Matrix Active Study Agent/Analyte Concentrations (units) Over Time by Body Weight - Quartiles](./tables/pharmacokinetics/tpk02.qmd)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TPK03 --  Subjects With Matrix Active Study Agent/Analyte Concentrations Below the Lowest Quantification Level (LLOQ/LLOQxMRD and units) Over Time](./tables/pharmacokinetics/tpk03.qmd)
+
+
 #### Exposure
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSIEX01 -- Duration of Treatment](./tables/exposure/tsiex01.qmd)
@@ -171,7 +204,7 @@ toc-depth: 4
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSIEX09 -- Distribution of Subjects by Study Treatment Lot](./tables/exposure/tsiex09.qmd)
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSIEX10 -- Study Treatment Compliance](./tables/study_treatment_compliance/tsiex10.qmd)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSIEX10 -- Study Treatment Compliance](./tables/exposure/tsiex10.qmd)
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[TSIEX11 -- Incidence and Reason for Treatment Modification for Infusions](./tables/exposure/tsiex11.qmd)
 
@@ -229,6 +262,10 @@ toc-depth: 4
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[LSFAE04 -- Listing of Adverse Events Leading to Death](./listings/adverse_events/lsfae04.qmd)
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[LSFAE05 -- Listing of Treatment-emergent Adverse Events of Special Interest - Specify AESI Grouping](./listings/adverse_events/lsfae05.qmd)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[LSFAE06A -- Selected Narrow / Broad OCMQs](./listings/adverse_events/lsfae06a.qmd)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[LSFAE06B -- Selected Narrow / Broad OCMQs](./listings/adverse_events/lsfae06b.qmd)
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[LSFDTH01 -- Listing of Deaths](./listings/adverse_events/lsfdth01.qmd)
 

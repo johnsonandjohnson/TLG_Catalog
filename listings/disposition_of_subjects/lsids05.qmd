@@ -8,8 +8,7 @@ subtitle: Listing of Overall Study Start and End Dates
 {{< include ../../_utils/envir_hook.qmd >}}
 
 ```{r setup, echo = FALSE, warning = FALSE, message = FALSE}
-library(rtables.officer)
-
+options(docx.add_datetime = FALSE, tidytlg.add_datetime = FALSE)
 envsetup_config_name <- "default"
 
 # Path to the combined config file
@@ -51,6 +50,7 @@ library(envsetup)
 library(tern)
 library(dplyr)
 library(rtables)
+library(rlistings)
 library(junco)
 
 # Define script level parameters
@@ -71,9 +71,7 @@ adsl <- pharmaverseadamjnj::adsl %>%
     rficdt_min = toupper(format(min(RFICDT, na.rm = TRUE), "%d%b%Y")),
     lstsvdt_max = toupper(format(max(LSTSVDT, na.rm = TRUE), "%d%b%Y")),
     rfpendtc_max = toupper(format(
-      max(as.Date(RFPENDTC),
-        na.rm = TRUE
-      ),
+      max(as.Date(RFPENDTC), na.rm = TRUE),
       "%d%b%Y"
     ))
   )
@@ -86,7 +84,8 @@ lsting <- adsl %>%
     COL3 = rfpendtc_max
   )
 
-lsting <- var_relabel(lsting,
+lsting <- var_relabel(
+  lsting,
   COL1 = "First Contact in the Study~[super a]",
   COL2 = "Last Visit in the Study~[super b]",
   # Optional Column: COL3/rfpendtc_max
@@ -107,10 +106,10 @@ result <- set_titles(result, tab_titles)
 
 # Output listing
 
-tt_to_tlgrtf(string_map = string_map, tt = head(result, 30), file = fileid, orientation = "landscape")
+tt_to_tlgrtf(string_map = string_map, tt = head(result, 100), file = fileid, orientation = "landscape")
 ```
 ```{r result1, echo=FALSE, message=FALSE, warning=FALSE, test = list(result_v1 = "result")}
-tt_to_flextable(head(result,100), theme = theme_docx_default(font_size = 6))
+tt_to_flextable_j(head(result,100), tblid)
 ```
 
 [Download RTF file](`r paste0(tolower(tblid), '.rtf')`)

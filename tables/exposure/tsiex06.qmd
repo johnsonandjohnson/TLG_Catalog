@@ -8,8 +8,7 @@ subtitle: Subjects Who Received Study Treatment Over Time
 {{< include ../../_utils/envir_hook.qmd >}}
 
 ```{r setup, echo = FALSE, warning = FALSE, message = FALSE}
-library(rtables.officer)
-
+options(docx.add_datetime = FALSE, tidytlg.add_datetime = FALSE)
 envsetup_config_name <- "default"
 
 # Path to the combined config file
@@ -43,7 +42,7 @@ apt <- FALSE
 
 ```{r variant1, results='hide', warning = FALSE, message = FALSE}
 
-# Program Name: tsiex06.R
+# Program Name:              tsiex06.R
 
 # Prep Environment
 
@@ -69,9 +68,10 @@ combined_colspan_trt <- TRUE
 
 if (combined_colspan_trt == TRUE) {
   # Set up levels and label for the required combined columns
-  add_combo <- add_combo_facet("Combined",
+  add_combo <- add_combo_facet(
+    "Combined",
     label = "Combined",
-    levels = c("Apalutamide", "Apalutamide Subgroup")
+    levels = c("Xanomeline High Dose", "Xanomeline Low Dose")
   )
 
   # choose if any facets need to be removed - e.g remove the combined column for placebo
@@ -101,14 +101,16 @@ avisit_levs <- stringr::str_to_sentence(levels(adex$AVISIT))
 adex$AVISIT <- stringr::str_to_sentence(adex$AVISIT)
 adex$AVISIT <- factor(adex$AVISIT, levels = avisit_levs)
 
-adsl$colspan_trt <- factor(ifelse(adsl[[trtvar]] == "Placebo", " ", "Active Study Agent"),
+adsl$colspan_trt <- factor(
+  ifelse(adsl[[trtvar]] == "Placebo", " ", "Active Study Agent"),
   levels = c("Active Study Agent", " ")
 )
 
 # join data together
 ex <- adex %>% inner_join(., adsl, by = c("USUBJID"))
 
-colspan_trt_map <- create_colspan_map(adsl,
+colspan_trt_map <- create_colspan_map(
+  adsl,
   non_active_grp = "Placebo",
   non_active_grp_span_lbl = " ",
   active_grp_span_lbl = "Active Study Agent",
@@ -123,7 +125,10 @@ lyt <- rtables::basic_table(
   show_colcounts = TRUE,
   colcount_format = "N=xx"
 ) %>%
-  split_cols_by("colspan_trt", split_fun = trim_levels_to_map(map = colspan_trt_map))
+  split_cols_by(
+    "colspan_trt",
+    split_fun = trim_levels_to_map(map = colspan_trt_map)
+  )
 
 if (combined_colspan_trt == TRUE) {
   lyt <- lyt %>%
@@ -134,9 +139,12 @@ if (combined_colspan_trt == TRUE) {
 }
 
 lyt <- lyt %>%
-  tern::count_occurrences("AVISIT",
-    .stats = "count_fraction_fixed_dp", .formats = c("count_fraction_fixed_dp" = jjcsformat_count_fraction),
-    var_labels = "Subjects receiving study treatment, n (%)", show_labels = "visible"
+  tern::count_occurrences(
+    "AVISIT",
+    .stats = "count_fraction_fixed_dp",
+    .formats = c("count_fraction_fixed_dp" = jjcsformat_count_fraction),
+    var_labels = "Subjects receiving study treatment, n (%)",
+    show_labels = "visible"
   )
 
 result <- build_table(lyt, ex, alt_counts_df = adsl)
@@ -147,10 +155,10 @@ result <- set_titles(result, tab_titles)
 
 # Convert to tbl file and output table
 
-tt_to_tlgrtf(string_map = string_map, tt = head(result, 20), file = fileid, orientation = "portrait")
+tt_to_tlgrtf(string_map = string_map, tt = head(result, 25), file = fileid, orientation = "portrait")
 ```
 ```{r result1, echo=FALSE, message=FALSE, warning=FALSE, test = list(result_v1 = "result")}
-tt_to_flextable(head(result, 20), theme = theme_docx_default(font_size = 6))
+tt_to_flextable_j(head(result, 25), tblid)
 ```
 
 [Download RTF file](`r paste0(tolower(tblid), '.rtf')`)

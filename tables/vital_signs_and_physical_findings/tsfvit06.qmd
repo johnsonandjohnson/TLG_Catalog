@@ -8,8 +8,7 @@ subtitle: Subjects With Treatment-emergent Orthostatic Hypotension During Treatm
 {{< include ../../_utils/envir_hook.qmd >}}
 
 ```{r setup, echo = FALSE, warning = FALSE, message = FALSE}
-library(rtables.officer)
-
+options(docx.add_datetime = FALSE, tidytlg.add_datetime = FALSE)
 envsetup_config_name <- "default"
 
 # Path to the combined config file
@@ -65,7 +64,7 @@ trtvar <- "TRT01A"
 ctrl_grp <- "Placebo"
 
 # specify in the order you want to print on table
-selparamcd <- c("ORTHYP", "ORTHYPD", "ORTHYPS")
+selparamcd <- c("ORTHYP", "DIABPO", "SYSBPO")
 
 selparamcdN <- tibble(PARAMCD = selparamcd, PARAMCDN = seq_along(selparamcd))
 
@@ -78,12 +77,14 @@ adsl <- pharmaverseadamjnj::adsl %>%
   select(USUBJID, all_of(c(popfl, trtvar)), SEX, AGEGR1, RACE, ETHNIC)
 
 
-adsl$colspan_trt <- factor(ifelse(adsl[[trtvar]] == ctrl_grp, " ", "Active Study Agent"),
+adsl$colspan_trt <- factor(
+  ifelse(adsl[[trtvar]] == ctrl_grp, " ", "Active Study Agent"),
   levels = c("Active Study Agent", " ")
 )
 
 
-colspan_trt_map <- create_colspan_map(adsl,
+colspan_trt_map <- create_colspan_map(
+  adsl,
   non_active_grp = ctrl_grp,
   non_active_grp_span_lbl = " ",
   active_grp_span_lbl = "Active Study Agent",
@@ -99,8 +100,30 @@ ref_path <- c("colspan_trt", " ", trtvar, ctrl_grp)
 ## for those subjects with only Y records or only N records, keep one Y, N record respectively
 filtered_advs <- pharmaverseadamjnj::advs %>%
   filter(PARAMCD %in% selparamcd & APOBLFL == "Y") %>%
+  filter(PARAMCD %in% selparamcd) %>%
+  mutate(
+    AVALC = case_when(
+      (PARAMCD == "SYSBPO" | PARAMCD == "DIABPO") & CRIT1FL == "Y" ~ "Y",
+      (PARAMCD == "SYSBPO" | PARAMCD == "DIABPO") &
+        (CRIT1FL == "N" |
+          CRIT1FL == NA) ~ "N",
+      PARAMCD == "ORTHYP" ~ AVALC
+    ),
+    PARAM = case_when(
+      PARAMCD == "SYSBPO" ~ "SBP (STD-SUP) <-20",
+      PARAMCD == "DIABPO" ~ "DBP (STD-SUP) <-10",
+      PARAMCD == "ORTHYP" ~ PARAM
+    )
+  ) %>%
   select(
-    STUDYID, USUBJID, PARAMCD, PARAM, AVALC, AVISIT, APOBLFL, TRTEMFL,
+    STUDYID,
+    USUBJID,
+    PARAMCD,
+    PARAM,
+    AVALC,
+    AVISIT,
+    APOBLFL,
+    TRTEMFL,
     ONTRTFL
   ) %>%
   inner_join(adsl) %>%
@@ -129,9 +152,10 @@ selparamcdN <- selparamcdN %>%
 
 param_levels <- unique(as.character(selparamcdN$PARAM))
 
-filtered_advs$PARAM <- factor(as.character(filtered_advs$PARAM), levels = param_levels)
-
-
+filtered_advs$PARAM <- factor(
+  as.character(filtered_advs$PARAM),
+  levels = param_levels
+)
 
 
 ### Mapping for AVALC
@@ -141,31 +165,51 @@ xlabel_map <- unique(filtered_advs %>% select(PARAM, PARAMCD)) %>%
     value = "Y",
     label = as.character(PARAM)
   ) %>%
-  mutate(label = case_when(
-    label == "Orthostatic Hypotension" ~ "Total number of subjects with orthostatic hypotension",
-    TRUE ~ label
-  ))
+  mutate(
+    label = case_when(
+      label ==
+        "Orthostatic Hypotension" ~ "Total number of subjects with orthostatic hypotension",
+      TRUE ~ label
+    )
+  )
 
 # Define layout and build table:
 
-extra_args_rr <- list(method = "wald", denom = "n_df", ref_path = ref_path, .stats = c("count_unique_fraction"))  
+extra_args_rr <- list(
+  method = "wald",
+  denom = "n_df",
+  ref_path = ref_path,
+  .stats = c("count_unique_fraction")
+)
 
 lyt <- basic_table(
-  show_colcounts = TRUE, colcount_format = "N=xx"
+  show_colcounts = TRUE,
+  colcount_format = "N=xx"
 ) %>%
-  split_cols_by("colspan_trt", split_fun = trim_levels_to_map(map = colspan_trt_map)) %>%
+  split_cols_by(
+    "colspan_trt",
+    split_fun = trim_levels_to_map(map = colspan_trt_map)
+  ) %>%
   split_cols_by(trtvar) %>%
-  analyze("AVALC", a_freq_j, show_labels = "hidden", table_names = "AVALC_N",
-          extra_args = list(denom = "n_df", .stats = c("n_df"))
-          ) %>%
-  split_rows_by("PARAM",
-    label_pos = "topleft", split_fun = drop_split_levels,
+  analyze(
+    "AVALC",
+    a_freq_j,
+    show_labels = "hidden",
+    table_names = "AVALC_N",
+    extra_args = list(denom = "n_df", .stats = c("n_df"))
+  ) %>%
+  split_rows_by(
+    "PARAM",
+    label_pos = "topleft",
+    split_fun = drop_split_levels,
     child_labels = "hidden",
     split_label = "Orthostatic hypotension, n (%)"
   ) %>%
   # as in shell, do not show denom in count/denom (%)
   ### indent will be fixed to 1, will be updated later in post-processing
-  analyze("AVALC", a_freq_j,
+  analyze(
+    "AVALC",
+    a_freq_j,
     extra_args = append(
       extra_args_rr,
       list(
@@ -177,20 +221,23 @@ lyt <- basic_table(
     show_labels = "hidden"
   )
 
-
 result <- build_table(lyt, filtered_advs, alt_counts_df = adsl)
 
 # Post-Processing:
 
-## update indent for "ORTHYPS" and "ORTHYPD"
-
+## update indent for "SYSBPO" and "DIABPO"
 
 adj_indent_mod <- function(result, path, indentupd) {
-  indent_mod(tt_at_path(result, path)) <- indent_mod(tt_at_path(result, path)) + indentupd
+  indent_mod(tt_at_path(result, path)) <- indent_mod(tt_at_path(result, path)) +
+    indentupd
   return(result)
 }
 
-result <- adj_indent_mod(result, path = c("PARAM", "Orthostatic Hypotension"), indentupd = -1L)
+result <- adj_indent_mod(
+  result,
+  path = c("PARAM", "Orthostatic Hypotension"),
+  indentupd = -1L
+)
 
 result <- remove_col_count(result)
 
@@ -200,10 +247,10 @@ result <- set_titles(result, titles)
 
 # Convert to tbl file and output table
 
-tt_to_tlgrtf(string_map = string_map, tt = head(result, 20), file = fileid)
+tt_to_tlgrtf(string_map = string_map, tt = head(result, 25), file = fileid)
 ```
 ```{r result1, echo=FALSE, message=FALSE, warning=FALSE, test = list(result_v1 = "result")}
-tt_to_flextable(head(result, 20), theme = theme_docx_default(font_size = 6))
+tt_to_flextable_j(head(result, 25), tblid)
 ```
 
 [Download RTF file](`r paste0(tolower(tblid), '.rtf')`)

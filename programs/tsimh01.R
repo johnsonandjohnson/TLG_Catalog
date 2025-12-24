@@ -51,7 +51,6 @@ tblid <- "TSIMH01"
 fileid <- write_path(opath, tblid)
 titles <- get_titles_from_file(tblid)
 string_map <- default_str_map
-
 popfls <- c("FASFL", "SAFFL")
 popfl <- popfls[1]
 trtvar <- "TRT01P"

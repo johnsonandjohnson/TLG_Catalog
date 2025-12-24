@@ -1,6 +1,6 @@
 ---
 title: TSFAE06B
-subtitle: Subjects With Treatment-emergent Adverse Events With Frequency ≥5% in Drug-treated Group and ≥2% More Often in Drug-treated Group Than Placebo-treated Group by Preferred Term
+subtitle: Subjects With Treatment-emergent Adverse Events With Frequency =5% in Drug-treated Group and =2% More Often in Drug-treated Group Than Placebo-treated Group by Preferred Term
 ---
 
 ------------------------------------------------------------------------
@@ -8,8 +8,7 @@ subtitle: Subjects With Treatment-emergent Adverse Events With Frequency ≥5% i
 {{< include ../../_utils/envir_hook.qmd >}}
 
 ```{r setup, echo = FALSE, warning = FALSE, message = FALSE}
-library(rtables.officer)
-
+options(docx.add_datetime = FALSE, tidytlg.add_datetime = FALSE)
 envsetup_config_name <- "default"
 
 # Path to the combined config file
@@ -43,7 +42,7 @@ apt <- FALSE
 
 ```{r variant1, results='hide', warning = FALSE, message = FALSE}
 
-# Program Name: tsfae06b.R
+# Program Name:              tsfae06b.R
 
 # Prep Environment
 
@@ -72,9 +71,10 @@ ctrl_grp <- "Placebo"
 
 if (combined_colspan_trt == TRUE) {
   # Set up levels and label for the required combined columns
-  add_combo <- add_combo_facet("Combined",
+  add_combo <- add_combo_facet(
+    "Combined",
     label = "Combined",
-    levels = c("Apalutamide", "Apalutamide Subgroup")
+    levels = c("Xanomeline High Dose", "Xanomeline Low Dose")
   )
 
   # choose if any facets need to be removed - e.g remove the combined column for placebo
@@ -98,7 +98,8 @@ adae <- pharmaverseadamjnj::adae %>%
   filter(TRTEMFL == "Y") %>%
   select(USUBJID, TRTEMFL, AEDECOD)
 
-adsl$colspan_trt <- factor(ifelse(adsl[[trtvar]] == "Placebo", " ", "Active Study Agent"),
+adsl$colspan_trt <- factor(
+  ifelse(adsl[[trtvar]] == "Placebo", " ", "Active Study Agent"),
   levels = c("Active Study Agent", " ")
 )
 
@@ -110,7 +111,8 @@ if (risk_diff == TRUE) {
 # join data together
 ae <- adae %>% right_join(., adsl, by = c("USUBJID"))
 
-colspan_trt_map <- create_colspan_map(adsl,
+colspan_trt_map <- create_colspan_map(
+  adsl,
   non_active_grp = ctrl_grp,
   non_active_grp_span_lbl = " ",
   active_grp_span_lbl = "Active Study Agent",
@@ -121,14 +123,21 @@ colspan_trt_map <- create_colspan_map(adsl,
 # Define layout and build table:
 
 ref_path <- c("colspan_trt", " ", "TRT01A", "Placebo")
-extra_args_rr <- list(method = rr_method, ref_path = ref_path, .stats = c("count_unique_fraction"))
+extra_args_rr <- list(
+  method = rr_method,
+  ref_path = ref_path,
+  .stats = c("count_unique_fraction")
+)
 
 lyt <- basic_table(
   top_level_section_div = " ",
   show_colcounts = TRUE,
   colcount_format = "N=xx"
 ) %>%
-  split_cols_by("colspan_trt", split_fun = trim_levels_to_map(map = colspan_trt_map))
+  split_cols_by(
+    "colspan_trt",
+    split_fun = trim_levels_to_map(map = colspan_trt_map)
+  )
 
 if (combined_colspan_trt == TRUE) {
   lyt <- lyt %>%
@@ -141,11 +150,20 @@ if (combined_colspan_trt == TRUE) {
 if (risk_diff == TRUE) {
   lyt <- lyt %>%
     split_cols_by("rrisk_header", nested = FALSE) %>%
-    split_cols_by(trtvar, labels_var = "rrisk_label", split_fun = remove_split_levels("Placebo"))
+    split_cols_by(
+      trtvar,
+      labels_var = "rrisk_label",
+      split_fun = remove_split_levels("Placebo")
+    )
 }
 
 lyt <- lyt %>%
-  analyze("AEDECOD", afun = a_freq_j, extra_args = append(extra_args_rr, NULL), indent_mod = 0L) %>%
+  analyze(
+    "AEDECOD",
+    afun = a_freq_j,
+    extra_args = append(extra_args_rr, NULL),
+    indent_mod = 0L
+  ) %>%
   append_topleft("Preferred Term, n (%)")
 
 result <- build_table(lyt, ae, alt_counts_df = adsl)
@@ -160,17 +178,22 @@ if (length(adae$TRTEMFL) != 0) {
   # and y% more often than placebo
   ################################################################################
 
-  result <- safe_prune_table(result, prune_func = bspt_pruner(
-    fraction = 0.05, diff_from_control = 0.02,
-    control = ctrl_grp
-  ))
+  result <- safe_prune_table(
+    result,
+    prune_func = bspt_pruner(
+      fraction = 0.05,
+      diff_from_control = 0.02,
+      control = ctrl_grp
+    )
+  )
 }
 
 ## Remove the N=xx column headers for the risk difference columns
 result <- remove_col_count(result)
 
 ## Remove any rogue null rows
-result <- result %>% safe_prune_table(prune_func = keep_rows(keep_non_null_rows))
+result <- result %>%
+  safe_prune_table(prune_func = keep_rows(keep_non_null_rows))
 
 # Add titles and footnotes:
 
@@ -178,10 +201,10 @@ result <- set_titles(result, tab_titles)
 
 # Convert to tbl file and output table
 
-tt_to_tlgrtf(string_map = string_map, tt = head(result, 20), file = fileid, orientation = "landscape")
+tt_to_tlgrtf(string_map = string_map, tt = head(result, 25), file = fileid, orientation = "landscape")
 ```
 ```{r result1, echo=FALSE, message=FALSE, warning=FALSE, test = list(result_v1 = "result")}
-tt_to_flextable(head(result, 20), theme = theme_docx_default(font_size = 6))
+tt_to_flextable_j(head(result, 25), tblid)
 ```
 
 [Download RTF file](`r paste0(tolower(tblid), '.rtf')`)

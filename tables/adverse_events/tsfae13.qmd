@@ -8,8 +8,7 @@ subtitle: Exposure-adjusted Incidence Rate Analysis by Preferred Term
 {{< include ../../_utils/envir_hook.qmd >}}
 
 ```{r setup, echo = FALSE, warning = FALSE, message = FALSE}
-library(rtables.officer)
-
+options(docx.add_datetime = FALSE, tidytlg.add_datetime = FALSE)
 envsetup_config_name <- "default"
 
 # Path to the combined config file
@@ -68,27 +67,35 @@ string_map <- default_str_map
 adexsum <- pharmaverseadamjnj::adexsum %>%
   filter(!!rlang::sym(popfl) == "Y" & PARAMCD == "TRTDURY") %>%
   create_colspan_var(
-    non_active_grp          = ctrl_grp,
+    non_active_grp = ctrl_grp,
     non_active_grp_span_lbl = " ",
-    active_grp_span_lbl     = "Active Study Agent",
-    colspan_var             = "colspan_trt",
-    trt_var                 = trtvar
+    active_grp_span_lbl = "Active Study Agent",
+    colspan_var = "colspan_trt",
+    trt_var = trtvar
   ) %>%
   mutate(
     rrisk_header = "Risk Difference (95% CI)",
     rrisk_label = paste(!!rlang::sym(trtvar), "vs", ctrl_grp),
     TRTDURY = AVAL
   ) %>%
-  select(USUBJID, !!rlang::sym(trtvar), colspan_trt, rrisk_header, rrisk_label, TRTDURY)
+  select(
+    USUBJID,
+    !!rlang::sym(trtvar),
+    colspan_trt,
+    rrisk_header,
+    rrisk_label,
+    TRTDURY
+  )
 
 adae <- pharmaverseadamjnj::adae %>%
   filter(TRTEMFL == "Y" & AOCCPFL == "Y") %>%
-  select(USUBJID, AEDECOD, ASTDY, AOCCPFL) 
+  select(USUBJID, AEDECOD, ASTDY, AOCCPFL)
 
-# left join -- subjects without ae will be handled via alt_counts_df dataframe
-aefup <- left_join(adae, adexsum, by = "USUBJID")
+#  join -- -- subjects without ae will be handled via alt_counts_df dataframe
+aefup <- right_join(adae, adexsum, by = "USUBJID")
 
-colspan_trt_map <- create_colspan_map(adexsum,
+colspan_trt_map <- create_colspan_map(
+  adexsum,
   non_active_grp = ctrl_grp,
   non_active_grp_span_lbl = " ",
   active_grp_span_lbl = "Active Study Agent",
@@ -99,29 +106,42 @@ ref_path <- c("colspan_trt", " ", trtvar, ctrl_grp)
 
 # Define layout and build table:
 
-lyt <- basic_table(show_colcounts = TRUE, colcount_format = "N=xx", top_level_section_div = " ") %>%
-  split_cols_by("colspan_trt", split_fun = trim_levels_to_map(map = colspan_trt_map)) %>%
+lyt <- basic_table(
+  show_colcounts = TRUE,
+  colcount_format = "N=xx",
+  top_level_section_div = " "
+) %>%
+  split_cols_by(
+    "colspan_trt",
+    split_fun = trim_levels_to_map(map = colspan_trt_map)
+  ) %>%
   split_cols_by(trtvar) %>%
   split_cols_by("rrisk_header", nested = FALSE) %>%
-  split_cols_by(trtvar, labels_var = "rrisk_label", split_fun = remove_split_levels(ctrl_grp)) %>%
-  analyze("TRTDURY",
-          nested = FALSE,
-          show_labels = "hidden",
-          afun = a_patyrs_j
-          ,extra_args = list(.labels = c(patyrs = "Subject years\u1D43"))
-          ) %>%
-   analyze(vars = "AEDECOD",
-           nested = FALSE,
-           afun = a_eair100_j,
-           extra_args = list(
-              fup_var = "TRTDURY",
-              occ_var = "AOCCPFL",
-              occ_dy = "ASTDY",
-              ref_path = ref_path,
-              drop_levels = TRUE)
-   ) %>%
+  split_cols_by(
+    trtvar,
+    labels_var = "rrisk_label",
+    split_fun = remove_split_levels(ctrl_grp)
+  ) %>%
+  analyze(
+    "TRTDURY",
+    nested = FALSE,
+    show_labels = "hidden",
+    afun = a_patyrs_j,
+    extra_args = list(.labels = c(patyrs = "Subject years\u1D43"))
+  ) %>%
+  analyze(
+    vars = "AEDECOD",
+    nested = FALSE,
+    afun = a_eair100_j,
+    extra_args = list(
+      fup_var = "TRTDURY",
+      occ_var = "AOCCPFL",
+      occ_dy = "ASTDY",
+      ref_path = ref_path,
+      drop_levels = TRUE
+    )
+  ) %>%
   append_topleft("Preferred Term, EAIR Per 100 SY")
-
 
 
 result <- build_table(lyt, aefup, alt_counts_df = adexsum)
@@ -131,7 +151,7 @@ result <- build_table(lyt, aefup, alt_counts_df = adexsum)
 result <- result %>%
   sort_at_path(
     path = c("AEDECOD"),
-    scorefun = jj_complex_scorefun(colpath = "Apalutamide")
+    scorefun = jj_complex_scorefun(colpath = "Xanomeline High Dose")
   )
 
 result <- remove_col_count(result)
@@ -142,10 +162,10 @@ result <- set_titles(result, tab_titles)
 
 # Convert to tbl file and output table:
 
-tt_to_tlgrtf(string_map = string_map, tt = head(result, 20), file = fileid, orientation = "landscape")
+tt_to_tlgrtf(string_map = string_map, tt = head(result, 25), file = fileid, orientation = "landscape")
 ```
 ```{r result1, echo=FALSE, message=FALSE, warning=FALSE, test = list(result_v1 = "result")}
-tt_to_flextable(head(result, 20), theme = theme_docx_default(font_size = 6))
+tt_to_flextable_j(head(result, 25), tblid)
 ```
 
 [Download RTF file](`r paste0(tolower(tblid), '.rtf')`)

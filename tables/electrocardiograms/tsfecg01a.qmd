@@ -8,8 +8,7 @@ subtitle: Mean Change From Baseline for ECG Data Over Time by Subgroup
 {{< include ../../_utils/envir_hook.qmd >}}
 
 ```{r setup, echo = FALSE, warning = FALSE, message = FALSE}
-library(rtables.officer)
-
+options(docx.add_datetime = FALSE, tidytlg.add_datetime = FALSE)
 envsetup_config_name <- "default"
 
 # Path to the combined config file
@@ -68,13 +67,15 @@ subgrplbl <- "Age: %s years"
 
 page_by <- FALSE # Set page_by TRUE/FALSE if you (do not) wish to start a new page after a new subgroup
 indent_adj <- -1L
-if (page_by) indent_adj <- 0L
+if (page_by) {
+  indent_adj <- 0L
+}
 
 # Note on ancova parameter
 # when ancova = TRUE
 # ancova model will be used to calculate all mean/mean change columns
 # not just those from the Difference column
-# model specification  
+# model specification
 summ_vars <- list(arm = trtvar, covariates = NULL)
 
 # when ancova = FALSE, all mean/mean change columns will be from descriptive stats
@@ -86,7 +87,17 @@ comp_btw_group <- TRUE
 
 
 selparamcd <- c("EGHRMN", "PRAG", "QRSAG", "QTC", "QTCBAG", "QTCFAG", "RRAG")
-selvisit <- c("Baseline", "Month 1", "Month 3", "Month 6", "Month 9", "Month 12", "Month 15", "Month 18", "Month 24")
+selvisit <- c(
+  "Baseline",
+  "Month 1",
+  "Month 3",
+  "Month 6",
+  "Month 9",
+  "Month 12",
+  "Month 15",
+  "Month 18",
+  "Month 24"
+)
 
 # For template output to reduce output, only limited timepoints and parameters are selected
 # Remove for actual study code
@@ -98,14 +109,24 @@ selvisit <- c("Baseline", "Month 1", "Month 3")
 
 adsl <- pharmaverseadamjnj::adsl %>%
   filter(.data[[popfl]] == "Y") %>%
-  select(STUDYID, USUBJID, all_of(c(popfl, trtvar, subgrpvar)), SEX, AGEGR1, RACE, ETHNIC, AGE)
+  select(
+    STUDYID,
+    USUBJID,
+    all_of(c(popfl, trtvar, subgrpvar)),
+    SEX,
+    AGEGR1,
+    RACE,
+    ETHNIC,
+    AGE
+  )
 
 
 msubgrp <- adsl %>%
   group_by(across(all_of(c(trtvar, subgrpvar)))) %>%
   summarize(count = n())
 
-adsl$colspan_trt <- factor(ifelse(adsl[[trtvar]] == ctrl_grp, " ", "Active Study Agent"),
+adsl$colspan_trt <- factor(
+  ifelse(adsl[[trtvar]] == ctrl_grp, " ", "Active Study Agent"),
   levels = c("Active Study Agent", " ")
 )
 
@@ -115,16 +136,25 @@ adsl$rrisk_label <- paste(adsl[[trtvar]], paste("vs", ctrl_grp))
 
 adeg00 <- pharmaverseadamjnj::adeg %>%
   select(
-    USUBJID, AVISITN, AVISIT, PARAMCD, PARAM, AVAL, BASE, CHG, starts_with("ANL"),
-    ABLFL, APOBLFL
+    USUBJID,
+    AVISITN,
+    AVISIT,
+    PARAMCD,
+    PARAM,
+    AVAL,
+    BASE,
+    CHG,
+    starts_with("ANL"),
+    ABLFL,
+    APOBLFL
     # ,EGSTAT
   ) %>%
   mutate(inegdata = "Y") %>%
   inner_join(adsl)
 
 # selection of all non-unscheduled visits from data
-visits <- adeg00 %>% 
-  select(AVISIT) %>% 
+visits <- adeg00 %>%
+  select(AVISIT) %>%
   filter(!grepl("UNSCHEDULED", toupper(AVISIT)))
 
 visits$AVISIT <- droplevels(visits$AVISIT)
@@ -143,7 +173,12 @@ selvisit_data <- levels(visits$AVISIT)
 ## note that precision is on the raw values, as we are presenting mean/ci, and extra digit will be added
 ## eg precision = 2 will result in mean/ci format xx.xxx (xx.xxx, xx.xxx)
 
-eg_precision <- tidytlg:::make_precision_data(df = adeg00, decimal = 3, precisionby = "PARAMCD", precisionon = "AVAL")
+eg_precision <- tidytlg:::make_precision_data(
+  df = adeg00,
+  decimal = 3,
+  precisionby = "PARAMCD",
+  precisionon = "AVAL"
+)
 
 filtered_adeg_00 <- adeg00 %>%
   filter(PARAMCD %in% selparamcd) %>%
@@ -152,54 +187,63 @@ filtered_adeg_00 <- adeg00 %>%
   filter(ANL02FL == "Y" & (ABLFL == "Y" | APOBLFL == "Y"))
 
 #### perform check on unique record per subject/param/timepoint
-check_unique <- filtered_adeg_00 %>% 
-  group_by(USUBJID, PARAMCD, AVISIT) %>% 
-  mutate(n_recsub = n()) %>% 
-  filter(n_recsub>1)
+check_unique <- filtered_adeg_00 %>%
+  group_by(USUBJID, PARAMCD, AVISIT) %>%
+  mutate(n_recsub = n()) %>%
+  filter(n_recsub > 1)
 
-if (nrow(check_unique) > 0){
-  stop("Your input dataset needs extra attention, as some subjects have more than one record per parameter/visit")
+if (nrow(check_unique) > 0) {
+  stop(
+    "Your input dataset needs extra attention, as some subjects have more than one record per parameter/visit"
+  )
   ### you will run into issues with fraction portion in count_denom_fraction, as count > denom, and fraction > 1 if you don't adjust your input dataset
-  
+
   # Possible extra derivation - just to ensure program can run without issues
   ### Study team is responsible for adding this derivation onto ADaM dataset and ensure proper derivation rule for ANL02FL is implemented !!!!!!!!!!
   filtered_adeg_00x <- adeg00 %>%
     filter(PARAMCD %in% selparamcd) %>%
     filter(AVISIT %in% selvisit) %>%
     ### unique record per timepoint:
-    filter(ANL02FL == "Y" & (ABLFL == "Y" | APOBLFL == "Y")) %>% 
-    group_by(USUBJID, PARAM, AVISIT) %>% 
-    mutate(n_sub = n()) %>% 
-    arrange(USUBJID, PARAM, AVISIT, ADT) %>% 
-    mutate(i =vctrs::vec_group_id(ADT)) %>% 
-    mutate(ANL02FL = case_when(n_sub == 1 ~ "Y",
-                               i == 1 ~ "Y")) %>% 
-    select(-c(i, n_sub)) %>% 
+    filter(ANL02FL == "Y" & (ABLFL == "Y" | APOBLFL == "Y")) %>%
+    group_by(USUBJID, PARAM, AVISIT) %>%
+    mutate(n_sub = n()) %>%
+    arrange(USUBJID, PARAM, AVISIT, ADT) %>%
+    mutate(i = vctrs::vec_group_id(ADT)) %>%
+    mutate(
+      ANL02FL = case_when(
+        n_sub == 1 ~ "Y",
+        i == 1 ~ "Y"
+      )
+    ) %>%
+    select(-c(i, n_sub)) %>%
     ungroup()
-  
+
   filtered_adeg_00 <- filtered_adeg_00x %>%
     filter(PARAMCD %in% selparamcd) %>%
     filter(AVISIT %in% selvisit) %>%
     ### unique record per timepoint:
-    filter(ANL02FL == "Y" & (ABLFL == "Y" | APOBLFL == "Y")) 
-  
+    filter(ANL02FL == "Y" & (ABLFL == "Y" | APOBLFL == "Y"))
+
   ## now your data should contain 1 record per subject per parameter
 }
 
 
-
-
 ### for denominator per timepoint: all records from adeg on this timepoint: ignoring anl01fl/anl02fl/param
-filtered_adeg_timepoints <- unique(adeg00 %>%
-  filter(AVISIT %in% selvisit) %>%
-  select(USUBJID, AVISITN, AVISIT, inegdata)) %>%
+filtered_adeg_timepoints <- unique(
+  adeg00 %>%
+    filter(AVISIT %in% selvisit) %>%
+    select(USUBJID, AVISITN, AVISIT, inegdata)
+) %>%
   inner_join(adsl)
 
 params <- unique(filtered_adeg_00 %>% select(PARAMCD, PARAM))
 
 filtered_adeg_timepoints <- filtered_adeg_timepoints %>%
   mutate(dummy_join = 1) %>%
-  full_join(params %>% mutate(dummy_join = 1), relationship = "many-to-many") %>%
+  full_join(
+    params %>% mutate(dummy_join = 1),
+    relationship = "many-to-many"
+  ) %>%
   select(-dummy_join)
 
 ### identify subjects in filtered_adeg_timepoints and not in filtered_adeg
@@ -229,8 +273,6 @@ adeg_timepoints_subgroups <-
   ) %>%
   # expand dataset to show all levels
   tidyr::complete(., USUBJID, PARAMCD, AVISIT)
-
-
 
 
 extra_sub2 <-
@@ -265,16 +307,14 @@ attr(filtered_adeg$extra_sub2, "label") <- "Extra Subject step 2"
 filtered_adeg <- var_relabel_list(filtered_adeg, var_labels(adeg00, fill = T))
 
 
-
-
-
 #### Note : variable inegdata will be used to differentiate records from subjects in vsdata at timepoint and subjects not in vsdata (only in adsl)
 #### is.na(filtered_adeg$inegdata) corresponds to filtered_adeg$extra_sub2 == "Y"
 
 ## check1 <- filtered_adeg %>% filter(extra_sub2 == "Y") %>% select(USUBJID,inegdata,extra_sub2,PARAMCD,AVISIT,AVAL)
 ## check2 <- filtered_adeg %>% filter(is.na(inegdata)) %>% select(USUBJID,inegdata,extra_sub2,PARAMCD,AVISIT,AVAL)
 
-colspan_trt_map <- create_colspan_map(adsl,
+colspan_trt_map <- create_colspan_map(
+  adsl,
   non_active_grp = ctrl_grp,
   non_active_grp_span_lbl = " ",
   active_grp_span_lbl = "Active Study Agent",
@@ -289,38 +329,80 @@ summ_vars <- list(arm = trtvar, covariates = NULL)
 ref_path <- c("colspan_trt", " ", trtvar, ctrl_grp)
 multivars <- c("AVAL", "AVAL", "CHG")
 
-extra_args_3col <- list(format_na_str = rep("NA", 3), 
-                        d = "decimal", 
-                        variables = summ_vars, 
-                        ref_path = ref_path,
-                        ancova = ancova, 
-                        comp_btw_group = comp_btw_group,
-                        indatavar = "inegdata",
-                        multivars = multivars)
+extra_args_3col <- list(
+  format_na_str = rep("NA", 3),
+  d = "decimal",
+  variables = summ_vars,
+  ref_path = ref_path,
+  ancova = ancova,
+  comp_btw_group = comp_btw_group,
+  indatavar = "inegdata",
+  multivars = multivars
+)
 
 lyt_0 <- basic_table(show_colcounts = FALSE, colcount_format = "N=xx") %>%
   ### first columns
-  split_cols_by("colspan_trt", split_fun = trim_levels_to_map(map = colspan_trt_map)) %>%
+  split_cols_by(
+    "colspan_trt",
+    split_fun = trim_levels_to_map(map = colspan_trt_map)
+  ) %>%
   split_cols_by(trtvar, show_colcounts = TRUE, colcount_format = "N=xx") %>%
-  
-  split_rows_by(subgrpvar, label_pos = "hidden", section_div = " ", split_fun = drop_split_levels, page_by = page_by) %>%
+  split_rows_by(
+    subgrpvar,
+    label_pos = "hidden",
+    section_div = " ",
+    split_fun = drop_split_levels,
+    page_by = page_by
+  ) %>%
   ### just show number of subjects in current level of subgrpvar
   ### only show this number in the first AVAL column
-  summarize_row_groups(var = subgrpvar, cfun = a_freq_j, extra_args = list(label_fstr = subgrplbl, extrablankline = TRUE, restr_columns = "AVAL", .stats = c("n_altdf"),
-                                                                           riskdiff = FALSE, denom_by = subgrpvar)) %>%
-  
-  split_rows_by("PARAM", label_pos = "topleft", split_label = obj_label(filtered_adeg$PARAM), section_div = " ", split_fun = drop_split_levels, indent_mod = indent_adj) %>%
+  summarize_row_groups(
+    var = subgrpvar,
+    cfun = a_freq_j,
+    extra_args = list(
+      label_fstr = subgrplbl,
+      extrablankline = TRUE,
+      restr_columns = "AVAL",
+      .stats = c("n_altdf"),
+      riskdiff = FALSE,
+      denom_by = subgrpvar
+    )
+  ) %>%
+  split_rows_by(
+    "PARAM",
+    label_pos = "topleft",
+    split_label = obj_label(filtered_adeg$PARAM),
+    section_div = " ",
+    split_fun = drop_split_levels,
+    indent_mod = indent_adj
+  ) %>%
   ## note the child_labels = hidden for AVISIT, these labels will be taken care off by
   ## applying function summarize_aval_chg_diff further in the layout
-  split_rows_by("AVISIT", label_pos = "topleft", split_label = "Study Visit", split_fun = drop_split_levels, child_labels = "hidden") %>%
+  split_rows_by(
+    "AVISIT",
+    label_pos = "topleft",
+    split_label = "Study Visit",
+    split_fun = drop_split_levels,
+    child_labels = "hidden"
+  ) %>%
   ## set up a 3 column split
-  split_cols_by_multivar(multivars, varlabels = c("n/N (%)", "Mean (95% CI)", "Mean Change From Baseline (95% CI)")) %>%
+  split_cols_by_multivar(
+    multivars,
+    varlabels = c(
+      "n/N (%)",
+      "Mean (95% CI)",
+      "Mean Change From Baseline (95% CI)"
+    )
+  ) %>%
   ### restart for the rrisk_header columns - note the nested = FALSE option
   ### also note the child_labels = "hidden" in both PARAM and AVISIT
   split_cols_by("rrisk_header", nested = FALSE) %>%
-  split_cols_by(trtvar,
-    split_fun = remove_split_levels(ctrl_grp), labels_var = "rrisk_label",
-    show_colcounts = TRUE, colcount_format = "N=xx"
+  split_cols_by(
+    trtvar,
+    split_fun = remove_split_levels(ctrl_grp),
+    labels_var = "rrisk_label",
+    show_colcounts = TRUE,
+    colcount_format = "N=xx"
   ) %>%
   ### difference columns : just 1 column & analysis needs to be done on change
   split_cols_by_multivar(multivars[3], varlabels = c(" "))
@@ -330,7 +412,8 @@ lyt_0 <- basic_table(show_colcounts = FALSE, colcount_format = "N=xx") %>%
 lyt <- lyt_0 %>%
   ### the variable passed here in analyze is not used (STUDYID), it is a dummy var passing,
   ### the function summarize_aval_chg_diff grabs the required vars from cols_by_multivar calls
-  analyze("STUDYID",
+  analyze(
+    "STUDYID",
     afun = a_summarize_aval_chg_diff_j,
     extra_args = extra_args_3col
   )
@@ -345,7 +428,9 @@ remove_col_count2 <- function(result, string = paste("vs", ctrl_grp)) {
     filter(stringr::str_detect(toupper(label), toupper(string))) %>%
     pull(path)
 
-  for (i in seq_along(mcdfsel)) facet_colcount(result, mcdfsel[[i]]) <- NA
+  for (i in seq_along(mcdfsel)) {
+    facet_colcount(result, mcdfsel[[i]]) <- NA
+  }
 
   return(result)
 }
@@ -358,14 +443,15 @@ result <- set_titles(result, titles)
 
 # Convert to tbl file and output table
 
-tt_to_tlgrtf(string_map = string_map, tt = head(result, 20),
+tt_to_tlgrtf(string_map = string_map, tt = 
+  result,
   file = fileid,
   nosplitin = list(cols = c(trtvar, "rrisk_header")),
   orientation = "landscape"
 )
 ```
 ```{r result1, echo=FALSE, message=FALSE, warning=FALSE, test = list(result_v1 = "result")}
-tt_to_flextable(head(result, 20), theme = theme_docx_default(font_size = 6))
+tt_to_flextable_j(head(result, 25), tblid)
 ```
 
 [Download RTF file](`r paste0(tolower(tblid), '.rtf')`)

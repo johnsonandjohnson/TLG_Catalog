@@ -1,6 +1,6 @@
 ---
 title: TSFLAB04B
-subtitle: Subjects With Last/Any On-treatment Hematology Values ≥ Level 2 Criteria
+subtitle: Subjects With Last/Any On-treatment Hematology Values = Level 2 Criteria
 ---
 
 ------------------------------------------------------------------------
@@ -8,8 +8,7 @@ subtitle: Subjects With Last/Any On-treatment Hematology Values ≥ Level 2 Crit
 {{< include ../../_utils/envir_hook.qmd >}}
 
 ```{r setup, echo = FALSE, warning = FALSE, message = FALSE}
-library(rtables.officer)
-
+options(docx.add_datetime = FALSE, tidytlg.add_datetime = FALSE)
 envsetup_config_name <- "default"
 
 # Path to the combined config file
@@ -96,15 +95,24 @@ markedlyabnormal_file <- file.path('../../_data', "markedlyabnormal.xlsx")
 
 markedlyabnormal_sheets <- readxl::excel_sheets(markedlyabnormal_file)
 
-lbmarkedlyabnormal_defs <- readxl::read_excel(markedlyabnormal_file, sheet = toupper(ad_domain)) %>%
+lbmarkedlyabnormal_defs <- readxl::read_excel(
+  markedlyabnormal_file,
+  sheet = toupper(ad_domain)
+) %>%
   filter(PARAMCD != "Parameter Code")
 
-MCRITs <- unique(lbmarkedlyabnormal_defs %>% filter(!stringr::str_ends(VARNAME, "ML")) %>% pull(VARNAME))
+MCRITs <- unique(
+  lbmarkedlyabnormal_defs %>%
+    filter(!stringr::str_ends(VARNAME, "ML")) %>%
+    pull(VARNAME)
+)
 
 
-MCRITs_def <- unique(lbmarkedlyabnormal_defs %>%
-                       filter(VARNAME %in% MCRITs) %>%
-                       select(PARAMCD, VARNAME, CRIT, SEX)) %>%
+MCRITs_def <- unique(
+  lbmarkedlyabnormal_defs %>%
+    filter(VARNAME %in% MCRITs) %>%
+    select(PARAMCD, VARNAME, CRIT, SEX)
+) %>%
   mutate(VARNAME = paste0(VARNAME, "ML")) %>%
   rename(CRITNAME = CRIT)
 
@@ -115,7 +123,9 @@ MCRITs_def2 <- lbmarkedlyabnormal_defs %>%
 
 MCRITs_def3 <- MCRITs_def2 %>%
   left_join(., MCRITs_def, relationship = "many-to-one") %>%
-  mutate(CRITx = paste0("(", stringr::str_split_i(CRIT, stringr::fixed("("), 2))) %>%
+  mutate(
+    CRITx = paste0("(", stringr::str_split_i(CRIT, stringr::fixed("("), 2))
+  ) %>%
   mutate(CRITx = paste(CRITNAME, CRITx)) %>%
   select(PARAMCD, SEX, VARNAME, CRITx, ORDER) %>%
   mutate(VARNAME = paste0(VARNAME, "x")) %>%
@@ -126,8 +136,6 @@ MCRITs_def3 <- MCRITs_def2 %>%
 ### the label on the output will be the label from the chosen threshold
 MCRITs_def4 <- MCRITs_def3 %>%
   filter(CRITn == level_threshold)
-
-
 
 
 ### convert dataframe into label_map that can be used with the a_freq_j afun function
@@ -146,30 +154,44 @@ params <- unique(xlabel_map %>% select(PARAMCD, var, value)) %>%
 
 xlabel_map <- params %>%
   left_join(., xlabel_map) %>%
-  mutate(label = case_when(
-    is.na(label) ~ "TO BE DELETED",
-    TRUE ~ label
-  ))
+  mutate(
+    label = case_when(
+      is.na(label) ~ "TO BE DELETED",
+      TRUE ~ label
+    )
+  )
 
 ### for fixing a problem with one test : HDL, it has MCRIT1 male low, MCRIT2 female low
 ### our data only has MCRIT1
 ### get text of label prior to "(", to process later
-xlabel_map$label_short <- stringr::str_split_i(xlabel_map$label, stringr::fixed("("), 1)
+xlabel_map$label_short <- stringr::str_split_i(
+  xlabel_map$label,
+  stringr::fixed("("),
+  1
+)
 
 
 #### extend xlabel_map to include both MCRIT1 and MCRIT2 for all parameters
-params <- unique(xlabel_map %>% select(PARAMCD, var, value)) %>% 
+params <- unique(xlabel_map %>% select(PARAMCD, var, value)) %>%
   tidyr::expand(PARAMCD, var, value)
 
-xlabel_map <- params %>% 
-  left_join(., xlabel_map) %>% 
-  mutate(label = case_when(is.na(label) ~ "TO BE DELETED",
-                           TRUE ~ label))
+xlabel_map <- params %>%
+  left_join(., xlabel_map) %>%
+  mutate(
+    label = case_when(
+      is.na(label) ~ "TO BE DELETED",
+      TRUE ~ label
+    )
+  )
 
 ### for fixing a problem with one test : HDL, it has MCRIT1 male low, MCRIT2 female low
 ### our data only has MCRIT1
 ### get text of label prior to "(", to process later
-xlabel_map$label_short <- stringr::str_split_i(xlabel_map$label, stringr::fixed("("), 1)
+xlabel_map$label_short <- stringr::str_split_i(
+  xlabel_map$label,
+  stringr::fixed("("),
+  1
+)
 
 # Process Data:
 
@@ -177,29 +199,53 @@ adsl <- pharmaverseadamjnj::adsl %>%
   filter(.data[[popfl]] == "Y") %>%
   select(STUDYID, USUBJID, all_of(c(popfl, trtvar)))
 
-adsl$colspan_trt <- factor(ifelse(adsl[[trtvar]] == ctrl_grp, " ", "Active Study Agent"),
-                           levels = c("Active Study Agent", " ")
+adsl$colspan_trt <- factor(
+  ifelse(adsl[[trtvar]] == ctrl_grp, " ", "Active Study Agent"),
+  levels = c("Active Study Agent", " ")
 )
 
 adsl$rrisk_header <- "Risk Difference (%) (95% CI)"
 adsl$rrisk_label <- paste(adsl[[trtvar]], paste("vs", ctrl_grp))
 
-colspan_trt_map <- create_colspan_map(adsl,
-                                      non_active_grp = ctrl_grp,
-                                      non_active_grp_span_lbl = " ",
-                                      active_grp_span_lbl = "Active Study Agent",
-                                      colspan_var = "colspan_trt",
-                                      trt_var = trtvar
+colspan_trt_map <- create_colspan_map(
+  adsl,
+  non_active_grp = ctrl_grp,
+  non_active_grp_span_lbl = " ",
+  active_grp_span_lbl = "Active Study Agent",
+  colspan_var = "colspan_trt",
+  trt_var = trtvar
 )
 ref_path <- c("colspan_trt", " ", trtvar, ctrl_grp)
 
 adlb_complete <- pharmaverseadamjnj::adlb
 
 adlb00 <- adlb_complete %>%
-  select(USUBJID, AVISITN, AVISIT, starts_with("PAR"), starts_with("ANL"), starts_with("MCRIT"), ONTRTFL, TRTEMFL, LVOTFL, AVAL) %>%
+  select(
+    USUBJID,
+    AVISITN,
+    AVISIT,
+    starts_with("PAR"),
+    starts_with("ANL"),
+    starts_with("MCRIT"),
+    ONTRTFL,
+    TRTEMFL,
+    LVOTFL,
+    AVAL
+  ) %>%
   inner_join(adsl) %>%
-  relocate(USUBJID, AVISITN, AVISIT, PARAMCD, MCRIT1ML, MCRIT2ML, ANL04FL, ANL05FL, ONTRTFL, TRTEMFL, LVOTFL)
-
+  relocate(
+    USUBJID,
+    AVISITN,
+    AVISIT,
+    PARAMCD,
+    MCRIT1ML,
+    MCRIT2ML,
+    ANL04FL,
+    ANL05FL,
+    ONTRTFL,
+    TRTEMFL,
+    LVOTFL
+  )
 
 
 ### previous actions on adlb lost the label of variables
@@ -212,8 +258,25 @@ filtered_adlb_0 <- adlb00 %>%
   filter(PARAMCD %in% unique(MCRITs_def3$PARAMCD)) %>%
   filter(toupper(PARCAT1) == "HEMATOLOGY") %>%
   select(
-    USUBJID, AVISITN, AVISIT, PARAMCD, PARAM, PARCAT1, PARCAT2, PARCAT3, ONTRTFL, TRTEMFL, LVOTFL, MCRIT1ML, MCRIT1MN, MCRIT1, MCRIT2ML, MCRIT2MN, MCRIT2,
-    ANL04FL, ANL05FL
+    USUBJID,
+    AVISITN,
+    AVISIT,
+    PARAMCD,
+    PARAM,
+    PARCAT1,
+    PARCAT2,
+    PARCAT3,
+    ONTRTFL,
+    TRTEMFL,
+    LVOTFL,
+    MCRIT1ML,
+    MCRIT1MN,
+    MCRIT1,
+    MCRIT2ML,
+    MCRIT2MN,
+    MCRIT2,
+    ANL04FL,
+    ANL05FL
   ) %>%
   inner_join(adsl)
 
@@ -267,23 +330,52 @@ if (trtemfl) {
 
 
 filtered_adlb_1 <- filtered_adlb_1 %>%
-  mutate(MCRIT1MLx = case_when(
-    !is.na(MCRIT1ML) ~ paste0("(", stringr::str_split_i(MCRIT1ML, stringr::fixed("("), 2)),
-    TRUE ~ NA
-  )) %>%
-  mutate(MCRIT1MLx = case_when(
-    !is.na(MCRIT1ML) ~ paste(MCRIT1, MCRIT1MLx),
-    TRUE ~ NA
-  )) %>%
-  mutate(MCRIT2MLx = case_when(
-    !is.na(MCRIT2ML) ~ paste0("(", stringr::str_split_i(MCRIT2ML, stringr::fixed("("), 2)),
-    TRUE ~ NA
-  )) %>%
-  mutate(MCRIT2MLx = case_when(
-    !is.na(MCRIT2ML) ~ paste(MCRIT2, MCRIT2MLx),
-    TRUE ~ NA
-  )) %>%
-  relocate(USUBJID, AVISITN, AVISIT, PARAM, PARAMCD, MCRIT1MLx, MCRIT2MLx, MCRIT1ML, MCRIT2ML, ANL04FL, ANL05FL, ONTRTFL, TRTEMFL, LVOTFL)
+  mutate(
+    MCRIT1MLx = case_when(
+      !is.na(MCRIT1ML) ~ paste0(
+        "(",
+        stringr::str_split_i(MCRIT1ML, stringr::fixed("("), 2)
+      ),
+      TRUE ~ NA
+    )
+  ) %>%
+  mutate(
+    MCRIT1MLx = case_when(
+      !is.na(MCRIT1ML) ~ paste(MCRIT1, MCRIT1MLx),
+      TRUE ~ NA
+    )
+  ) %>%
+  mutate(
+    MCRIT2MLx = case_when(
+      !is.na(MCRIT2ML) ~ paste0(
+        "(",
+        stringr::str_split_i(MCRIT2ML, stringr::fixed("("), 2)
+      ),
+      TRUE ~ NA
+    )
+  ) %>%
+  mutate(
+    MCRIT2MLx = case_when(
+      !is.na(MCRIT2ML) ~ paste(MCRIT2, MCRIT2MLx),
+      TRUE ~ NA
+    )
+  ) %>%
+  relocate(
+    USUBJID,
+    AVISITN,
+    AVISIT,
+    PARAM,
+    PARAMCD,
+    MCRIT1MLx,
+    MCRIT2MLx,
+    MCRIT1ML,
+    MCRIT2ML,
+    ANL04FL,
+    ANL05FL,
+    ONTRTFL,
+    TRTEMFL,
+    LVOTFL
+  )
 
 
 filtered_adlb_1 <- filtered_adlb_1 %>%
@@ -303,7 +395,6 @@ filtered_adlb_1 <- filtered_adlb_1 %>%
   )
 
 
-
 paramcd_param <- unique(filtered_adlb_1 %>% select(PARAMCD, PARAM))
 
 
@@ -312,9 +403,11 @@ xlabel_map <- xlabel_map %>%
   arrange(PARAM, var)
 
 ### to resolve a problem with HDL -- get from the data what MCRIT1 and MCRIT2 are being used
-xlabel_map_data <- unique(filtered_adlb_1 %>%
-                            select(PARAMCD, PARAM, MCRIT1, MCRIT2) %>%
-                            tidyr::pivot_longer(cols = (c("MCRIT1", "MCRIT2")))) %>%
+xlabel_map_data <- unique(
+  filtered_adlb_1 %>%
+    select(PARAMCD, PARAM, MCRIT1, MCRIT2) %>%
+    tidyr::pivot_longer(cols = (c("MCRIT1", "MCRIT2")))
+) %>%
   mutate(
     label_short_data = case_when(
       is.na(value) ~ "TO BE DELETED",
@@ -329,10 +422,13 @@ xlabel_map <- xlabel_map %>%
   right_join(., xlabel_map_data) %>%
   arrange(PARAM, var) %>%
   ## actual fix for not including HDL female if not derived on data
-  mutate(label = case_when(
-    label_short_data == "TO BE DELETED" & label != "TO BE DELETED" ~ "TO BE DELETED",
-    TRUE ~ label
-  ))
+  mutate(
+    label = case_when(
+      label_short_data == "TO BE DELETED" &
+        label != "TO BE DELETED" ~ "TO BE DELETED",
+      TRUE ~ label
+    )
+  )
 
 # Define layout and build table:
 
@@ -346,38 +442,49 @@ extra_args_rr2 <- list(
 
 lyt <- basic_table(show_colcounts = TRUE, colcount_format = "N=xx") %>%
   ### first columns
-  split_cols_by("colspan_trt", split_fun = trim_levels_to_map(map = colspan_trt_map)) %>%
+  split_cols_by(
+    "colspan_trt",
+    split_fun = trim_levels_to_map(map = colspan_trt_map)
+  ) %>%
   split_cols_by(trtvar) %>%
   split_cols_by("rrisk_header", nested = FALSE) %>%
-  split_cols_by(trtvar,
-                labels_var = "rrisk_label",
-                split_fun = remove_split_levels(ctrl_grp)
+  split_cols_by(
+    trtvar,
+    labels_var = "rrisk_label",
+    split_fun = remove_split_levels(ctrl_grp)
   ) %>%
-  split_rows_by("PARCAT3",
-                label_pos = "topleft",
-                child_labels = "visible",
-                split_label = "Laboratory Category",
-                split_fun = drop_split_levels,
-                section_div = " "
+  split_rows_by(
+    "PARCAT3",
+    label_pos = "topleft",
+    child_labels = "visible",
+    split_label = "Laboratory Category",
+    split_fun = drop_split_levels,
+    section_div = " "
   ) %>%
-  split_rows_by("PARAM",
-                label_pos = "topleft",
-                child_labels = "hidden",
-                split_label = paste0("Laboratory Test >= Level ", level_threshold, ", n (%)"),
-                split_fun = drop_split_levels
+  split_rows_by(
+    "PARAM",
+    label_pos = "topleft",
+    child_labels = "hidden",
+    split_label = paste0(
+      "Laboratory Test >= Level ",
+      level_threshold,
+      ", n (%)"
+    ),
+    split_fun = drop_split_levels
   ) %>%
   # denominators are varying per test, therefor show denom (not yet in shell)
-  analyze(c("MCRIT1MNx", "MCRIT2MNx"),
-          afun = a_freq_j,
-          extra_args = append(
-            extra_args_rr2,
-            list(
-              val = c("Y"),
-              label_map = xlabel_map
-            )
-          ),
-          show_labels = "hidden",
-          indent_mod = 0L
+  analyze(
+    c("MCRIT1MNx", "MCRIT2MNx"),
+    afun = a_freq_j,
+    extra_args = append(
+      extra_args_rr2,
+      list(
+        val = c("Y"),
+        label_map = xlabel_map
+      )
+    ),
+    show_labels = "hidden",
+    indent_mod = 0L
   )
 
 result <- build_table(lyt, filtered_adlb_1, alt_counts_df = adsl)
@@ -401,10 +508,10 @@ result <- set_titles(result, titles)
 
 # Convert to tbl file and output table
 
-tt_to_tlgrtf(string_map = string_map, tt = head(result, 20), file = fileid, orientation = "landscape")
+tt_to_tlgrtf(string_map = string_map, tt = head(result, 25), file = fileid, orientation = "landscape")
 ```
 ```{r result1, echo=FALSE, message=FALSE, warning=FALSE, test = list(result_v1 = "result")}
-tt_to_flextable(head(result, 20), theme = theme_docx_default(font_size = 6))
+tt_to_flextable_j(head(result, 25), tblid)
 ```
 
 [Download RTF file](`r paste0(tolower(tblid), '.rtf')`)

@@ -8,8 +8,7 @@ subtitle: Listing of Study Treatment Administration for Infusions
 {{< include ../../_utils/envir_hook.qmd >}}
 
 ```{r setup, echo = FALSE, warning = FALSE, message = FALSE}
-library(rtables.officer)
-
+options(docx.add_datetime = FALSE, tidytlg.add_datetime = FALSE)
 envsetup_config_name <- "default"
 
 # Path to the combined config file
@@ -52,6 +51,7 @@ library(tern)
 library(dplyr)
 library(tidyr)
 library(rtables)
+library(rlistings)
 library(junco)
 
 # Define script level parameters
@@ -79,7 +79,13 @@ lsting <- adex %>%
     AACTDU4 = stringr::str_to_sentence(AACTDU4),
     AACTDU5 = stringr::str_to_sentence(AACTDU5)
   ) %>%
-  unite("dact", AACTDU1, AACTDU2, AACTDU3, AACTDU4, AACTDU5,
+  unite(
+    "dact",
+    AACTDU1,
+    AACTDU2,
+    AACTDU3,
+    AACTDU4,
+    AACTDU5,
     sep = ", ",
     na.rm = TRUE,
     remove = FALSE
@@ -89,14 +95,16 @@ lsting <- adex %>%
     AGE = explicit_na(as.character(AGE), ""),
     SEX = explicit_na(SEX, ""),
     RACE_DECODE = explicit_na(RACE_DECODE, ""),
-    ASTDT = ifelse(!is.na(ASTDT) & nchar(as.character(ASTDT)) == 10,
+    ASTDT = ifelse(
+      !is.na(ASTDT) & nchar(as.character(ASTDT)) == 10,
       toupper(format(ASTDT, "%d%b%Y")),
       ""
     ),
     ASTTM = ifelse(!is.na(ASTDTM), substr(as.character(ASTDTM), 12, 16), ""),
     ASTDYN = ifelse(!is.na(ASTDY), ASTDY, NA),
     ASTDY = ifelse(!is.na(ASTDY), ASTDY, ""),
-    AENDT = ifelse(!is.na(AENDT) & nchar(as.character(AENDT)) == 10,
+    AENDT = ifelse(
+      !is.na(AENDT) & nchar(as.character(AENDT)) == 10,
       toupper(format(AENDT, "%d%b%Y")),
       ""
     ),
@@ -106,13 +114,21 @@ lsting <- adex %>%
     preas = case_when(
       toupper(AADJP) == "ADVERSE EVENT" ~ stringr::str_to_sentence(AADJP),
       toupper(AADJP) == "OTHER" ~
-        paste0(stringr::str_to_sentence(AADJP), ": ", stringr::str_to_sentence(AADJPOTH)),
+        paste0(
+          stringr::str_to_sentence(AADJP),
+          ": ",
+          stringr::str_to_sentence(AADJPOTH)
+        ),
       is.na(AADJP) & !is.na(AACTPR) ~ "N/A"
     ),
     dreas = case_when(
       toupper(AADJ) == "ADVERSE EVENT" ~ stringr::str_to_sentence(AADJ),
       toupper(AADJ) == "OTHER" ~
-        paste0(stringr::str_to_sentence(AADJ), ": ", stringr::str_to_sentence(AADJOTH)),
+        paste0(
+          stringr::str_to_sentence(AADJ),
+          ": ",
+          stringr::str_to_sentence(AADJOTH)
+        ),
       is.na(AADJ) & !is.na(dact) ~ "N/A"
     ),
     COL0 = explicit_na(.data[[trtvar]], ""),
@@ -163,11 +179,19 @@ lsting <- adex %>%
     )
   ) %>%
   arrange(
-    COL0, COL1, COL2, !is.na(ASTDYN), ASTDYN, ASTDTM, !is.na(AENDYN),
-    AENDYN, AENDTM
+    COL0,
+    COL1,
+    COL2,
+    !is.na(ASTDYN),
+    ASTDYN,
+    ASTDTM,
+    !is.na(AENDYN),
+    AENDYN,
+    AENDTM
   )
 
-lsting <- var_relabel(lsting,
+lsting <- var_relabel(
+  lsting,
   COL0 = "Treatment Group",
   COL1 = "Subject ID",
   COL2 = paste("Age (years)", "Sex", "Race", sep = concat_sep),
@@ -202,10 +226,10 @@ result <- set_titles(result, tab_titles)
 
 # Output listing
 
-tt_to_tlgrtf(string_map = string_map, tt = head(result, 30), file = fileid, orientation = "landscape")
+tt_to_tlgrtf(string_map = string_map, tt = head(result, 100), file = fileid, orientation = "landscape")
 ```
 ```{r result1, echo=FALSE, message=FALSE, warning=FALSE, test = list(result_v1 = "result")}
-tt_to_flextable(head(result,100), theme = theme_docx_default(font_size = 6))
+tt_to_flextable_j(head(result,100), tblid)
 ```
 
 [Download RTF file](`r paste0(tolower(tblid), '.rtf')`)

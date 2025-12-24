@@ -8,8 +8,7 @@ subtitle: Subjects With Treatment-emergent Adverse Events of Special Interest - 
 {{< include ../../_utils/envir_hook.qmd >}}
 
 ```{r setup, echo = FALSE, warning = FALSE, message = FALSE}
-library(rtables.officer)
-
+options(docx.add_datetime = FALSE, tidytlg.add_datetime = FALSE)
 envsetup_config_name <- "default"
 
 # Path to the combined config file
@@ -43,7 +42,7 @@ apt <- FALSE
 
 ```{r variant1, results='hide', warning = FALSE, message = FALSE}
 
-# Program Name: tsfae07b.R
+# Program Name:              tsfae07b.R
 
 # Prep Environment
 
@@ -77,9 +76,10 @@ ctrl_grp <- "Placebo"
 
 if (combined_colspan_trt == TRUE) {
   # Set up levels and label for the required combined columns
-  add_combo <- add_combo_facet("Combined",
+  add_combo <- add_combo_facet(
+    "Combined",
     label = "Combined",
-    levels = c("Apalutamide", "Apalutamide Subgroup")
+    levels = c("Xanomeline High Dose", "Xanomeline Low Dose")
   )
 
   # choose if any facets need to be removed - e.g remove the combined column for placebo
@@ -114,7 +114,11 @@ if (labsection == TRUE) {
     filter_val <- unlist(strsplit(lab_vals[[i]], ","))
 
     adlb <- pharmaverseadamjnj::adlb %>%
-      filter(TRTEMFL == "Y" & PARAMCD == lab_params[[i]] & !!rlang::sym(lab_var[[i]]) %in% filter_val) %>%
+      filter(
+        TRTEMFL == "Y" &
+          PARAMCD == lab_params[[i]] &
+          !!rlang::sym(lab_var[[i]]) %in% filter_val
+      ) %>%
       mutate(criteria = lab_labels[[i]]) %>%
       select(USUBJID, TRTEMFL, PARAMCD, all_of(lab_var[[i]]), criteria)
 
@@ -155,9 +159,21 @@ if (labsection == TRUE) {
 
 adae <- pharmaverseadamjnj::adae %>%
   filter(TRTEMFL == "Y" & !is.na(!!rlang::sym(special_interest_var))) %>%
-  select(USUBJID, TRTEMFL, AEBODSYS, AEDECOD, AETOXGR, all_of(special_interest_var), AESER, AEOUT, all_of(aeactionvar), all_of(aerelvar))
+  select(
+    USUBJID,
+    TRTEMFL,
+    AEBODSYS,
+    AEDECOD,
+    AETOXGR,
+    all_of(special_interest_var),
+    AESER,
+    AEOUT,
+    all_of(aeactionvar),
+    all_of(aerelvar)
+  )
 
-adsl$colspan_trt <- factor(ifelse(adsl[[trtvar]] == "Placebo", " ", "Active Study Agent"),
+adsl$colspan_trt <- factor(
+  ifelse(adsl[[trtvar]] == "Placebo", " ", "Active Study Agent"),
   levels = c("Active Study Agent", " ")
 )
 
@@ -172,8 +188,20 @@ ae <- adae %>% right_join(., adsl, by = c("USUBJID"))
 # Keep only maximum toxicity for the particular AESI
 ae <- ae %>%
   mutate(
-    ATOXGR = factor(ifelse(is.na(AETOXGR), "Missing", as.character(paste0("Grade ", AETOXGR))),
-      levels = c("Grade 5", "Grade 4", "Grade 3", "Grade 2", "Grade 1", "Missing")
+    ATOXGR = factor(
+      ifelse(
+        is.na(AETOXGR),
+        "Missing",
+        as.character(paste0("Grade ", AETOXGR))
+      ),
+      levels = c(
+        "Grade 5",
+        "Grade 4",
+        "Grade 3",
+        "Grade 2",
+        "Grade 1",
+        "Missing"
+      )
     ),
     rowhead = "Maximum toxicity"
   ) %>%
@@ -185,24 +213,33 @@ ae <- ae %>%
 # Remove Missing as a level since not required in table
 levels(ae$ATOXGR)[levels(ae$ATOXGR) == "Missing"] <- NA
 
-colspan_trt_map <- create_colspan_map(adsl, 
-                                      non_active_grp = ctrl_grp,
-                                      non_active_grp_span_lbl = " ",
-                                      active_grp_span_lbl = "Active Study Agent",
-                                      colspan_var = "colspan_trt",
-                                      trt_var = trtvar)
+colspan_trt_map <- create_colspan_map(
+  adsl,
+  non_active_grp = ctrl_grp,
+  non_active_grp_span_lbl = " ",
+  active_grp_span_lbl = "Active Study Agent",
+  colspan_var = "colspan_trt",
+  trt_var = trtvar
+)
 
 # Define layout and build table:
 
 ref_path <- c("colspan_trt", " ", "TRT01A", "Placebo")
-extra_args_rr <- list(method = rr_method, ref_path = ref_path, .stats = c("count_unique_fraction"))
+extra_args_rr <- list(
+  method = rr_method,
+  ref_path = ref_path,
+  .stats = c("count_unique_fraction")
+)
 
 lyt <- basic_table(
   top_level_section_div = " ",
   show_colcounts = TRUE,
   colcount_format = "N=xx"
 ) %>%
-  split_cols_by("colspan_trt", split_fun = trim_levels_to_map(map = colspan_trt_map))
+  split_cols_by(
+    "colspan_trt",
+    split_fun = trim_levels_to_map(map = colspan_trt_map)
+  )
 
 if (combined_colspan_trt == TRUE) {
   lyt <- lyt %>%
@@ -215,45 +252,118 @@ if (combined_colspan_trt == TRUE) {
 if (risk_diff == TRUE) {
   lyt <- lyt %>%
     split_cols_by("rrisk_header", nested = FALSE) %>%
-    split_cols_by(trtvar, labels_var = "rrisk_label", split_fun = remove_split_levels("Placebo"))
+    split_cols_by(
+      trtvar,
+      labels_var = "rrisk_label",
+      split_fun = remove_split_levels("Placebo")
+    )
 }
 
 lyt <- lyt %>%
-  split_rows_by(special_interest_var,
+  split_rows_by(
+    special_interest_var,
     split_label = "",
     split_fun = trim_levels_in_group("AEDECOD"),
     label_pos = "topleft",
     indent_mod = 0,
     section_div = c(" ")
   ) %>%
-  summarize_row_groups(special_interest_var, cfun = a_freq_j, extra_args = append(extra_args_rr, NULL)) %>%
-  analyze("AEDECOD", var_labels = "Preferred Term", afun = a_freq_j, indent_mod = 0, show_labels = "visible", extra_args = append(extra_args_rr, NULL)) %>%
-  split_rows_by("rowhead",
-    split_label = ""
+  summarize_row_groups(
+    special_interest_var,
+    cfun = a_freq_j,
+    extra_args = append(extra_args_rr, NULL)
+  ) %>%
+  analyze(
+    "AEDECOD",
+    var_labels = "Preferred Term",
+    afun = a_freq_j,
+    indent_mod = 0,
+    show_labels = "visible",
+    extra_args = append(extra_args_rr, NULL)
+  ) %>%
+  split_rows_by(
+    "rowhead",
+    split_label = "",
     # ,split_fun = trim_levels_in_group("ATOXGR")
-    , label_pos = "topleft",
+    label_pos = "topleft",
     indent_mod = 0,
     section_div = c(" ")
   ) %>%
-  analyze("ATOXGR", afun = a_freq_j, indent_mod = 0, extra_args = append(extra_args_rr, NULL)) %>%
-  split_rows_by("AESER",
+  analyze(
+    "ATOXGR",
+    afun = a_freq_j,
+    indent_mod = 0,
+    extra_args = append(extra_args_rr, NULL)
+  ) %>%
+  split_rows_by(
+    "AESER",
     split_fun = keep_split_levels("Y"),
     section_div = " "
   ) %>%
-  summarize_row_groups("AESER", cfun = a_freq_j, extra_args = append(extra_args_rr, list(label="Serious", NULL))) %>%
-  analyze("AEOUT", afun = a_freq_j, show_labels = "hidden", extra_args = append(extra_args_rr, list(label="Deaths", val="FATAL",NULL))) %>%
-  analyze(aeactionvar, afun = a_freq_j,show_labels = "hidden", nested = FALSE, extra_args = append(extra_args_rr, list(label="Resulting in treatment discontinuation", val="DRUG WITHDRAWN",NULL))) %>%
-  analyze(aerelvar, afun = a_freq_j, show_labels = "hidden", nested = FALSE, extra_args = append(extra_args_rr, list(label="Related~[super a]", val="RELATED",NULL)))
+  summarize_row_groups(
+    "AESER",
+    cfun = a_freq_j,
+    extra_args = append(extra_args_rr, list(label = "Serious", NULL))
+  ) %>%
+  analyze(
+    "AEOUT",
+    afun = a_freq_j,
+    show_labels = "hidden",
+    extra_args = append(
+      extra_args_rr,
+      list(label = "Deaths", val = "FATAL", NULL)
+    )
+  ) %>%
+  analyze(
+    aeactionvar,
+    afun = a_freq_j,
+    show_labels = "hidden",
+    nested = FALSE,
+    extra_args = append(
+      extra_args_rr,
+      list(
+        label = "Resulting in treatment discontinuation",
+        val = "DRUG WITHDRAWN",
+        NULL
+      )
+    )
+  ) %>%
+  analyze(
+    aerelvar,
+    afun = a_freq_j,
+    show_labels = "hidden",
+    nested = FALSE,
+    extra_args = append(
+      extra_args_rr,
+      list(label = "Related~[super a]", val = "RELATED", NULL)
+    )
+  )
 
 if (labsection == TRUE) {
   lyt <- lyt %>%
-    analyze("lab_flag", afun = a_freq_j, show_labels = "hidden", nested = FALSE, extra_args = append(extra_args_rr, list(label="Laboratory assessment~[super b]", NULL)))
-  
+    analyze(
+      "lab_flag",
+      afun = a_freq_j,
+      show_labels = "hidden",
+      nested = FALSE,
+      extra_args = append(
+        extra_args_rr,
+        list(label = "Laboratory assessment~[super b]", NULL)
+      )
+    )
+
   for (i in 1:length(lab_params)) {
     aflagvar <- paste0("lab_flag", i)
 
     lyt <- lyt %>%
-      analyze(aflagvar, afun = a_freq_j, indent_mod = 1, show_labels = "hidden", nested = TRUE, extra_args = append(extra_args_rr, NULL))
+      analyze(
+        aflagvar,
+        afun = a_freq_j,
+        indent_mod = 1,
+        show_labels = "hidden",
+        nested = TRUE,
+        extra_args = append(extra_args_rr, NULL)
+      )
   }
 }
 
@@ -266,7 +376,8 @@ result <- build_table(lyt, ae, alt_counts_df = adsl)
 result <- remove_col_count(result)
 
 ## Remove any rogue null rows
-result <- result %>% safe_prune_table(prune_func = keep_rows(keep_non_null_rows))
+result <- result %>%
+  safe_prune_table(prune_func = keep_rows(keep_non_null_rows))
 
 # Add titles and footnotes:
 
@@ -274,10 +385,10 @@ result <- set_titles(result, tab_titles)
 
 # Convert to tbl file and output table
 
-tt_to_tlgrtf(string_map = string_map, tt = head(result, 20), file = fileid, orientation = "landscape")
+tt_to_tlgrtf(string_map = string_map, tt = head(result, 25), file = fileid, orientation = "landscape")
 ```
 ```{r result1, echo=FALSE, message=FALSE, warning=FALSE, test = list(result_v1 = "result")}
-tt_to_flextable(head(result, 20), theme = theme_docx_default(font_size = 6))
+tt_to_flextable_j(head(result, 25), tblid)
 ```
 
 [Download RTF file](`r paste0(tolower(tblid), '.rtf')`)

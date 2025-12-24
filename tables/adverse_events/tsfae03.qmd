@@ -8,8 +8,7 @@ subtitle: Subjects With Treatment-emergent Serious Adverse Events by System Orga
 {{< include ../../_utils/envir_hook.qmd >}}
 
 ```{r setup, echo = FALSE, warning = FALSE, message = FALSE}
-library(rtables.officer)
-
+options(docx.add_datetime = FALSE, tidytlg.add_datetime = FALSE)
 envsetup_config_name <- "default"
 
 # Path to the combined config file
@@ -43,7 +42,7 @@ apt <- FALSE
 
 ```{r variant1, results='hide', warning = FALSE, message = FALSE}
 
-# Program Name: tsfae03.R
+# Program Name:              tsfae03.R
 
 # Prep Environment
 
@@ -72,9 +71,10 @@ ctrl_grp <- "Placebo"
 
 if (combined_colspan_trt == TRUE) {
   # Set up levels and label for the required combined columns
-  add_combo <- add_combo_facet("Combined",
+  add_combo <- add_combo_facet(
+    "Combined",
     label = "Combined",
-    levels = c("Apalutamide", "Apalutamide Subgroup")
+    levels = c("Xanomeline High Dose", "Xanomeline Low Dose")
   )
 
   # choose if any facets need to be removed - e.g remove the combined column for placebo
@@ -98,7 +98,8 @@ adae <- pharmaverseadamjnj::adae %>%
   filter(TRTEMFL == "Y" & AESER == "Y") %>%
   select(USUBJID, TRTEMFL, AEBODSYS, AEDECOD)
 
-adsl$colspan_trt <- factor(ifelse(adsl[[trtvar]] == "Placebo", " ", "Active Study Agent"),
+adsl$colspan_trt <- factor(
+  ifelse(adsl[[trtvar]] == "Placebo", " ", "Active Study Agent"),
   levels = c("Active Study Agent", " ")
 )
 
@@ -110,17 +111,23 @@ if (risk_diff == TRUE) {
 # join data together
 ae <- adae %>% right_join(., adsl, by = c("USUBJID"))
 
-colspan_trt_map <- create_colspan_map(adsl, 
-                                      non_active_grp = ctrl_grp,
-                                      non_active_grp_span_lbl = " ",
-                                      active_grp_span_lbl = "Active Study Agent",
-                                      colspan_var = "colspan_trt",
-                                      trt_var = trtvar)
+colspan_trt_map <- create_colspan_map(
+  adsl,
+  non_active_grp = ctrl_grp,
+  non_active_grp_span_lbl = " ",
+  active_grp_span_lbl = "Active Study Agent",
+  colspan_var = "colspan_trt",
+  trt_var = trtvar
+)
 
 # Define layout and build table:
 
 ref_path <- c("colspan_trt", " ", "TRT01A", "Placebo")
-extra_args_rr <- list(method = rr_method, ref_path = ref_path, .stats = c("count_unique_fraction"))
+extra_args_rr <- list(
+  method = rr_method,
+  ref_path = ref_path,
+  .stats = c("count_unique_fraction")
+)
 
 
 lyt <- basic_table(
@@ -128,7 +135,10 @@ lyt <- basic_table(
   show_colcounts = TRUE,
   colcount_format = "N=xx"
 ) %>%
-  split_cols_by("colspan_trt", split_fun = trim_levels_to_map(map = colspan_trt_map))
+  split_cols_by(
+    "colspan_trt",
+    split_fun = trim_levels_to_map(map = colspan_trt_map)
+  )
 
 if (combined_colspan_trt == TRUE) {
   lyt <- lyt %>%
@@ -141,20 +151,41 @@ if (combined_colspan_trt == TRUE) {
 if (risk_diff == TRUE) {
   lyt <- lyt %>%
     split_cols_by("rrisk_header", nested = FALSE) %>%
-    split_cols_by(trtvar, labels_var = "rrisk_label", split_fun = remove_split_levels("Placebo"))
+    split_cols_by(
+      trtvar,
+      labels_var = "rrisk_label",
+      split_fun = remove_split_levels("Placebo")
+    )
 }
 
 lyt <- lyt %>%
-  analyze("TRTEMFL", show_labels = "hidden", afun = a_freq_j,  extra_args = append(extra_args_rr, list(label="Subjects with >=1 SAE",NULL))) %>%
-  split_rows_by("AEBODSYS",
+  analyze(
+    "TRTEMFL",
+    show_labels = "hidden",
+    afun = a_freq_j,
+    extra_args = append(
+      extra_args_rr,
+      list(label = "Subjects with >=1 SAE", NULL)
+    )
+  ) %>%
+  split_rows_by(
+    "AEBODSYS",
     split_label = "System Organ Class",
     split_fun = trim_levels_in_group("AEDECOD"),
     label_pos = "topleft",
     section_div = c(" "),
     nested = FALSE
   ) %>%
-  summarize_row_groups("AEBODSYS", cfun = a_freq_j, extra_args = append(extra_args_rr, NULL)) %>%
-  analyze("AEDECOD", afun = a_freq_j, extra_args = append(extra_args_rr, NULL)) %>%
+  summarize_row_groups(
+    "AEBODSYS",
+    cfun = a_freq_j,
+    extra_args = append(extra_args_rr, NULL)
+  ) %>%
+  analyze(
+    "AEDECOD",
+    afun = a_freq_j,
+    extra_args = append(extra_args_rr, NULL)
+  ) %>%
   append_topleft("  Preferred Term, n (%)")
 
 result <- build_table(lyt, ae, alt_counts_df = adsl)
@@ -164,14 +195,23 @@ result <- remove_col_count(result)
 
 # If there is no data remove top row and display "No data to display" text
 if (length(adae$TRTEMFL) == 0) {
-  result <- safe_prune_table(result, prune_func = remove_rows(removerowtext = "Subjects with >=1 SAE"))
+  result <- safe_prune_table(
+    result,
+    prune_func = remove_rows(removerowtext = "Subjects with >=1 SAE")
+  )
 }
 
 # Post-Processing step to sort by descending count on chosen active treatment columns.
 
 if (length(adae$TRTEMFL) != 0) {
-  result <- sort_at_path(result, c("root", "AEBODSYS"), scorefun = jj_complex_scorefun())
-  result <- sort_at_path(result, c("root", "AEBODSYS", "*", "AEDECOD"),
+  result <- sort_at_path(
+    result,
+    c("root", "AEBODSYS"),
+    scorefun = jj_complex_scorefun()
+  )
+  result <- sort_at_path(
+    result,
+    c("root", "AEBODSYS", "*", "AEDECOD"),
     scorefun = jj_complex_scorefun()
   )
 }
@@ -182,10 +222,10 @@ result <- set_titles(result, tab_titles)
 
 # Convert to tbl file and output table
 
-tt_to_tlgrtf(string_map = string_map, tt = head(result, 20), file = fileid, orientation = "landscape")
+tt_to_tlgrtf(string_map = string_map, tt = head(result, 25), file = fileid, orientation = "landscape")
 ```
 ```{r result1, echo=FALSE, message=FALSE, warning=FALSE, test = list(result_v1 = "result")}
-tt_to_flextable(head(result, 20), theme = theme_docx_default(font_size = 6))
+tt_to_flextable_j(head(result, 25), tblid)
 ```
 
 [Download RTF file](`r paste0(tolower(tblid), '.rtf')`)

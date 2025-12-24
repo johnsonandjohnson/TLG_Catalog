@@ -8,8 +8,7 @@ subtitle: Incidence and Reason for Treatment Modification for Infusions
 {{< include ../../_utils/envir_hook.qmd >}}
 
 ```{r setup, echo = FALSE, warning = FALSE, message = FALSE}
-library(rtables.officer)
-
+options(docx.add_datetime = FALSE, tidytlg.add_datetime = FALSE)
 envsetup_config_name <- "default"
 
 # Path to the combined config file
@@ -43,7 +42,7 @@ apt <- FALSE
 
 ```{r variant1, results='hide', warning = FALSE, message = FALSE}
 
-# Program Name: tsiex11.R
+# Program Name:              tsiex11.R
 
 # Prep Environment
 
@@ -70,9 +69,10 @@ ctrl_grp <- "Placebo"
 
 if (combined_colspan_trt == TRUE) {
   # Set up levels and label for the required combined columns
-  add_combo <- add_combo_facet("Combined",
+  add_combo <- add_combo_facet(
+    "Combined",
     label = "Combined",
-    levels = c("Apalutamide", "Apalutamide Subgroup")
+    levels = c("Xanomeline High Dose", "Xanomeline Low Dose")
   )
 
   # choose if any facets need to be removed - e.g remove the combined column for placebo
@@ -93,17 +93,25 @@ adsl <- pharmaverseadamjnj::adsl %>%
   filter(!!rlang::sym(popfl) == "Y") %>%
   select(STUDYID, USUBJID, all_of(trtvar), all_of(popfl))
 
-adsl$colspan_trt <- factor(ifelse(adsl[[trtvar]] == ctrl_grp, " ", "Active Study Agent"),
-                           levels = c("Active Study Agent", " ")
+adsl$colspan_trt <- factor(
+  ifelse(adsl[[trtvar]] == ctrl_grp, " ", "Active Study Agent"),
+  levels = c("Active Study Agent", " ")
 )
 
 
-
-core_ex_vars <- c("USUBJID", "AACTPR", "AACTDU", "AADJ", "AADJP", "AVISIT", "AVISITN" )
+core_ex_vars <- c(
+  "USUBJID",
+  "AACTPR",
+  "AACTDU",
+  "AADJ",
+  "AADJP",
+  "AVISIT",
+  "AVISITN"
+)
 
 adex1 <- pharmaverseadamjnj::adex %>%
-  filter(!grepl("UNSCHEDULED", AVISIT, ignore.case = TRUE)) %>% 
-  select(all_of(core_ex_vars))  
+  filter(!grepl("UNSCHEDULED", AVISIT, ignore.case = TRUE)) %>%
+  select(all_of(core_ex_vars))
 
 # Convert AVISIT to sentence case and apply levels to maintain ordering
 avisit_levs <- stringr::str_to_sentence(levels(adex1$AVISIT))
@@ -111,67 +119,85 @@ adex1$AVISIT <- stringr::str_to_sentence(adex1$AVISIT)
 adex1$AVISIT <- factor(adex1$AVISIT, levels = avisit_levs)
 
 
-adex1a <- adex1 %>% 
-  mutate(AACTx = AACTPR,
-         AADJx = AADJ, 
-         XXX = "Prior to infusion")
-  
-adex1b <- adex1 %>% 
-  mutate(AACTx = AACTDU,
-         AADJx = AADJP, 
-         XXX = "During infusion")
+adex1a <- adex1 %>%
+  mutate(
+    AACTx = AACTPR,
+    AADJx = AADJ,
+    XXX = "Prior to infusion"
+  )
+
+adex1b <- adex1 %>%
+  mutate(
+    AACTx = AACTDU,
+    AADJx = AADJP,
+    XXX = "During infusion"
+  )
 
 adex1c <- bind_rows(adex1a, adex1b)
-adex1c$XXX <- factor(adex1c$XXX, levels = c("Prior to infusion", "During infusion"))
+adex1c$XXX <- factor(
+  adex1c$XXX,
+  levels = c("Prior to infusion", "During infusion")
+)
 
 ### Overall visit
 
 adex2 <- pharmaverseadamjnj::adex %>%
-  mutate(AVISIT = "Overall") %>% 
-  select(all_of(core_ex_vars))  
+  mutate(AVISIT = "Overall") %>%
+  select(all_of(core_ex_vars))
 
-adex2a <- adex2 %>% 
-  mutate(AACTx = AACTPR,
-         AADJx = AADJ, 
-         XXX = "Prior to infusion")
+adex2a <- adex2 %>%
+  mutate(
+    AACTx = AACTPR,
+    AADJx = AADJ,
+    XXX = "Prior to infusion"
+  )
 
-adex2b <- adex2 %>% 
-  mutate(AACTx = AACTDU,
-         AADJx = AADJP, 
-         XXX = "During infusion")
+adex2b <- adex2 %>%
+  mutate(
+    AACTx = AACTDU,
+    AADJx = AADJP,
+    XXX = "During infusion"
+  )
 
 adex2c <- bind_rows(adex2a, adex2b)
-adex2c$XXX <- factor(adex2c$XXX, levels = c("Prior to infusion", "During infusion"))
+adex2c$XXX <- factor(
+  adex2c$XXX,
+  levels = c("Prior to infusion", "During infusion")
+)
 
-adex <- bind_rows(adex1c, adex2c) 
+adex <- bind_rows(adex1c, adex2c)
 
 # control levels of AVISIT
 adex$AVISIT <- factor(adex$AVISIT, levels = c("Overall", levels(adex1$AVISIT)))
 
 # control levels of new variables AACTx and AADJx
-aact_levels <- c("DOSE REDUCED COMPARED TO PRIOR INFUSION", 
-                 "INFUSION DELAYED WITHIN THE CYCLE", 
-                 "INFUSION RATE DECREASED COMPARED TO PRIOR INFUSION", 
-                 "INFUSION SKIPPED (AND NOT MADE UP)", 
-                 "STUDY DRUG PERMANENTLY DISCONTINUED",
-                 
-                 "INFUSION ABORTED",
-                 "INFUSION INTERRUPTED",
-                 "INFUSION RATE INCREASED"
+aact_levels <- c(
+  "DOSE REDUCED COMPARED TO PRIOR INFUSION",
+  "INFUSION DELAYED WITHIN THE CYCLE",
+  "INFUSION RATE DECREASED COMPARED TO PRIOR INFUSION",
+  "INFUSION SKIPPED (AND NOT MADE UP)",
+  "STUDY DRUG PERMANENTLY DISCONTINUED",
+  "INFUSION ABORTED",
+  "INFUSION INTERRUPTED",
+  "INFUSION RATE INCREASED"
 )
 
-aact_labels <- c("Dose reduced",
-                 "Infusion delayed",
-                 "Infusion rate decreased",
-                 "Infusion skipped",
-                 "Study agent permanently discontinued",
-                 
-                 "Infusion aborted",                    
-                 "Infusion interrupted",
-                 "Infusion rate increased"       
+aact_labels <- c(
+  "Dose reduced",
+  "Infusion delayed",
+  "Infusion rate decreased",
+  "Infusion skipped",
+  "Study agent permanently discontinued",
+  "Infusion aborted",
+  "Infusion interrupted",
+  "Infusion rate increased"
 )
 
-adex$AACTx <- factor(as.character(adex$AACTx), levels = aact_levels, labels = aact_labels)
+adex$AACTx <- factor(
+  as.character(adex$AACTx),
+  levels = aact_levels,
+  labels = aact_labels
+)
 
 adex$AADJx <- factor(adex$AADJx, levels = levels(c(adex$AADJ, adex$AADJP)))
 
@@ -192,7 +218,8 @@ ex2 <- ex %>%
 
 # Define layout and build table:
 
-colspan_trt_map <- create_colspan_map(adsl,
+colspan_trt_map <- create_colspan_map(
+  adsl,
   non_active_grp = ctrl_grp,
   non_active_grp_span_lbl = " ",
   active_grp_span_lbl = "Active Study Agent",
@@ -203,31 +230,34 @@ ref_path <- c("colspan_trt", " ", trtvar, ctrl_grp)
 
 
 split_map <- tribble(
-  ~XXX , ~AACTx, 
-     "Prior to infusion", "Dose reduced",
-     "Prior to infusion", "Infusion delayed",
-     "Prior to infusion", "Infusion rate decreased", 
-     "Prior to infusion", "Infusion skipped", 
-     "Prior to infusion", "Study agent permanently discontinued",
-  
-     "During infusion", "Infusion aborted",
-     "During infusion", "Infusion interrupted",
-     "During infusion", "Infusion rate increased"
+  ~XXX                , ~AACTx                                 ,
+  "Prior to infusion" , "Dose reduced"                         ,
+  "Prior to infusion" , "Infusion delayed"                     ,
+  "Prior to infusion" , "Infusion rate decreased"              ,
+  "Prior to infusion" , "Infusion skipped"                     ,
+  "Prior to infusion" , "Study agent permanently discontinued" ,
+  "During infusion"   , "Infusion aborted"                     ,
+  "During infusion"   , "Infusion interrupted"                 ,
+  "During infusion"   , "Infusion rate increased"
 )
 
 
-
-extra_args1 <- list(.stats = "count_unique_fraction", 
-                    denom = "n_parentdf", 
-                    denom_by = "AVISIT",
-                    drop_levels = TRUE) 
+extra_args1 <- list(
+  .stats = "count_unique_fraction",
+  denom = "n_parentdf",
+  denom_by = "AVISIT",
+  drop_levels = TRUE
+)
 
 lyt <- rtables::basic_table(
   top_level_section_div = " ",
   show_colcounts = TRUE,
   colcount_format = "N=xx"
 ) %>%
-  split_cols_by("colspan_trt", split_fun = trim_levels_to_map(map = colspan_trt_map)) 
+  split_cols_by(
+    "colspan_trt",
+    split_fun = trim_levels_to_map(map = colspan_trt_map)
+  )
 
 if (combined_colspan_trt == TRUE) {
   lyt <- lyt %>%
@@ -238,11 +268,9 @@ if (combined_colspan_trt == TRUE) {
 }
 
 
-
-
-
 lyt <- lyt %>%
-  split_rows_by("AVISIT",
+  split_rows_by(
+    "AVISIT",
     split_label = "Time Point",
     split_fun = drop_split_levels,
     label_pos = "topleft",
@@ -250,29 +278,27 @@ lyt <- lyt %>%
     indent_mod = 0L,
     section_div = c(" ")
   ) %>%
-  split_rows_by("XXX",
-                split_fun  = keep_split_levels(c("Prior to infusion"
-                                                 , "During infusion"
-                                                 )),
-                section_div = " ",
-                child_labels = "visible"
+  split_rows_by(
+    "XXX",
+    split_fun = keep_split_levels(c(
+      "Prior to infusion",
+      "During infusion"
+    )),
+    section_div = " ",
+    child_labels = "visible"
   ) %>%
-  summarize_row_groups("XXX" ,
-                       cfun = a_freq_j,
-                       extra_args = list(.stats = "n_df", label = "N")
-                      ) %>%    
-  split_rows_by("AACTx",
-                split_fun = trim_levels_to_map(map = split_map),
-                section_div = " "
-                ) %>%
-  summarize_row_groups("AACTx",
-                       cfun = a_freq_j,
-                       extra_args = extra_args1) %>%
-  analyze("AADJx",
-          afun = a_freq_j,
-          extra_args = extra_args1) %>%
-
-  
+  summarize_row_groups(
+    "XXX",
+    cfun = a_freq_j,
+    extra_args = list(.stats = "n_df", label = "N")
+  ) %>%
+  split_rows_by(
+    "AACTx",
+    split_fun = trim_levels_to_map(map = split_map),
+    section_div = " "
+  ) %>%
+  summarize_row_groups("AACTx", cfun = a_freq_j, extra_args = extra_args1) %>%
+  analyze("AADJx", afun = a_freq_j, extra_args = extra_args1) %>%
   append_topleft("  Time Relative to Infusion") %>%
   append_topleft("    Modification, n (%)")
 
@@ -289,10 +315,10 @@ result <- set_titles(result, tab_titles)
 
 # Convert to tbl file and output table
 
-tt_to_tlgrtf(string_map = string_map, tt = head(result, 20), file = fileid, orientation = "portrait")
+tt_to_tlgrtf(string_map = string_map, tt = head(result, 25), file = fileid, orientation = "portrait")
 ```
 ```{r result1, echo=FALSE, message=FALSE, warning=FALSE, test = list(result_v1 = "result")}
-tt_to_flextable(head(result, 20), theme = theme_docx_default(font_size = 6))
+tt_to_flextable_j(head(result, 25), tblid)
 ```
 
 [Download RTF file](`r paste0(tolower(tblid), '.rtf')`)
