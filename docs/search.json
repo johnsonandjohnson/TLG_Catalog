@@ -790,9 +790,9 @@
   {
     "objectID": "index.html#introduction",
     "href": "index.html#introduction",
-    "title": "Johnson & Johnson Innovative Medicine TL Catalog",
-    "section": "",
-    "text": "The TL catalog is a catalog of Tables and Listings for clinical trials generated using NEST+ junco packages.\nThis catalog contains R template scripts for Johnson & Johnson Innovative Medicine.\nEach TL is represented on a separate article page, typically including the following sections:\n\nSetup and pre-processing of synthetic data.\nSteps to produce the TL.\n\n\nNote: Our functions are optimized for TrueType font DOCX and RTF generation, but in this catalog we show HTML flextables for simplicity. Thus, some elements differ is size and purpose. We also provide RTF downloads for true fidelity. Some listings have been shortened down for demonstration purposes.",
+    "title": "",
+    "section": "Introduction",
+    "text": "Introduction\n\nThe TL catalog is a catalog of Tables and Listings for clinical trials generated using NEST+ junco packages.\nThis catalog contains R template scripts for Johnson & Johnson Innovative Medicine.\nEach TL is represented on a separate article page, typically including the following sections:\n\nSetup and pre-processing of synthetic data.\nSteps to produce the TL.\n\n\nNote: Our functions are optimized for TrueType font DOCX and RTF generation, but in this catalog we show HTML flextables for simplicity. Thus, some elements differ is size and purpose. We also provide RTF downloads for true fidelity. Some listings have been shortened down for demonstration purposes.",
     "crumbs": [
       "Introduction"
     ]
@@ -800,9 +800,9 @@
   {
     "objectID": "index.html#usage",
     "href": "index.html#usage",
-    "title": "Johnson & Johnson Innovative Medicine TL Catalog",
-    "section": "",
-    "text": "See the full list of available TLs on the Index page.\nThe reproducibility section contains session information and allows one to install the packages required to properly run the code.\n\n\n\n\nOne can search for any text in the search bar (i.e. reference mock)",
+    "title": "",
+    "section": "Usage",
+    "text": "Usage\nSee the full list of available TLs on the Index page.\nThe reproducibility section contains session information and allows one to install the packages required to properly run the code.\n\nInteracting with Catalog R Code\n\n\nOne can search for any text in the search bar (i.e. reference mock)",
     "crumbs": [
       "Introduction"
     ]
@@ -810,9 +810,9 @@
   {
     "objectID": "index.html#license",
     "href": "index.html#license",
-    "title": "Johnson & Johnson Innovative Medicine TL Catalog",
-    "section": "",
-    "text": "This catalog as well as code examples are licensed under the Apache License, Version 2.0 - see the LICENSE file for details.",
+    "title": "",
+    "section": "License",
+    "text": "License\nThis catalog as well as code examples are licensed under the Apache License, Version 2.0 - see the LICENSE file for details.",
     "crumbs": [
       "Introduction"
     ]
@@ -820,9 +820,9 @@
   {
     "objectID": "index.html#development",
     "href": "index.html#development",
-    "title": "Johnson & Johnson Innovative Medicine TL Catalog",
-    "section": "",
-    "text": "This website is built using Quarto and hosted on GitHub Pages.\nIf you are adding a new table, listing, or graph in the form a new .qmd file, then you will also need to update the index in the tlg-index.qmd file with the new file name. To do so, run the R code in the generate-index.R file after creating your template.",
+    "title": "",
+    "section": "Development",
+    "text": "Development\nThis website is built using Quarto and hosted on GitHub Pages.\nIf you are adding a new table, listing, or graph in the form a new .qmd file, then you will also need to update the index in the tlg-index.qmd file with the new file name. To do so, run the R code in the generate-index.R file after creating your template.",
     "crumbs": [
       "Introduction"
     ]
@@ -1650,9 +1650,9 @@
   {
     "objectID": "index.html#contributing",
     "href": "index.html#contributing",
-    "title": "Johnson & Johnson Innovative Medicine TL Catalog",
-    "section": "",
-    "text": "We welcome contributions big and small to the TL catalog. Use the giscus panels at the bottom of each page to share your feedback & ideas, ask questions, and report issues.",
+    "title": "",
+    "section": "Contributing",
+    "text": "Contributing\nWe welcome contributions big and small to the TL catalog. Use the giscus panels at the bottom of each page to share your feedback & ideas, ask questions, and report issues.",
     "crumbs": [
       "Introduction"
     ]
