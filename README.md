@@ -9,11 +9,11 @@ The TL catalog is a catalog of **T**ables and **L**istings for clinical trials g
 
 This catalog contains R template scripts for Johnson & Johnson Innovative Medicine.
 
-Each TLG is represented on a separate article page, typically including the following sections:
+Each TL is represented on a separate article page, typically including the following sections:
 
 -   Setup and pre-processing of synthetic data.
 
--   Steps to produce the TLG.
+-   Steps to produce the TL.
 
 > **Note:** Our functions are optimized for TrueType font DOCX and RTF generation, but in this catalog we show HTML flextables for simplicity. 
 > Thus, some elements differ is size and purpose. We also provide RTF downloads for true fidelity. Some listings have been shortened down for demonstration purposes.
@@ -43,7 +43,7 @@ This catalog as well as code examples are licensed under the Apache License, Ver
 
 ## Contributing
 
-We welcome contributions big and small to the TLG catalog. 
+We welcome contributions big and small to the TL catalog. 
 Use the giscus panels at the bottom of each page to share your feedback & ideas, ask questions, and report issues.
 
 

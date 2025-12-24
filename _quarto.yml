@@ -124,19 +124,19 @@ website:
         - changelog.qmd
         - text: "---"
         - tlg-index.qmd
-  comments:
-    giscus:
+#  comments:
+    #giscus:
       # Reference: https://quarto.org/docs/reference/projects/books.html#giscus
       # Also https://giscus.app/ for all options
-      repo: johnsonandjohnson/TLG_Catalog
+      #repo: johnsonandjohnson/TLG_Catalog
       # repo-id: "MDEwOlJlcG9zaXRvcnk0MDYxNTcwMjg="
-      category: General
+#      category: General
       # category-id: "DIC_kwDOGDV25M4CVBzs" #TODO FIX THIS
-      reactions-enabled: true
-      theme: light
-      language: en
-      loading: lazy
-      mapping: pathname
+#      reactions-enabled: true
+#      theme: light
+#      language: en
+#      loading: lazy
+#      mapping: pathname
 
 profile:
   group:

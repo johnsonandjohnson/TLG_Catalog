@@ -1,6 +1,6 @@
 # Changelog
 
-This document tracks the changes made to the J&J CS R Safety TLG Sample Script Catalog over time.
+This document tracks the changes made to the TL Sample Script Catalog over time.
 
 ------------------------------------------------------------------------
 
@@ -10,23 +10,23 @@ This document tracks the changes made to the J&J CS R Safety TLG Sample Script C
 ### Added Scripts
 
 The following scripts have been added to the catalog:
--   `lsfae06a.R`
--   `lsfae06b.R`
--   `tsfae14.R`
--   `tsfae15.R`
--   `tsfae16.R`
--   `tsfae17a.R`
--   `tsfae17b.R`
--   `tsfae17c.R`
--   `tsfae17d.R`
--   `tsfae19a.R`
--   `tsfae19b.R`
--   `tsfae19c.R`
--   `tsfae19d.R`
--   `tpk01a.R`
--   `tpk01b.R`
--   `tpk02.R`
--   `tpk03.R`
+-   `lsfae06a.R` <br>
+-   `lsfae06b.R` <br>
+-   `tsfae14.R` <br>
+-   `tsfae15.R` <br>
+-   `tsfae16.R` <br>
+-   `tsfae17a.R` <br>
+-   `tsfae17b.R` <br>
+-   `tsfae17c.R` <br>
+-   `tsfae17d.R` <br>
+-   `tsfae19a.R` <br>
+-   `tsfae19b.R` <br>
+-   `tsfae19c.R` <br>
+-   `tsfae19d.R` <br>
+-   `tpk01a.R` <br>
+-   `tpk01b.R` <br>
+-   `tpk02.R` <br>
+-   `tpk03.R` <br>
 
 
 ## Version: August 06, 2025
@@ -34,117 +34,117 @@ The following scripts have been added to the catalog:
 ### Added Scripts
 
 The following scripts have been added to the catalog:
--   `lsfae01.R`
--   `lsfae02.R`
--   `lsfae03.R`
--   `lsfae04.R`
--   `lsfae05.R`
--   `lsfdth01.R`
--   `lsfecg01.R`
--   `lsfecg02.R`
--   `lsflab01.R`
--   `lsfvit01.R`
--   `lsfvit02.R`
--   `lsicm01.R`
--   `lsidem01.R`
--   `lsidem02.R`
--   `lsids01.R`
--   `lsids02.R`
--   `lsids03.R`
--   `lsids04.R`
--   `lsids05.R`
--   `lsiex01.R`
--   `lsiex02.R`
--   `lsiex03.R`
--   `lsimh01.R`
--   `tsfae01a.R`
--   `tsfae01b.R`
--   `tsfae02.R`
--   `tsfae02a.R`
--   `tsfae03.R`
--   `tsfae03a.R`
--   `tsfae04.R`
--   `tsfae04a.R`
--   `tsfae05.R`
--   `tsfae05a.R`
--   `tsfae06a.R`
--   `tsfae06b.R`
--   `tsfae07a.R`
--   `tsfae07b.R`
--   `tsfae08.R`
--   `tsfae09.R`
--   `tsfae10.R`
--   `tsfae11.R`
--   `tsfae12.R`
--   `tsfae13.R`
--   `tsfae20a.R`
--   `tsfae20b.R`
--   `tsfae20c.R`
--   `tsfae21a.R`
--   `tsfae21b.R`
--   `tsfae21c.R`
--   `tsfae21d.R`
--   `tsfae22a.R`
--   `tsfae22b.R`
--   `tsfae22c.R`
--   `tsfae23a.R`
--   `tsfae23b.R`
--   `tsfae23c.R`
--   `tsfae23d.R`
--   `tsfae24a.R`
--   `tsfae24b.R`
--   `tsfae24c.R`
--   `tsfae24d.R`
--   `tsfae24f.R`
--   `tsfdth01.R`
--   `tsfecg01.R`
--   `tsfecg01a.R`
--   `tsfecg02.R`
--   `tsfecg03.R`
--   `tsfecg04.R`
--   `tsfecg05.R`
--   `tsflab01.R`
--   `tsflab01a.R`
--   `tsflab02.R`
--   `tsflab02a.R`
--   `tsflab02b.R`
--   `tsflab03.R`
--   `tsflab03a.R`
--   `tsflab04a.R`
--   `tsflab04b.R`
--   `tsflab05.R`
--   `tsflab06.R`
--   `tsflab07.R`
--   `tsfvit01.R`
--   `tsfvit01a.R`
--   `tsfvit02.R`
--   `tsfvit03.R`
--   `tsfvit04.R`
--   `tsfvit05.R`
--   `tsfvit06.R`
--   `tsicm01.R`
--   `tsicm02.R`
--   `tsicm03.R`
--   `tsicm04.R`
--   `tsicm05.R`
--   `tsicm06.R`
--   `tsicm07.R`
--   `tsicm08.R`
--   `tsidem01.R`
--   `tsidem02.R`
--   `tsids01.R`
--   `tsids02.R`
--   `tsids02a.R`
--   `tsiex01.R`
--   `tsiex02.R`
--   `tsiex03.R`
--   `tsiex04.R`
--   `tsiex06.R`
--   `tsiex07.R`
--   `tsiex08.R`
--   `tsiex09.R`
--   `tsiex10.R`
--   `tsiex11.R`
--   `tsimh01.R`
+-   `lsfae01.R` <br>
+-   `lsfae02.R` <br>
+-   `lsfae03.R` <br>
+-   `lsfae04.R` <br>
+-   `lsfae05.R` <br>
+-   `lsfdth01.R` <br>
+-   `lsfecg01.R` <br>
+-   `lsfecg02.R` <br>
+-   `lsflab01.R` <br>
+-   `lsfvit01.R` <br>
+-   `lsfvit02.R` <br>
+-   `lsicm01.R` <br>
+-   `lsidem01.R` <br>
+-   `lsidem02.R` <br>
+-   `lsids01.R` <br>
+-   `lsids02.R` <br>
+-   `lsids03.R` <br>
+-   `lsids04.R` <br>
+-   `lsids05.R` <br>
+-   `lsiex01.R` <br>
+-   `lsiex02.R` <br>
+-   `lsiex03.R` <br>
+-   `lsimh01.R` <br>
+-   `tsfae01a.R` <br>
+-   `tsfae01b.R` <br>
+-   `tsfae02.R` <br>
+-   `tsfae02a.R` <br>
+-   `tsfae03.R` <br>
+-   `tsfae03a.R` <br>
+-   `tsfae04.R` <br>
+-   `tsfae04a.R` <br>
+-   `tsfae05.R` <br>
+-   `tsfae05a.R` <br>
+-   `tsfae06a.R` <br>
+-   `tsfae06b.R` <br>
+-   `tsfae07a.R` <br>
+-   `tsfae07b.R` <br>
+-   `tsfae08.R` <br>
+-   `tsfae09.R` <br>
+-   `tsfae10.R` <br>
+-   `tsfae11.R` <br>
+-   `tsfae12.R` <br>
+-   `tsfae13.R` <br>
+-   `tsfae20a.R` <br>
+-   `tsfae20b.R` <br>
+-   `tsfae20c.R` <br>
+-   `tsfae21a.R` <br>
+-   `tsfae21b.R` <br>
+-   `tsfae21c.R` <br>
+-   `tsfae21d.R` <br>
+-   `tsfae22a.R` <br>
+-   `tsfae22b.R` <br>
+-   `tsfae22c.R` <br>
+-   `tsfae23a.R` <br>
+-   `tsfae23b.R` <br>
+-   `tsfae23c.R` <br>
+-   `tsfae23d.R` <br>
+-   `tsfae24a.R` <br>
+-   `tsfae24b.R` <br>
+-   `tsfae24c.R` <br>
+-   `tsfae24d.R` <br>
+-   `tsfae24f.R` <br>
+-   `tsfdth01.R` <br>
+-   `tsfecg01.R` <br>
+-   `tsfecg01a.R` <br>
+-   `tsfecg02.R` <br>
+-   `tsfecg03.R` <br>
+-   `tsfecg04.R` <br>
+-   `tsfecg05.R` <br>
+-   `tsflab01.R` <br>
+-   `tsflab01a.R` <br>
+-   `tsflab02.R` <br>
+-   `tsflab02a.R` <br>
+-   `tsflab02b.R` <br>
+-   `tsflab03.R` <br>
+-   `tsflab03a.R` <br>
+-   `tsflab04a.R` <br>
+-   `tsflab04b.R` <br>
+-   `tsflab05.R` <br>
+-   `tsflab06.R` <br>
+-   `tsflab07.R` <br>
+-   `tsfvit01.R` <br>
+-   `tsfvit01a.R` <br>
+-   `tsfvit02.R` <br>
+-   `tsfvit03.R` <br>
+-   `tsfvit04.R` <br>
+-   `tsfvit05.R` <br>
+-   `tsfvit06.R` <br>
+-   `tsicm01.R` <br>
+-   `tsicm02.R` <br>
+-   `tsicm03.R` <br>
+-   `tsicm04.R` <br>
+-   `tsicm05.R` <br>
+-   `tsicm06.R` <br>
+-   `tsicm07.R` <br>
+-   `tsicm08.R` <br>
+-   `tsidem01.R` <br>
+-   `tsidem02.R` <br>
+-   `tsids01.R` <br>
+-   `tsids02.R` <br>
+-   `tsids02a.R` <br>
+-   `tsiex01.R` <br>
+-   `tsiex02.R` <br>
+-   `tsiex03.R` <br>
+-   `tsiex04.R` <br>
+-   `tsiex06.R` <br>
+-   `tsiex07.R` <br>
+-   `tsiex08.R` <br>
+-   `tsiex09.R` <br>
+-   `tsiex10.R` <br>
+-   `tsiex11.R` <br>
+-   `tsimh01.R` <br>
 
 ------------------------------------------------------------------------
