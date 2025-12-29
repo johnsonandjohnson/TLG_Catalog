@@ -257,7 +257,6 @@ lyt <- basic_table(show_colcounts = FALSE) %>%
   append_topleft("    Criteria, n")
 
 result <- build_table(lyt, adeg, alt_counts_df = adslx)
-# head(result, 20)
 
 # Add titles and footnotes:
 
@@ -282,10 +281,10 @@ colwidths <- def_colwidths(
 acolwidths <- colwidths
 acolwidths[3:length(acolwidths)] <- 12
 
-tt_to_tlgrtf(string_map = string_map, tt = head(result, 25), file = fileid, colwidths = acolwidths)
+tt_to_tlgrtf(string_map = string_map, tt = result, file = fileid, colwidths = acolwidths)
 ```
 ```{r result1, echo=FALSE, message=FALSE, warning=FALSE, test = list(result_v1 = "result")}
-tt_to_flextable_j(head(result, 25), tblid)
+tt_to_flextable_j(result, tblid)
 ```
 
 [Download RTF file](`r paste0(tolower(tblid), '.rtf')`)

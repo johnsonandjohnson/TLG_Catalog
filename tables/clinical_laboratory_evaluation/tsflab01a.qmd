@@ -719,7 +719,7 @@ result4 <- build_result_parcat3(
 result <- build_result_parcat3(PARCAT3sel = "General chemistry", tblid = tblid)
 ```
 ```{r result1, echo=FALSE, message=FALSE, warning=FALSE, test = list(result_v1 = "result")}
-rtables.officer::tt_to_flextable(head(result, 25), theme = junco::theme_docx_default_j()) #TODO: FIX THIS
+rtables.officer::tt_to_flextable(result, theme = junco::theme_docx_default_j()) #TODO: FIX THIS
 ```
 
 [Download RTF file](`r paste0(tolower(tblid), '.rtf')`)

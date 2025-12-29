@@ -307,7 +307,6 @@ result <- build_table(lyt, ex, alt_counts_df = adsl)
 # Prune table to remove all the rows with 0 counts or no data to report across all sections
 
 result <- prune_table(result, prune_func = prune_empty_level)
-head(result, 75)
 
 # Add titles and footnotes:
 
@@ -315,10 +314,10 @@ result <- set_titles(result, tab_titles)
 
 # Convert to tbl file and output table
 
-tt_to_tlgrtf(string_map = string_map, tt = head(result, 25), file = fileid, orientation = "portrait")
+tt_to_tlgrtf(string_map = string_map, tt = result, file = fileid, orientation = "portrait")
 ```
 ```{r result1, echo=FALSE, message=FALSE, warning=FALSE, test = list(result_v1 = "result")}
-tt_to_flextable_j(head(result, 25), tblid)
+tt_to_flextable_j(result, tblid)
 ```
 
 [Download RTF file](`r paste0(tolower(tblid), '.rtf')`)
