@@ -120,7 +120,7 @@ cookieconsent.run({
 <script src="../../site_libs/tabwid-1.1.3/tabwid.js"></script><link rel="stylesheet" href="../../assets/css/style.css">
 <meta property="og:title" content="TPK01B – TL Catalog">
 <meta property="og:description" content="Matrix Active Study Agent/Analyte Concentrations (units) Over Time">
-<meta property="og:image" content="https://johnsonandjohnson.github.io/tlg-catalog/tables/pharmacokinetics/assets/img/logo.png">
+<meta property="og:image" content="https://johnsonandjohnson.github.io/TLG_Catalog/tables/pharmacokinetics/assets/img/logo.png">
 <meta property="og:site_name" content="TL Catalog">
 </head>
 <body class="nav-sidebar docked nav-fixed">
@@ -162,6 +162,13 @@ cookieconsent.run({
   <div class="sidebar-item-container"> 
   <a href="../../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introduction</span></a>
+  </div>
+</li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../tlg-index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Index</span></a>
   </div>
 </li>
         <li class="px-0"><hr class="sidebar-divider hi "></li>
@@ -1163,12 +1170,6 @@ cookieconsent.run({
   </div>
 </li>
         <li class="px-0"><hr class="sidebar-divider hi "></li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../tlg-index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Index</span></a>
-  </div>
-</li>
     </ul>
 </div>
 </nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
@@ -1178,7 +1179,7 @@ cookieconsent.run({
    
   <ul>
 <li><a href="#output" id="toc-output" class="nav-link active" data-scroll-target="#output">Output</a></li>
-  </ul><div class="toc-actions"><ul><li><a href="https://github.com/johnsonandjohnson/tlg-catalog/edit/main/book/tables/pharmacokinetics/tpk01b.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/johnsonandjohnson/tlg-catalog/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+  </ul><div class="toc-actions"><ul><li><a href="https://github.com/johnsonandjohnson/TLG_Catalog/edit/dev/book/tables/pharmacokinetics/tpk01b.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/johnsonandjohnson/TLG_Catalog/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content column-body" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Tables</li><li class="breadcrumb-item"><a href="../../tables/pharmacokinetics/tpk01a.html">Pharmacokinetics</a></li><li class="breadcrumb-item"><a href="../../tables/pharmacokinetics/tpk01b.html">TPK01B</a></li></ol></nav><div class="quarto-title">
@@ -1336,267 +1337,268 @@ cookieconsent.run({
 <span id="cb1-130"><a href="#cb1-130"></a>  <span class="co"># Convert to tbl file and output table:</span></span>
 <span id="cb1-131"><a href="#cb1-131"></a>  <span class="do">##############################################################################</span></span>
 <span id="cb1-132"><a href="#cb1-132"></a>  </span>
-<span id="cb1-133"><a href="#cb1-133"></a>  <span class="fu">tt_to_tlgrtf</span>(<span class="at">string_map =</span> string_map, <span class="at">tt =</span> <span class="fu">head</span>(result, <span class="dv">25</span>), <span class="at">file =</span> path, <span class="at">orientation =</span> <span class="st">"landscape"</span>)</span>
+<span id="cb1-133"><a href="#cb1-133"></a>  <span class="fu">tt_to_tlgrtf</span>(<span class="at">string_map =</span> string_map, <span class="at">tt =</span> result, <span class="at">file =</span> path, <span class="at">orientation =</span> <span class="st">"landscape"</span>)</span>
 <span id="cb1-134"><a href="#cb1-134"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <div class="cell" data-test="{&quot;result_v1&quot;:&quot;result&quot;}">
 <div class="cell-output-display">
 <div class="tabwid tabwid_left">
-<style>.cl-0236a0a6{}.cl-022e633c{font-family:'Times New Roman';font-size:10pt;font-weight:bold;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-022e635a{font-family:'Times New Roman';font-size:9pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-02313fd0{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:0;padding-right:0;line-height: 1;background-color:transparent;}.cl-02313fe4{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:3.6pt;padding-right:0;line-height: 1;background-color:transparent;}.cl-02313fe5{margin:0;text-align:center;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:0;padding-right:0;line-height: 1;background-color:transparent;}.cl-02313fee{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:0;padding-right:0;line-height: 1;background-color:transparent;}.cl-02313fef{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:0;padding-right:0;line-height: 1;background-color:transparent;}.cl-02315bb4{width:1.978in;background-color:rgba(255, 255, 255, 1.00);vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0.75pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-02315bbe{width:0.346in;background-color:rgba(255, 255, 255, 1.00);vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0.75pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-02315bbf{width:0.593in;background-color:rgba(255, 255, 255, 1.00);vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0.75pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-02315bc8{width:0.495in;background-color:rgba(255, 255, 255, 1.00);vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0.75pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-02315bc9{width:1.978in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(102, 102, 102, 1.00);border-top: 0.75pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-02315bca{width:0.346in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(102, 102, 102, 1.00);border-top: 0.75pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-02315bd2{width:0.593in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(102, 102, 102, 1.00);border-top: 0.75pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-02315bdc{width:0.495in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(102, 102, 102, 1.00);border-top: 0.75pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-02315bdd{width:1.978in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-02315bde{width:0.346in;background-color:transparent;vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-02315be6{width:0.593in;background-color:transparent;vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-02315be7{width:0.495in;background-color:transparent;vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-02315bf0{width:0.346in;background-color:transparent;vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0.75pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-02315bf1{width:0.593in;background-color:transparent;vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0.75pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-02315bfa{width:0.495in;background-color:transparent;vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0.75pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-02315c04{width:1.978in;background-color:transparent;vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-02315c05{width:1.978in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-02315c06{width:0.346in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-02315c07{width:0.593in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-02315c0e{width:0.495in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-02315c0f{width:1.978in;background-color:transparent;vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-02315c18{width:0.346in;background-color:transparent;vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-02315c19{width:0.593in;background-color:transparent;vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-02315c22{width:0.495in;background-color:transparent;vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-02315c23{width:1.978in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(255, 255, 255, 0.00);border-top: 0 solid rgba(255, 255, 255, 0.00);border-left: 0 solid rgba(255, 255, 255, 0.00);border-right: 0 solid rgba(255, 255, 255, 0.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-02315c2c{width:0.346in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(255, 255, 255, 0.00);border-top: 0 solid rgba(255, 255, 255, 0.00);border-left: 0 solid rgba(255, 255, 255, 0.00);border-right: 0 solid rgba(255, 255, 255, 0.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-02315c2d{width:0.593in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(255, 255, 255, 0.00);border-top: 0 solid rgba(255, 255, 255, 0.00);border-left: 0 solid rgba(255, 255, 255, 0.00);border-right: 0 solid rgba(255, 255, 255, 0.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-02315c36{width:0.495in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(255, 255, 255, 0.00);border-top: 0 solid rgba(255, 255, 255, 0.00);border-left: 0 solid rgba(255, 255, 255, 0.00);border-right: 0 solid rgba(255, 255, 255, 0.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-02315c37{width:1.978in;background-color:transparent;vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(255, 255, 255, 0.00);border-left: 0 solid rgba(255, 255, 255, 0.00);border-right: 0 solid rgba(255, 255, 255, 0.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-02315c38{width:0.346in;background-color:transparent;vertical-align: middle;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(255, 255, 255, 0.00);border-left: 0 solid rgba(255, 255, 255, 0.00);border-right: 0 solid rgba(255, 255, 255, 0.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-02315c40{width:0.593in;background-color:transparent;vertical-align: middle;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(255, 255, 255, 0.00);border-left: 0 solid rgba(255, 255, 255, 0.00);border-right: 0 solid rgba(255, 255, 255, 0.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-02315c41{width:0.495in;background-color:transparent;vertical-align: middle;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(255, 255, 255, 0.00);border-left: 0 solid rgba(255, 255, 255, 0.00);border-right: 0 solid rgba(255, 255, 255, 0.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style>
-<table data-quarto-disable-processing="true" class="cl-0236a0a6">
+<style>.cl-6f33bf84{}.cl-6f2c8412{font-family:'Times New Roman';font-size:10pt;font-weight:bold;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-6f2c843a{font-family:'Times New Roman';font-size:9pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-6f2c8444{font-family:'Times New Roman';font-size:8pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-6f2f3f9a{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:0;padding-right:0;line-height: 1;background-color:transparent;}.cl-6f2f3fa4{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:3.6pt;padding-right:0;line-height: 1;background-color:transparent;}.cl-6f2f3fa5{margin:0;text-align:center;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:0;padding-right:0;line-height: 1;background-color:transparent;}.cl-6f2f3fae{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:0;padding-right:0;line-height: 1;background-color:transparent;}.cl-6f2f3faf{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:0;padding-right:0;line-height: 1;background-color:transparent;}.cl-6f2f3fb0{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:0;padding-right:0;line-height: 1;background-color:transparent;}.cl-6f2f3fb1{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:0;padding-right:0;line-height: 1;background-color:transparent;}.cl-6f2f5a48{width:1.978in;background-color:rgba(255, 255, 255, 1.00);vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0.75pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-6f2f5a52{width:0.346in;background-color:rgba(255, 255, 255, 1.00);vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0.75pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-6f2f5a53{width:0.593in;background-color:rgba(255, 255, 255, 1.00);vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0.75pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-6f2f5a5c{width:0.495in;background-color:rgba(255, 255, 255, 1.00);vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0.75pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-6f2f5a5d{width:1.978in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(102, 102, 102, 1.00);border-top: 0.75pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-6f2f5a5e{width:0.346in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(102, 102, 102, 1.00);border-top: 0.75pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-6f2f5a5f{width:0.593in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(102, 102, 102, 1.00);border-top: 0.75pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-6f2f5a66{width:0.495in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(102, 102, 102, 1.00);border-top: 0.75pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-6f2f5a67{width:1.978in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-6f2f5a68{width:0.346in;background-color:transparent;vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-6f2f5a69{width:0.593in;background-color:transparent;vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-6f2f5a70{width:0.495in;background-color:transparent;vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-6f2f5a71{width:0.346in;background-color:transparent;vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0.75pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-6f2f5a7a{width:0.593in;background-color:transparent;vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0.75pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-6f2f5a7b{width:0.495in;background-color:transparent;vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0.75pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-6f2f5a7c{width:1.978in;background-color:transparent;vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-6f2f5a84{width:1.978in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-6f2f5a85{width:0.346in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-6f2f5a86{width:0.593in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-6f2f5a87{width:0.495in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-6f2f5a8e{width:1.978in;background-color:transparent;vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-6f2f5a8f{width:0.346in;background-color:transparent;vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-6f2f5a90{width:0.593in;background-color:transparent;vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-6f2f5a91{width:0.495in;background-color:transparent;vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-6f2f5a98{width:1.978in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(255, 255, 255, 0.00);border-top: 0 solid rgba(255, 255, 255, 0.00);border-left: 0 solid rgba(255, 255, 255, 0.00);border-right: 0 solid rgba(255, 255, 255, 0.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-6f2f5a99{width:0.346in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(255, 255, 255, 0.00);border-top: 0 solid rgba(255, 255, 255, 0.00);border-left: 0 solid rgba(255, 255, 255, 0.00);border-right: 0 solid rgba(255, 255, 255, 0.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-6f2f5a9a{width:0.593in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(255, 255, 255, 0.00);border-top: 0 solid rgba(255, 255, 255, 0.00);border-left: 0 solid rgba(255, 255, 255, 0.00);border-right: 0 solid rgba(255, 255, 255, 0.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-6f2f5a9b{width:0.495in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(255, 255, 255, 0.00);border-top: 0 solid rgba(255, 255, 255, 0.00);border-left: 0 solid rgba(255, 255, 255, 0.00);border-right: 0 solid rgba(255, 255, 255, 0.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-6f2f5aa2{width:1.978in;background-color:transparent;vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(255, 255, 255, 0.00);border-left: 0 solid rgba(255, 255, 255, 0.00);border-right: 0 solid rgba(255, 255, 255, 0.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-6f2f5aa3{width:0.346in;background-color:transparent;vertical-align: middle;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(255, 255, 255, 0.00);border-left: 0 solid rgba(255, 255, 255, 0.00);border-right: 0 solid rgba(255, 255, 255, 0.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-6f2f5aa4{width:0.593in;background-color:transparent;vertical-align: middle;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(255, 255, 255, 0.00);border-left: 0 solid rgba(255, 255, 255, 0.00);border-right: 0 solid rgba(255, 255, 255, 0.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-6f2f5aa5{width:0.495in;background-color:transparent;vertical-align: middle;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(255, 255, 255, 0.00);border-left: 0 solid rgba(255, 255, 255, 0.00);border-right: 0 solid rgba(255, 255, 255, 0.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-6f2f5aac{width:1.978in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(255, 255, 255, 0.00);border-left: 0 solid rgba(255, 255, 255, 0.00);border-right: 0 solid rgba(255, 255, 255, 0.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-6f2f5aad{width:0.346in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(255, 255, 255, 0.00);border-left: 0 solid rgba(255, 255, 255, 0.00);border-right: 0 solid rgba(255, 255, 255, 0.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-6f2f5ab6{width:0.593in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(255, 255, 255, 0.00);border-left: 0 solid rgba(255, 255, 255, 0.00);border-right: 0 solid rgba(255, 255, 255, 0.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-6f2f5ab7{width:0.495in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(255, 255, 255, 0.00);border-left: 0 solid rgba(255, 255, 255, 0.00);border-right: 0 solid rgba(255, 255, 255, 0.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style>
+<table data-quarto-disable-processing="true" class="cl-6f33bf84">
 <thead>
-<tr style="overflow-wrap:break-word;"><th colspan="9" class="cl-02315bb4"><p class="cl-02313fd0"><span class="cl-022e633c">TPK01b:</span> <span class="cl-022e633c">[Matrix] [Active Study Agent/Analyte] Concentrations ([units]) Over Time; Pharmacokinetics Analysis Set (Study jjcs - core)</span></p></th></tr>
+<tr style="overflow-wrap:break-word;"><th colspan="9" class="cl-6f2f5a48"><p class="cl-6f2f3f9a"><span class="cl-6f2c8412">TPK01b:</span> <span class="cl-6f2c8412">[Matrix] [Active Study Agent/Analyte] Concentrations ([units]) Over Time; Pharmacokinetics Analysis Set (Study jjcs - core)</span></p></th></tr>
 <tr style="overflow-wrap:break-word;">
-<th class="cl-02315bc9"><p class="cl-02313fe4"><span class="cl-022e635a"></span></p></th>
-<th colspan="8" class="cl-02315bca"><p class="cl-02313fe5"><span class="cl-022e635a">Xanomeline Low Dose</span></p></th>
+<th class="cl-6f2f5a5d"><p class="cl-6f2f3fa4"><span class="cl-6f2c843a"></span></p></th>
+<th colspan="8" class="cl-6f2f5a5e"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">Xanomeline Low Dose</span></p></th>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<th class="cl-02315bdd"><p class="cl-02313fe4"><span class="cl-022e635a"></span></p></th>
-<th colspan="8" class="cl-02315bde"><p class="cl-02313fe5"><span class="cl-022e635a">N=96</span></p></th>
+<th class="cl-6f2f5a67"><p class="cl-6f2f3fa4"><span class="cl-6f2c843a"></span></p></th>
+<th colspan="8" class="cl-6f2f5a68"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">N=96</span></p></th>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<th class="cl-02315bdd"><p class="cl-02313fe4"><span class="cl-022e635a"></span></p></th>
-<th colspan="8" class="cl-02315bf0"><p class="cl-02313fe5"><span class="cl-022e635a">Observed</span></p></th>
+<th class="cl-6f2f5a67"><p class="cl-6f2f3fa4"><span class="cl-6f2c843a"></span></p></th>
+<th colspan="8" class="cl-6f2f5a71"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">Observed</span></p></th>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<th class="cl-02315c04"><p class="cl-02313fee"><span class="cl-022e635a">Time Point</span></p></th>
-<th class="cl-02315bf0"><p class="cl-02313fe5"><span class="cl-022e635a">N</span></p></th>
-<th class="cl-02315bf1"><p class="cl-02313fe5"><span class="cl-022e635a">Mean</span></p></th>
-<th class="cl-02315bfa"><p class="cl-02313fe5"><span class="cl-022e635a">SD</span></p></th>
-<th class="cl-02315bf1"><p class="cl-02313fe5"><span class="cl-022e635a">Med</span></p></th>
-<th class="cl-02315bf1"><p class="cl-02313fe5"><span class="cl-022e635a">Min</span></p></th>
-<th class="cl-02315bf1"><p class="cl-02313fe5"><span class="cl-022e635a">Max</span></p></th>
-<th class="cl-02315bf1"><p class="cl-02313fe5"><span class="cl-022e635a">% CV</span></p></th>
-<th class="cl-02315bf1"><p class="cl-02313fe5"><span class="cl-022e635a">Geometric Mean</span></p></th>
+<th class="cl-6f2f5a7c"><p class="cl-6f2f3fae"><span class="cl-6f2c843a">Time Point</span></p></th>
+<th class="cl-6f2f5a71"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">N</span></p></th>
+<th class="cl-6f2f5a7a"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">Mean</span></p></th>
+<th class="cl-6f2f5a7b"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">SD</span></p></th>
+<th class="cl-6f2f5a7a"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">Med</span></p></th>
+<th class="cl-6f2f5a7a"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">Min</span></p></th>
+<th class="cl-6f2f5a7a"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">Max</span></p></th>
+<th class="cl-6f2f5a7a"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">% CV</span></p></th>
+<th class="cl-6f2f5a7a"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">Geometric Mean</span></p></th>
 </tr>
 </thead>
 <tbody>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-02315c05"><p class="cl-02313fee"><span class="cl-022e635a">Day 1 - Pre-dose</span></p></td>
-<td class="cl-02315c06"><p class="cl-02313fe5"><span class="cl-022e635a">96</span></p></td>
-<td class="cl-02315c07"><p class="cl-02313fe5"><span class="cl-022e635a">0.00</span></p></td>
-<td class="cl-02315c0e"><p class="cl-02313fe5"><span class="cl-022e635a">0.00</span></p></td>
-<td class="cl-02315c07"><p class="cl-02313fe5"><span class="cl-022e635a">0.00</span></p></td>
-<td class="cl-02315c07"><p class="cl-02313fe5"><span class="cl-022e635a">0.00</span></p></td>
-<td class="cl-02315c07"><p class="cl-02313fe5"><span class="cl-022e635a">0.00</span></p></td>
-<td class="cl-02315c07"><p class="cl-02313fe5"><span class="cl-022e635a">NA</span></p></td>
-<td class="cl-02315c07"><p class="cl-02313fe5"><span class="cl-022e635a">NA</span></p></td>
+<td class="cl-6f2f5a84"><p class="cl-6f2f3fae"><span class="cl-6f2c843a">Day 1 - Pre-dose</span></p></td>
+<td class="cl-6f2f5a85"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">96</span></p></td>
+<td class="cl-6f2f5a86"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">0.00</span></p></td>
+<td class="cl-6f2f5a87"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">0.00</span></p></td>
+<td class="cl-6f2f5a86"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">0.00</span></p></td>
+<td class="cl-6f2f5a86"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">0.00</span></p></td>
+<td class="cl-6f2f5a86"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">0.00</span></p></td>
+<td class="cl-6f2f5a86"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">NA</span></p></td>
+<td class="cl-6f2f5a86"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">NA</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-02315c05"><p class="cl-02313fee"><span class="cl-022e635a">Day 1 - 5 Min Post-dose</span></p></td>
-<td class="cl-02315c06"><p class="cl-02313fe5"><span class="cl-022e635a">96</span></p></td>
-<td class="cl-02315c07"><p class="cl-02313fe5"><span class="cl-022e635a">0.10</span></p></td>
-<td class="cl-02315c0e"><p class="cl-02313fe5"><span class="cl-022e635a">0.01</span></p></td>
-<td class="cl-02315c07"><p class="cl-02313fe5"><span class="cl-022e635a">0.10</span></p></td>
-<td class="cl-02315c07"><p class="cl-02313fe5"><span class="cl-022e635a">0.09</span></p></td>
-<td class="cl-02315c07"><p class="cl-02313fe5"><span class="cl-022e635a">0.11</span></p></td>
-<td class="cl-02315c07"><p class="cl-02313fe5"><span class="cl-022e635a">5.3</span></p></td>
-<td class="cl-02315c07"><p class="cl-02313fe5"><span class="cl-022e635a">0.10</span></p></td>
+<td class="cl-6f2f5a84"><p class="cl-6f2f3fae"><span class="cl-6f2c843a">Day 1 - 5 Min Post-dose</span></p></td>
+<td class="cl-6f2f5a85"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">96</span></p></td>
+<td class="cl-6f2f5a86"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">0.10</span></p></td>
+<td class="cl-6f2f5a87"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">0.01</span></p></td>
+<td class="cl-6f2f5a86"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">0.10</span></p></td>
+<td class="cl-6f2f5a86"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">0.09</span></p></td>
+<td class="cl-6f2f5a86"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">0.11</span></p></td>
+<td class="cl-6f2f5a86"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">5.3</span></p></td>
+<td class="cl-6f2f5a86"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">0.10</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-02315c05"><p class="cl-02313fee"><span class="cl-022e635a">Day 1 - 30 Min Post-dose</span></p></td>
-<td class="cl-02315c06"><p class="cl-02313fe5"><span class="cl-022e635a">96</span></p></td>
-<td class="cl-02315c07"><p class="cl-02313fe5"><span class="cl-022e635a">0.55</span></p></td>
-<td class="cl-02315c0e"><p class="cl-02313fe5"><span class="cl-022e635a">0.03</span></p></td>
-<td class="cl-02315c07"><p class="cl-02313fe5"><span class="cl-022e635a">0.54</span></p></td>
-<td class="cl-02315c07"><p class="cl-02313fe5"><span class="cl-022e635a">0.50</span></p></td>
-<td class="cl-02315c07"><p class="cl-02313fe5"><span class="cl-022e635a">0.60</span></p></td>
-<td class="cl-02315c07"><p class="cl-02313fe5"><span class="cl-022e635a">4.8</span></p></td>
-<td class="cl-02315c07"><p class="cl-02313fe5"><span class="cl-022e635a">0.55</span></p></td>
+<td class="cl-6f2f5a84"><p class="cl-6f2f3fae"><span class="cl-6f2c843a">Day 1 - 30 Min Post-dose</span></p></td>
+<td class="cl-6f2f5a85"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">96</span></p></td>
+<td class="cl-6f2f5a86"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">0.55</span></p></td>
+<td class="cl-6f2f5a87"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">0.03</span></p></td>
+<td class="cl-6f2f5a86"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">0.54</span></p></td>
+<td class="cl-6f2f5a86"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">0.50</span></p></td>
+<td class="cl-6f2f5a86"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">0.60</span></p></td>
+<td class="cl-6f2f5a86"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">4.8</span></p></td>
+<td class="cl-6f2f5a86"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">0.55</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-02315c05"><p class="cl-02313fee"><span class="cl-022e635a">Day 1 - 1h Post-dose</span></p></td>
-<td class="cl-02315c06"><p class="cl-02313fe5"><span class="cl-022e635a">96</span></p></td>
-<td class="cl-02315c07"><p class="cl-02313fe5"><span class="cl-022e635a">0.93</span></p></td>
-<td class="cl-02315c0e"><p class="cl-02313fe5"><span class="cl-022e635a">0.04</span></p></td>
-<td class="cl-02315c07"><p class="cl-02313fe5"><span class="cl-022e635a">0.93</span></p></td>
-<td class="cl-02315c07"><p class="cl-02313fe5"><span class="cl-022e635a">0.85</span></p></td>
-<td class="cl-02315c07"><p class="cl-02313fe5"><span class="cl-022e635a">1.01</span></p></td>
-<td class="cl-02315c07"><p class="cl-02313fe5"><span class="cl-022e635a">4.4</span></p></td>
-<td class="cl-02315c07"><p class="cl-02313fe5"><span class="cl-022e635a">0.93</span></p></td>
+<td class="cl-6f2f5a84"><p class="cl-6f2f3fae"><span class="cl-6f2c843a">Day 1 - 1h Post-dose</span></p></td>
+<td class="cl-6f2f5a85"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">96</span></p></td>
+<td class="cl-6f2f5a86"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">0.93</span></p></td>
+<td class="cl-6f2f5a87"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">0.04</span></p></td>
+<td class="cl-6f2f5a86"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">0.93</span></p></td>
+<td class="cl-6f2f5a86"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">0.85</span></p></td>
+<td class="cl-6f2f5a86"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">1.01</span></p></td>
+<td class="cl-6f2f5a86"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">4.4</span></p></td>
+<td class="cl-6f2f5a86"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">0.93</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-02315c05"><p class="cl-02313fee"><span class="cl-022e635a">Day 1 - 1.5h Post-dose</span></p></td>
-<td class="cl-02315c06"><p class="cl-02313fe5"><span class="cl-022e635a">96</span></p></td>
-<td class="cl-02315c07"><p class="cl-02313fe5"><span class="cl-022e635a">1.20</span></p></td>
-<td class="cl-02315c0e"><p class="cl-02313fe5"><span class="cl-022e635a">0.05</span></p></td>
-<td class="cl-02315c07"><p class="cl-02313fe5"><span class="cl-022e635a">1.20</span></p></td>
-<td class="cl-02315c07"><p class="cl-02313fe5"><span class="cl-022e635a">1.11</span></p></td>
-<td class="cl-02315c07"><p class="cl-02313fe5"><span class="cl-022e635a">1.29</span></p></td>
-<td class="cl-02315c07"><p class="cl-02313fe5"><span class="cl-022e635a">4.0</span></p></td>
-<td class="cl-02315c07"><p class="cl-02313fe5"><span class="cl-022e635a">1.20</span></p></td>
+<td class="cl-6f2f5a84"><p class="cl-6f2f3fae"><span class="cl-6f2c843a">Day 1 - 1.5h Post-dose</span></p></td>
+<td class="cl-6f2f5a85"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">96</span></p></td>
+<td class="cl-6f2f5a86"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">1.20</span></p></td>
+<td class="cl-6f2f5a87"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">0.05</span></p></td>
+<td class="cl-6f2f5a86"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">1.20</span></p></td>
+<td class="cl-6f2f5a86"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">1.11</span></p></td>
+<td class="cl-6f2f5a86"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">1.29</span></p></td>
+<td class="cl-6f2f5a86"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">4.0</span></p></td>
+<td class="cl-6f2f5a86"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">1.20</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-02315c05"><p class="cl-02313fee"><span class="cl-022e635a">Day 1 - 2h Post-dose</span></p></td>
-<td class="cl-02315c06"><p class="cl-02313fe5"><span class="cl-022e635a">96</span></p></td>
-<td class="cl-02315c07"><p class="cl-02313fe5"><span class="cl-022e635a">1.39</span></p></td>
-<td class="cl-02315c0e"><p class="cl-02313fe5"><span class="cl-022e635a">0.05</span></p></td>
-<td class="cl-02315c07"><p class="cl-02313fe5"><span class="cl-022e635a">1.39</span></p></td>
-<td class="cl-02315c07"><p class="cl-02313fe5"><span class="cl-022e635a">1.29</span></p></td>
-<td class="cl-02315c07"><p class="cl-02313fe5"><span class="cl-022e635a">1.49</span></p></td>
-<td class="cl-02315c07"><p class="cl-02313fe5"><span class="cl-022e635a">3.7</span></p></td>
-<td class="cl-02315c07"><p class="cl-02313fe5"><span class="cl-022e635a">1.39</span></p></td>
+<td class="cl-6f2f5a84"><p class="cl-6f2f3fae"><span class="cl-6f2c843a">Day 1 - 2h Post-dose</span></p></td>
+<td class="cl-6f2f5a85"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">96</span></p></td>
+<td class="cl-6f2f5a86"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">1.39</span></p></td>
+<td class="cl-6f2f5a87"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">0.05</span></p></td>
+<td class="cl-6f2f5a86"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">1.39</span></p></td>
+<td class="cl-6f2f5a86"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">1.29</span></p></td>
+<td class="cl-6f2f5a86"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">1.49</span></p></td>
+<td class="cl-6f2f5a86"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">3.7</span></p></td>
+<td class="cl-6f2f5a86"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">1.39</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-02315c05"><p class="cl-02313fee"><span class="cl-022e635a">Day 1 - 4h Post-dose</span></p></td>
-<td class="cl-02315c06"><p class="cl-02313fe5"><span class="cl-022e635a">96</span></p></td>
-<td class="cl-02315c07"><p class="cl-02313fe5"><span class="cl-022e635a">1.74</span></p></td>
-<td class="cl-02315c0e"><p class="cl-02313fe5"><span class="cl-022e635a">0.05</span></p></td>
-<td class="cl-02315c07"><p class="cl-02313fe5"><span class="cl-022e635a">1.74</span></p></td>
-<td class="cl-02315c07"><p class="cl-02313fe5"><span class="cl-022e635a">1.64</span></p></td>
-<td class="cl-02315c07"><p class="cl-02313fe5"><span class="cl-022e635a">1.83</span></p></td>
-<td class="cl-02315c07"><p class="cl-02313fe5"><span class="cl-022e635a">3.2</span></p></td>
-<td class="cl-02315c07"><p class="cl-02313fe5"><span class="cl-022e635a">1.74</span></p></td>
+<td class="cl-6f2f5a84"><p class="cl-6f2f3fae"><span class="cl-6f2c843a">Day 1 - 4h Post-dose</span></p></td>
+<td class="cl-6f2f5a85"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">96</span></p></td>
+<td class="cl-6f2f5a86"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">1.74</span></p></td>
+<td class="cl-6f2f5a87"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">0.05</span></p></td>
+<td class="cl-6f2f5a86"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">1.74</span></p></td>
+<td class="cl-6f2f5a86"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">1.64</span></p></td>
+<td class="cl-6f2f5a86"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">1.83</span></p></td>
+<td class="cl-6f2f5a86"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">3.2</span></p></td>
+<td class="cl-6f2f5a86"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">1.74</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-02315c05"><p class="cl-02313fee"><span class="cl-022e635a">Day 1 - 0-6h Post-dose</span></p></td>
-<td class="cl-02315c06"><p class="cl-02313fe5"><span class="cl-022e635a">96</span></p></td>
-<td class="cl-02315c07"><p class="cl-02313fe5"><span class="cl-022e635a">26.72</span></p></td>
-<td class="cl-02315c0e"><p class="cl-02313fe5"><span class="cl-022e635a">1.44</span></p></td>
-<td class="cl-02315c07"><p class="cl-02313fe5"><span class="cl-022e635a">26.63</span></p></td>
-<td class="cl-02315c07"><p class="cl-02313fe5"><span class="cl-022e635a">24.53</span></p></td>
-<td class="cl-02315c07"><p class="cl-02313fe5"><span class="cl-022e635a">29.25</span></p></td>
-<td class="cl-02315c07"><p class="cl-02313fe5"><span class="cl-022e635a">5.4</span></p></td>
-<td class="cl-02315c07"><p class="cl-02313fe5"><span class="cl-022e635a">26.68</span></p></td>
+<td class="cl-6f2f5a84"><p class="cl-6f2f3fae"><span class="cl-6f2c843a">Day 1 - 0-6h Post-dose</span></p></td>
+<td class="cl-6f2f5a85"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">96</span></p></td>
+<td class="cl-6f2f5a86"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">26.72</span></p></td>
+<td class="cl-6f2f5a87"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">1.44</span></p></td>
+<td class="cl-6f2f5a86"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">26.63</span></p></td>
+<td class="cl-6f2f5a86"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">24.53</span></p></td>
+<td class="cl-6f2f5a86"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">29.25</span></p></td>
+<td class="cl-6f2f5a86"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">5.4</span></p></td>
+<td class="cl-6f2f5a86"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">26.68</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-02315c05"><p class="cl-02313fee"><span class="cl-022e635a">Day 1 - 6h Post-dose</span></p></td>
-<td class="cl-02315c06"><p class="cl-02313fe5"><span class="cl-022e635a">96</span></p></td>
-<td class="cl-02315c07"><p class="cl-02313fe5"><span class="cl-022e635a">1.82</span></p></td>
-<td class="cl-02315c0e"><p class="cl-02313fe5"><span class="cl-022e635a">0.05</span></p></td>
-<td class="cl-02315c07"><p class="cl-02313fe5"><span class="cl-022e635a">1.82</span></p></td>
-<td class="cl-02315c07"><p class="cl-02313fe5"><span class="cl-022e635a">1.73</span></p></td>
-<td class="cl-02315c07"><p class="cl-02313fe5"><span class="cl-022e635a">1.91</span></p></td>
-<td class="cl-02315c07"><p class="cl-02313fe5"><span class="cl-022e635a">3.0</span></p></td>
-<td class="cl-02315c07"><p class="cl-02313fe5"><span class="cl-022e635a">1.82</span></p></td>
+<td class="cl-6f2f5a84"><p class="cl-6f2f3fae"><span class="cl-6f2c843a">Day 1 - 6h Post-dose</span></p></td>
+<td class="cl-6f2f5a85"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">96</span></p></td>
+<td class="cl-6f2f5a86"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">1.82</span></p></td>
+<td class="cl-6f2f5a87"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">0.05</span></p></td>
+<td class="cl-6f2f5a86"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">1.82</span></p></td>
+<td class="cl-6f2f5a86"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">1.73</span></p></td>
+<td class="cl-6f2f5a86"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">1.91</span></p></td>
+<td class="cl-6f2f5a86"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">3.0</span></p></td>
+<td class="cl-6f2f5a86"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">1.82</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-02315c05"><p class="cl-02313fee"><span class="cl-022e635a">Day 1 - 8h Post-dose</span></p></td>
-<td class="cl-02315c06"><p class="cl-02313fe5"><span class="cl-022e635a">96</span></p></td>
-<td class="cl-02315c07"><p class="cl-02313fe5"><span class="cl-022e635a">1.84</span></p></td>
-<td class="cl-02315c0e"><p class="cl-02313fe5"><span class="cl-022e635a">0.05</span></p></td>
-<td class="cl-02315c07"><p class="cl-02313fe5"><span class="cl-022e635a">1.84</span></p></td>
-<td class="cl-02315c07"><p class="cl-02313fe5"><span class="cl-022e635a">1.75</span></p></td>
-<td class="cl-02315c07"><p class="cl-02313fe5"><span class="cl-022e635a">1.94</span></p></td>
-<td class="cl-02315c07"><p class="cl-02313fe5"><span class="cl-022e635a">3.0</span></p></td>
-<td class="cl-02315c07"><p class="cl-02313fe5"><span class="cl-022e635a">1.84</span></p></td>
+<td class="cl-6f2f5a84"><p class="cl-6f2f3fae"><span class="cl-6f2c843a">Day 1 - 8h Post-dose</span></p></td>
+<td class="cl-6f2f5a85"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">96</span></p></td>
+<td class="cl-6f2f5a86"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">1.84</span></p></td>
+<td class="cl-6f2f5a87"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">0.05</span></p></td>
+<td class="cl-6f2f5a86"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">1.84</span></p></td>
+<td class="cl-6f2f5a86"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">1.75</span></p></td>
+<td class="cl-6f2f5a86"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">1.94</span></p></td>
+<td class="cl-6f2f5a86"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">3.0</span></p></td>
+<td class="cl-6f2f5a86"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">1.84</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-02315c05"><p class="cl-02313fee"><span class="cl-022e635a">Day 1 - 6-12h Post-dose</span></p></td>
-<td class="cl-02315c06"><p class="cl-02313fe5"><span class="cl-022e635a">96</span></p></td>
-<td class="cl-02315c07"><p class="cl-02313fe5"><span class="cl-022e635a">22.52</span></p></td>
-<td class="cl-02315c0e"><p class="cl-02313fe5"><span class="cl-022e635a">1.61</span></p></td>
-<td class="cl-02315c07"><p class="cl-02313fe5"><span class="cl-022e635a">22.43</span></p></td>
-<td class="cl-02315c07"><p class="cl-02313fe5"><span class="cl-022e635a">20.06</span></p></td>
-<td class="cl-02315c07"><p class="cl-02313fe5"><span class="cl-022e635a">25.34</span></p></td>
-<td class="cl-02315c07"><p class="cl-02313fe5"><span class="cl-022e635a">7.1</span></p></td>
-<td class="cl-02315c07"><p class="cl-02313fe5"><span class="cl-022e635a">22.47</span></p></td>
+<td class="cl-6f2f5a84"><p class="cl-6f2f3fae"><span class="cl-6f2c843a">Day 1 - 6-12h Post-dose</span></p></td>
+<td class="cl-6f2f5a85"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">96</span></p></td>
+<td class="cl-6f2f5a86"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">22.52</span></p></td>
+<td class="cl-6f2f5a87"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">1.61</span></p></td>
+<td class="cl-6f2f5a86"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">22.43</span></p></td>
+<td class="cl-6f2f5a86"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">20.06</span></p></td>
+<td class="cl-6f2f5a86"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">25.34</span></p></td>
+<td class="cl-6f2f5a86"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">7.1</span></p></td>
+<td class="cl-6f2f5a86"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">22.47</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-02315c05"><p class="cl-02313fee"><span class="cl-022e635a">Day 1 - 12h Post-dose</span></p></td>
-<td class="cl-02315c06"><p class="cl-02313fe5"><span class="cl-022e635a">96</span></p></td>
-<td class="cl-02315c07"><p class="cl-02313fe5"><span class="cl-022e635a">0.55</span></p></td>
-<td class="cl-02315c0e"><p class="cl-02313fe5"><span class="cl-022e635a">0.03</span></p></td>
-<td class="cl-02315c07"><p class="cl-02313fe5"><span class="cl-022e635a">0.55</span></p></td>
-<td class="cl-02315c07"><p class="cl-02313fe5"><span class="cl-022e635a">0.49</span></p></td>
-<td class="cl-02315c07"><p class="cl-02313fe5"><span class="cl-022e635a">0.62</span></p></td>
-<td class="cl-02315c07"><p class="cl-02313fe5"><span class="cl-022e635a">5.4</span></p></td>
-<td class="cl-02315c07"><p class="cl-02313fe5"><span class="cl-022e635a">0.55</span></p></td>
+<td class="cl-6f2f5a84"><p class="cl-6f2f3fae"><span class="cl-6f2c843a">Day 1 - 12h Post-dose</span></p></td>
+<td class="cl-6f2f5a85"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">96</span></p></td>
+<td class="cl-6f2f5a86"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">0.55</span></p></td>
+<td class="cl-6f2f5a87"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">0.03</span></p></td>
+<td class="cl-6f2f5a86"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">0.55</span></p></td>
+<td class="cl-6f2f5a86"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">0.49</span></p></td>
+<td class="cl-6f2f5a86"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">0.62</span></p></td>
+<td class="cl-6f2f5a86"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">5.4</span></p></td>
+<td class="cl-6f2f5a86"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">0.55</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-02315c05"><p class="cl-02313fee"><span class="cl-022e635a">Day 1 - 16h Post-dose</span></p></td>
-<td class="cl-02315c06"><p class="cl-02313fe5"><span class="cl-022e635a">96</span></p></td>
-<td class="cl-02315c07"><p class="cl-02313fe5"><span class="cl-022e635a">0.16</span></p></td>
-<td class="cl-02315c0e"><p class="cl-02313fe5"><span class="cl-022e635a">0.02</span></p></td>
-<td class="cl-02315c07"><p class="cl-02313fe5"><span class="cl-022e635a">0.16</span></p></td>
-<td class="cl-02315c07"><p class="cl-02313fe5"><span class="cl-022e635a">0.13</span></p></td>
-<td class="cl-02315c07"><p class="cl-02313fe5"><span class="cl-022e635a">0.20</span></p></td>
-<td class="cl-02315c07"><p class="cl-02313fe5"><span class="cl-022e635a">10.0</span></p></td>
-<td class="cl-02315c07"><p class="cl-02313fe5"><span class="cl-022e635a">0.16</span></p></td>
+<td class="cl-6f2f5a84"><p class="cl-6f2f3fae"><span class="cl-6f2c843a">Day 1 - 16h Post-dose</span></p></td>
+<td class="cl-6f2f5a85"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">96</span></p></td>
+<td class="cl-6f2f5a86"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">0.16</span></p></td>
+<td class="cl-6f2f5a87"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">0.02</span></p></td>
+<td class="cl-6f2f5a86"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">0.16</span></p></td>
+<td class="cl-6f2f5a86"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">0.13</span></p></td>
+<td class="cl-6f2f5a86"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">0.20</span></p></td>
+<td class="cl-6f2f5a86"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">10.0</span></p></td>
+<td class="cl-6f2f5a86"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">0.16</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-02315c05"><p class="cl-02313fee"><span class="cl-022e635a">Day 1 - 12-24h Post-dose</span></p></td>
-<td class="cl-02315c06"><p class="cl-02313fe5"><span class="cl-022e635a">96</span></p></td>
-<td class="cl-02315c07"><p class="cl-02313fe5"><span class="cl-022e635a">14.13</span></p></td>
-<td class="cl-02315c0e"><p class="cl-02313fe5"><span class="cl-022e635a">1.95</span></p></td>
-<td class="cl-02315c07"><p class="cl-02313fe5"><span class="cl-022e635a">14.02</span></p></td>
-<td class="cl-02315c07"><p class="cl-02313fe5"><span class="cl-022e635a">11.13</span></p></td>
-<td class="cl-02315c07"><p class="cl-02313fe5"><span class="cl-022e635a">17.52</span></p></td>
-<td class="cl-02315c07"><p class="cl-02313fe5"><span class="cl-022e635a">13.8</span></p></td>
-<td class="cl-02315c07"><p class="cl-02313fe5"><span class="cl-022e635a">13.99</span></p></td>
+<td class="cl-6f2f5a84"><p class="cl-6f2f3fae"><span class="cl-6f2c843a">Day 1 - 12-24h Post-dose</span></p></td>
+<td class="cl-6f2f5a85"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">96</span></p></td>
+<td class="cl-6f2f5a86"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">14.13</span></p></td>
+<td class="cl-6f2f5a87"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">1.95</span></p></td>
+<td class="cl-6f2f5a86"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">14.02</span></p></td>
+<td class="cl-6f2f5a86"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">11.13</span></p></td>
+<td class="cl-6f2f5a86"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">17.52</span></p></td>
+<td class="cl-6f2f5a86"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">13.8</span></p></td>
+<td class="cl-6f2f5a86"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">13.99</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-02315c05"><p class="cl-02313fee"><span class="cl-022e635a">Day 2 - 24h Post-dose</span></p></td>
-<td class="cl-02315c06"><p class="cl-02313fe5"><span class="cl-022e635a">96</span></p></td>
-<td class="cl-02315c07"><p class="cl-02313fe5"><span class="cl-022e635a">0.01</span></p></td>
-<td class="cl-02315c0e"><p class="cl-02313fe5"><span class="cl-022e635a">0.00</span></p></td>
-<td class="cl-02315c07"><p class="cl-02313fe5"><span class="cl-022e635a">0.01</span></p></td>
-<td class="cl-02315c07"><p class="cl-02313fe5"><span class="cl-022e635a">0.01</span></p></td>
-<td class="cl-02315c07"><p class="cl-02313fe5"><span class="cl-022e635a">0.02</span></p></td>
-<td class="cl-02315c07"><p class="cl-02313fe5"><span class="cl-022e635a">19.7</span></p></td>
-<td class="cl-02315c07"><p class="cl-02313fe5"><span class="cl-022e635a">0.01</span></p></td>
+<td class="cl-6f2f5a84"><p class="cl-6f2f3fae"><span class="cl-6f2c843a">Day 2 - 24h Post-dose</span></p></td>
+<td class="cl-6f2f5a85"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">96</span></p></td>
+<td class="cl-6f2f5a86"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">0.01</span></p></td>
+<td class="cl-6f2f5a87"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">0.00</span></p></td>
+<td class="cl-6f2f5a86"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">0.01</span></p></td>
+<td class="cl-6f2f5a86"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">0.01</span></p></td>
+<td class="cl-6f2f5a86"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">0.02</span></p></td>
+<td class="cl-6f2f5a86"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">19.7</span></p></td>
+<td class="cl-6f2f5a86"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">0.01</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-02315c05"><p class="cl-02313fee"><span class="cl-022e635a">Day 2 - Pre-dose</span></p></td>
-<td class="cl-02315c06"><p class="cl-02313fe5"><span class="cl-022e635a">94</span></p></td>
-<td class="cl-02315c07"><p class="cl-02313fe5"><span class="cl-022e635a">0.01</span></p></td>
-<td class="cl-02315c0e"><p class="cl-02313fe5"><span class="cl-022e635a">0.00</span></p></td>
-<td class="cl-02315c07"><p class="cl-02313fe5"><span class="cl-022e635a">0.01</span></p></td>
-<td class="cl-02315c07"><p class="cl-02313fe5"><span class="cl-022e635a">0.01</span></p></td>
-<td class="cl-02315c07"><p class="cl-02313fe5"><span class="cl-022e635a">0.02</span></p></td>
-<td class="cl-02315c07"><p class="cl-02313fe5"><span class="cl-022e635a">19.7</span></p></td>
-<td class="cl-02315c07"><p class="cl-02313fe5"><span class="cl-022e635a">0.01</span></p></td>
+<td class="cl-6f2f5a84"><p class="cl-6f2f3fae"><span class="cl-6f2c843a">Day 2 - Pre-dose</span></p></td>
+<td class="cl-6f2f5a85"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">94</span></p></td>
+<td class="cl-6f2f5a86"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">0.01</span></p></td>
+<td class="cl-6f2f5a87"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">0.00</span></p></td>
+<td class="cl-6f2f5a86"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">0.01</span></p></td>
+<td class="cl-6f2f5a86"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">0.01</span></p></td>
+<td class="cl-6f2f5a86"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">0.02</span></p></td>
+<td class="cl-6f2f5a86"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">19.7</span></p></td>
+<td class="cl-6f2f5a86"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">0.01</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-02315c05"><p class="cl-02313fee"><span class="cl-022e635a">Day 2 - 36h Post-dose</span></p></td>
-<td class="cl-02315c06"><p class="cl-02313fe5"><span class="cl-022e635a">96</span></p></td>
-<td class="cl-02315c07"><p class="cl-02313fe5"><span class="cl-022e635a">0.00</span></p></td>
-<td class="cl-02315c0e"><p class="cl-02313fe5"><span class="cl-022e635a">0.00</span></p></td>
-<td class="cl-02315c07"><p class="cl-02313fe5"><span class="cl-022e635a">0.00</span></p></td>
-<td class="cl-02315c07"><p class="cl-02313fe5"><span class="cl-022e635a">0.00</span></p></td>
-<td class="cl-02315c07"><p class="cl-02313fe5"><span class="cl-022e635a">0.00</span></p></td>
-<td class="cl-02315c07"><p class="cl-02313fe5"><span class="cl-022e635a">0.0</span></p></td>
-<td class="cl-02315c07"><p class="cl-02313fe5"><span class="cl-022e635a">0.01</span></p></td>
+<td class="cl-6f2f5a84"><p class="cl-6f2f3fae"><span class="cl-6f2c843a">Day 2 - 36h Post-dose</span></p></td>
+<td class="cl-6f2f5a85"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">96</span></p></td>
+<td class="cl-6f2f5a86"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">0.00</span></p></td>
+<td class="cl-6f2f5a87"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">0.00</span></p></td>
+<td class="cl-6f2f5a86"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">0.00</span></p></td>
+<td class="cl-6f2f5a86"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">0.00</span></p></td>
+<td class="cl-6f2f5a86"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">0.00</span></p></td>
+<td class="cl-6f2f5a86"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">0.0</span></p></td>
+<td class="cl-6f2f5a86"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">0.01</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-02315c05"><p class="cl-02313fee"><span class="cl-022e635a">Day 2 - 24-48h Post-dose</span></p></td>
-<td class="cl-02315c06"><p class="cl-02313fe5"><span class="cl-022e635a">96</span></p></td>
-<td class="cl-02315c07"><p class="cl-02313fe5"><span class="cl-022e635a">0.22</span></p></td>
-<td class="cl-02315c0e"><p class="cl-02313fe5"><span class="cl-022e635a">0.49</span></p></td>
-<td class="cl-02315c07"><p class="cl-02313fe5"><span class="cl-022e635a">0.00</span></p></td>
-<td class="cl-02315c07"><p class="cl-02313fe5"><span class="cl-022e635a">0.00</span></p></td>
-<td class="cl-02315c07"><p class="cl-02313fe5"><span class="cl-022e635a">1.89</span></p></td>
-<td class="cl-02315c07"><p class="cl-02313fe5"><span class="cl-022e635a">217.2</span></p></td>
-<td class="cl-02315c07"><p class="cl-02313fe5"><span class="cl-022e635a">0.01</span></p></td>
+<td class="cl-6f2f5a84"><p class="cl-6f2f3fae"><span class="cl-6f2c843a">Day 2 - 24-48h Post-dose</span></p></td>
+<td class="cl-6f2f5a85"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">96</span></p></td>
+<td class="cl-6f2f5a86"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">0.22</span></p></td>
+<td class="cl-6f2f5a87"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">0.49</span></p></td>
+<td class="cl-6f2f5a86"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">0.00</span></p></td>
+<td class="cl-6f2f5a86"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">0.00</span></p></td>
+<td class="cl-6f2f5a86"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">1.89</span></p></td>
+<td class="cl-6f2f5a86"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">217.2</span></p></td>
+<td class="cl-6f2f5a86"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">0.01</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-02315c05"><p class="cl-02313fee"><span class="cl-022e635a">Day 3 - 48h Post-dose</span></p></td>
-<td class="cl-02315c06"><p class="cl-02313fe5"><span class="cl-022e635a">96</span></p></td>
-<td class="cl-02315c07"><p class="cl-02313fe5"><span class="cl-022e635a">0.00</span></p></td>
-<td class="cl-02315c0e"><p class="cl-02313fe5"><span class="cl-022e635a">0.00</span></p></td>
-<td class="cl-02315c07"><p class="cl-02313fe5"><span class="cl-022e635a">0.00</span></p></td>
-<td class="cl-02315c07"><p class="cl-02313fe5"><span class="cl-022e635a">0.00</span></p></td>
-<td class="cl-02315c07"><p class="cl-02313fe5"><span class="cl-022e635a">0.00</span></p></td>
-<td class="cl-02315c07"><p class="cl-02313fe5"><span class="cl-022e635a">0.0</span></p></td>
-<td class="cl-02315c07"><p class="cl-02313fe5"><span class="cl-022e635a">0.01</span></p></td>
+<td class="cl-6f2f5a84"><p class="cl-6f2f3fae"><span class="cl-6f2c843a">Day 3 - 48h Post-dose</span></p></td>
+<td class="cl-6f2f5a85"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">96</span></p></td>
+<td class="cl-6f2f5a86"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">0.00</span></p></td>
+<td class="cl-6f2f5a87"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">0.00</span></p></td>
+<td class="cl-6f2f5a86"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">0.00</span></p></td>
+<td class="cl-6f2f5a86"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">0.00</span></p></td>
+<td class="cl-6f2f5a86"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">0.00</span></p></td>
+<td class="cl-6f2f5a86"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">0.0</span></p></td>
+<td class="cl-6f2f5a86"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">0.01</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-02315c0f"><p class="cl-02313fee"><span class="cl-022e635a">Day 3 - Pre-dose</span></p></td>
-<td class="cl-02315c18"><p class="cl-02313fe5"><span class="cl-022e635a">92</span></p></td>
-<td class="cl-02315c19"><p class="cl-02313fe5"><span class="cl-022e635a">0.00</span></p></td>
-<td class="cl-02315c22"><p class="cl-02313fe5"><span class="cl-022e635a">0.00</span></p></td>
-<td class="cl-02315c19"><p class="cl-02313fe5"><span class="cl-022e635a">0.00</span></p></td>
-<td class="cl-02315c19"><p class="cl-02313fe5"><span class="cl-022e635a">0.00</span></p></td>
-<td class="cl-02315c19"><p class="cl-02313fe5"><span class="cl-022e635a">0.00</span></p></td>
-<td class="cl-02315c19"><p class="cl-02313fe5"><span class="cl-022e635a">0.0</span></p></td>
-<td class="cl-02315c19"><p class="cl-02313fe5"><span class="cl-022e635a">0.01</span></p></td>
+<td class="cl-6f2f5a8e"><p class="cl-6f2f3fae"><span class="cl-6f2c843a">Day 3 - Pre-dose</span></p></td>
+<td class="cl-6f2f5a8f"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">92</span></p></td>
+<td class="cl-6f2f5a90"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">0.00</span></p></td>
+<td class="cl-6f2f5a91"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">0.00</span></p></td>
+<td class="cl-6f2f5a90"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">0.00</span></p></td>
+<td class="cl-6f2f5a90"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">0.00</span></p></td>
+<td class="cl-6f2f5a90"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">0.00</span></p></td>
+<td class="cl-6f2f5a90"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">0.0</span></p></td>
+<td class="cl-6f2f5a90"><p class="cl-6f2f3fa5"><span class="cl-6f2c843a">0.01</span></p></td>
 </tr>
 </tbody>
 <tfoot>
-<tr style="overflow-wrap:break-word;"><td colspan="9" class="cl-02315c23"><p class="cl-02313fee"><span class="cl-022e635a"></span></p></td></tr>
-<tr style="overflow-wrap:break-word;"><td colspan="9" class="cl-02315c23"><p class="cl-02313fee"><span class="cl-022e635a">Note: Incongruous samples are not included in this summary.</span></p></td></tr>
-<tr style="overflow-wrap:break-word;"><td colspan="9" class="cl-02315c37"><p class="cl-02313fee"><span class="cl-022e635a">Note: Concentrations below the lowest quantifiable concentration (ie, [xx.x ng/mL]) will be treated as zero in calculating the summary statistics.</span></p></td></tr>
+<tr style="overflow-wrap:break-word;"><td colspan="9" class="cl-6f2f5a98"><p class="cl-6f2f3fae"><span class="cl-6f2c843a"></span></p></td></tr>
+<tr style="overflow-wrap:break-word;"><td colspan="9" class="cl-6f2f5a98"><p class="cl-6f2f3fae"><span class="cl-6f2c843a">Note: Incongruous samples are not included in this summary.</span></p></td></tr>
+<tr style="overflow-wrap:break-word;"><td colspan="9" class="cl-6f2f5aa2"><p class="cl-6f2f3fae"><span class="cl-6f2c843a">Note: Concentrations below the lowest quantifiable concentration (ie, [xx.x ng/mL]) will be treated as zero in calculating the summary statistics.</span></p></td></tr>
+<tr style="overflow-wrap:break-word;"><td colspan="9" class="cl-6f2f5aac"><p class="cl-6f2f3fb0"><span class="cl-6f2c8444">[tpk01b.docx][/usr/lib/rstudio-server/bin/quarto/share/rmd/rmd.R] 29DEC2025, 09:54</span></p></td></tr>
 </tfoot>
 </table>
 </div>
@@ -1897,7 +1899,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/johnsonandjohnson\.github\.io\/tlg-catalog");
+      var filterRegex = new RegExp("https:\/\/johnsonandjohnson\.github\.io\/TLG_Catalog");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
@@ -2224,8 +2226,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
-</script><script src="https://giscus.app/client.js" data-repo="johnsonandjohnson/tlg-catalog" data-repo-id="" data-category="General" data-category-id="" data-mapping="pathname" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en" crossorigin="anonymous" data-loading="lazy" async="">
-</script><input type="hidden" id="giscus-base-theme" value="light"><input type="hidden" id="giscus-alt-theme" value="light"><nav class="page-navigation column-body"><div class="nav-page nav-page-previous">
+</script><nav class="page-navigation column-body"><div class="nav-page nav-page-previous">
       <a href="../../tables/pharmacokinetics/tpk01a.html" class="pagination-link" aria-label="TPK01A">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">TPK01A</span>
       </a>          
@@ -2412,11 +2413,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb2-174"><a href="#cb2-174"></a><span class="in">  # Convert to tbl file and output table:</span></span>
 <span id="cb2-175"><a href="#cb2-175"></a><span class="in">  ##############################################################################</span></span>
 <span id="cb2-176"><a href="#cb2-176"></a><span class="in">  </span></span>
-<span id="cb2-177"><a href="#cb2-177"></a><span class="in">  tt_to_tlgrtf(string_map = string_map, tt = head(result, 25), file = path, orientation = "landscape")</span></span>
+<span id="cb2-177"><a href="#cb2-177"></a><span class="in">  tt_to_tlgrtf(string_map = string_map, tt = result, file = path, orientation = "landscape")</span></span>
 <span id="cb2-178"><a href="#cb2-178"></a><span class="in">}</span></span>
 <span id="cb2-179"><a href="#cb2-179"></a><span class="in">```</span></span>
 <span id="cb2-180"><a href="#cb2-180"></a><span class="in">```{r result1, echo=FALSE, message=FALSE, warning=FALSE, test = list(result_v1 = "result")}</span></span>
-<span id="cb2-181"><a href="#cb2-181"></a><span class="in">tt_to_flextable_j(head(result, 25), tblid)</span></span>
+<span id="cb2-181"><a href="#cb2-181"></a><span class="in">tt_to_flextable_j(result, tblid)</span></span>
 <span id="cb2-182"><a href="#cb2-182"></a><span class="in">```</span></span>
 <span id="cb2-183"><a href="#cb2-183"></a></span>
 <span id="cb2-184"><a href="#cb2-184"></a><span class="co">[</span><span class="ot">Download RTF file</span><span class="co">]</span>(<span class="in">`r paste0(tolower(tblid), '.rtf')`</span>)</span>
@@ -2429,7 +2430,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
 
-<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/johnsonandjohnson/tlg-catalog/edit/main/book/tables/pharmacokinetics/tpk01b.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/johnsonandjohnson/tlg-catalog/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/johnsonandjohnson/TLG_Catalog/edit/dev/book/tables/pharmacokinetics/tpk01b.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/johnsonandjohnson/TLG_Catalog/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>

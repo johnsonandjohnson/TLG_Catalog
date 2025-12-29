@@ -120,7 +120,7 @@ cookieconsent.run({
 <script src="../../site_libs/tabwid-1.1.3/tabwid.js"></script><link rel="stylesheet" href="../../assets/css/style.css">
 <meta property="og:title" content="TSIEX06 – TL Catalog">
 <meta property="og:description" content="Subjects Who Received Study Treatment Over Time">
-<meta property="og:image" content="https://johnsonandjohnson.github.io/tlg-catalog/tables/exposure/assets/img/logo.png">
+<meta property="og:image" content="https://johnsonandjohnson.github.io/TLG_Catalog/tables/exposure/assets/img/logo.png">
 <meta property="og:site_name" content="TL Catalog">
 </head>
 <body class="nav-sidebar docked nav-fixed">
@@ -162,6 +162,13 @@ cookieconsent.run({
   <div class="sidebar-item-container"> 
   <a href="../../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introduction</span></a>
+  </div>
+</li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../tlg-index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Index</span></a>
   </div>
 </li>
         <li class="px-0"><hr class="sidebar-divider hi "></li>
@@ -1163,12 +1170,6 @@ cookieconsent.run({
   </div>
 </li>
         <li class="px-0"><hr class="sidebar-divider hi "></li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../tlg-index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Index</span></a>
-  </div>
-</li>
     </ul>
 </div>
 </nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
@@ -1178,7 +1179,7 @@ cookieconsent.run({
    
   <ul>
 <li><a href="#output" id="toc-output" class="nav-link active" data-scroll-target="#output">Output</a></li>
-  </ul><div class="toc-actions"><ul><li><a href="https://github.com/johnsonandjohnson/tlg-catalog/edit/main/book/tables/exposure/tsiex06.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/johnsonandjohnson/tlg-catalog/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+  </ul><div class="toc-actions"><ul><li><a href="https://github.com/johnsonandjohnson/TLG_Catalog/edit/dev/book/tables/exposure/tsiex06.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/johnsonandjohnson/TLG_Catalog/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content column-body" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Tables</li><li class="breadcrumb-item"><a href="../../tables/exposure/tsiex01.html">Exposure</a></li><li class="breadcrumb-item"><a href="../../tables/exposure/tsiex06.html">TSIEX06</a></li></ol></nav><div class="quarto-title">
@@ -1317,66 +1318,67 @@ cookieconsent.run({
 <span id="cb1-111"><a href="#cb1-111"></a></span>
 <span id="cb1-112"><a href="#cb1-112"></a><span class="co"># Convert to tbl file and output table</span></span>
 <span id="cb1-113"><a href="#cb1-113"></a></span>
-<span id="cb1-114"><a href="#cb1-114"></a><span class="fu">tt_to_tlgrtf</span>(<span class="at">string_map =</span> string_map, <span class="at">tt =</span> <span class="fu">head</span>(result, <span class="dv">25</span>), <span class="at">file =</span> fileid, <span class="at">orientation =</span> <span class="st">"portrait"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-114"><a href="#cb1-114"></a><span class="fu">tt_to_tlgrtf</span>(<span class="at">string_map =</span> string_map, <span class="at">tt =</span> result, <span class="at">file =</span> fileid, <span class="at">orientation =</span> <span class="st">"portrait"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <div class="cell" data-test="{&quot;result_v1&quot;:&quot;result&quot;}">
 <div class="cell-output-display">
 <div class="tabwid tabwid_left">
-<style>.cl-35ac80a4{}.cl-35a5fc0c{font-family:'Times New Roman';font-size:10pt;font-weight:bold;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-35a5fc34{font-family:'Times New Roman';font-size:9pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-35a837ec{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:0;padding-right:0;line-height: 1;background-color:transparent;}.cl-35a837f6{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:3.6pt;padding-right:0;line-height: 1;background-color:transparent;}.cl-35a83800{margin:0;text-align:center;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:0;padding-right:0;line-height: 1;background-color:transparent;}.cl-35a83801{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:0;padding-right:0;line-height: 1;background-color:transparent;}.cl-35a8380a{margin:0;text-align:center;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:0;padding-right:0;line-height: 1;background-color:transparent;}.cl-35a8380b{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:9pt;padding-right:0;line-height: 1;background-color:transparent;}.cl-35a84e9e{width:1.987in;background-color:rgba(255, 255, 255, 1.00);vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0.75pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-35a84ea8{width:1.098in;background-color:rgba(255, 255, 255, 1.00);vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0.75pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-35a84ea9{width:1.987in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(102, 102, 102, 1.00);border-top: 0.75pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-35a84eb2{width:1.098in;background-color:transparent;vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0.75pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-35a84eb3{width:1.098in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(102, 102, 102, 1.00);border-top: 0.75pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-35a84ebc{width:1.987in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-35a84ec6{width:1.098in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-35a84ec7{width:1.987in;background-color:transparent;vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-35a84ed0{width:1.098in;background-color:transparent;vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-35a84ed1{width:1.987in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-35a84eda{width:1.098in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-35a84edb{width:1.987in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-35a84edc{width:1.098in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-35a84ee4{width:1.987in;background-color:transparent;vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-35a84ee5{width:1.098in;background-color:transparent;vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style>
-<table data-quarto-disable-processing="true" class="cl-35ac80a4">
+<style>.cl-afbaf02c{}.cl-afb53222{font-family:'Times New Roman';font-size:10pt;font-weight:bold;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-afb5324a{font-family:'Times New Roman';font-size:9pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-afb5324b{font-family:'Times New Roman';font-size:8pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-afb77d84{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:0;padding-right:0;line-height: 1;background-color:transparent;}.cl-afb77d8e{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:3.6pt;padding-right:0;line-height: 1;background-color:transparent;}.cl-afb77d8f{margin:0;text-align:center;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:0;padding-right:0;line-height: 1;background-color:transparent;}.cl-afb77d98{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:0;padding-right:0;line-height: 1;background-color:transparent;}.cl-afb77d99{margin:0;text-align:center;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:0;padding-right:0;line-height: 1;background-color:transparent;}.cl-afb77d9a{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:9pt;padding-right:0;line-height: 1;background-color:transparent;}.cl-afb77d9b{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:0;padding-right:0;line-height: 1;background-color:transparent;}.cl-afb77da2{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:0;padding-right:0;line-height: 1;background-color:transparent;}.cl-afb7959e{width:1.987in;background-color:rgba(255, 255, 255, 1.00);vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0.75pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-afb7959f{width:1.098in;background-color:rgba(255, 255, 255, 1.00);vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0.75pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-afb795a8{width:1.987in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(102, 102, 102, 1.00);border-top: 0.75pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-afb795a9{width:1.098in;background-color:transparent;vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0.75pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-afb795b2{width:1.098in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(102, 102, 102, 1.00);border-top: 0.75pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-afb795b3{width:1.987in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-afb795b4{width:1.098in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-afb795b5{width:1.987in;background-color:transparent;vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-afb795bc{width:1.098in;background-color:transparent;vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-afb795bd{width:1.987in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-afb795be{width:1.098in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-afb795c6{width:1.987in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-afb795c7{width:1.098in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-afb795c8{width:1.987in;background-color:transparent;vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-afb795c9{width:1.098in;background-color:transparent;vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-afb795ca{width:1.987in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(102, 102, 102, 1.00);border-top: 0.75pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(255, 255, 255, 0.00);border-right: 0 solid rgba(255, 255, 255, 0.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-afb795d0{width:1.098in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(102, 102, 102, 1.00);border-top: 0.75pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(255, 255, 255, 0.00);border-right: 0 solid rgba(255, 255, 255, 0.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style>
+<table data-quarto-disable-processing="true" class="cl-afbaf02c">
 <thead>
-<tr style="overflow-wrap:break-word;"><th colspan="5" class="cl-35a84e9e"><p class="cl-35a837ec"><span class="cl-35a5fc0c">TSIEX06:</span> <span class="cl-35a5fc0c">Subjects Who Received Study Treatment Over Time; Safety Analysis Set (Study jjcs - core)</span></p></th></tr>
+<tr style="overflow-wrap:break-word;"><th colspan="5" class="cl-afb7959e"><p class="cl-afb77d84"><span class="cl-afb53222">TSIEX06:</span> <span class="cl-afb53222">Subjects Who Received Study Treatment Over Time; Safety Analysis Set (Study jjcs - core)</span></p></th></tr>
 <tr style="overflow-wrap:break-word;">
-<th class="cl-35a84ea9"><p class="cl-35a837f6"><span class="cl-35a5fc34"></span></p></th>
-<th colspan="3" class="cl-35a84eb2"><p class="cl-35a83800"><span class="cl-35a5fc34">Active Study Agent</span></p></th>
-<th class="cl-35a84eb3"><p class="cl-35a83800"><span class="cl-35a5fc34"> </span></p></th>
+<th class="cl-afb795a8"><p class="cl-afb77d8e"><span class="cl-afb5324a"></span></p></th>
+<th colspan="3" class="cl-afb795a9"><p class="cl-afb77d8f"><span class="cl-afb5324a">Active Study Agent</span></p></th>
+<th class="cl-afb795b2"><p class="cl-afb77d8f"><span class="cl-afb5324a"> </span></p></th>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<th class="cl-35a84ebc"><p class="cl-35a837f6"><span class="cl-35a5fc34"></span></p></th>
-<th class="cl-35a84eb3"><p class="cl-35a83800"><span class="cl-35a5fc34">Xanomeline High Dose</span></p></th>
-<th class="cl-35a84eb3"><p class="cl-35a83800"><span class="cl-35a5fc34">Xanomeline Low Dose</span></p></th>
-<th class="cl-35a84eb3"><p class="cl-35a83800"><span class="cl-35a5fc34">Combined</span></p></th>
-<th class="cl-35a84ec6"><p class="cl-35a83800"><span class="cl-35a5fc34">Placebo</span></p></th>
+<th class="cl-afb795b3"><p class="cl-afb77d8e"><span class="cl-afb5324a"></span></p></th>
+<th class="cl-afb795b2"><p class="cl-afb77d8f"><span class="cl-afb5324a">Xanomeline High Dose</span></p></th>
+<th class="cl-afb795b2"><p class="cl-afb77d8f"><span class="cl-afb5324a">Xanomeline Low Dose</span></p></th>
+<th class="cl-afb795b2"><p class="cl-afb77d8f"><span class="cl-afb5324a">Combined</span></p></th>
+<th class="cl-afb795b4"><p class="cl-afb77d8f"><span class="cl-afb5324a">Placebo</span></p></th>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<th class="cl-35a84ec7"><p class="cl-35a837f6"><span class="cl-35a5fc34"></span></p></th>
-<th class="cl-35a84ed0"><p class="cl-35a83800"><span class="cl-35a5fc34">N=53</span></p></th>
-<th class="cl-35a84ed0"><p class="cl-35a83800"><span class="cl-35a5fc34">N=73</span></p></th>
-<th class="cl-35a84ed0"><p class="cl-35a83800"><span class="cl-35a5fc34">N=126</span></p></th>
-<th class="cl-35a84ed0"><p class="cl-35a83800"><span class="cl-35a5fc34">N=59</span></p></th>
+<th class="cl-afb795b5"><p class="cl-afb77d8e"><span class="cl-afb5324a"></span></p></th>
+<th class="cl-afb795bc"><p class="cl-afb77d8f"><span class="cl-afb5324a">N=53</span></p></th>
+<th class="cl-afb795bc"><p class="cl-afb77d8f"><span class="cl-afb5324a">N=73</span></p></th>
+<th class="cl-afb795bc"><p class="cl-afb77d8f"><span class="cl-afb5324a">N=126</span></p></th>
+<th class="cl-afb795bc"><p class="cl-afb77d8f"><span class="cl-afb5324a">N=59</span></p></th>
 </tr>
 </thead>
 <tbody>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-35a84ed1"><p class="cl-35a83801"><span class="cl-35a5fc34">Subjects receiving study</span><br> <span class="cl-35a5fc34">treatment, n (%)</span></p></td>
-<td class="cl-35a84eda"><p class="cl-35a8380a"><span class="cl-35a5fc34"> </span></p></td>
-<td class="cl-35a84eda"><p class="cl-35a8380a"><span class="cl-35a5fc34"> </span></p></td>
-<td class="cl-35a84eda"><p class="cl-35a8380a"><span class="cl-35a5fc34"> </span></p></td>
-<td class="cl-35a84eda"><p class="cl-35a8380a"><span class="cl-35a5fc34"> </span></p></td>
+<td class="cl-afb795bd"><p class="cl-afb77d98"><span class="cl-afb5324a">Subjects receiving study</span><br> <span class="cl-afb5324a">treatment, n (%)</span></p></td>
+<td class="cl-afb795be"><p class="cl-afb77d99"><span class="cl-afb5324a"> </span></p></td>
+<td class="cl-afb795be"><p class="cl-afb77d99"><span class="cl-afb5324a"> </span></p></td>
+<td class="cl-afb795be"><p class="cl-afb77d99"><span class="cl-afb5324a"> </span></p></td>
+<td class="cl-afb795be"><p class="cl-afb77d99"><span class="cl-afb5324a"> </span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-35a84edb"><p class="cl-35a8380b"><span class="cl-35a5fc34">Baseline</span></p></td>
-<td class="cl-35a84edc"><p class="cl-35a83800"><span class="cl-35a5fc34">30 (56.6%)</span></p></td>
-<td class="cl-35a84edc"><p class="cl-35a83800"><span class="cl-35a5fc34">42 (57.5%)</span></p></td>
-<td class="cl-35a84edc"><p class="cl-35a83800"><span class="cl-35a5fc34">72 (57.1%)</span></p></td>
-<td class="cl-35a84edc"><p class="cl-35a83800"><span class="cl-35a5fc34">21 (35.6%)</span></p></td>
+<td class="cl-afb795c6"><p class="cl-afb77d9a"><span class="cl-afb5324a">Baseline</span></p></td>
+<td class="cl-afb795c7"><p class="cl-afb77d8f"><span class="cl-afb5324a">30 (56.6%)</span></p></td>
+<td class="cl-afb795c7"><p class="cl-afb77d8f"><span class="cl-afb5324a">42 (57.5%)</span></p></td>
+<td class="cl-afb795c7"><p class="cl-afb77d8f"><span class="cl-afb5324a">72 (57.1%)</span></p></td>
+<td class="cl-afb795c7"><p class="cl-afb77d8f"><span class="cl-afb5324a">21 (35.6%)</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-35a84edb"><p class="cl-35a8380b"><span class="cl-35a5fc34">Week 2</span></p></td>
-<td class="cl-35a84edc"><p class="cl-35a83800"><span class="cl-35a5fc34">27 (50.9%)</span></p></td>
-<td class="cl-35a84edc"><p class="cl-35a83800"><span class="cl-35a5fc34">16 (21.9%)</span></p></td>
-<td class="cl-35a84edc"><p class="cl-35a83800"><span class="cl-35a5fc34">43 (34.1%)</span></p></td>
-<td class="cl-35a84edc"><p class="cl-35a83800"><span class="cl-35a5fc34">28 (47.5%)</span></p></td>
+<td class="cl-afb795c6"><p class="cl-afb77d9a"><span class="cl-afb5324a">Week 2</span></p></td>
+<td class="cl-afb795c7"><p class="cl-afb77d8f"><span class="cl-afb5324a">27 (50.9%)</span></p></td>
+<td class="cl-afb795c7"><p class="cl-afb77d8f"><span class="cl-afb5324a">16 (21.9%)</span></p></td>
+<td class="cl-afb795c7"><p class="cl-afb77d8f"><span class="cl-afb5324a">43 (34.1%)</span></p></td>
+<td class="cl-afb795c7"><p class="cl-afb77d8f"><span class="cl-afb5324a">28 (47.5%)</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-35a84ee4"><p class="cl-35a8380b"><span class="cl-35a5fc34">Week 24</span></p></td>
-<td class="cl-35a84ee5"><p class="cl-35a83800"><span class="cl-35a5fc34">14 (26.4%)</span></p></td>
-<td class="cl-35a84ee5"><p class="cl-35a83800"><span class="cl-35a5fc34">8 (11.0%)</span></p></td>
-<td class="cl-35a84ee5"><p class="cl-35a83800"><span class="cl-35a5fc34">22 (17.5%)</span></p></td>
-<td class="cl-35a84ee5"><p class="cl-35a83800"><span class="cl-35a5fc34">19 (32.2%)</span></p></td>
+<td class="cl-afb795c8"><p class="cl-afb77d9a"><span class="cl-afb5324a">Week 24</span></p></td>
+<td class="cl-afb795c9"><p class="cl-afb77d8f"><span class="cl-afb5324a">14 (26.4%)</span></p></td>
+<td class="cl-afb795c9"><p class="cl-afb77d8f"><span class="cl-afb5324a">8 (11.0%)</span></p></td>
+<td class="cl-afb795c9"><p class="cl-afb77d8f"><span class="cl-afb5324a">22 (17.5%)</span></p></td>
+<td class="cl-afb795c9"><p class="cl-afb77d8f"><span class="cl-afb5324a">19 (32.2%)</span></p></td>
 </tr>
 </tbody>
+<tfoot><tr style="overflow-wrap:break-word;"><td colspan="5" class="cl-afb795ca"><p class="cl-afb77d9b"><span class="cl-afb5324b">[tsiex06.docx][/usr/lib/rstudio-server/bin/quarto/share/rmd/rmd.R] 29DEC2025, 09:56</span></p></td></tr></tfoot>
 </table>
 </div>
 </div>
@@ -1676,7 +1678,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/johnsonandjohnson\.github\.io\/tlg-catalog");
+      var filterRegex = new RegExp("https:\/\/johnsonandjohnson\.github\.io\/TLG_Catalog");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
@@ -2003,8 +2005,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
-</script><script src="https://giscus.app/client.js" data-repo="johnsonandjohnson/tlg-catalog" data-repo-id="" data-category="General" data-category-id="" data-mapping="pathname" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en" crossorigin="anonymous" data-loading="lazy" async="">
-</script><input type="hidden" id="giscus-base-theme" value="light"><input type="hidden" id="giscus-alt-theme" value="light"><nav class="page-navigation column-body"><div class="nav-page nav-page-previous">
+</script><nav class="page-navigation column-body"><div class="nav-page nav-page-previous">
       <a href="../../tables/exposure/tsiex04.html" class="pagination-link" aria-label="TSIEX04">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">TSIEX04</span>
       </a>          
@@ -2172,10 +2173,10 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb2-155"><a href="#cb2-155"></a></span>
 <span id="cb2-156"><a href="#cb2-156"></a><span class="in"># Convert to tbl file and output table</span></span>
 <span id="cb2-157"><a href="#cb2-157"></a></span>
-<span id="cb2-158"><a href="#cb2-158"></a><span class="in">tt_to_tlgrtf(string_map = string_map, tt = head(result, 25), file = fileid, orientation = "portrait")</span></span>
+<span id="cb2-158"><a href="#cb2-158"></a><span class="in">tt_to_tlgrtf(string_map = string_map, tt = result, file = fileid, orientation = "portrait")</span></span>
 <span id="cb2-159"><a href="#cb2-159"></a><span class="in">```</span></span>
 <span id="cb2-160"><a href="#cb2-160"></a><span class="in">```{r result1, echo=FALSE, message=FALSE, warning=FALSE, test = list(result_v1 = "result")}</span></span>
-<span id="cb2-161"><a href="#cb2-161"></a><span class="in">tt_to_flextable_j(head(result, 25), tblid)</span></span>
+<span id="cb2-161"><a href="#cb2-161"></a><span class="in">tt_to_flextable_j(result, tblid)</span></span>
 <span id="cb2-162"><a href="#cb2-162"></a><span class="in">```</span></span>
 <span id="cb2-163"><a href="#cb2-163"></a></span>
 <span id="cb2-164"><a href="#cb2-164"></a><span class="co">[</span><span class="ot">Download RTF file</span><span class="co">]</span>(<span class="in">`r paste0(tolower(tblid), '.rtf')`</span>)</span>
@@ -2188,7 +2189,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
 
-<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/johnsonandjohnson/tlg-catalog/edit/main/book/tables/exposure/tsiex06.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/johnsonandjohnson/tlg-catalog/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/johnsonandjohnson/TLG_Catalog/edit/dev/book/tables/exposure/tsiex06.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/johnsonandjohnson/TLG_Catalog/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>

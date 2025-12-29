@@ -120,7 +120,7 @@ cookieconsent.run({
 <script src="../../site_libs/tabwid-1.1.3/tabwid.js"></script><link rel="stylesheet" href="../../assets/css/style.css">
 <meta property="og:title" content="TSICM05 – TL Catalog">
 <meta property="og:description" content="Prior Medications">
-<meta property="og:image" content="https://johnsonandjohnson.github.io/tlg-catalog/tables/prior_and_concomitant_therapies/assets/img/logo.png">
+<meta property="og:image" content="https://johnsonandjohnson.github.io/TLG_Catalog/tables/prior_and_concomitant_therapies/assets/img/logo.png">
 <meta property="og:site_name" content="TL Catalog">
 </head>
 <body class="nav-sidebar docked nav-fixed">
@@ -162,6 +162,13 @@ cookieconsent.run({
   <div class="sidebar-item-container"> 
   <a href="../../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introduction</span></a>
+  </div>
+</li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../tlg-index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Index</span></a>
   </div>
 </li>
         <li class="px-0"><hr class="sidebar-divider hi "></li>
@@ -1163,12 +1170,6 @@ cookieconsent.run({
   </div>
 </li>
         <li class="px-0"><hr class="sidebar-divider hi "></li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../tlg-index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Index</span></a>
-  </div>
-</li>
     </ul>
 </div>
 </nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
@@ -1178,7 +1179,7 @@ cookieconsent.run({
    
   <ul>
 <li><a href="#output" id="toc-output" class="nav-link active" data-scroll-target="#output">Output</a></li>
-  </ul><div class="toc-actions"><ul><li><a href="https://github.com/johnsonandjohnson/tlg-catalog/edit/main/book/tables/prior_and_concomitant_therapies/tsicm05.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/johnsonandjohnson/tlg-catalog/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+  </ul><div class="toc-actions"><ul><li><a href="https://github.com/johnsonandjohnson/TLG_Catalog/edit/dev/book/tables/prior_and_concomitant_therapies/tsicm05.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/johnsonandjohnson/TLG_Catalog/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content column-body" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Tables</li><li class="breadcrumb-item"><a href="../../tables/prior_and_concomitant_therapies/tsicm01.html">Prior and Concomitant Therapies</a></li><li class="breadcrumb-item"><a href="../../tables/prior_and_concomitant_therapies/tsicm05.html">TSICM05</a></li></ol></nav><div class="quarto-title">
@@ -1365,252 +1366,1549 @@ cookieconsent.run({
 <span id="cb1-159"><a href="#cb1-159"></a></span>
 <span id="cb1-160"><a href="#cb1-160"></a><span class="co"># Convert to tbl file and output table</span></span>
 <span id="cb1-161"><a href="#cb1-161"></a></span>
-<span id="cb1-162"><a href="#cb1-162"></a><span class="fu">tt_to_tlgrtf</span>(<span class="at">string_map =</span> string_map, <span class="at">tt =</span> <span class="fu">head</span>(result, <span class="dv">25</span>), <span class="at">file =</span> fileid, <span class="at">orientation =</span> <span class="st">"landscape"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-162"><a href="#cb1-162"></a><span class="fu">tt_to_tlgrtf</span>(<span class="at">string_map =</span> string_map, <span class="at">tt =</span> result, <span class="at">file =</span> fileid, <span class="at">orientation =</span> <span class="st">"landscape"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <div class="cell" data-test="{&quot;result_v1&quot;:&quot;result&quot;}">
 <div class="cell-output-display">
 <div class="tabwid tabwid_left">
-<style>.cl-c54f42be{}.cl-c548d9ce{font-family:'Times New Roman';font-size:10pt;font-weight:bold;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-c548d9f6{font-family:'Times New Roman';font-size:9pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-c54b4ce0{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:0;padding-right:0;line-height: 1;background-color:transparent;}.cl-c54b4cea{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:3.6pt;padding-right:0;line-height: 1;background-color:transparent;}.cl-c54b4ceb{margin:0;text-align:center;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:0;padding-right:0;line-height: 1;background-color:transparent;}.cl-c54b4cf4{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:0;padding-right:0;line-height: 1;background-color:transparent;}.cl-c54b4cf5{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:7.2pt;padding-right:0;line-height: 1;background-color:transparent;}.cl-c54b4cfe{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:0;padding-right:0;line-height: 1;background-color:transparent;}.cl-c54b4cff{margin:0;text-align:center;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:0;padding-right:0;line-height: 1;background-color:transparent;}.cl-c54b4d00{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:9pt;padding-right:0;line-height: 1;background-color:transparent;}.cl-c54b4d01{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:0;padding-right:0;line-height: 1;background-color:transparent;}.cl-c54b64f0{width:1.976in;background-color:rgba(255, 255, 255, 1.00);vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0.75pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-c54b64f1{width:0.864in;background-color:rgba(255, 255, 255, 1.00);vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0.75pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-c54b64fa{width:0.947in;background-color:rgba(255, 255, 255, 1.00);vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0.75pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-c54b64fb{width:1.976in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(102, 102, 102, 1.00);border-top: 0.75pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-c54b64fc{width:0.864in;background-color:transparent;vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0.75pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-c54b6504{width:0.864in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(102, 102, 102, 1.00);border-top: 0.75pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-c54b6505{width:0.947in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(102, 102, 102, 1.00);border-top: 0.75pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-c54b6506{width:1.976in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-c54b650e{width:0.864in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-c54b650f{width:0.947in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-c54b6510{width:1.976in;background-color:transparent;vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-c54b6518{width:0.864in;background-color:transparent;vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-c54b6519{width:0.947in;background-color:transparent;vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-c54b6522{width:1.976in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-c54b6523{width:0.864in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-c54b6524{width:0.947in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-c54b652c{width:1.976in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-c54b652d{width:0.864in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-c54b652e{width:0.947in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-c54b652f{width:1.976in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-c54b6536{width:0.864in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-c54b6537{width:0.947in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-c54b6538{width:1.976in;background-color:transparent;vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-c54b6539{width:0.864in;background-color:transparent;vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-c54b6540{width:0.947in;background-color:transparent;vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-c54b6541{width:1.976in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(255, 255, 255, 0.00);border-top: 0 solid rgba(255, 255, 255, 0.00);border-left: 0 solid rgba(255, 255, 255, 0.00);border-right: 0 solid rgba(255, 255, 255, 0.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-c54b654a{width:0.864in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(255, 255, 255, 0.00);border-top: 0 solid rgba(255, 255, 255, 0.00);border-left: 0 solid rgba(255, 255, 255, 0.00);border-right: 0 solid rgba(255, 255, 255, 0.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-c54b654b{width:0.947in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(255, 255, 255, 0.00);border-top: 0 solid rgba(255, 255, 255, 0.00);border-left: 0 solid rgba(255, 255, 255, 0.00);border-right: 0 solid rgba(255, 255, 255, 0.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-c54b654c{width:1.976in;background-color:transparent;vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(255, 255, 255, 0.00);border-left: 0 solid rgba(255, 255, 255, 0.00);border-right: 0 solid rgba(255, 255, 255, 0.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-c54b6554{width:0.864in;background-color:transparent;vertical-align: middle;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(255, 255, 255, 0.00);border-left: 0 solid rgba(255, 255, 255, 0.00);border-right: 0 solid rgba(255, 255, 255, 0.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-c54b6555{width:0.947in;background-color:transparent;vertical-align: middle;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(255, 255, 255, 0.00);border-left: 0 solid rgba(255, 255, 255, 0.00);border-right: 0 solid rgba(255, 255, 255, 0.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style>
-<table data-quarto-disable-processing="true" class="cl-c54f42be">
+<style>.cl-4b3ab618{}.cl-4b2eec16{font-family:'Times New Roman';font-size:10pt;font-weight:bold;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-4b2eec34{font-family:'Times New Roman';font-size:9pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-4b2eec3e{font-family:'Times New Roman';font-size:8pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-4b32956e{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:0;padding-right:0;line-height: 1;background-color:transparent;}.cl-4b329578{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:3.6pt;padding-right:0;line-height: 1;background-color:transparent;}.cl-4b329582{margin:0;text-align:center;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:0;padding-right:0;line-height: 1;background-color:transparent;}.cl-4b329583{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:0;padding-right:0;line-height: 1;background-color:transparent;}.cl-4b329584{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:7.2pt;padding-right:0;line-height: 1;background-color:transparent;}.cl-4b32958c{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:0;padding-right:0;line-height: 1;background-color:transparent;}.cl-4b32958d{margin:0;text-align:center;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:0;padding-right:0;line-height: 1;background-color:transparent;}.cl-4b32958e{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:9pt;padding-right:0;line-height: 1;background-color:transparent;}.cl-4b32958f{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:9pt;padding-right:0;line-height: 1;background-color:transparent;}.cl-4b329590{margin:0;text-align:center;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:0;padding-right:0;line-height: 1;background-color:transparent;}.cl-4b329596{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:0;padding-right:0;line-height: 1;background-color:transparent;}.cl-4b329597{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:0;padding-right:0;line-height: 1;background-color:transparent;}.cl-4b329598{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:0;padding-right:0;line-height: 1;background-color:transparent;}.cl-4b32bec2{width:1.976in;background-color:rgba(255, 255, 255, 1.00);vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0.75pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4b32becc{width:0.864in;background-color:rgba(255, 255, 255, 1.00);vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0.75pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4b32bed6{width:0.947in;background-color:rgba(255, 255, 255, 1.00);vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0.75pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4b32bed7{width:1.976in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(102, 102, 102, 1.00);border-top: 0.75pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4b32bed8{width:0.864in;background-color:transparent;vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0.75pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4b32bee0{width:0.864in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(102, 102, 102, 1.00);border-top: 0.75pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4b32bee1{width:0.947in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(102, 102, 102, 1.00);border-top: 0.75pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4b32bee2{width:1.976in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4b32bee3{width:0.864in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4b32beea{width:0.947in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4b32beeb{width:1.976in;background-color:transparent;vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4b32beec{width:0.864in;background-color:transparent;vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4b32beed{width:0.947in;background-color:transparent;vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4b32bef4{width:1.976in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4b32bef5{width:0.864in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4b32befe{width:0.947in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4b32beff{width:1.976in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4b32bf00{width:0.864in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4b32bf01{width:0.947in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4b32bf02{width:1.976in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4b32bf08{width:0.864in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4b32bf09{width:0.947in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4b32bf0a{width:1.976in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4b32bf0b{width:0.864in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4b32bf0c{width:0.947in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4b32bf12{width:1.976in;background-color:transparent;vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4b32bf13{width:0.864in;background-color:transparent;vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4b32bf14{width:0.947in;background-color:transparent;vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4b32bf1c{width:1.976in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(255, 255, 255, 0.00);border-top: 0 solid rgba(255, 255, 255, 0.00);border-left: 0 solid rgba(255, 255, 255, 0.00);border-right: 0 solid rgba(255, 255, 255, 0.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4b32bf1d{width:0.864in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(255, 255, 255, 0.00);border-top: 0 solid rgba(255, 255, 255, 0.00);border-left: 0 solid rgba(255, 255, 255, 0.00);border-right: 0 solid rgba(255, 255, 255, 0.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4b32bf1e{width:0.947in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(255, 255, 255, 0.00);border-top: 0 solid rgba(255, 255, 255, 0.00);border-left: 0 solid rgba(255, 255, 255, 0.00);border-right: 0 solid rgba(255, 255, 255, 0.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4b32bf1f{width:1.976in;background-color:transparent;vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(255, 255, 255, 0.00);border-left: 0 solid rgba(255, 255, 255, 0.00);border-right: 0 solid rgba(255, 255, 255, 0.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4b32bf20{width:0.864in;background-color:transparent;vertical-align: middle;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(255, 255, 255, 0.00);border-left: 0 solid rgba(255, 255, 255, 0.00);border-right: 0 solid rgba(255, 255, 255, 0.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4b32bf21{width:0.947in;background-color:transparent;vertical-align: middle;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(255, 255, 255, 0.00);border-left: 0 solid rgba(255, 255, 255, 0.00);border-right: 0 solid rgba(255, 255, 255, 0.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4b32bf26{width:1.976in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(255, 255, 255, 0.00);border-left: 0 solid rgba(255, 255, 255, 0.00);border-right: 0 solid rgba(255, 255, 255, 0.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4b32bf27{width:0.864in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(255, 255, 255, 0.00);border-left: 0 solid rgba(255, 255, 255, 0.00);border-right: 0 solid rgba(255, 255, 255, 0.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4b32bf28{width:0.947in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(255, 255, 255, 0.00);border-left: 0 solid rgba(255, 255, 255, 0.00);border-right: 0 solid rgba(255, 255, 255, 0.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style>
+<table data-quarto-disable-processing="true" class="cl-4b3ab618">
 <thead>
-<tr style="overflow-wrap:break-word;"><th colspan="6" class="cl-c54b64f0"><p class="cl-c54b4ce0"><span class="cl-c548d9ce">TSICM05:</span> <span class="cl-c548d9ce">Prior Medications; Safety Analysis Set (Study jjcs - core)</span></p></th></tr>
+<tr style="overflow-wrap:break-word;"><th colspan="6" class="cl-4b32bec2"><p class="cl-4b32956e"><span class="cl-4b2eec16">TSICM05:</span> <span class="cl-4b2eec16">Prior Medications; Safety Analysis Set (Study jjcs - core)</span></p></th></tr>
 <tr style="overflow-wrap:break-word;">
-<th class="cl-c54b64fb"><p class="cl-c54b4cea"><span class="cl-c548d9f6"></span></p></th>
-<th colspan="3" class="cl-c54b64fc"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">Active Study Agent</span></p></th>
-<th class="cl-c54b6504"><p class="cl-c54b4ceb"><span class="cl-c548d9f6"> </span></p></th>
-<th class="cl-c54b6505"><p class="cl-c54b4ceb"><span class="cl-c548d9f6"> </span></p></th>
+<th class="cl-4b32bed7"><p class="cl-4b329578"><span class="cl-4b2eec34"></span></p></th>
+<th colspan="3" class="cl-4b32bed8"><p class="cl-4b329582"><span class="cl-4b2eec34">Active Study Agent</span></p></th>
+<th class="cl-4b32bee0"><p class="cl-4b329582"><span class="cl-4b2eec34"> </span></p></th>
+<th class="cl-4b32bee1"><p class="cl-4b329582"><span class="cl-4b2eec34"> </span></p></th>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<th class="cl-c54b6506"><p class="cl-c54b4cf4"><span class="cl-c548d9f6">ATC Level 1</span></p></th>
-<th class="cl-c54b6504"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">Xanomeline High Dose</span></p></th>
-<th class="cl-c54b6504"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">Xanomeline Low Dose</span></p></th>
-<th class="cl-c54b6504"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">Combined</span></p></th>
-<th class="cl-c54b650e"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">Placebo</span></p></th>
-<th class="cl-c54b650f"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">Total</span></p></th>
+<th class="cl-4b32bee2"><p class="cl-4b329583"><span class="cl-4b2eec34">ATC Level 1</span></p></th>
+<th class="cl-4b32bee0"><p class="cl-4b329582"><span class="cl-4b2eec34">Xanomeline High Dose</span></p></th>
+<th class="cl-4b32bee0"><p class="cl-4b329582"><span class="cl-4b2eec34">Xanomeline Low Dose</span></p></th>
+<th class="cl-4b32bee0"><p class="cl-4b329582"><span class="cl-4b2eec34">Combined</span></p></th>
+<th class="cl-4b32bee3"><p class="cl-4b329582"><span class="cl-4b2eec34">Placebo</span></p></th>
+<th class="cl-4b32beea"><p class="cl-4b329582"><span class="cl-4b2eec34">Total</span></p></th>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<th class="cl-c54b6510"><p class="cl-c54b4cf5"><span class="cl-c548d9f6">Standardized Medication Name</span></p></th>
-<th class="cl-c54b6518"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">N=53</span></p></th>
-<th class="cl-c54b6518"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">N=73</span></p></th>
-<th class="cl-c54b6518"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">N=126</span></p></th>
-<th class="cl-c54b6518"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">N=59</span></p></th>
-<th class="cl-c54b6519"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">N=185</span></p></th>
+<th class="cl-4b32beeb"><p class="cl-4b329584"><span class="cl-4b2eec34">Standardized Medication Name</span></p></th>
+<th class="cl-4b32beec"><p class="cl-4b329582"><span class="cl-4b2eec34">N=53</span></p></th>
+<th class="cl-4b32beec"><p class="cl-4b329582"><span class="cl-4b2eec34">N=73</span></p></th>
+<th class="cl-4b32beec"><p class="cl-4b329582"><span class="cl-4b2eec34">N=126</span></p></th>
+<th class="cl-4b32beec"><p class="cl-4b329582"><span class="cl-4b2eec34">N=59</span></p></th>
+<th class="cl-4b32beed"><p class="cl-4b329582"><span class="cl-4b2eec34">N=185</span></p></th>
 </tr>
 </thead>
 <tbody>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-c54b6522"><p class="cl-c54b4cfe"><span class="cl-c548d9f6">Subjects with ≥1 prior</span><br> <span class="cl-c548d9f6">medication</span></p></td>
-<td class="cl-c54b6523"><p class="cl-c54b4cff"><span class="cl-c548d9f6">43 (81.1%)</span></p></td>
-<td class="cl-c54b6523"><p class="cl-c54b4cff"><span class="cl-c548d9f6">56 (76.7%)</span></p></td>
-<td class="cl-c54b6523"><p class="cl-c54b4cff"><span class="cl-c548d9f6">99 (78.6%)</span></p></td>
-<td class="cl-c54b6523"><p class="cl-c54b4cff"><span class="cl-c548d9f6">49 (83.1%)</span></p></td>
-<td class="cl-c54b6524"><p class="cl-c54b4cff"><span class="cl-c548d9f6">148 (80.0%)</span></p></td>
+<td class="cl-4b32bef4"><p class="cl-4b32958c"><span class="cl-4b2eec34">Subjects with ≥1 prior</span><br> <span class="cl-4b2eec34">medication</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b32958d"><span class="cl-4b2eec34">43 (81.1%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b32958d"><span class="cl-4b2eec34">56 (76.7%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b32958d"><span class="cl-4b2eec34">99 (78.6%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b32958d"><span class="cl-4b2eec34">49 (83.1%)</span></p></td>
+<td class="cl-4b32befe"><p class="cl-4b32958d"><span class="cl-4b2eec34">148 (80.0%)</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-c54b652c"><p class="cl-c54b4cf4"><span class="cl-c548d9f6"></span></p></td>
-<td class="cl-c54b652d"><p class="cl-c54b4ceb"><span class="cl-c548d9f6"></span></p></td>
-<td class="cl-c54b652d"><p class="cl-c54b4ceb"><span class="cl-c548d9f6"></span></p></td>
-<td class="cl-c54b652d"><p class="cl-c54b4ceb"><span class="cl-c548d9f6"></span></p></td>
-<td class="cl-c54b652d"><p class="cl-c54b4ceb"><span class="cl-c548d9f6"></span></p></td>
-<td class="cl-c54b652e"><p class="cl-c54b4ceb"><span class="cl-c548d9f6"></span></p></td>
+<td class="cl-4b32beff"><p class="cl-4b329583"><span class="cl-4b2eec34"></span></p></td>
+<td class="cl-4b32bf00"><p class="cl-4b329582"><span class="cl-4b2eec34"></span></p></td>
+<td class="cl-4b32bf00"><p class="cl-4b329582"><span class="cl-4b2eec34"></span></p></td>
+<td class="cl-4b32bf00"><p class="cl-4b329582"><span class="cl-4b2eec34"></span></p></td>
+<td class="cl-4b32bf00"><p class="cl-4b329582"><span class="cl-4b2eec34"></span></p></td>
+<td class="cl-4b32bf01"><p class="cl-4b329582"><span class="cl-4b2eec34"></span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-c54b652f"><p class="cl-c54b4cf4"><span class="cl-c548d9f6">Uncoded</span></p></td>
-<td class="cl-c54b6536"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">42 (79.2%)</span></p></td>
-<td class="cl-c54b6536"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">54 (74.0%)</span></p></td>
-<td class="cl-c54b6536"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">96 (76.2%)</span></p></td>
-<td class="cl-c54b6536"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">47 (79.7%)</span></p></td>
-<td class="cl-c54b6537"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">143 (77.3%)</span></p></td>
+<td class="cl-4b32bf02"><p class="cl-4b329583"><span class="cl-4b2eec34">Uncoded</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">42 (79.2%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">54 (74.0%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">96 (76.2%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">47 (79.7%)</span></p></td>
+<td class="cl-4b32bf09"><p class="cl-4b329582"><span class="cl-4b2eec34">143 (77.3%)</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-c54b652f"><p class="cl-c54b4d00"><span class="cl-c548d9f6">Uncoded: vitamin e</span></p></td>
-<td class="cl-c54b6536"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">8 (15.1%)</span></p></td>
-<td class="cl-c54b6536"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">10 (13.7%)</span></p></td>
-<td class="cl-c54b6536"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">18 (14.3%)</span></p></td>
-<td class="cl-c54b6536"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">12 (20.3%)</span></p></td>
-<td class="cl-c54b6537"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">30 (16.2%)</span></p></td>
+<td class="cl-4b32bf02"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: vitamin e</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">8 (15.1%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">10 (13.7%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">18 (14.3%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">12 (20.3%)</span></p></td>
+<td class="cl-4b32bf09"><p class="cl-4b329582"><span class="cl-4b2eec34">30 (16.2%)</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-c54b652f"><p class="cl-c54b4d00"><span class="cl-c548d9f6">Uncoded: multivitamin</span></p></td>
-<td class="cl-c54b6536"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">8 (15.1%)</span></p></td>
-<td class="cl-c54b6536"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">11 (15.1%)</span></p></td>
-<td class="cl-c54b6536"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">19 (15.1%)</span></p></td>
-<td class="cl-c54b6536"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">9 (15.3%)</span></p></td>
-<td class="cl-c54b6537"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">28 (15.1%)</span></p></td>
+<td class="cl-4b32bf02"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: multivitamin</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">8 (15.1%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">11 (15.1%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">19 (15.1%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">9 (15.3%)</span></p></td>
+<td class="cl-4b32bf09"><p class="cl-4b329582"><span class="cl-4b2eec34">28 (15.1%)</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-c54b652f"><p class="cl-c54b4d00"><span class="cl-c548d9f6">Uncoded: multivitamins</span></p></td>
-<td class="cl-c54b6536"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">8 (15.1%)</span></p></td>
-<td class="cl-c54b6536"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">5 (6.8%)</span></p></td>
-<td class="cl-c54b6536"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">13 (10.3%)</span></p></td>
-<td class="cl-c54b6536"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">6 (10.2%)</span></p></td>
-<td class="cl-c54b6537"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">19 (10.3%)</span></p></td>
+<td class="cl-4b32bf02"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: multivitamins</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">8 (15.1%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">5 (6.8%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">13 (10.3%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">6 (10.2%)</span></p></td>
+<td class="cl-4b32bf09"><p class="cl-4b329582"><span class="cl-4b2eec34">19 (10.3%)</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-c54b652f"><p class="cl-c54b4d00"><span class="cl-c548d9f6">Uncoded: vitamin c</span></p></td>
-<td class="cl-c54b6536"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">5 (9.4%)</span></p></td>
-<td class="cl-c54b6536"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">5 (6.8%)</span></p></td>
-<td class="cl-c54b6536"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">10 (7.9%)</span></p></td>
-<td class="cl-c54b6536"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">5 (8.5%)</span></p></td>
-<td class="cl-c54b6537"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">15 (8.1%)</span></p></td>
+<td class="cl-4b32bf02"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: vitamin c</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">5 (9.4%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">5 (6.8%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">10 (7.9%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">5 (8.5%)</span></p></td>
+<td class="cl-4b32bf09"><p class="cl-4b329582"><span class="cl-4b2eec34">15 (8.1%)</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-c54b6522"><p class="cl-c54b4d00"><span class="cl-c548d9f6">Uncoded: synthroid</span></p></td>
-<td class="cl-c54b6523"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">3 (5.7%)</span></p></td>
-<td class="cl-c54b6523"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">4 (5.5%)</span></p></td>
-<td class="cl-c54b6523"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">7 (5.6%)</span></p></td>
-<td class="cl-c54b6523"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">3 (5.1%)</span></p></td>
-<td class="cl-c54b6524"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">10 (5.4%)</span></p></td>
+<td class="cl-4b32bef4"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: synthroid</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">3 (5.7%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">4 (5.5%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">7 (5.6%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">3 (5.1%)</span></p></td>
+<td class="cl-4b32befe"><p class="cl-4b329582"><span class="cl-4b2eec34">10 (5.4%)</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-c54b6522"><p class="cl-c54b4d00"><span class="cl-c548d9f6">Uncoded: tylenol</span></p></td>
-<td class="cl-c54b6523"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">3 (5.7%)</span></p></td>
-<td class="cl-c54b6523"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">3 (4.1%)</span></p></td>
-<td class="cl-c54b6523"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">6 (4.8%)</span></p></td>
-<td class="cl-c54b6523"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">4 (6.8%)</span></p></td>
-<td class="cl-c54b6524"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">10 (5.4%)</span></p></td>
+<td class="cl-4b32bef4"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: tylenol</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">3 (5.7%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">3 (4.1%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">6 (4.8%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">4 (6.8%)</span></p></td>
+<td class="cl-4b32befe"><p class="cl-4b329582"><span class="cl-4b2eec34">10 (5.4%)</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-c54b6522"><p class="cl-c54b4d00"><span class="cl-c548d9f6">Uncoded: timoptic</span></p></td>
-<td class="cl-c54b6523"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">5 (9.4%)</span></p></td>
-<td class="cl-c54b6523"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">2 (2.7%)</span></p></td>
-<td class="cl-c54b6523"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">7 (5.6%)</span></p></td>
-<td class="cl-c54b6523"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">2 (3.4%)</span></p></td>
-<td class="cl-c54b6524"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">9 (4.9%)</span></p></td>
+<td class="cl-4b32bef4"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: timoptic</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">5 (9.4%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">2 (2.7%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">7 (5.6%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">2 (3.4%)</span></p></td>
+<td class="cl-4b32befe"><p class="cl-4b329582"><span class="cl-4b2eec34">9 (4.9%)</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-c54b652f"><p class="cl-c54b4d00"><span class="cl-c548d9f6">Uncoded: centrum silver</span></p></td>
-<td class="cl-c54b6536"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">2 (3.8%)</span></p></td>
-<td class="cl-c54b6536"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">2 (2.7%)</span></p></td>
-<td class="cl-c54b6536"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">4 (3.2%)</span></p></td>
-<td class="cl-c54b6536"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">2 (3.4%)</span></p></td>
-<td class="cl-c54b6537"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">6 (3.2%)</span></p></td>
+<td class="cl-4b32bf02"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: centrum silver</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">2 (3.8%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">2 (2.7%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">4 (3.2%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">2 (3.4%)</span></p></td>
+<td class="cl-4b32bf09"><p class="cl-4b329582"><span class="cl-4b2eec34">6 (3.2%)</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-c54b6522"><p class="cl-c54b4d00"><span class="cl-c548d9f6">Uncoded: ibuprofen</span></p></td>
-<td class="cl-c54b6523"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">0</span></p></td>
-<td class="cl-c54b6523"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">2 (2.7%)</span></p></td>
-<td class="cl-c54b6523"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">2 (1.6%)</span></p></td>
-<td class="cl-c54b6523"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">4 (6.8%)</span></p></td>
-<td class="cl-c54b6524"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">6 (3.2%)</span></p></td>
+<td class="cl-4b32bef4"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: ibuprofen</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">2 (2.7%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">2 (1.6%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">4 (6.8%)</span></p></td>
+<td class="cl-4b32befe"><p class="cl-4b329582"><span class="cl-4b2eec34">6 (3.2%)</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-c54b652f"><p class="cl-c54b4d00"><span class="cl-c548d9f6">Uncoded: motrin</span></p></td>
-<td class="cl-c54b6536"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">3 (5.7%)</span></p></td>
-<td class="cl-c54b6536"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">1 (1.4%)</span></p></td>
-<td class="cl-c54b6536"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">4 (3.2%)</span></p></td>
-<td class="cl-c54b6536"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">2 (3.4%)</span></p></td>
-<td class="cl-c54b6537"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">6 (3.2%)</span></p></td>
+<td class="cl-4b32bf02"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: motrin</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">3 (5.7%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.4%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">4 (3.2%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">2 (3.4%)</span></p></td>
+<td class="cl-4b32bf09"><p class="cl-4b329582"><span class="cl-4b2eec34">6 (3.2%)</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-c54b652f"><p class="cl-c54b4d00"><span class="cl-c548d9f6">Uncoded: ativan</span></p></td>
-<td class="cl-c54b6536"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">0</span></p></td>
-<td class="cl-c54b6536"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">3 (4.1%)</span></p></td>
-<td class="cl-c54b6536"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">3 (2.4%)</span></p></td>
-<td class="cl-c54b6536"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">2 (3.4%)</span></p></td>
-<td class="cl-c54b6537"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">5 (2.7%)</span></p></td>
+<td class="cl-4b32bf02"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: ativan</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">3 (4.1%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">3 (2.4%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">2 (3.4%)</span></p></td>
+<td class="cl-4b32bf09"><p class="cl-4b329582"><span class="cl-4b2eec34">5 (2.7%)</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-c54b652f"><p class="cl-c54b4d00"><span class="cl-c548d9f6">Uncoded: ecotrin</span></p></td>
-<td class="cl-c54b6536"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">0</span></p></td>
-<td class="cl-c54b6536"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">3 (4.1%)</span></p></td>
-<td class="cl-c54b6536"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">3 (2.4%)</span></p></td>
-<td class="cl-c54b6536"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">2 (3.4%)</span></p></td>
-<td class="cl-c54b6537"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">5 (2.7%)</span></p></td>
+<td class="cl-4b32bf02"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: ecotrin</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">3 (4.1%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">3 (2.4%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">2 (3.4%)</span></p></td>
+<td class="cl-4b32bf09"><p class="cl-4b329582"><span class="cl-4b2eec34">5 (2.7%)</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-c54b6522"><p class="cl-c54b4d00"><span class="cl-c548d9f6">Uncoded: estrogen nos</span></p></td>
-<td class="cl-c54b6523"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">3 (5.7%)</span></p></td>
-<td class="cl-c54b6523"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">0</span></p></td>
-<td class="cl-c54b6523"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">3 (2.4%)</span></p></td>
-<td class="cl-c54b6523"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">2 (3.4%)</span></p></td>
-<td class="cl-c54b6524"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">5 (2.7%)</span></p></td>
+<td class="cl-4b32bef4"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: estrogen nos</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">3 (5.7%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">3 (2.4%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">2 (3.4%)</span></p></td>
+<td class="cl-4b32befe"><p class="cl-4b329582"><span class="cl-4b2eec34">5 (2.7%)</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-c54b6522"><p class="cl-c54b4d00"><span class="cl-c548d9f6">Uncoded: ginkgo biloba</span></p></td>
-<td class="cl-c54b6523"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">1 (1.9%)</span></p></td>
-<td class="cl-c54b6523"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">3 (4.1%)</span></p></td>
-<td class="cl-c54b6523"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">4 (3.2%)</span></p></td>
-<td class="cl-c54b6523"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">1 (1.7%)</span></p></td>
-<td class="cl-c54b6524"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">5 (2.7%)</span></p></td>
+<td class="cl-4b32bef4"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: ginkgo biloba</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.9%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">3 (4.1%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">4 (3.2%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.7%)</span></p></td>
+<td class="cl-4b32befe"><p class="cl-4b329582"><span class="cl-4b2eec34">5 (2.7%)</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-c54b652f"><p class="cl-c54b4d00"><span class="cl-c548d9f6">Uncoded: metamucil</span></p></td>
-<td class="cl-c54b6536"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">3 (5.7%)</span></p></td>
-<td class="cl-c54b6536"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">1 (1.4%)</span></p></td>
-<td class="cl-c54b6536"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">4 (3.2%)</span></p></td>
-<td class="cl-c54b6536"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">1 (1.7%)</span></p></td>
-<td class="cl-c54b6537"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">5 (2.7%)</span></p></td>
+<td class="cl-4b32bf02"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: metamucil</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">3 (5.7%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.4%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">4 (3.2%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.7%)</span></p></td>
+<td class="cl-4b32bf09"><p class="cl-4b329582"><span class="cl-4b2eec34">5 (2.7%)</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-c54b6522"><p class="cl-c54b4d00"><span class="cl-c548d9f6">Uncoded: provera</span></p></td>
-<td class="cl-c54b6523"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">1 (1.9%)</span></p></td>
-<td class="cl-c54b6523"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">2 (2.7%)</span></p></td>
-<td class="cl-c54b6523"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">3 (2.4%)</span></p></td>
-<td class="cl-c54b6523"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">2 (3.4%)</span></p></td>
-<td class="cl-c54b6524"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">5 (2.7%)</span></p></td>
+<td class="cl-4b32bef4"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: provera</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.9%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">2 (2.7%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">3 (2.4%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">2 (3.4%)</span></p></td>
+<td class="cl-4b32befe"><p class="cl-4b329582"><span class="cl-4b2eec34">5 (2.7%)</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-c54b652f"><p class="cl-c54b4d00"><span class="cl-c548d9f6">Uncoded: zestril</span></p></td>
-<td class="cl-c54b6536"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">2 (3.8%)</span></p></td>
-<td class="cl-c54b6536"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">1 (1.4%)</span></p></td>
-<td class="cl-c54b6536"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">3 (2.4%)</span></p></td>
-<td class="cl-c54b6536"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">2 (3.4%)</span></p></td>
-<td class="cl-c54b6537"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">5 (2.7%)</span></p></td>
+<td class="cl-4b32bf02"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: zestril</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">2 (3.8%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.4%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">3 (2.4%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">2 (3.4%)</span></p></td>
+<td class="cl-4b32bf09"><p class="cl-4b329582"><span class="cl-4b2eec34">5 (2.7%)</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-c54b652f"><p class="cl-c54b4d00"><span class="cl-c548d9f6">Uncoded: zocor</span></p></td>
-<td class="cl-c54b6536"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">1 (1.9%)</span></p></td>
-<td class="cl-c54b6536"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">1 (1.4%)</span></p></td>
-<td class="cl-c54b6536"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">2 (1.6%)</span></p></td>
-<td class="cl-c54b6536"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">3 (5.1%)</span></p></td>
-<td class="cl-c54b6537"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">5 (2.7%)</span></p></td>
+<td class="cl-4b32bf02"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: zocor</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.9%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.4%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">2 (1.6%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">3 (5.1%)</span></p></td>
+<td class="cl-4b32bf09"><p class="cl-4b329582"><span class="cl-4b2eec34">5 (2.7%)</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-c54b652f"><p class="cl-c54b4d00"><span class="cl-c548d9f6">Uncoded: advil</span></p></td>
-<td class="cl-c54b6536"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">4 (7.5%)</span></p></td>
-<td class="cl-c54b6536"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">0</span></p></td>
-<td class="cl-c54b6536"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">4 (3.2%)</span></p></td>
-<td class="cl-c54b6536"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">0</span></p></td>
-<td class="cl-c54b6537"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">4 (2.2%)</span></p></td>
+<td class="cl-4b32bf02"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: advil</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">4 (7.5%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">4 (3.2%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf09"><p class="cl-4b329582"><span class="cl-4b2eec34">4 (2.2%)</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-c54b652f"><p class="cl-c54b4d00"><span class="cl-c548d9f6">Uncoded: asa</span></p></td>
-<td class="cl-c54b6536"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">3 (5.7%)</span></p></td>
-<td class="cl-c54b6536"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">0</span></p></td>
-<td class="cl-c54b6536"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">3 (2.4%)</span></p></td>
-<td class="cl-c54b6536"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">1 (1.7%)</span></p></td>
-<td class="cl-c54b6537"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">4 (2.2%)</span></p></td>
+<td class="cl-4b32bf02"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: asa</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">3 (5.7%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">3 (2.4%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.7%)</span></p></td>
+<td class="cl-4b32bf09"><p class="cl-4b329582"><span class="cl-4b2eec34">4 (2.2%)</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-c54b652f"><p class="cl-c54b4d00"><span class="cl-c548d9f6">Uncoded: claritin</span></p></td>
-<td class="cl-c54b6536"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">0</span></p></td>
-<td class="cl-c54b6536"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">3 (4.1%)</span></p></td>
-<td class="cl-c54b6536"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">3 (2.4%)</span></p></td>
-<td class="cl-c54b6536"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">1 (1.7%)</span></p></td>
-<td class="cl-c54b6537"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">4 (2.2%)</span></p></td>
+<td class="cl-4b32bf02"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: claritin</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">3 (4.1%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">3 (2.4%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.7%)</span></p></td>
+<td class="cl-4b32bf09"><p class="cl-4b329582"><span class="cl-4b2eec34">4 (2.2%)</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-c54b6522"><p class="cl-c54b4d00"><span class="cl-c548d9f6">Uncoded: dyazide</span></p></td>
-<td class="cl-c54b6523"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">0</span></p></td>
-<td class="cl-c54b6523"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">4 (5.5%)</span></p></td>
-<td class="cl-c54b6523"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">4 (3.2%)</span></p></td>
-<td class="cl-c54b6523"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">0</span></p></td>
-<td class="cl-c54b6524"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">4 (2.2%)</span></p></td>
+<td class="cl-4b32bef4"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: dyazide</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">4 (5.5%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">4 (3.2%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32befe"><p class="cl-4b329582"><span class="cl-4b2eec34">4 (2.2%)</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-c54b6538"><p class="cl-c54b4d00"><span class="cl-c548d9f6">Uncoded: vitamin b12</span></p></td>
-<td class="cl-c54b6539"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">0</span></p></td>
-<td class="cl-c54b6539"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">2 (2.7%)</span></p></td>
-<td class="cl-c54b6539"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">2 (1.6%)</span></p></td>
-<td class="cl-c54b6539"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">2 (3.4%)</span></p></td>
-<td class="cl-c54b6540"><p class="cl-c54b4ceb"><span class="cl-c548d9f6">4 (2.2%)</span></p></td>
+<td class="cl-4b32bf02"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: vitamin b12</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">2 (2.7%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">2 (1.6%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">2 (3.4%)</span></p></td>
+<td class="cl-4b32bf09"><p class="cl-4b329582"><span class="cl-4b2eec34">4 (2.2%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bf02"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: zinc</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.9%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.4%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">2 (1.6%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">2 (3.4%)</span></p></td>
+<td class="cl-4b32bf09"><p class="cl-4b329582"><span class="cl-4b2eec34">4 (2.2%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bef4"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: betagan</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.9%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.8%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">2 (3.4%)</span></p></td>
+<td class="cl-4b32befe"><p class="cl-4b329582"><span class="cl-4b2eec34">3 (1.6%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bf02"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: centrum</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.9%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.4%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">2 (1.6%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.7%)</span></p></td>
+<td class="cl-4b32bf09"><p class="cl-4b329582"><span class="cl-4b2eec34">3 (1.6%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bf02"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: furosemide</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">3 (4.1%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">3 (2.4%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf09"><p class="cl-4b329582"><span class="cl-4b2eec34">3 (1.6%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bef4"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: garlic</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">2 (3.8%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">2 (1.6%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.7%)</span></p></td>
+<td class="cl-4b32befe"><p class="cl-4b329582"><span class="cl-4b2eec34">3 (1.6%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bef4"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: lopid</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">2 (3.8%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.4%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">3 (2.4%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32befe"><p class="cl-4b329582"><span class="cl-4b2eec34">3 (1.6%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bef4"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: monopril</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">2 (2.7%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">2 (1.6%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.7%)</span></p></td>
+<td class="cl-4b32befe"><p class="cl-4b329582"><span class="cl-4b2eec34">3 (1.6%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bf02"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: ocuvite</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.9%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.8%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">2 (3.4%)</span></p></td>
+<td class="cl-4b32bf09"><p class="cl-4b329582"><span class="cl-4b2eec34">3 (1.6%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bef4"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: potassium</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">2 (2.7%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">2 (1.6%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.7%)</span></p></td>
+<td class="cl-4b32befe"><p class="cl-4b329582"><span class="cl-4b2eec34">3 (1.6%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bef4"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: prilosec</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">2 (2.7%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">2 (1.6%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.7%)</span></p></td>
+<td class="cl-4b32befe"><p class="cl-4b329582"><span class="cl-4b2eec34">3 (1.6%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bef4"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: prinivil</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.9%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.4%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">2 (1.6%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.7%)</span></p></td>
+<td class="cl-4b32befe"><p class="cl-4b329582"><span class="cl-4b2eec34">3 (1.6%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bf02"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: tums</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.9%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.4%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">2 (1.6%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.7%)</span></p></td>
+<td class="cl-4b32bf09"><p class="cl-4b329582"><span class="cl-4b2eec34">3 (1.6%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bf02"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: vitamins</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">3 (4.1%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">3 (2.4%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf09"><p class="cl-4b329582"><span class="cl-4b2eec34">3 (1.6%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bef4"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: accupril</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">2 (3.8%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">2 (1.6%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32befe"><p class="cl-4b329582"><span class="cl-4b2eec34">2 (1.1%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bef4"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: acetaminophen</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.4%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.8%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.7%)</span></p></td>
+<td class="cl-4b32befe"><p class="cl-4b329582"><span class="cl-4b2eec34">2 (1.1%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bf02"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: altace</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.4%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.8%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.7%)</span></p></td>
+<td class="cl-4b32bf09"><p class="cl-4b329582"><span class="cl-4b2eec34">2 (1.1%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bef4"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: aspirin (e.c.)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.4%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.8%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.7%)</span></p></td>
+<td class="cl-4b32befe"><p class="cl-4b329582"><span class="cl-4b2eec34">2 (1.1%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bef4"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: b complex</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.9%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.8%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.7%)</span></p></td>
+<td class="cl-4b32befe"><p class="cl-4b329582"><span class="cl-4b2eec34">2 (1.1%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bef4"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: benadryl</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.9%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.4%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">2 (1.6%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32befe"><p class="cl-4b329582"><span class="cl-4b2eec34">2 (1.1%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bf02"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: betacarotene</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.4%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.8%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.7%)</span></p></td>
+<td class="cl-4b32bf09"><p class="cl-4b329582"><span class="cl-4b2eec34">2 (1.1%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bf02"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: bufferin</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.9%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.4%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">2 (1.6%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf09"><p class="cl-4b329582"><span class="cl-4b2eec34">2 (1.1%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bf02"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: calcium carbonate</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">2 (3.4%)</span></p></td>
+<td class="cl-4b32bf09"><p class="cl-4b329582"><span class="cl-4b2eec34">2 (1.1%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bef4"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: capoten</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">2 (2.7%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">2 (1.6%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32befe"><p class="cl-4b329582"><span class="cl-4b2eec34">2 (1.1%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bef4"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: chloral hydrate</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.9%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.4%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">2 (1.6%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32befe"><p class="cl-4b329582"><span class="cl-4b2eec34">2 (1.1%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bf02"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: excedrin</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.9%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.4%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">2 (1.6%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf09"><p class="cl-4b329582"><span class="cl-4b2eec34">2 (1.1%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bef4"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: glyburide</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.9%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.4%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">2 (1.6%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32befe"><p class="cl-4b329582"><span class="cl-4b2eec34">2 (1.1%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bef4"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: herbal preparation</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.9%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.8%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.7%)</span></p></td>
+<td class="cl-4b32befe"><p class="cl-4b329582"><span class="cl-4b2eec34">2 (1.1%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bef4"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: hydrochlorothiazide</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.9%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.8%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.7%)</span></p></td>
+<td class="cl-4b32befe"><p class="cl-4b329582"><span class="cl-4b2eec34">2 (1.1%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bef4"><p class="cl-4b32958f"><span class="cl-4b2eec34">Uncoded: hydrocortisone,</span><br> <span class="cl-4b2eec34">topical</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329590"><span class="cl-4b2eec34">1 (1.9%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329590"><span class="cl-4b2eec34">1 (1.4%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329590"><span class="cl-4b2eec34">2 (1.6%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329590"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32befe"><p class="cl-4b329590"><span class="cl-4b2eec34">2 (1.1%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bef4"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: hytrin</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.9%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.4%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">2 (1.6%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32befe"><p class="cl-4b329582"><span class="cl-4b2eec34">2 (1.1%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bef4"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: lisinopril</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">2 (2.7%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">2 (1.6%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32befe"><p class="cl-4b329582"><span class="cl-4b2eec34">2 (1.1%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bef4"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: milk of magnesia</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.9%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.8%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.7%)</span></p></td>
+<td class="cl-4b32befe"><p class="cl-4b329582"><span class="cl-4b2eec34">2 (1.1%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bef4"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: mylanta</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">2 (3.4%)</span></p></td>
+<td class="cl-4b32befe"><p class="cl-4b329582"><span class="cl-4b2eec34">2 (1.1%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bef4"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: prednisone</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.4%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.8%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.7%)</span></p></td>
+<td class="cl-4b32befe"><p class="cl-4b329582"><span class="cl-4b2eec34">2 (1.1%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bef4"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: procardia</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">2 (3.8%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">2 (1.6%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32befe"><p class="cl-4b329582"><span class="cl-4b2eec34">2 (1.1%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bef4"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: propine</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">2 (3.4%)</span></p></td>
+<td class="cl-4b32befe"><p class="cl-4b329582"><span class="cl-4b2eec34">2 (1.1%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bf02"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: relafen</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.4%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.8%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.7%)</span></p></td>
+<td class="cl-4b32bf09"><p class="cl-4b329582"><span class="cl-4b2eec34">2 (1.1%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bef4"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: theragran-m</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.4%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.8%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.7%)</span></p></td>
+<td class="cl-4b32befe"><p class="cl-4b329582"><span class="cl-4b2eec34">2 (1.1%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bef4"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: trusopt</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">2 (3.4%)</span></p></td>
+<td class="cl-4b32befe"><p class="cl-4b329582"><span class="cl-4b2eec34">2 (1.1%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bf02"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: vitamin b</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">2 (2.7%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">2 (1.6%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf09"><p class="cl-4b329582"><span class="cl-4b2eec34">2 (1.1%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bf02"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: vitamin d</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.9%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.8%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.7%)</span></p></td>
+<td class="cl-4b32bf09"><p class="cl-4b329582"><span class="cl-4b2eec34">2 (1.1%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bf02"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: aerobid</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.7%)</span></p></td>
+<td class="cl-4b32bf09"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.5%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bf02"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: albuterol</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.7%)</span></p></td>
+<td class="cl-4b32bf09"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.5%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bef4"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: alphagan</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.7%)</span></p></td>
+<td class="cl-4b32befe"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.5%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bef4"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: ampicillin</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.7%)</span></p></td>
+<td class="cl-4b32befe"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.5%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bf02"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: anti-oxidant</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.4%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.8%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf09"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.5%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bef4"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: ascriptin</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.4%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.8%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32befe"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.5%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bf02"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: beconase</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.9%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.8%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf09"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.5%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bf02"><p class="cl-4b32958f"><span class="cl-4b2eec34">Uncoded: benzalkonium</span><br> <span class="cl-4b2eec34">chloride</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329590"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329590"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329590"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329590"><span class="cl-4b2eec34">1 (1.7%)</span></p></td>
+<td class="cl-4b32bf09"><p class="cl-4b329590"><span class="cl-4b2eec34">1 (0.5%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bef4"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: calcium magnesium</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.4%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.8%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32befe"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.5%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bf02"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: central-vite</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.7%)</span></p></td>
+<td class="cl-4b32bf09"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.5%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bf02"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: charcoal, activated</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.4%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.8%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf09"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.5%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bef4"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: cipro</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.4%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.8%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32befe"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.5%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bf02"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: cod-liver oil</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.4%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.8%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf09"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.5%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bef4"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: daypro</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.4%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.8%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32befe"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.5%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bf02"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: debrox</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.4%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.8%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf09"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.5%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bf02"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: dhea</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.7%)</span></p></td>
+<td class="cl-4b32bf09"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.5%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bf02"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: diabeta</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.9%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.8%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf09"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.5%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bf02"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: diabinese</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.4%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.8%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf09"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.5%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bef4"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: diprolene cream</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.4%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.8%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32befe"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.5%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bef4"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: dipyridamole</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.4%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.8%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32befe"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.5%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bf02"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: docusate</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.9%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.8%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf09"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.5%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bf02"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: docusate sodium</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.9%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.8%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf09"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.5%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bf02"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: estradiol</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.7%)</span></p></td>
+<td class="cl-4b32bf09"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.5%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bf02"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: eucerin creme</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.7%)</span></p></td>
+<td class="cl-4b32bf09"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.5%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bf02"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: ex-lax</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.9%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.8%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf09"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.5%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bf02"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: feldene</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.7%)</span></p></td>
+<td class="cl-4b32bf09"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.5%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bef4"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: fibre, dietary</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.4%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.8%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32befe"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.5%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bf02"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: folic acid</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.4%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.8%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf09"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.5%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bf02"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: fosamax</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.4%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.8%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf09"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.5%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bef4"><p class="cl-4b32958f"><span class="cl-4b2eec34">Uncoded: garamycin</span><br> <span class="cl-4b2eec34">ophthalmic</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329590"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329590"><span class="cl-4b2eec34">1 (1.4%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329590"><span class="cl-4b2eec34">1 (0.8%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329590"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32befe"><p class="cl-4b329590"><span class="cl-4b2eec34">1 (0.5%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bef4"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: ginseng</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.7%)</span></p></td>
+<td class="cl-4b32befe"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.5%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bef4"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: glucotrol</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.9%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.8%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32befe"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.5%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bf02"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: hismanal</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.4%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.8%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf09"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.5%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bef4"><p class="cl-4b32958f"><span class="cl-4b2eec34">Uncoded: homeopatic</span><br> <span class="cl-4b2eec34">preparation</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329590"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329590"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329590"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329590"><span class="cl-4b2eec34">1 (1.7%)</span></p></td>
+<td class="cl-4b32befe"><p class="cl-4b329590"><span class="cl-4b2eec34">1 (0.5%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bf02"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: humulin n</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.9%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.8%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf09"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.5%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bef4"><p class="cl-4b32958f"><span class="cl-4b2eec34">Uncoded: hydrochlorothiazide</span><br> <span class="cl-4b2eec34">with triamterene</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329590"><span class="cl-4b2eec34">1 (1.9%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329590"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329590"><span class="cl-4b2eec34">1 (0.8%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329590"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32befe"><p class="cl-4b329590"><span class="cl-4b2eec34">1 (0.5%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bf02"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: indocin</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.9%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.8%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf09"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.5%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bf02"><p class="cl-4b32958f"><span class="cl-4b2eec34">Uncoded: influenza virus</span><br> <span class="cl-4b2eec34">vaccine</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329590"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329590"><span class="cl-4b2eec34">1 (1.4%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329590"><span class="cl-4b2eec34">1 (0.8%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329590"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf09"><p class="cl-4b329590"><span class="cl-4b2eec34">1 (0.5%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bf02"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: iron</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.9%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.8%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf09"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.5%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bf02"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: k-dur</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.9%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.8%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf09"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.5%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bf02"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: keflex</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.4%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.8%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf09"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.5%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bf02"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: levobunolol</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.9%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.8%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf09"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.5%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bf02"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: levothroid</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.9%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.8%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf09"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.5%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bf02"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: levoxine</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.7%)</span></p></td>
+<td class="cl-4b32bf09"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.5%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bef4"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: levoxyl</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.7%)</span></p></td>
+<td class="cl-4b32befe"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.5%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bef4"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: lopressor</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.4%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.8%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32befe"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.5%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bef4"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: lorazepam</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.4%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.8%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32befe"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.5%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bf02"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: lotensin</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.9%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.8%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf09"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.5%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bf02"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: maxzide</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.9%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.8%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf09"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.5%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bf02"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: meclizine</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.4%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.8%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf09"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.5%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bef4"><p class="cl-4b32958f"><span class="cl-4b2eec34">Uncoded:</span><br> <span class="cl-4b2eec34">medroxyprogesterone</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329590"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329590"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329590"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329590"><span class="cl-4b2eec34">1 (1.7%)</span></p></td>
+<td class="cl-4b32befe"><p class="cl-4b329590"><span class="cl-4b2eec34">1 (0.5%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bef4"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: metrogel</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.7%)</span></p></td>
+<td class="cl-4b32befe"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.5%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bf02"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: minerals nos</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.9%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.8%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf09"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.5%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bf02"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: multivit</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.7%)</span></p></td>
+<td class="cl-4b32bf09"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.5%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bf02"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: nasacort</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.4%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.8%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf09"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.5%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bef4"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: nasal spray</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.9%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.8%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32befe"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.5%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bef4"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: neptazane</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.9%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.8%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32befe"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.5%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bef4"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: nitro patch</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.4%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.8%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32befe"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.5%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bf02"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: nitrodisc</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.9%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.8%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf09"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.5%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bef4"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: nitroglycerin</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.4%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.8%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32befe"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.5%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bef4"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: ocupress</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.9%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.8%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32befe"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.5%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bef4"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: papaya</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.7%)</span></p></td>
+<td class="cl-4b32befe"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.5%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bef4"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: perdiem</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.4%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.8%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32befe"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.5%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bef4"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: persantine</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.4%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.8%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32befe"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.5%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bef4"><p class="cl-4b32958f"><span class="cl-4b2eec34">Uncoded: pilocarpine</span><br> <span class="cl-4b2eec34">hydrochloride</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329590"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329590"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329590"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329590"><span class="cl-4b2eec34">1 (1.7%)</span></p></td>
+<td class="cl-4b32befe"><p class="cl-4b329590"><span class="cl-4b2eec34">1 (0.5%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bef4"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: pilostat</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.7%)</span></p></td>
+<td class="cl-4b32befe"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.5%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bef4"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: pravastatin</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.4%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.8%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32befe"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.5%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bef4"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: premphase</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.9%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.8%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32befe"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.5%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bef4"><p class="cl-4b32958f"><span class="cl-4b2eec34">Uncoded: promethazine hcl</span><br> <span class="cl-4b2eec34">w/codeine</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329590"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329590"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329590"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329590"><span class="cl-4b2eec34">1 (1.7%)</span></p></td>
+<td class="cl-4b32befe"><p class="cl-4b329590"><span class="cl-4b2eec34">1 (0.5%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bef4"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: propulsid</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.4%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.8%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32befe"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.5%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bef4"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: psorcon</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.7%)</span></p></td>
+<td class="cl-4b32befe"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.5%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bef4"><p class="cl-4b32958f"><span class="cl-4b2eec34">Uncoded: psyllium hydrophilic</span><br> <span class="cl-4b2eec34">mucilloid</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329590"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329590"><span class="cl-4b2eec34">1 (1.4%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329590"><span class="cl-4b2eec34">1 (0.8%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329590"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32befe"><p class="cl-4b329590"><span class="cl-4b2eec34">1 (0.5%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bef4"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: quercetin</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.4%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.8%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32befe"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.5%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bef4"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: quinamm</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.4%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.8%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32befe"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.5%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bef4"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: quinapril</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.4%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.8%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32befe"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.5%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bef4"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: quinine sulfate</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.7%)</span></p></td>
+<td class="cl-4b32befe"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.5%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bf02"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: stresstabs</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.4%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.8%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf09"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.5%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bf02"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: sudafed</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.9%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.8%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf09"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.5%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bf02"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: sulindac</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.9%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.8%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf09"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.5%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bf02"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: surfak</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.4%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.8%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf09"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.5%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bf02"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: ticlid</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.4%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.8%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf09"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.5%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bf02"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: timolol maleate</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.4%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.8%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf09"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.5%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bf02"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: triamcinolone</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.7%)</span></p></td>
+<td class="cl-4b32bf09"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.5%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bef4"><p class="cl-4b32958f"><span class="cl-4b2eec34">Uncoded: tylenol extra</span><br> <span class="cl-4b2eec34">strength</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329590"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329590"><span class="cl-4b2eec34">1 (1.4%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329590"><span class="cl-4b2eec34">1 (0.8%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329590"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32befe"><p class="cl-4b329590"><span class="cl-4b2eec34">1 (0.5%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bef4"><p class="cl-4b32958f"><span class="cl-4b2eec34">Uncoded: tylenol w/codeine</span><br> <span class="cl-4b2eec34">no. 4</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329590"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329590"><span class="cl-4b2eec34">1 (1.4%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329590"><span class="cl-4b2eec34">1 (0.8%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329590"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32befe"><p class="cl-4b329590"><span class="cl-4b2eec34">1 (0.5%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bf02"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: ultram</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.4%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.8%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf09"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.5%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bf02"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: vitamin a</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.9%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.8%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf09"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.5%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bf02"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: vitamin b6</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.4%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.8%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf09"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.5%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bf02"><p class="cl-4b32958f"><span class="cl-4b2eec34">Uncoded: vitamins with</span><br> <span class="cl-4b2eec34">minerals</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329590"><span class="cl-4b2eec34">1 (1.9%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329590"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329590"><span class="cl-4b2eec34">1 (0.8%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329590"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf09"><p class="cl-4b329590"><span class="cl-4b2eec34">1 (0.5%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bef4"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: zephrex</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.4%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.8%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32befe"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.5%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bf02"><p class="cl-4b32958e"><span class="cl-4b2eec34">Uncoded: zestoretic</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.4%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.8%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf09"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.5%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32beff"><p class="cl-4b329583"><span class="cl-4b2eec34"></span></p></td>
+<td class="cl-4b32bf00"><p class="cl-4b329582"><span class="cl-4b2eec34"></span></p></td>
+<td class="cl-4b32bf00"><p class="cl-4b329582"><span class="cl-4b2eec34"></span></p></td>
+<td class="cl-4b32bf00"><p class="cl-4b329582"><span class="cl-4b2eec34"></span></p></td>
+<td class="cl-4b32bf00"><p class="cl-4b329582"><span class="cl-4b2eec34"></span></p></td>
+<td class="cl-4b32bf01"><p class="cl-4b329582"><span class="cl-4b2eec34"></span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bf0a"><p class="cl-4b329583"><span class="cl-4b2eec34">Nervous system</span></p></td>
+<td class="cl-4b32bf0b"><p class="cl-4b329582"><span class="cl-4b2eec34">3 (5.7%)</span></p></td>
+<td class="cl-4b32bf0b"><p class="cl-4b329582"><span class="cl-4b2eec34">8 (11.0%)</span></p></td>
+<td class="cl-4b32bf0b"><p class="cl-4b329582"><span class="cl-4b2eec34">11 (8.7%)</span></p></td>
+<td class="cl-4b32bf0b"><p class="cl-4b329582"><span class="cl-4b2eec34">15 (25.4%)</span></p></td>
+<td class="cl-4b32bf0c"><p class="cl-4b329582"><span class="cl-4b2eec34">26 (14.1%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bef4"><p class="cl-4b32958e"><span class="cl-4b2eec34">Acetylsalicylic acid</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">3 (5.7%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">8 (11.0%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">11 (8.7%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">14 (23.7%)</span></p></td>
+<td class="cl-4b32befe"><p class="cl-4b329582"><span class="cl-4b2eec34">25 (13.5%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bef4"><p class="cl-4b32958e"><span class="cl-4b2eec34">Alprazolam</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.7%)</span></p></td>
+<td class="cl-4b32befe"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.5%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bef4"><p class="cl-4b32958e"><span class="cl-4b2eec34">Sumatriptan</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.7%)</span></p></td>
+<td class="cl-4b32befe"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.5%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32beff"><p class="cl-4b329583"><span class="cl-4b2eec34"></span></p></td>
+<td class="cl-4b32bf00"><p class="cl-4b329582"><span class="cl-4b2eec34"></span></p></td>
+<td class="cl-4b32bf00"><p class="cl-4b329582"><span class="cl-4b2eec34"></span></p></td>
+<td class="cl-4b32bf00"><p class="cl-4b329582"><span class="cl-4b2eec34"></span></p></td>
+<td class="cl-4b32bf00"><p class="cl-4b329582"><span class="cl-4b2eec34"></span></p></td>
+<td class="cl-4b32bf01"><p class="cl-4b329582"><span class="cl-4b2eec34"></span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bef4"><p class="cl-4b32958c"><span class="cl-4b2eec34">Alimentary tract and</span><br> <span class="cl-4b2eec34">metabolism</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b32958d"><span class="cl-4b2eec34">4 (7.5%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b32958d"><span class="cl-4b2eec34">8 (11.0%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b32958d"><span class="cl-4b2eec34">12 (9.5%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b32958d"><span class="cl-4b2eec34">7 (11.9%)</span></p></td>
+<td class="cl-4b32befe"><p class="cl-4b32958d"><span class="cl-4b2eec34">19 (10.3%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bf02"><p class="cl-4b32958e"><span class="cl-4b2eec34">Calcium</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">3 (5.7%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">4 (5.5%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">7 (5.6%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">6 (10.2%)</span></p></td>
+<td class="cl-4b32bf09"><p class="cl-4b329582"><span class="cl-4b2eec34">13 (7.0%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bf02"><p class="cl-4b32958e"><span class="cl-4b2eec34">Simeticone</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">2 (2.7%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">2 (1.6%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf09"><p class="cl-4b329582"><span class="cl-4b2eec34">2 (1.1%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bef4"><p class="cl-4b32958e"><span class="cl-4b2eec34">Algeldrate</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.7%)</span></p></td>
+<td class="cl-4b32befe"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.5%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bf02"><p class="cl-4b32958e"><span class="cl-4b2eec34">Calcium carbonate</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.9%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.8%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf09"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.5%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bef4"><p class="cl-4b32958e"><span class="cl-4b2eec34">Loperamide hydrochloride</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.4%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.8%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32befe"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.5%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bef4"><p class="cl-4b32958e"><span class="cl-4b2eec34">Metformin hydrochloride</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.4%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.8%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32befe"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.5%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32beff"><p class="cl-4b329583"><span class="cl-4b2eec34"></span></p></td>
+<td class="cl-4b32bf00"><p class="cl-4b329582"><span class="cl-4b2eec34"></span></p></td>
+<td class="cl-4b32bf00"><p class="cl-4b329582"><span class="cl-4b2eec34"></span></p></td>
+<td class="cl-4b32bf00"><p class="cl-4b329582"><span class="cl-4b2eec34"></span></p></td>
+<td class="cl-4b32bf00"><p class="cl-4b329582"><span class="cl-4b2eec34"></span></p></td>
+<td class="cl-4b32bf01"><p class="cl-4b329582"><span class="cl-4b2eec34"></span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bef4"><p class="cl-4b32958c"><span class="cl-4b2eec34">Genito urinary system and sex</span><br> <span class="cl-4b2eec34">hormones</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b32958d"><span class="cl-4b2eec34">3 (5.7%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b32958d"><span class="cl-4b2eec34">7 (9.6%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b32958d"><span class="cl-4b2eec34">10 (7.9%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b32958d"><span class="cl-4b2eec34">2 (3.4%)</span></p></td>
+<td class="cl-4b32befe"><p class="cl-4b32958d"><span class="cl-4b2eec34">12 (6.5%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bef4"><p class="cl-4b32958e"><span class="cl-4b2eec34">Estrogens conjugated</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">3 (5.7%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">7 (9.6%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">10 (7.9%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">2 (3.4%)</span></p></td>
+<td class="cl-4b32befe"><p class="cl-4b329582"><span class="cl-4b2eec34">12 (6.5%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32beff"><p class="cl-4b329583"><span class="cl-4b2eec34"></span></p></td>
+<td class="cl-4b32bf00"><p class="cl-4b329582"><span class="cl-4b2eec34"></span></p></td>
+<td class="cl-4b32bf00"><p class="cl-4b329582"><span class="cl-4b2eec34"></span></p></td>
+<td class="cl-4b32bf00"><p class="cl-4b329582"><span class="cl-4b2eec34"></span></p></td>
+<td class="cl-4b32bf00"><p class="cl-4b329582"><span class="cl-4b2eec34"></span></p></td>
+<td class="cl-4b32bf01"><p class="cl-4b329582"><span class="cl-4b2eec34"></span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bef4"><p class="cl-4b329583"><span class="cl-4b2eec34">Cardiovascular system</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.9%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">6 (8.2%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">7 (5.6%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">2 (3.4%)</span></p></td>
+<td class="cl-4b32befe"><p class="cl-4b329582"><span class="cl-4b2eec34">9 (4.9%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bef4"><p class="cl-4b32958e"><span class="cl-4b2eec34">Digoxin</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.9%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">4 (5.5%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">5 (4.0%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32befe"><p class="cl-4b329582"><span class="cl-4b2eec34">5 (2.7%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bf02"><p class="cl-4b32958e"><span class="cl-4b2eec34">Fluvastatin</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">2 (2.7%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">2 (1.6%)</span></p></td>
+<td class="cl-4b32bf08"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf09"><p class="cl-4b329582"><span class="cl-4b2eec34">2 (1.1%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bef4"><p class="cl-4b32958e"><span class="cl-4b2eec34">Nifedipine</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">2 (3.4%)</span></p></td>
+<td class="cl-4b32befe"><p class="cl-4b329582"><span class="cl-4b2eec34">2 (1.1%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32beff"><p class="cl-4b329583"><span class="cl-4b2eec34"></span></p></td>
+<td class="cl-4b32bf00"><p class="cl-4b329582"><span class="cl-4b2eec34"></span></p></td>
+<td class="cl-4b32bf00"><p class="cl-4b329582"><span class="cl-4b2eec34"></span></p></td>
+<td class="cl-4b32bf00"><p class="cl-4b329582"><span class="cl-4b2eec34"></span></p></td>
+<td class="cl-4b32bf00"><p class="cl-4b329582"><span class="cl-4b2eec34"></span></p></td>
+<td class="cl-4b32bf01"><p class="cl-4b329582"><span class="cl-4b2eec34"></span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bef4"><p class="cl-4b329583"><span class="cl-4b2eec34">Respiratory system</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">3 (5.7%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">3 (2.4%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.7%)</span></p></td>
+<td class="cl-4b32befe"><p class="cl-4b329582"><span class="cl-4b2eec34">4 (2.2%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bef4"><p class="cl-4b32958e"><span class="cl-4b2eec34">Naproxen sodium</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">3 (5.7%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">3 (2.4%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.7%)</span></p></td>
+<td class="cl-4b32befe"><p class="cl-4b329582"><span class="cl-4b2eec34">4 (2.2%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32beff"><p class="cl-4b329583"><span class="cl-4b2eec34"></span></p></td>
+<td class="cl-4b32bf00"><p class="cl-4b329582"><span class="cl-4b2eec34"></span></p></td>
+<td class="cl-4b32bf00"><p class="cl-4b329582"><span class="cl-4b2eec34"></span></p></td>
+<td class="cl-4b32bf00"><p class="cl-4b329582"><span class="cl-4b2eec34"></span></p></td>
+<td class="cl-4b32bf00"><p class="cl-4b329582"><span class="cl-4b2eec34"></span></p></td>
+<td class="cl-4b32bf01"><p class="cl-4b329582"><span class="cl-4b2eec34"></span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bef4"><p class="cl-4b32958c"><span class="cl-4b2eec34">Antineoplastic and</span><br> <span class="cl-4b2eec34">immunomodulating agents</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b32958d"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b32958d"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b32958d"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b32958d"><span class="cl-4b2eec34">1 (1.7%)</span></p></td>
+<td class="cl-4b32befe"><p class="cl-4b32958d"><span class="cl-4b2eec34">1 (0.5%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bef4"><p class="cl-4b32958e"><span class="cl-4b2eec34">Leuprorelin acetate</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.7%)</span></p></td>
+<td class="cl-4b32befe"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.5%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32beff"><p class="cl-4b329583"><span class="cl-4b2eec34"></span></p></td>
+<td class="cl-4b32bf00"><p class="cl-4b329582"><span class="cl-4b2eec34"></span></p></td>
+<td class="cl-4b32bf00"><p class="cl-4b329582"><span class="cl-4b2eec34"></span></p></td>
+<td class="cl-4b32bf00"><p class="cl-4b329582"><span class="cl-4b2eec34"></span></p></td>
+<td class="cl-4b32bf00"><p class="cl-4b329582"><span class="cl-4b2eec34"></span></p></td>
+<td class="cl-4b32bf01"><p class="cl-4b329582"><span class="cl-4b2eec34"></span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bef4"><p class="cl-4b329583"><span class="cl-4b2eec34">Blood and blood forming organs</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.4%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.8%)</span></p></td>
+<td class="cl-4b32bef5"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32befe"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.5%)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-4b32bf12"><p class="cl-4b32958e"><span class="cl-4b2eec34">Ferrous sulfate</span></p></td>
+<td class="cl-4b32bf13"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf13"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (1.4%)</span></p></td>
+<td class="cl-4b32bf13"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.8%)</span></p></td>
+<td class="cl-4b32bf13"><p class="cl-4b329582"><span class="cl-4b2eec34">0</span></p></td>
+<td class="cl-4b32bf14"><p class="cl-4b329582"><span class="cl-4b2eec34">1 (0.5%)</span></p></td>
 </tr>
 </tbody>
 <tfoot>
-<tr style="overflow-wrap:break-word;"><td colspan="6" class="cl-c54b6541"><p class="cl-c54b4cf4"><span class="cl-c548d9f6"></span></p></td></tr>
-<tr style="overflow-wrap:break-word;"><td colspan="6" class="cl-c54b654c"><p class="cl-c54b4cf4"><span class="cl-c548d9f6">Note: Prior medications are defined as any therapy used before the day of first dose (partial or complete) of study treatment.</span></p></td></tr>
+<tr style="overflow-wrap:break-word;"><td colspan="6" class="cl-4b32bf1c"><p class="cl-4b329583"><span class="cl-4b2eec34"></span></p></td></tr>
+<tr style="overflow-wrap:break-word;"><td colspan="6" class="cl-4b32bf1f"><p class="cl-4b329583"><span class="cl-4b2eec34">Note: Prior medications are defined as any therapy used before the day of first dose (partial or complete) of study treatment.</span></p></td></tr>
+<tr style="overflow-wrap:break-word;"><td colspan="6" class="cl-4b32bf26"><p class="cl-4b329597"><span class="cl-4b2eec3e">[tsicm05.docx][/usr/lib/rstudio-server/bin/quarto/share/rmd/rmd.R] 29DEC2025, 10:01</span></p></td></tr>
 </tfoot>
 </table>
 </div>
@@ -1911,7 +3209,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/johnsonandjohnson\.github\.io\/tlg-catalog");
+      var filterRegex = new RegExp("https:\/\/johnsonandjohnson\.github\.io\/TLG_Catalog");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
@@ -2238,8 +3536,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
-</script><script src="https://giscus.app/client.js" data-repo="johnsonandjohnson/tlg-catalog" data-repo-id="" data-category="General" data-category-id="" data-mapping="pathname" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en" crossorigin="anonymous" data-loading="lazy" async="">
-</script><input type="hidden" id="giscus-base-theme" value="light"><input type="hidden" id="giscus-alt-theme" value="light"><nav class="page-navigation column-body"><div class="nav-page nav-page-previous">
+</script><nav class="page-navigation column-body"><div class="nav-page nav-page-previous">
       <a href="../../tables/prior_and_concomitant_therapies/tsicm04.html" class="pagination-link" aria-label="TSICM04">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">TSICM04</span>
       </a>          
@@ -2455,10 +3752,10 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb2-203"><a href="#cb2-203"></a></span>
 <span id="cb2-204"><a href="#cb2-204"></a><span class="in"># Convert to tbl file and output table</span></span>
 <span id="cb2-205"><a href="#cb2-205"></a></span>
-<span id="cb2-206"><a href="#cb2-206"></a><span class="in">tt_to_tlgrtf(string_map = string_map, tt = head(result, 25), file = fileid, orientation = "landscape")</span></span>
+<span id="cb2-206"><a href="#cb2-206"></a><span class="in">tt_to_tlgrtf(string_map = string_map, tt = result, file = fileid, orientation = "landscape")</span></span>
 <span id="cb2-207"><a href="#cb2-207"></a><span class="in">```</span></span>
 <span id="cb2-208"><a href="#cb2-208"></a><span class="in">```{r result1, echo=FALSE, message=FALSE, warning=FALSE, test = list(result_v1 = "result")}</span></span>
-<span id="cb2-209"><a href="#cb2-209"></a><span class="in">tt_to_flextable_j(head(result, 25), tblid)</span></span>
+<span id="cb2-209"><a href="#cb2-209"></a><span class="in">tt_to_flextable_j(result, tblid)</span></span>
 <span id="cb2-210"><a href="#cb2-210"></a><span class="in">```</span></span>
 <span id="cb2-211"><a href="#cb2-211"></a></span>
 <span id="cb2-212"><a href="#cb2-212"></a><span class="co">[</span><span class="ot">Download RTF file</span><span class="co">]</span>(<span class="in">`r paste0(tolower(tblid), '.rtf')`</span>)</span>
@@ -2471,7 +3768,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
 
-<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/johnsonandjohnson/tlg-catalog/edit/main/book/tables/prior_and_concomitant_therapies/tsicm05.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/johnsonandjohnson/tlg-catalog/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/johnsonandjohnson/TLG_Catalog/edit/dev/book/tables/prior_and_concomitant_therapies/tsicm05.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/johnsonandjohnson/TLG_Catalog/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>

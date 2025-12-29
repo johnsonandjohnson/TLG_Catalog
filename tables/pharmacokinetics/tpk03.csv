@@ -24,3 +24,38 @@
 "N","72","96","168","N",9,1,15,0
 "Number of subjects with values below LLOQxMRD, n (%)","0","0","0","VALUE",9,2,16,0
 "Day 1 - 6h Post-dose","","","","HEADER",10,0,16,1
+"N","72","96","168","N",10,1,17,0
+"Number of subjects with values below LLOQxMRD, n (%)","0","0","0","VALUE",10,2,18,0
+"Day 1 - 8h Post-dose","","","","HEADER",11,0,18,1
+"N","72","96","168","N",11,1,19,0
+"Number of subjects with values below LLOQxMRD, n (%)","0","0","0","VALUE",11,2,20,0
+"Day 1 - 6-12h Post-dose","","","","HEADER",12,0,20,1
+"N","72","96","168","N",12,1,21,0
+"Number of subjects with values below LLOQxMRD, n (%)","0","0","0","VALUE",12,2,22,0
+"Day 1 - 12h Post-dose","","","","HEADER",13,0,22,1
+"N","72","96","168","N",13,1,23,0
+"Number of subjects with values below LLOQxMRD, n (%)","0","0","0","VALUE",13,2,24,0
+"Day 1 - 16h Post-dose","","","","HEADER",14,0,24,1
+"N","72","96","168","N",14,1,25,0
+"Number of subjects with values below LLOQxMRD, n (%)","0","0","0","VALUE",14,2,26,0
+"Day 1 - 12-24h Post-dose","","","","HEADER",15,0,26,1
+"N","72","96","168","N",15,1,27,0
+"Number of subjects with values below LLOQxMRD, n (%)","0","0","0","VALUE",15,2,28,0
+"Day 2 - 24h Post-dose","","","","HEADER",16,0,28,1
+"N","72","96","168","N",16,1,29,0
+"Number of subjects with values below LLOQxMRD, n (%)","0","0","0","VALUE",16,2,30,0
+"Day 2 - Pre-dose","","","","HEADER",17,0,30,1
+"N","72","94","166","N",17,1,31,0
+"Number of subjects with values below LLOQxMRD, n (%)","0","0","0","VALUE",17,2,32,0
+"Day 2 - 36h Post-dose","","","","HEADER",18,0,32,1
+"N","72","96","168","N",18,1,33,0
+"Number of subjects with values below LLOQxMRD, n (%)","72 (100.0%)","96 (100.0%)","168 (100.0%)","VALUE",18,2,34,0
+"Day 2 - 24-48h Post-dose","","","","HEADER",19,0,34,1
+"N","72","96","168","N",19,1,35,0
+"Number of subjects with values below LLOQxMRD, n (%)","51 (70.8%)","76 (79.2%)","127 (75.6%)","VALUE",19,2,36,0
+"Day 3 - 48h Post-dose","","","","HEADER",20,0,36,1
+"N","72","96","168","N",20,1,37,0
+"Number of subjects with values below LLOQxMRD, n (%)","72 (100.0%)","96 (100.0%)","168 (100.0%)","VALUE",20,2,38,0
+"Day 3 - Pre-dose","","","","HEADER",21,0,38,1
+"N","72","92","164","N",21,1,39,0
+"Number of subjects with values below LLOQxMRD, n (%)","72 (100.0%)","92 (95.8%)","164 (97.6%)","VALUE",21,2,40,0
