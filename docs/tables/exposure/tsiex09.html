@@ -120,7 +120,7 @@ cookieconsent.run({
 <script src="../../site_libs/tabwid-1.1.3/tabwid.js"></script><link rel="stylesheet" href="../../assets/css/style.css">
 <meta property="og:title" content="TSIEX09 – TL Catalog">
 <meta property="og:description" content="Distribution of Subjects by Study Treatment Lot">
-<meta property="og:image" content="https://johnsonandjohnson.github.io/tlg-catalog/tables/exposure/assets/img/logo.png">
+<meta property="og:image" content="https://johnsonandjohnson.github.io/TLG_Catalog/tables/exposure/assets/img/logo.png">
 <meta property="og:site_name" content="TL Catalog">
 </head>
 <body class="nav-sidebar docked nav-fixed">
@@ -162,6 +162,13 @@ cookieconsent.run({
   <div class="sidebar-item-container"> 
   <a href="../../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introduction</span></a>
+  </div>
+</li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../tlg-index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Index</span></a>
   </div>
 </li>
         <li class="px-0"><hr class="sidebar-divider hi "></li>
@@ -1163,12 +1170,6 @@ cookieconsent.run({
   </div>
 </li>
         <li class="px-0"><hr class="sidebar-divider hi "></li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../tlg-index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Index</span></a>
-  </div>
-</li>
     </ul>
 </div>
 </nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
@@ -1178,7 +1179,7 @@ cookieconsent.run({
    
   <ul>
 <li><a href="#output" id="toc-output" class="nav-link active" data-scroll-target="#output">Output</a></li>
-  </ul><div class="toc-actions"><ul><li><a href="https://github.com/johnsonandjohnson/tlg-catalog/edit/main/book/tables/exposure/tsiex09.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/johnsonandjohnson/tlg-catalog/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+  </ul><div class="toc-actions"><ul><li><a href="https://github.com/johnsonandjohnson/TLG_Catalog/edit/dev/book/tables/exposure/tsiex09.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/johnsonandjohnson/TLG_Catalog/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content column-body" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Tables</li><li class="breadcrumb-item"><a href="../../tables/exposure/tsiex01.html">Exposure</a></li><li class="breadcrumb-item"><a href="../../tables/exposure/tsiex09.html">TSIEX09</a></li></ol></nav><div class="quarto-title">
@@ -1338,118 +1339,119 @@ cookieconsent.run({
 <span id="cb1-132"><a href="#cb1-132"></a></span>
 <span id="cb1-133"><a href="#cb1-133"></a><span class="co"># Convert to tbl file and output table</span></span>
 <span id="cb1-134"><a href="#cb1-134"></a></span>
-<span id="cb1-135"><a href="#cb1-135"></a><span class="fu">tt_to_tlgrtf</span>(<span class="at">string_map =</span> string_map, <span class="at">tt =</span> <span class="fu">head</span>(result, <span class="dv">25</span>), <span class="at">file =</span> fileid, <span class="at">orientation =</span> <span class="st">"portrait"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-135"><a href="#cb1-135"></a><span class="fu">tt_to_tlgrtf</span>(<span class="at">string_map =</span> string_map, <span class="at">tt =</span> result, <span class="at">file =</span> fileid, <span class="at">orientation =</span> <span class="st">"portrait"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <div class="cell" data-test="{&quot;result_v1&quot;:&quot;result&quot;}">
 <div class="cell-output-display">
 <div class="tabwid tabwid_left">
-<style>.cl-1a54f912{}.cl-1a4eab66{font-family:'Times New Roman';font-size:10pt;font-weight:bold;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-1a4eab8e{font-family:'Times New Roman';font-size:9pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-1a511a4a{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:0;padding-right:0;line-height: 1;background-color:transparent;}.cl-1a511a5e{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:3.6pt;padding-right:0;line-height: 1;background-color:transparent;}.cl-1a511a5f{margin:0;text-align:center;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:0;padding-right:0;line-height: 1;background-color:transparent;}.cl-1a511a68{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:0;padding-right:0;line-height: 1;background-color:transparent;}.cl-1a511a72{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:7.2pt;padding-right:0;line-height: 1;background-color:transparent;}.cl-1a511a73{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:9pt;padding-right:0;line-height: 1;background-color:transparent;}.cl-1a511a74{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:0;padding-right:0;line-height: 1;background-color:transparent;}.cl-1a51330e{width:1.987in;background-color:rgba(255, 255, 255, 1.00);vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0.75pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-1a513318{width:1.098in;background-color:rgba(255, 255, 255, 1.00);vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0.75pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-1a513322{width:1.987in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(102, 102, 102, 1.00);border-top: 0.75pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-1a513323{width:1.098in;background-color:transparent;vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0.75pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-1a513324{width:1.098in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(102, 102, 102, 1.00);border-top: 0.75pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-1a51332c{width:1.987in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-1a51332d{width:1.098in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-1a513336{width:1.987in;background-color:transparent;vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-1a513337{width:1.098in;background-color:transparent;vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-1a513338{width:1.987in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-1a513340{width:1.098in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-1a513341{width:1.987in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-1a51334a{width:1.098in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-1a51334b{width:1.987in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-1a513354{width:1.098in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-1a513355{width:1.987in;background-color:transparent;vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-1a513356{width:1.098in;background-color:transparent;vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-1a51335e{width:1.987in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(255, 255, 255, 0.00);border-top: 0 solid rgba(255, 255, 255, 0.00);border-left: 0 solid rgba(255, 255, 255, 0.00);border-right: 0 solid rgba(255, 255, 255, 0.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-1a51335f{width:1.098in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(255, 255, 255, 0.00);border-top: 0 solid rgba(255, 255, 255, 0.00);border-left: 0 solid rgba(255, 255, 255, 0.00);border-right: 0 solid rgba(255, 255, 255, 0.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-1a513360{width:1.987in;background-color:transparent;vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(255, 255, 255, 0.00);border-left: 0 solid rgba(255, 255, 255, 0.00);border-right: 0 solid rgba(255, 255, 255, 0.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-1a513368{width:1.098in;background-color:transparent;vertical-align: middle;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(255, 255, 255, 0.00);border-left: 0 solid rgba(255, 255, 255, 0.00);border-right: 0 solid rgba(255, 255, 255, 0.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style>
-<table data-quarto-disable-processing="true" class="cl-1a54f912">
+<style>.cl-8ef93e02{}.cl-8ef2ff92{font-family:'Times New Roman';font-size:10pt;font-weight:bold;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-8ef2ffba{font-family:'Times New Roman';font-size:9pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-8ef2ffbb{font-family:'Times New Roman';font-size:8pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-8ef5cbaa{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:0;padding-right:0;line-height: 1;background-color:transparent;}.cl-8ef5cbb4{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:3.6pt;padding-right:0;line-height: 1;background-color:transparent;}.cl-8ef5cbbe{margin:0;text-align:center;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:0;padding-right:0;line-height: 1;background-color:transparent;}.cl-8ef5cbbf{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:0;padding-right:0;line-height: 1;background-color:transparent;}.cl-8ef5cbc0{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:7.2pt;padding-right:0;line-height: 1;background-color:transparent;}.cl-8ef5cbc1{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:9pt;padding-right:0;line-height: 1;background-color:transparent;}.cl-8ef5cbc8{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:0;padding-right:0;line-height: 1;background-color:transparent;}.cl-8ef5cbc9{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:0;padding-right:0;line-height: 1;background-color:transparent;}.cl-8ef5cbca{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:0;padding-right:0;line-height: 1;background-color:transparent;}.cl-8ef5e158{width:1.987in;background-color:rgba(255, 255, 255, 1.00);vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0.75pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-8ef5e159{width:1.098in;background-color:rgba(255, 255, 255, 1.00);vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0.75pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-8ef5e162{width:1.987in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(102, 102, 102, 1.00);border-top: 0.75pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-8ef5e163{width:1.098in;background-color:transparent;vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0.75pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-8ef5e16c{width:1.098in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(102, 102, 102, 1.00);border-top: 0.75pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-8ef5e16d{width:1.987in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-8ef5e16e{width:1.098in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-8ef5e16f{width:1.987in;background-color:transparent;vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-8ef5e176{width:1.098in;background-color:transparent;vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-8ef5e177{width:1.987in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-8ef5e178{width:1.098in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-8ef5e179{width:1.987in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-8ef5e180{width:1.098in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-8ef5e181{width:1.987in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-8ef5e182{width:1.098in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-8ef5e183{width:1.987in;background-color:transparent;vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-8ef5e18a{width:1.098in;background-color:transparent;vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-8ef5e18b{width:1.987in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(255, 255, 255, 0.00);border-top: 0 solid rgba(255, 255, 255, 0.00);border-left: 0 solid rgba(255, 255, 255, 0.00);border-right: 0 solid rgba(255, 255, 255, 0.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-8ef5e18c{width:1.098in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(255, 255, 255, 0.00);border-top: 0 solid rgba(255, 255, 255, 0.00);border-left: 0 solid rgba(255, 255, 255, 0.00);border-right: 0 solid rgba(255, 255, 255, 0.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-8ef5e18d{width:1.987in;background-color:transparent;vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(255, 255, 255, 0.00);border-left: 0 solid rgba(255, 255, 255, 0.00);border-right: 0 solid rgba(255, 255, 255, 0.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-8ef5e194{width:1.098in;background-color:transparent;vertical-align: middle;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(255, 255, 255, 0.00);border-left: 0 solid rgba(255, 255, 255, 0.00);border-right: 0 solid rgba(255, 255, 255, 0.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-8ef5e195{width:1.987in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(255, 255, 255, 0.00);border-left: 0 solid rgba(255, 255, 255, 0.00);border-right: 0 solid rgba(255, 255, 255, 0.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-8ef5e196{width:1.098in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(255, 255, 255, 0.00);border-left: 0 solid rgba(255, 255, 255, 0.00);border-right: 0 solid rgba(255, 255, 255, 0.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style>
+<table data-quarto-disable-processing="true" class="cl-8ef93e02">
 <thead>
-<tr style="overflow-wrap:break-word;"><th colspan="5" class="cl-1a51330e"><p class="cl-1a511a4a"><span class="cl-1a4eab66">TSIEX09:</span> <span class="cl-1a4eab66">Distribution of Subjects by Study Treatment Lot; Safety Analysis Set (Study jjcs - core)</span></p></th></tr>
+<tr style="overflow-wrap:break-word;"><th colspan="5" class="cl-8ef5e158"><p class="cl-8ef5cbaa"><span class="cl-8ef2ff92">TSIEX09:</span> <span class="cl-8ef2ff92">Distribution of Subjects by Study Treatment Lot; Safety Analysis Set (Study jjcs - core)</span></p></th></tr>
 <tr style="overflow-wrap:break-word;">
-<th class="cl-1a513322"><p class="cl-1a511a5e"><span class="cl-1a4eab8e"></span></p></th>
-<th colspan="3" class="cl-1a513323"><p class="cl-1a511a5f"><span class="cl-1a4eab8e">Active Study Agent</span></p></th>
-<th class="cl-1a513324"><p class="cl-1a511a5f"><span class="cl-1a4eab8e"> </span></p></th>
+<th class="cl-8ef5e162"><p class="cl-8ef5cbb4"><span class="cl-8ef2ffba"></span></p></th>
+<th colspan="3" class="cl-8ef5e163"><p class="cl-8ef5cbbe"><span class="cl-8ef2ffba">Active Study Agent</span></p></th>
+<th class="cl-8ef5e16c"><p class="cl-8ef5cbbe"><span class="cl-8ef2ffba"> </span></p></th>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<th class="cl-1a51332c"><p class="cl-1a511a68"><span class="cl-1a4eab8e">Study Treatment</span></p></th>
-<th class="cl-1a513324"><p class="cl-1a511a5f"><span class="cl-1a4eab8e">Xanomeline High Dose</span></p></th>
-<th class="cl-1a513324"><p class="cl-1a511a5f"><span class="cl-1a4eab8e">Xanomeline Low Dose</span></p></th>
-<th class="cl-1a513324"><p class="cl-1a511a5f"><span class="cl-1a4eab8e">Combined</span></p></th>
-<th class="cl-1a51332d"><p class="cl-1a511a5f"><span class="cl-1a4eab8e">Placebo</span></p></th>
+<th class="cl-8ef5e16d"><p class="cl-8ef5cbbf"><span class="cl-8ef2ffba">Study Treatment</span></p></th>
+<th class="cl-8ef5e16c"><p class="cl-8ef5cbbe"><span class="cl-8ef2ffba">Xanomeline High Dose</span></p></th>
+<th class="cl-8ef5e16c"><p class="cl-8ef5cbbe"><span class="cl-8ef2ffba">Xanomeline Low Dose</span></p></th>
+<th class="cl-8ef5e16c"><p class="cl-8ef5cbbe"><span class="cl-8ef2ffba">Combined</span></p></th>
+<th class="cl-8ef5e16e"><p class="cl-8ef5cbbe"><span class="cl-8ef2ffba">Placebo</span></p></th>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<th class="cl-1a513336"><p class="cl-1a511a72"><span class="cl-1a4eab8e">Lot, n (%)</span></p></th>
-<th class="cl-1a513337"><p class="cl-1a511a5f"><span class="cl-1a4eab8e">N=53</span></p></th>
-<th class="cl-1a513337"><p class="cl-1a511a5f"><span class="cl-1a4eab8e">N=73</span></p></th>
-<th class="cl-1a513337"><p class="cl-1a511a5f"><span class="cl-1a4eab8e">N=126</span></p></th>
-<th class="cl-1a513337"><p class="cl-1a511a5f"><span class="cl-1a4eab8e">N=59</span></p></th>
+<th class="cl-8ef5e16f"><p class="cl-8ef5cbc0"><span class="cl-8ef2ffba">Lot, n (%)</span></p></th>
+<th class="cl-8ef5e176"><p class="cl-8ef5cbbe"><span class="cl-8ef2ffba">N=53</span></p></th>
+<th class="cl-8ef5e176"><p class="cl-8ef5cbbe"><span class="cl-8ef2ffba">N=73</span></p></th>
+<th class="cl-8ef5e176"><p class="cl-8ef5cbbe"><span class="cl-8ef2ffba">N=126</span></p></th>
+<th class="cl-8ef5e176"><p class="cl-8ef5cbbe"><span class="cl-8ef2ffba">N=59</span></p></th>
 </tr>
 </thead>
 <tbody>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-1a513338"><p class="cl-1a511a68"><span class="cl-1a4eab8e">Xanomeline lots</span></p></td>
-<td class="cl-1a513340"><p class="cl-1a511a5f"><span class="cl-1a4eab8e"> </span></p></td>
-<td class="cl-1a513340"><p class="cl-1a511a5f"><span class="cl-1a4eab8e"> </span></p></td>
-<td class="cl-1a513340"><p class="cl-1a511a5f"><span class="cl-1a4eab8e"> </span></p></td>
-<td class="cl-1a513340"><p class="cl-1a511a5f"><span class="cl-1a4eab8e"> </span></p></td>
+<td class="cl-8ef5e177"><p class="cl-8ef5cbbf"><span class="cl-8ef2ffba">Xanomeline lots</span></p></td>
+<td class="cl-8ef5e178"><p class="cl-8ef5cbbe"><span class="cl-8ef2ffba"> </span></p></td>
+<td class="cl-8ef5e178"><p class="cl-8ef5cbbe"><span class="cl-8ef2ffba"> </span></p></td>
+<td class="cl-8ef5e178"><p class="cl-8ef5cbbe"><span class="cl-8ef2ffba"> </span></p></td>
+<td class="cl-8ef5e178"><p class="cl-8ef5cbbe"><span class="cl-8ef2ffba"> </span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-1a513341"><p class="cl-1a511a73"><span class="cl-1a4eab8e">XXX-YYY-ZZZ-002</span></p></td>
-<td class="cl-1a51334a"><p class="cl-1a511a5f"><span class="cl-1a4eab8e">30 (56.6%)</span></p></td>
-<td class="cl-1a51334a"><p class="cl-1a511a5f"><span class="cl-1a4eab8e">31 (42.5%)</span></p></td>
-<td class="cl-1a51334a"><p class="cl-1a511a5f"><span class="cl-1a4eab8e">61 (48.4%)</span></p></td>
-<td class="cl-1a51334a"><p class="cl-1a511a5f"><span class="cl-1a4eab8e">0</span></p></td>
+<td class="cl-8ef5e179"><p class="cl-8ef5cbc1"><span class="cl-8ef2ffba">XXX-YYY-ZZZ-002</span></p></td>
+<td class="cl-8ef5e180"><p class="cl-8ef5cbbe"><span class="cl-8ef2ffba">30 (56.6%)</span></p></td>
+<td class="cl-8ef5e180"><p class="cl-8ef5cbbe"><span class="cl-8ef2ffba">31 (42.5%)</span></p></td>
+<td class="cl-8ef5e180"><p class="cl-8ef5cbbe"><span class="cl-8ef2ffba">61 (48.4%)</span></p></td>
+<td class="cl-8ef5e180"><p class="cl-8ef5cbbe"><span class="cl-8ef2ffba">0</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-1a513341"><p class="cl-1a511a73"><span class="cl-1a4eab8e">XXX-YYY-ZZZ-003</span></p></td>
-<td class="cl-1a51334a"><p class="cl-1a511a5f"><span class="cl-1a4eab8e">26 (49.1%)</span></p></td>
-<td class="cl-1a51334a"><p class="cl-1a511a5f"><span class="cl-1a4eab8e">28 (38.4%)</span></p></td>
-<td class="cl-1a51334a"><p class="cl-1a511a5f"><span class="cl-1a4eab8e">54 (42.9%)</span></p></td>
-<td class="cl-1a51334a"><p class="cl-1a511a5f"><span class="cl-1a4eab8e">0</span></p></td>
+<td class="cl-8ef5e179"><p class="cl-8ef5cbc1"><span class="cl-8ef2ffba">XXX-YYY-ZZZ-003</span></p></td>
+<td class="cl-8ef5e180"><p class="cl-8ef5cbbe"><span class="cl-8ef2ffba">26 (49.1%)</span></p></td>
+<td class="cl-8ef5e180"><p class="cl-8ef5cbbe"><span class="cl-8ef2ffba">28 (38.4%)</span></p></td>
+<td class="cl-8ef5e180"><p class="cl-8ef5cbbe"><span class="cl-8ef2ffba">54 (42.9%)</span></p></td>
+<td class="cl-8ef5e180"><p class="cl-8ef5cbbe"><span class="cl-8ef2ffba">0</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-1a513341"><p class="cl-1a511a73"><span class="cl-1a4eab8e">XXX-YYY-ZZZ-004</span></p></td>
-<td class="cl-1a51334a"><p class="cl-1a511a5f"><span class="cl-1a4eab8e">20 (37.7%)</span></p></td>
-<td class="cl-1a51334a"><p class="cl-1a511a5f"><span class="cl-1a4eab8e">38 (52.1%)</span></p></td>
-<td class="cl-1a51334a"><p class="cl-1a511a5f"><span class="cl-1a4eab8e">58 (46.0%)</span></p></td>
-<td class="cl-1a51334a"><p class="cl-1a511a5f"><span class="cl-1a4eab8e">0</span></p></td>
+<td class="cl-8ef5e179"><p class="cl-8ef5cbc1"><span class="cl-8ef2ffba">XXX-YYY-ZZZ-004</span></p></td>
+<td class="cl-8ef5e180"><p class="cl-8ef5cbbe"><span class="cl-8ef2ffba">20 (37.7%)</span></p></td>
+<td class="cl-8ef5e180"><p class="cl-8ef5cbbe"><span class="cl-8ef2ffba">38 (52.1%)</span></p></td>
+<td class="cl-8ef5e180"><p class="cl-8ef5cbbe"><span class="cl-8ef2ffba">58 (46.0%)</span></p></td>
+<td class="cl-8ef5e180"><p class="cl-8ef5cbbe"><span class="cl-8ef2ffba">0</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-1a513341"><p class="cl-1a511a73"><span class="cl-1a4eab8e">XXX-YYY-ZZZ-005</span></p></td>
-<td class="cl-1a51334a"><p class="cl-1a511a5f"><span class="cl-1a4eab8e">25 (47.2%)</span></p></td>
-<td class="cl-1a51334a"><p class="cl-1a511a5f"><span class="cl-1a4eab8e">29 (39.7%)</span></p></td>
-<td class="cl-1a51334a"><p class="cl-1a511a5f"><span class="cl-1a4eab8e">54 (42.9%)</span></p></td>
-<td class="cl-1a51334a"><p class="cl-1a511a5f"><span class="cl-1a4eab8e">0</span></p></td>
+<td class="cl-8ef5e179"><p class="cl-8ef5cbc1"><span class="cl-8ef2ffba">XXX-YYY-ZZZ-005</span></p></td>
+<td class="cl-8ef5e180"><p class="cl-8ef5cbbe"><span class="cl-8ef2ffba">25 (47.2%)</span></p></td>
+<td class="cl-8ef5e180"><p class="cl-8ef5cbbe"><span class="cl-8ef2ffba">29 (39.7%)</span></p></td>
+<td class="cl-8ef5e180"><p class="cl-8ef5cbbe"><span class="cl-8ef2ffba">54 (42.9%)</span></p></td>
+<td class="cl-8ef5e180"><p class="cl-8ef5cbbe"><span class="cl-8ef2ffba">0</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-1a51334b"><p class="cl-1a511a68"><span class="cl-1a4eab8e"></span></p></td>
-<td class="cl-1a513354"><p class="cl-1a511a5f"><span class="cl-1a4eab8e"></span></p></td>
-<td class="cl-1a513354"><p class="cl-1a511a5f"><span class="cl-1a4eab8e"></span></p></td>
-<td class="cl-1a513354"><p class="cl-1a511a5f"><span class="cl-1a4eab8e"></span></p></td>
-<td class="cl-1a513354"><p class="cl-1a511a5f"><span class="cl-1a4eab8e"></span></p></td>
+<td class="cl-8ef5e181"><p class="cl-8ef5cbbf"><span class="cl-8ef2ffba"></span></p></td>
+<td class="cl-8ef5e182"><p class="cl-8ef5cbbe"><span class="cl-8ef2ffba"></span></p></td>
+<td class="cl-8ef5e182"><p class="cl-8ef5cbbe"><span class="cl-8ef2ffba"></span></p></td>
+<td class="cl-8ef5e182"><p class="cl-8ef5cbbe"><span class="cl-8ef2ffba"></span></p></td>
+<td class="cl-8ef5e182"><p class="cl-8ef5cbbe"><span class="cl-8ef2ffba"></span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-1a513338"><p class="cl-1a511a68"><span class="cl-1a4eab8e">Placebo lots</span></p></td>
-<td class="cl-1a513340"><p class="cl-1a511a5f"><span class="cl-1a4eab8e"> </span></p></td>
-<td class="cl-1a513340"><p class="cl-1a511a5f"><span class="cl-1a4eab8e"> </span></p></td>
-<td class="cl-1a513340"><p class="cl-1a511a5f"><span class="cl-1a4eab8e"> </span></p></td>
-<td class="cl-1a513340"><p class="cl-1a511a5f"><span class="cl-1a4eab8e"> </span></p></td>
+<td class="cl-8ef5e177"><p class="cl-8ef5cbbf"><span class="cl-8ef2ffba">Placebo lots</span></p></td>
+<td class="cl-8ef5e178"><p class="cl-8ef5cbbe"><span class="cl-8ef2ffba"> </span></p></td>
+<td class="cl-8ef5e178"><p class="cl-8ef5cbbe"><span class="cl-8ef2ffba"> </span></p></td>
+<td class="cl-8ef5e178"><p class="cl-8ef5cbbe"><span class="cl-8ef2ffba"> </span></p></td>
+<td class="cl-8ef5e178"><p class="cl-8ef5cbbe"><span class="cl-8ef2ffba"> </span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-1a513341"><p class="cl-1a511a73"><span class="cl-1a4eab8e">XXX-YYY-ZZZ-002</span></p></td>
-<td class="cl-1a51334a"><p class="cl-1a511a5f"><span class="cl-1a4eab8e">0</span></p></td>
-<td class="cl-1a51334a"><p class="cl-1a511a5f"><span class="cl-1a4eab8e">0</span></p></td>
-<td class="cl-1a51334a"><p class="cl-1a511a5f"><span class="cl-1a4eab8e">0</span></p></td>
-<td class="cl-1a51334a"><p class="cl-1a511a5f"><span class="cl-1a4eab8e">32 (54.2%)</span></p></td>
+<td class="cl-8ef5e179"><p class="cl-8ef5cbc1"><span class="cl-8ef2ffba">XXX-YYY-ZZZ-002</span></p></td>
+<td class="cl-8ef5e180"><p class="cl-8ef5cbbe"><span class="cl-8ef2ffba">0</span></p></td>
+<td class="cl-8ef5e180"><p class="cl-8ef5cbbe"><span class="cl-8ef2ffba">0</span></p></td>
+<td class="cl-8ef5e180"><p class="cl-8ef5cbbe"><span class="cl-8ef2ffba">0</span></p></td>
+<td class="cl-8ef5e180"><p class="cl-8ef5cbbe"><span class="cl-8ef2ffba">32 (54.2%)</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-1a513341"><p class="cl-1a511a73"><span class="cl-1a4eab8e">XXX-YYY-ZZZ-003</span></p></td>
-<td class="cl-1a51334a"><p class="cl-1a511a5f"><span class="cl-1a4eab8e">0</span></p></td>
-<td class="cl-1a51334a"><p class="cl-1a511a5f"><span class="cl-1a4eab8e">0</span></p></td>
-<td class="cl-1a51334a"><p class="cl-1a511a5f"><span class="cl-1a4eab8e">0</span></p></td>
-<td class="cl-1a51334a"><p class="cl-1a511a5f"><span class="cl-1a4eab8e">28 (47.5%)</span></p></td>
+<td class="cl-8ef5e179"><p class="cl-8ef5cbc1"><span class="cl-8ef2ffba">XXX-YYY-ZZZ-003</span></p></td>
+<td class="cl-8ef5e180"><p class="cl-8ef5cbbe"><span class="cl-8ef2ffba">0</span></p></td>
+<td class="cl-8ef5e180"><p class="cl-8ef5cbbe"><span class="cl-8ef2ffba">0</span></p></td>
+<td class="cl-8ef5e180"><p class="cl-8ef5cbbe"><span class="cl-8ef2ffba">0</span></p></td>
+<td class="cl-8ef5e180"><p class="cl-8ef5cbbe"><span class="cl-8ef2ffba">28 (47.5%)</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-1a513341"><p class="cl-1a511a73"><span class="cl-1a4eab8e">XXX-YYY-ZZZ-004</span></p></td>
-<td class="cl-1a51334a"><p class="cl-1a511a5f"><span class="cl-1a4eab8e">0</span></p></td>
-<td class="cl-1a51334a"><p class="cl-1a511a5f"><span class="cl-1a4eab8e">0</span></p></td>
-<td class="cl-1a51334a"><p class="cl-1a511a5f"><span class="cl-1a4eab8e">0</span></p></td>
-<td class="cl-1a51334a"><p class="cl-1a511a5f"><span class="cl-1a4eab8e">33 (55.9%)</span></p></td>
+<td class="cl-8ef5e179"><p class="cl-8ef5cbc1"><span class="cl-8ef2ffba">XXX-YYY-ZZZ-004</span></p></td>
+<td class="cl-8ef5e180"><p class="cl-8ef5cbbe"><span class="cl-8ef2ffba">0</span></p></td>
+<td class="cl-8ef5e180"><p class="cl-8ef5cbbe"><span class="cl-8ef2ffba">0</span></p></td>
+<td class="cl-8ef5e180"><p class="cl-8ef5cbbe"><span class="cl-8ef2ffba">0</span></p></td>
+<td class="cl-8ef5e180"><p class="cl-8ef5cbbe"><span class="cl-8ef2ffba">33 (55.9%)</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-1a513355"><p class="cl-1a511a73"><span class="cl-1a4eab8e">XXX-YYY-ZZZ-005</span></p></td>
-<td class="cl-1a513356"><p class="cl-1a511a5f"><span class="cl-1a4eab8e">0</span></p></td>
-<td class="cl-1a513356"><p class="cl-1a511a5f"><span class="cl-1a4eab8e">0</span></p></td>
-<td class="cl-1a513356"><p class="cl-1a511a5f"><span class="cl-1a4eab8e">0</span></p></td>
-<td class="cl-1a513356"><p class="cl-1a511a5f"><span class="cl-1a4eab8e">32 (54.2%)</span></p></td>
+<td class="cl-8ef5e183"><p class="cl-8ef5cbc1"><span class="cl-8ef2ffba">XXX-YYY-ZZZ-005</span></p></td>
+<td class="cl-8ef5e18a"><p class="cl-8ef5cbbe"><span class="cl-8ef2ffba">0</span></p></td>
+<td class="cl-8ef5e18a"><p class="cl-8ef5cbbe"><span class="cl-8ef2ffba">0</span></p></td>
+<td class="cl-8ef5e18a"><p class="cl-8ef5cbbe"><span class="cl-8ef2ffba">0</span></p></td>
+<td class="cl-8ef5e18a"><p class="cl-8ef5cbbe"><span class="cl-8ef2ffba">32 (54.2%)</span></p></td>
 </tr>
 </tbody>
 <tfoot>
-<tr style="overflow-wrap:break-word;"><td colspan="5" class="cl-1a51335e"><p class="cl-1a511a68"><span class="cl-1a4eab8e"></span></p></td></tr>
-<tr style="overflow-wrap:break-word;"><td colspan="5" class="cl-1a513360"><p class="cl-1a511a68"><span class="cl-1a4eab8e">Note: Subjects may be counted in multiple lots, if applicable.</span></p></td></tr>
+<tr style="overflow-wrap:break-word;"><td colspan="5" class="cl-8ef5e18b"><p class="cl-8ef5cbbf"><span class="cl-8ef2ffba"></span></p></td></tr>
+<tr style="overflow-wrap:break-word;"><td colspan="5" class="cl-8ef5e18d"><p class="cl-8ef5cbbf"><span class="cl-8ef2ffba">Note: Subjects may be counted in multiple lots, if applicable.</span></p></td></tr>
+<tr style="overflow-wrap:break-word;"><td colspan="5" class="cl-8ef5e195"><p class="cl-8ef5cbc9"><span class="cl-8ef2ffbb">[tsiex09.docx][/usr/lib/rstudio-server/bin/quarto/share/rmd/rmd.R] 29DEC2025, 09:55</span></p></td></tr>
 </tfoot>
 </table>
 </div>
@@ -1750,7 +1752,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/johnsonandjohnson\.github\.io\/tlg-catalog");
+      var filterRegex = new RegExp("https:\/\/johnsonandjohnson\.github\.io\/TLG_Catalog");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
@@ -2077,8 +2079,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
-</script><script src="https://giscus.app/client.js" data-repo="johnsonandjohnson/tlg-catalog" data-repo-id="" data-category="General" data-category-id="" data-mapping="pathname" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en" crossorigin="anonymous" data-loading="lazy" async="">
-</script><input type="hidden" id="giscus-base-theme" value="light"><input type="hidden" id="giscus-alt-theme" value="light"><nav class="page-navigation column-body"><div class="nav-page nav-page-previous">
+</script><nav class="page-navigation column-body"><div class="nav-page nav-page-previous">
       <a href="../../tables/exposure/tsiex08.html" class="pagination-link" aria-label="TSIEX08">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">TSIEX08</span>
       </a>          
@@ -2267,10 +2268,10 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb2-176"><a href="#cb2-176"></a></span>
 <span id="cb2-177"><a href="#cb2-177"></a><span class="in"># Convert to tbl file and output table</span></span>
 <span id="cb2-178"><a href="#cb2-178"></a></span>
-<span id="cb2-179"><a href="#cb2-179"></a><span class="in">tt_to_tlgrtf(string_map = string_map, tt = head(result, 25), file = fileid, orientation = "portrait")</span></span>
+<span id="cb2-179"><a href="#cb2-179"></a><span class="in">tt_to_tlgrtf(string_map = string_map, tt = result, file = fileid, orientation = "portrait")</span></span>
 <span id="cb2-180"><a href="#cb2-180"></a><span class="in">```</span></span>
 <span id="cb2-181"><a href="#cb2-181"></a><span class="in">```{r result1, echo=FALSE, message=FALSE, warning=FALSE, test = list(result_v1 = "result")}</span></span>
-<span id="cb2-182"><a href="#cb2-182"></a><span class="in">tt_to_flextable_j(head(result, 25), tblid)</span></span>
+<span id="cb2-182"><a href="#cb2-182"></a><span class="in">tt_to_flextable_j(result, tblid)</span></span>
 <span id="cb2-183"><a href="#cb2-183"></a><span class="in">```</span></span>
 <span id="cb2-184"><a href="#cb2-184"></a></span>
 <span id="cb2-185"><a href="#cb2-185"></a><span class="co">[</span><span class="ot">Download RTF file</span><span class="co">]</span>(<span class="in">`r paste0(tolower(tblid), '.rtf')`</span>)</span>
@@ -2283,7 +2284,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
 
-<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/johnsonandjohnson/tlg-catalog/edit/main/book/tables/exposure/tsiex09.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/johnsonandjohnson/tlg-catalog/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/johnsonandjohnson/TLG_Catalog/edit/dev/book/tables/exposure/tsiex09.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/johnsonandjohnson/TLG_Catalog/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>

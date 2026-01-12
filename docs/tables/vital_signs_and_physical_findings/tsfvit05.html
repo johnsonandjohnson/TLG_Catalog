@@ -120,7 +120,7 @@ cookieconsent.run({
 <script src="../../site_libs/tabwid-1.1.3/tabwid.js"></script><link rel="stylesheet" href="../../assets/css/style.css">
 <meta property="og:title" content="TSFVIT05 – TL Catalog">
 <meta property="og:description" content="Subjects With On-treatment Clinically Important Vital Signs Over Time">
-<meta property="og:image" content="https://johnsonandjohnson.github.io/tlg-catalog/tables/vital_signs_and_physical_findings/assets/img/logo.png">
+<meta property="og:image" content="https://johnsonandjohnson.github.io/TLG_Catalog/tables/vital_signs_and_physical_findings/assets/img/logo.png">
 <meta property="og:site_name" content="TL Catalog">
 </head>
 <body class="nav-sidebar docked nav-fixed">
@@ -162,6 +162,13 @@ cookieconsent.run({
   <div class="sidebar-item-container"> 
   <a href="../../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introduction</span></a>
+  </div>
+</li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../tlg-index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Index</span></a>
   </div>
 </li>
         <li class="px-0"><hr class="sidebar-divider hi "></li>
@@ -1163,12 +1170,6 @@ cookieconsent.run({
   </div>
 </li>
         <li class="px-0"><hr class="sidebar-divider hi "></li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../tlg-index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Index</span></a>
-  </div>
-</li>
     </ul>
 </div>
 </nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
@@ -1178,7 +1179,7 @@ cookieconsent.run({
    
   <ul>
 <li><a href="#output" id="toc-output" class="nav-link active" data-scroll-target="#output">Output</a></li>
-  </ul><div class="toc-actions"><ul><li><a href="https://github.com/johnsonandjohnson/tlg-catalog/edit/main/book/tables/vital_signs_and_physical_findings/tsfvit05.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/johnsonandjohnson/tlg-catalog/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+  </ul><div class="toc-actions"><ul><li><a href="https://github.com/johnsonandjohnson/TLG_Catalog/edit/dev/book/tables/vital_signs_and_physical_findings/tsfvit05.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/johnsonandjohnson/TLG_Catalog/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content column-body" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Tables</li><li class="breadcrumb-item"><a href="../../tables/vital_signs_and_physical_findings/tsfvit01.html">Vital Signs and Physical Findings</a></li><li class="breadcrumb-item"><a href="../../tables/vital_signs_and_physical_findings/tsfvit05.html">TSFVIT05</a></li></ol></nav><div class="quarto-title">
@@ -1509,220 +1510,323 @@ cookieconsent.run({
 <span id="cb1-303"><a href="#cb1-303"></a></span>
 <span id="cb1-304"><a href="#cb1-304"></a><span class="co"># Convert to tbl file and output table</span></span>
 <span id="cb1-305"><a href="#cb1-305"></a></span>
-<span id="cb1-306"><a href="#cb1-306"></a><span class="fu">tt_to_tlgrtf</span>(<span class="at">string_map =</span> string_map, <span class="at">tt =</span> <span class="fu">head</span>(result, <span class="dv">25</span>), <span class="at">file =</span> fileid)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-306"><a href="#cb1-306"></a><span class="fu">tt_to_tlgrtf</span>(<span class="at">string_map =</span> string_map, <span class="at">tt =</span> result, <span class="at">file =</span> fileid)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <div class="cell" data-test="{&quot;result_v1&quot;:&quot;result&quot;}">
 <div class="cell-output-display">
 <div class="tabwid tabwid_left">
-<style>.cl-75c20420{}.cl-75bbdae6{font-family:'Times New Roman';font-size:10pt;font-weight:bold;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-75bbdb04{font-family:'Times New Roman';font-size:9pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-75be380e{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:0;padding-right:0;line-height: 1;background-color:transparent;}.cl-75be3822{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:0;padding-right:0;line-height: 1;background-color:transparent;}.cl-75be3823{margin:0;text-align:center;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:0;padding-right:0;line-height: 1;background-color:transparent;}.cl-75be382c{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:7.2pt;padding-right:0;line-height: 1;background-color:transparent;}.cl-75be3836{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:10.8pt;padding-right:0;line-height: 1;background-color:transparent;}.cl-75be3837{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:9pt;padding-right:0;line-height: 1;background-color:transparent;}.cl-75be3838{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:18pt;padding-right:0;line-height: 1;background-color:transparent;}.cl-75be3840{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:27pt;padding-right:0;line-height: 1;background-color:transparent;}.cl-75be3841{margin:0;text-align:center;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:0;padding-right:0;line-height: 1;background-color:transparent;}.cl-75be384a{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:9pt;padding-right:0;line-height: 1;background-color:transparent;}.cl-75be384b{margin:0;text-align:center;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:0;padding-right:0;line-height: 1;background-color:transparent;}.cl-75be384c{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:0;padding-right:0;line-height: 1;background-color:transparent;}.cl-75be508c{width:1.946in;background-color:rgba(255, 255, 255, 1.00);vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0.75pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-75be508d{width:0.757in;background-color:rgba(255, 255, 255, 1.00);vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0.75pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-75be5096{width:1.838in;background-color:rgba(255, 255, 255, 1.00);vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0.75pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-75be5097{width:1.946in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(102, 102, 102, 1.00);border-top: 0.75pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-75be5098{width:0.757in;background-color:transparent;vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0.75pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-75be50a0{width:1.838in;background-color:transparent;vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0.75pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-75be50a1{width:1.838in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(102, 102, 102, 1.00);border-top: 0.75pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-75be50aa{width:1.946in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-75be50ab{width:0.757in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(102, 102, 102, 1.00);border-top: 0.75pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-75be50b4{width:1.838in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-75be50b5{width:1.946in;background-color:transparent;vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-75be50be{width:0.757in;background-color:transparent;vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-75be50bf{width:1.838in;background-color:transparent;vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-75be50c0{width:1.946in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-75be50c1{width:0.757in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-75be50c8{width:1.838in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-75be50c9{width:1.946in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-75be50d2{width:0.757in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-75be50d3{width:1.838in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-75be50dc{width:1.946in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-75be50dd{width:0.757in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-75be50e6{width:1.838in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-75be50e7{width:1.946in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-75be50f0{width:0.757in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-75be50f1{width:1.838in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-75be50f2{width:1.946in;background-color:transparent;vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-75be50f3{width:0.757in;background-color:transparent;vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-75be50f4{width:1.838in;background-color:transparent;vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-75be50fa{width:1.946in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(255, 255, 255, 0.00);border-top: 0 solid rgba(255, 255, 255, 0.00);border-left: 0 solid rgba(255, 255, 255, 0.00);border-right: 0 solid rgba(255, 255, 255, 0.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-75be50fb{width:0.757in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(255, 255, 255, 0.00);border-top: 0 solid rgba(255, 255, 255, 0.00);border-left: 0 solid rgba(255, 255, 255, 0.00);border-right: 0 solid rgba(255, 255, 255, 0.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-75be5104{width:1.838in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(255, 255, 255, 0.00);border-top: 0 solid rgba(255, 255, 255, 0.00);border-left: 0 solid rgba(255, 255, 255, 0.00);border-right: 0 solid rgba(255, 255, 255, 0.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-75be5105{width:1.946in;background-color:transparent;vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(255, 255, 255, 0.00);border-left: 0 solid rgba(255, 255, 255, 0.00);border-right: 0 solid rgba(255, 255, 255, 0.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-75be5106{width:0.757in;background-color:transparent;vertical-align: middle;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(255, 255, 255, 0.00);border-left: 0 solid rgba(255, 255, 255, 0.00);border-right: 0 solid rgba(255, 255, 255, 0.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-75be510e{width:1.838in;background-color:transparent;vertical-align: middle;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(255, 255, 255, 0.00);border-left: 0 solid rgba(255, 255, 255, 0.00);border-right: 0 solid rgba(255, 255, 255, 0.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style>
-<table data-quarto-disable-processing="true" class="cl-75c20420">
+<style>.cl-f521bc04{}.cl-f51b58b4{font-family:'Times New Roman';font-size:10pt;font-weight:bold;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-f51b58d2{font-family:'Times New Roman';font-size:9pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-f51b58d3{font-family:'Times New Roman';font-size:8pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-f51dbffa{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:0;padding-right:0;line-height: 1;background-color:transparent;}.cl-f51dc004{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:0;padding-right:0;line-height: 1;background-color:transparent;}.cl-f51dc005{margin:0;text-align:center;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:0;padding-right:0;line-height: 1;background-color:transparent;}.cl-f51dc00e{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:7.2pt;padding-right:0;line-height: 1;background-color:transparent;}.cl-f51dc00f{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:10.8pt;padding-right:0;line-height: 1;background-color:transparent;}.cl-f51dc010{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:9pt;padding-right:0;line-height: 1;background-color:transparent;}.cl-f51dc011{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:18pt;padding-right:0;line-height: 1;background-color:transparent;}.cl-f51dc012{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:27pt;padding-right:0;line-height: 1;background-color:transparent;}.cl-f51dc018{margin:0;text-align:center;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:0;padding-right:0;line-height: 1;background-color:transparent;}.cl-f51dc019{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:9pt;padding-right:0;line-height: 1;background-color:transparent;}.cl-f51dc01a{margin:0;text-align:center;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:0;padding-right:0;line-height: 1;background-color:transparent;}.cl-f51dc01b{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:0;padding-right:0;line-height: 1;background-color:transparent;}.cl-f51dc022{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:0;padding-right:0;line-height: 1;background-color:transparent;}.cl-f51dc023{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:0;padding-right:0;line-height: 1;background-color:transparent;}.cl-f51dd85a{width:1.946in;background-color:rgba(255, 255, 255, 1.00);vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0.75pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f51dd85b{width:0.757in;background-color:rgba(255, 255, 255, 1.00);vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0.75pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f51dd864{width:1.838in;background-color:rgba(255, 255, 255, 1.00);vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0.75pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f51dd865{width:1.946in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(102, 102, 102, 1.00);border-top: 0.75pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f51dd866{width:0.757in;background-color:transparent;vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0.75pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f51dd86e{width:1.838in;background-color:transparent;vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0.75pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f51dd86f{width:1.838in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(102, 102, 102, 1.00);border-top: 0.75pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f51dd870{width:1.946in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f51dd871{width:0.757in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(102, 102, 102, 1.00);border-top: 0.75pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f51dd872{width:1.838in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f51dd878{width:1.946in;background-color:transparent;vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f51dd879{width:0.757in;background-color:transparent;vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f51dd87a{width:1.838in;background-color:transparent;vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f51dd87b{width:1.946in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f51dd87c{width:0.757in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f51dd882{width:1.838in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f51dd883{width:1.946in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f51dd884{width:0.757in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f51dd885{width:1.838in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f51dd886{width:1.946in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f51dd887{width:0.757in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f51dd88c{width:1.838in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f51dd88d{width:1.946in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f51dd88e{width:0.757in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f51dd88f{width:1.838in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f51dd890{width:1.946in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f51dd896{width:0.757in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f51dd897{width:1.838in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f51dd898{width:1.946in;background-color:transparent;vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f51dd899{width:0.757in;background-color:transparent;vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f51dd8a0{width:1.838in;background-color:transparent;vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f51dd8a1{width:1.946in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(255, 255, 255, 0.00);border-top: 0 solid rgba(255, 255, 255, 0.00);border-left: 0 solid rgba(255, 255, 255, 0.00);border-right: 0 solid rgba(255, 255, 255, 0.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f51dd8a2{width:0.757in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(255, 255, 255, 0.00);border-top: 0 solid rgba(255, 255, 255, 0.00);border-left: 0 solid rgba(255, 255, 255, 0.00);border-right: 0 solid rgba(255, 255, 255, 0.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f51dd8a3{width:1.838in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(255, 255, 255, 0.00);border-top: 0 solid rgba(255, 255, 255, 0.00);border-left: 0 solid rgba(255, 255, 255, 0.00);border-right: 0 solid rgba(255, 255, 255, 0.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f51dd8aa{width:1.946in;background-color:transparent;vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(255, 255, 255, 0.00);border-left: 0 solid rgba(255, 255, 255, 0.00);border-right: 0 solid rgba(255, 255, 255, 0.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f51dd8ab{width:0.757in;background-color:transparent;vertical-align: middle;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(255, 255, 255, 0.00);border-left: 0 solid rgba(255, 255, 255, 0.00);border-right: 0 solid rgba(255, 255, 255, 0.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f51dd8ac{width:1.838in;background-color:transparent;vertical-align: middle;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(255, 255, 255, 0.00);border-left: 0 solid rgba(255, 255, 255, 0.00);border-right: 0 solid rgba(255, 255, 255, 0.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f51dd8ad{width:1.946in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(255, 255, 255, 0.00);border-left: 0 solid rgba(255, 255, 255, 0.00);border-right: 0 solid rgba(255, 255, 255, 0.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f51dd8ae{width:0.757in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(255, 255, 255, 0.00);border-left: 0 solid rgba(255, 255, 255, 0.00);border-right: 0 solid rgba(255, 255, 255, 0.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f51dd8b4{width:1.838in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(255, 255, 255, 0.00);border-left: 0 solid rgba(255, 255, 255, 0.00);border-right: 0 solid rgba(255, 255, 255, 0.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style>
+<table data-quarto-disable-processing="true" class="cl-f521bc04">
 <thead>
-<tr style="overflow-wrap:break-word;"><th colspan="4" class="cl-75be508c"><p class="cl-75be380e"><span class="cl-75bbdae6">TSFVIT05:</span> <span class="cl-75bbdae6">Subjects With On-treatment Clinically Important Vital Signs [Over Time]; Safety Analysis Set (Study jjcs - core)</span></p></th></tr>
+<tr style="overflow-wrap:break-word;"><th colspan="4" class="cl-f51dd85a"><p class="cl-f51dbffa"><span class="cl-f51b58b4">TSFVIT05:</span> <span class="cl-f51b58b4">Subjects With On-treatment Clinically Important Vital Signs [Over Time]; Safety Analysis Set (Study jjcs - core)</span></p></th></tr>
 <tr style="overflow-wrap:break-word;">
-<th class="cl-75be5097"><p class="cl-75be3822"><span class="cl-75bbdb04">Study Visit</span></p></th>
-<th colspan="2" class="cl-75be5098"><p class="cl-75be3823"><span class="cl-75bbdb04">Active Study Agent</span></p></th>
-<th class="cl-75be50a1"><p class="cl-75be3823"><span class="cl-75bbdb04"> </span></p></th>
+<th class="cl-f51dd865"><p class="cl-f51dc004"><span class="cl-f51b58d2">Study Visit</span></p></th>
+<th colspan="2" class="cl-f51dd866"><p class="cl-f51dc005"><span class="cl-f51b58d2">Active Study Agent</span></p></th>
+<th class="cl-f51dd86f"><p class="cl-f51dc005"><span class="cl-f51b58d2"> </span></p></th>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<th class="cl-75be50aa"><p class="cl-75be382c"><span class="cl-75bbdb04">Parameter</span></p></th>
-<th class="cl-75be50ab"><p class="cl-75be3823"><span class="cl-75bbdb04">Xanomeline High Dose</span></p></th>
-<th class="cl-75be50a1"><p class="cl-75be3823"><span class="cl-75bbdb04">Xanomeline Low Dose</span></p></th>
-<th class="cl-75be50b4"><p class="cl-75be3823"><span class="cl-75bbdb04">Placebo</span></p></th>
+<th class="cl-f51dd870"><p class="cl-f51dc00e"><span class="cl-f51b58d2">Parameter</span></p></th>
+<th class="cl-f51dd871"><p class="cl-f51dc005"><span class="cl-f51b58d2">Xanomeline High Dose</span></p></th>
+<th class="cl-f51dd86f"><p class="cl-f51dc005"><span class="cl-f51b58d2">Xanomeline Low Dose</span></p></th>
+<th class="cl-f51dd872"><p class="cl-f51dc005"><span class="cl-f51b58d2">Placebo</span></p></th>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<th class="cl-75be50b5"><p class="cl-75be3836"><span class="cl-75bbdb04">Criteria, n (%)</span></p></th>
-<th class="cl-75be50be"><p class="cl-75be3823"><span class="cl-75bbdb04">N=53</span></p></th>
-<th class="cl-75be50bf"><p class="cl-75be3823"><span class="cl-75bbdb04">N=73</span></p></th>
-<th class="cl-75be50bf"><p class="cl-75be3823"><span class="cl-75bbdb04">N=59</span></p></th>
+<th class="cl-f51dd878"><p class="cl-f51dc00f"><span class="cl-f51b58d2">Criteria, n (%)</span></p></th>
+<th class="cl-f51dd879"><p class="cl-f51dc005"><span class="cl-f51b58d2">N=53</span></p></th>
+<th class="cl-f51dd87a"><p class="cl-f51dc005"><span class="cl-f51b58d2">N=73</span></p></th>
+<th class="cl-f51dd87a"><p class="cl-f51dc005"><span class="cl-f51b58d2">N=59</span></p></th>
 </tr>
 </thead>
 <tbody>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-75be50c0"><p class="cl-75be3822"><span class="cl-75bbdb04">On-treatment</span></p></td>
-<td class="cl-75be50c1"><p class="cl-75be3823"><span class="cl-75bbdb04"> </span></p></td>
-<td class="cl-75be50c8"><p class="cl-75be3823"><span class="cl-75bbdb04"> </span></p></td>
-<td class="cl-75be50c8"><p class="cl-75be3823"><span class="cl-75bbdb04"> </span></p></td>
+<td class="cl-f51dd87b"><p class="cl-f51dc004"><span class="cl-f51b58d2">On-treatment</span></p></td>
+<td class="cl-f51dd87c"><p class="cl-f51dc005"><span class="cl-f51b58d2"> </span></p></td>
+<td class="cl-f51dd882"><p class="cl-f51dc005"><span class="cl-f51b58d2"> </span></p></td>
+<td class="cl-f51dd882"><p class="cl-f51dc005"><span class="cl-f51b58d2"> </span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-75be50c9"><p class="cl-75be3837"><span class="cl-75bbdb04">Pulse rate (beats/min)</span></p></td>
-<td class="cl-75be50d2"><p class="cl-75be3823"><span class="cl-75bbdb04"> </span></p></td>
-<td class="cl-75be50d3"><p class="cl-75be3823"><span class="cl-75bbdb04"> </span></p></td>
-<td class="cl-75be50d3"><p class="cl-75be3823"><span class="cl-75bbdb04"> </span></p></td>
+<td class="cl-f51dd883"><p class="cl-f51dc010"><span class="cl-f51b58d2">Pulse rate (beats/min)</span></p></td>
+<td class="cl-f51dd884"><p class="cl-f51dc005"><span class="cl-f51b58d2"> </span></p></td>
+<td class="cl-f51dd885"><p class="cl-f51dc005"><span class="cl-f51b58d2"> </span></p></td>
+<td class="cl-f51dd885"><p class="cl-f51dc005"><span class="cl-f51b58d2"> </span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-75be50c0"><p class="cl-75be3838"><span class="cl-75bbdb04">N</span></p></td>
-<td class="cl-75be50c1"><p class="cl-75be3823"><span class="cl-75bbdb04">53</span></p></td>
-<td class="cl-75be50c8"><p class="cl-75be3823"><span class="cl-75bbdb04">71</span></p></td>
-<td class="cl-75be50c8"><p class="cl-75be3823"><span class="cl-75bbdb04">58</span></p></td>
+<td class="cl-f51dd87b"><p class="cl-f51dc011"><span class="cl-f51b58d2">N</span></p></td>
+<td class="cl-f51dd87c"><p class="cl-f51dc005"><span class="cl-f51b58d2">53</span></p></td>
+<td class="cl-f51dd882"><p class="cl-f51dc005"><span class="cl-f51b58d2">71</span></p></td>
+<td class="cl-f51dd882"><p class="cl-f51dc005"><span class="cl-f51b58d2">58</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-75be50dc"><p class="cl-75be3840"><span class="cl-75bbdb04">&lt;50 bpm and with &gt;20</span><br> <span class="cl-75bbdb04">bpm decrease from</span><br> <span class="cl-75bbdb04">baseline</span></p></td>
-<td class="cl-75be50dd"><p class="cl-75be3841"><span class="cl-75bbdb04">0</span></p></td>
-<td class="cl-75be50e6"><p class="cl-75be3841"><span class="cl-75bbdb04">1 (1.4%)</span></p></td>
-<td class="cl-75be50e6"><p class="cl-75be3841"><span class="cl-75bbdb04">0</span></p></td>
+<td class="cl-f51dd886"><p class="cl-f51dc012"><span class="cl-f51b58d2">&lt;50 bpm and with &gt;20</span><br> <span class="cl-f51b58d2">bpm decrease from</span><br> <span class="cl-f51b58d2">baseline</span></p></td>
+<td class="cl-f51dd887"><p class="cl-f51dc018"><span class="cl-f51b58d2">0</span></p></td>
+<td class="cl-f51dd88c"><p class="cl-f51dc018"><span class="cl-f51b58d2">1 (1.4%)</span></p></td>
+<td class="cl-f51dd88c"><p class="cl-f51dc018"><span class="cl-f51b58d2">0</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-75be50dc"><p class="cl-75be3840"><span class="cl-75bbdb04">&gt;120 bpm and with &gt;30</span><br> <span class="cl-75bbdb04">bpm increase from</span><br> <span class="cl-75bbdb04">baseline</span></p></td>
-<td class="cl-75be50dd"><p class="cl-75be3841"><span class="cl-75bbdb04">0</span></p></td>
-<td class="cl-75be50e6"><p class="cl-75be3841"><span class="cl-75bbdb04">0</span></p></td>
-<td class="cl-75be50e6"><p class="cl-75be3841"><span class="cl-75bbdb04">0</span></p></td>
+<td class="cl-f51dd886"><p class="cl-f51dc012"><span class="cl-f51b58d2">&gt;120 bpm and with &gt;30</span><br> <span class="cl-f51b58d2">bpm increase from</span><br> <span class="cl-f51b58d2">baseline</span></p></td>
+<td class="cl-f51dd887"><p class="cl-f51dc018"><span class="cl-f51b58d2">0</span></p></td>
+<td class="cl-f51dd88c"><p class="cl-f51dc018"><span class="cl-f51b58d2">0</span></p></td>
+<td class="cl-f51dd88c"><p class="cl-f51dc018"><span class="cl-f51b58d2">0</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-75be50e7"><p class="cl-75be3822"><span class="cl-75bbdb04"></span></p></td>
-<td class="cl-75be50f0"><p class="cl-75be3823"><span class="cl-75bbdb04"></span></p></td>
-<td class="cl-75be50f1"><p class="cl-75be3823"><span class="cl-75bbdb04"></span></p></td>
-<td class="cl-75be50f1"><p class="cl-75be3823"><span class="cl-75bbdb04"></span></p></td>
+<td class="cl-f51dd88d"><p class="cl-f51dc004"><span class="cl-f51b58d2"></span></p></td>
+<td class="cl-f51dd88e"><p class="cl-f51dc005"><span class="cl-f51b58d2"></span></p></td>
+<td class="cl-f51dd88f"><p class="cl-f51dc005"><span class="cl-f51b58d2"></span></p></td>
+<td class="cl-f51dd88f"><p class="cl-f51dc005"><span class="cl-f51b58d2"></span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-75be50dc"><p class="cl-75be384a"><span class="cl-75bbdb04">Systolic blood pressure</span><br> <span class="cl-75bbdb04">(mmHg)</span></p></td>
-<td class="cl-75be50dd"><p class="cl-75be384b"><span class="cl-75bbdb04"> </span></p></td>
-<td class="cl-75be50e6"><p class="cl-75be384b"><span class="cl-75bbdb04"> </span></p></td>
-<td class="cl-75be50e6"><p class="cl-75be384b"><span class="cl-75bbdb04"> </span></p></td>
+<td class="cl-f51dd886"><p class="cl-f51dc019"><span class="cl-f51b58d2">Systolic blood pressure</span><br> <span class="cl-f51b58d2">(mmHg)</span></p></td>
+<td class="cl-f51dd887"><p class="cl-f51dc01a"><span class="cl-f51b58d2"> </span></p></td>
+<td class="cl-f51dd88c"><p class="cl-f51dc01a"><span class="cl-f51b58d2"> </span></p></td>
+<td class="cl-f51dd88c"><p class="cl-f51dc01a"><span class="cl-f51b58d2"> </span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-75be50c0"><p class="cl-75be3838"><span class="cl-75bbdb04">N</span></p></td>
-<td class="cl-75be50c1"><p class="cl-75be3823"><span class="cl-75bbdb04">53</span></p></td>
-<td class="cl-75be50c8"><p class="cl-75be3823"><span class="cl-75bbdb04">71</span></p></td>
-<td class="cl-75be50c8"><p class="cl-75be3823"><span class="cl-75bbdb04">58</span></p></td>
+<td class="cl-f51dd87b"><p class="cl-f51dc011"><span class="cl-f51b58d2">N</span></p></td>
+<td class="cl-f51dd87c"><p class="cl-f51dc005"><span class="cl-f51b58d2">53</span></p></td>
+<td class="cl-f51dd882"><p class="cl-f51dc005"><span class="cl-f51b58d2">71</span></p></td>
+<td class="cl-f51dd882"><p class="cl-f51dc005"><span class="cl-f51b58d2">58</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-75be50dc"><p class="cl-75be3840"><span class="cl-75bbdb04">&lt;90 mmHg and with &gt;30</span><br> <span class="cl-75bbdb04">mmHg decrease from</span><br> <span class="cl-75bbdb04">baseline</span></p></td>
-<td class="cl-75be50dd"><p class="cl-75be3841"><span class="cl-75bbdb04">0</span></p></td>
-<td class="cl-75be50e6"><p class="cl-75be3841"><span class="cl-75bbdb04">0</span></p></td>
-<td class="cl-75be50e6"><p class="cl-75be3841"><span class="cl-75bbdb04">1 (1.7%)</span></p></td>
+<td class="cl-f51dd886"><p class="cl-f51dc012"><span class="cl-f51b58d2">&lt;90 mmHg and with &gt;30</span><br> <span class="cl-f51b58d2">mmHg decrease from</span><br> <span class="cl-f51b58d2">baseline</span></p></td>
+<td class="cl-f51dd887"><p class="cl-f51dc018"><span class="cl-f51b58d2">0</span></p></td>
+<td class="cl-f51dd88c"><p class="cl-f51dc018"><span class="cl-f51b58d2">0</span></p></td>
+<td class="cl-f51dd88c"><p class="cl-f51dc018"><span class="cl-f51b58d2">1 (1.7%)</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-75be50dc"><p class="cl-75be3840"><span class="cl-75bbdb04">&gt;180 mmHg and with</span><br> <span class="cl-75bbdb04">&gt;40 mmHg increase</span><br> <span class="cl-75bbdb04">from baseline</span></p></td>
-<td class="cl-75be50dd"><p class="cl-75be3841"><span class="cl-75bbdb04">0</span></p></td>
-<td class="cl-75be50e6"><p class="cl-75be3841"><span class="cl-75bbdb04">0</span></p></td>
-<td class="cl-75be50e6"><p class="cl-75be3841"><span class="cl-75bbdb04">1 (1.7%)</span></p></td>
+<td class="cl-f51dd886"><p class="cl-f51dc012"><span class="cl-f51b58d2">&gt;180 mmHg and with</span><br> <span class="cl-f51b58d2">&gt;40 mmHg increase</span><br> <span class="cl-f51b58d2">from baseline</span></p></td>
+<td class="cl-f51dd887"><p class="cl-f51dc018"><span class="cl-f51b58d2">0</span></p></td>
+<td class="cl-f51dd88c"><p class="cl-f51dc018"><span class="cl-f51b58d2">0</span></p></td>
+<td class="cl-f51dd88c"><p class="cl-f51dc018"><span class="cl-f51b58d2">1 (1.7%)</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-75be50e7"><p class="cl-75be3822"><span class="cl-75bbdb04"></span></p></td>
-<td class="cl-75be50f0"><p class="cl-75be3823"><span class="cl-75bbdb04"></span></p></td>
-<td class="cl-75be50f1"><p class="cl-75be3823"><span class="cl-75bbdb04"></span></p></td>
-<td class="cl-75be50f1"><p class="cl-75be3823"><span class="cl-75bbdb04"></span></p></td>
+<td class="cl-f51dd88d"><p class="cl-f51dc004"><span class="cl-f51b58d2"></span></p></td>
+<td class="cl-f51dd88e"><p class="cl-f51dc005"><span class="cl-f51b58d2"></span></p></td>
+<td class="cl-f51dd88f"><p class="cl-f51dc005"><span class="cl-f51b58d2"></span></p></td>
+<td class="cl-f51dd88f"><p class="cl-f51dc005"><span class="cl-f51b58d2"></span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-75be50dc"><p class="cl-75be384a"><span class="cl-75bbdb04">Diastolic blood pressure</span><br> <span class="cl-75bbdb04">(mmHg)</span></p></td>
-<td class="cl-75be50dd"><p class="cl-75be384b"><span class="cl-75bbdb04"> </span></p></td>
-<td class="cl-75be50e6"><p class="cl-75be384b"><span class="cl-75bbdb04"> </span></p></td>
-<td class="cl-75be50e6"><p class="cl-75be384b"><span class="cl-75bbdb04"> </span></p></td>
+<td class="cl-f51dd886"><p class="cl-f51dc019"><span class="cl-f51b58d2">Diastolic blood pressure</span><br> <span class="cl-f51b58d2">(mmHg)</span></p></td>
+<td class="cl-f51dd887"><p class="cl-f51dc01a"><span class="cl-f51b58d2"> </span></p></td>
+<td class="cl-f51dd88c"><p class="cl-f51dc01a"><span class="cl-f51b58d2"> </span></p></td>
+<td class="cl-f51dd88c"><p class="cl-f51dc01a"><span class="cl-f51b58d2"> </span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-75be50c0"><p class="cl-75be3838"><span class="cl-75bbdb04">N</span></p></td>
-<td class="cl-75be50c1"><p class="cl-75be3823"><span class="cl-75bbdb04">53</span></p></td>
-<td class="cl-75be50c8"><p class="cl-75be3823"><span class="cl-75bbdb04">71</span></p></td>
-<td class="cl-75be50c8"><p class="cl-75be3823"><span class="cl-75bbdb04">58</span></p></td>
+<td class="cl-f51dd87b"><p class="cl-f51dc011"><span class="cl-f51b58d2">N</span></p></td>
+<td class="cl-f51dd87c"><p class="cl-f51dc005"><span class="cl-f51b58d2">53</span></p></td>
+<td class="cl-f51dd882"><p class="cl-f51dc005"><span class="cl-f51b58d2">71</span></p></td>
+<td class="cl-f51dd882"><p class="cl-f51dc005"><span class="cl-f51b58d2">58</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-75be50dc"><p class="cl-75be3840"><span class="cl-75bbdb04">&lt;50 mmHg and with &gt;20</span><br> <span class="cl-75bbdb04">mmHg decrease from</span><br> <span class="cl-75bbdb04">baseline</span></p></td>
-<td class="cl-75be50dd"><p class="cl-75be3841"><span class="cl-75bbdb04">0</span></p></td>
-<td class="cl-75be50e6"><p class="cl-75be3841"><span class="cl-75bbdb04">0</span></p></td>
-<td class="cl-75be50e6"><p class="cl-75be3841"><span class="cl-75bbdb04">0</span></p></td>
+<td class="cl-f51dd886"><p class="cl-f51dc012"><span class="cl-f51b58d2">&lt;50 mmHg and with &gt;20</span><br> <span class="cl-f51b58d2">mmHg decrease from</span><br> <span class="cl-f51b58d2">baseline</span></p></td>
+<td class="cl-f51dd887"><p class="cl-f51dc018"><span class="cl-f51b58d2">0</span></p></td>
+<td class="cl-f51dd88c"><p class="cl-f51dc018"><span class="cl-f51b58d2">0</span></p></td>
+<td class="cl-f51dd88c"><p class="cl-f51dc018"><span class="cl-f51b58d2">0</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-75be50dc"><p class="cl-75be3840"><span class="cl-75bbdb04">&gt;105 mmHg and with</span><br> <span class="cl-75bbdb04">&gt;30 mmHg increase</span><br> <span class="cl-75bbdb04">from baseline</span></p></td>
-<td class="cl-75be50dd"><p class="cl-75be3841"><span class="cl-75bbdb04">0</span></p></td>
-<td class="cl-75be50e6"><p class="cl-75be3841"><span class="cl-75bbdb04">0</span></p></td>
-<td class="cl-75be50e6"><p class="cl-75be3841"><span class="cl-75bbdb04">0</span></p></td>
+<td class="cl-f51dd886"><p class="cl-f51dc012"><span class="cl-f51b58d2">&gt;105 mmHg and with</span><br> <span class="cl-f51b58d2">&gt;30 mmHg increase</span><br> <span class="cl-f51b58d2">from baseline</span></p></td>
+<td class="cl-f51dd887"><p class="cl-f51dc018"><span class="cl-f51b58d2">0</span></p></td>
+<td class="cl-f51dd88c"><p class="cl-f51dc018"><span class="cl-f51b58d2">0</span></p></td>
+<td class="cl-f51dd88c"><p class="cl-f51dc018"><span class="cl-f51b58d2">0</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-75be50e7"><p class="cl-75be3822"><span class="cl-75bbdb04"></span></p></td>
-<td class="cl-75be50f0"><p class="cl-75be3823"><span class="cl-75bbdb04"></span></p></td>
-<td class="cl-75be50f1"><p class="cl-75be3823"><span class="cl-75bbdb04"></span></p></td>
-<td class="cl-75be50f1"><p class="cl-75be3823"><span class="cl-75bbdb04"></span></p></td>
+<td class="cl-f51dd88d"><p class="cl-f51dc004"><span class="cl-f51b58d2"></span></p></td>
+<td class="cl-f51dd88e"><p class="cl-f51dc005"><span class="cl-f51b58d2"></span></p></td>
+<td class="cl-f51dd88f"><p class="cl-f51dc005"><span class="cl-f51b58d2"></span></p></td>
+<td class="cl-f51dd88f"><p class="cl-f51dc005"><span class="cl-f51b58d2"></span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-75be50dc"><p class="cl-75be3822"><span class="cl-75bbdb04">Cycle 02</span></p></td>
-<td class="cl-75be50dd"><p class="cl-75be3823"><span class="cl-75bbdb04"> </span></p></td>
-<td class="cl-75be50e6"><p class="cl-75be3823"><span class="cl-75bbdb04"> </span></p></td>
-<td class="cl-75be50e6"><p class="cl-75be3823"><span class="cl-75bbdb04"> </span></p></td>
+<td class="cl-f51dd886"><p class="cl-f51dc004"><span class="cl-f51b58d2">Cycle 02</span></p></td>
+<td class="cl-f51dd887"><p class="cl-f51dc005"><span class="cl-f51b58d2"> </span></p></td>
+<td class="cl-f51dd88c"><p class="cl-f51dc005"><span class="cl-f51b58d2"> </span></p></td>
+<td class="cl-f51dd88c"><p class="cl-f51dc005"><span class="cl-f51b58d2"> </span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-75be50c9"><p class="cl-75be3837"><span class="cl-75bbdb04">Pulse rate (beats/min)</span></p></td>
-<td class="cl-75be50d2"><p class="cl-75be3823"><span class="cl-75bbdb04"> </span></p></td>
-<td class="cl-75be50d3"><p class="cl-75be3823"><span class="cl-75bbdb04"> </span></p></td>
-<td class="cl-75be50d3"><p class="cl-75be3823"><span class="cl-75bbdb04"> </span></p></td>
+<td class="cl-f51dd883"><p class="cl-f51dc010"><span class="cl-f51b58d2">Pulse rate (beats/min)</span></p></td>
+<td class="cl-f51dd884"><p class="cl-f51dc005"><span class="cl-f51b58d2"> </span></p></td>
+<td class="cl-f51dd885"><p class="cl-f51dc005"><span class="cl-f51b58d2"> </span></p></td>
+<td class="cl-f51dd885"><p class="cl-f51dc005"><span class="cl-f51b58d2"> </span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-75be50c0"><p class="cl-75be3838"><span class="cl-75bbdb04">N</span></p></td>
-<td class="cl-75be50c1"><p class="cl-75be3823"><span class="cl-75bbdb04">53</span></p></td>
-<td class="cl-75be50c8"><p class="cl-75be3823"><span class="cl-75bbdb04">71</span></p></td>
-<td class="cl-75be50c8"><p class="cl-75be3823"><span class="cl-75bbdb04">58</span></p></td>
+<td class="cl-f51dd87b"><p class="cl-f51dc011"><span class="cl-f51b58d2">N</span></p></td>
+<td class="cl-f51dd87c"><p class="cl-f51dc005"><span class="cl-f51b58d2">53</span></p></td>
+<td class="cl-f51dd882"><p class="cl-f51dc005"><span class="cl-f51b58d2">71</span></p></td>
+<td class="cl-f51dd882"><p class="cl-f51dc005"><span class="cl-f51b58d2">58</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-75be50dc"><p class="cl-75be3840"><span class="cl-75bbdb04">&lt;50 bpm and with &gt;20</span><br> <span class="cl-75bbdb04">bpm decrease from</span><br> <span class="cl-75bbdb04">baseline</span></p></td>
-<td class="cl-75be50dd"><p class="cl-75be3841"><span class="cl-75bbdb04">0</span></p></td>
-<td class="cl-75be50e6"><p class="cl-75be3841"><span class="cl-75bbdb04">0</span></p></td>
-<td class="cl-75be50e6"><p class="cl-75be3841"><span class="cl-75bbdb04">0</span></p></td>
+<td class="cl-f51dd886"><p class="cl-f51dc012"><span class="cl-f51b58d2">&lt;50 bpm and with &gt;20</span><br> <span class="cl-f51b58d2">bpm decrease from</span><br> <span class="cl-f51b58d2">baseline</span></p></td>
+<td class="cl-f51dd887"><p class="cl-f51dc018"><span class="cl-f51b58d2">0</span></p></td>
+<td class="cl-f51dd88c"><p class="cl-f51dc018"><span class="cl-f51b58d2">0</span></p></td>
+<td class="cl-f51dd88c"><p class="cl-f51dc018"><span class="cl-f51b58d2">0</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-75be50dc"><p class="cl-75be3840"><span class="cl-75bbdb04">&gt;120 bpm and with &gt;30</span><br> <span class="cl-75bbdb04">bpm increase from</span><br> <span class="cl-75bbdb04">baseline</span></p></td>
-<td class="cl-75be50dd"><p class="cl-75be3841"><span class="cl-75bbdb04">0</span></p></td>
-<td class="cl-75be50e6"><p class="cl-75be3841"><span class="cl-75bbdb04">0</span></p></td>
-<td class="cl-75be50e6"><p class="cl-75be3841"><span class="cl-75bbdb04">0</span></p></td>
+<td class="cl-f51dd886"><p class="cl-f51dc012"><span class="cl-f51b58d2">&gt;120 bpm and with &gt;30</span><br> <span class="cl-f51b58d2">bpm increase from</span><br> <span class="cl-f51b58d2">baseline</span></p></td>
+<td class="cl-f51dd887"><p class="cl-f51dc018"><span class="cl-f51b58d2">0</span></p></td>
+<td class="cl-f51dd88c"><p class="cl-f51dc018"><span class="cl-f51b58d2">0</span></p></td>
+<td class="cl-f51dd88c"><p class="cl-f51dc018"><span class="cl-f51b58d2">0</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-75be50e7"><p class="cl-75be3822"><span class="cl-75bbdb04"></span></p></td>
-<td class="cl-75be50f0"><p class="cl-75be3823"><span class="cl-75bbdb04"></span></p></td>
-<td class="cl-75be50f1"><p class="cl-75be3823"><span class="cl-75bbdb04"></span></p></td>
-<td class="cl-75be50f1"><p class="cl-75be3823"><span class="cl-75bbdb04"></span></p></td>
+<td class="cl-f51dd88d"><p class="cl-f51dc004"><span class="cl-f51b58d2"></span></p></td>
+<td class="cl-f51dd88e"><p class="cl-f51dc005"><span class="cl-f51b58d2"></span></p></td>
+<td class="cl-f51dd88f"><p class="cl-f51dc005"><span class="cl-f51b58d2"></span></p></td>
+<td class="cl-f51dd88f"><p class="cl-f51dc005"><span class="cl-f51b58d2"></span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-75be50dc"><p class="cl-75be384a"><span class="cl-75bbdb04">Systolic blood pressure</span><br> <span class="cl-75bbdb04">(mmHg)</span></p></td>
-<td class="cl-75be50dd"><p class="cl-75be384b"><span class="cl-75bbdb04"> </span></p></td>
-<td class="cl-75be50e6"><p class="cl-75be384b"><span class="cl-75bbdb04"> </span></p></td>
-<td class="cl-75be50e6"><p class="cl-75be384b"><span class="cl-75bbdb04"> </span></p></td>
+<td class="cl-f51dd886"><p class="cl-f51dc019"><span class="cl-f51b58d2">Systolic blood pressure</span><br> <span class="cl-f51b58d2">(mmHg)</span></p></td>
+<td class="cl-f51dd887"><p class="cl-f51dc01a"><span class="cl-f51b58d2"> </span></p></td>
+<td class="cl-f51dd88c"><p class="cl-f51dc01a"><span class="cl-f51b58d2"> </span></p></td>
+<td class="cl-f51dd88c"><p class="cl-f51dc01a"><span class="cl-f51b58d2"> </span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-75be50c0"><p class="cl-75be3838"><span class="cl-75bbdb04">N</span></p></td>
-<td class="cl-75be50c1"><p class="cl-75be3823"><span class="cl-75bbdb04">53</span></p></td>
-<td class="cl-75be50c8"><p class="cl-75be3823"><span class="cl-75bbdb04">71</span></p></td>
-<td class="cl-75be50c8"><p class="cl-75be3823"><span class="cl-75bbdb04">58</span></p></td>
+<td class="cl-f51dd87b"><p class="cl-f51dc011"><span class="cl-f51b58d2">N</span></p></td>
+<td class="cl-f51dd87c"><p class="cl-f51dc005"><span class="cl-f51b58d2">53</span></p></td>
+<td class="cl-f51dd882"><p class="cl-f51dc005"><span class="cl-f51b58d2">71</span></p></td>
+<td class="cl-f51dd882"><p class="cl-f51dc005"><span class="cl-f51b58d2">58</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-75be50dc"><p class="cl-75be3840"><span class="cl-75bbdb04">&lt;90 mmHg and with &gt;30</span><br> <span class="cl-75bbdb04">mmHg decrease from</span><br> <span class="cl-75bbdb04">baseline</span></p></td>
-<td class="cl-75be50dd"><p class="cl-75be3841"><span class="cl-75bbdb04">0</span></p></td>
-<td class="cl-75be50e6"><p class="cl-75be3841"><span class="cl-75bbdb04">0</span></p></td>
-<td class="cl-75be50e6"><p class="cl-75be3841"><span class="cl-75bbdb04">0</span></p></td>
+<td class="cl-f51dd886"><p class="cl-f51dc012"><span class="cl-f51b58d2">&lt;90 mmHg and with &gt;30</span><br> <span class="cl-f51b58d2">mmHg decrease from</span><br> <span class="cl-f51b58d2">baseline</span></p></td>
+<td class="cl-f51dd887"><p class="cl-f51dc018"><span class="cl-f51b58d2">0</span></p></td>
+<td class="cl-f51dd88c"><p class="cl-f51dc018"><span class="cl-f51b58d2">0</span></p></td>
+<td class="cl-f51dd88c"><p class="cl-f51dc018"><span class="cl-f51b58d2">0</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-75be50dc"><p class="cl-75be3840"><span class="cl-75bbdb04">&gt;180 mmHg and with</span><br> <span class="cl-75bbdb04">&gt;40 mmHg increase</span><br> <span class="cl-75bbdb04">from baseline</span></p></td>
-<td class="cl-75be50dd"><p class="cl-75be3841"><span class="cl-75bbdb04">0</span></p></td>
-<td class="cl-75be50e6"><p class="cl-75be3841"><span class="cl-75bbdb04">0</span></p></td>
-<td class="cl-75be50e6"><p class="cl-75be3841"><span class="cl-75bbdb04">0</span></p></td>
+<td class="cl-f51dd886"><p class="cl-f51dc012"><span class="cl-f51b58d2">&gt;180 mmHg and with</span><br> <span class="cl-f51b58d2">&gt;40 mmHg increase</span><br> <span class="cl-f51b58d2">from baseline</span></p></td>
+<td class="cl-f51dd887"><p class="cl-f51dc018"><span class="cl-f51b58d2">0</span></p></td>
+<td class="cl-f51dd88c"><p class="cl-f51dc018"><span class="cl-f51b58d2">0</span></p></td>
+<td class="cl-f51dd88c"><p class="cl-f51dc018"><span class="cl-f51b58d2">0</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-75be50e7"><p class="cl-75be3822"><span class="cl-75bbdb04"></span></p></td>
-<td class="cl-75be50f0"><p class="cl-75be3823"><span class="cl-75bbdb04"></span></p></td>
-<td class="cl-75be50f1"><p class="cl-75be3823"><span class="cl-75bbdb04"></span></p></td>
-<td class="cl-75be50f1"><p class="cl-75be3823"><span class="cl-75bbdb04"></span></p></td>
+<td class="cl-f51dd88d"><p class="cl-f51dc004"><span class="cl-f51b58d2"></span></p></td>
+<td class="cl-f51dd88e"><p class="cl-f51dc005"><span class="cl-f51b58d2"></span></p></td>
+<td class="cl-f51dd88f"><p class="cl-f51dc005"><span class="cl-f51b58d2"></span></p></td>
+<td class="cl-f51dd88f"><p class="cl-f51dc005"><span class="cl-f51b58d2"></span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-75be50dc"><p class="cl-75be384a"><span class="cl-75bbdb04">Diastolic blood pressure</span><br> <span class="cl-75bbdb04">(mmHg)</span></p></td>
-<td class="cl-75be50dd"><p class="cl-75be384b"><span class="cl-75bbdb04"> </span></p></td>
-<td class="cl-75be50e6"><p class="cl-75be384b"><span class="cl-75bbdb04"> </span></p></td>
-<td class="cl-75be50e6"><p class="cl-75be384b"><span class="cl-75bbdb04"> </span></p></td>
+<td class="cl-f51dd886"><p class="cl-f51dc019"><span class="cl-f51b58d2">Diastolic blood pressure</span><br> <span class="cl-f51b58d2">(mmHg)</span></p></td>
+<td class="cl-f51dd887"><p class="cl-f51dc01a"><span class="cl-f51b58d2"> </span></p></td>
+<td class="cl-f51dd88c"><p class="cl-f51dc01a"><span class="cl-f51b58d2"> </span></p></td>
+<td class="cl-f51dd88c"><p class="cl-f51dc01a"><span class="cl-f51b58d2"> </span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-75be50c0"><p class="cl-75be3838"><span class="cl-75bbdb04">N</span></p></td>
-<td class="cl-75be50c1"><p class="cl-75be3823"><span class="cl-75bbdb04">53</span></p></td>
-<td class="cl-75be50c8"><p class="cl-75be3823"><span class="cl-75bbdb04">71</span></p></td>
-<td class="cl-75be50c8"><p class="cl-75be3823"><span class="cl-75bbdb04">58</span></p></td>
+<td class="cl-f51dd87b"><p class="cl-f51dc011"><span class="cl-f51b58d2">N</span></p></td>
+<td class="cl-f51dd87c"><p class="cl-f51dc005"><span class="cl-f51b58d2">53</span></p></td>
+<td class="cl-f51dd882"><p class="cl-f51dc005"><span class="cl-f51b58d2">71</span></p></td>
+<td class="cl-f51dd882"><p class="cl-f51dc005"><span class="cl-f51b58d2">58</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-75be50f2"><p class="cl-75be3840"><span class="cl-75bbdb04">&lt;50 mmHg and with &gt;20</span><br> <span class="cl-75bbdb04">mmHg decrease from</span><br> <span class="cl-75bbdb04">baseline</span></p></td>
-<td class="cl-75be50f3"><p class="cl-75be3841"><span class="cl-75bbdb04">0</span></p></td>
-<td class="cl-75be50f4"><p class="cl-75be3841"><span class="cl-75bbdb04">0</span></p></td>
-<td class="cl-75be50f4"><p class="cl-75be3841"><span class="cl-75bbdb04">0</span></p></td>
+<td class="cl-f51dd886"><p class="cl-f51dc012"><span class="cl-f51b58d2">&lt;50 mmHg and with &gt;20</span><br> <span class="cl-f51b58d2">mmHg decrease from</span><br> <span class="cl-f51b58d2">baseline</span></p></td>
+<td class="cl-f51dd887"><p class="cl-f51dc018"><span class="cl-f51b58d2">0</span></p></td>
+<td class="cl-f51dd88c"><p class="cl-f51dc018"><span class="cl-f51b58d2">0</span></p></td>
+<td class="cl-f51dd88c"><p class="cl-f51dc018"><span class="cl-f51b58d2">0</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-f51dd886"><p class="cl-f51dc012"><span class="cl-f51b58d2">&gt;105 mmHg and with</span><br> <span class="cl-f51b58d2">&gt;30 mmHg increase</span><br> <span class="cl-f51b58d2">from baseline</span></p></td>
+<td class="cl-f51dd887"><p class="cl-f51dc018"><span class="cl-f51b58d2">0</span></p></td>
+<td class="cl-f51dd88c"><p class="cl-f51dc018"><span class="cl-f51b58d2">0</span></p></td>
+<td class="cl-f51dd88c"><p class="cl-f51dc018"><span class="cl-f51b58d2">0</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-f51dd88d"><p class="cl-f51dc004"><span class="cl-f51b58d2"></span></p></td>
+<td class="cl-f51dd88e"><p class="cl-f51dc005"><span class="cl-f51b58d2"></span></p></td>
+<td class="cl-f51dd88f"><p class="cl-f51dc005"><span class="cl-f51b58d2"></span></p></td>
+<td class="cl-f51dd88f"><p class="cl-f51dc005"><span class="cl-f51b58d2"></span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-f51dd886"><p class="cl-f51dc004"><span class="cl-f51b58d2">Cycle 04</span></p></td>
+<td class="cl-f51dd887"><p class="cl-f51dc005"><span class="cl-f51b58d2"> </span></p></td>
+<td class="cl-f51dd88c"><p class="cl-f51dc005"><span class="cl-f51b58d2"> </span></p></td>
+<td class="cl-f51dd88c"><p class="cl-f51dc005"><span class="cl-f51b58d2"> </span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-f51dd883"><p class="cl-f51dc010"><span class="cl-f51b58d2">Pulse rate (beats/min)</span></p></td>
+<td class="cl-f51dd884"><p class="cl-f51dc005"><span class="cl-f51b58d2"> </span></p></td>
+<td class="cl-f51dd885"><p class="cl-f51dc005"><span class="cl-f51b58d2"> </span></p></td>
+<td class="cl-f51dd885"><p class="cl-f51dc005"><span class="cl-f51b58d2"> </span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-f51dd890"><p class="cl-f51dc011"><span class="cl-f51b58d2">N</span></p></td>
+<td class="cl-f51dd896"><p class="cl-f51dc005"><span class="cl-f51b58d2">51</span></p></td>
+<td class="cl-f51dd897"><p class="cl-f51dc005"><span class="cl-f51b58d2">47</span></p></td>
+<td class="cl-f51dd897"><p class="cl-f51dc005"><span class="cl-f51b58d2">51</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-f51dd886"><p class="cl-f51dc012"><span class="cl-f51b58d2">&lt;50 bpm and with &gt;20</span><br> <span class="cl-f51b58d2">bpm decrease from</span><br> <span class="cl-f51b58d2">baseline</span></p></td>
+<td class="cl-f51dd887"><p class="cl-f51dc018"><span class="cl-f51b58d2">0</span></p></td>
+<td class="cl-f51dd88c"><p class="cl-f51dc018"><span class="cl-f51b58d2">0</span></p></td>
+<td class="cl-f51dd88c"><p class="cl-f51dc018"><span class="cl-f51b58d2">0</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-f51dd886"><p class="cl-f51dc012"><span class="cl-f51b58d2">&gt;120 bpm and with &gt;30</span><br> <span class="cl-f51b58d2">bpm increase from</span><br> <span class="cl-f51b58d2">baseline</span></p></td>
+<td class="cl-f51dd887"><p class="cl-f51dc018"><span class="cl-f51b58d2">0</span></p></td>
+<td class="cl-f51dd88c"><p class="cl-f51dc018"><span class="cl-f51b58d2">0</span></p></td>
+<td class="cl-f51dd88c"><p class="cl-f51dc018"><span class="cl-f51b58d2">0</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-f51dd88d"><p class="cl-f51dc004"><span class="cl-f51b58d2"></span></p></td>
+<td class="cl-f51dd88e"><p class="cl-f51dc005"><span class="cl-f51b58d2"></span></p></td>
+<td class="cl-f51dd88f"><p class="cl-f51dc005"><span class="cl-f51b58d2"></span></p></td>
+<td class="cl-f51dd88f"><p class="cl-f51dc005"><span class="cl-f51b58d2"></span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-f51dd886"><p class="cl-f51dc019"><span class="cl-f51b58d2">Systolic blood pressure</span><br> <span class="cl-f51b58d2">(mmHg)</span></p></td>
+<td class="cl-f51dd887"><p class="cl-f51dc01a"><span class="cl-f51b58d2"> </span></p></td>
+<td class="cl-f51dd88c"><p class="cl-f51dc01a"><span class="cl-f51b58d2"> </span></p></td>
+<td class="cl-f51dd88c"><p class="cl-f51dc01a"><span class="cl-f51b58d2"> </span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-f51dd890"><p class="cl-f51dc011"><span class="cl-f51b58d2">N</span></p></td>
+<td class="cl-f51dd896"><p class="cl-f51dc005"><span class="cl-f51b58d2">51</span></p></td>
+<td class="cl-f51dd897"><p class="cl-f51dc005"><span class="cl-f51b58d2">47</span></p></td>
+<td class="cl-f51dd897"><p class="cl-f51dc005"><span class="cl-f51b58d2">51</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-f51dd886"><p class="cl-f51dc012"><span class="cl-f51b58d2">&lt;90 mmHg and with &gt;30</span><br> <span class="cl-f51b58d2">mmHg decrease from</span><br> <span class="cl-f51b58d2">baseline</span></p></td>
+<td class="cl-f51dd887"><p class="cl-f51dc018"><span class="cl-f51b58d2">0</span></p></td>
+<td class="cl-f51dd88c"><p class="cl-f51dc018"><span class="cl-f51b58d2">0</span></p></td>
+<td class="cl-f51dd88c"><p class="cl-f51dc018"><span class="cl-f51b58d2">0</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-f51dd886"><p class="cl-f51dc012"><span class="cl-f51b58d2">&gt;180 mmHg and with</span><br> <span class="cl-f51b58d2">&gt;40 mmHg increase</span><br> <span class="cl-f51b58d2">from baseline</span></p></td>
+<td class="cl-f51dd887"><p class="cl-f51dc018"><span class="cl-f51b58d2">0</span></p></td>
+<td class="cl-f51dd88c"><p class="cl-f51dc018"><span class="cl-f51b58d2">0</span></p></td>
+<td class="cl-f51dd88c"><p class="cl-f51dc018"><span class="cl-f51b58d2">0</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-f51dd88d"><p class="cl-f51dc004"><span class="cl-f51b58d2"></span></p></td>
+<td class="cl-f51dd88e"><p class="cl-f51dc005"><span class="cl-f51b58d2"></span></p></td>
+<td class="cl-f51dd88f"><p class="cl-f51dc005"><span class="cl-f51b58d2"></span></p></td>
+<td class="cl-f51dd88f"><p class="cl-f51dc005"><span class="cl-f51b58d2"></span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-f51dd886"><p class="cl-f51dc019"><span class="cl-f51b58d2">Diastolic blood pressure</span><br> <span class="cl-f51b58d2">(mmHg)</span></p></td>
+<td class="cl-f51dd887"><p class="cl-f51dc01a"><span class="cl-f51b58d2"> </span></p></td>
+<td class="cl-f51dd88c"><p class="cl-f51dc01a"><span class="cl-f51b58d2"> </span></p></td>
+<td class="cl-f51dd88c"><p class="cl-f51dc01a"><span class="cl-f51b58d2"> </span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-f51dd890"><p class="cl-f51dc011"><span class="cl-f51b58d2">N</span></p></td>
+<td class="cl-f51dd896"><p class="cl-f51dc005"><span class="cl-f51b58d2">51</span></p></td>
+<td class="cl-f51dd897"><p class="cl-f51dc005"><span class="cl-f51b58d2">47</span></p></td>
+<td class="cl-f51dd897"><p class="cl-f51dc005"><span class="cl-f51b58d2">51</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-f51dd886"><p class="cl-f51dc012"><span class="cl-f51b58d2">&lt;50 mmHg and with &gt;20</span><br> <span class="cl-f51b58d2">mmHg decrease from</span><br> <span class="cl-f51b58d2">baseline</span></p></td>
+<td class="cl-f51dd887"><p class="cl-f51dc018"><span class="cl-f51b58d2">0</span></p></td>
+<td class="cl-f51dd88c"><p class="cl-f51dc018"><span class="cl-f51b58d2">0</span></p></td>
+<td class="cl-f51dd88c"><p class="cl-f51dc018"><span class="cl-f51b58d2">0</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-f51dd898"><p class="cl-f51dc012"><span class="cl-f51b58d2">&gt;105 mmHg and with</span><br> <span class="cl-f51b58d2">&gt;30 mmHg increase</span><br> <span class="cl-f51b58d2">from baseline</span></p></td>
+<td class="cl-f51dd899"><p class="cl-f51dc018"><span class="cl-f51b58d2">0</span></p></td>
+<td class="cl-f51dd8a0"><p class="cl-f51dc018"><span class="cl-f51b58d2">0</span></p></td>
+<td class="cl-f51dd8a0"><p class="cl-f51dc018"><span class="cl-f51b58d2">0</span></p></td>
 </tr>
 </tbody>
 <tfoot>
-<tr style="overflow-wrap:break-word;"><td colspan="4" class="cl-75be50fa"><p class="cl-75be3822"><span class="cl-75bbdb04"></span></p></td></tr>
-<tr style="overflow-wrap:break-word;"><td colspan="4" class="cl-75be50fa"><p class="cl-75be3822"><span class="cl-75bbdb04">Note: Clinically important vital signs are defined in the Statistical Analysis Plan. N is the number of subjects with at least 1 postbaseline value for the specified vital sign parameter.</span></p></td></tr>
-<tr style="overflow-wrap:break-word;"><td colspan="4" class="cl-75be5105"><p class="cl-75be3822"><span class="cl-75bbdb04">Note: On-treatment is defined as values obtained after the first dose and within [30 days] following treatment discontinuation. [</span><span class="cl-75bbdb04">Only treatment-emergent values (those that worsened from baseline) are presented.</span><span class="cl-75bbdb04">]</span></p></td></tr>
+<tr style="overflow-wrap:break-word;"><td colspan="4" class="cl-f51dd8a1"><p class="cl-f51dc004"><span class="cl-f51b58d2"></span></p></td></tr>
+<tr style="overflow-wrap:break-word;"><td colspan="4" class="cl-f51dd8a1"><p class="cl-f51dc004"><span class="cl-f51b58d2">Note: Clinically important vital signs are defined in the Statistical Analysis Plan. N is the number of subjects with at least 1 postbaseline value for the specified vital sign parameter.</span></p></td></tr>
+<tr style="overflow-wrap:break-word;"><td colspan="4" class="cl-f51dd8aa"><p class="cl-f51dc004"><span class="cl-f51b58d2">Note: On-treatment is defined as values obtained after the first dose and within [30 days] following treatment discontinuation. [</span><span class="cl-f51b58d2">Only treatment-emergent values (those that worsened from baseline) are presented.</span><span class="cl-f51b58d2">]</span></p></td></tr>
+<tr style="overflow-wrap:break-word;"><td colspan="4" class="cl-f51dd8ad"><p class="cl-f51dc022"><span class="cl-f51b58d3">[tsfvit05.docx][/usr/lib/rstudio-server/bin/quarto/share/rmd/rmd.R] 29DEC2025, 09:58</span></p></td></tr>
 </tfoot>
 </table>
 </div>
@@ -2023,7 +2127,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/johnsonandjohnson\.github\.io\/tlg-catalog");
+      var filterRegex = new RegExp("https:\/\/johnsonandjohnson\.github\.io\/TLG_Catalog");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
@@ -2350,8 +2454,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
-</script><script src="https://giscus.app/client.js" data-repo="johnsonandjohnson/tlg-catalog" data-repo-id="" data-category="General" data-category-id="" data-mapping="pathname" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en" crossorigin="anonymous" data-loading="lazy" async="">
-</script><input type="hidden" id="giscus-base-theme" value="light"><input type="hidden" id="giscus-alt-theme" value="light"><nav class="page-navigation column-body"><div class="nav-page nav-page-previous">
+</script><nav class="page-navigation column-body"><div class="nav-page nav-page-previous">
       <a href="../../tables/vital_signs_and_physical_findings/tsfvit04.html" class="pagination-link" aria-label="TSFVIT04">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">TSFVIT04</span>
       </a>          
@@ -2711,10 +2814,10 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb2-347"><a href="#cb2-347"></a></span>
 <span id="cb2-348"><a href="#cb2-348"></a><span class="in"># Convert to tbl file and output table</span></span>
 <span id="cb2-349"><a href="#cb2-349"></a></span>
-<span id="cb2-350"><a href="#cb2-350"></a><span class="in">tt_to_tlgrtf(string_map = string_map, tt = head(result, 25), file = fileid)</span></span>
+<span id="cb2-350"><a href="#cb2-350"></a><span class="in">tt_to_tlgrtf(string_map = string_map, tt = result, file = fileid)</span></span>
 <span id="cb2-351"><a href="#cb2-351"></a><span class="in">```</span></span>
 <span id="cb2-352"><a href="#cb2-352"></a><span class="in">```{r result1, echo=FALSE, message=FALSE, warning=FALSE, test = list(result_v1 = "result")}</span></span>
-<span id="cb2-353"><a href="#cb2-353"></a><span class="in">tt_to_flextable_j(head(result, 25), tblid)</span></span>
+<span id="cb2-353"><a href="#cb2-353"></a><span class="in">tt_to_flextable_j(result, tblid)</span></span>
 <span id="cb2-354"><a href="#cb2-354"></a><span class="in">```</span></span>
 <span id="cb2-355"><a href="#cb2-355"></a></span>
 <span id="cb2-356"><a href="#cb2-356"></a><span class="co">[</span><span class="ot">Download RTF file</span><span class="co">]</span>(<span class="in">`r paste0(tolower(tblid), '.rtf')`</span>)</span>
@@ -2727,7 +2830,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
 
-<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/johnsonandjohnson/tlg-catalog/edit/main/book/tables/vital_signs_and_physical_findings/tsfvit05.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/johnsonandjohnson/tlg-catalog/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/johnsonandjohnson/TLG_Catalog/edit/dev/book/tables/vital_signs_and_physical_findings/tsfvit05.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/johnsonandjohnson/TLG_Catalog/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>

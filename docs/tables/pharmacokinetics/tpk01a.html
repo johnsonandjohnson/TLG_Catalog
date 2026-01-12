@@ -120,7 +120,7 @@ cookieconsent.run({
 <script src="../../site_libs/tabwid-1.1.3/tabwid.js"></script><link rel="stylesheet" href="../../assets/css/style.css">
 <meta property="og:title" content="TPK01A – TL Catalog">
 <meta property="og:description" content="Matrix Active Study Agent/Analyte Concentrations (units) Over Time">
-<meta property="og:image" content="https://johnsonandjohnson.github.io/tlg-catalog/tables/pharmacokinetics/assets/img/logo.png">
+<meta property="og:image" content="https://johnsonandjohnson.github.io/TLG_Catalog/tables/pharmacokinetics/assets/img/logo.png">
 <meta property="og:site_name" content="TL Catalog">
 </head>
 <body class="nav-sidebar docked nav-fixed">
@@ -162,6 +162,13 @@ cookieconsent.run({
   <div class="sidebar-item-container"> 
   <a href="../../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introduction</span></a>
+  </div>
+</li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../tlg-index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Index</span></a>
   </div>
 </li>
         <li class="px-0"><hr class="sidebar-divider hi "></li>
@@ -1163,12 +1170,6 @@ cookieconsent.run({
   </div>
 </li>
         <li class="px-0"><hr class="sidebar-divider hi "></li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../tlg-index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Index</span></a>
-  </div>
-</li>
     </ul>
 </div>
 </nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
@@ -1178,7 +1179,7 @@ cookieconsent.run({
    
   <ul>
 <li><a href="#output" id="toc-output" class="nav-link active" data-scroll-target="#output">Output</a></li>
-  </ul><div class="toc-actions"><ul><li><a href="https://github.com/johnsonandjohnson/tlg-catalog/edit/main/book/tables/pharmacokinetics/tpk01a.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/johnsonandjohnson/tlg-catalog/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+  </ul><div class="toc-actions"><ul><li><a href="https://github.com/johnsonandjohnson/TLG_Catalog/edit/dev/book/tables/pharmacokinetics/tpk01a.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/johnsonandjohnson/TLG_Catalog/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content column-body" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Tables</li><li class="breadcrumb-item"><a href="../../tables/pharmacokinetics/tpk01a.html">Pharmacokinetics</a></li><li class="breadcrumb-item"><a href="../../tables/pharmacokinetics/tpk01a.html">TPK01A</a></li></ol></nav><div class="quarto-title">
@@ -1342,207 +1343,1114 @@ cookieconsent.run({
 <span id="cb1-136"><a href="#cb1-136"></a></span>
 <span id="cb1-137"><a href="#cb1-137"></a><span class="co"># Convert to tbl file and output table:</span></span>
 <span id="cb1-138"><a href="#cb1-138"></a></span>
-<span id="cb1-139"><a href="#cb1-139"></a><span class="fu">tt_to_tlgrtf</span>(<span class="at">string_map =</span> string_map, <span class="at">tt =</span> <span class="fu">head</span>(result, <span class="dv">25</span>), <span class="at">file =</span> fileid, <span class="at">orientation =</span> <span class="st">"portrait"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-139"><a href="#cb1-139"></a><span class="fu">tt_to_tlgrtf</span>(<span class="at">string_map =</span> string_map, <span class="at">tt =</span> result, <span class="at">file =</span> fileid, <span class="at">orientation =</span> <span class="st">"portrait"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <div class="cell" data-test="{&quot;result_v1&quot;:&quot;result&quot;}">
 <div class="cell-output-display">
 <div class="tabwid tabwid_left">
-<style>.cl-096edd48{}.cl-0967f24e{font-family:'Times New Roman';font-size:10pt;font-weight:bold;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-0967f276{font-family:'Times New Roman';font-size:9pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-096b30b2{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:0;padding-right:0;line-height: 1;background-color:transparent;}.cl-096b30bc{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:3.6pt;padding-right:0;line-height: 1;background-color:transparent;}.cl-096b30bd{margin:0;text-align:center;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:0;padding-right:0;line-height: 1;background-color:transparent;}.cl-096b30c6{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:0;padding-right:0;line-height: 1;background-color:transparent;}.cl-096b30c7{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:9pt;padding-right:0;line-height: 1;background-color:transparent;}.cl-096b30c8{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:18pt;padding-right:0;line-height: 1;background-color:transparent;}.cl-096b30d0{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:0;padding-right:0;line-height: 1;background-color:transparent;}.cl-096b4994{width:1.963in;background-color:rgba(255, 255, 255, 1.00);vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0.75pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-096b4995{width:1.472in;background-color:rgba(255, 255, 255, 1.00);vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0.75pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-096b499e{width:1.963in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(102, 102, 102, 1.00);border-top: 0.75pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-096b499f{width:1.472in;background-color:transparent;vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0.75pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-096b49a0{width:1.963in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-096b49a8{width:1.472in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(102, 102, 102, 1.00);border-top: 0.75pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-096b49a9{width:1.963in;background-color:transparent;vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-096b49aa{width:1.472in;background-color:transparent;vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-096b49b2{width:1.963in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-096b49b3{width:1.472in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-096b49b4{width:1.963in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-096b49bc{width:1.472in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-096b49bd{width:1.963in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-096b49be{width:1.472in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-096b49bf{width:1.963in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-096b49c6{width:1.472in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-096b49c7{width:1.963in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-096b49c8{width:1.472in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-096b49c9{width:1.963in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-096b49d0{width:1.472in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-096b49d1{width:1.963in;background-color:transparent;vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-096b49d2{width:1.472in;background-color:transparent;vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-096b49da{width:1.963in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(255, 255, 255, 0.00);border-top: 0 solid rgba(255, 255, 255, 0.00);border-left: 0 solid rgba(255, 255, 255, 0.00);border-right: 0 solid rgba(255, 255, 255, 0.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-096b49db{width:1.472in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(255, 255, 255, 0.00);border-top: 0 solid rgba(255, 255, 255, 0.00);border-left: 0 solid rgba(255, 255, 255, 0.00);border-right: 0 solid rgba(255, 255, 255, 0.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-096b49dc{width:1.963in;background-color:transparent;vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(255, 255, 255, 0.00);border-left: 0 solid rgba(255, 255, 255, 0.00);border-right: 0 solid rgba(255, 255, 255, 0.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-096b49e4{width:1.472in;background-color:transparent;vertical-align: middle;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(255, 255, 255, 0.00);border-left: 0 solid rgba(255, 255, 255, 0.00);border-right: 0 solid rgba(255, 255, 255, 0.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style>
-<table data-quarto-disable-processing="true" class="cl-096edd48">
+<style>.cl-7752e9a6{}.cl-7748c57a{font-family:'Times New Roman';font-size:10pt;font-weight:bold;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-7748c5a2{font-family:'Times New Roman';font-size:9pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-7748c5a3{font-family:'Times New Roman';font-size:8pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-774bdd46{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:0;padding-right:0;line-height: 1;background-color:transparent;}.cl-774bdd50{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:3.6pt;padding-right:0;line-height: 1;background-color:transparent;}.cl-774bdd5a{margin:0;text-align:center;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:0;padding-right:0;line-height: 1;background-color:transparent;}.cl-774bdd5b{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:0;padding-right:0;line-height: 1;background-color:transparent;}.cl-774bdd5c{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:9pt;padding-right:0;line-height: 1;background-color:transparent;}.cl-774bdd64{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:18pt;padding-right:0;line-height: 1;background-color:transparent;}.cl-774bdd65{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:0;padding-right:0;line-height: 1;background-color:transparent;}.cl-774bdd66{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:0;padding-right:0;line-height: 1;background-color:transparent;}.cl-774bdd6e{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:0;padding-right:0;line-height: 1;background-color:transparent;}.cl-774bff9c{width:1.978in;background-color:rgba(255, 255, 255, 1.00);vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0.75pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-774bffa6{width:1.467in;background-color:rgba(255, 255, 255, 1.00);vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0.75pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-774bffa7{width:1.978in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(102, 102, 102, 1.00);border-top: 0.75pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-774bffb0{width:1.467in;background-color:transparent;vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0.75pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-774bffb1{width:1.978in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-774bffba{width:1.467in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(102, 102, 102, 1.00);border-top: 0.75pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-774bffbb{width:1.978in;background-color:transparent;vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-774bffbc{width:1.467in;background-color:transparent;vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-774bffbd{width:1.978in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-774bffbe{width:1.467in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-774bffc4{width:1.978in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-774bffce{width:1.467in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-774bffcf{width:1.978in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-774bffd0{width:1.467in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-774bffd1{width:1.978in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-774bffd8{width:1.467in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-774bffd9{width:1.978in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-774bffda{width:1.467in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-774bffdb{width:1.978in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-774bffe2{width:1.467in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-774bffe3{width:1.978in;background-color:transparent;vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-774bffe4{width:1.467in;background-color:transparent;vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-774bffe5{width:1.978in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(255, 255, 255, 0.00);border-top: 0 solid rgba(255, 255, 255, 0.00);border-left: 0 solid rgba(255, 255, 255, 0.00);border-right: 0 solid rgba(255, 255, 255, 0.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-774bffe6{width:1.467in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(255, 255, 255, 0.00);border-top: 0 solid rgba(255, 255, 255, 0.00);border-left: 0 solid rgba(255, 255, 255, 0.00);border-right: 0 solid rgba(255, 255, 255, 0.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-774bffec{width:1.978in;background-color:transparent;vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(255, 255, 255, 0.00);border-left: 0 solid rgba(255, 255, 255, 0.00);border-right: 0 solid rgba(255, 255, 255, 0.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-774bffed{width:1.467in;background-color:transparent;vertical-align: middle;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(255, 255, 255, 0.00);border-left: 0 solid rgba(255, 255, 255, 0.00);border-right: 0 solid rgba(255, 255, 255, 0.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-774bffee{width:1.978in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(255, 255, 255, 0.00);border-left: 0 solid rgba(255, 255, 255, 0.00);border-right: 0 solid rgba(255, 255, 255, 0.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-774bffef{width:1.467in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(255, 255, 255, 0.00);border-left: 0 solid rgba(255, 255, 255, 0.00);border-right: 0 solid rgba(255, 255, 255, 0.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style>
+<table data-quarto-disable-processing="true" class="cl-7752e9a6">
 <thead>
-<tr style="overflow-wrap:break-word;"><th colspan="4" class="cl-096b4994"><p class="cl-096b30b2"><span class="cl-0967f24e">TPK01a:</span> <span class="cl-0967f24e">[Matrix] [Active Study Agent/Analyte] Concentrations ([units]) Over Time; Pharmacokinetics Analysis Set (Study jjcs - core)</span></p></th></tr>
+<tr style="overflow-wrap:break-word;"><th colspan="4" class="cl-774bff9c"><p class="cl-774bdd46"><span class="cl-7748c57a">TPK01a:</span> <span class="cl-7748c57a">[Matrix] [Active Study Agent/Analyte] Concentrations ([units]) Over Time; Pharmacokinetics Analysis Set (Study jjcs - core)</span></p></th></tr>
 <tr style="overflow-wrap:break-word;">
-<th class="cl-096b499e"><p class="cl-096b30bc"><span class="cl-0967f276"></span></p></th>
-<th colspan="3" class="cl-096b499f"><p class="cl-096b30bd"><span class="cl-0967f276">Active Study Agent</span></p></th>
+<th class="cl-774bffa7"><p class="cl-774bdd50"><span class="cl-7748c5a2"></span></p></th>
+<th colspan="3" class="cl-774bffb0"><p class="cl-774bdd5a"><span class="cl-7748c5a2">Active Study Agent</span></p></th>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<th class="cl-096b49a0"><p class="cl-096b30bc"><span class="cl-0967f276"></span></p></th>
-<th class="cl-096b49a8"><p class="cl-096b30bd"><span class="cl-0967f276">Xanomeline High Dose</span></p></th>
-<th class="cl-096b49a8"><p class="cl-096b30bd"><span class="cl-0967f276">Xanomeline Low Dose</span></p></th>
-<th class="cl-096b49a8"><p class="cl-096b30bd"><span class="cl-0967f276">Combined</span></p></th>
+<th class="cl-774bffb1"><p class="cl-774bdd50"><span class="cl-7748c5a2"></span></p></th>
+<th class="cl-774bffba"><p class="cl-774bdd5a"><span class="cl-7748c5a2">Xanomeline High Dose</span></p></th>
+<th class="cl-774bffba"><p class="cl-774bdd5a"><span class="cl-7748c5a2">Xanomeline Low Dose</span></p></th>
+<th class="cl-774bffba"><p class="cl-774bdd5a"><span class="cl-7748c5a2">Combined</span></p></th>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<th class="cl-096b49a9"><p class="cl-096b30c6"><span class="cl-0967f276">Time Point</span></p></th>
-<th class="cl-096b49aa"><p class="cl-096b30bd"><span class="cl-0967f276">N=72</span></p></th>
-<th class="cl-096b49aa"><p class="cl-096b30bd"><span class="cl-0967f276">N=96</span></p></th>
-<th class="cl-096b49aa"><p class="cl-096b30bd"><span class="cl-0967f276">N=168</span></p></th>
+<th class="cl-774bffbb"><p class="cl-774bdd5b"><span class="cl-7748c5a2">Time Point</span></p></th>
+<th class="cl-774bffbc"><p class="cl-774bdd5a"><span class="cl-7748c5a2">N=72</span></p></th>
+<th class="cl-774bffbc"><p class="cl-774bdd5a"><span class="cl-7748c5a2">N=96</span></p></th>
+<th class="cl-774bffbc"><p class="cl-774bdd5a"><span class="cl-7748c5a2">N=168</span></p></th>
 </tr>
 </thead>
 <tbody>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-096b49b2"><p class="cl-096b30c6"><span class="cl-0967f276">Day 1 - Pre-dose</span></p></td>
-<td class="cl-096b49b3"><p class="cl-096b30bd"><span class="cl-0967f276"> </span></p></td>
-<td class="cl-096b49b3"><p class="cl-096b30bd"><span class="cl-0967f276"> </span></p></td>
-<td class="cl-096b49b3"><p class="cl-096b30bd"><span class="cl-0967f276"> </span></p></td>
+<td class="cl-774bffbd"><p class="cl-774bdd5b"><span class="cl-7748c5a2">Day 1 - Pre-dose</span></p></td>
+<td class="cl-774bffbe"><p class="cl-774bdd5a"><span class="cl-7748c5a2"> </span></p></td>
+<td class="cl-774bffbe"><p class="cl-774bdd5a"><span class="cl-7748c5a2"> </span></p></td>
+<td class="cl-774bffbe"><p class="cl-774bdd5a"><span class="cl-7748c5a2"> </span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-096b49b4"><p class="cl-096b30c7"><span class="cl-0967f276">N</span></p></td>
-<td class="cl-096b49bc"><p class="cl-096b30bd"><span class="cl-0967f276">72</span></p></td>
-<td class="cl-096b49bc"><p class="cl-096b30bd"><span class="cl-0967f276">96</span></p></td>
-<td class="cl-096b49bc"><p class="cl-096b30bd"><span class="cl-0967f276">168</span></p></td>
+<td class="cl-774bffc4"><p class="cl-774bdd5c"><span class="cl-7748c5a2">N</span></p></td>
+<td class="cl-774bffce"><p class="cl-774bdd5a"><span class="cl-7748c5a2">72</span></p></td>
+<td class="cl-774bffce"><p class="cl-774bdd5a"><span class="cl-7748c5a2">96</span></p></td>
+<td class="cl-774bffce"><p class="cl-774bdd5a"><span class="cl-7748c5a2">168</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-096b49bd"><p class="cl-096b30c8"><span class="cl-0967f276">Mean (SD)</span></p></td>
-<td class="cl-096b49be"><p class="cl-096b30bd"><span class="cl-0967f276">0.00 (0.00)</span></p></td>
-<td class="cl-096b49be"><p class="cl-096b30bd"><span class="cl-0967f276">0.00 (0.00)</span></p></td>
-<td class="cl-096b49be"><p class="cl-096b30bd"><span class="cl-0967f276">0.00 (0.00)</span></p></td>
+<td class="cl-774bffcf"><p class="cl-774bdd64"><span class="cl-7748c5a2">Mean (SD)</span></p></td>
+<td class="cl-774bffd0"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.00 (0.00)</span></p></td>
+<td class="cl-774bffd0"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.00 (0.00)</span></p></td>
+<td class="cl-774bffd0"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.00 (0.00)</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-096b49bf"><p class="cl-096b30c8"><span class="cl-0967f276">Median</span></p></td>
-<td class="cl-096b49c6"><p class="cl-096b30bd"><span class="cl-0967f276">0.00</span></p></td>
-<td class="cl-096b49c6"><p class="cl-096b30bd"><span class="cl-0967f276">0.00</span></p></td>
-<td class="cl-096b49c6"><p class="cl-096b30bd"><span class="cl-0967f276">0.00</span></p></td>
+<td class="cl-774bffd1"><p class="cl-774bdd64"><span class="cl-7748c5a2">Median</span></p></td>
+<td class="cl-774bffd8"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.00</span></p></td>
+<td class="cl-774bffd8"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.00</span></p></td>
+<td class="cl-774bffd8"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.00</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-096b49bf"><p class="cl-096b30c8"><span class="cl-0967f276">Geometric mean</span></p></td>
-<td class="cl-096b49c6"><p class="cl-096b30bd"><span class="cl-0967f276">NA</span></p></td>
-<td class="cl-096b49c6"><p class="cl-096b30bd"><span class="cl-0967f276">NA</span></p></td>
-<td class="cl-096b49c6"><p class="cl-096b30bd"><span class="cl-0967f276">NA</span></p></td>
+<td class="cl-774bffd1"><p class="cl-774bdd64"><span class="cl-7748c5a2">Geometric mean</span></p></td>
+<td class="cl-774bffd8"><p class="cl-774bdd5a"><span class="cl-7748c5a2">NA</span></p></td>
+<td class="cl-774bffd8"><p class="cl-774bdd5a"><span class="cl-7748c5a2">NA</span></p></td>
+<td class="cl-774bffd8"><p class="cl-774bdd5a"><span class="cl-7748c5a2">NA</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-096b49c7"><p class="cl-096b30c8"><span class="cl-0967f276">Min, max</span></p></td>
-<td class="cl-096b49c8"><p class="cl-096b30bd"><span class="cl-0967f276">0.00, 0.00</span></p></td>
-<td class="cl-096b49c8"><p class="cl-096b30bd"><span class="cl-0967f276">0.00, 0.00</span></p></td>
-<td class="cl-096b49c8"><p class="cl-096b30bd"><span class="cl-0967f276">0.00, 0.00</span></p></td>
+<td class="cl-774bffd9"><p class="cl-774bdd64"><span class="cl-7748c5a2">Min, max</span></p></td>
+<td class="cl-774bffda"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.00, 0.00</span></p></td>
+<td class="cl-774bffda"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.00, 0.00</span></p></td>
+<td class="cl-774bffda"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.00, 0.00</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-096b49bd"><p class="cl-096b30c8"><span class="cl-0967f276">CV (%)</span></p></td>
-<td class="cl-096b49be"><p class="cl-096b30bd"><span class="cl-0967f276">NA</span></p></td>
-<td class="cl-096b49be"><p class="cl-096b30bd"><span class="cl-0967f276">NA</span></p></td>
-<td class="cl-096b49be"><p class="cl-096b30bd"><span class="cl-0967f276">NA</span></p></td>
+<td class="cl-774bffcf"><p class="cl-774bdd64"><span class="cl-7748c5a2">CV (%)</span></p></td>
+<td class="cl-774bffd0"><p class="cl-774bdd5a"><span class="cl-7748c5a2">NA</span></p></td>
+<td class="cl-774bffd0"><p class="cl-774bdd5a"><span class="cl-7748c5a2">NA</span></p></td>
+<td class="cl-774bffd0"><p class="cl-774bdd5a"><span class="cl-7748c5a2">NA</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-096b49b2"><p class="cl-096b30c8"><span class="cl-0967f276">Interquartile range</span></p></td>
-<td class="cl-096b49b3"><p class="cl-096b30bd"><span class="cl-0967f276">0.00, 0.00</span></p></td>
-<td class="cl-096b49b3"><p class="cl-096b30bd"><span class="cl-0967f276">0.00, 0.00</span></p></td>
-<td class="cl-096b49b3"><p class="cl-096b30bd"><span class="cl-0967f276">0.00, 0.00</span></p></td>
+<td class="cl-774bffbd"><p class="cl-774bdd64"><span class="cl-7748c5a2">Interquartile range</span></p></td>
+<td class="cl-774bffbe"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.00, 0.00</span></p></td>
+<td class="cl-774bffbe"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.00, 0.00</span></p></td>
+<td class="cl-774bffbe"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.00, 0.00</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-096b49c9"><p class="cl-096b30c6"><span class="cl-0967f276"></span></p></td>
-<td class="cl-096b49d0"><p class="cl-096b30bd"><span class="cl-0967f276"></span></p></td>
-<td class="cl-096b49d0"><p class="cl-096b30bd"><span class="cl-0967f276"></span></p></td>
-<td class="cl-096b49d0"><p class="cl-096b30bd"><span class="cl-0967f276"></span></p></td>
+<td class="cl-774bffdb"><p class="cl-774bdd5b"><span class="cl-7748c5a2"></span></p></td>
+<td class="cl-774bffe2"><p class="cl-774bdd5a"><span class="cl-7748c5a2"></span></p></td>
+<td class="cl-774bffe2"><p class="cl-774bdd5a"><span class="cl-7748c5a2"></span></p></td>
+<td class="cl-774bffe2"><p class="cl-774bdd5a"><span class="cl-7748c5a2"></span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-096b49b2"><p class="cl-096b30c6"><span class="cl-0967f276">Day 1 - 5 Min Post-dose</span></p></td>
-<td class="cl-096b49b3"><p class="cl-096b30bd"><span class="cl-0967f276"> </span></p></td>
-<td class="cl-096b49b3"><p class="cl-096b30bd"><span class="cl-0967f276"> </span></p></td>
-<td class="cl-096b49b3"><p class="cl-096b30bd"><span class="cl-0967f276"> </span></p></td>
+<td class="cl-774bffbd"><p class="cl-774bdd5b"><span class="cl-7748c5a2">Day 1 - 5 Min Post-dose</span></p></td>
+<td class="cl-774bffbe"><p class="cl-774bdd5a"><span class="cl-7748c5a2"> </span></p></td>
+<td class="cl-774bffbe"><p class="cl-774bdd5a"><span class="cl-7748c5a2"> </span></p></td>
+<td class="cl-774bffbe"><p class="cl-774bdd5a"><span class="cl-7748c5a2"> </span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-096b49b4"><p class="cl-096b30c7"><span class="cl-0967f276">N</span></p></td>
-<td class="cl-096b49bc"><p class="cl-096b30bd"><span class="cl-0967f276">72</span></p></td>
-<td class="cl-096b49bc"><p class="cl-096b30bd"><span class="cl-0967f276">96</span></p></td>
-<td class="cl-096b49bc"><p class="cl-096b30bd"><span class="cl-0967f276">168</span></p></td>
+<td class="cl-774bffc4"><p class="cl-774bdd5c"><span class="cl-7748c5a2">N</span></p></td>
+<td class="cl-774bffce"><p class="cl-774bdd5a"><span class="cl-7748c5a2">72</span></p></td>
+<td class="cl-774bffce"><p class="cl-774bdd5a"><span class="cl-7748c5a2">96</span></p></td>
+<td class="cl-774bffce"><p class="cl-774bdd5a"><span class="cl-7748c5a2">168</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-096b49bd"><p class="cl-096b30c8"><span class="cl-0967f276">Mean (SD)</span></p></td>
-<td class="cl-096b49be"><p class="cl-096b30bd"><span class="cl-0967f276">0.10 (0.00)</span></p></td>
-<td class="cl-096b49be"><p class="cl-096b30bd"><span class="cl-0967f276">0.10 (0.01)</span></p></td>
-<td class="cl-096b49be"><p class="cl-096b30bd"><span class="cl-0967f276">0.10 (0.01)</span></p></td>
+<td class="cl-774bffcf"><p class="cl-774bdd64"><span class="cl-7748c5a2">Mean (SD)</span></p></td>
+<td class="cl-774bffd0"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.10 (0.00)</span></p></td>
+<td class="cl-774bffd0"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.10 (0.01)</span></p></td>
+<td class="cl-774bffd0"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.10 (0.01)</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-096b49bf"><p class="cl-096b30c8"><span class="cl-0967f276">Median</span></p></td>
-<td class="cl-096b49c6"><p class="cl-096b30bd"><span class="cl-0967f276">0.10</span></p></td>
-<td class="cl-096b49c6"><p class="cl-096b30bd"><span class="cl-0967f276">0.10</span></p></td>
-<td class="cl-096b49c6"><p class="cl-096b30bd"><span class="cl-0967f276">0.10</span></p></td>
+<td class="cl-774bffd1"><p class="cl-774bdd64"><span class="cl-7748c5a2">Median</span></p></td>
+<td class="cl-774bffd8"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.10</span></p></td>
+<td class="cl-774bffd8"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.10</span></p></td>
+<td class="cl-774bffd8"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.10</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-096b49bf"><p class="cl-096b30c8"><span class="cl-0967f276">Geometric mean</span></p></td>
-<td class="cl-096b49c6"><p class="cl-096b30bd"><span class="cl-0967f276">0.10</span></p></td>
-<td class="cl-096b49c6"><p class="cl-096b30bd"><span class="cl-0967f276">0.10</span></p></td>
-<td class="cl-096b49c6"><p class="cl-096b30bd"><span class="cl-0967f276">0.10</span></p></td>
+<td class="cl-774bffd1"><p class="cl-774bdd64"><span class="cl-7748c5a2">Geometric mean</span></p></td>
+<td class="cl-774bffd8"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.10</span></p></td>
+<td class="cl-774bffd8"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.10</span></p></td>
+<td class="cl-774bffd8"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.10</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-096b49c7"><p class="cl-096b30c8"><span class="cl-0967f276">Min, max</span></p></td>
-<td class="cl-096b49c8"><p class="cl-096b30bd"><span class="cl-0967f276">0.09, 0.11</span></p></td>
-<td class="cl-096b49c8"><p class="cl-096b30bd"><span class="cl-0967f276">0.09, 0.11</span></p></td>
-<td class="cl-096b49c8"><p class="cl-096b30bd"><span class="cl-0967f276">0.09, 0.11</span></p></td>
+<td class="cl-774bffd9"><p class="cl-774bdd64"><span class="cl-7748c5a2">Min, max</span></p></td>
+<td class="cl-774bffda"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.09, 0.11</span></p></td>
+<td class="cl-774bffda"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.09, 0.11</span></p></td>
+<td class="cl-774bffda"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.09, 0.11</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-096b49bd"><p class="cl-096b30c8"><span class="cl-0967f276">CV (%)</span></p></td>
-<td class="cl-096b49be"><p class="cl-096b30bd"><span class="cl-0967f276">4.9</span></p></td>
-<td class="cl-096b49be"><p class="cl-096b30bd"><span class="cl-0967f276">5.3</span></p></td>
-<td class="cl-096b49be"><p class="cl-096b30bd"><span class="cl-0967f276">5.1</span></p></td>
+<td class="cl-774bffcf"><p class="cl-774bdd64"><span class="cl-7748c5a2">CV (%)</span></p></td>
+<td class="cl-774bffd0"><p class="cl-774bdd5a"><span class="cl-7748c5a2">4.9</span></p></td>
+<td class="cl-774bffd0"><p class="cl-774bdd5a"><span class="cl-7748c5a2">5.3</span></p></td>
+<td class="cl-774bffd0"><p class="cl-774bdd5a"><span class="cl-7748c5a2">5.1</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-096b49b2"><p class="cl-096b30c8"><span class="cl-0967f276">Interquartile range</span></p></td>
-<td class="cl-096b49b3"><p class="cl-096b30bd"><span class="cl-0967f276">0.10, 0.10</span></p></td>
-<td class="cl-096b49b3"><p class="cl-096b30bd"><span class="cl-0967f276">0.10, 0.10</span></p></td>
-<td class="cl-096b49b3"><p class="cl-096b30bd"><span class="cl-0967f276">0.10, 0.10</span></p></td>
+<td class="cl-774bffbd"><p class="cl-774bdd64"><span class="cl-7748c5a2">Interquartile range</span></p></td>
+<td class="cl-774bffbe"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.10, 0.10</span></p></td>
+<td class="cl-774bffbe"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.10, 0.10</span></p></td>
+<td class="cl-774bffbe"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.10, 0.10</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-096b49c9"><p class="cl-096b30c6"><span class="cl-0967f276"></span></p></td>
-<td class="cl-096b49d0"><p class="cl-096b30bd"><span class="cl-0967f276"></span></p></td>
-<td class="cl-096b49d0"><p class="cl-096b30bd"><span class="cl-0967f276"></span></p></td>
-<td class="cl-096b49d0"><p class="cl-096b30bd"><span class="cl-0967f276"></span></p></td>
+<td class="cl-774bffdb"><p class="cl-774bdd5b"><span class="cl-7748c5a2"></span></p></td>
+<td class="cl-774bffe2"><p class="cl-774bdd5a"><span class="cl-7748c5a2"></span></p></td>
+<td class="cl-774bffe2"><p class="cl-774bdd5a"><span class="cl-7748c5a2"></span></p></td>
+<td class="cl-774bffe2"><p class="cl-774bdd5a"><span class="cl-7748c5a2"></span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-096b49b2"><p class="cl-096b30c6"><span class="cl-0967f276">Day 1 - 30 Min Post-dose</span></p></td>
-<td class="cl-096b49b3"><p class="cl-096b30bd"><span class="cl-0967f276"> </span></p></td>
-<td class="cl-096b49b3"><p class="cl-096b30bd"><span class="cl-0967f276"> </span></p></td>
-<td class="cl-096b49b3"><p class="cl-096b30bd"><span class="cl-0967f276"> </span></p></td>
+<td class="cl-774bffbd"><p class="cl-774bdd5b"><span class="cl-7748c5a2">Day 1 - 30 Min Post-dose</span></p></td>
+<td class="cl-774bffbe"><p class="cl-774bdd5a"><span class="cl-7748c5a2"> </span></p></td>
+<td class="cl-774bffbe"><p class="cl-774bdd5a"><span class="cl-7748c5a2"> </span></p></td>
+<td class="cl-774bffbe"><p class="cl-774bdd5a"><span class="cl-7748c5a2"> </span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-096b49b4"><p class="cl-096b30c7"><span class="cl-0967f276">N</span></p></td>
-<td class="cl-096b49bc"><p class="cl-096b30bd"><span class="cl-0967f276">72</span></p></td>
-<td class="cl-096b49bc"><p class="cl-096b30bd"><span class="cl-0967f276">96</span></p></td>
-<td class="cl-096b49bc"><p class="cl-096b30bd"><span class="cl-0967f276">168</span></p></td>
+<td class="cl-774bffc4"><p class="cl-774bdd5c"><span class="cl-7748c5a2">N</span></p></td>
+<td class="cl-774bffce"><p class="cl-774bdd5a"><span class="cl-7748c5a2">72</span></p></td>
+<td class="cl-774bffce"><p class="cl-774bdd5a"><span class="cl-7748c5a2">96</span></p></td>
+<td class="cl-774bffce"><p class="cl-774bdd5a"><span class="cl-7748c5a2">168</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-096b49bd"><p class="cl-096b30c8"><span class="cl-0967f276">Mean (SD)</span></p></td>
-<td class="cl-096b49be"><p class="cl-096b30bd"><span class="cl-0967f276">0.54 (0.02)</span></p></td>
-<td class="cl-096b49be"><p class="cl-096b30bd"><span class="cl-0967f276">0.55 (0.03)</span></p></td>
-<td class="cl-096b49be"><p class="cl-096b30bd"><span class="cl-0967f276">0.55 (0.03)</span></p></td>
+<td class="cl-774bffcf"><p class="cl-774bdd64"><span class="cl-7748c5a2">Mean (SD)</span></p></td>
+<td class="cl-774bffd0"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.54 (0.02)</span></p></td>
+<td class="cl-774bffd0"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.55 (0.03)</span></p></td>
+<td class="cl-774bffd0"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.55 (0.03)</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-096b49bf"><p class="cl-096b30c8"><span class="cl-0967f276">Median</span></p></td>
-<td class="cl-096b49c6"><p class="cl-096b30bd"><span class="cl-0967f276">0.54</span></p></td>
-<td class="cl-096b49c6"><p class="cl-096b30bd"><span class="cl-0967f276">0.54</span></p></td>
-<td class="cl-096b49c6"><p class="cl-096b30bd"><span class="cl-0967f276">0.54</span></p></td>
+<td class="cl-774bffd1"><p class="cl-774bdd64"><span class="cl-7748c5a2">Median</span></p></td>
+<td class="cl-774bffd8"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.54</span></p></td>
+<td class="cl-774bffd8"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.54</span></p></td>
+<td class="cl-774bffd8"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.54</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-096b49bf"><p class="cl-096b30c8"><span class="cl-0967f276">Geometric mean</span></p></td>
-<td class="cl-096b49c6"><p class="cl-096b30bd"><span class="cl-0967f276">0.54</span></p></td>
-<td class="cl-096b49c6"><p class="cl-096b30bd"><span class="cl-0967f276">0.55</span></p></td>
-<td class="cl-096b49c6"><p class="cl-096b30bd"><span class="cl-0967f276">0.54</span></p></td>
+<td class="cl-774bffd1"><p class="cl-774bdd64"><span class="cl-7748c5a2">Geometric mean</span></p></td>
+<td class="cl-774bffd8"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.54</span></p></td>
+<td class="cl-774bffd8"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.55</span></p></td>
+<td class="cl-774bffd8"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.54</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-096b49c7"><p class="cl-096b30c8"><span class="cl-0967f276">Min, max</span></p></td>
-<td class="cl-096b49c8"><p class="cl-096b30bd"><span class="cl-0967f276">0.50, 0.60</span></p></td>
-<td class="cl-096b49c8"><p class="cl-096b30bd"><span class="cl-0967f276">0.50, 0.60</span></p></td>
-<td class="cl-096b49c8"><p class="cl-096b30bd"><span class="cl-0967f276">0.50, 0.60</span></p></td>
+<td class="cl-774bffd9"><p class="cl-774bdd64"><span class="cl-7748c5a2">Min, max</span></p></td>
+<td class="cl-774bffda"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.50, 0.60</span></p></td>
+<td class="cl-774bffda"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.50, 0.60</span></p></td>
+<td class="cl-774bffda"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.50, 0.60</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-096b49bd"><p class="cl-096b30c8"><span class="cl-0967f276">CV (%)</span></p></td>
-<td class="cl-096b49be"><p class="cl-096b30bd"><span class="cl-0967f276">4.4</span></p></td>
-<td class="cl-096b49be"><p class="cl-096b30bd"><span class="cl-0967f276">4.8</span></p></td>
-<td class="cl-096b49be"><p class="cl-096b30bd"><span class="cl-0967f276">4.6</span></p></td>
+<td class="cl-774bffcf"><p class="cl-774bdd64"><span class="cl-7748c5a2">CV (%)</span></p></td>
+<td class="cl-774bffd0"><p class="cl-774bdd5a"><span class="cl-7748c5a2">4.4</span></p></td>
+<td class="cl-774bffd0"><p class="cl-774bdd5a"><span class="cl-7748c5a2">4.8</span></p></td>
+<td class="cl-774bffd0"><p class="cl-774bdd5a"><span class="cl-7748c5a2">4.6</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-096b49b2"><p class="cl-096b30c8"><span class="cl-0967f276">Interquartile range</span></p></td>
-<td class="cl-096b49b3"><p class="cl-096b30bd"><span class="cl-0967f276">0.52, 0.56</span></p></td>
-<td class="cl-096b49b3"><p class="cl-096b30bd"><span class="cl-0967f276">0.53, 0.57</span></p></td>
-<td class="cl-096b49b3"><p class="cl-096b30bd"><span class="cl-0967f276">0.52, 0.56</span></p></td>
+<td class="cl-774bffbd"><p class="cl-774bdd64"><span class="cl-7748c5a2">Interquartile range</span></p></td>
+<td class="cl-774bffbe"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.52, 0.56</span></p></td>
+<td class="cl-774bffbe"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.53, 0.57</span></p></td>
+<td class="cl-774bffbe"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.52, 0.56</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-096b49c9"><p class="cl-096b30c6"><span class="cl-0967f276"></span></p></td>
-<td class="cl-096b49d0"><p class="cl-096b30bd"><span class="cl-0967f276"></span></p></td>
-<td class="cl-096b49d0"><p class="cl-096b30bd"><span class="cl-0967f276"></span></p></td>
-<td class="cl-096b49d0"><p class="cl-096b30bd"><span class="cl-0967f276"></span></p></td>
+<td class="cl-774bffdb"><p class="cl-774bdd5b"><span class="cl-7748c5a2"></span></p></td>
+<td class="cl-774bffe2"><p class="cl-774bdd5a"><span class="cl-7748c5a2"></span></p></td>
+<td class="cl-774bffe2"><p class="cl-774bdd5a"><span class="cl-7748c5a2"></span></p></td>
+<td class="cl-774bffe2"><p class="cl-774bdd5a"><span class="cl-7748c5a2"></span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-096b49d1"><p class="cl-096b30c6"><span class="cl-0967f276">Day 1 - 1h Post-dose</span></p></td>
-<td class="cl-096b49d2"><p class="cl-096b30bd"><span class="cl-0967f276"> </span></p></td>
-<td class="cl-096b49d2"><p class="cl-096b30bd"><span class="cl-0967f276"> </span></p></td>
-<td class="cl-096b49d2"><p class="cl-096b30bd"><span class="cl-0967f276"> </span></p></td>
+<td class="cl-774bffbd"><p class="cl-774bdd5b"><span class="cl-7748c5a2">Day 1 - 1h Post-dose</span></p></td>
+<td class="cl-774bffbe"><p class="cl-774bdd5a"><span class="cl-7748c5a2"> </span></p></td>
+<td class="cl-774bffbe"><p class="cl-774bdd5a"><span class="cl-7748c5a2"> </span></p></td>
+<td class="cl-774bffbe"><p class="cl-774bdd5a"><span class="cl-7748c5a2"> </span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffc4"><p class="cl-774bdd5c"><span class="cl-7748c5a2">N</span></p></td>
+<td class="cl-774bffce"><p class="cl-774bdd5a"><span class="cl-7748c5a2">72</span></p></td>
+<td class="cl-774bffce"><p class="cl-774bdd5a"><span class="cl-7748c5a2">96</span></p></td>
+<td class="cl-774bffce"><p class="cl-774bdd5a"><span class="cl-7748c5a2">168</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffcf"><p class="cl-774bdd64"><span class="cl-7748c5a2">Mean (SD)</span></p></td>
+<td class="cl-774bffd0"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.93 (0.04)</span></p></td>
+<td class="cl-774bffd0"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.93 (0.04)</span></p></td>
+<td class="cl-774bffd0"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.93 (0.04)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffd1"><p class="cl-774bdd64"><span class="cl-7748c5a2">Median</span></p></td>
+<td class="cl-774bffd8"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.93</span></p></td>
+<td class="cl-774bffd8"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.93</span></p></td>
+<td class="cl-774bffd8"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.93</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffd1"><p class="cl-774bdd64"><span class="cl-7748c5a2">Geometric mean</span></p></td>
+<td class="cl-774bffd8"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.93</span></p></td>
+<td class="cl-774bffd8"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.93</span></p></td>
+<td class="cl-774bffd8"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.93</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffd9"><p class="cl-774bdd64"><span class="cl-7748c5a2">Min, max</span></p></td>
+<td class="cl-774bffda"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.86, 1.02</span></p></td>
+<td class="cl-774bffda"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.85, 1.01</span></p></td>
+<td class="cl-774bffda"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.85, 1.02</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffcf"><p class="cl-774bdd64"><span class="cl-7748c5a2">CV (%)</span></p></td>
+<td class="cl-774bffd0"><p class="cl-774bdd5a"><span class="cl-7748c5a2">4.0</span></p></td>
+<td class="cl-774bffd0"><p class="cl-774bdd5a"><span class="cl-7748c5a2">4.4</span></p></td>
+<td class="cl-774bffd0"><p class="cl-774bdd5a"><span class="cl-7748c5a2">4.2</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffbd"><p class="cl-774bdd64"><span class="cl-7748c5a2">Interquartile range</span></p></td>
+<td class="cl-774bffbe"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.90, 0.95</span></p></td>
+<td class="cl-774bffbe"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.90, 0.96</span></p></td>
+<td class="cl-774bffbe"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.90, 0.96</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffdb"><p class="cl-774bdd5b"><span class="cl-7748c5a2"></span></p></td>
+<td class="cl-774bffe2"><p class="cl-774bdd5a"><span class="cl-7748c5a2"></span></p></td>
+<td class="cl-774bffe2"><p class="cl-774bdd5a"><span class="cl-7748c5a2"></span></p></td>
+<td class="cl-774bffe2"><p class="cl-774bdd5a"><span class="cl-7748c5a2"></span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffbd"><p class="cl-774bdd5b"><span class="cl-7748c5a2">Day 1 - 1.5h Post-dose</span></p></td>
+<td class="cl-774bffbe"><p class="cl-774bdd5a"><span class="cl-7748c5a2"> </span></p></td>
+<td class="cl-774bffbe"><p class="cl-774bdd5a"><span class="cl-7748c5a2"> </span></p></td>
+<td class="cl-774bffbe"><p class="cl-774bdd5a"><span class="cl-7748c5a2"> </span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffc4"><p class="cl-774bdd5c"><span class="cl-7748c5a2">N</span></p></td>
+<td class="cl-774bffce"><p class="cl-774bdd5a"><span class="cl-7748c5a2">72</span></p></td>
+<td class="cl-774bffce"><p class="cl-774bdd5a"><span class="cl-7748c5a2">96</span></p></td>
+<td class="cl-774bffce"><p class="cl-774bdd5a"><span class="cl-7748c5a2">168</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffcf"><p class="cl-774bdd64"><span class="cl-7748c5a2">Mean (SD)</span></p></td>
+<td class="cl-774bffd0"><p class="cl-774bdd5a"><span class="cl-7748c5a2">1.20 (0.04)</span></p></td>
+<td class="cl-774bffd0"><p class="cl-774bdd5a"><span class="cl-7748c5a2">1.20 (0.05)</span></p></td>
+<td class="cl-774bffd0"><p class="cl-774bdd5a"><span class="cl-7748c5a2">1.20 (0.05)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffd1"><p class="cl-774bdd64"><span class="cl-7748c5a2">Median</span></p></td>
+<td class="cl-774bffd8"><p class="cl-774bdd5a"><span class="cl-7748c5a2">1.20</span></p></td>
+<td class="cl-774bffd8"><p class="cl-774bdd5a"><span class="cl-7748c5a2">1.20</span></p></td>
+<td class="cl-774bffd8"><p class="cl-774bdd5a"><span class="cl-7748c5a2">1.20</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffd1"><p class="cl-774bdd64"><span class="cl-7748c5a2">Geometric mean</span></p></td>
+<td class="cl-774bffd8"><p class="cl-774bdd5a"><span class="cl-7748c5a2">1.20</span></p></td>
+<td class="cl-774bffd8"><p class="cl-774bdd5a"><span class="cl-7748c5a2">1.20</span></p></td>
+<td class="cl-774bffd8"><p class="cl-774bdd5a"><span class="cl-7748c5a2">1.20</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffd9"><p class="cl-774bdd64"><span class="cl-7748c5a2">Min, max</span></p></td>
+<td class="cl-774bffda"><p class="cl-774bdd5a"><span class="cl-7748c5a2">1.12, 1.31</span></p></td>
+<td class="cl-774bffda"><p class="cl-774bdd5a"><span class="cl-7748c5a2">1.11, 1.29</span></p></td>
+<td class="cl-774bffda"><p class="cl-774bdd5a"><span class="cl-7748c5a2">1.11, 1.31</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffcf"><p class="cl-774bdd64"><span class="cl-7748c5a2">CV (%)</span></p></td>
+<td class="cl-774bffd0"><p class="cl-774bdd5a"><span class="cl-7748c5a2">3.7</span></p></td>
+<td class="cl-774bffd0"><p class="cl-774bdd5a"><span class="cl-7748c5a2">4.0</span></p></td>
+<td class="cl-774bffd0"><p class="cl-774bdd5a"><span class="cl-7748c5a2">3.9</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffbd"><p class="cl-774bdd64"><span class="cl-7748c5a2">Interquartile range</span></p></td>
+<td class="cl-774bffbe"><p class="cl-774bdd5a"><span class="cl-7748c5a2">1.17, 1.22</span></p></td>
+<td class="cl-774bffbe"><p class="cl-774bdd5a"><span class="cl-7748c5a2">1.16, 1.24</span></p></td>
+<td class="cl-774bffbe"><p class="cl-774bdd5a"><span class="cl-7748c5a2">1.17, 1.23</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffdb"><p class="cl-774bdd5b"><span class="cl-7748c5a2"></span></p></td>
+<td class="cl-774bffe2"><p class="cl-774bdd5a"><span class="cl-7748c5a2"></span></p></td>
+<td class="cl-774bffe2"><p class="cl-774bdd5a"><span class="cl-7748c5a2"></span></p></td>
+<td class="cl-774bffe2"><p class="cl-774bdd5a"><span class="cl-7748c5a2"></span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffbd"><p class="cl-774bdd5b"><span class="cl-7748c5a2">Day 1 - 2h Post-dose</span></p></td>
+<td class="cl-774bffbe"><p class="cl-774bdd5a"><span class="cl-7748c5a2"> </span></p></td>
+<td class="cl-774bffbe"><p class="cl-774bdd5a"><span class="cl-7748c5a2"> </span></p></td>
+<td class="cl-774bffbe"><p class="cl-774bdd5a"><span class="cl-7748c5a2"> </span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffc4"><p class="cl-774bdd5c"><span class="cl-7748c5a2">N</span></p></td>
+<td class="cl-774bffce"><p class="cl-774bdd5a"><span class="cl-7748c5a2">72</span></p></td>
+<td class="cl-774bffce"><p class="cl-774bdd5a"><span class="cl-7748c5a2">96</span></p></td>
+<td class="cl-774bffce"><p class="cl-774bdd5a"><span class="cl-7748c5a2">168</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffcf"><p class="cl-774bdd64"><span class="cl-7748c5a2">Mean (SD)</span></p></td>
+<td class="cl-774bffd0"><p class="cl-774bdd5a"><span class="cl-7748c5a2">1.39 (0.05)</span></p></td>
+<td class="cl-774bffd0"><p class="cl-774bdd5a"><span class="cl-7748c5a2">1.39 (0.05)</span></p></td>
+<td class="cl-774bffd0"><p class="cl-774bdd5a"><span class="cl-7748c5a2">1.39 (0.05)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffd1"><p class="cl-774bdd64"><span class="cl-7748c5a2">Median</span></p></td>
+<td class="cl-774bffd8"><p class="cl-774bdd5a"><span class="cl-7748c5a2">1.38</span></p></td>
+<td class="cl-774bffd8"><p class="cl-774bdd5a"><span class="cl-7748c5a2">1.39</span></p></td>
+<td class="cl-774bffd8"><p class="cl-774bdd5a"><span class="cl-7748c5a2">1.39</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffd1"><p class="cl-774bdd64"><span class="cl-7748c5a2">Geometric mean</span></p></td>
+<td class="cl-774bffd8"><p class="cl-774bdd5a"><span class="cl-7748c5a2">1.39</span></p></td>
+<td class="cl-774bffd8"><p class="cl-774bdd5a"><span class="cl-7748c5a2">1.39</span></p></td>
+<td class="cl-774bffd8"><p class="cl-774bdd5a"><span class="cl-7748c5a2">1.39</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffd9"><p class="cl-774bdd64"><span class="cl-7748c5a2">Min, max</span></p></td>
+<td class="cl-774bffda"><p class="cl-774bdd5a"><span class="cl-7748c5a2">1.31, 1.50</span></p></td>
+<td class="cl-774bffda"><p class="cl-774bdd5a"><span class="cl-7748c5a2">1.29, 1.49</span></p></td>
+<td class="cl-774bffda"><p class="cl-774bdd5a"><span class="cl-7748c5a2">1.29, 1.50</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffcf"><p class="cl-774bdd64"><span class="cl-7748c5a2">CV (%)</span></p></td>
+<td class="cl-774bffd0"><p class="cl-774bdd5a"><span class="cl-7748c5a2">3.4</span></p></td>
+<td class="cl-774bffd0"><p class="cl-774bdd5a"><span class="cl-7748c5a2">3.7</span></p></td>
+<td class="cl-774bffd0"><p class="cl-774bdd5a"><span class="cl-7748c5a2">3.6</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffbd"><p class="cl-774bdd64"><span class="cl-7748c5a2">Interquartile range</span></p></td>
+<td class="cl-774bffbe"><p class="cl-774bdd5a"><span class="cl-7748c5a2">1.36, 1.41</span></p></td>
+<td class="cl-774bffbe"><p class="cl-774bdd5a"><span class="cl-7748c5a2">1.35, 1.43</span></p></td>
+<td class="cl-774bffbe"><p class="cl-774bdd5a"><span class="cl-7748c5a2">1.35, 1.43</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffdb"><p class="cl-774bdd5b"><span class="cl-7748c5a2"></span></p></td>
+<td class="cl-774bffe2"><p class="cl-774bdd5a"><span class="cl-7748c5a2"></span></p></td>
+<td class="cl-774bffe2"><p class="cl-774bdd5a"><span class="cl-7748c5a2"></span></p></td>
+<td class="cl-774bffe2"><p class="cl-774bdd5a"><span class="cl-7748c5a2"></span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffbd"><p class="cl-774bdd5b"><span class="cl-7748c5a2">Day 1 - 4h Post-dose</span></p></td>
+<td class="cl-774bffbe"><p class="cl-774bdd5a"><span class="cl-7748c5a2"> </span></p></td>
+<td class="cl-774bffbe"><p class="cl-774bdd5a"><span class="cl-7748c5a2"> </span></p></td>
+<td class="cl-774bffbe"><p class="cl-774bdd5a"><span class="cl-7748c5a2"> </span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffc4"><p class="cl-774bdd5c"><span class="cl-7748c5a2">N</span></p></td>
+<td class="cl-774bffce"><p class="cl-774bdd5a"><span class="cl-7748c5a2">72</span></p></td>
+<td class="cl-774bffce"><p class="cl-774bdd5a"><span class="cl-7748c5a2">96</span></p></td>
+<td class="cl-774bffce"><p class="cl-774bdd5a"><span class="cl-7748c5a2">168</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffcf"><p class="cl-774bdd64"><span class="cl-7748c5a2">Mean (SD)</span></p></td>
+<td class="cl-774bffd0"><p class="cl-774bdd5a"><span class="cl-7748c5a2">1.73 (0.05)</span></p></td>
+<td class="cl-774bffd0"><p class="cl-774bdd5a"><span class="cl-7748c5a2">1.74 (0.05)</span></p></td>
+<td class="cl-774bffd0"><p class="cl-774bdd5a"><span class="cl-7748c5a2">1.74 (0.05)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffd1"><p class="cl-774bdd64"><span class="cl-7748c5a2">Median</span></p></td>
+<td class="cl-774bffd8"><p class="cl-774bdd5a"><span class="cl-7748c5a2">1.73</span></p></td>
+<td class="cl-774bffd8"><p class="cl-774bdd5a"><span class="cl-7748c5a2">1.74</span></p></td>
+<td class="cl-774bffd8"><p class="cl-774bdd5a"><span class="cl-7748c5a2">1.73</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffd1"><p class="cl-774bdd64"><span class="cl-7748c5a2">Geometric mean</span></p></td>
+<td class="cl-774bffd8"><p class="cl-774bdd5a"><span class="cl-7748c5a2">1.73</span></p></td>
+<td class="cl-774bffd8"><p class="cl-774bdd5a"><span class="cl-7748c5a2">1.74</span></p></td>
+<td class="cl-774bffd8"><p class="cl-774bdd5a"><span class="cl-7748c5a2">1.73</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffd9"><p class="cl-774bdd64"><span class="cl-7748c5a2">Min, max</span></p></td>
+<td class="cl-774bffda"><p class="cl-774bdd5a"><span class="cl-7748c5a2">1.65, 1.84</span></p></td>
+<td class="cl-774bffda"><p class="cl-774bdd5a"><span class="cl-7748c5a2">1.64, 1.83</span></p></td>
+<td class="cl-774bffda"><p class="cl-774bdd5a"><span class="cl-7748c5a2">1.64, 1.84</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffcf"><p class="cl-774bdd64"><span class="cl-7748c5a2">CV (%)</span></p></td>
+<td class="cl-774bffd0"><p class="cl-774bdd5a"><span class="cl-7748c5a2">3.0</span></p></td>
+<td class="cl-774bffd0"><p class="cl-774bdd5a"><span class="cl-7748c5a2">3.2</span></p></td>
+<td class="cl-774bffd0"><p class="cl-774bdd5a"><span class="cl-7748c5a2">3.1</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffbd"><p class="cl-774bdd64"><span class="cl-7748c5a2">Interquartile range</span></p></td>
+<td class="cl-774bffbe"><p class="cl-774bdd5a"><span class="cl-7748c5a2">1.69, 1.78</span></p></td>
+<td class="cl-774bffbe"><p class="cl-774bdd5a"><span class="cl-7748c5a2">1.69, 1.79</span></p></td>
+<td class="cl-774bffbe"><p class="cl-774bdd5a"><span class="cl-7748c5a2">1.69, 1.78</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffdb"><p class="cl-774bdd5b"><span class="cl-7748c5a2"></span></p></td>
+<td class="cl-774bffe2"><p class="cl-774bdd5a"><span class="cl-7748c5a2"></span></p></td>
+<td class="cl-774bffe2"><p class="cl-774bdd5a"><span class="cl-7748c5a2"></span></p></td>
+<td class="cl-774bffe2"><p class="cl-774bdd5a"><span class="cl-7748c5a2"></span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffbd"><p class="cl-774bdd5b"><span class="cl-7748c5a2">Day 1 - 0-6h Post-dose</span></p></td>
+<td class="cl-774bffbe"><p class="cl-774bdd5a"><span class="cl-7748c5a2"> </span></p></td>
+<td class="cl-774bffbe"><p class="cl-774bdd5a"><span class="cl-7748c5a2"> </span></p></td>
+<td class="cl-774bffbe"><p class="cl-774bdd5a"><span class="cl-7748c5a2"> </span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffc4"><p class="cl-774bdd5c"><span class="cl-7748c5a2">N</span></p></td>
+<td class="cl-774bffce"><p class="cl-774bdd5a"><span class="cl-7748c5a2">72</span></p></td>
+<td class="cl-774bffce"><p class="cl-774bdd5a"><span class="cl-7748c5a2">96</span></p></td>
+<td class="cl-774bffce"><p class="cl-774bdd5a"><span class="cl-7748c5a2">168</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffcf"><p class="cl-774bdd64"><span class="cl-7748c5a2">Mean (SD)</span></p></td>
+<td class="cl-774bffd0"><p class="cl-774bdd5a"><span class="cl-7748c5a2">26.85 (1.51)</span></p></td>
+<td class="cl-774bffd0"><p class="cl-774bdd5a"><span class="cl-7748c5a2">26.72 (1.44)</span></p></td>
+<td class="cl-774bffd0"><p class="cl-774bdd5a"><span class="cl-7748c5a2">26.78 (1.47)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffd1"><p class="cl-774bdd64"><span class="cl-7748c5a2">Median</span></p></td>
+<td class="cl-774bffd8"><p class="cl-774bdd5a"><span class="cl-7748c5a2">26.80</span></p></td>
+<td class="cl-774bffd8"><p class="cl-774bdd5a"><span class="cl-7748c5a2">26.63</span></p></td>
+<td class="cl-774bffd8"><p class="cl-774bdd5a"><span class="cl-7748c5a2">26.67</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffd1"><p class="cl-774bdd64"><span class="cl-7748c5a2">Geometric mean</span></p></td>
+<td class="cl-774bffd8"><p class="cl-774bdd5a"><span class="cl-7748c5a2">26.81</span></p></td>
+<td class="cl-774bffd8"><p class="cl-774bdd5a"><span class="cl-7748c5a2">26.68</span></p></td>
+<td class="cl-774bffd8"><p class="cl-774bdd5a"><span class="cl-7748c5a2">26.74</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffd9"><p class="cl-774bdd64"><span class="cl-7748c5a2">Min, max</span></p></td>
+<td class="cl-774bffda"><p class="cl-774bdd5a"><span class="cl-7748c5a2">24.49, 29.19</span></p></td>
+<td class="cl-774bffda"><p class="cl-774bdd5a"><span class="cl-7748c5a2">24.53, 29.25</span></p></td>
+<td class="cl-774bffda"><p class="cl-774bdd5a"><span class="cl-7748c5a2">24.49, 29.25</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffcf"><p class="cl-774bdd64"><span class="cl-7748c5a2">CV (%)</span></p></td>
+<td class="cl-774bffd0"><p class="cl-774bdd5a"><span class="cl-7748c5a2">5.6</span></p></td>
+<td class="cl-774bffd0"><p class="cl-774bdd5a"><span class="cl-7748c5a2">5.4</span></p></td>
+<td class="cl-774bffd0"><p class="cl-774bdd5a"><span class="cl-7748c5a2">5.5</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffbd"><p class="cl-774bdd64"><span class="cl-7748c5a2">Interquartile range</span></p></td>
+<td class="cl-774bffbe"><p class="cl-774bdd5a"><span class="cl-7748c5a2">25.46, 28.28</span></p></td>
+<td class="cl-774bffbe"><p class="cl-774bdd5a"><span class="cl-7748c5a2">25.56, 28.01</span></p></td>
+<td class="cl-774bffbe"><p class="cl-774bdd5a"><span class="cl-7748c5a2">25.52, 28.17</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffdb"><p class="cl-774bdd5b"><span class="cl-7748c5a2"></span></p></td>
+<td class="cl-774bffe2"><p class="cl-774bdd5a"><span class="cl-7748c5a2"></span></p></td>
+<td class="cl-774bffe2"><p class="cl-774bdd5a"><span class="cl-7748c5a2"></span></p></td>
+<td class="cl-774bffe2"><p class="cl-774bdd5a"><span class="cl-7748c5a2"></span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffbd"><p class="cl-774bdd5b"><span class="cl-7748c5a2">Day 1 - 6h Post-dose</span></p></td>
+<td class="cl-774bffbe"><p class="cl-774bdd5a"><span class="cl-7748c5a2"> </span></p></td>
+<td class="cl-774bffbe"><p class="cl-774bdd5a"><span class="cl-7748c5a2"> </span></p></td>
+<td class="cl-774bffbe"><p class="cl-774bdd5a"><span class="cl-7748c5a2"> </span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffc4"><p class="cl-774bdd5c"><span class="cl-7748c5a2">N</span></p></td>
+<td class="cl-774bffce"><p class="cl-774bdd5a"><span class="cl-7748c5a2">72</span></p></td>
+<td class="cl-774bffce"><p class="cl-774bdd5a"><span class="cl-7748c5a2">96</span></p></td>
+<td class="cl-774bffce"><p class="cl-774bdd5a"><span class="cl-7748c5a2">168</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffcf"><p class="cl-774bdd64"><span class="cl-7748c5a2">Mean (SD)</span></p></td>
+<td class="cl-774bffd0"><p class="cl-774bdd5a"><span class="cl-7748c5a2">1.82 (0.05)</span></p></td>
+<td class="cl-774bffd0"><p class="cl-774bdd5a"><span class="cl-7748c5a2">1.82 (0.05)</span></p></td>
+<td class="cl-774bffd0"><p class="cl-774bdd5a"><span class="cl-7748c5a2">1.82 (0.05)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffd1"><p class="cl-774bdd64"><span class="cl-7748c5a2">Median</span></p></td>
+<td class="cl-774bffd8"><p class="cl-774bdd5a"><span class="cl-7748c5a2">1.82</span></p></td>
+<td class="cl-774bffd8"><p class="cl-774bdd5a"><span class="cl-7748c5a2">1.82</span></p></td>
+<td class="cl-774bffd8"><p class="cl-774bdd5a"><span class="cl-7748c5a2">1.82</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffd1"><p class="cl-774bdd64"><span class="cl-7748c5a2">Geometric mean</span></p></td>
+<td class="cl-774bffd8"><p class="cl-774bdd5a"><span class="cl-7748c5a2">1.82</span></p></td>
+<td class="cl-774bffd8"><p class="cl-774bdd5a"><span class="cl-7748c5a2">1.82</span></p></td>
+<td class="cl-774bffd8"><p class="cl-774bdd5a"><span class="cl-7748c5a2">1.82</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffd9"><p class="cl-774bdd64"><span class="cl-7748c5a2">Min, max</span></p></td>
+<td class="cl-774bffda"><p class="cl-774bdd5a"><span class="cl-7748c5a2">1.74, 1.92</span></p></td>
+<td class="cl-774bffda"><p class="cl-774bdd5a"><span class="cl-7748c5a2">1.73, 1.91</span></p></td>
+<td class="cl-774bffda"><p class="cl-774bdd5a"><span class="cl-7748c5a2">1.73, 1.92</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffcf"><p class="cl-774bdd64"><span class="cl-7748c5a2">CV (%)</span></p></td>
+<td class="cl-774bffd0"><p class="cl-774bdd5a"><span class="cl-7748c5a2">3.0</span></p></td>
+<td class="cl-774bffd0"><p class="cl-774bdd5a"><span class="cl-7748c5a2">3.0</span></p></td>
+<td class="cl-774bffd0"><p class="cl-774bdd5a"><span class="cl-7748c5a2">3.0</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffbd"><p class="cl-774bdd64"><span class="cl-7748c5a2">Interquartile range</span></p></td>
+<td class="cl-774bffbe"><p class="cl-774bdd5a"><span class="cl-7748c5a2">1.77, 1.87</span></p></td>
+<td class="cl-774bffbe"><p class="cl-774bdd5a"><span class="cl-7748c5a2">1.77, 1.88</span></p></td>
+<td class="cl-774bffbe"><p class="cl-774bdd5a"><span class="cl-7748c5a2">1.77, 1.87</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffdb"><p class="cl-774bdd5b"><span class="cl-7748c5a2"></span></p></td>
+<td class="cl-774bffe2"><p class="cl-774bdd5a"><span class="cl-7748c5a2"></span></p></td>
+<td class="cl-774bffe2"><p class="cl-774bdd5a"><span class="cl-7748c5a2"></span></p></td>
+<td class="cl-774bffe2"><p class="cl-774bdd5a"><span class="cl-7748c5a2"></span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffbd"><p class="cl-774bdd5b"><span class="cl-7748c5a2">Day 1 - 8h Post-dose</span></p></td>
+<td class="cl-774bffbe"><p class="cl-774bdd5a"><span class="cl-7748c5a2"> </span></p></td>
+<td class="cl-774bffbe"><p class="cl-774bdd5a"><span class="cl-7748c5a2"> </span></p></td>
+<td class="cl-774bffbe"><p class="cl-774bdd5a"><span class="cl-7748c5a2"> </span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffc4"><p class="cl-774bdd5c"><span class="cl-7748c5a2">N</span></p></td>
+<td class="cl-774bffce"><p class="cl-774bdd5a"><span class="cl-7748c5a2">72</span></p></td>
+<td class="cl-774bffce"><p class="cl-774bdd5a"><span class="cl-7748c5a2">96</span></p></td>
+<td class="cl-774bffce"><p class="cl-774bdd5a"><span class="cl-7748c5a2">168</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffcf"><p class="cl-774bdd64"><span class="cl-7748c5a2">Mean (SD)</span></p></td>
+<td class="cl-774bffd0"><p class="cl-774bdd5a"><span class="cl-7748c5a2">1.84 (0.05)</span></p></td>
+<td class="cl-774bffd0"><p class="cl-774bdd5a"><span class="cl-7748c5a2">1.84 (0.05)</span></p></td>
+<td class="cl-774bffd0"><p class="cl-774bdd5a"><span class="cl-7748c5a2">1.84 (0.05)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffd1"><p class="cl-774bdd64"><span class="cl-7748c5a2">Median</span></p></td>
+<td class="cl-774bffd8"><p class="cl-774bdd5a"><span class="cl-7748c5a2">1.84</span></p></td>
+<td class="cl-774bffd8"><p class="cl-774bdd5a"><span class="cl-7748c5a2">1.84</span></p></td>
+<td class="cl-774bffd8"><p class="cl-774bdd5a"><span class="cl-7748c5a2">1.84</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffd1"><p class="cl-774bdd64"><span class="cl-7748c5a2">Geometric mean</span></p></td>
+<td class="cl-774bffd8"><p class="cl-774bdd5a"><span class="cl-7748c5a2">1.84</span></p></td>
+<td class="cl-774bffd8"><p class="cl-774bdd5a"><span class="cl-7748c5a2">1.84</span></p></td>
+<td class="cl-774bffd8"><p class="cl-774bdd5a"><span class="cl-7748c5a2">1.84</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffd9"><p class="cl-774bdd64"><span class="cl-7748c5a2">Min, max</span></p></td>
+<td class="cl-774bffda"><p class="cl-774bdd5a"><span class="cl-7748c5a2">1.76, 1.94</span></p></td>
+<td class="cl-774bffda"><p class="cl-774bdd5a"><span class="cl-7748c5a2">1.75, 1.94</span></p></td>
+<td class="cl-774bffda"><p class="cl-774bdd5a"><span class="cl-7748c5a2">1.75, 1.94</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffcf"><p class="cl-774bdd64"><span class="cl-7748c5a2">CV (%)</span></p></td>
+<td class="cl-774bffd0"><p class="cl-774bdd5a"><span class="cl-7748c5a2">3.0</span></p></td>
+<td class="cl-774bffd0"><p class="cl-774bdd5a"><span class="cl-7748c5a2">3.0</span></p></td>
+<td class="cl-774bffd0"><p class="cl-774bdd5a"><span class="cl-7748c5a2">3.0</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffbd"><p class="cl-774bdd64"><span class="cl-7748c5a2">Interquartile range</span></p></td>
+<td class="cl-774bffbe"><p class="cl-774bdd5a"><span class="cl-7748c5a2">1.79, 1.90</span></p></td>
+<td class="cl-774bffbe"><p class="cl-774bdd5a"><span class="cl-7748c5a2">1.79, 1.90</span></p></td>
+<td class="cl-774bffbe"><p class="cl-774bdd5a"><span class="cl-7748c5a2">1.79, 1.90</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffdb"><p class="cl-774bdd5b"><span class="cl-7748c5a2"></span></p></td>
+<td class="cl-774bffe2"><p class="cl-774bdd5a"><span class="cl-7748c5a2"></span></p></td>
+<td class="cl-774bffe2"><p class="cl-774bdd5a"><span class="cl-7748c5a2"></span></p></td>
+<td class="cl-774bffe2"><p class="cl-774bdd5a"><span class="cl-7748c5a2"></span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffbd"><p class="cl-774bdd5b"><span class="cl-7748c5a2">Day 1 - 6-12h Post-dose</span></p></td>
+<td class="cl-774bffbe"><p class="cl-774bdd5a"><span class="cl-7748c5a2"> </span></p></td>
+<td class="cl-774bffbe"><p class="cl-774bdd5a"><span class="cl-7748c5a2"> </span></p></td>
+<td class="cl-774bffbe"><p class="cl-774bdd5a"><span class="cl-7748c5a2"> </span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffc4"><p class="cl-774bdd5c"><span class="cl-7748c5a2">N</span></p></td>
+<td class="cl-774bffce"><p class="cl-774bdd5a"><span class="cl-7748c5a2">72</span></p></td>
+<td class="cl-774bffce"><p class="cl-774bdd5a"><span class="cl-7748c5a2">96</span></p></td>
+<td class="cl-774bffce"><p class="cl-774bdd5a"><span class="cl-7748c5a2">168</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffcf"><p class="cl-774bdd64"><span class="cl-7748c5a2">Mean (SD)</span></p></td>
+<td class="cl-774bffd0"><p class="cl-774bdd5a"><span class="cl-7748c5a2">22.67 (1.69)</span></p></td>
+<td class="cl-774bffd0"><p class="cl-774bdd5a"><span class="cl-7748c5a2">22.52 (1.61)</span></p></td>
+<td class="cl-774bffd0"><p class="cl-774bdd5a"><span class="cl-7748c5a2">22.58 (1.64)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffd1"><p class="cl-774bdd64"><span class="cl-7748c5a2">Median</span></p></td>
+<td class="cl-774bffd8"><p class="cl-774bdd5a"><span class="cl-7748c5a2">22.62</span></p></td>
+<td class="cl-774bffd8"><p class="cl-774bdd5a"><span class="cl-7748c5a2">22.43</span></p></td>
+<td class="cl-774bffd8"><p class="cl-774bdd5a"><span class="cl-7748c5a2">22.47</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffd1"><p class="cl-774bdd64"><span class="cl-7748c5a2">Geometric mean</span></p></td>
+<td class="cl-774bffd8"><p class="cl-774bdd5a"><span class="cl-7748c5a2">22.60</span></p></td>
+<td class="cl-774bffd8"><p class="cl-774bdd5a"><span class="cl-7748c5a2">22.47</span></p></td>
+<td class="cl-774bffd8"><p class="cl-774bdd5a"><span class="cl-7748c5a2">22.53</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffd9"><p class="cl-774bdd64"><span class="cl-7748c5a2">Min, max</span></p></td>
+<td class="cl-774bffda"><p class="cl-774bdd5a"><span class="cl-7748c5a2">20.01, 25.27</span></p></td>
+<td class="cl-774bffda"><p class="cl-774bdd5a"><span class="cl-7748c5a2">20.06, 25.34</span></p></td>
+<td class="cl-774bffda"><p class="cl-774bdd5a"><span class="cl-7748c5a2">20.01, 25.34</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffcf"><p class="cl-774bdd64"><span class="cl-7748c5a2">CV (%)</span></p></td>
+<td class="cl-774bffd0"><p class="cl-774bdd5a"><span class="cl-7748c5a2">7.4</span></p></td>
+<td class="cl-774bffd0"><p class="cl-774bdd5a"><span class="cl-7748c5a2">7.1</span></p></td>
+<td class="cl-774bffd0"><p class="cl-774bdd5a"><span class="cl-7748c5a2">7.3</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffbd"><p class="cl-774bdd64"><span class="cl-7748c5a2">Interquartile range</span></p></td>
+<td class="cl-774bffbe"><p class="cl-774bdd5a"><span class="cl-7748c5a2">21.11, 24.26</span></p></td>
+<td class="cl-774bffbe"><p class="cl-774bdd5a"><span class="cl-7748c5a2">21.23, 23.97</span></p></td>
+<td class="cl-774bffbe"><p class="cl-774bdd5a"><span class="cl-7748c5a2">21.18, 24.15</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffdb"><p class="cl-774bdd5b"><span class="cl-7748c5a2"></span></p></td>
+<td class="cl-774bffe2"><p class="cl-774bdd5a"><span class="cl-7748c5a2"></span></p></td>
+<td class="cl-774bffe2"><p class="cl-774bdd5a"><span class="cl-7748c5a2"></span></p></td>
+<td class="cl-774bffe2"><p class="cl-774bdd5a"><span class="cl-7748c5a2"></span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffbd"><p class="cl-774bdd5b"><span class="cl-7748c5a2">Day 1 - 12h Post-dose</span></p></td>
+<td class="cl-774bffbe"><p class="cl-774bdd5a"><span class="cl-7748c5a2"> </span></p></td>
+<td class="cl-774bffbe"><p class="cl-774bdd5a"><span class="cl-7748c5a2"> </span></p></td>
+<td class="cl-774bffbe"><p class="cl-774bdd5a"><span class="cl-7748c5a2"> </span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffc4"><p class="cl-774bdd5c"><span class="cl-7748c5a2">N</span></p></td>
+<td class="cl-774bffce"><p class="cl-774bdd5a"><span class="cl-7748c5a2">72</span></p></td>
+<td class="cl-774bffce"><p class="cl-774bdd5a"><span class="cl-7748c5a2">96</span></p></td>
+<td class="cl-774bffce"><p class="cl-774bdd5a"><span class="cl-7748c5a2">168</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffcf"><p class="cl-774bdd64"><span class="cl-7748c5a2">Mean (SD)</span></p></td>
+<td class="cl-774bffd0"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.55 (0.03)</span></p></td>
+<td class="cl-774bffd0"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.55 (0.03)</span></p></td>
+<td class="cl-774bffd0"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.55 (0.03)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffd1"><p class="cl-774bdd64"><span class="cl-7748c5a2">Median</span></p></td>
+<td class="cl-774bffd8"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.55</span></p></td>
+<td class="cl-774bffd8"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.55</span></p></td>
+<td class="cl-774bffd8"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.55</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffd1"><p class="cl-774bdd64"><span class="cl-7748c5a2">Geometric mean</span></p></td>
+<td class="cl-774bffd8"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.55</span></p></td>
+<td class="cl-774bffd8"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.55</span></p></td>
+<td class="cl-774bffd8"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.55</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffd9"><p class="cl-774bdd64"><span class="cl-7748c5a2">Min, max</span></p></td>
+<td class="cl-774bffda"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.49, 0.62</span></p></td>
+<td class="cl-774bffda"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.49, 0.62</span></p></td>
+<td class="cl-774bffda"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.49, 0.62</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffcf"><p class="cl-774bdd64"><span class="cl-7748c5a2">CV (%)</span></p></td>
+<td class="cl-774bffd0"><p class="cl-774bdd5a"><span class="cl-7748c5a2">6.2</span></p></td>
+<td class="cl-774bffd0"><p class="cl-774bdd5a"><span class="cl-7748c5a2">5.4</span></p></td>
+<td class="cl-774bffd0"><p class="cl-774bdd5a"><span class="cl-7748c5a2">5.7</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffbd"><p class="cl-774bdd64"><span class="cl-7748c5a2">Interquartile range</span></p></td>
+<td class="cl-774bffbe"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.53, 0.58</span></p></td>
+<td class="cl-774bffbe"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.53, 0.57</span></p></td>
+<td class="cl-774bffbe"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.53, 0.57</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffdb"><p class="cl-774bdd5b"><span class="cl-7748c5a2"></span></p></td>
+<td class="cl-774bffe2"><p class="cl-774bdd5a"><span class="cl-7748c5a2"></span></p></td>
+<td class="cl-774bffe2"><p class="cl-774bdd5a"><span class="cl-7748c5a2"></span></p></td>
+<td class="cl-774bffe2"><p class="cl-774bdd5a"><span class="cl-7748c5a2"></span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffbd"><p class="cl-774bdd5b"><span class="cl-7748c5a2">Day 1 - 16h Post-dose</span></p></td>
+<td class="cl-774bffbe"><p class="cl-774bdd5a"><span class="cl-7748c5a2"> </span></p></td>
+<td class="cl-774bffbe"><p class="cl-774bdd5a"><span class="cl-7748c5a2"> </span></p></td>
+<td class="cl-774bffbe"><p class="cl-774bdd5a"><span class="cl-7748c5a2"> </span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffc4"><p class="cl-774bdd5c"><span class="cl-7748c5a2">N</span></p></td>
+<td class="cl-774bffce"><p class="cl-774bdd5a"><span class="cl-7748c5a2">72</span></p></td>
+<td class="cl-774bffce"><p class="cl-774bdd5a"><span class="cl-7748c5a2">96</span></p></td>
+<td class="cl-774bffce"><p class="cl-774bdd5a"><span class="cl-7748c5a2">168</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffcf"><p class="cl-774bdd64"><span class="cl-7748c5a2">Mean (SD)</span></p></td>
+<td class="cl-774bffd0"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.16 (0.02)</span></p></td>
+<td class="cl-774bffd0"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.16 (0.02)</span></p></td>
+<td class="cl-774bffd0"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.16 (0.02)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffd1"><p class="cl-774bdd64"><span class="cl-7748c5a2">Median</span></p></td>
+<td class="cl-774bffd8"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.17</span></p></td>
+<td class="cl-774bffd8"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.16</span></p></td>
+<td class="cl-774bffd8"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.16</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffd1"><p class="cl-774bdd64"><span class="cl-7748c5a2">Geometric mean</span></p></td>
+<td class="cl-774bffd8"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.16</span></p></td>
+<td class="cl-774bffd8"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.16</span></p></td>
+<td class="cl-774bffd8"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.16</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffd9"><p class="cl-774bdd64"><span class="cl-7748c5a2">Min, max</span></p></td>
+<td class="cl-774bffda"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.13, 0.20</span></p></td>
+<td class="cl-774bffda"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.13, 0.20</span></p></td>
+<td class="cl-774bffda"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.13, 0.20</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffcf"><p class="cl-774bdd64"><span class="cl-7748c5a2">CV (%)</span></p></td>
+<td class="cl-774bffd0"><p class="cl-774bdd5a"><span class="cl-7748c5a2">11.0</span></p></td>
+<td class="cl-774bffd0"><p class="cl-774bdd5a"><span class="cl-7748c5a2">10.0</span></p></td>
+<td class="cl-774bffd0"><p class="cl-774bdd5a"><span class="cl-7748c5a2">10.4</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffbd"><p class="cl-774bdd64"><span class="cl-7748c5a2">Interquartile range</span></p></td>
+<td class="cl-774bffbe"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.15, 0.18</span></p></td>
+<td class="cl-774bffbe"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.15, 0.18</span></p></td>
+<td class="cl-774bffbe"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.15, 0.18</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffdb"><p class="cl-774bdd5b"><span class="cl-7748c5a2"></span></p></td>
+<td class="cl-774bffe2"><p class="cl-774bdd5a"><span class="cl-7748c5a2"></span></p></td>
+<td class="cl-774bffe2"><p class="cl-774bdd5a"><span class="cl-7748c5a2"></span></p></td>
+<td class="cl-774bffe2"><p class="cl-774bdd5a"><span class="cl-7748c5a2"></span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffbd"><p class="cl-774bdd5b"><span class="cl-7748c5a2">Day 1 - 12-24h Post-dose</span></p></td>
+<td class="cl-774bffbe"><p class="cl-774bdd5a"><span class="cl-7748c5a2"> </span></p></td>
+<td class="cl-774bffbe"><p class="cl-774bdd5a"><span class="cl-7748c5a2"> </span></p></td>
+<td class="cl-774bffbe"><p class="cl-774bdd5a"><span class="cl-7748c5a2"> </span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffc4"><p class="cl-774bdd5c"><span class="cl-7748c5a2">N</span></p></td>
+<td class="cl-774bffce"><p class="cl-774bdd5a"><span class="cl-7748c5a2">72</span></p></td>
+<td class="cl-774bffce"><p class="cl-774bdd5a"><span class="cl-7748c5a2">96</span></p></td>
+<td class="cl-774bffce"><p class="cl-774bdd5a"><span class="cl-7748c5a2">168</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffcf"><p class="cl-774bdd64"><span class="cl-7748c5a2">Mean (SD)</span></p></td>
+<td class="cl-774bffd0"><p class="cl-774bdd5a"><span class="cl-7748c5a2">14.30 (2.04)</span></p></td>
+<td class="cl-774bffd0"><p class="cl-774bdd5a"><span class="cl-7748c5a2">14.13 (1.95)</span></p></td>
+<td class="cl-774bffd0"><p class="cl-774bdd5a"><span class="cl-7748c5a2">14.20 (1.99)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffd1"><p class="cl-774bdd64"><span class="cl-7748c5a2">Median</span></p></td>
+<td class="cl-774bffd8"><p class="cl-774bdd5a"><span class="cl-7748c5a2">14.26</span></p></td>
+<td class="cl-774bffd8"><p class="cl-774bdd5a"><span class="cl-7748c5a2">14.02</span></p></td>
+<td class="cl-774bffd8"><p class="cl-774bdd5a"><span class="cl-7748c5a2">14.07</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffd1"><p class="cl-774bdd64"><span class="cl-7748c5a2">Geometric mean</span></p></td>
+<td class="cl-774bffd8"><p class="cl-774bdd5a"><span class="cl-7748c5a2">14.15</span></p></td>
+<td class="cl-774bffd8"><p class="cl-774bdd5a"><span class="cl-7748c5a2">13.99</span></p></td>
+<td class="cl-774bffd8"><p class="cl-774bdd5a"><span class="cl-7748c5a2">14.06</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffd9"><p class="cl-774bdd64"><span class="cl-7748c5a2">Min, max</span></p></td>
+<td class="cl-774bffda"><p class="cl-774bdd5a"><span class="cl-7748c5a2">11.07, 17.44</span></p></td>
+<td class="cl-774bffda"><p class="cl-774bdd5a"><span class="cl-7748c5a2">11.13, 17.52</span></p></td>
+<td class="cl-774bffda"><p class="cl-774bdd5a"><span class="cl-7748c5a2">11.07, 17.52</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffcf"><p class="cl-774bdd64"><span class="cl-7748c5a2">CV (%)</span></p></td>
+<td class="cl-774bffd0"><p class="cl-774bdd5a"><span class="cl-7748c5a2">14.3</span></p></td>
+<td class="cl-774bffd0"><p class="cl-774bdd5a"><span class="cl-7748c5a2">13.8</span></p></td>
+<td class="cl-774bffd0"><p class="cl-774bdd5a"><span class="cl-7748c5a2">14.0</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffbd"><p class="cl-774bdd64"><span class="cl-7748c5a2">Interquartile range</span></p></td>
+<td class="cl-774bffbe"><p class="cl-774bdd5a"><span class="cl-7748c5a2">12.41, 16.24</span></p></td>
+<td class="cl-774bffbe"><p class="cl-774bdd5a"><span class="cl-7748c5a2">12.56, 15.88</span></p></td>
+<td class="cl-774bffbe"><p class="cl-774bdd5a"><span class="cl-7748c5a2">12.50, 16.10</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffdb"><p class="cl-774bdd5b"><span class="cl-7748c5a2"></span></p></td>
+<td class="cl-774bffe2"><p class="cl-774bdd5a"><span class="cl-7748c5a2"></span></p></td>
+<td class="cl-774bffe2"><p class="cl-774bdd5a"><span class="cl-7748c5a2"></span></p></td>
+<td class="cl-774bffe2"><p class="cl-774bdd5a"><span class="cl-7748c5a2"></span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffbd"><p class="cl-774bdd5b"><span class="cl-7748c5a2">Day 2 - 24h Post-dose</span></p></td>
+<td class="cl-774bffbe"><p class="cl-774bdd5a"><span class="cl-7748c5a2"> </span></p></td>
+<td class="cl-774bffbe"><p class="cl-774bdd5a"><span class="cl-7748c5a2"> </span></p></td>
+<td class="cl-774bffbe"><p class="cl-774bdd5a"><span class="cl-7748c5a2"> </span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffc4"><p class="cl-774bdd5c"><span class="cl-7748c5a2">N</span></p></td>
+<td class="cl-774bffce"><p class="cl-774bdd5a"><span class="cl-7748c5a2">72</span></p></td>
+<td class="cl-774bffce"><p class="cl-774bdd5a"><span class="cl-7748c5a2">96</span></p></td>
+<td class="cl-774bffce"><p class="cl-774bdd5a"><span class="cl-7748c5a2">168</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffcf"><p class="cl-774bdd64"><span class="cl-7748c5a2">Mean (SD)</span></p></td>
+<td class="cl-774bffd0"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.01 (0.00)</span></p></td>
+<td class="cl-774bffd0"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.01 (0.00)</span></p></td>
+<td class="cl-774bffd0"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.01 (0.00)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffd1"><p class="cl-774bdd64"><span class="cl-7748c5a2">Median</span></p></td>
+<td class="cl-774bffd8"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.01</span></p></td>
+<td class="cl-774bffd8"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.01</span></p></td>
+<td class="cl-774bffd8"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.01</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffd1"><p class="cl-774bdd64"><span class="cl-7748c5a2">Geometric mean</span></p></td>
+<td class="cl-774bffd8"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.01</span></p></td>
+<td class="cl-774bffd8"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.01</span></p></td>
+<td class="cl-774bffd8"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.01</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffd9"><p class="cl-774bdd64"><span class="cl-7748c5a2">Min, max</span></p></td>
+<td class="cl-774bffda"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.01, 0.02</span></p></td>
+<td class="cl-774bffda"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.01, 0.02</span></p></td>
+<td class="cl-774bffda"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.01, 0.02</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffcf"><p class="cl-774bdd64"><span class="cl-7748c5a2">CV (%)</span></p></td>
+<td class="cl-774bffd0"><p class="cl-774bdd5a"><span class="cl-7748c5a2">20.9</span></p></td>
+<td class="cl-774bffd0"><p class="cl-774bdd5a"><span class="cl-7748c5a2">19.7</span></p></td>
+<td class="cl-774bffd0"><p class="cl-774bdd5a"><span class="cl-7748c5a2">20.2</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffbd"><p class="cl-774bdd64"><span class="cl-7748c5a2">Interquartile range</span></p></td>
+<td class="cl-774bffbe"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.01, 0.02</span></p></td>
+<td class="cl-774bffbe"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.01, 0.02</span></p></td>
+<td class="cl-774bffbe"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.01, 0.02</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffdb"><p class="cl-774bdd5b"><span class="cl-7748c5a2"></span></p></td>
+<td class="cl-774bffe2"><p class="cl-774bdd5a"><span class="cl-7748c5a2"></span></p></td>
+<td class="cl-774bffe2"><p class="cl-774bdd5a"><span class="cl-7748c5a2"></span></p></td>
+<td class="cl-774bffe2"><p class="cl-774bdd5a"><span class="cl-7748c5a2"></span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffbd"><p class="cl-774bdd5b"><span class="cl-7748c5a2">Day 2 - Pre-dose</span></p></td>
+<td class="cl-774bffbe"><p class="cl-774bdd5a"><span class="cl-7748c5a2"> </span></p></td>
+<td class="cl-774bffbe"><p class="cl-774bdd5a"><span class="cl-7748c5a2"> </span></p></td>
+<td class="cl-774bffbe"><p class="cl-774bdd5a"><span class="cl-7748c5a2"> </span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffc4"><p class="cl-774bdd5c"><span class="cl-7748c5a2">N</span></p></td>
+<td class="cl-774bffce"><p class="cl-774bdd5a"><span class="cl-7748c5a2">72</span></p></td>
+<td class="cl-774bffce"><p class="cl-774bdd5a"><span class="cl-7748c5a2">94</span></p></td>
+<td class="cl-774bffce"><p class="cl-774bdd5a"><span class="cl-7748c5a2">166</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffcf"><p class="cl-774bdd64"><span class="cl-7748c5a2">Mean (SD)</span></p></td>
+<td class="cl-774bffd0"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.01 (0.00)</span></p></td>
+<td class="cl-774bffd0"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.01 (0.00)</span></p></td>
+<td class="cl-774bffd0"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.01 (0.00)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffd1"><p class="cl-774bdd64"><span class="cl-7748c5a2">Median</span></p></td>
+<td class="cl-774bffd8"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.01</span></p></td>
+<td class="cl-774bffd8"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.01</span></p></td>
+<td class="cl-774bffd8"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.01</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffd1"><p class="cl-774bdd64"><span class="cl-7748c5a2">Geometric mean</span></p></td>
+<td class="cl-774bffd8"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.01</span></p></td>
+<td class="cl-774bffd8"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.01</span></p></td>
+<td class="cl-774bffd8"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.01</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffd9"><p class="cl-774bdd64"><span class="cl-7748c5a2">Min, max</span></p></td>
+<td class="cl-774bffda"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.01, 0.02</span></p></td>
+<td class="cl-774bffda"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.01, 0.02</span></p></td>
+<td class="cl-774bffda"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.01, 0.02</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffcf"><p class="cl-774bdd64"><span class="cl-7748c5a2">CV (%)</span></p></td>
+<td class="cl-774bffd0"><p class="cl-774bdd5a"><span class="cl-7748c5a2">20.9</span></p></td>
+<td class="cl-774bffd0"><p class="cl-774bdd5a"><span class="cl-7748c5a2">19.7</span></p></td>
+<td class="cl-774bffd0"><p class="cl-774bdd5a"><span class="cl-7748c5a2">20.2</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffbd"><p class="cl-774bdd64"><span class="cl-7748c5a2">Interquartile range</span></p></td>
+<td class="cl-774bffbe"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.01, 0.02</span></p></td>
+<td class="cl-774bffbe"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.01, 0.02</span></p></td>
+<td class="cl-774bffbe"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.01, 0.02</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffdb"><p class="cl-774bdd5b"><span class="cl-7748c5a2"></span></p></td>
+<td class="cl-774bffe2"><p class="cl-774bdd5a"><span class="cl-7748c5a2"></span></p></td>
+<td class="cl-774bffe2"><p class="cl-774bdd5a"><span class="cl-7748c5a2"></span></p></td>
+<td class="cl-774bffe2"><p class="cl-774bdd5a"><span class="cl-7748c5a2"></span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffbd"><p class="cl-774bdd5b"><span class="cl-7748c5a2">Day 2 - 36h Post-dose</span></p></td>
+<td class="cl-774bffbe"><p class="cl-774bdd5a"><span class="cl-7748c5a2"> </span></p></td>
+<td class="cl-774bffbe"><p class="cl-774bdd5a"><span class="cl-7748c5a2"> </span></p></td>
+<td class="cl-774bffbe"><p class="cl-774bdd5a"><span class="cl-7748c5a2"> </span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffc4"><p class="cl-774bdd5c"><span class="cl-7748c5a2">N</span></p></td>
+<td class="cl-774bffce"><p class="cl-774bdd5a"><span class="cl-7748c5a2">72</span></p></td>
+<td class="cl-774bffce"><p class="cl-774bdd5a"><span class="cl-7748c5a2">96</span></p></td>
+<td class="cl-774bffce"><p class="cl-774bdd5a"><span class="cl-7748c5a2">168</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffcf"><p class="cl-774bdd64"><span class="cl-7748c5a2">Mean (SD)</span></p></td>
+<td class="cl-774bffd0"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.00 (0.00)</span></p></td>
+<td class="cl-774bffd0"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.00 (0.00)</span></p></td>
+<td class="cl-774bffd0"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.00 (0.00)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffd1"><p class="cl-774bdd64"><span class="cl-7748c5a2">Median</span></p></td>
+<td class="cl-774bffd8"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.00</span></p></td>
+<td class="cl-774bffd8"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.00</span></p></td>
+<td class="cl-774bffd8"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.00</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffd1"><p class="cl-774bdd64"><span class="cl-7748c5a2">Geometric mean</span></p></td>
+<td class="cl-774bffd8"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.01</span></p></td>
+<td class="cl-774bffd8"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.01</span></p></td>
+<td class="cl-774bffd8"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.01</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffd9"><p class="cl-774bdd64"><span class="cl-7748c5a2">Min, max</span></p></td>
+<td class="cl-774bffda"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.00, 0.00</span></p></td>
+<td class="cl-774bffda"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.00, 0.00</span></p></td>
+<td class="cl-774bffda"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.00, 0.00</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffcf"><p class="cl-774bdd64"><span class="cl-7748c5a2">CV (%)</span></p></td>
+<td class="cl-774bffd0"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.0</span></p></td>
+<td class="cl-774bffd0"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.0</span></p></td>
+<td class="cl-774bffd0"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.0</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffbd"><p class="cl-774bdd64"><span class="cl-7748c5a2">Interquartile range</span></p></td>
+<td class="cl-774bffbe"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.00, 0.00</span></p></td>
+<td class="cl-774bffbe"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.00, 0.00</span></p></td>
+<td class="cl-774bffbe"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.00, 0.00</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffdb"><p class="cl-774bdd5b"><span class="cl-7748c5a2"></span></p></td>
+<td class="cl-774bffe2"><p class="cl-774bdd5a"><span class="cl-7748c5a2"></span></p></td>
+<td class="cl-774bffe2"><p class="cl-774bdd5a"><span class="cl-7748c5a2"></span></p></td>
+<td class="cl-774bffe2"><p class="cl-774bdd5a"><span class="cl-7748c5a2"></span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffbd"><p class="cl-774bdd5b"><span class="cl-7748c5a2">Day 2 - 24-48h Post-dose</span></p></td>
+<td class="cl-774bffbe"><p class="cl-774bdd5a"><span class="cl-7748c5a2"> </span></p></td>
+<td class="cl-774bffbe"><p class="cl-774bdd5a"><span class="cl-7748c5a2"> </span></p></td>
+<td class="cl-774bffbe"><p class="cl-774bdd5a"><span class="cl-7748c5a2"> </span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffc4"><p class="cl-774bdd5c"><span class="cl-7748c5a2">N</span></p></td>
+<td class="cl-774bffce"><p class="cl-774bdd5a"><span class="cl-7748c5a2">72</span></p></td>
+<td class="cl-774bffce"><p class="cl-774bdd5a"><span class="cl-7748c5a2">96</span></p></td>
+<td class="cl-774bffce"><p class="cl-774bdd5a"><span class="cl-7748c5a2">168</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffcf"><p class="cl-774bdd64"><span class="cl-7748c5a2">Mean (SD)</span></p></td>
+<td class="cl-774bffd0"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.28 (0.53)</span></p></td>
+<td class="cl-774bffd0"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.22 (0.49)</span></p></td>
+<td class="cl-774bffd0"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.25 (0.50)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffd1"><p class="cl-774bdd64"><span class="cl-7748c5a2">Median</span></p></td>
+<td class="cl-774bffd8"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.00</span></p></td>
+<td class="cl-774bffd8"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.00</span></p></td>
+<td class="cl-774bffd8"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.00</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffd1"><p class="cl-774bdd64"><span class="cl-7748c5a2">Geometric mean</span></p></td>
+<td class="cl-774bffd8"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.02</span></p></td>
+<td class="cl-774bffd8"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.01</span></p></td>
+<td class="cl-774bffd8"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.02</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffd9"><p class="cl-774bdd64"><span class="cl-7748c5a2">Min, max</span></p></td>
+<td class="cl-774bffda"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.00, 1.78</span></p></td>
+<td class="cl-774bffda"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.00, 1.89</span></p></td>
+<td class="cl-774bffda"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.00, 1.89</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffcf"><p class="cl-774bdd64"><span class="cl-7748c5a2">CV (%)</span></p></td>
+<td class="cl-774bffd0"><p class="cl-774bdd5a"><span class="cl-7748c5a2">191.0</span></p></td>
+<td class="cl-774bffd0"><p class="cl-774bdd5a"><span class="cl-7748c5a2">217.2</span></p></td>
+<td class="cl-774bffd0"><p class="cl-774bdd5a"><span class="cl-7748c5a2">204.4</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffbd"><p class="cl-774bdd64"><span class="cl-7748c5a2">Interquartile range</span></p></td>
+<td class="cl-774bffbe"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.00, 0.18</span></p></td>
+<td class="cl-774bffbe"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.00, 0.00</span></p></td>
+<td class="cl-774bffbe"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.00, 0.00</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffdb"><p class="cl-774bdd5b"><span class="cl-7748c5a2"></span></p></td>
+<td class="cl-774bffe2"><p class="cl-774bdd5a"><span class="cl-7748c5a2"></span></p></td>
+<td class="cl-774bffe2"><p class="cl-774bdd5a"><span class="cl-7748c5a2"></span></p></td>
+<td class="cl-774bffe2"><p class="cl-774bdd5a"><span class="cl-7748c5a2"></span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffbd"><p class="cl-774bdd5b"><span class="cl-7748c5a2">Day 3 - 48h Post-dose</span></p></td>
+<td class="cl-774bffbe"><p class="cl-774bdd5a"><span class="cl-7748c5a2"> </span></p></td>
+<td class="cl-774bffbe"><p class="cl-774bdd5a"><span class="cl-7748c5a2"> </span></p></td>
+<td class="cl-774bffbe"><p class="cl-774bdd5a"><span class="cl-7748c5a2"> </span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffc4"><p class="cl-774bdd5c"><span class="cl-7748c5a2">N</span></p></td>
+<td class="cl-774bffce"><p class="cl-774bdd5a"><span class="cl-7748c5a2">72</span></p></td>
+<td class="cl-774bffce"><p class="cl-774bdd5a"><span class="cl-7748c5a2">96</span></p></td>
+<td class="cl-774bffce"><p class="cl-774bdd5a"><span class="cl-7748c5a2">168</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffcf"><p class="cl-774bdd64"><span class="cl-7748c5a2">Mean (SD)</span></p></td>
+<td class="cl-774bffd0"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.00 (0.00)</span></p></td>
+<td class="cl-774bffd0"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.00 (0.00)</span></p></td>
+<td class="cl-774bffd0"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.00 (0.00)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffd1"><p class="cl-774bdd64"><span class="cl-7748c5a2">Median</span></p></td>
+<td class="cl-774bffd8"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.00</span></p></td>
+<td class="cl-774bffd8"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.00</span></p></td>
+<td class="cl-774bffd8"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.00</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffd1"><p class="cl-774bdd64"><span class="cl-7748c5a2">Geometric mean</span></p></td>
+<td class="cl-774bffd8"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.01</span></p></td>
+<td class="cl-774bffd8"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.01</span></p></td>
+<td class="cl-774bffd8"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.01</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffd9"><p class="cl-774bdd64"><span class="cl-7748c5a2">Min, max</span></p></td>
+<td class="cl-774bffda"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.00, 0.00</span></p></td>
+<td class="cl-774bffda"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.00, 0.00</span></p></td>
+<td class="cl-774bffda"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.00, 0.00</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffcf"><p class="cl-774bdd64"><span class="cl-7748c5a2">CV (%)</span></p></td>
+<td class="cl-774bffd0"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.0</span></p></td>
+<td class="cl-774bffd0"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.0</span></p></td>
+<td class="cl-774bffd0"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.0</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffbd"><p class="cl-774bdd64"><span class="cl-7748c5a2">Interquartile range</span></p></td>
+<td class="cl-774bffbe"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.00, 0.00</span></p></td>
+<td class="cl-774bffbe"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.00, 0.00</span></p></td>
+<td class="cl-774bffbe"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.00, 0.00</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffdb"><p class="cl-774bdd5b"><span class="cl-7748c5a2"></span></p></td>
+<td class="cl-774bffe2"><p class="cl-774bdd5a"><span class="cl-7748c5a2"></span></p></td>
+<td class="cl-774bffe2"><p class="cl-774bdd5a"><span class="cl-7748c5a2"></span></p></td>
+<td class="cl-774bffe2"><p class="cl-774bdd5a"><span class="cl-7748c5a2"></span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffbd"><p class="cl-774bdd5b"><span class="cl-7748c5a2">Day 3 - Pre-dose</span></p></td>
+<td class="cl-774bffbe"><p class="cl-774bdd5a"><span class="cl-7748c5a2"> </span></p></td>
+<td class="cl-774bffbe"><p class="cl-774bdd5a"><span class="cl-7748c5a2"> </span></p></td>
+<td class="cl-774bffbe"><p class="cl-774bdd5a"><span class="cl-7748c5a2"> </span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffc4"><p class="cl-774bdd5c"><span class="cl-7748c5a2">N</span></p></td>
+<td class="cl-774bffce"><p class="cl-774bdd5a"><span class="cl-7748c5a2">72</span></p></td>
+<td class="cl-774bffce"><p class="cl-774bdd5a"><span class="cl-7748c5a2">92</span></p></td>
+<td class="cl-774bffce"><p class="cl-774bdd5a"><span class="cl-7748c5a2">164</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffcf"><p class="cl-774bdd64"><span class="cl-7748c5a2">Mean (SD)</span></p></td>
+<td class="cl-774bffd0"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.00 (0.00)</span></p></td>
+<td class="cl-774bffd0"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.00 (0.00)</span></p></td>
+<td class="cl-774bffd0"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.00 (0.00)</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffd1"><p class="cl-774bdd64"><span class="cl-7748c5a2">Median</span></p></td>
+<td class="cl-774bffd8"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.00</span></p></td>
+<td class="cl-774bffd8"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.00</span></p></td>
+<td class="cl-774bffd8"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.00</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffd1"><p class="cl-774bdd64"><span class="cl-7748c5a2">Geometric mean</span></p></td>
+<td class="cl-774bffd8"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.01</span></p></td>
+<td class="cl-774bffd8"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.01</span></p></td>
+<td class="cl-774bffd8"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.01</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffd9"><p class="cl-774bdd64"><span class="cl-7748c5a2">Min, max</span></p></td>
+<td class="cl-774bffda"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.00, 0.00</span></p></td>
+<td class="cl-774bffda"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.00, 0.00</span></p></td>
+<td class="cl-774bffda"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.00, 0.00</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffcf"><p class="cl-774bdd64"><span class="cl-7748c5a2">CV (%)</span></p></td>
+<td class="cl-774bffd0"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.0</span></p></td>
+<td class="cl-774bffd0"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.0</span></p></td>
+<td class="cl-774bffd0"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.0</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-774bffe3"><p class="cl-774bdd64"><span class="cl-7748c5a2">Interquartile range</span></p></td>
+<td class="cl-774bffe4"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.00, 0.00</span></p></td>
+<td class="cl-774bffe4"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.00, 0.00</span></p></td>
+<td class="cl-774bffe4"><p class="cl-774bdd5a"><span class="cl-7748c5a2">0.00, 0.00</span></p></td>
 </tr>
 </tbody>
 <tfoot>
-<tr style="overflow-wrap:break-word;"><td colspan="4" class="cl-096b49da"><p class="cl-096b30c6"><span class="cl-0967f276"></span></p></td></tr>
-<tr style="overflow-wrap:break-word;"><td colspan="4" class="cl-096b49da"><p class="cl-096b30c6"><span class="cl-0967f276">Note: Incongruous samples are not included in this summary.</span></p></td></tr>
-<tr style="overflow-wrap:break-word;"><td colspan="4" class="cl-096b49dc"><p class="cl-096b30c6"><span class="cl-0967f276">Note: Concentrations below the lowest quantifiable concentration (ie, [x.xx ng/mL]) will be treated as zero in calculating the summary statistics.</span></p></td></tr>
+<tr style="overflow-wrap:break-word;"><td colspan="4" class="cl-774bffe5"><p class="cl-774bdd5b"><span class="cl-7748c5a2"></span></p></td></tr>
+<tr style="overflow-wrap:break-word;"><td colspan="4" class="cl-774bffe5"><p class="cl-774bdd5b"><span class="cl-7748c5a2">Note: Incongruous samples are not included in this summary.</span></p></td></tr>
+<tr style="overflow-wrap:break-word;"><td colspan="4" class="cl-774bffec"><p class="cl-774bdd5b"><span class="cl-7748c5a2">Note: Concentrations below the lowest quantifiable concentration (ie, [x.xx ng/mL]) will be treated as zero in calculating the summary statistics.</span></p></td></tr>
+<tr style="overflow-wrap:break-word;"><td colspan="4" class="cl-774bffee"><p class="cl-774bdd66"><span class="cl-7748c5a3">[tpk01a.docx][/usr/lib/rstudio-server/bin/quarto/share/rmd/rmd.R] 29DEC2025, 09:55</span></p></td></tr>
 </tfoot>
 </table>
 </div>
@@ -1843,7 +2751,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/johnsonandjohnson\.github\.io\/tlg-catalog");
+      var filterRegex = new RegExp("https:\/\/johnsonandjohnson\.github\.io\/TLG_Catalog");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
@@ -2170,8 +3078,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
-</script><script src="https://giscus.app/client.js" data-repo="johnsonandjohnson/tlg-catalog" data-repo-id="" data-category="General" data-category-id="" data-mapping="pathname" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en" crossorigin="anonymous" data-loading="lazy" async="">
-</script><input type="hidden" id="giscus-base-theme" value="light"><input type="hidden" id="giscus-alt-theme" value="light"><nav class="page-navigation column-body"><div class="nav-page nav-page-previous">
+</script><nav class="page-navigation column-body"><div class="nav-page nav-page-previous">
       <a href="../../tables/exposure/tsiex11.html" class="pagination-link" aria-label="TSIEX11">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">TSIEX11</span>
       </a>          
@@ -2364,10 +3271,10 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb2-180"><a href="#cb2-180"></a></span>
 <span id="cb2-181"><a href="#cb2-181"></a><span class="in"># Convert to tbl file and output table:</span></span>
 <span id="cb2-182"><a href="#cb2-182"></a></span>
-<span id="cb2-183"><a href="#cb2-183"></a><span class="in">tt_to_tlgrtf(string_map = string_map, tt = head(result, 25), file = fileid, orientation = "portrait")</span></span>
+<span id="cb2-183"><a href="#cb2-183"></a><span class="in">tt_to_tlgrtf(string_map = string_map, tt = result, file = fileid, orientation = "portrait")</span></span>
 <span id="cb2-184"><a href="#cb2-184"></a><span class="in">```</span></span>
 <span id="cb2-185"><a href="#cb2-185"></a><span class="in">```{r result1, echo=FALSE, message=FALSE, warning=FALSE, test = list(result_v1 = "result")}</span></span>
-<span id="cb2-186"><a href="#cb2-186"></a><span class="in">tt_to_flextable_j(head(result, 25), tblid)</span></span>
+<span id="cb2-186"><a href="#cb2-186"></a><span class="in">tt_to_flextable_j(result, tblid)</span></span>
 <span id="cb2-187"><a href="#cb2-187"></a><span class="in">```</span></span>
 <span id="cb2-188"><a href="#cb2-188"></a></span>
 <span id="cb2-189"><a href="#cb2-189"></a><span class="co">[</span><span class="ot">Download RTF file</span><span class="co">]</span>(<span class="in">`r paste0(tolower(tblid), '.rtf')`</span>)</span>
@@ -2380,7 +3287,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
 
-<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/johnsonandjohnson/tlg-catalog/edit/main/book/tables/pharmacokinetics/tpk01a.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/johnsonandjohnson/tlg-catalog/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/johnsonandjohnson/TLG_Catalog/edit/dev/book/tables/pharmacokinetics/tpk01a.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/johnsonandjohnson/TLG_Catalog/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>

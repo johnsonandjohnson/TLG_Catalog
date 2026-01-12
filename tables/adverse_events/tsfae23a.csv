@@ -1,26 +1,45 @@
 "label","col 1","col 2","col 3","col 4","row_type","anbr","indentme","roworder","newrows"
 "Subjects with ≥1 related SAE","11 (20.8%)","12 (16.4%)","23 (18.3%)","14 (23.7%)","VALUE",2,0,0,0
-"CHEST PAIN","2 (3.8%)","0","2 (1.6%)","0","VALUE",3,0,0,1
-"CONTUSION","1 (1.9%)","1 (1.4%)","2 (1.6%)","0","VALUE",3,0,1,0
-"ABDOMINAL DISCOMFORT","1 (1.9%)","0","1 (0.8%)","0","VALUE",3,0,2,0
-"BACK PAIN","1 (1.9%)","0","1 (0.8%)","0","VALUE",3,0,3,0
-"CHILLS","1 (1.9%)","0","1 (0.8%)","0","VALUE",3,0,4,0
-"CONFUSIONAL STATE","1 (1.9%)","0","1 (0.8%)","0","VALUE",3,0,5,0
-"CONJUNCTIVAL HAEMORRHAGE","0","1 (1.4%)","1 (0.8%)","0","VALUE",3,0,6,0
-"COUGH","0","1 (1.4%)","1 (0.8%)","1 (1.7%)","VALUE",3,0,7,0
-"DIARRHOEA","1 (1.9%)","0","1 (0.8%)","1 (1.7%)","VALUE",3,0,8,0
-"DIZZINESS","1 (1.9%)","0","1 (0.8%)","0","VALUE",3,0,9,0
-"DYSPHONIA","0","1 (1.4%)","1 (0.8%)","0","VALUE",3,0,10,0
-"DYSURIA","0","1 (1.4%)","1 (0.8%)","1 (1.7%)","VALUE",3,0,11,0
-"ELECTROCARDIOGRAM T WAVE AMPLITUDE DECREASED","0","1 (1.4%)","1 (0.8%)","0","VALUE",3,0,12,0
-"EPISTAXIS","1 (1.9%)","0","1 (0.8%)","0","VALUE",3,0,13,0
-"FALL","0","1 (1.4%)","1 (0.8%)","0","VALUE",3,0,14,0
-"FATIGUE","0","1 (1.4%)","1 (0.8%)","0","VALUE",3,0,15,0
-"HEADACHE","0","1 (1.4%)","1 (0.8%)","0","VALUE",3,0,16,0
-"CERVICITIS","0","0","0","1 (1.7%)","VALUE",3,0,17,0
-"CONJUNCTIVITIS","0","0","0","1 (1.7%)","VALUE",3,0,18,0
-"DELUSION","0","0","0","1 (1.7%)","VALUE",3,0,19,0
-"DISORIENTATION","0","0","0","1 (1.7%)","VALUE",3,0,20,0
-"DISTURBANCE IN SEXUAL AROUSAL","0","0","0","1 (1.7%)","VALUE",3,0,21,0
-"ELECTROCARDIOGRAM ST SEGMENT DEPRESSION","0","0","0","1 (1.7%)","VALUE",3,0,22,0
-"ELECTROCARDIOGRAM T WAVE INVERSION","0","0","0","1 (1.7%)","VALUE",3,0,23,0
+"SINUS BRADYCARDIA","2 (3.8%)","1 (1.4%)","3 (2.4%)","0","VALUE",3,0,0,1
+"CHEST PAIN","2 (3.8%)","0","2 (1.6%)","0","VALUE",3,0,1,0
+"CONTUSION","1 (1.9%)","1 (1.4%)","2 (1.6%)","0","VALUE",3,0,2,0
+"ABDOMINAL DISCOMFORT","1 (1.9%)","0","1 (0.8%)","0","VALUE",3,0,3,0
+"BACK PAIN","1 (1.9%)","0","1 (0.8%)","0","VALUE",3,0,4,0
+"CHILLS","1 (1.9%)","0","1 (0.8%)","0","VALUE",3,0,5,0
+"CONFUSIONAL STATE","1 (1.9%)","0","1 (0.8%)","0","VALUE",3,0,6,0
+"CONJUNCTIVAL HAEMORRHAGE","0","1 (1.4%)","1 (0.8%)","0","VALUE",3,0,7,0
+"COUGH","0","1 (1.4%)","1 (0.8%)","1 (1.7%)","VALUE",3,0,8,0
+"DIARRHOEA","1 (1.9%)","0","1 (0.8%)","1 (1.7%)","VALUE",3,0,9,0
+"DIZZINESS","1 (1.9%)","0","1 (0.8%)","0","VALUE",3,0,10,0
+"DYSPHONIA","0","1 (1.4%)","1 (0.8%)","0","VALUE",3,0,11,0
+"DYSURIA","0","1 (1.4%)","1 (0.8%)","1 (1.7%)","VALUE",3,0,12,0
+"ELECTROCARDIOGRAM T WAVE AMPLITUDE DECREASED","0","1 (1.4%)","1 (0.8%)","0","VALUE",3,0,13,0
+"EPISTAXIS","1 (1.9%)","0","1 (0.8%)","0","VALUE",3,0,14,0
+"FALL","0","1 (1.4%)","1 (0.8%)","0","VALUE",3,0,15,0
+"FATIGUE","0","1 (1.4%)","1 (0.8%)","0","VALUE",3,0,16,0
+"HEADACHE","0","1 (1.4%)","1 (0.8%)","0","VALUE",3,0,17,0
+"INCREASED APPETITE","1 (1.9%)","0","1 (0.8%)","0","VALUE",3,0,18,0
+"MALAISE","1 (1.9%)","0","1 (0.8%)","0","VALUE",3,0,19,0
+"NIGHTMARE","1 (1.9%)","0","1 (0.8%)","0","VALUE",3,0,20,0
+"OEDEMA PERIPHERAL","0","1 (1.4%)","1 (0.8%)","1 (1.7%)","VALUE",3,0,21,0
+"RHINORRHOEA","0","1 (1.4%)","1 (0.8%)","0","VALUE",3,0,22,0
+"SOMNOLENCE","1 (1.9%)","0","1 (0.8%)","0","VALUE",3,0,23,0
+"TRANSIENT ISCHAEMIC ATTACK","0","1 (1.4%)","1 (0.8%)","0","VALUE",3,0,24,0
+"VENTRICULAR EXTRASYSTOLES","0","1 (1.4%)","1 (0.8%)","0","VALUE",3,0,25,0
+"VOMITING","1 (1.9%)","0","1 (0.8%)","0","VALUE",3,0,26,0
+"CERVICITIS","0","0","0","1 (1.7%)","VALUE",3,0,27,0
+"CONJUNCTIVITIS","0","0","0","1 (1.7%)","VALUE",3,0,28,0
+"DELUSION","0","0","0","1 (1.7%)","VALUE",3,0,29,0
+"DISORIENTATION","0","0","0","1 (1.7%)","VALUE",3,0,30,0
+"DISTURBANCE IN SEXUAL AROUSAL","0","0","0","1 (1.7%)","VALUE",3,0,31,0
+"ELECTROCARDIOGRAM ST SEGMENT DEPRESSION","0","0","0","1 (1.7%)","VALUE",3,0,32,0
+"ELECTROCARDIOGRAM T WAVE INVERSION","0","0","0","1 (1.7%)","VALUE",3,0,33,0
+"HYPERTENSION","0","0","0","1 (1.7%)","VALUE",3,0,34,0
+"HYPOTENSION","0","0","0","1 (1.7%)","VALUE",3,0,35,0
+"NASAL CONGESTION","0","0","0","1 (1.7%)","VALUE",3,0,36,0
+"PRURITUS","0","0","0","1 (1.7%)","VALUE",3,0,37,0
+"PSYCHOMOTOR HYPERACTIVITY","0","0","0","1 (1.7%)","VALUE",3,0,38,0
+"RASH","0","0","0","1 (1.7%)","VALUE",3,0,39,0
+"SUPRAVENTRICULAR EXTRASYSTOLES","0","0","0","1 (1.7%)","VALUE",3,0,40,0
+"UPPER RESPIRATORY TRACT INFECTION","0","0","0","3 (5.1%)","VALUE",3,0,41,0
+"VAGINAL MYCOSIS","0","0","0","1 (1.7%)","VALUE",3,0,42,0

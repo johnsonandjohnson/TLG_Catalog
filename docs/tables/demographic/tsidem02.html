@@ -120,7 +120,7 @@ cookieconsent.run({
 <script src="../../site_libs/tabwid-1.1.3/tabwid.js"></script><link rel="stylesheet" href="../../assets/css/style.css">
 <meta property="og:title" content="TSIDEM02 – TL Catalog">
 <meta property="og:description" content="Subjects by Region, Country/Territory, and Site">
-<meta property="og:image" content="https://johnsonandjohnson.github.io/tlg-catalog/tables/demographic/assets/img/logo.png">
+<meta property="og:image" content="https://johnsonandjohnson.github.io/TLG_Catalog/tables/demographic/assets/img/logo.png">
 <meta property="og:site_name" content="TL Catalog">
 </head>
 <body class="nav-sidebar docked nav-fixed">
@@ -162,6 +162,13 @@ cookieconsent.run({
   <div class="sidebar-item-container"> 
   <a href="../../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introduction</span></a>
+  </div>
+</li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../tlg-index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Index</span></a>
   </div>
 </li>
         <li class="px-0"><hr class="sidebar-divider hi "></li>
@@ -1163,12 +1170,6 @@ cookieconsent.run({
   </div>
 </li>
         <li class="px-0"><hr class="sidebar-divider hi "></li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../tlg-index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Index</span></a>
-  </div>
-</li>
     </ul>
 </div>
 </nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
@@ -1178,7 +1179,7 @@ cookieconsent.run({
    
   <ul>
 <li><a href="#output" id="toc-output" class="nav-link active" data-scroll-target="#output">Output</a></li>
-  </ul><div class="toc-actions"><ul><li><a href="https://github.com/johnsonandjohnson/tlg-catalog/edit/main/book/tables/demographic/tsidem02.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/johnsonandjohnson/tlg-catalog/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+  </ul><div class="toc-actions"><ul><li><a href="https://github.com/johnsonandjohnson/TLG_Catalog/edit/dev/book/tables/demographic/tsidem02.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/johnsonandjohnson/TLG_Catalog/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content column-body" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Tables</li><li class="breadcrumb-item"><a href="../../tables/demographic/tsidem01.html">Demographic</a></li><li class="breadcrumb-item"><a href="../../tables/demographic/tsidem02.html">TSIDEM02</a></li></ol></nav><div class="quarto-title">
@@ -1322,172 +1323,173 @@ cookieconsent.run({
 <span id="cb1-116"><a href="#cb1-116"></a></span>
 <span id="cb1-117"><a href="#cb1-117"></a><span class="co"># Convert to tbl file and output table:</span></span>
 <span id="cb1-118"><a href="#cb1-118"></a></span>
-<span id="cb1-119"><a href="#cb1-119"></a><span class="fu">tt_to_tlgrtf</span>(<span class="at">string_map =</span> string_map, <span class="at">tt =</span> <span class="fu">head</span>(result, <span class="dv">25</span>), <span class="at">file =</span> fileid)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-119"><a href="#cb1-119"></a><span class="fu">tt_to_tlgrtf</span>(<span class="at">string_map =</span> string_map, <span class="at">tt =</span> result, <span class="at">file =</span> fileid)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <div class="cell" data-test="{&quot;result_v1&quot;:&quot;result&quot;}">
 <div class="cell-output-display">
 <div class="tabwid tabwid_left">
-<style>.cl-b318f216{}.cl-b312a992{font-family:'Times New Roman';font-size:10pt;font-weight:bold;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-b312a9ba{font-family:'Times New Roman';font-size:9pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-b3152424{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:0;padding-right:0;line-height: 1;background-color:transparent;}.cl-b3152438{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:0;padding-right:0;line-height: 1;background-color:transparent;}.cl-b3152439{margin:0;text-align:center;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:0;padding-right:0;line-height: 1;background-color:transparent;}.cl-b3152442{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:7.2pt;padding-right:0;line-height: 1;background-color:transparent;}.cl-b3152443{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:14.4pt;padding-right:0;line-height: 1;background-color:transparent;}.cl-b315244c{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:9pt;padding-right:0;line-height: 1;background-color:transparent;}.cl-b315244d{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:18pt;padding-right:0;line-height: 1;background-color:transparent;}.cl-b3153c0c{width:1.97in;background-color:rgba(255, 255, 255, 1.00);vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0.75pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b3153c16{width:1.079in;background-color:rgba(255, 255, 255, 1.00);vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0.75pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b3153c20{width:1.173in;background-color:rgba(255, 255, 255, 1.00);vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0.75pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b3153c21{width:1.97in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(102, 102, 102, 1.00);border-top: 0.75pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b3153c2a{width:1.079in;background-color:transparent;vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0.75pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b3153c2b{width:1.079in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(102, 102, 102, 1.00);border-top: 0.75pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b3153c2c{width:1.173in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(102, 102, 102, 1.00);border-top: 0.75pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b3153c2d{width:1.97in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b3153c34{width:1.079in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b3153c35{width:1.173in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b3153c3e{width:1.97in;background-color:transparent;vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b3153c3f{width:1.079in;background-color:transparent;vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b3153c48{width:1.173in;background-color:transparent;vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b3153c49{width:1.97in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b3153c4a{width:1.079in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b3153c52{width:1.173in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b3153c53{width:1.97in;background-color:transparent;vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b3153c54{width:1.079in;background-color:transparent;vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b3153c5c{width:1.173in;background-color:transparent;vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style>
-<table data-quarto-disable-processing="true" class="cl-b318f216">
+<style>.cl-5082eae8{}.cl-507c8e5a{font-family:'Times New Roman';font-size:10pt;font-weight:bold;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-507c8e82{font-family:'Times New Roman';font-size:9pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-507c8e8c{font-family:'Times New Roman';font-size:8pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-507f089c{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:0;padding-right:0;line-height: 1;background-color:transparent;}.cl-507f08a6{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:0;padding-right:0;line-height: 1;background-color:transparent;}.cl-507f08b0{margin:0;text-align:center;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:0;padding-right:0;line-height: 1;background-color:transparent;}.cl-507f08b1{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:7.2pt;padding-right:0;line-height: 1;background-color:transparent;}.cl-507f08b2{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:14.4pt;padding-right:0;line-height: 1;background-color:transparent;}.cl-507f08ba{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:9pt;padding-right:0;line-height: 1;background-color:transparent;}.cl-507f08bb{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:18pt;padding-right:0;line-height: 1;background-color:transparent;}.cl-507f08bc{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:0;padding-right:0;line-height: 1;background-color:transparent;}.cl-507f08c4{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:0;padding-right:0;line-height: 1;background-color:transparent;}.cl-507f2106{width:1.97in;background-color:rgba(255, 255, 255, 1.00);vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0.75pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-507f2107{width:1.079in;background-color:rgba(255, 255, 255, 1.00);vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0.75pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-507f2110{width:1.173in;background-color:rgba(255, 255, 255, 1.00);vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0.75pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-507f2111{width:1.97in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(102, 102, 102, 1.00);border-top: 0.75pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-507f2112{width:1.079in;background-color:transparent;vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0.75pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-507f211a{width:1.079in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(102, 102, 102, 1.00);border-top: 0.75pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-507f211b{width:1.173in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(102, 102, 102, 1.00);border-top: 0.75pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-507f211c{width:1.97in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-507f211d{width:1.079in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-507f211e{width:1.173in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-507f2124{width:1.97in;background-color:transparent;vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-507f2125{width:1.079in;background-color:transparent;vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-507f2126{width:1.173in;background-color:transparent;vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-507f212e{width:1.97in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-507f212f{width:1.079in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-507f2130{width:1.173in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-507f2131{width:1.97in;background-color:transparent;vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-507f2138{width:1.079in;background-color:transparent;vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-507f2139{width:1.173in;background-color:transparent;vertical-align: bottom;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-507f213a{width:1.97in;background-color:transparent;vertical-align: bottom;border-bottom: 0 solid rgba(102, 102, 102, 1.00);border-top: 0.75pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(255, 255, 255, 0.00);border-right: 0 solid rgba(255, 255, 255, 0.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-507f213b{width:1.079in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(102, 102, 102, 1.00);border-top: 0.75pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(255, 255, 255, 0.00);border-right: 0 solid rgba(255, 255, 255, 0.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-507f213c{width:1.173in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(102, 102, 102, 1.00);border-top: 0.75pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(255, 255, 255, 0.00);border-right: 0 solid rgba(255, 255, 255, 0.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style>
+<table data-quarto-disable-processing="true" class="cl-5082eae8">
 <thead>
-<tr style="overflow-wrap:break-word;"><th colspan="5" class="cl-b3153c0c"><p class="cl-b3152424"><span class="cl-b312a992">TSIDEM02:</span> <span class="cl-b312a992">Subjects by Region, Country/Territory, and Site; Full Analysis Set (Study jjcs - core)</span></p></th></tr>
+<tr style="overflow-wrap:break-word;"><th colspan="5" class="cl-507f2106"><p class="cl-507f089c"><span class="cl-507c8e5a">TSIDEM02:</span> <span class="cl-507c8e5a">Subjects by Region, Country/Territory, and Site; Full Analysis Set (Study jjcs - core)</span></p></th></tr>
 <tr style="overflow-wrap:break-word;">
-<th class="cl-b3153c21"><p class="cl-b3152438"><span class="cl-b312a9ba">Region</span></p></th>
-<th colspan="2" class="cl-b3153c2a"><p class="cl-b3152439"><span class="cl-b312a9ba">Active Study Agent</span></p></th>
-<th class="cl-b3153c2b"><p class="cl-b3152439"><span class="cl-b312a9ba"> </span></p></th>
-<th class="cl-b3153c2c"><p class="cl-b3152439"><span class="cl-b312a9ba"> </span></p></th>
+<th class="cl-507f2111"><p class="cl-507f08a6"><span class="cl-507c8e82">Region</span></p></th>
+<th colspan="2" class="cl-507f2112"><p class="cl-507f08b0"><span class="cl-507c8e82">Active Study Agent</span></p></th>
+<th class="cl-507f211a"><p class="cl-507f08b0"><span class="cl-507c8e82"> </span></p></th>
+<th class="cl-507f211b"><p class="cl-507f08b0"><span class="cl-507c8e82"> </span></p></th>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<th class="cl-b3153c2d"><p class="cl-b3152442"><span class="cl-b312a9ba">Country/Territory</span></p></th>
-<th class="cl-b3153c2b"><p class="cl-b3152439"><span class="cl-b312a9ba">Xanomeline High Dose</span></p></th>
-<th class="cl-b3153c2b"><p class="cl-b3152439"><span class="cl-b312a9ba">Xanomeline Low Dose</span></p></th>
-<th class="cl-b3153c34"><p class="cl-b3152439"><span class="cl-b312a9ba">Placebo</span></p></th>
-<th class="cl-b3153c35"><p class="cl-b3152439"><span class="cl-b312a9ba">Total</span></p></th>
+<th class="cl-507f211c"><p class="cl-507f08b1"><span class="cl-507c8e82">Country/Territory</span></p></th>
+<th class="cl-507f211a"><p class="cl-507f08b0"><span class="cl-507c8e82">Xanomeline High Dose</span></p></th>
+<th class="cl-507f211a"><p class="cl-507f08b0"><span class="cl-507c8e82">Xanomeline Low Dose</span></p></th>
+<th class="cl-507f211d"><p class="cl-507f08b0"><span class="cl-507c8e82">Placebo</span></p></th>
+<th class="cl-507f211e"><p class="cl-507f08b0"><span class="cl-507c8e82">Total</span></p></th>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<th class="cl-b3153c3e"><p class="cl-b3152443"><span class="cl-b312a9ba">Site, n (%)</span></p></th>
-<th class="cl-b3153c3f"><p class="cl-b3152439"><span class="cl-b312a9ba">N=64</span></p></th>
-<th class="cl-b3153c3f"><p class="cl-b3152439"><span class="cl-b312a9ba">N=62</span></p></th>
-<th class="cl-b3153c3f"><p class="cl-b3152439"><span class="cl-b312a9ba">N=59</span></p></th>
-<th class="cl-b3153c48"><p class="cl-b3152439"><span class="cl-b312a9ba">N=185</span></p></th>
+<th class="cl-507f2124"><p class="cl-507f08b2"><span class="cl-507c8e82">Site, n (%)</span></p></th>
+<th class="cl-507f2125"><p class="cl-507f08b0"><span class="cl-507c8e82">N=64</span></p></th>
+<th class="cl-507f2125"><p class="cl-507f08b0"><span class="cl-507c8e82">N=62</span></p></th>
+<th class="cl-507f2125"><p class="cl-507f08b0"><span class="cl-507c8e82">N=59</span></p></th>
+<th class="cl-507f2126"><p class="cl-507f08b0"><span class="cl-507c8e82">N=185</span></p></th>
 </tr>
 </thead>
 <tbody>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-b3153c49"><p class="cl-b3152438"><span class="cl-b312a9ba">NA</span></p></td>
-<td class="cl-b3153c4a"><p class="cl-b3152439"><span class="cl-b312a9ba">64 (100.0%)</span></p></td>
-<td class="cl-b3153c4a"><p class="cl-b3152439"><span class="cl-b312a9ba">62 (100.0%)</span></p></td>
-<td class="cl-b3153c4a"><p class="cl-b3152439"><span class="cl-b312a9ba">59 (100.0%)</span></p></td>
-<td class="cl-b3153c52"><p class="cl-b3152439"><span class="cl-b312a9ba">185 (100.0%)</span></p></td>
+<td class="cl-507f212e"><p class="cl-507f08a6"><span class="cl-507c8e82">NA</span></p></td>
+<td class="cl-507f212f"><p class="cl-507f08b0"><span class="cl-507c8e82">64 (100.0%)</span></p></td>
+<td class="cl-507f212f"><p class="cl-507f08b0"><span class="cl-507c8e82">62 (100.0%)</span></p></td>
+<td class="cl-507f212f"><p class="cl-507f08b0"><span class="cl-507c8e82">59 (100.0%)</span></p></td>
+<td class="cl-507f2130"><p class="cl-507f08b0"><span class="cl-507c8e82">185 (100.0%)</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-b3153c49"><p class="cl-b315244c"><span class="cl-b312a9ba">United States of America</span></p></td>
-<td class="cl-b3153c4a"><p class="cl-b3152439"><span class="cl-b312a9ba">64 (100.0%)</span></p></td>
-<td class="cl-b3153c4a"><p class="cl-b3152439"><span class="cl-b312a9ba">62 (100.0%)</span></p></td>
-<td class="cl-b3153c4a"><p class="cl-b3152439"><span class="cl-b312a9ba">59 (100.0%)</span></p></td>
-<td class="cl-b3153c52"><p class="cl-b3152439"><span class="cl-b312a9ba">185 (100.0%)</span></p></td>
+<td class="cl-507f212e"><p class="cl-507f08ba"><span class="cl-507c8e82">United States of America</span></p></td>
+<td class="cl-507f212f"><p class="cl-507f08b0"><span class="cl-507c8e82">64 (100.0%)</span></p></td>
+<td class="cl-507f212f"><p class="cl-507f08b0"><span class="cl-507c8e82">62 (100.0%)</span></p></td>
+<td class="cl-507f212f"><p class="cl-507f08b0"><span class="cl-507c8e82">59 (100.0%)</span></p></td>
+<td class="cl-507f2130"><p class="cl-507f08b0"><span class="cl-507c8e82">185 (100.0%)</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-b3153c49"><p class="cl-b315244d"><span class="cl-b312a9ba">701</span></p></td>
-<td class="cl-b3153c4a"><p class="cl-b3152439"><span class="cl-b312a9ba">12 (18.8%)</span></p></td>
-<td class="cl-b3153c4a"><p class="cl-b3152439"><span class="cl-b312a9ba">12 (19.4%)</span></p></td>
-<td class="cl-b3153c4a"><p class="cl-b3152439"><span class="cl-b312a9ba">11 (18.6%)</span></p></td>
-<td class="cl-b3153c52"><p class="cl-b3152439"><span class="cl-b312a9ba">35 (18.9%)</span></p></td>
+<td class="cl-507f212e"><p class="cl-507f08bb"><span class="cl-507c8e82">701</span></p></td>
+<td class="cl-507f212f"><p class="cl-507f08b0"><span class="cl-507c8e82">12 (18.8%)</span></p></td>
+<td class="cl-507f212f"><p class="cl-507f08b0"><span class="cl-507c8e82">12 (19.4%)</span></p></td>
+<td class="cl-507f212f"><p class="cl-507f08b0"><span class="cl-507c8e82">11 (18.6%)</span></p></td>
+<td class="cl-507f2130"><p class="cl-507f08b0"><span class="cl-507c8e82">35 (18.9%)</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-b3153c49"><p class="cl-b315244d"><span class="cl-b312a9ba">702</span></p></td>
-<td class="cl-b3153c4a"><p class="cl-b3152439"><span class="cl-b312a9ba">0</span></p></td>
-<td class="cl-b3153c4a"><p class="cl-b3152439"><span class="cl-b312a9ba">1 (1.6%)</span></p></td>
-<td class="cl-b3153c4a"><p class="cl-b3152439"><span class="cl-b312a9ba">0</span></p></td>
-<td class="cl-b3153c52"><p class="cl-b3152439"><span class="cl-b312a9ba">1 (0.5%)</span></p></td>
+<td class="cl-507f212e"><p class="cl-507f08bb"><span class="cl-507c8e82">702</span></p></td>
+<td class="cl-507f212f"><p class="cl-507f08b0"><span class="cl-507c8e82">0</span></p></td>
+<td class="cl-507f212f"><p class="cl-507f08b0"><span class="cl-507c8e82">1 (1.6%)</span></p></td>
+<td class="cl-507f212f"><p class="cl-507f08b0"><span class="cl-507c8e82">0</span></p></td>
+<td class="cl-507f2130"><p class="cl-507f08b0"><span class="cl-507c8e82">1 (0.5%)</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-b3153c49"><p class="cl-b315244d"><span class="cl-b312a9ba">703</span></p></td>
-<td class="cl-b3153c4a"><p class="cl-b3152439"><span class="cl-b312a9ba">4 (6.2%)</span></p></td>
-<td class="cl-b3153c4a"><p class="cl-b3152439"><span class="cl-b312a9ba">5 (8.1%)</span></p></td>
-<td class="cl-b3153c4a"><p class="cl-b3152439"><span class="cl-b312a9ba">5 (8.5%)</span></p></td>
-<td class="cl-b3153c52"><p class="cl-b3152439"><span class="cl-b312a9ba">14 (7.6%)</span></p></td>
+<td class="cl-507f212e"><p class="cl-507f08bb"><span class="cl-507c8e82">703</span></p></td>
+<td class="cl-507f212f"><p class="cl-507f08b0"><span class="cl-507c8e82">4 (6.2%)</span></p></td>
+<td class="cl-507f212f"><p class="cl-507f08b0"><span class="cl-507c8e82">5 (8.1%)</span></p></td>
+<td class="cl-507f212f"><p class="cl-507f08b0"><span class="cl-507c8e82">5 (8.5%)</span></p></td>
+<td class="cl-507f2130"><p class="cl-507f08b0"><span class="cl-507c8e82">14 (7.6%)</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-b3153c49"><p class="cl-b315244d"><span class="cl-b312a9ba">704</span></p></td>
-<td class="cl-b3153c4a"><p class="cl-b3152439"><span class="cl-b312a9ba">6 (9.4%)</span></p></td>
-<td class="cl-b3153c4a"><p class="cl-b3152439"><span class="cl-b312a9ba">7 (11.3%)</span></p></td>
-<td class="cl-b3153c4a"><p class="cl-b3152439"><span class="cl-b312a9ba">6 (10.2%)</span></p></td>
-<td class="cl-b3153c52"><p class="cl-b3152439"><span class="cl-b312a9ba">19 (10.3%)</span></p></td>
+<td class="cl-507f212e"><p class="cl-507f08bb"><span class="cl-507c8e82">704</span></p></td>
+<td class="cl-507f212f"><p class="cl-507f08b0"><span class="cl-507c8e82">6 (9.4%)</span></p></td>
+<td class="cl-507f212f"><p class="cl-507f08b0"><span class="cl-507c8e82">7 (11.3%)</span></p></td>
+<td class="cl-507f212f"><p class="cl-507f08b0"><span class="cl-507c8e82">6 (10.2%)</span></p></td>
+<td class="cl-507f2130"><p class="cl-507f08b0"><span class="cl-507c8e82">19 (10.3%)</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-b3153c49"><p class="cl-b315244d"><span class="cl-b312a9ba">705</span></p></td>
-<td class="cl-b3153c4a"><p class="cl-b3152439"><span class="cl-b312a9ba">5 (7.8%)</span></p></td>
-<td class="cl-b3153c4a"><p class="cl-b3152439"><span class="cl-b312a9ba">3 (4.8%)</span></p></td>
-<td class="cl-b3153c4a"><p class="cl-b3152439"><span class="cl-b312a9ba">2 (3.4%)</span></p></td>
-<td class="cl-b3153c52"><p class="cl-b3152439"><span class="cl-b312a9ba">10 (5.4%)</span></p></td>
+<td class="cl-507f212e"><p class="cl-507f08bb"><span class="cl-507c8e82">705</span></p></td>
+<td class="cl-507f212f"><p class="cl-507f08b0"><span class="cl-507c8e82">5 (7.8%)</span></p></td>
+<td class="cl-507f212f"><p class="cl-507f08b0"><span class="cl-507c8e82">3 (4.8%)</span></p></td>
+<td class="cl-507f212f"><p class="cl-507f08b0"><span class="cl-507c8e82">2 (3.4%)</span></p></td>
+<td class="cl-507f2130"><p class="cl-507f08b0"><span class="cl-507c8e82">10 (5.4%)</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-b3153c49"><p class="cl-b315244d"><span class="cl-b312a9ba">706</span></p></td>
-<td class="cl-b3153c4a"><p class="cl-b3152439"><span class="cl-b312a9ba">0</span></p></td>
-<td class="cl-b3153c4a"><p class="cl-b3152439"><span class="cl-b312a9ba">1 (1.6%)</span></p></td>
-<td class="cl-b3153c4a"><p class="cl-b3152439"><span class="cl-b312a9ba">0</span></p></td>
-<td class="cl-b3153c52"><p class="cl-b3152439"><span class="cl-b312a9ba">1 (0.5%)</span></p></td>
+<td class="cl-507f212e"><p class="cl-507f08bb"><span class="cl-507c8e82">706</span></p></td>
+<td class="cl-507f212f"><p class="cl-507f08b0"><span class="cl-507c8e82">0</span></p></td>
+<td class="cl-507f212f"><p class="cl-507f08b0"><span class="cl-507c8e82">1 (1.6%)</span></p></td>
+<td class="cl-507f212f"><p class="cl-507f08b0"><span class="cl-507c8e82">0</span></p></td>
+<td class="cl-507f2130"><p class="cl-507f08b0"><span class="cl-507c8e82">1 (0.5%)</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-b3153c49"><p class="cl-b315244d"><span class="cl-b312a9ba">707</span></p></td>
-<td class="cl-b3153c4a"><p class="cl-b3152439"><span class="cl-b312a9ba">0</span></p></td>
-<td class="cl-b3153c4a"><p class="cl-b3152439"><span class="cl-b312a9ba">0</span></p></td>
-<td class="cl-b3153c4a"><p class="cl-b3152439"><span class="cl-b312a9ba">1 (1.7%)</span></p></td>
-<td class="cl-b3153c52"><p class="cl-b3152439"><span class="cl-b312a9ba">1 (0.5%)</span></p></td>
+<td class="cl-507f212e"><p class="cl-507f08bb"><span class="cl-507c8e82">707</span></p></td>
+<td class="cl-507f212f"><p class="cl-507f08b0"><span class="cl-507c8e82">0</span></p></td>
+<td class="cl-507f212f"><p class="cl-507f08b0"><span class="cl-507c8e82">0</span></p></td>
+<td class="cl-507f212f"><p class="cl-507f08b0"><span class="cl-507c8e82">1 (1.7%)</span></p></td>
+<td class="cl-507f2130"><p class="cl-507f08b0"><span class="cl-507c8e82">1 (0.5%)</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-b3153c49"><p class="cl-b315244d"><span class="cl-b312a9ba">708</span></p></td>
-<td class="cl-b3153c4a"><p class="cl-b3152439"><span class="cl-b312a9ba">6 (9.4%)</span></p></td>
-<td class="cl-b3153c4a"><p class="cl-b3152439"><span class="cl-b312a9ba">6 (9.7%)</span></p></td>
-<td class="cl-b3153c4a"><p class="cl-b3152439"><span class="cl-b312a9ba">4 (6.8%)</span></p></td>
-<td class="cl-b3153c52"><p class="cl-b3152439"><span class="cl-b312a9ba">16 (8.6%)</span></p></td>
+<td class="cl-507f212e"><p class="cl-507f08bb"><span class="cl-507c8e82">708</span></p></td>
+<td class="cl-507f212f"><p class="cl-507f08b0"><span class="cl-507c8e82">6 (9.4%)</span></p></td>
+<td class="cl-507f212f"><p class="cl-507f08b0"><span class="cl-507c8e82">6 (9.7%)</span></p></td>
+<td class="cl-507f212f"><p class="cl-507f08b0"><span class="cl-507c8e82">4 (6.8%)</span></p></td>
+<td class="cl-507f2130"><p class="cl-507f08b0"><span class="cl-507c8e82">16 (8.6%)</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-b3153c49"><p class="cl-b315244d"><span class="cl-b312a9ba">709</span></p></td>
-<td class="cl-b3153c4a"><p class="cl-b3152439"><span class="cl-b312a9ba">4 (6.2%)</span></p></td>
-<td class="cl-b3153c4a"><p class="cl-b3152439"><span class="cl-b312a9ba">5 (8.1%)</span></p></td>
-<td class="cl-b3153c4a"><p class="cl-b3152439"><span class="cl-b312a9ba">6 (10.2%)</span></p></td>
-<td class="cl-b3153c52"><p class="cl-b3152439"><span class="cl-b312a9ba">15 (8.1%)</span></p></td>
+<td class="cl-507f212e"><p class="cl-507f08bb"><span class="cl-507c8e82">709</span></p></td>
+<td class="cl-507f212f"><p class="cl-507f08b0"><span class="cl-507c8e82">4 (6.2%)</span></p></td>
+<td class="cl-507f212f"><p class="cl-507f08b0"><span class="cl-507c8e82">5 (8.1%)</span></p></td>
+<td class="cl-507f212f"><p class="cl-507f08b0"><span class="cl-507c8e82">6 (10.2%)</span></p></td>
+<td class="cl-507f2130"><p class="cl-507f08b0"><span class="cl-507c8e82">15 (8.1%)</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-b3153c49"><p class="cl-b315244d"><span class="cl-b312a9ba">710</span></p></td>
-<td class="cl-b3153c4a"><p class="cl-b3152439"><span class="cl-b312a9ba">8 (12.5%)</span></p></td>
-<td class="cl-b3153c4a"><p class="cl-b3152439"><span class="cl-b312a9ba">7 (11.3%)</span></p></td>
-<td class="cl-b3153c4a"><p class="cl-b3152439"><span class="cl-b312a9ba">7 (11.9%)</span></p></td>
-<td class="cl-b3153c52"><p class="cl-b3152439"><span class="cl-b312a9ba">22 (11.9%)</span></p></td>
+<td class="cl-507f212e"><p class="cl-507f08bb"><span class="cl-507c8e82">710</span></p></td>
+<td class="cl-507f212f"><p class="cl-507f08b0"><span class="cl-507c8e82">8 (12.5%)</span></p></td>
+<td class="cl-507f212f"><p class="cl-507f08b0"><span class="cl-507c8e82">7 (11.3%)</span></p></td>
+<td class="cl-507f212f"><p class="cl-507f08b0"><span class="cl-507c8e82">7 (11.9%)</span></p></td>
+<td class="cl-507f2130"><p class="cl-507f08b0"><span class="cl-507c8e82">22 (11.9%)</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-b3153c49"><p class="cl-b315244d"><span class="cl-b312a9ba">711</span></p></td>
-<td class="cl-b3153c4a"><p class="cl-b3152439"><span class="cl-b312a9ba">1 (1.6%)</span></p></td>
-<td class="cl-b3153c4a"><p class="cl-b3152439"><span class="cl-b312a9ba">1 (1.6%)</span></p></td>
-<td class="cl-b3153c4a"><p class="cl-b3152439"><span class="cl-b312a9ba">1 (1.7%)</span></p></td>
-<td class="cl-b3153c52"><p class="cl-b3152439"><span class="cl-b312a9ba">3 (1.6%)</span></p></td>
+<td class="cl-507f212e"><p class="cl-507f08bb"><span class="cl-507c8e82">711</span></p></td>
+<td class="cl-507f212f"><p class="cl-507f08b0"><span class="cl-507c8e82">1 (1.6%)</span></p></td>
+<td class="cl-507f212f"><p class="cl-507f08b0"><span class="cl-507c8e82">1 (1.6%)</span></p></td>
+<td class="cl-507f212f"><p class="cl-507f08b0"><span class="cl-507c8e82">1 (1.7%)</span></p></td>
+<td class="cl-507f2130"><p class="cl-507f08b0"><span class="cl-507c8e82">3 (1.6%)</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-b3153c49"><p class="cl-b315244d"><span class="cl-b312a9ba">713</span></p></td>
-<td class="cl-b3153c4a"><p class="cl-b3152439"><span class="cl-b312a9ba">1 (1.6%)</span></p></td>
-<td class="cl-b3153c4a"><p class="cl-b3152439"><span class="cl-b312a9ba">2 (3.2%)</span></p></td>
-<td class="cl-b3153c4a"><p class="cl-b3152439"><span class="cl-b312a9ba">3 (5.1%)</span></p></td>
-<td class="cl-b3153c52"><p class="cl-b3152439"><span class="cl-b312a9ba">6 (3.2%)</span></p></td>
+<td class="cl-507f212e"><p class="cl-507f08bb"><span class="cl-507c8e82">713</span></p></td>
+<td class="cl-507f212f"><p class="cl-507f08b0"><span class="cl-507c8e82">1 (1.6%)</span></p></td>
+<td class="cl-507f212f"><p class="cl-507f08b0"><span class="cl-507c8e82">2 (3.2%)</span></p></td>
+<td class="cl-507f212f"><p class="cl-507f08b0"><span class="cl-507c8e82">3 (5.1%)</span></p></td>
+<td class="cl-507f2130"><p class="cl-507f08b0"><span class="cl-507c8e82">6 (3.2%)</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-b3153c49"><p class="cl-b315244d"><span class="cl-b312a9ba">714</span></p></td>
-<td class="cl-b3153c4a"><p class="cl-b3152439"><span class="cl-b312a9ba">2 (3.1%)</span></p></td>
-<td class="cl-b3153c4a"><p class="cl-b3152439"><span class="cl-b312a9ba">2 (3.2%)</span></p></td>
-<td class="cl-b3153c4a"><p class="cl-b3152439"><span class="cl-b312a9ba">2 (3.4%)</span></p></td>
-<td class="cl-b3153c52"><p class="cl-b3152439"><span class="cl-b312a9ba">6 (3.2%)</span></p></td>
+<td class="cl-507f212e"><p class="cl-507f08bb"><span class="cl-507c8e82">714</span></p></td>
+<td class="cl-507f212f"><p class="cl-507f08b0"><span class="cl-507c8e82">2 (3.1%)</span></p></td>
+<td class="cl-507f212f"><p class="cl-507f08b0"><span class="cl-507c8e82">2 (3.2%)</span></p></td>
+<td class="cl-507f212f"><p class="cl-507f08b0"><span class="cl-507c8e82">2 (3.4%)</span></p></td>
+<td class="cl-507f2130"><p class="cl-507f08b0"><span class="cl-507c8e82">6 (3.2%)</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-b3153c49"><p class="cl-b315244d"><span class="cl-b312a9ba">715</span></p></td>
-<td class="cl-b3153c4a"><p class="cl-b3152439"><span class="cl-b312a9ba">2 (3.1%)</span></p></td>
-<td class="cl-b3153c4a"><p class="cl-b3152439"><span class="cl-b312a9ba">2 (3.2%)</span></p></td>
-<td class="cl-b3153c4a"><p class="cl-b3152439"><span class="cl-b312a9ba">1 (1.7%)</span></p></td>
-<td class="cl-b3153c52"><p class="cl-b3152439"><span class="cl-b312a9ba">5 (2.7%)</span></p></td>
+<td class="cl-507f212e"><p class="cl-507f08bb"><span class="cl-507c8e82">715</span></p></td>
+<td class="cl-507f212f"><p class="cl-507f08b0"><span class="cl-507c8e82">2 (3.1%)</span></p></td>
+<td class="cl-507f212f"><p class="cl-507f08b0"><span class="cl-507c8e82">2 (3.2%)</span></p></td>
+<td class="cl-507f212f"><p class="cl-507f08b0"><span class="cl-507c8e82">1 (1.7%)</span></p></td>
+<td class="cl-507f2130"><p class="cl-507f08b0"><span class="cl-507c8e82">5 (2.7%)</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-b3153c49"><p class="cl-b315244d"><span class="cl-b312a9ba">716</span></p></td>
-<td class="cl-b3153c4a"><p class="cl-b3152439"><span class="cl-b312a9ba">8 (12.5%)</span></p></td>
-<td class="cl-b3153c4a"><p class="cl-b3152439"><span class="cl-b312a9ba">4 (6.5%)</span></p></td>
-<td class="cl-b3153c4a"><p class="cl-b3152439"><span class="cl-b312a9ba">7 (11.9%)</span></p></td>
-<td class="cl-b3153c52"><p class="cl-b3152439"><span class="cl-b312a9ba">19 (10.3%)</span></p></td>
+<td class="cl-507f212e"><p class="cl-507f08bb"><span class="cl-507c8e82">716</span></p></td>
+<td class="cl-507f212f"><p class="cl-507f08b0"><span class="cl-507c8e82">8 (12.5%)</span></p></td>
+<td class="cl-507f212f"><p class="cl-507f08b0"><span class="cl-507c8e82">4 (6.5%)</span></p></td>
+<td class="cl-507f212f"><p class="cl-507f08b0"><span class="cl-507c8e82">7 (11.9%)</span></p></td>
+<td class="cl-507f2130"><p class="cl-507f08b0"><span class="cl-507c8e82">19 (10.3%)</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-b3153c49"><p class="cl-b315244d"><span class="cl-b312a9ba">717</span></p></td>
-<td class="cl-b3153c4a"><p class="cl-b3152439"><span class="cl-b312a9ba">2 (3.1%)</span></p></td>
-<td class="cl-b3153c4a"><p class="cl-b3152439"><span class="cl-b312a9ba">1 (1.6%)</span></p></td>
-<td class="cl-b3153c4a"><p class="cl-b3152439"><span class="cl-b312a9ba">1 (1.7%)</span></p></td>
-<td class="cl-b3153c52"><p class="cl-b3152439"><span class="cl-b312a9ba">4 (2.2%)</span></p></td>
+<td class="cl-507f212e"><p class="cl-507f08bb"><span class="cl-507c8e82">717</span></p></td>
+<td class="cl-507f212f"><p class="cl-507f08b0"><span class="cl-507c8e82">2 (3.1%)</span></p></td>
+<td class="cl-507f212f"><p class="cl-507f08b0"><span class="cl-507c8e82">1 (1.6%)</span></p></td>
+<td class="cl-507f212f"><p class="cl-507f08b0"><span class="cl-507c8e82">1 (1.7%)</span></p></td>
+<td class="cl-507f2130"><p class="cl-507f08b0"><span class="cl-507c8e82">4 (2.2%)</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-b3153c53"><p class="cl-b315244d"><span class="cl-b312a9ba">718</span></p></td>
-<td class="cl-b3153c54"><p class="cl-b3152439"><span class="cl-b312a9ba">3 (4.7%)</span></p></td>
-<td class="cl-b3153c54"><p class="cl-b3152439"><span class="cl-b312a9ba">3 (4.8%)</span></p></td>
-<td class="cl-b3153c54"><p class="cl-b3152439"><span class="cl-b312a9ba">2 (3.4%)</span></p></td>
-<td class="cl-b3153c5c"><p class="cl-b3152439"><span class="cl-b312a9ba">8 (4.3%)</span></p></td>
+<td class="cl-507f2131"><p class="cl-507f08bb"><span class="cl-507c8e82">718</span></p></td>
+<td class="cl-507f2138"><p class="cl-507f08b0"><span class="cl-507c8e82">3 (4.7%)</span></p></td>
+<td class="cl-507f2138"><p class="cl-507f08b0"><span class="cl-507c8e82">3 (4.8%)</span></p></td>
+<td class="cl-507f2138"><p class="cl-507f08b0"><span class="cl-507c8e82">2 (3.4%)</span></p></td>
+<td class="cl-507f2139"><p class="cl-507f08b0"><span class="cl-507c8e82">8 (4.3%)</span></p></td>
 </tr>
 </tbody>
+<tfoot><tr style="overflow-wrap:break-word;"><td colspan="5" class="cl-507f213a"><p class="cl-507f08bc"><span class="cl-507c8e8c">[tsidem02.docx][/usr/lib/rstudio-server/bin/quarto/share/rmd/rmd.R] 29DEC2025, 10:22</span></p></td></tr></tfoot>
 </table>
 </div>
 </div>
@@ -1787,7 +1789,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/johnsonandjohnson\.github\.io\/tlg-catalog");
+      var filterRegex = new RegExp("https:\/\/johnsonandjohnson\.github\.io\/TLG_Catalog");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
@@ -2114,8 +2116,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
-</script><script src="https://giscus.app/client.js" data-repo="johnsonandjohnson/tlg-catalog" data-repo-id="" data-category="General" data-category-id="" data-mapping="pathname" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en" crossorigin="anonymous" data-loading="lazy" async="">
-</script><input type="hidden" id="giscus-base-theme" value="light"><input type="hidden" id="giscus-alt-theme" value="light"><nav class="page-navigation column-body"><div class="nav-page nav-page-previous">
+</script><nav class="page-navigation column-body"><div class="nav-page nav-page-previous">
       <a href="../../tables/demographic/tsidem01.html" class="pagination-link" aria-label="TSIDEM01">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">TSIDEM01</span>
       </a>          
@@ -2288,10 +2289,10 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb2-160"><a href="#cb2-160"></a></span>
 <span id="cb2-161"><a href="#cb2-161"></a><span class="in"># Convert to tbl file and output table:</span></span>
 <span id="cb2-162"><a href="#cb2-162"></a></span>
-<span id="cb2-163"><a href="#cb2-163"></a><span class="in">tt_to_tlgrtf(string_map = string_map, tt = head(result, 25), file = fileid)</span></span>
+<span id="cb2-163"><a href="#cb2-163"></a><span class="in">tt_to_tlgrtf(string_map = string_map, tt = result, file = fileid)</span></span>
 <span id="cb2-164"><a href="#cb2-164"></a><span class="in">```</span></span>
 <span id="cb2-165"><a href="#cb2-165"></a><span class="in">```{r result1, echo=FALSE, message=FALSE, warning=FALSE, test = list(result_v1 = "result")}</span></span>
-<span id="cb2-166"><a href="#cb2-166"></a><span class="in">tt_to_flextable_j(head(result, 25), tblid)</span></span>
+<span id="cb2-166"><a href="#cb2-166"></a><span class="in">tt_to_flextable_j(result, tblid)</span></span>
 <span id="cb2-167"><a href="#cb2-167"></a><span class="in">```</span></span>
 <span id="cb2-168"><a href="#cb2-168"></a></span>
 <span id="cb2-169"><a href="#cb2-169"></a><span class="co">[</span><span class="ot">Download RTF file</span><span class="co">]</span>(<span class="in">`r paste0(tolower(tblid), '.rtf')`</span>)</span>
@@ -2304,7 +2305,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
 
-<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/johnsonandjohnson/tlg-catalog/edit/main/book/tables/demographic/tsidem02.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/johnsonandjohnson/tlg-catalog/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/johnsonandjohnson/TLG_Catalog/edit/dev/book/tables/demographic/tsidem02.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/johnsonandjohnson/TLG_Catalog/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>
