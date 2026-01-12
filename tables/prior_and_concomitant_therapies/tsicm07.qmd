@@ -33,7 +33,7 @@ dpspdr <- "jjcs__NULL__jjcs - core"
 
 apt <- FALSE
 library(junco)
-string_map <- rbind(string_map, c("&ctcae", "5.0"))
+default_str_map <- rbind(default_str_map, c("&ctcae", "5.0"))
 
 ```
 
@@ -243,7 +243,7 @@ result <- set_titles(result, tab_titles)
 tt_to_tlgrtf(string_map = string_map, tt = result, file = fileid, orientation = "landscape")
 ```
 ```{r result1, echo=FALSE, message=FALSE, warning=FALSE, test = list(result_v1 = "result")}
-tt_to_flextable_j(result, tblid)
+tt_to_flextable_j(result, tblid, string_map = string_map) 
 ```
 
 [Download RTF file](`r paste0(tolower(tblid), '.rtf')`)
