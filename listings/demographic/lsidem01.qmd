@@ -8,7 +8,6 @@ subtitle: Listing of Demographics and Baseline Characteristics
 {{< include ../../_utils/envir_hook.qmd >}}
 
 ```{r setup, echo = FALSE, warning = FALSE, message = FALSE}
-library(rtables.officer)
 
 options(docx.add_datetime = FALSE, tidytlg.add_datetime = FALSE)
 envsetup_config_name <- "default"
@@ -34,6 +33,8 @@ dpscomp <- "standards"
 dpspdr <- "jjcs__NULL__jjcs - core"
 
 apt <- FALSE
+library(junco)
+string_map <- rbind(string_map, c("&ctcae", "5.0"))
 
 ```
 

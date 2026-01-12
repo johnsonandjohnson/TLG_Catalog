@@ -32,6 +32,8 @@ dpscomp <- "standards"
 dpspdr <- "jjcs__NULL__jjcs - core"
 
 apt <- FALSE
+library(junco)
+string_map <- rbind(string_map, c("&ctcae", "5.0"))
 
 ```
 
@@ -610,7 +612,7 @@ result <- build_result_parcat3(
 )
 ```
 ```{r result1, echo=FALSE, message=FALSE, warning=FALSE, test = list(result_v1 = "result")}
-rtables.officer::tt_to_flextable(result, theme = junco::theme_docx_default_j()) #TODO: FIX this
+tt_to_flextable_j(result, tblid)
 ```
 
 [Download RTF file](`r paste0(tolower(tblid), '.rtf')`)
