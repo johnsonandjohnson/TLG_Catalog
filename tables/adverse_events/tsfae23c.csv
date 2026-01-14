@@ -1,14 +1,17 @@
 "label","col 1","col 2","col 3","col 4","row_type","anbr","indentme","roworder","newrows"
-"Subjects with ≥1 related AE leading to discontinuation","2 (3.8%)","1 (1.4%)","3 (2.4%)","7 (11.9%)","VALUE",2,0,0,0
-"HEADACHE","1 (1.9%)","0","1 (0.8%)","0","VALUE",3,0,0,1
-"MALAISE","1 (1.9%)","0","1 (0.8%)","0","VALUE",3,0,1,0
-"SOMNOLENCE","0","1 (1.4%)","1 (0.8%)","0","VALUE",3,0,2,0
-"CONFUSIONAL STATE","0","0","0","1 (1.7%)","VALUE",3,0,3,0
-"DISORIENTATION","0","0","0","1 (1.7%)","VALUE",3,0,4,0
-"DISTURBANCE IN SEXUAL AROUSAL","0","0","0","1 (1.7%)","VALUE",3,0,5,0
-"DYSURIA","0","0","0","1 (1.7%)","VALUE",3,0,6,0
-"ELECTROCARDIOGRAM T WAVE INVERSION","0","0","0","1 (1.7%)","VALUE",3,0,7,0
-"HYPERHIDROSIS","0","0","0","1 (1.7%)","VALUE",3,0,8,0
-"HYPERTENSION","0","0","0","1 (1.7%)","VALUE",3,0,9,0
-"RASH","0","0","0","1 (1.7%)","VALUE",3,0,10,0
-"VAGINAL MYCOSIS","0","0","0","1 (1.7%)","VALUE",3,0,11,0
+"Subjects with ≥1 related AE leading to discontinuation","3 (5.7%)","5 (6.8%)","8 (6.3%)","7 (11.9%)","VALUE",2,0,0,0
+"ASTHENIA","0","1 (1.4%)","1 (0.8%)","0","VALUE",3,0,0,1
+"CHEST PAIN","1 (1.9%)","0","1 (0.8%)","0","VALUE",3,0,1,0
+"CONTUSION","0","1 (1.4%)","1 (0.8%)","0","VALUE",3,0,2,0
+"DIZZINESS","0","1 (1.4%)","1 (0.8%)","0","VALUE",3,0,3,0
+"DYSPHONIA","0","1 (1.4%)","1 (0.8%)","0","VALUE",3,0,4,0
+"HEADACHE","1 (1.9%)","0","1 (0.8%)","0","VALUE",3,0,5,0
+"NASAL CONGESTION","1 (1.9%)","0","1 (0.8%)","0","VALUE",3,0,6,0
+"PALPITATIONS","0","1 (1.4%)","1 (0.8%)","0","VALUE",3,0,7,0
+"DISORIENTATION","0","0","0","1 (1.7%)","VALUE",3,0,8,0
+"ELECTROCARDIOGRAM T WAVE AMPLITUDE DECREASED","0","0","0","1 (1.7%)","VALUE",3,0,9,0
+"EYE PRURITUS","0","0","0","1 (1.7%)","VALUE",3,0,10,0
+"HYPERHIDROSIS","0","0","0","1 (1.7%)","VALUE",3,0,11,0
+"OEDEMA PERIPHERAL","0","0","0","1 (1.7%)","VALUE",3,0,12,0
+"RASH","0","0","0","1 (1.7%)","VALUE",3,0,13,0
+"UPPER RESPIRATORY TRACT INFECTION","0","0","0","1 (1.7%)","VALUE",3,0,14,0

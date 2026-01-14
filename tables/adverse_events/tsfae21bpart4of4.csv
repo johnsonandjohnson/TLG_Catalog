@@ -1,10 +1,10 @@
 "label","col 1","col 2","col 3","col 4","col 5","col 6","row_type","anbr","indentme","roworder","newrows"
 "Subjects with ≥1 AE","42 (71.2%)","","","","","","VALUE",2,0,0,0
-"General disorders and administration site conditions","16 (27.1%)","1 (1.7%)","4 (6.8%)","2 (3.4%)","3 (5.1%)","3 (5.1%)","VALUE",3,0,0,1
-"APPLICATION SITE PRURITUS","4 (6.8%)","0","0","1 (1.7%)","1 (1.7%)","2 (3.4%)","VALUE",3,1,1,0
-"APPLICATION SITE ERYTHEMA","2 (3.4%)","0","0","0","1 (1.7%)","0","VALUE",3,1,2,0
-"APPLICATION SITE IRRITATION","2 (3.4%)","0","1 (1.7%)","0","1 (1.7%)","0","VALUE",3,1,3,0
-"APPLICATION SITE DERMATITIS","5 (8.5%)","1 (1.7%)","2 (3.4%)","1 (1.7%)","0","1 (1.7%)","VALUE",3,1,4,0
+"General disorders and administration site conditions","16 (27.1%)","4 (6.8%)","2 (3.4%)","5 (8.5%)","0","5 (8.5%)","VALUE",3,0,0,1
+"APPLICATION SITE PRURITUS","4 (6.8%)","0","0","2 (3.4%)","0","2 (3.4%)","VALUE",3,1,1,0
+"APPLICATION SITE ERYTHEMA","2 (3.4%)","1 (1.7%)","1 (1.7%)","0","0","0","VALUE",3,1,2,0
+"APPLICATION SITE IRRITATION","2 (3.4%)","0","1 (1.7%)","0","0","1 (1.7%)","VALUE",3,1,3,0
+"APPLICATION SITE DERMATITIS","5 (8.5%)","2 (3.4%)","0","2 (3.4%)","0","1 (1.7%)","VALUE",3,1,4,0
 "FATIGUE","0","0","0","0","0","0","VALUE",3,1,5,0
 "APPLICATION SITE VESICLES","0","0","0","0","0","0","VALUE",3,1,6,0
 "APPLICATION SITE SWELLING","0","0","0","0","0","0","VALUE",3,1,7,0
@@ -14,27 +14,27 @@
 "APPLICATION SITE URTICARIA","0","0","0","0","0","0","VALUE",3,1,11,0
 "CHEST DISCOMFORT","0","0","0","0","0","0","VALUE",3,1,12,0
 "CHEST PAIN","0","0","0","0","0","0","VALUE",3,1,13,0
-"OEDEMA PERIPHERAL","2 (3.4%)","0","0","1 (1.7%)","0","0","VALUE",3,1,14,0
+"OEDEMA PERIPHERAL","2 (3.4%)","0","0","1 (1.7%)","0","1 (1.7%)","VALUE",3,1,14,0
 "APPLICATION SITE BLEEDING","0","0","0","0","0","0","VALUE",3,1,15,0
 "APPLICATION SITE DESQUAMATION","0","0","0","0","0","0","VALUE",3,1,16,0
-"APPLICATION SITE REACTION","1 (1.7%)","0","0","0","1 (1.7%)","0","VALUE",3,1,17,0
-"ASTHENIA","1 (1.7%)","0","1 (1.7%)","0","0","0","VALUE",3,1,18,0
+"APPLICATION SITE REACTION","1 (1.7%)","0","0","1 (1.7%)","0","0","VALUE",3,1,17,0
+"ASTHENIA","1 (1.7%)","0","0","0","0","1 (1.7%)","VALUE",3,1,18,0
 "CHILLS","0","0","0","0","0","0","VALUE",3,1,19,0
 "FEELING ABNORMAL","0","0","0","0","0","0","VALUE",3,1,20,0
 "FEELING COLD","0","0","0","0","0","0","VALUE",3,1,21,0
 "OEDEMA","0","0","0","0","0","0","VALUE",3,1,22,0
 "PAIN","0","0","0","0","0","0","VALUE",3,1,23,0
-"PYREXIA","2 (3.4%)","0","1 (1.7%)","0","0","0","VALUE",3,1,24,0
+"PYREXIA","2 (3.4%)","1 (1.7%)","1 (1.7%)","0","0","0","VALUE",3,1,24,0
 "SECRETION DISCHARGE","0","0","0","0","0","0","VALUE",3,1,25,0
 "SUDDEN DEATH","0","0","0","0","0","0","VALUE",3,1,26,0
 "ULCER","0","0","0","0","0","0","VALUE",3,1,27,0
-"APPLICATION SITE INDURATION","1 (1.7%)","0","0","0","0","1 (1.7%)","VALUE",3,1,28,0
-"Skin and subcutaneous tissue disorders","16 (27.1%)","1 (1.7%)","4 (6.8%)","1 (1.7%)","6 (10.2%)","4 (6.8%)","VALUE",4,0,28,1
-"PRURITUS","6 (10.2%)","1 (1.7%)","0","0","4 (6.8%)","0","VALUE",4,1,29,0
-"ERYTHEMA","6 (10.2%)","0","1 (1.7%)","0","4 (6.8%)","0","VALUE",4,1,30,0
-"RASH","4 (6.8%)","0","1 (1.7%)","2 (3.4%)","0","1 (1.7%)","VALUE",4,1,31,0
-"HYPERHIDROSIS","2 (3.4%)","0","1 (1.7%)","0","0","1 (1.7%)","VALUE",4,1,32,0
-"SKIN IRRITATION","3 (5.1%)","1 (1.7%)","1 (1.7%)","1 (1.7%)","0","0","VALUE",4,1,33,0
+"APPLICATION SITE INDURATION","1 (1.7%)","0","0","0","1 (1.7%)","0","VALUE",3,1,28,0
+"Skin and subcutaneous tissue disorders","16 (27.1%)","2 (3.4%)","4 (6.8%)","2 (3.4%)","1 (1.7%)","5 (8.5%)","VALUE",4,0,28,1
+"PRURITUS","6 (10.2%)","1 (1.7%)","1 (1.7%)","0","1 (1.7%)","1 (1.7%)","VALUE",4,1,29,0
+"ERYTHEMA","6 (10.2%)","1 (1.7%)","0","0","3 (5.1%)","0","VALUE",4,1,30,0
+"RASH","4 (6.8%)","1 (1.7%)","1 (1.7%)","0","0","2 (3.4%)","VALUE",4,1,31,0
+"HYPERHIDROSIS","2 (3.4%)","0","0","1 (1.7%)","0","1 (1.7%)","VALUE",4,1,32,0
+"SKIN IRRITATION","3 (5.1%)","0","1 (1.7%)","1 (1.7%)","1 (1.7%)","0","VALUE",4,1,33,0
 "BLISTER","0","0","0","0","0","0","VALUE",4,1,34,0
 "RASH PRURITIC","0","0","0","0","0","0","VALUE",4,1,35,0
 "URTICARIA","0","0","0","0","0","0","VALUE",4,1,36,0
@@ -43,14 +43,14 @@
 "RASH ERYTHEMATOUS","0","0","0","0","0","0","VALUE",4,1,39,0
 "RASH MACULO-PAPULAR","0","0","0","0","0","0","VALUE",4,1,40,0
 "SKIN ODOUR ABNORMAL","0","0","0","0","0","0","VALUE",4,1,41,0
-"ALOPECIA","1 (1.7%)","0","0","0","0","1 (1.7%)","VALUE",4,1,42,0
-"DRUG ERUPTION","1 (1.7%)","0","0","1 (1.7%)","0","0","VALUE",4,1,43,0
+"ALOPECIA","1 (1.7%)","0","1 (1.7%)","0","0","0","VALUE",4,1,42,0
+"DRUG ERUPTION","1 (1.7%)","0","1 (1.7%)","0","0","0","VALUE",4,1,43,0
 "SKIN ULCER","1 (1.7%)","0","0","0","0","1 (1.7%)","VALUE",4,1,44,0
-"Nervous system disorders","5 (8.5%)","0","0","2 (3.4%)","0","2 (3.4%)","VALUE",5,0,44,1
+"Nervous system disorders","5 (8.5%)","0","1 (1.7%)","0","2 (3.4%)","2 (3.4%)","VALUE",5,0,44,1
 "DIZZINESS","0","0","0","0","0","0","VALUE",5,1,45,0
-"HEADACHE","2 (3.4%)","0","0","1 (1.7%)","0","0","VALUE",5,1,46,0
+"HEADACHE","2 (3.4%)","0","1 (1.7%)","0","1 (1.7%)","0","VALUE",5,1,46,0
 "SYNCOPE","0","0","0","0","0","0","VALUE",5,1,47,0
-"SOMNOLENCE","1 (1.7%)","0","0","0","0","1 (1.7%)","VALUE",5,1,48,0
+"SOMNOLENCE","1 (1.7%)","0","0","0","1 (1.7%)","0","VALUE",5,1,48,0
 "TRANSIENT ISCHAEMIC ATTACK","0","0","0","0","0","0","VALUE",5,1,49,0
 "BALANCE DISORDER","0","0","0","0","0","0","VALUE",5,1,50,0
 "BURNING SENSATION","0","0","0","0","0","0","VALUE",5,1,51,0
@@ -66,25 +66,25 @@
 "PARTIAL SEIZURES WITH SECONDARY GENERALISATION","0","0","0","0","0","0","VALUE",5,1,61,0
 "STUPOR","0","0","0","0","0","0","VALUE",5,1,62,0
 "SYNCOPE VASOVAGAL","0","0","0","0","0","0","VALUE",5,1,63,0
-"PARKINSON'S DISEASE","1 (1.7%)","0","0","1 (1.7%)","0","0","VALUE",5,1,64,0
+"PARKINSON'S DISEASE","1 (1.7%)","0","0","0","0","1 (1.7%)","VALUE",5,1,64,0
 "PSYCHOMOTOR HYPERACTIVITY","1 (1.7%)","0","0","0","0","1 (1.7%)","VALUE",5,1,65,0
-"Gastrointestinal disorders","7 (11.9%)","1 (1.7%)","1 (1.7%)","0","2 (3.4%)","2 (3.4%)","VALUE",6,0,65,1
+"Gastrointestinal disorders","7 (11.9%)","0","2 (3.4%)","2 (3.4%)","0","3 (5.1%)","VALUE",6,0,65,1
 "NAUSEA","0","0","0","0","0","0","VALUE",6,1,66,0
 "VOMITING","0","0","0","0","0","0","VALUE",6,1,67,0
-"DIARRHOEA","3 (5.1%)","0","0","0","1 (1.7%)","1 (1.7%)","VALUE",6,1,68,0
+"DIARRHOEA","3 (5.1%)","0","1 (1.7%)","1 (1.7%)","0","1 (1.7%)","VALUE",6,1,68,0
 "SALIVARY HYPERSECRETION","0","0","0","0","0","0","VALUE",6,1,69,0
-"ABDOMINAL PAIN","1 (1.7%)","0","0","0","0","0","VALUE",6,1,70,0
+"ABDOMINAL PAIN","1 (1.7%)","0","0","1 (1.7%)","0","0","VALUE",6,1,70,0
 "ABDOMINAL DISCOMFORT","0","0","0","0","0","0","VALUE",6,1,71,0
 "DYSPEPSIA","1 (1.7%)","0","0","0","0","1 (1.7%)","VALUE",6,1,72,0
 "RECTAL HAEMORRHAGE","0","0","0","0","0","0","VALUE",6,1,73,0
 "STOMACH DISCOMFORT","0","0","0","0","0","0","VALUE",6,1,74,0
-"CONSTIPATION","1 (1.7%)","0","1 (1.7%)","0","0","0","VALUE",6,1,75,0
-"GASTROOESOPHAGEAL REFLUX DISEASE","1 (1.7%)","0","0","0","0","0","VALUE",6,1,76,0
-"GLOSSITIS","1 (1.7%)","0","0","0","1 (1.7%)","0","VALUE",6,1,77,0
-"HIATUS HERNIA","1 (1.7%)","1 (1.7%)","0","0","0","0","VALUE",6,1,78,0
-"Cardiac disorders","7 (11.9%)","0","1 (1.7%)","3 (5.1%)","2 (3.4%)","1 (1.7%)","VALUE",7,0,78,1
+"CONSTIPATION","1 (1.7%)","0","0","0","0","1 (1.7%)","VALUE",6,1,75,0
+"GASTROOESOPHAGEAL REFLUX DISEASE","1 (1.7%)","0","0","0","1 (1.7%)","0","VALUE",6,1,76,0
+"GLOSSITIS","1 (1.7%)","0","1 (1.7%)","0","0","0","VALUE",6,1,77,0
+"HIATUS HERNIA","1 (1.7%)","0","0","1 (1.7%)","0","0","VALUE",6,1,78,0
+"Cardiac disorders","7 (11.9%)","1 (1.7%)","0","2 (3.4%)","1 (1.7%)","2 (3.4%)","VALUE",7,0,78,1
 "SINUS BRADYCARDIA","0","0","0","0","0","0","VALUE",7,1,79,0
-"MYOCARDIAL INFARCTION","3 (5.1%)","0","0","3 (5.1%)","0","0","VALUE",7,1,80,0
+"MYOCARDIAL INFARCTION","3 (5.1%)","1 (1.7%)","0","1 (1.7%)","0","1 (1.7%)","VALUE",7,1,80,0
 "ATRIAL FIBRILLATION","0","0","0","0","0","0","VALUE",7,1,81,0
 "VENTRICULAR EXTRASYSTOLES","0","0","0","0","0","0","VALUE",7,1,82,0
 "ATRIAL FLUTTER","0","0","0","0","0","0","VALUE",7,1,83,0
@@ -95,46 +95,46 @@
 "SUPRAVENTRICULAR EXTRASYSTOLES","1 (1.7%)","0","0","0","0","1 (1.7%)","VALUE",7,1,88,0
 "SUPRAVENTRICULAR TACHYCARDIA","0","0","0","0","0","0","VALUE",7,1,89,0
 "WOLFF-PARKINSON-WHITE SYNDROME","0","0","0","0","0","0","VALUE",7,1,90,0
-"ATRIOVENTRICULAR BLOCK SECOND DEGREE","1 (1.7%)","0","1 (1.7%)","0","0","0","VALUE",7,1,91,0
+"ATRIOVENTRICULAR BLOCK SECOND DEGREE","1 (1.7%)","0","0","0","0","0","VALUE",7,1,91,0
 "BUNDLE BRANCH BLOCK LEFT","1 (1.7%)","0","0","0","1 (1.7%)","0","VALUE",7,1,92,0
-"SINUS ARRHYTHMIA","1 (1.7%)","0","0","0","1 (1.7%)","0","VALUE",7,1,93,0
-"TACHYCARDIA","1 (1.7%)","0","1 (1.7%)","0","0","0","VALUE",7,1,94,0
-"Infections and infestations","14 (23.7%)","1 (1.7%)","6 (10.2%)","1 (1.7%)","1 (1.7%)","5 (8.5%)","VALUE",8,0,94,1
-"NASOPHARYNGITIS","2 (3.4%)","0","1 (1.7%)","0","1 (1.7%)","0","VALUE",8,1,95,0
-"INFLUENZA","1 (1.7%)","0","0","1 (1.7%)","0","0","VALUE",8,1,96,0
-"UPPER RESPIRATORY TRACT INFECTION","5 (8.5%)","1 (1.7%)","2 (3.4%)","0","0","2 (3.4%)","VALUE",8,1,97,0
+"SINUS ARRHYTHMIA","1 (1.7%)","0","0","1 (1.7%)","0","0","VALUE",7,1,93,0
+"TACHYCARDIA","1 (1.7%)","0","0","0","0","0","VALUE",7,1,94,0
+"Infections and infestations","14 (23.7%)","2 (3.4%)","0","2 (3.4%)","3 (5.1%)","3 (5.1%)","VALUE",8,0,94,1
+"NASOPHARYNGITIS","2 (3.4%)","0","0","1 (1.7%)","1 (1.7%)","0","VALUE",8,1,95,0
+"INFLUENZA","1 (1.7%)","0","0","0","1 (1.7%)","0","VALUE",8,1,96,0
+"UPPER RESPIRATORY TRACT INFECTION","5 (8.5%)","2 (3.4%)","0","0","1 (1.7%)","0","VALUE",8,1,97,0
 "CELLULITIS","0","0","0","0","0","0","VALUE",8,1,98,0
 "HORDEOLUM","0","0","0","0","0","0","VALUE",8,1,99,0
 "LOWER RESPIRATORY TRACT INFECTION","0","0","0","0","0","0","VALUE",8,1,100,0
 "PNEUMONIA","0","0","0","0","0","0","VALUE",8,1,101,0
 "RHINITIS","0","0","0","0","0","0","VALUE",8,1,102,0
-"URINARY TRACT INFECTION","2 (3.4%)","0","1 (1.7%)","0","0","1 (1.7%)","VALUE",8,1,103,0
-"BRONCHITIS","1 (1.7%)","0","1 (1.7%)","0","0","0","VALUE",8,1,104,0
-"CERVICITIS","1 (1.7%)","0","1 (1.7%)","0","0","0","VALUE",8,1,105,0
-"EAR INFECTION","2 (3.4%)","0","1 (1.7%)","0","0","1 (1.7%)","VALUE",8,1,106,0
+"URINARY TRACT INFECTION","2 (3.4%)","1 (1.7%)","0","1 (1.7%)","0","0","VALUE",8,1,103,0
+"BRONCHITIS","1 (1.7%)","0","0","0","0","0","VALUE",8,1,104,0
+"CERVICITIS","1 (1.7%)","0","0","1 (1.7%)","0","0","VALUE",8,1,105,0
+"EAR INFECTION","2 (3.4%)","0","0","0","0","1 (1.7%)","VALUE",8,1,106,0
 "GASTROENTERITIS VIRAL","1 (1.7%)","0","0","0","0","1 (1.7%)","VALUE",8,1,107,0
-"LOCALISED INFECTION","1 (1.7%)","0","1 (1.7%)","0","0","0","VALUE",8,1,108,0
-"VAGINAL MYCOSIS","1 (1.7%)","0","0","0","0","1 (1.7%)","VALUE",8,1,109,0
-"Psychiatric disorders","7 (11.9%)","4 (6.8%)","1 (1.7%)","0","1 (1.7%)","1 (1.7%)","VALUE",9,0,109,1
-"CONFUSIONAL STATE","2 (3.4%)","2 (3.4%)","0","0","0","0","VALUE",9,1,110,0
-"AGITATION","1 (1.7%)","0","0","0","1 (1.7%)","0","VALUE",9,1,111,0
+"LOCALISED INFECTION","1 (1.7%)","0","0","0","0","1 (1.7%)","VALUE",8,1,108,0
+"VAGINAL MYCOSIS","1 (1.7%)","0","1 (1.7%)","0","0","0","VALUE",8,1,109,0
+"Psychiatric disorders","7 (11.9%)","2 (3.4%)","1 (1.7%)","2 (3.4%)","1 (1.7%)","1 (1.7%)","VALUE",9,0,109,1
+"CONFUSIONAL STATE","2 (3.4%)","0","1 (1.7%)","1 (1.7%)","0","0","VALUE",9,1,110,0
+"AGITATION","1 (1.7%)","0","0","1 (1.7%)","0","0","VALUE",9,1,111,0
 "ANXIETY","0","0","0","0","0","0","VALUE",9,1,112,0
 "DELIRIUM","0","0","0","0","0","0","VALUE",9,1,113,0
-"DELUSION","1 (1.7%)","1 (1.7%)","0","0","0","0","VALUE",9,1,114,0
+"DELUSION","1 (1.7%)","0","0","0","1 (1.7%)","0","VALUE",9,1,114,0
 "DEPRESSED MOOD","0","0","0","0","0","0","VALUE",9,1,115,0
 "HALLUCINATION","0","0","0","0","0","0","VALUE",9,1,116,0
 "HALLUCINATION, VISUAL","0","0","0","0","0","0","VALUE",9,1,117,0
-"INSOMNIA","1 (1.7%)","0","0","0","0","1 (1.7%)","VALUE",9,1,118,0
+"INSOMNIA","1 (1.7%)","1 (1.7%)","0","0","0","0","VALUE",9,1,118,0
 "IRRITABILITY","0","0","0","0","0","0","VALUE",9,1,119,0
 "LIBIDO DECREASED","0","0","0","0","0","0","VALUE",9,1,120,0
 "LISTLESS","0","0","0","0","0","0","VALUE",9,1,121,0
 "NIGHTMARE","0","0","0","0","0","0","VALUE",9,1,122,0
 "RESTLESSNESS","0","0","0","0","0","0","VALUE",9,1,123,0
-"DISORIENTATION","1 (1.7%)","0","1 (1.7%)","0","0","0","VALUE",9,1,124,0
-"DISTURBANCE IN SEXUAL AROUSAL","1 (1.7%)","1 (1.7%)","0","0","0","0","VALUE",9,1,125,0
-"Respiratory, thoracic and mediastinal disorders","5 (8.5%)","1 (1.7%)","0","0","1 (1.7%)","1 (1.7%)","VALUE",10,0,125,1
-"COUGH","1 (1.7%)","0","0","0","0","0","VALUE",10,1,126,0
-"NASAL CONGESTION","2 (3.4%)","1 (1.7%)","0","0","0","0","VALUE",10,1,127,0
+"DISORIENTATION","1 (1.7%)","1 (1.7%)","0","0","0","0","VALUE",9,1,124,0
+"DISTURBANCE IN SEXUAL AROUSAL","1 (1.7%)","0","0","0","0","1 (1.7%)","VALUE",9,1,125,0
+"Respiratory, thoracic and mediastinal disorders","5 (8.5%)","0","1 (1.7%)","0","2 (3.4%)","2 (3.4%)","VALUE",10,0,125,1
+"COUGH","1 (1.7%)","0","0","0","0","1 (1.7%)","VALUE",10,1,126,0
+"NASAL CONGESTION","2 (3.4%)","0","1 (1.7%)","0","1 (1.7%)","0","VALUE",10,1,127,0
 "EPISTAXIS","0","0","0","0","0","0","VALUE",10,1,128,0
 "RHINORRHOEA","0","0","0","0","0","0","VALUE",10,1,129,0
 "ALLERGIC GRANULOMATOUS ANGIITIS","0","0","0","0","0","0","VALUE",10,1,130,0
@@ -143,68 +143,68 @@
 "PHARYNGOLARYNGEAL PAIN","0","0","0","0","0","0","VALUE",10,1,133,0
 "PRODUCTIVE COUGH","0","0","0","0","0","0","VALUE",10,1,134,0
 "RESPIRATORY TRACT CONGESTION","0","0","0","0","0","0","VALUE",10,1,135,0
-"EMPHYSEMA","1 (1.7%)","0","0","0","1 (1.7%)","0","VALUE",10,1,136,0
-"POSTNASAL DRIP","1 (1.7%)","0","0","0","0","1 (1.7%)","VALUE",10,1,137,0
-"Investigations","7 (11.9%)","3 (5.1%)","1 (1.7%)","1 (1.7%)","1 (1.7%)","1 (1.7%)","VALUE",11,0,137,1
+"EMPHYSEMA","1 (1.7%)","0","0","0","0","1 (1.7%)","VALUE",10,1,136,0
+"POSTNASAL DRIP","1 (1.7%)","0","0","0","1 (1.7%)","0","VALUE",10,1,137,0
+"Investigations","7 (11.9%)","0","2 (3.4%)","2 (3.4%)","0","3 (5.1%)","VALUE",11,0,137,1
 "BLOOD GLUCOSE INCREASED","0","0","0","0","0","0","VALUE",11,1,138,0
-"ELECTROCARDIOGRAM T WAVE INVERSION","2 (3.4%)","1 (1.7%)","0","0","1 (1.7%)","0","VALUE",11,1,139,0
+"ELECTROCARDIOGRAM T WAVE INVERSION","2 (3.4%)","0","1 (1.7%)","1 (1.7%)","0","0","VALUE",11,1,139,0
 "BIOPSY","0","0","0","0","0","0","VALUE",11,1,140,0
 "BIOPSY PROSTATE","0","0","0","0","0","0","VALUE",11,1,141,0
 "BLOOD CHOLESTEROL INCREASED","0","0","0","0","0","0","VALUE",11,1,142,0
 "BODY TEMPERATURE INCREASED","0","0","0","0","0","0","VALUE",11,1,143,0
-"ELECTROCARDIOGRAM ST SEGMENT DEPRESSION","3 (5.1%)","2 (3.4%)","1 (1.7%)","0","0","0","VALUE",11,1,144,0
+"ELECTROCARDIOGRAM ST SEGMENT DEPRESSION","3 (5.1%)","1 (1.7%)","1 (1.7%)","0","0","1 (1.7%)","VALUE",11,1,144,0
 "ELECTROCARDIOGRAM T WAVE AMPLITUDE DECREASED","1 (1.7%)","0","0","0","0","0","VALUE",11,1,145,0
 "NASAL MUCOSA BIOPSY","0","0","0","0","0","0","VALUE",11,1,146,0
 "WEIGHT DECREASED","0","0","0","0","0","0","VALUE",11,1,147,0
-"BLOOD ALKALINE PHOSPHATASE INCREASED","1 (1.7%)","0","0","1 (1.7%)","0","0","VALUE",11,1,148,0
-"BLOOD CREATINE PHOSPHOKINASE INCREASED","1 (1.7%)","0","0","0","0","1 (1.7%)","VALUE",11,1,149,0
-"BLOOD URINE PRESENT","1 (1.7%)","0","0","0","0","0","VALUE",11,1,150,0
-"CYSTOSCOPY","1 (1.7%)","1 (1.7%)","0","0","0","0","VALUE",11,1,151,0
+"BLOOD ALKALINE PHOSPHATASE INCREASED","1 (1.7%)","0","0","0","0","1 (1.7%)","VALUE",11,1,148,0
+"BLOOD CREATINE PHOSPHOKINASE INCREASED","1 (1.7%)","0","0","1 (1.7%)","0","0","VALUE",11,1,149,0
+"BLOOD URINE PRESENT","1 (1.7%)","0","0","0","0","1 (1.7%)","VALUE",11,1,150,0
+"CYSTOSCOPY","1 (1.7%)","0","1 (1.7%)","0","0","0","VALUE",11,1,151,0
 "Musculoskeletal and connective tissue disorders","2 (3.4%)","0","0","0","1 (1.7%)","1 (1.7%)","VALUE",12,0,151,1
-"BACK PAIN","1 (1.7%)","0","0","0","1 (1.7%)","0","VALUE",12,1,152,0
+"BACK PAIN","1 (1.7%)","0","0","0","0","1 (1.7%)","VALUE",12,1,152,0
 "ARTHRALGIA","0","0","0","0","0","0","VALUE",12,1,153,0
 "FLANK PAIN","0","0","0","0","0","0","VALUE",12,1,154,0
 "MUSCLE SPASMS","0","0","0","0","0","0","VALUE",12,1,155,0
 "MUSCULAR WEAKNESS","0","0","0","0","0","0","VALUE",12,1,156,0
 "MYALGIA","0","0","0","0","0","0","VALUE",12,1,157,0
-"SHOULDER PAIN","1 (1.7%)","0","0","0","0","1 (1.7%)","VALUE",12,1,158,0
+"SHOULDER PAIN","1 (1.7%)","0","0","0","1 (1.7%)","0","VALUE",12,1,158,0
 "Injury, poisoning and procedural complications","2 (3.4%)","0","0","0","1 (1.7%)","1 (1.7%)","VALUE",13,0,158,1
 "CONTUSION","0","0","0","0","0","0","VALUE",13,1,159,0
-"FALL","1 (1.7%)","0","0","0","1 (1.7%)","0","VALUE",13,1,160,0
+"FALL","1 (1.7%)","0","0","0","0","1 (1.7%)","VALUE",13,1,160,0
 "EXCORIATION","0","0","0","0","0","0","VALUE",13,1,161,0
 "SKIN LACERATION","0","0","0","0","0","0","VALUE",13,1,162,0
 "FACIAL BONES FRACTURE","0","0","0","0","0","0","VALUE",13,1,163,0
 "JOINT DISLOCATION","0","0","0","0","0","0","VALUE",13,1,164,0
 "WOUND","0","0","0","0","0","0","VALUE",13,1,165,0
-"HIP FRACTURE","1 (1.7%)","0","0","0","0","1 (1.7%)","VALUE",13,1,166,0
-"Renal and urinary disorders","2 (3.4%)","0","0","0","0","1 (1.7%)","VALUE",14,0,166,1
+"HIP FRACTURE","1 (1.7%)","0","0","0","1 (1.7%)","0","VALUE",13,1,166,0
+"Renal and urinary disorders","2 (3.4%)","0","1 (1.7%)","0","0","1 (1.7%)","VALUE",14,0,166,1
 "CALCULUS URETHRAL","0","0","0","0","0","0","VALUE",14,1,167,0
-"DYSURIA","1 (1.7%)","0","0","0","0","0","VALUE",14,1,168,0
+"DYSURIA","1 (1.7%)","0","1 (1.7%)","0","0","0","VALUE",14,1,168,0
 "INCONTINENCE","0","0","0","0","0","0","VALUE",14,1,169,0
 "MICTURITION URGENCY","1 (1.7%)","0","0","0","0","1 (1.7%)","VALUE",14,1,170,0
 "NEPHROLITHIASIS","0","0","0","0","0","0","VALUE",14,1,171,0
-"Vascular disorders","3 (5.1%)","0","0","1 (1.7%)","1 (1.7%)","1 (1.7%)","VALUE",15,0,171,1
+"Vascular disorders","3 (5.1%)","0","1 (1.7%)","1 (1.7%)","0","1 (1.7%)","VALUE",15,0,171,1
 "HOT FLUSH","0","0","0","0","0","0","VALUE",15,1,172,0
-"HYPERTENSION","1 (1.7%)","0","0","1 (1.7%)","0","0","VALUE",15,1,173,0
-"HYPOTENSION","2 (3.4%)","0","1 (1.7%)","0","0","1 (1.7%)","VALUE",15,1,174,0
+"HYPERTENSION","1 (1.7%)","0","0","0","0","1 (1.7%)","VALUE",15,1,173,0
+"HYPOTENSION","2 (3.4%)","0","1 (1.7%)","1 (1.7%)","0","0","VALUE",15,1,174,0
 "WOUND HAEMORRHAGE","0","0","0","0","0","0","VALUE",15,1,175,0
-"ORTHOSTATIC HYPOTENSION","1 (1.7%)","0","0","0","1 (1.7%)","0","VALUE",15,1,176,0
-"Ear and labyrinth disorders","1 (1.7%)","0","0","1 (1.7%)","0","0","VALUE",16,0,176,1
+"ORTHOSTATIC HYPOTENSION","1 (1.7%)","1 (1.7%)","0","0","0","0","VALUE",15,1,176,0
+"Ear and labyrinth disorders","1 (1.7%)","0","0","0","1 (1.7%)","0","VALUE",16,0,176,1
 "VERTIGO","0","0","0","0","0","0","VALUE",16,1,177,0
 "CERUMEN IMPACTION","0","0","0","0","0","0","VALUE",16,1,178,0
-"EAR PAIN","1 (1.7%)","0","0","1 (1.7%)","0","0","VALUE",16,1,179,0
-"Eye disorders","2 (3.4%)","1 (1.7%)","0","0","0","1 (1.7%)","VALUE",17,0,179,1
+"EAR PAIN","1 (1.7%)","0","0","0","1 (1.7%)","0","VALUE",16,1,179,0
+"Eye disorders","2 (3.4%)","0","0","0","0","2 (3.4%)","VALUE",17,0,179,1
 "VISION BLURRED","0","0","0","0","0","0","VALUE",17,1,180,0
 "CONJUNCTIVAL HAEMORRHAGE","0","0","0","0","0","0","VALUE",17,1,181,0
 "CONJUNCTIVITIS","1 (1.7%)","0","0","0","0","1 (1.7%)","VALUE",17,1,182,0
-"EYE ALLERGY","1 (1.7%)","0","0","0","0","0","VALUE",17,1,183,0
-"EYE PRURITUS","1 (1.7%)","1 (1.7%)","0","0","0","0","VALUE",17,1,184,0
-"EYE SWELLING","1 (1.7%)","1 (1.7%)","0","0","0","0","VALUE",17,1,185,0
-"Reproductive system and breast disorders","3 (5.1%)","0","1 (1.7%)","0","1 (1.7%)","0","VALUE",18,0,185,1
+"EYE ALLERGY","1 (1.7%)","0","1 (1.7%)","0","0","0","VALUE",17,1,183,0
+"EYE PRURITUS","1 (1.7%)","0","0","0","0","1 (1.7%)","VALUE",17,1,184,0
+"EYE SWELLING","1 (1.7%)","0","0","0","0","1 (1.7%)","VALUE",17,1,185,0
+"Reproductive system and breast disorders","3 (5.1%)","0","1 (1.7%)","1 (1.7%)","1 (1.7%)","0","VALUE",18,0,185,1
 "ABNORMAL UTERINE BLEEDING","0","0","0","0","0","0","VALUE",18,1,186,0
-"BENIGN PROSTATIC HYPERPLASIA","1 (1.7%)","0","0","0","1 (1.7%)","0","VALUE",18,1,187,0
-"ERECTILE DYSFUNCTION","1 (1.7%)","0","0","0","0","0","VALUE",18,1,188,0
-"PELVIC PAIN","1 (1.7%)","0","1 (1.7%)","0","0","0","VALUE",18,1,189,0
+"BENIGN PROSTATIC HYPERPLASIA","1 (1.7%)","0","1 (1.7%)","0","0","0","VALUE",18,1,187,0
+"ERECTILE DYSFUNCTION","1 (1.7%)","0","0","1 (1.7%)","0","0","VALUE",18,1,188,0
+"PELVIC PAIN","1 (1.7%)","0","0","0","1 (1.7%)","0","VALUE",18,1,189,0
 "Congenital, familial and genetic disorders","0","0","0","0","0","0","VALUE",19,0,189,1
 "VENTRICULAR SEPTAL DEFECT","0","0","0","0","0","0","VALUE",19,1,190,0
 "Neoplasms benign, malignant and unspecified (incl cysts and polyps)","0","0","0","0","0","0","VALUE",20,0,190,1
@@ -212,11 +212,11 @@
 "PROSTATE CANCER","0","0","0","0","0","0","VALUE",20,1,192,0
 "Endocrine disorders","1 (1.7%)","1 (1.7%)","0","0","0","0","VALUE",21,0,192,1
 "BLEEDING ANOVULATORY","1 (1.7%)","1 (1.7%)","0","0","0","0","VALUE",21,1,193,0
-"Metabolism and nutrition disorders","2 (3.4%)","0","1 (1.7%)","0","0","1 (1.7%)","VALUE",22,0,193,1
+"Metabolism and nutrition disorders","2 (3.4%)","0","0","0","0","1 (1.7%)","VALUE",22,0,193,1
 "INCREASED APPETITE","0","0","0","0","0","0","VALUE",22,1,194,0
-"DECREASED APPETITE","1 (1.7%)","0","1 (1.7%)","0","0","0","VALUE",22,1,195,0
-"DEHYDRATION","1 (1.7%)","0","0","0","0","1 (1.7%)","VALUE",22,1,196,0
-"Surgical and medical procedures","2 (3.4%)","0","0","1 (1.7%)","1 (1.7%)","0","VALUE",23,0,196,1
+"DECREASED APPETITE","1 (1.7%)","0","0","0","0","1 (1.7%)","VALUE",22,1,195,0
+"DEHYDRATION","1 (1.7%)","0","0","0","0","0","VALUE",22,1,196,0
+"Surgical and medical procedures","2 (3.4%)","0","0","2 (3.4%)","0","0","VALUE",23,0,196,1
 "ACROCHORDON EXCISION","0","0","0","0","0","0","VALUE",23,1,197,0
-"CATARACT OPERATION","1 (1.7%)","0","0","0","1 (1.7%)","0","VALUE",23,1,198,0
+"CATARACT OPERATION","1 (1.7%)","0","0","1 (1.7%)","0","0","VALUE",23,1,198,0
 "EYE LASER SURGERY","1 (1.7%)","0","0","1 (1.7%)","0","0","VALUE",23,1,199,0
