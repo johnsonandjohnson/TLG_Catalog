@@ -236,6 +236,8 @@ generate_qmd_content <- function(r_content, base_name, base_name_upper, first_le
     "dpspdr <- \"jjcs__NULL__jjcs - core\"",
     "",
     "apt <- FALSE",
+    "library(junco)",
+    "string_map <- rbind(string_map, c('&ctcae', '5.0'))",
     "",
     "```",
     "",
