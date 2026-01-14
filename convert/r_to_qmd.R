@@ -237,7 +237,7 @@ generate_qmd_content <- function(r_content, base_name, base_name_upper, first_le
     "",
     "apt <- FALSE",
     "library(junco)",
-    "string_map <- rbind(string_map, c('&ctcae', '5.0'))",
+    "default_str_map <- rbind(default_str_map, c('&ctcae', '5.0'))",
     "",
     "```",
     "",
