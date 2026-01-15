@@ -163,7 +163,7 @@ lyt <- lyt %>%
   analyze(
     "AEBODSYS",
     afun = a_freq_j,
-    extra_args = append(extra_args_rr, NULL),
+    extra_args = append(extra_args_rr, list(drop_levels = TRUE)),
     indent_mod = 0L
   ) %>%
   append_topleft("System Organ Class, n (%)")
