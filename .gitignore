@@ -39,3 +39,4 @@ teal_app.lock
 site_libs/*
 /.quarto/
 .Rproj.user
+convert/API.R
